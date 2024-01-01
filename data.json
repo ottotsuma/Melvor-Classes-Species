@@ -5,7 +5,7 @@
         "pages": [
             {
                 "id": "Classes",
-                "media": "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_red.png",
+                "media": "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
                 "containerID": "classes-container",
                 "headerBgClass": "bg-classes",
                 "hasGameGuide": false,
@@ -15,7 +15,7 @@
                 ],
                 "sidebarItem": {
                     "categoryID": "Passive",
-                    "icon": "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_red.png"
+                    "icon": "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg"
                   }
             }
         ],
@@ -45,7 +45,7 @@
                     }
                 ],
                 "modifiers": {
-                    "decreasedClassesGP": 5
+                    "decreasedClassesGP": 5                    
                 },
                 "consumesOn": [
                     {
@@ -187,44 +187,39 @@
                         {
                             "id": "Human",
                             "name": "Human",
-                            "media": "assets/teachers/Unrelenting_Force.png",
+                            "media": "https://ottotsuma.github.io/images/portraits/human%20female%20barbarian%202.jpg",
                             "baseExperience": 5,
                             "maxGP": 141,
                             "productId": "namespace_classes:Human",
                             "level": 1,
                             "skills": [
-                                "melvorD:Woodcutting",
-                                "melvorD:Firemaking"
+                                "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg"
                             ],
                             "standardModifiers": [
                                 {
                                     "level": 1,
-                                    "key": "decreasedThievingStealth",
-                                    "value": 100
+                                    "key": "decreasedMagicMaxHit",
+                                    "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedChanceForArrowShaftsWoodcutting",
-                                    "skill": "melvorD:Woodcutting",
-                                    "value": 2
+                                    "key": "increasedGPFromSales",
+                                    "value": 10
                                 },
                                 {
                                     "level": 60,
-                                    "key": "increasedMasteryXP",
-                                    "skill": "melvorD:Firemaking",
-                                    "value": 15
+                                    "key": "increasedDamageAgainstAnimals",
+                                    "value": 10
                                 },
                                 {
                                     "level": 80,
-                                    "key": "decreasedSkillIntervalPercent",
-                                    "skill": "melvorD:Firemaking",
+                                    "key": "increasedDamageAgainstHumans",
                                     "value": 10
                                 },
                                 {
                                     "level": 99,
-                                    "key": "increasedWoodcuttingGemChance",
-                                    "skill": "melvorD:Woodcutting",
-                                    "value": 5
+                                    "key": "increasedGlobalAccuracyAgainstMythicalCreatures",
+                                    "value": 10
                                 }
                             ],
                             "hardcoreModifiers": [
@@ -267,8 +262,7 @@
                             "productId": "namespace_classes:Animal_Allegiance",
                             "level": 10,
                             "skills": [
-                                "melvorD:Fishing",
-                                "melvorD:Cooking"
+                                "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -338,8 +332,7 @@
                             "productId": "namespace_classes:Cyclone",
                             "level": 20,
                             "skills": [
-                                "melvorD:Mining",
-                                "melvorD:Smithing"
+                                "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -410,7 +403,7 @@
                             "productId": "namespace_classes:Become_Ethereal",
                             "level": 30,
                             "skills": [
-                                "melvorD:Hitpoints"
+                                "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_green.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -476,9 +469,7 @@
                             "productId": "namespace_classes:Kynes_Peace",
                             "level": 40,
                             "skills": [
-                                "melvorD:Woodcutting",
-                                "melvorD:Mining",
-                                "melvorD:Firemaking"
+                                "https://cdn.melvor.net/core/v018/assets/media/monsters/frozen_mammoth.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -544,8 +535,7 @@
                             "productId": "namespace_classes:Slow_Time",
                             "level": 50,
                             "skills": [
-                                "melvorD:Fletching",
-                                "melvorD:Crafting"
+                                "https://cdn.melvor.net/core/v018/assets/media/monsters/fierce_devil.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -617,7 +607,7 @@
                             "productId": "namespace_classes:Whirlwind_Sprint",
                             "level": 60,
                             "skills": [
-                                "melvorD:Agility"
+                                "https://cdn.melvor.net/core/v018/assets/media/monsters/fire_spirit.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -685,8 +675,7 @@
                             "productId": "namespace_classes:Throw_Voice",
                             "level": 70,
                             "skills": [
-                                "melvorD:Defence",
-                                "melvorD:Hitpoints"
+                                "https://cdn.melvor.net/core/v018/assets/media/monsters/large_crab.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -752,8 +741,7 @@
                             "productId": "namespace_classes:Dismay",
                             "level": 80,
                             "skills": [
-                                "melvorD:Runecrafting",
-                                "melvorD:Prayer"
+                                "https://cdn.melvor.net/core/v018/assets/media/monsters/large_crab.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -819,7 +807,7 @@
                             "productId": "namespace_classes:Battle_Fury",
                             "level": 90,
                             "skills": [
-                                "melvorD:Slayer"
+                                "https://cdn.melvor.net/core/v018/assets/media/monsters/skeleton.png"
                             ],
                             "standardModifiers": [
                                 {

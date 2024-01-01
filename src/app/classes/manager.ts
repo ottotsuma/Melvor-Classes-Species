@@ -105,7 +105,7 @@ export class ClassesManager {
 
     public calculateEquipCost(teacher: Teacher) {
         const MasterCostMap = [
-            this.classes.settings.shoutEquipCostOne || 1000,
+            this.classes.settings.shoutEquipCostOne || 0,
             this.classes.settings.shoutEquipCostTwo || 10000,
             this.classes.settings.shoutEquipCostThree || 100000,
             this.classes.settings.shoutEquipCostFour || 10000000,

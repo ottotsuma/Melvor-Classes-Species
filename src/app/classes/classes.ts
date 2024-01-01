@@ -11,7 +11,7 @@ import './classes.scss';
 
 export class Classes extends SkillWithMastery<Teacher, ClassesSkillData> {
     public readonly version = 4;
-    public readonly _media = 'https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_red.png';
+    public readonly _media = 'https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg';
     public readonly _events = window.mitt();
     public readonly on = this._events.on;
     public readonly off = this._events.off;

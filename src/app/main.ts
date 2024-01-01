@@ -65,9 +65,12 @@ export class App {
         this.initModifiers();
 
         this.game.classes = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_classes'), Classes);
-
+        const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
+        if(!kcm) {
+            return;
+        }
         await this.context.gameData.addPackage('data.json');
-
+        await this.context.gameData.addPackage('data-cmim.json');
         const DragonList: any[] = [
             "melvorD:PratTheProtectorOfSecrets",
             "melvorD:GreenDragon",
@@ -110,11 +113,6 @@ export class App {
         if (cloudManager.hasAoDEntitlement) {
             await this.context.gameData.addPackage('data-aod.json');
         }
-        const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
-        if (kcm) {
-            await this.context.gameData.addPackage('data-cmim.json');
-        }
-
         const en_data = {
             MODIFIER_DATA_summoningSynergy_Devil_Eagle: "While Thieving - 50% chance for +10% base Skill XP, 40% chance for 2.5x GP, and 10% chance to gain no Items or GP",
             MONSTER_TYPE_SINGULAR_Elf: "Elf",
@@ -145,7 +143,6 @@ export class App {
           }
 
         this.context.onCharacterLoaded(async () => {
-            if (kcm) {
                 const cmim = mod.api.customModifiersInMelvor;
                 cmim.addMonsters("Dragon", DragonList)
                 cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", [], true);
@@ -158,7 +155,6 @@ export class App {
                 cmim.forceBaseModTypeActive("Elemental");
                 cmim.forceBaseModTypeActive("MythicalCreature");
                 cmim.forceBaseModTypeActive("SeaCreature");
-            }
         })
 
         this.patchGamemodes(this.game.classes);

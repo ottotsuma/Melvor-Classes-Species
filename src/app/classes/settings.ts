@@ -26,7 +26,7 @@ export class ClassesSettings {
                 name: 'one-mastery',
                 label: getLangString('Classes_Classes_Settings_Base_Shout_Equip_Cost_1'),
                 hint: '',
-                default: 10000,
+                default: 0,
                 min: 100,
                 max: 999999999999,
                 onChange(value: number, previousValue: number) {

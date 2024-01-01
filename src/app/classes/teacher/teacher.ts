@@ -71,8 +71,9 @@ export function TeacherComponent(classes: Classes, teacher: Teacher, game: Game)
             this.disabled = classes.shouts.isMastered(teacher);
         },
         getSkillIcons: function () {
-            return teacher.skills.map(skillId => {
-                return game.skills.find(skill => skill.id === skillId)?.media;
+            return teacher.skills.map(media => {
+                // return game.skills.find(skill => skill.id === skillId)?.media;
+                return media
             });
         },
         getMinGPRoll: function () {
