@@ -1,362 +1,25 @@
 {
     "$schema": "https://melvoridle.com/assets/schema/gameData.json",
-    "namespace": "namespace_thuum",
-    "modifications": {
-        "items": [
-            {
-                "id": "melvorF:Potion_Box_II",
-                "dropTable": {
-                    "add": [
-                        {
-                            "itemID": "namespace_thuum:Generous_Gratuity_Potion_I",
-                            "minQuantity": 422,
-                            "maxQuantity": 422,
-                            "weight": 10
-                        }
-                    ]
-                }
-            },
-            {
-                "id": "melvorD:Aorpheats_Signet_Ring",
-                "modifiers": {
-                    "add": {
-                        "decreasedThuumGP": 100
-                    }
-                }
-            },
-            {
-                "id": "melvorF:Max_Skillcape",
-                "modifiers": {
-                    "add": {
-                        "decreasedSkillInterval": [
-                            {
-                                "skillID": "namespace_thuum:Thuum",
-                                "value": 500
-                            }
-                        ],
-                        "decreasedThuumEquipCost": 5,
-                        "decreasedThuumGP": 5
-                    }
-                }
-            },
-            {
-                "id": "melvorF:Cape_of_Completion",
-                "modifiers": {
-                    "add": {
-                        "decreasedSkillInterval": [
-                            {
-                                "skillID": "namespace_thuum:Thuum",
-                                "value": 500
-                            }
-                        ],
-                        "decreasedThuumEquipCost": 5,
-                        "decreasedThuumGP": 5
-                    }
-                }
-            }
-        ]
-    },
+    "namespace": "namespace_classes",
     "data": {
         "pages": [
             {
-                "id": "Thuum",
+                "id": "Classes",
                 "media": "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_red.png",
-                "containerID": "thuum-container",
-                "headerBgClass": "bg-thuum",
+                "containerID": "classes-container",
+                "headerBgClass": "bg-classes",
                 "hasGameGuide": false,
                 "canBeDefault": true,
-                "action": "namespace_thuum:Thuum",
                 "skills": [
-                    "namespace_thuum:Thuum"
-                ]
-            }
-        ],
-        "bankSortOrder": [
-            {
-                "insertAt": "After",
-                "afterID": "melvorF:Farming_Potion_IV",
-                "ids": [
-                    "namespace_thuum:Generous_Gratuity_Potion_I",
-                    "namespace_thuum:Generous_Gratuity_Potion_II",
-                    "namespace_thuum:Generous_Gratuity_Potion_III",
-                    "namespace_thuum:Generous_Gratuity_Potion_IV"
-                ]
-            },
-            {
-                "insertAt": "After",
-                "afterID": "melvorD:Mining_Skillcape",
-                "ids": [
-                    "namespace_thuum:Thuum_Skillcape"
-                ]
-            },
-            {
-                "insertAt": "After",
-                "afterID": "melvorF:Star_Gazing_Boots",
-                "ids": [
-                    "namespace_thuum:Shouts_Hat",
-                    "namespace_thuum:Shouts_Body",
-                    "namespace_thuum:Shouts_Leggings",
-                    "namespace_thuum:Shouts_Boots"
-                ]
-            },
-            {
-                "insertAt": "After",
-                "afterID": "melvorD:Diamond",
-                "ids": [
-                    "namespace_thuum:Dragon_Soul"
-                ]
+                    "namespace_classes:Classes"
+                ],
+                "sidebarItem": {
+                    "categoryID": "Passive",
+                    "icon": "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_red.png"
+                  }
             }
         ],
         "items": [
-            {
-                "itemType": "Item",
-                "id": "Dragon_Soul",
-                "name": "Dragon Soul",
-                "category": "Thuum",
-                "type": "Misc",
-                "media": "assets/items/dragon_soul.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "customDescription": "Used to upgrade mastered shout teachers. Unlocks a 5th modifier.",
-                "sellsFor": 500
-            },
-            {
-                "itemType": "Equipment",
-                "id": "Shouts_Hat",
-                "name": "Shouts Hat",
-                "category": "Thuum",
-                "type": "Equipment",
-                "media": "assets/township/skilling-outfit-hat-thuum.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 2000,
-                "customDescription": "+2% Thuum Skill XP<br><span class=\"text-warning\">With all four Shouts Outfit equipped: +8% Thuum Mastery XP</span>",
-                "tier": "none",
-                "validSlots": [
-                    "Helmet"
-                ],
-                "occupiesSlots": [],
-                "equipRequirements": [],
-                "equipmentStats": [],
-                "modifiers": {
-                    "increasedSkillXP": [
-                        {
-                            "skillID": "namespace_thuum:Thuum",
-                            "value": 2
-                        }
-                    ]
-                }
-            },
-            {
-                "itemType": "Equipment",
-                "id": "Shouts_Body",
-                "name": "Shouts Body",
-                "category": "Thuum",
-                "type": "Equipment",
-                "media": "assets/township/skilling-outfit-body-thuum.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 2000,
-                "customDescription": "+2% Thuum Skill XP<br><span class=\"text-warning\">With all four Shouts Outfit equipped: +8% Thuum Mastery XP</span>",
-                "tier": "none",
-                "validSlots": [
-                    "Platebody"
-                ],
-                "occupiesSlots": [],
-                "equipRequirements": [],
-                "equipmentStats": [],
-                "modifiers": {
-                    "increasedSkillXP": [
-                        {
-                            "skillID": "namespace_thuum:Thuum",
-                            "value": 2
-                        }
-                    ]
-                }
-            },
-            {
-                "itemType": "Equipment",
-                "id": "Shouts_Leggings",
-                "name": "Shouts Leggings",
-                "category": "Thuum",
-                "type": "Equipment",
-                "media": "assets/township/skilling-outfit-leggings-thuum.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 2000,
-                "customDescription": "+2% Thuum Skill XP<br><span class=\"text-warning\">With all four Shouts Outfit equipped: +8% Thuum Mastery XP</span>",
-                "tier": "none",
-                "validSlots": [
-                    "Platelegs"
-                ],
-                "occupiesSlots": [],
-                "equipRequirements": [],
-                "equipmentStats": [],
-                "modifiers": {
-                    "increasedSkillXP": [
-                        {
-                            "skillID": "namespace_thuum:Thuum",
-                            "value": 2
-                        }
-                    ]
-                }
-            },
-            {
-                "itemType": "Equipment",
-                "id": "Shouts_Boots",
-                "name": "Shouts Boots",
-                "category": "Thuum",
-                "type": "Equipment",
-                "media": "assets/township/skilling-outfit-boots-thuum.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 2000,
-                "customDescription": "+2% Thuum Skill XP<br><span class=\"text-warning\">With all four Shouts Outfit equipped: +8% Thuum Mastery XP</span>",
-                "tier": "none",
-                "validSlots": [
-                    "Boots"
-                ],
-                "occupiesSlots": [],
-                "equipRequirements": [],
-                "equipmentStats": [],
-                "modifiers": {
-                    "increasedSkillXP": [
-                        {
-                            "skillID": "namespace_thuum:Thuum",
-                            "value": 2
-                        }
-                    ]
-                }
-            },
-            {
-                "itemType": "Equipment",
-                "id": "Thuum_Scroll_Of_XP",
-                "name": "Thuum Scroll of XP",
-                "category": "Township",
-                "type": "Equipment",
-                "media": "assets/township/thuum-scroll-of-xp.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 80,
-                "tier": "none",
-                "validSlots": [
-                    "Consumable"
-                ],
-                "occupiesSlots": [],
-                "equipRequirements": [],
-                "equipmentStats": [],
-                "modifiers": {
-                    "increasedSkillXP": [
-                        {
-                            "skillID": "namespace_thuum:Thuum",
-                            "value": 3
-                        }
-                    ]
-                },
-                "consumesOn": [
-                    {
-                        "type": "ThuumAction"
-                    }
-                ]
-            },
-            {
-                "id": "Generous_Gratuity_Potion_I",
-                "name": "Generous Gratuity Potion I",
-                "category": "Herblore",
-                "type": "Potion",
-                "media": "assets/potion/thuum-potion-i.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 50,
-                "itemType": "Potion",
-                "modifiers": {
-                    "decreasedThuumGP": 10
-                },
-                "charges": 15,
-                "tier": 0,
-                "action": "namespace_thuum:Thuum",
-                "consumesOn": [
-                    {
-                        "type": "ThuumAction"
-                    }
-                ]
-            },
-            {
-                "id": "Generous_Gratuity_Potion_II",
-                "name": "Generous Gratuity Potion II",
-                "category": "Herblore",
-                "type": "Potion",
-                "media": "assets/potion/thuum-potion-ii.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 100,
-                "itemType": "Potion",
-                "modifiers": {
-                    "decreasedThuumGP": 20
-                },
-                "charges": 25,
-                "tier": 1,
-                "action": "namespace_thuum:Thuum",
-                "consumesOn": [
-                    {
-                        "type": "ThuumAction"
-                    }
-                ]
-            },
-            {
-                "id": "Generous_Gratuity_Potion_III",
-                "name": "Generous Gratuity Potion III",
-                "category": "Herblore",
-                "type": "Potion",
-                "media": "assets/potion/thuum-potion-iii.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 150,
-                "itemType": "Potion",
-                "modifiers": {
-                    "decreasedThuumGP": 30
-                },
-                "charges": 35,
-                "tier": 2,
-                "action": "namespace_thuum:Thuum",
-                "consumesOn": [
-                    {
-                        "type": "ThuumAction"
-                    }
-                ]
-            },
-            {
-                "id": "Generous_Gratuity_Potion_IV",
-                "name": "Generous Gratuity Potion IV",
-                "category": "Herblore",
-                "type": "Potion",
-                "media": "assets/potion/thuum-potion-iv.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 200,
-                "itemType": "Potion",
-                "modifiers": {
-                    "decreasedThuumGP": 50
-                },
-                "charges": 50,
-                "tier": 3,
-                "action": "namespace_thuum:Thuum",
-                "consumesOn": [
-                    {
-                        "type": "ThuumAction"
-                    }
-                ]
-            },
             {
                 "itemType": "Equipment",
                 "id": "Summoning_Familiar_Shout",
@@ -382,11 +45,11 @@
                     }
                 ],
                 "modifiers": {
-                    "decreasedThuumGP": 5
+                    "decreasedClassesGP": 5
                 },
                 "consumesOn": [
                     {
-                        "type": "ThuumAction"
+                        "type": "ClassesAction"
                     },
                     {
                         "type": "PlayerSummonAttack"
@@ -394,8 +57,8 @@
                 ]
             },
             {
-                "id": "Mastery_Token_Thuum",
-                "name": "Mastery Token (Thuum)",
+                "id": "Mastery_Token_Classes",
+                "name": "Mastery Token (Classes)",
                 "category": "Mastery",
                 "type": "Token",
                 "media": "assets/mastery-token.png",
@@ -407,343 +70,11 @@
                 "modifiers": {
                     "masteryToken": [
                         {
-                            "skillID": "namespace_thuum:Thuum",
+                            "skillID": "namespace_classes:Classes",
                             "value": 0.1
                         }
                     ]
                 }
-            },
-            {
-                "itemType": "Equipment",
-                "id": "Thuum_Skillcape",
-                "name": "Thuum Skillcape",
-                "category": "Combat",
-                "type": "Armour",
-                "media": "assets/thuum-skillcape.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 250000,
-                "tier": "Skillcape",
-                "validSlots": [
-                    "Cape"
-                ],
-                "occupiesSlots": [],
-                "equipRequirements": [
-                    {
-                        "type": "SkillLevel",
-                        "skillID": "namespace_thuum:Thuum",
-                        "level": 99
-                    }
-                ],
-                "equipmentStats": [
-                    {
-                        "key": "meleeDefenceBonus",
-                        "value": 9
-                    },
-                    {
-                        "key": "rangedDefenceBonus",
-                        "value": 9
-                    },
-                    {
-                        "key": "magicDefenceBonus",
-                        "value": 9
-                    }
-                ],
-                "modifiers": {
-                    "decreasedSkillInterval": [
-                        {
-                            "skillID": "namespace_thuum:Thuum",
-                            "value": 500
-                        }
-                    ],
-                    "decreasedThuumEquipCost": 5,
-                    "decreasedThuumGP": 5
-                }
-            }
-        ],
-        "itemUpgrades": [
-            {
-                "upgradedItemID": "namespace_thuum:Generous_Gratuity_Potion_II",
-                "gpCost": 0,
-                "scCost": 0,
-                "itemCosts": [
-                    {
-                        "id": "namespace_thuum:Generous_Gratuity_Potion_I",
-                        "quantity": 3
-                    }
-                ],
-                "rootItemIDs": [
-                    "namespace_thuum:Generous_Gratuity_Potion_I"
-                ],
-                "isDowngrade": false
-            },
-            {
-                "upgradedItemID": "namespace_thuum:Generous_Gratuity_Potion_III",
-                "gpCost": 0,
-                "scCost": 0,
-                "itemCosts": [
-                    {
-                        "id": "namespace_thuum:Generous_Gratuity_Potion_II",
-                        "quantity": 3
-                    }
-                ],
-                "rootItemIDs": [
-                    "namespace_thuum:Generous_Gratuity_Potion_II"
-                ],
-                "isDowngrade": false
-            },
-            {
-                "upgradedItemID": "namespace_thuum:Generous_Gratuity_Potion_IV",
-                "gpCost": 0,
-                "scCost": 0,
-                "itemCosts": [
-                    {
-                        "id": "namespace_thuum:Generous_Gratuity_Potion_III",
-                        "quantity": 3
-                    }
-                ],
-                "rootItemIDs": [
-                    "namespace_thuum:Generous_Gratuity_Potion_III"
-                ],
-                "isDowngrade": false
-            }
-        ],
-        "shopPurchases": [
-            {
-                "id": "Thuum_Skillcape",
-                "media": "assets/thuum-skillcape.png",
-                "category": "melvorD:Skillcapes",
-                "contains": {
-                    "items": [
-                        {
-                            "id": "namespace_thuum:Thuum_Skillcape",
-                            "quantity": 1
-                        }
-                    ]
-                },
-                "cost": {
-                    "gp": {
-                        "type": "Fixed",
-                        "cost": 1000000
-                    },
-                    "slayerCoins": {
-                        "type": "Fixed",
-                        "cost": 0
-                    },
-                    "items": [],
-                    "raidCoins": {
-                        "type": "Fixed",
-                        "cost": 0
-                    }
-                },
-                "allowQuantityPurchase": false,
-                "unlockRequirements": [],
-                "purchaseRequirements": [
-                    {
-                        "type": "SkillLevel",
-                        "skillID": "namespace_thuum:Thuum",
-                        "level": 99
-                    }
-                ],
-                "defaultBuyLimit": 1,
-                "buyLimitOverrides": [],
-                "showBuyLimit": false
-            },
-            {
-                "id": "Shouts_Hat",
-                "media": "assets/township/skilling-outfit-hat-thuum.png",
-                "category": "melvorF:Township",
-                "contains": {
-                    "items": [
-                        {
-                            "id": "namespace_thuum:Shouts_Hat",
-                            "quantity": 1
-                        }
-                    ]
-                },
-                "cost": {
-                    "gp": {
-                        "type": "Fixed",
-                        "cost": 100000
-                    },
-                    "slayerCoins": {
-                        "type": "Fixed",
-                        "cost": 0
-                    },
-                    "items": [],
-                    "raidCoins": {
-                        "type": "Fixed",
-                        "cost": 0
-                    }
-                },
-                "allowQuantityPurchase": false,
-                "unlockRequirements": [],
-                "purchaseRequirements": [
-                    {
-                        "type": "SkillLevel",
-                        "skillID": "melvorD:Township",
-                        "level": 10
-                    },
-                    {
-                        "type": "TownshipTask",
-                        "count": 20
-                    }
-                ],
-                "defaultBuyLimit": 0,
-                "buyLimitOverrides": [],
-                "showBuyLimit": false
-            },
-            {
-                "id": "Shouts_Body",
-                "media": "assets/township/skilling-outfit-body-thuum.png",
-                "category": "melvorF:Township",
-                "contains": {
-                    "items": [
-                        {
-                            "id": "namespace_thuum:Shouts_Body",
-                            "quantity": 1
-                        }
-                    ]
-                },
-                "cost": {
-                    "gp": {
-                        "type": "Fixed",
-                        "cost": 100000
-                    },
-                    "slayerCoins": {
-                        "type": "Fixed",
-                        "cost": 0
-                    },
-                    "items": [],
-                    "raidCoins": {
-                        "type": "Fixed",
-                        "cost": 0
-                    }
-                },
-                "allowQuantityPurchase": false,
-                "unlockRequirements": [],
-                "purchaseRequirements": [
-                    {
-                        "type": "SkillLevel",
-                        "skillID": "melvorD:Township",
-                        "level": 20
-                    },
-                    {
-                        "type": "TownshipTask",
-                        "count": 40
-                    }
-                ],
-                "defaultBuyLimit": 0,
-                "buyLimitOverrides": [],
-                "showBuyLimit": false
-            },
-            {
-                "id": "Shouts_Leggings",
-                "media": "assets/township/skilling-outfit-leggings-thuum.png",
-                "category": "melvorF:Township",
-                "contains": {
-                    "items": [
-                        {
-                            "id": "namespace_thuum:Shouts_Leggings",
-                            "quantity": 1
-                        }
-                    ]
-                },
-                "cost": {
-                    "gp": {
-                        "type": "Fixed",
-                        "cost": 100000
-                    },
-                    "slayerCoins": {
-                        "type": "Fixed",
-                        "cost": 0
-                    },
-                    "items": [],
-                    "raidCoins": {
-                        "type": "Fixed",
-                        "cost": 0
-                    }
-                },
-                "allowQuantityPurchase": false,
-                "unlockRequirements": [],
-                "purchaseRequirements": [
-                    {
-                        "type": "SkillLevel",
-                        "skillID": "melvorD:Township",
-                        "level": 40
-                    },
-                    {
-                        "type": "TownshipTask",
-                        "count": 60
-                    }
-                ],
-                "defaultBuyLimit": 0,
-                "buyLimitOverrides": [],
-                "showBuyLimit": false
-            },
-            {
-                "id": "Shouts_Boots",
-                "media": "assets/township/skilling-outfit-boots-thuum.png",
-                "category": "melvorF:Township",
-                "contains": {
-                    "items": [
-                        {
-                            "id": "namespace_thuum:Shouts_Boots",
-                            "quantity": 1
-                        }
-                    ]
-                },
-                "cost": {
-                    "gp": {
-                        "type": "Fixed",
-                        "cost": 100000
-                    },
-                    "slayerCoins": {
-                        "type": "Fixed",
-                        "cost": 0
-                    },
-                    "items": [],
-                    "raidCoins": {
-                        "type": "Fixed",
-                        "cost": 0
-                    }
-                },
-                "allowQuantityPurchase": false,
-                "unlockRequirements": [],
-                "purchaseRequirements": [
-                    {
-                        "type": "SkillLevel",
-                        "skillID": "melvorD:Township",
-                        "level": 60
-                    },
-                    {
-                        "type": "TownshipTask",
-                        "count": 80
-                    }
-                ],
-                "defaultBuyLimit": 0,
-                "buyLimitOverrides": [],
-                "showBuyLimit": false
-            }
-        ],
-        "shopDisplayOrder": [
-            {
-                "insertAt": "After",
-                "afterID": "melvorD:Mining_Skillcape",
-                "ids": [
-                    "namespace_thuum:Thuum_Skillcape"
-                ]
-            },
-            {
-                "insertAt": "After",
-                "afterID": "melvorF:Star_Gazing_Boots",
-                "ids": [
-                    "namespace_thuum:Shouts_Hat",
-                    "namespace_thuum:Shouts_Body",
-                    "namespace_thuum:Shouts_Leggings",
-                    "namespace_thuum:Shouts_Boots"
-                ]
             }
         ],
         "pets": [
@@ -755,22 +86,22 @@
                 "modifiers": {
                     "decreasedSkillInterval": [
                         {
-                            "skillID": "namespace_thuum:Thuum",
+                            "skillID": "namespace_classes:Classes",
                             "value": 150
                         }
                     ]
                 },
                 "activeInRaid": false,
                 "scaleChanceWithMasteryPool": true,
-                "skillID": "namespace_thuum:Thuum"
+                "skillID": "namespace_classes:Classes"
             }
         ],
         "skillData": [
             {
-                "skillID": "namespace_thuum:Thuum",
+                "skillID": "namespace_classes:Classes",
                 "data": {
                     "pets": [
-                        "namespace_thuum:Dragon"
+                        "namespace_classes:Dragon"
                     ],
                     "rareDrops": [
                         {
@@ -813,19 +144,13 @@
                     ],
                     "minibar": {
                         "defaultItems": [
-                            "namespace_thuum:Thuum_Skillcape",
-                            "namespace_thuum:Shouts_Hat",
-                            "namespace_thuum:Shouts_Body",
-                            "namespace_thuum:Shouts_Leggings",
-                            "namespace_thuum:Shouts_Boots",
-                            "namespace_thuum:Thuum_Scroll_Of_XP"
                         ],
                         "upgrades": [],
                         "pets": [
-                            "namespace_thuum:Dragon"
+                            "namespace_classes:Dragon"
                         ]
                     },
-                    "masteryTokenID": "namespace_thuum:Mastery_Token_Thuum",
+                    "masteryTokenID": "namespace_classes:Mastery_Token_Classes",
                     "masteryLevelUnlocks": [
                         {
                             "level": "1",
@@ -860,13 +185,12 @@
                     ],
                     "teachers": [
                         {
-                            "id": "Unrelenting_Force",
-                            "name": "Unrelenting Force",
+                            "id": "Human",
+                            "name": "Human",
                             "media": "assets/teachers/Unrelenting_Force.png",
-                            "baseInterval": 3000,
                             "baseExperience": 5,
                             "maxGP": 141,
-                            "productId": "namespace_thuum:Unrelenting_Force",
+                            "productId": "namespace_classes:Human",
                             "level": 1,
                             "skills": [
                                 "melvorD:Woodcutting",
@@ -938,10 +262,9 @@
                             "id": "Animal_Allegiance",
                             "name": "Animal Allegiance",
                             "media": "assets/teachers/Animal_Allegiance.png",
-                            "baseInterval": 3000,
                             "baseExperience": 13,
                             "maxGP": 182,
-                            "productId": "namespace_thuum:Animal_Allegiance",
+                            "productId": "namespace_classes:Animal_Allegiance",
                             "level": 10,
                             "skills": [
                                 "melvorD:Fishing",
@@ -1010,10 +333,9 @@
                             "id": "Cyclone",
                             "name": "Cyclone",
                             "media": "assets/teachers/Cyclone.png",
-                            "baseInterval": 3000,
                             "baseExperience": 21,
                             "maxGP": 223,
-                            "productId": "namespace_thuum:Cyclone",
+                            "productId": "namespace_classes:Cyclone",
                             "level": 20,
                             "skills": [
                                 "melvorD:Mining",
@@ -1083,10 +405,9 @@
                             "id": "Become_Ethereal",
                             "name": "Become Ethereal",
                             "media": "assets/teachers/Become_Ethereal.png",
-                            "baseInterval": 3000,
                             "baseExperience": 29,
                             "maxGP": 264,
-                            "productId": "namespace_thuum:Become_Ethereal",
+                            "productId": "namespace_classes:Become_Ethereal",
                             "level": 30,
                             "skills": [
                                 "melvorD:Hitpoints"
@@ -1150,10 +471,9 @@
                             "id": "Kynes_Peace",
                             "name": "Kyne's Peace",
                             "media": "assets/teachers/Kynes_Peace.png",
-                            "baseInterval": 3000,
                             "baseExperience": 37,
                             "maxGP": 305,
-                            "productId": "namespace_thuum:Kynes_Peace",
+                            "productId": "namespace_classes:Kynes_Peace",
                             "level": 40,
                             "skills": [
                                 "melvorD:Woodcutting",
@@ -1219,10 +539,9 @@
                             "id": "Slow_Time",
                             "name": "Slow_Times",
                             "media": "assets/teachers/Slow_Time.png",
-                            "baseInterval": 3000,
                             "baseExperience": 45,
                             "maxGP": 346,
-                            "productId": "namespace_thuum:Slow_Time",
+                            "productId": "namespace_classes:Slow_Time",
                             "level": 50,
                             "skills": [
                                 "melvorD:Fletching",
@@ -1293,10 +612,9 @@
                             "id": "Whirlwind_Sprint",
                             "name": "Whirlwind_Sprint",
                             "media": "assets/teachers/Whirlwind_Sprint.png",
-                            "baseInterval": 3000,
                             "baseExperience": 53,
                             "maxGP": 387,
-                            "productId": "namespace_thuum:Whirlwind_Sprint",
+                            "productId": "namespace_classes:Whirlwind_Sprint",
                             "level": 60,
                             "skills": [
                                 "melvorD:Agility"
@@ -1362,10 +680,9 @@
                             "id": "Throw_Voice",
                             "name": "Throw_Voice",
                             "media": "assets/teachers/Throw_Voice.png",
-                            "baseInterval": 3000,
                             "baseExperience": 61,
                             "maxGP": 428,
-                            "productId": "namespace_thuum:Throw_Voice",
+                            "productId": "namespace_classes:Throw_Voice",
                             "level": 70,
                             "skills": [
                                 "melvorD:Defence",
@@ -1430,10 +747,9 @@
                             "id": "Dismay",
                             "name": "Dismay",
                             "media": "assets/teachers/Dismay.png",
-                            "baseInterval": 3000,
                             "baseExperience": 69,
                             "maxGP": 469,
-                            "productId": "namespace_thuum:Dismay",
+                            "productId": "namespace_classes:Dismay",
                             "level": 80,
                             "skills": [
                                 "melvorD:Runecrafting",
@@ -1498,10 +814,9 @@
                             "id": "Battle_Fury",
                             "name": "Battle Fury",
                             "media": "assets/teachers/Battle_Fury.png",
-                            "baseInterval": 3000,
                             "baseExperience": 81,
                             "maxGP": 510,
-                            "productId": "namespace_thuum:Battle_Fury",
+                            "productId": "namespace_classes:Battle_Fury",
                             "level": 90,
                             "skills": [
                                 "melvorD:Slayer"
@@ -1567,41 +882,13 @@
                 }
             },
             {
-                "skillID": "melvorD:Herblore",
-                "data": {
-                    "recipes": [
-                        {
-                            "id": "Generous_Gratuity_Potion",
-                            "name": "Generous Gratuity Potion",
-                            "level": 80,
-                            "potionIDs": [
-                                "namespace_thuum:Generous_Gratuity_Potion_I",
-                                "namespace_thuum:Generous_Gratuity_Potion_II",
-                                "namespace_thuum:Generous_Gratuity_Potion_III",
-                                "namespace_thuum:Generous_Gratuity_Potion_IV"
-                            ],
-                            "baseExperience": 140,
-                            "categoryID": "melvorF:SkillPotions",
-                            "itemCosts": [
-                                {
-                                    "id": "melvorF:Pigtayle_Herb",
-                                    "quantity": 1
-                                }
-                            ],
-                            "gpCost": 1000,
-                            "scCost": 0
-                        }
-                    ]
-                }
-            },
-            {
                 "skillID": "melvorD:Summoning",
                 "data": {
                     "recipes": [
                         {
                             "id": "Shout",
                             "level": 90,
-                            "productID": "namespace_thuum:Summoning_Familiar_Shout",
+                            "productID": "namespace_classes:Summoning_Familiar_Shout",
                             "baseQuantity": 25,
                             "baseExperience": 41,
                             "categoryID": "melvorD:TabletsFamiliars",
@@ -1625,7 +912,7 @@
                             "nonShardItemCosts": [],
                             "tier": 3,
                             "skillIDs": [
-                                "namespace_thuum:Thuum"
+                                "namespace_classes:Classes"
                             ]
                         }
                     ],
@@ -1633,7 +920,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:GolbinThief",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedGPOnEnemyHit": 30,
@@ -1648,7 +935,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Occultist",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedGlobalEvasion": 10
@@ -1665,7 +952,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Wolf",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedLifesteal": 2
@@ -1679,7 +966,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Ent",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedChanceAdditionalSkillResource": [
@@ -1698,7 +985,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Mole",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedChanceAdditionalSkillResource": [
@@ -1717,7 +1004,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Octopus",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedChanceAdditionalSkillResource": [
@@ -1736,7 +1023,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Minotaur",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedMeleeMaxHit": 3,
@@ -1751,7 +1038,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Centaur",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedRangedMaxHit": 3,
@@ -1766,7 +1053,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Witch",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedMagicMaxHit": 3,
@@ -1781,7 +1068,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Pig",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedSkillPreservationChance": [
@@ -1800,7 +1087,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Crow",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedAdditionalRunecraftCountRunes": 2
@@ -1814,7 +1101,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Leprechaun",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedGPFromThievingFlat": 50
@@ -1829,7 +1116,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Cyclops",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedSlayerCoins": 10
@@ -1843,7 +1130,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Yak",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedDamageReduction": 1
@@ -1861,7 +1148,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Unicorn",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedHitpointRegeneration": 50
@@ -1875,7 +1162,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Dragon",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedChanceToApplyBurn": 10
@@ -1889,7 +1176,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Monkey",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedChanceToDoubleItemsSkill": [
@@ -1908,7 +1195,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Salamander",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedSkillPreservationChance": [
@@ -1927,7 +1214,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Bear",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "increasedSkillPreservationChance": [
@@ -1946,7 +1233,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Devil",
-                                "namespace_thuum:Shout"
+                                "namespace_classes:Shout"
                             ],
                             "modifiers": {
                                 "decreasedSkillIntervalPercent": [

@@ -1,22 +1,21 @@
 {
     "$schema": "https://melvoridle.com/assets/schema/gameData.json",
-    "namespace": "namespace_thuum",
+    "namespace": "namespace_classes",
     "data": {
         "skillData": [
             {
-                "skillID": "namespace_thuum:Thuum",
+                "skillID": "namespace_classes:Classes",
                 "data": {
                     "teachers": [
                         {
                             "id": "cmim_teacher",
                             "name": "Combat Modifiers In Melvor",
                             "media": "assets/dragon.png",
-                            "baseInterval": 3000,
                             "baseExperience": 155,
                             "maxGP": 551,
-                            "productId": "namespace_thuum:cmim_teacher",
+                            "productId": "namespace_classes:cmim_teacher",
                             "level": 99,
-                            "skills": ["namespace_thuum:Thuum"],
+                            "skills": ["namespace_classes:Classes"],
                             "standardModifiers": [
                                 {
                                     "level": 1,

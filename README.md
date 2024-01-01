@@ -1,4 +1,4 @@
-# [Thuum] Thuum
+# [Classes] Classes
 
 Translations for all languages supported by melvor idle have been provided with this mod, however, I only speak English and cannot guarantee the accuracy of translations.
 
@@ -6,17 +6,17 @@ All translations were generated using chat gpt.
 
 **If you see an incorrect or missing translation, please create an issue on github providing the correct translation. Thank you!**
 
-https://github.com/thuumridium/thuum
+https://github.com/classesridium/classes
 
-Does not contain actual thuum. Sorry. :(
+Does not contain actual classes. Sorry. :(
 
 Disclaimer: **Please backup your save file before installing this mod.**
 
-This mod should be safe to install and uninstall at any time, however the game is designed to automatically delete data for mods that aren't loaded. **So if you uninstall this mod and load your save game, the Thuum data will be deleted by the game.** If you re-install the mod after the data is deleted, the skill will be reset to level 1, including masteries. If you uninstall and re-install without ever loading your save game, the data should be safe and retained.
+This mod should be safe to install and uninstall at any time, however the game is designed to automatically delete data for mods that aren't loaded. **So if you uninstall this mod and load your save game, the Classes data will be deleted by the game.** If you re-install the mod after the data is deleted, the skill will be reset to level 1, including masteries. If you uninstall and re-install without ever loading your save game, the data should be safe and retained.
 
 Please provide any feedback or bug reports, would love to hear your thoughts.
 
-![Thuum](images/thuum.png)
+![Classes](images/classes.png)
 
 ## Design Methodology
 
@@ -27,7 +27,7 @@ When designing this skill, my aims were to take pressure off early game gold, wh
 
 ## Training
 
-Thuum is a brand new skill which combines themes from Astrology, Thieving and Agility. It provides an easy way to obtain gold and powerful bonuses that benefit other skills.
+Classes is a brand new skill which combines themes from Astrology, Thieving and Agility. It provides an easy way to obtain gold and powerful bonuses that benefit other skills.
 
 Earn tips (GP) while you train shouts with various teachers, then Master the shouts you have trained to provide you with powerful bonuses while you train other skills.
 
@@ -41,9 +41,9 @@ Modifiers can be unlocked in any order once the mastery level has been attained,
 
 The cost to unlock a modifier is as follows
 
-* Level 40 Mastery Unlock - 100,000 GP + 1 Essence of Thuum
-* Level 75 Mastery Unlock - 1,000,000 GP + 1 Essence of Thuum
-* Level 99 Mastery Unlock - 10,000,000 GP + 1 Essence of Thuum
+* Level 40 Mastery Unlock - 100,000 GP + 1 Essence of Classes
+* Level 75 Mastery Unlock - 1,000,000 GP + 1 Essence of Classes
+* Level 99 Mastery Unlock - 10,000,000 GP + 1 Essence of Classes
 
 ![Teacher Mastery](images/teacher-mastery.png)
 
@@ -72,11 +72,11 @@ While training you have a chance to obtain Signet Ring Half A, Circlet of Rhaely
 
 Tips (GP) earned while training do scale with global gold increases.
 
-### Sheet Thuum, Essence of Thuum, Gems and Utilities
+### Sheet Classes, Essence of Classes, Gems and Utilities
 
-Training Thuum has a 2% chance to drop sheet thuum, these are used for mastered shout teacher upgrades.
+Training Classes has a 2% chance to drop sheet classes, these are used for mastered shout teacher upgrades.
 
-Sheet Thuum drop chance is a flat 2% and is not modified by any rarity increases, the only other boost to sheet thuum drop chance is applying Diamond String to your mastered shouts teacher. With two shouts, this means you can get a total of 12% drop chance for Sheet Thuum.
+Sheet Classes drop chance is a flat 2% and is not modified by any rarity increases, the only other boost to sheet classes drop chance is applying Diamond String to your mastered shouts teacher. With two shouts, this means you can get a total of 12% drop chance for Sheet Classes.
 
 ![Items](images/items.png)
 
@@ -90,11 +90,11 @@ Upgrades are destroyed if you Master a new shout. Re-hiring a previously mastere
 
 ### Upgrade
 
-Upgrading a mastered shouts teacher unlocks a 5th modifier, to do so, you require an Essence of Thuum.
+Upgrading a mastered shouts teacher unlocks a 5th modifier, to do so, you require an Essence of Classes.
 
-Essence of Thuum
-Upgrade from Sheet Thuum
-1,000,000GP + 50 Sheet Thuum
+Essence of Classes
+Upgrade from Sheet Classes
+1,000,000GP + 50 Sheet Classes
 Unlocks a 5th modifier on mastered shout teacher when upgraded.
 
 ![Upgrade](images/upgrade.png)
@@ -105,18 +105,18 @@ You can select one of three gems to socket into your shouts teacher. Only one ca
 
 Polished Topaz Gem
 Upgrade from Topaz
-50,000 GP + 50 Topaz + 10 Sheet Thuum
-+5% Thuum GP
+50,000 GP + 50 Topaz + 10 Sheet Classes
++5% Classes GP
 
 Polished Ruby Gem
 Upgrade from Ruby
-50,000 GP + 50 Ruby + 10 Sheet Thuum
-+5% Thuum Skill XP
+50,000 GP + 50 Ruby + 10 Sheet Classes
++5% Classes Skill XP
 
 Polished Sapphire Gem
 Upgrade from Sapphire
-50,000 GP + 50 Sapphire + 10 Sheet Thuum
-+5% Thuum Mastery XP
+50,000 GP + 50 Sapphire + 10 Sheet Classes
++5% Classes Mastery XP
 
 ![Socket](images/gem.png)
 
@@ -126,20 +126,20 @@ You can select one of three utilities to apply onto your shouts teacher. Only on
 
 Diamond String
 Upgrade from Bowstring
-50,000 GP + 100 Diamond + 100 Bowstring + 50 Thuum Sheet
-+5% Sheet Thuum drop chance
+50,000 GP + 100 Diamond + 100 Bowstring + 50 Classes Sheet
++5% Sheet Classes drop chance
 
 Pristine Leather
 Upgrade from Leather
-50,000 GP + 100 Diamond + 100 Leather + 50 Thuum Sheet
--5% Thuum Interval
+50,000 GP + 100 Diamond + 100 Leather + 50 Classes Sheet
+-5% Classes Interval
 
 Mystic Oil
 Upgrade from Weird Gloop
-50,000 GP + 100 Diamond + 100 Weird Gloop + 50 Thuum Sheet
-+1 additional reward roll while training Thuum
+50,000 GP + 100 Diamond + 100 Weird Gloop + 50 Classes Sheet
++1 additional reward roll while training Classes
 
-Mystic Oil will roll for rewards an additional time when training the thuum skill.
+Mystic Oil will roll for rewards an additional time when training the classes skill.
 
 This means if you have Mystic Oil applied, every time you train an teacher, the rewards are rolled an additional time.
 
@@ -151,13 +151,13 @@ This includes:
 
 For example, if you have Band Practice with two shouts mastered, both equipped with Mystic Oil.
 
-1 tick of training Thuum will roll 3 times for a chance to get the pet, rare drops, summoning marks and mastery tokens.
+1 tick of training Classes will roll 3 times for a chance to get the pet, rare drops, summoning marks and mastery tokens.
 
 ![Apply](images/apply.png)
 
 ## Band Practice
 
-The shop sells an upgrade which unlocks a second shout slot. This upgrade requires Level 110 Thuum and costs 1B GP.
+The shop sells an upgrade which unlocks a second shout slot. This upgrade requires Level 110 Classes and costs 1B GP.
 
 ![Band Practice](images/band-practice.png)
 
@@ -193,13 +193,13 @@ The level calculation is clamped to a max skill level of 120, which roughly equa
 
 ## Skill Unlocks
 
-Leveling the Thuum skill unlocks additional thuumal teachers to train your shouts with.
+Leveling the Classes skill unlocks additional classesal teachers to train your shouts with.
 
 ![Skill Unlocks](images/teacher-unlocks.png)
 
 ## Mastery Pool Unlocks
 
-Mastery Pool checkpoints provide additional xp, mastery xp, thuum interval and Master cost reduction.
+Mastery Pool checkpoints provide additional xp, mastery xp, classes interval and Master cost reduction.
 
 ![Mastery Pool Unlocks](images/mastery-pool-unlocks.png)
 
@@ -211,17 +211,17 @@ As you level up an teachers mastery, the tips you earn increases. You can also u
 
 ## Skill Capes
 
-The Thuum Skill Cape
+The Classes Skill Cape
 
-![Thuum Skillcape](images/thuum-skillcape.png)
+![Classes Skillcape](images/classes-skillcape.png)
 
-The Superior Thuum Skill Cape
+The Superior Classes Skill Cape
 
-![Superior Thuum Skillcape](images/superior-thuum-skillcape.png)
+![Superior Classes Skillcape](images/superior-classes-skillcape.png)
 
 ## Pet
 
-The Thuum skill also contains a pet: Dragon which provides -0.15s Thuum Interval
+The Classes skill also contains a pet: Dragon which provides -0.15s Classes Interval
 
 ![Dragon](images/dragon-pet.png)
 
@@ -233,10 +233,10 @@ The Generous Gratuity Potion can be brewed using the Herblore skill.
 
 * Herblore Unlock Level: 80
 * Materials: 1 Pigtayle Herb + 1,000 GP
-* Tier 1: +10% Thuum GP, 15 Charges
-* Tier 2: +20% Thuum GP, 25 Charges
-* Tier 3: +30% Thuum GP, 35 Charges
-* Tier 4: +50% Thuum GP, 50 Charges
+* Tier 1: +10% Classes GP, 15 Charges
+* Tier 2: +20% Classes GP, 25 Charges
+* Tier 3: +30% Classes GP, 35 Charges
+* Tier 4: +50% Classes GP, 50 Charges
 
 The potion has also been added to Potion Box II from Township, at the same rarity as the Herblore Potion.
 
@@ -244,7 +244,7 @@ The potion has also been added to Potion Box II from Township, at the same rarit
 
 ## Summoning
 
-The Thuum skill has its own tablet. The Shout! The Shout is both a combat and skill tablet.
+The Classes skill has its own tablet. The Shout! The Shout is both a combat and skill tablet.
 
 ![Shout Tablet](images/shout-tablet.png)
 
@@ -253,9 +253,9 @@ The Thuum skill has its own tablet. The Shout! The Shout is both a combat and sk
 * Tier: 3
 * Summoning Level Requirement: 90
 * Summoning Max Hit: 192
-* Skill Bonus: +5% Thuum GP
+* Skill Bonus: +5% Classes GP
 
-In addition, the Shout has synergies with every single other tablet. Since Thuum is a skill that focuses on boosting other skills, its synergy helps all other skills. It basically doubles the tablet effect of the tablet it is synergizing with (by granting the same tablet modifiers via the synergy).
+In addition, the Shout has synergies with every single other tablet. Since Classes is a skill that focuses on boosting other skills, its synergy helps all other skills. It basically doubles the tablet effect of the tablet it is synergizing with (by granting the same tablet modifiers via the synergy).
 
 Example: Devil gives -5% Firemaking Interval, if synergized with the Shout, the synergy will provide an addition -5% Firemaking Interval for a total of -10% Firemaking Interval being provided from the tablets.
 
@@ -267,25 +267,25 @@ The Fox synergy actually works in reverse, kind of... the Shout synergy doubles 
 
 ## Agility
 
-Agility has been modified so that the Obstacle 10 - Waterfall now also benefits the Thuum skill.
+Agility has been modified so that the Obstacle 10 - Waterfall now also benefits the Classes skill.
 
 ![Agility](images/agility.png)
 
 ## Astrology
 
-Astrology has been modified so that the Variel constellation now also benefits the Thuum skill.
+Astrology has been modified so that the Variel constellation now also benefits the Classes skill.
 
 ![Astrology](images/astrology.png)
 
 ## Township
 
-The Thuum skill adds a Thuum Scroll of XP granting +3% Thuum Skill XP. It functions the same as other scrolls of xp.
+The Classes skill adds a Classes Scroll of XP granting +3% Classes Skill XP. It functions the same as other scrolls of xp.
 
-It requires level 15 Township and level 15 Thuum to purchase, with a default value of 80 planks per scroll.
+It requires level 15 Township and level 15 Classes to purchase, with a default value of 80 planks per scroll.
 
 ![Township](images/township-xp-scroll.png)
 
-The Thuum skill adds a Thuum Outfit, which is fully integrated just like all the other skilling outfits.
+The Classes skill adds a Classes Outfit, which is fully integrated just like all the other skilling outfits.
 
 ![Shouts Outfit](images/shout-outfit.png)
 
@@ -313,7 +313,7 @@ The Circus is a new combat area that contains 3 types of jesters to fight.
 
 ### Guitar Weapon
 
-The Jester can drop a Guitar which is a new 2H Weapon which requires attack and thuum levels to equip. The Guitar can be upgraded twice.
+The Jester can drop a Guitar which is a new 2H Weapon which requires attack and classes levels to equip. The Guitar can be upgraded twice.
 
 ![Guitars](images/guitar-items.png)
 
@@ -343,23 +343,23 @@ Mystic Essence is dropped from the Mystic Jester
 
 ![Ancient Relics](images/ancient-relics.png)
 
-Thuum has Ancient Relics
+Classes has Ancient Relics
 
-#1: +50% Thuum Mastery XP
-#2: +10% chance to obtain Shrimp while training Thuum
+#1: +50% Classes Mastery XP
+#2: +10% chance to obtain Shrimp while training Classes
 #3: 1% increased chance to locate Ancient Relics
 #4: +50% Global GP (except Item Sales)
-#5: -20% Thuum Interval
+#5: -20% Classes Interval
 Master Relic: +1 Shout Equip Limit
 
 (Yes, this means you can have 3 mastered shouts)
 
 ### Lesser Relic
 
-Thuum also has a Lesser Relic which grants:
+Classes also has a Lesser Relic which grants:
 
--5% Thuum Interval
-+5% Thuum GP
+-5% Classes Interval
++5% Classes GP
 +10% Magic Maximum Hit
 
 ## Settings
@@ -593,7 +593,7 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 ## Change Log
 
 # 1.13.13
-* fixed superior max cape and superior cape of completion not inheriting thuum skillcape modifiers
+* fixed superior max cape and superior cape of completion not inheriting classes skillcape modifiers
 
 # 1.13.12
 * improved compatibility with tiny passive icons
@@ -605,7 +605,7 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 * fixed skill completion statistic count being doubled
 
 # 1.13.9
-* fixed thuum gp gains not considering flat gp increases such as golden wreath
+* fixed classes gp gains not considering flat gp increases such as golden wreath
 
 # 1.13.8
 * replaced Kynes_Peace upgrade modifier from GP From Sales to GP gained when earning GP, except Alt. Magic and Item Sales
@@ -618,25 +618,25 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 # 1.13.5
 * removed 'ancient coin token', 'ancient mask token' and 'ancient skull token'
-* thuum skill level cap in the ancient relics gamemode now scales with combat stats level cap
-* thuum is no longer offered as a choice for skill cap level increases
-* improved logic for unlocking thuum skill to support custom ancient relic gamemodes
+* classes skill level cap in the ancient relics gamemode now scales with combat stats level cap
+* classes is no longer offered as a choice for skill cap level increases
+* improved logic for unlocking classes skill to support custom ancient relic gamemodes
 
 # 1.13.4
 * added a new teacher, the flute which focuses on cartography and archaeology
 
 # 1.13.3
-* added ancient relics for thuum
-* added a lesser relic for thuum
+* added ancient relics for classes
+* added a lesser relic for classes
 
 # 1.13.2
-* fixed thuum being locked in ancient relics gamemode on existing saves when enabling the mod for the first time
+* fixed classes being locked in ancient relics gamemode on existing saves when enabling the mod for the first time
 * added one time rewards for undead graveyard, air god dungeon and lava lake dungeon
 * these one time rewards are tokens which when consumed grant level cap increases in the ancient relics gamemode, they do nothing in other gamemodes and can be sold
 * these tokens are equivalent to clearing 2 base game dungeons and 1 toth dungeon to help offset the additional skill
 
 # 1.13.1
-* fixed thuum being locked in ancient relics gamemode
+* fixed classes being locked in ancient relics gamemode
 * fixed skill cape exception check
 
 # 1.13.0
@@ -655,7 +655,7 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 ### 1.11.0
 * significantly reduced hiring cost of shouts from 10k, 100k, 20m, 200m to 10k, 100k, 1m, 10m
-* unlocking modifiers now also cost gp in addition to essence of thuum, costs are 100k for level 40 modifier, 1m for level 75 modifier and 10m for level 99 modifier
+* unlocking modifiers now also cost gp in addition to essence of classes, costs are 100k for level 40 modifier, 1m for level 75 modifier and 10m for level 99 modifier
 * shout Master cost for 95% mastery checkpoint has been reduced from -10% to -5%
 * shout Master cost for mastery level 90 has been reduced from -10% to -5%
 * switched and reduced the power of some teacher modifiers:
@@ -685,32 +685,32 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 ### 1.9.0
 * Throne of the Herald is now optional, all TotH data requires the expansion to load, this includes superior skillcape, teachers above level 99 and summoning synergies above level 99
-* max skillcape and superior max skillcape no longer require the thuum skill to purchase
-* eagle + shout synergy now grants -10% Thuum Interval, from -5% Agility Interval
-* owl + shout synergy now grants +1.5% Thuum Mastery XP Per Maxed Star in Variel, from -5% Astrology Interval
+* max skillcape and superior max skillcape no longer require the classes skill to purchase
+* eagle + shout synergy now grants -10% Classes Interval, from -5% Agility Interval
+* owl + shout synergy now grants +1.5% Classes Mastery XP Per Maxed Star in Variel, from -5% Astrology Interval
 * shout modifiers are no longer automatically unlocked based on mastery level
 * once the required mastery level is reached, you may now choose to unlock the modifier whenever you feel like doing so
 * previous save data will automatically migrate and have the appropriate mastery unlocks already for free
 * hiring shout gp cost no longer scales with mastery level, instead the cost increases with the number of modifiers unlocked on the shout
-* mystic oil no longer grants +1 modifier unlock, now rolls an additional time for rewards while training thuum
+* mystic oil no longer grants +1 modifier unlock, now rolls an additional time for rewards while training classes
 
 ### 1.8.1
-* reordered the thuum skillcapes to be listed/sorted in alphabetical order in the shop and bank
+* reordered the classes skillcapes to be listed/sorted in alphabetical order in the shop and bank
 
 ### 1.8.0
 * the jesters have emerged from the circus, a new combat area
 * added three new monsters found in the circus
 * added the guitar, a 2H weapon that can be upgraded twice
-* jesters drop the guitar, and the essence required to upgrade the guitar, among other thuum related drops
+* jesters drop the guitar, and the essence required to upgrade the guitar, among other classes related drops
 
 ### 1.7.1
-* reduced base drop chance of sheet thuum from 5% to 2%
-* significantly reduced the sell value of thuum related items, these were not intended to be an easy way to generate gold
+* reduced base drop chance of sheet classes from 5% to 2%
+* significantly reduced the sell value of classes related items, these were not intended to be an easy way to generate gold
 
 ### 1.7.0
-* agility obstacle 10 waterfall now also benefits the Thuum skill
-* astrology variel constellation now also benefits the Thuum skill
-* added compatibility between Tiny Passive Icons mod and the Thuum skill mod for Agility and Astrology
+* agility obstacle 10 waterfall now also benefits the Classes skill
+* astrology variel constellation now also benefits the Classes skill
+* added compatibility between Tiny Passive Icons mod and the Classes skill mod for Agility and Astrology
 * switched the Animal_Allegiance and drum teachers
   * no functional change, just switched the type of teacher
   * the Animal_Allegiance now benefits fishing and cooking and is still unlocked at level 10
@@ -727,7 +727,7 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 ### 1.6.3
 * fixed concert pass halves dropping more often then intended
-* adjusted the Thuum pet, Dragon, to provide a flat -0.15s Thuum Interval from -1% Thuum Interval
+* adjusted the Classes pet, Dragon, to provide a flat -0.15s Classes Interval from -1% Classes Interval
 
 ### 1.6.2
 * fixed message when the concert pass runs out to be more context specific
@@ -737,20 +737,20 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 ### 1.6.0
 * added concert pass half a, concert pass half b and concert pass
-* half a and half b can drop while training thuum
+* half a and half b can drop while training classes
 * both halves + 10M GP can be used to purchase 1,000 charges of a concert pass
-* the concert pass can be equipped in the offhand and while training Thuum you also gain Skill XP for the skills the teacher supports
+* the concert pass can be equipped in the offhand and while training Classes you also gain Skill XP for the skills the teacher supports
 
 ### 1.5.0
-* increased drop rate of sheet thuum from 1% to 5%
-* expanded the ability to upgrade mastered shout teachers which boost the Thuum skill itself
+* increased drop rate of sheet classes from 1% to 5%
+* expanded the ability to upgrade mastered shout teachers which boost the Classes skill itself
   * one of three new gems can be socketed into a mastered shouts teacher
   * one of three new utilities can be applied onto a mastered shouts teacher
 
 ### 1.4.2
 * fixed skill info header not displaying as intended on mobile
-* fixed Aorpheats Signet Ring not providing +100% GP to Thuum
-* fixed Max Skillcape, Cape of Completion, Superior Max Skillcape and Superior Cape of Completion not inheriting Thuum Skillcape modifiers (these capes still DO NOT require any Thuum skill levels, they just inherit the modifiers of the Thuum skillcapes)
+* fixed Aorpheats Signet Ring not providing +100% GP to Classes
+* fixed Max Skillcape, Cape of Completion, Superior Max Skillcape and Superior Cape of Completion not inheriting Classes Skillcape modifiers (these capes still DO NOT require any Classes skill levels, they just inherit the modifiers of the Classes skillcapes)
 
 ### 1.4.1
 * fixed trumpet mastery level 1 modifier incorrectly requiring mastery level 40
@@ -769,15 +769,15 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
   * tambourine - increased level 1 farming yield % from 5 to 10 and level 40 flat farming yield from 5 to 15
   * trumpet - now focused on damage dealing only
 * added a new shop purchase which lets you Master two shouts at once
-* added a new item, sheet thuum which is dropped while training Thuum
-* added a new item, essence of thuum, which is upgraded from sheet thuum
+* added a new item, sheet classes which is dropped while training Classes
+* added a new item, essence of classes, which is upgraded from sheet classes
 * added the ability to upgrade mastered shout teachers which unlocks a 5th modifier
 
 ### 1.3.0
-* added a potion to Herblore which increases GP obtained while training Thuum
-* added a summoning tablet for the Thuum skill, the Shout
-* added a Thuum Scroll of XP which can be purchased from the Township trader with Planks
-* added a Thuum Outfit to the Township category of the shop, it functions the same all other skilling outfits
+* added a potion to Herblore which increases GP obtained while training Classes
+* added a summoning tablet for the Classes skill, the Shout
+* added a Classes Scroll of XP which can be purchased from the Township trader with Planks
+* added a Classes Outfit to the Township category of the shop, it functions the same all other skilling outfits
 
 ### 1.2.0
 
@@ -798,15 +798,15 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 ### 1.0.2
 
-* fixed thuum mastery token granting no experience
+* fixed classes mastery token granting no experience
 
 ### 1.0.1
 
 * fixed the spelling of Throw_Voice
 * removed mastery token, capes and pet from being required for completion log
-* removed thuum from being required for max and superior max capes
-* skill cape now also reduces shout Master cost by 5% and increased gold earned from thuum by 5%
-* superior skill cape now also reduces shout Master cost by 10% and increased gold earned from thuum by 10%
+* removed classes from being required for max and superior max capes
+* skill cape now also reduces shout Master cost by 5% and increased gold earned from classes by 5%
+* superior skill cape now also reduces shout Master cost by 10% and increased gold earned from classes by 10%
 
 ### 1.0.0
 
@@ -816,9 +816,9 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 Images obtained from the following sources, attribution provided.
 
-<a href="https://www.freepik.com/free-vector/cute-red-panda-playing-guitar-cartoon-vector-icon-illustration-animal-thuum-icon-concept-isolated_31966379.htm">Image by catalyststuff on Freepik</a>
+<a href="https://www.freepik.com/free-vector/cute-red-panda-playing-guitar-cartoon-vector-icon-illustration-animal-classes-icon-concept-isolated_31966379.htm">Image by catalyststuff on Freepik</a>
 
-<a href="https://www.freepik.com/free-vector/thuumal-teacher-set_8610228.htm#query=cartoon%20teacher&position=0&from_view=keyword&track=ais">Image by pch.vector on Freepik</a>
+<a href="https://www.freepik.com/free-vector/classesal-teacher-set_8610228.htm#query=cartoon%20teacher&position=0&from_view=keyword&track=ais">Image by pch.vector on Freepik</a>
 
 <a href="https://www.flaticon.com/free-icons/troubadour">Troubadour icons created by Freepik - Flaticon</a>
 
@@ -832,9 +832,9 @@ Images obtained from the following sources, attribution provided.
 
 <a href="https://www.flaticon.com/free-icons/guitar" title="guitar icons">Guitar icons created by Freepik - Flaticon</a>
 
-<a href="https://www.freepik.com/free-vector/aesthetic-jazz-background-thuumal-teacher-border-blue-vector_20346432.htm#query=thuumal%20background&position=16&from_view=search&track=ais">Image by rawpixel.com on Freepik</a>
+<a href="https://www.freepik.com/free-vector/aesthetic-jazz-background-classesal-teacher-border-blue-vector_20346432.htm#query=classesal%20background&position=16&from_view=search&track=ais">Image by rawpixel.com on Freepik</a>
 
-<a href="https://www.flaticon.com/free-icons/thuum-and-multimedia" title="thuum and multimedia icons">Thuum and multimedia icons created by Mihimihi - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/classes-and-multimedia" title="classes and multimedia icons">Classes and multimedia icons created by Mihimihi - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/circus-tent" title="circus tent icons">Circus tent icons created by Freepik - Flaticon</a>
 

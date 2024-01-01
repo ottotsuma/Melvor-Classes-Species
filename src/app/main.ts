@@ -1,15 +1,15 @@
-import { ThuumActionEventMatcher, ThuumActionEventMatcherOptions } from './thuum/event';
-import { Thuum } from './thuum/thuum';
-import { UserInterface } from './thuum/user-interface';
-import { ThuumModifiers } from './thuum/modifiers';
-import { ThuumTownship } from './township/township';
-import { ThuumAgility } from './agility/agility';
-import { ThuumAstrology } from './astrology/astrology';
+import { ClassesActionEventMatcher, ClassesActionEventMatcherOptions } from './classes/event';
+import { Classes } from './classes/classes';
+import { UserInterface } from './classes/user-interface';
+import { ClassesModifiers } from './classes/modifiers';
+// import { ClassesTownship } from './classes/township/township';
+// import { ClassesAgility } from './agility/agility';
+// import { ClassesAstrology } from './astrology/astrology';
 import { TinyPassiveIconsCompatibility } from './compatibility/tiny-passive-icons';
-import { ThuumSkillData } from './thuum/thuum.types';
+import { ClassesSkillData } from './classes/classes.types';
 import { languages } from './language';
-import { ThuumTranslation } from './translation/translation';
-import { ThuumSettings } from './thuum/settings';
+import { ClassesTranslation } from './classes/translation/translation';
+import { ClassesSettings } from './classes/settings';
 
 declare global {
     interface CloudManager {
@@ -20,7 +20,7 @@ declare global {
     const cloudManager: CloudManager;
 
     interface SkillIDDataMap {
-        'namespace_thuum:Thuum': ThuumSkillData;
+        'namespace_classes:Classes': ClassesSkillData;
     }
 
     interface SkillValue {
@@ -29,7 +29,7 @@ declare global {
     }
 
     interface Game {
-        thuum: Thuum;
+        classes: Classes;
     }
 
     interface Gamemode {
@@ -52,11 +52,11 @@ export class App {
     constructor(private readonly context: Modding.ModContext, private readonly game: Game) { }
 
     public async init() {
-        await this.context.loadTemplates('thuum/thuum.html');
-        await this.context.loadTemplates('thuum/teacher/teacher.html');
-        await this.context.loadTemplates('thuum/shout/shout.html');
-        await this.context.loadTemplates('thuum/mastery/mastery.html');
-        await this.context.loadTemplates('thuum/locked/locked.html');
+        await this.context.loadTemplates('classes/classes.html');
+        await this.context.loadTemplates('classes/teacher/teacher.html');
+        await this.context.loadTemplates('classes/shout/shout.html');
+        await this.context.loadTemplates('classes/mastery/mastery.html');
+        await this.context.loadTemplates('classes/locked/locked.html');
 
         this.initLanguage();
         this.initTranslation();
@@ -64,7 +64,7 @@ export class App {
         this.patchEventManager();
         this.initModifiers();
 
-        this.game.thuum = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_thuum'), Thuum);
+        this.game.classes = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_classes'), Classes);
 
         await this.context.gameData.addPackage('data.json');
 
@@ -93,10 +93,10 @@ export class App {
             // await this.context.gameData
             //     .buildPackage(builder => {
             //         builder.skillData.add({
-            //             skillID: 'namespace_thuum:Thuum',
+            //             skillID: 'namespace_classes:Classes',
             //             data: {
             //                 minibar: {
-            //                     defaultItems: ['namespace_thuum:Superior_Thuum_Skillcape'],
+            //                     defaultItems: ['namespace_classes:Superior_Classes_Skillcape'],
             //                     upgrades: [],
             //                     pets: []
             //                 },
@@ -158,67 +158,46 @@ export class App {
                 cmim.forceBaseModTypeActive("Elemental");
                 cmim.forceBaseModTypeActive("MythicalCreature");
                 cmim.forceBaseModTypeActive("SeaCreature");
-                const cmimDragonList = await cmim.getMonstersOfType('Dragon');
-                const initialPackage = this.context.gameData.buildPackage(builder => {
-                    for (let index = 0; index < cmimDragonList.length; index++) {
-                        builder.monsters.modify({
-                            "id": cmimDragonList[index],
-                            "lootTable": {
-                                "add": [
-                                    {
-                                        "itemID": "namespace_thuum:Dragon_Soul",
-                                        "maxQuantity": 1,
-                                        "minQuantity": 1,
-                                        "weight": 1
-                                    }
-                                ]
-                            }
-                        });
-                    }
-                })
-                initialPackage.add();
-                // this.game.thuum.changesMade = initialPackage
-            } else {
-                for (let index = 0; index < DragonList.length; index++) {
-                    await this.context.gameData.buildPackage(builder => {
-                        builder.monsters.modify({
-                            "id": DragonList[index],
-                            "lootTable": {
-                                "add": [
-                                    {
-                                        "itemID": "namespace_thuum:Dragon_Soul",
-                                        "maxQuantity": 1,
-                                        "minQuantity": 1,
-                                        "weight": 1
-                                    }
-                                ]
-                            }
-                        });
-                    }).add();
-                }
             }
         })
 
-        this.patchGamemodes(this.game.thuum);
-        this.patchUnlock(this.game.thuum);
-        this.initCompatibility(this.game.thuum);
-        this.initAgility(this.game.thuum);
-        this.initAstrology(this.game.thuum);
-        this.initTownship();
+        this.patchGamemodes(this.game.classes);
+        this.patchUnlock(this.game.classes);
+        this.initCompatibility(this.game.classes);
+        // this.initAgility(this.game.classes);
+        // this.initAstrology(this.game.classes);
+        // this.initTownship();
 
-        this.game.thuum.userInterface = this.initInterface(this.game.thuum);
-        this.game.thuum.initSettings(settings);
+        this.game.classes.userInterface = this.initInterface(this.game.classes);
+        this.game.classes.initSettings(settings);
     }
 
     private patchEventManager() {
         this.context.patch(GameEventSystem, 'constructMatcher').after((_patch, data) => {
-            if (this.isThuumEvent(data)) {
-                return new ThuumActionEventMatcher(data, this.game) as any;
+            if (this.isClassesEvent(data)) {
+                return new ClassesActionEventMatcher(data, this.game) as any;
             }
         });
+        // @ts-ignore
+        this.context.patch(CombatManager, "onEnemyDeath").after(()=> {
+            try {
+                // if (game && game.activeAction && game.activeAction._localID) {
+                    // if (game.activeAction._localID === "Combat") {
+                        const combatLevel = game.combat.enemy.monster.combatLevel
+                        // const classes = game.skills.getObjectByID('namespace_classes:Classes') as Classes;
+                        const teacher = game.classes.shouts.get(1)
+                        const exp = Math.floor((combatLevel/teacher.teacher.baseExperience) + teacher.teacher.baseExperience)
+                        game.classes.addXP(exp)
+                        game.classes.addMasteryXP(teacher.teacher, exp)
+                    // }
+                // }            
+            } catch (error) {
+                console.log('addXP', error) 
+            }
+          });
     }
 
-    private patchGamemodes(thuum: Thuum) {
+    private patchGamemodes(classes: Classes) {
         this.game.gamemodes.forEach(gamemode => {
             if (gamemode.allowDungeonLevelCapIncrease) {
                 if (!gamemode.startingSkills) {
@@ -233,30 +212,30 @@ export class App {
                     gamemode.autoLevelSkillsPost99 = [];
                 }
 
-                gamemode.startingSkills.add(thuum);
-                gamemode.autoLevelSkillsPre99.push({ skill: thuum, value: 5 });
-                gamemode.autoLevelSkillsPost99.push({ skill: thuum, value: 3 });
+                gamemode.startingSkills.add(classes);
+                gamemode.autoLevelSkillsPre99.push({ skill: classes, value: 5 });
+                gamemode.autoLevelSkillsPost99.push({ skill: classes, value: 3 });
             }
         });
     }
 
-    private patchUnlock(thuum: Thuum) {
+    private patchUnlock(classes: Classes) {
         this.context.patch(EventManager, 'loadEvents').after(() => {
             if (this.game.currentGamemode.allowDungeonLevelCapIncrease) {
-                thuum.setUnlock(true);
-                thuum.increasedLevelCap = this.game.attack.increasedLevelCap;
+                classes.setUnlock(true);
+                classes.increasedLevelCap = this.game.attack.increasedLevelCap;
             }
         });
     }
 
-    private isThuumEvent(
-        data: GameEventMatcherData | ThuumActionEventMatcherOptions
-    ): data is ThuumActionEventMatcherOptions {
-        return data.type === 'ThuumAction';
+    private isClassesEvent(
+        data: GameEventMatcherData | ClassesActionEventMatcherOptions
+    ): data is ClassesActionEventMatcherOptions {
+        return data.type === 'ClassesAction';
     }
 
     private initSettings() {
-        const settings = new ThuumSettings(this.context);
+        const settings = new ClassesSettings(this.context);
 
         settings.init();
 
@@ -264,37 +243,37 @@ export class App {
     }
 
     private initModifiers() {
-        const modifiers = new ThuumModifiers();
+        const modifiers = new ClassesModifiers();
 
         modifiers.registerModifiers();
     }
 
-    private initTownship() {
-        const township = new ThuumTownship(this.context, this.game);
+    // private initTownship() {
+    //     const township = new ClassesTownship(this.context, this.game);
 
-        township.register();
-    }
+    //     township.register();
+    // }
 
-    private initAgility(thuum: Thuum) {
-        const agility = new ThuumAgility(this.game, thuum);
+    // private initAgility(classes: Classes) {
+    //     const agility = new ClassesAgility(this.game, classes);
 
-        agility.register();
-    }
+    //     agility.register();
+    // }
 
-    private initAstrology(thuum: Thuum) {
-        const astrology = new ThuumAstrology(this.game, thuum);
+    // private initAstrology(classes: Classes) {
+    //     const astrology = new ClassesAstrology(this.game, classes);
 
-        astrology.register();
-    }
+    //     astrology.register();
+    // }
 
-    private initCompatibility(thuum: Thuum) {
-        const tinyPassiveIcons = new TinyPassiveIconsCompatibility(this.context, thuum);
+    private initCompatibility(classes: Classes) {
+        const tinyPassiveIcons = new TinyPassiveIconsCompatibility(this.context, classes);
 
         tinyPassiveIcons.patch();
     }
 
-    private initInterface(thuum: Thuum) {
-        const userInterface = new UserInterface(this.context, this.game, thuum);
+    private initInterface(classes: Classes) {
+        const userInterface = new UserInterface(this.context, this.game, classes);
 
         userInterface.init();
 
@@ -302,7 +281,7 @@ export class App {
     }
 
     private initTranslation() {
-        const translation = new ThuumTranslation(this.context);
+        const translation = new ClassesTranslation(this.context);
 
         translation.init();
     }
@@ -333,7 +312,7 @@ export class App {
             if (keysToNotPrefix.some(prefix => key.includes(prefix))) {
                 loadedLangJson[key] = value;
             } else {
-                loadedLangJson[`Thuum_Thuum_${key}`] = value;
+                loadedLangJson[`Classes_Classes_${key}`] = value;
             }
         }
     }

@@ -1,5 +1,5 @@
 {
-    "namespace": "namespace_thuum",
+    "namespace": "namespace_classes",
     "setup": "setup.mjs",
     "icon": "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_red.png"
 }

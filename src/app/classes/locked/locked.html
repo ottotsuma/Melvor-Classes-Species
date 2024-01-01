@@ -1,0 +1,23 @@
+<template id="classes-teacher-locked">
+    <div class="col-6 col-lg-3" id="teacher-locked" v-if="isVisible">
+        <div
+            class="block block-rounded block-link-pop block-rounded-extra border-top border-danger border-4x justify-vertical-center bg-gray-dark"
+        >
+            <div class="block-content block-content-full pb-0">
+                <div class="font-size-sm font-w600 text-center mb-3">
+                    <span id="teacher-locked-text">{{ getLangString('Classes_Classes_Locked') }}</span>
+
+                    <br />
+
+                    <img class="locked-teacher-icon m-3" :src="icon" />
+
+                    <br />
+
+                    <span class="badge badge-danger badge-pill mb-1" id="teacher-next-level">
+                        {{ templateLangString('Classes_Classes_Level', { level: level }) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

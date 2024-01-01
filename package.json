@@ -1,7 +1,7 @@
 {
-    "name": "thuum",
+    "name": "classes",
     "version": "1.13.13",
-    "description": "Melvor Idle mod that adds the thuum skill.",
+    "description": "Melvor Idle mod that adds the classes skill.",
     "main": "manifest.json",
     "scripts": {
         "pack": "webpack",

@@ -1,23 +1,23 @@
-import { Thuum } from '../thuum/thuum';
+import { Classes } from '../classes/classes';
 
-export class ThuumAgility {
-    constructor(private readonly game: Game, private readonly thuum: Thuum) {}
+export class ClassesAgility {
+    constructor(private readonly game: Game, private readonly classes: Classes) {}
 
     public register() {
         const waterfall = this.game.agility.actions.registeredObjects.get('melvorF:Waterfall');
 
         waterfall.modifiers.decreasedSkillIntervalPercent.push({
-            skill: this.thuum,
+            skill: this.classes,
             value: 5
         });
 
         waterfall.modifiers.increasedSkillXP.push({
-            skill: this.thuum,
+            skill: this.classes,
             value: 5
         });
 
         waterfall.modifiers.increasedMasteryXP.push({
-            skill: this.thuum,
+            skill: this.classes,
             value: 5
         });
 

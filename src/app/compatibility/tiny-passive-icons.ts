@@ -1,17 +1,17 @@
-import { Thuum } from '../thuum/thuum';
+import { Classes } from '../classes/classes';
 
 export class TinyPassiveIconsCompatibility {
     private readonly tinyIconTags = {
-        increasedThuumEquipCost: ['thuum', 'gp'],
-        decreasedThuumEquipCost: ['thuum', 'gp'],
-        increasedThuumGP: ['thuum', 'gp'],
-        decreasedThuumGP: ['thuum', 'gp'],
-        increasedThuumAdditionalRewardRoll: ['thuum'],
-        decreasedThuumAdditionalRewardRoll: ['thuum'],
+        increasedClassesEquipCost: ['classes', 'gp'],
+        decreasedClassesEquipCost: ['classes', 'gp'],
+        increasedClassesGP: ['classes', 'gp'],
+        decreasedClassesGP: ['classes', 'gp'],
+        increasedClassesAdditionalRewardRoll: ['classes'],
+        decreasedClassesAdditionalRewardRoll: ['classes'],
         increasedSkillMasteryXPPerVariel: ['skill']
     };
 
-    constructor(private readonly context: Modding.ModContext, private readonly thuum: Thuum) {}
+    constructor(private readonly context: Modding.ModContext, private readonly classes: Classes) {}
 
     public patch() {
         this.context.onModsLoaded(() => {
@@ -21,20 +21,20 @@ export class TinyPassiveIconsCompatibility {
 
             const tinyIcons = mod.api.tinyIcons;
 
-            const thuumTags: Record<string, string> = {
-                thuum: this.thuum.media,
+            const classesTags: Record<string, string> = {
+                classes: this.classes.media,
                 shrimp: tinyIcons.getIconResourcePath('bank', 'shrimp'),
             };
 
-            for (const teacher of this.thuum.actions.allObjects) {
-                thuumTags[teacher.localID] = teacher.media;
+            for (const teacher of this.classes.actions.allObjects) {
+                classesTags[teacher.localID] = teacher.media;
             }
 
-            for (const rareDrop of this.thuum.rareDrops) {
-                thuumTags[rareDrop.item.localID] = rareDrop.item.media;
+            for (const rareDrop of this.classes.rareDrops) {
+                classesTags[rareDrop.item.localID] = rareDrop.item.media;
             }
 
-            tinyIcons.addTagSources(thuumTags);
+            tinyIcons.addTagSources(classesTags);
             tinyIcons.addCustomModifiers(this.tinyIconTags);
         });
     }

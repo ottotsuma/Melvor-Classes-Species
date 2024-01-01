@@ -1,7 +1,7 @@
-import { Thuum } from '../thuum/thuum';
+import { Classes } from '../classes/classes';
 
-export class ThuumAstrology {
-    constructor(private readonly game: Game, private readonly thuum: Thuum) {}
+export class ClassesAstrology {
+    constructor(private readonly game: Game, private readonly classes: Classes) {}
 
     public register() {
         if (!cloudManager.hasTotHEntitlement) {
@@ -15,14 +15,14 @@ export class ThuumAstrology {
                 if (modifier.key === 'increasedSkillXP') {
                     astrologyModifier.modifiers.push({
                         key: 'increasedSkillXP',
-                        skill: this.thuum
+                        skill: this.classes
                     });
                 }
 
                 if (modifier.key === 'increasedMasteryXP') {
                     astrologyModifier.modifiers.push({
                         key: 'increasedMasteryXP',
-                        skill: this.thuum
+                        skill: this.classes
                     });
                 }
             }
@@ -33,13 +33,13 @@ export class ThuumAstrology {
                 if (modifier.key === 'decreasedSkillIntervalPercent') {
                     astrologyModifier.modifiers.push({
                         key: 'decreasedSkillIntervalPercent',
-                        skill: this.thuum
+                        skill: this.classes
                     });
                 }
             }
         }
 
-        variel.skills.push(this.thuum);
+        variel.skills.push(this.classes);
         variel.masteryXPModifier = 'increasedSkillMasteryXPPerVariel';
 
         this.game.astrology.actions.registeredObjects.set('melvorTotH:Variel', variel);
