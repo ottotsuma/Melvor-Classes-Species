@@ -1,7 +1,7 @@
 {
-    "name": "classes",
+    "name": "profile",
     "version": "1.13.13",
-    "description": "Melvor Idle mod that adds the classes skill.",
+    "description": "Melvor Idle mod that adds the profile skill.",
     "main": "manifest.json",
     "scripts": {
         "pack": "webpack",

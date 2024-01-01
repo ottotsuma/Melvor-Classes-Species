@@ -1,0 +1,22 @@
+.profile-mastery {
+    .manage-section {
+        min-height: 58px;
+
+        &.with-border {
+            margin: 15px 0 0;
+            padding: 15px 10px 0;
+            border-top: dashed 1px grey;
+        }
+
+        &.with-bottom-border {
+            margin: 15px 0;
+            padding: 15px 10px;
+            border-top: dashed 1px gray;
+            border-bottom: dashed 1px gray;
+        }
+    }
+
+    .bg-combat-inner-dark {
+        border-radius: 5px;
+    }
+}

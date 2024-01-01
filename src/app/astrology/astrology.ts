@@ -1,7 +1,7 @@
-import { Classes } from '../classes/classes';
+import { Profile } from '../profile/profile';
 
-export class ClassesAstrology {
-    constructor(private readonly game: Game, private readonly classes: Classes) {}
+export class ProfileAstrology {
+    constructor(private readonly game: Game, private readonly profile: Profile) {}
 
     public register() {
         if (!cloudManager.hasTotHEntitlement) {
@@ -15,14 +15,14 @@ export class ClassesAstrology {
                 if (modifier.key === 'increasedSkillXP') {
                     astrologyModifier.modifiers.push({
                         key: 'increasedSkillXP',
-                        skill: this.classes
+                        skill: this.profile
                     });
                 }
 
                 if (modifier.key === 'increasedMasteryXP') {
                     astrologyModifier.modifiers.push({
                         key: 'increasedMasteryXP',
-                        skill: this.classes
+                        skill: this.profile
                     });
                 }
             }
@@ -33,13 +33,13 @@ export class ClassesAstrology {
                 if (modifier.key === 'decreasedSkillIntervalPercent') {
                     astrologyModifier.modifiers.push({
                         key: 'decreasedSkillIntervalPercent',
-                        skill: this.classes
+                        skill: this.profile
                     });
                 }
             }
         }
 
-        variel.skills.push(this.classes);
+        variel.skills.push(this.profile);
         variel.masteryXPModifier = 'increasedSkillMasteryXPPerVariel';
 
         this.game.astrology.actions.registeredObjects.set('melvorTotH:Variel', variel);

@@ -1,17 +1,17 @@
-import { Classes } from '../classes/classes';
+import { Profile } from '../profile/profile';
 
 export class TinyPassiveIconsCompatibility {
     private readonly tinyIconTags = {
-        increasedClassesEquipCost: ['classes', 'gp'],
-        decreasedClassesEquipCost: ['classes', 'gp'],
-        increasedClassesGP: ['classes', 'gp'],
-        decreasedClassesGP: ['classes', 'gp'],
-        increasedClassesAdditionalRewardRoll: ['classes'],
-        decreasedClassesAdditionalRewardRoll: ['classes'],
+        increasedProfileEquipCost: ['profile', 'gp'],
+        decreasedProfileEquipCost: ['profile', 'gp'],
+        increasedProfileGP: ['profile', 'gp'],
+        decreasedProfileGP: ['profile', 'gp'],
+        increasedProfileAdditionalRewardRoll: ['profile'],
+        decreasedProfileAdditionalRewardRoll: ['profile'],
         increasedSkillMasteryXPPerVariel: ['skill']
     };
 
-    constructor(private readonly context: Modding.ModContext, private readonly classes: Classes) {}
+    constructor(private readonly context: Modding.ModContext, private readonly profile: Profile) {}
 
     public patch() {
         this.context.onModsLoaded(() => {
@@ -21,20 +21,20 @@ export class TinyPassiveIconsCompatibility {
 
             const tinyIcons = mod.api.tinyIcons;
 
-            const classesTags: Record<string, string> = {
-                classes: this.classes.media,
+            const profileTags: Record<string, string> = {
+                profile: this.profile.media,
                 shrimp: tinyIcons.getIconResourcePath('bank', 'shrimp'),
             };
 
-            for (const teacher of this.classes.actions.allObjects) {
-                classesTags[teacher.localID] = teacher.media;
+            for (const single_species of this.profile.actions.allObjects) {
+                profileTags[single_species.localID] = single_species.media;
             }
 
-            for (const rareDrop of this.classes.rareDrops) {
-                classesTags[rareDrop.item.localID] = rareDrop.item.media;
+            for (const rareDrop of this.profile.rareDrops) {
+                profileTags[rareDrop.item.localID] = rareDrop.item.media;
             }
 
-            tinyIcons.addTagSources(classesTags);
+            tinyIcons.addTagSources(profileTags);
             tinyIcons.addCustomModifiers(this.tinyIconTags);
         });
     }

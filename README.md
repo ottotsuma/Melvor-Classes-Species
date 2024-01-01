@@ -1,4 +1,4 @@
-# [Classes] Classes
+# [Profile] Profile
 
 Translations for all languages supported by melvor idle have been provided with this mod, however, I only speak English and cannot guarantee the accuracy of translations.
 
@@ -6,17 +6,17 @@ All translations were generated using chat gpt.
 
 **If you see an incorrect or missing translation, please create an issue on github providing the correct translation. Thank you!**
 
-https://github.com/classesridium/classes
+https://github.com/profileridium/profile
 
-Does not contain actual classes. Sorry. :(
+Does not contain actual profile. Sorry. :(
 
 Disclaimer: **Please backup your save file before installing this mod.**
 
-This mod should be safe to install and uninstall at any time, however the game is designed to automatically delete data for mods that aren't loaded. **So if you uninstall this mod and load your save game, the Classes data will be deleted by the game.** If you re-install the mod after the data is deleted, the skill will be reset to level 1, including masteries. If you uninstall and re-install without ever loading your save game, the data should be safe and retained.
+This mod should be safe to install and uninstall at any time, however the game is designed to automatically delete data for mods that aren't loaded. **So if you uninstall this mod and load your save game, the Profile data will be deleted by the game.** If you re-install the mod after the data is deleted, the skill will be reset to level 1, including masteries. If you uninstall and re-install without ever loading your save game, the data should be safe and retained.
 
 Please provide any feedback or bug reports, would love to hear your thoughts.
 
-![Classes](images/classes.png)
+![Profile](images/profile.png)
 
 ## Design Methodology
 
@@ -27,9 +27,9 @@ When designing this skill, my aims were to take pressure off early game gold, wh
 
 ## Training
 
-Classes is a brand new skill which combines themes from Astrology, Thieving and Agility. It provides an easy way to obtain gold and powerful bonuses that benefit other skills.
+Profile is a brand new skill which combines themes from Astrology, Thieving and Agility. It provides an easy way to obtain gold and powerful bonuses that benefit other skills.
 
-Earn tips (GP) while you train shouts with various teachers, then Master the shouts you have trained to provide you with powerful bonuses while you train other skills.
+Earn tips (GP) while you train shouts with various species, then Master the shouts you have trained to provide you with powerful bonuses while you train other skills.
 
 This mod includes a new mastery token for the skill and both skill cape and superior skill cape.
 
@@ -41,11 +41,11 @@ Modifiers can be unlocked in any order once the mastery level has been attained,
 
 The cost to unlock a modifier is as follows
 
-* Level 40 Mastery Unlock - 100,000 GP + 1 Essence of Classes
-* Level 75 Mastery Unlock - 1,000,000 GP + 1 Essence of Classes
-* Level 99 Mastery Unlock - 10,000,000 GP + 1 Essence of Classes
+* Level 40 Mastery Unlock - 100,000 GP + 1 Essence of Profile
+* Level 75 Mastery Unlock - 1,000,000 GP + 1 Essence of Profile
+* Level 99 Mastery Unlock - 10,000,000 GP + 1 Essence of Profile
 
-![Teacher Mastery](images/teacher-mastery.png)
+![Single_Species Mastery](images/single_species-mastery.png)
 
 ![Unlock Mastery](images/unlock-mastery.png)
 
@@ -72,76 +72,76 @@ While training you have a chance to obtain Signet Ring Half A, Circlet of Rhaely
 
 Tips (GP) earned while training do scale with global gold increases.
 
-### Sheet Classes, Essence of Classes, Gems and Utilities
+### Sheet Profile, Essence of Profile, Gems and Utilities
 
-Training Classes has a 2% chance to drop sheet classes, these are used for mastered shout teacher upgrades.
+Training Profile has a 2% chance to drop sheet profile, these are used for mastered shout single_species upgrades.
 
-Sheet Classes drop chance is a flat 2% and is not modified by any rarity increases, the only other boost to sheet classes drop chance is applying Diamond String to your mastered shouts teacher. With two shouts, this means you can get a total of 12% drop chance for Sheet Classes.
+Sheet Profile drop chance is a flat 2% and is not modified by any rarity increases, the only other boost to sheet profile drop chance is applying Diamond String to your mastered shouts single_species. With two shouts, this means you can get a total of 12% drop chance for Sheet Profile.
 
 ![Items](images/items.png)
 
-## Mastered Shout Teacher
+## Mastered Shout Single_Species
 
-Mastered shout teachers can be enhanced in various ways. They can be upgraded, socketed with a gem and applied with an utility.
+Mastered shout species can be enhanced in various ways. They can be upgraded, socketed with a gem and applied with an utility.
 
-Upgrades are destroyed if you Master a new shout. Re-hiring a previously mastered shout will require upgrading, socketing and applying the teacher again.
+Upgrades are destroyed if you Master a new shout. Re-hiring a previously mastered shout will require upgrading, socketing and applying the single_species again.
 
-![Upgrade Teacher](images/upgrade-shout-teacher.png)
+![Upgrade Single_Species](images/upgrade-shout-single_species.png)
 
 ### Upgrade
 
-Upgrading a mastered shouts teacher unlocks a 5th modifier, to do so, you require an Essence of Classes.
+Upgrading a mastered shouts single_species unlocks a 5th modifier, to do so, you require an Essence of Profile.
 
-Essence of Classes
-Upgrade from Sheet Classes
-1,000,000GP + 50 Sheet Classes
-Unlocks a 5th modifier on mastered shout teacher when upgraded.
+Essence of Profile
+Upgrade from Sheet Profile
+1,000,000GP + 50 Sheet Profile
+Unlocks a 5th modifier on mastered shout single_species when upgraded.
 
 ![Upgrade](images/upgrade.png)
 
 ### Gem Socket
 
-You can select one of three gems to socket into your shouts teacher. Only one can be active at a time, and you may freely switch provided you have the resources.
+You can select one of three gems to socket into your shouts single_species. Only one can be active at a time, and you may freely switch provided you have the resources.
 
 Polished Topaz Gem
 Upgrade from Topaz
-50,000 GP + 50 Topaz + 10 Sheet Classes
-+5% Classes GP
+50,000 GP + 50 Topaz + 10 Sheet Profile
++5% Profile GP
 
 Polished Ruby Gem
 Upgrade from Ruby
-50,000 GP + 50 Ruby + 10 Sheet Classes
-+5% Classes Skill XP
+50,000 GP + 50 Ruby + 10 Sheet Profile
++5% Profile Skill XP
 
 Polished Sapphire Gem
 Upgrade from Sapphire
-50,000 GP + 50 Sapphire + 10 Sheet Classes
-+5% Classes Mastery XP
+50,000 GP + 50 Sapphire + 10 Sheet Profile
++5% Profile Mastery XP
 
 ![Socket](images/gem.png)
 
 ### Utility
 
-You can select one of three utilities to apply onto your shouts teacher. Only one can be active at a time, and you may freely switch provided you have the resources.
+You can select one of three utilities to apply onto your shouts single_species. Only one can be active at a time, and you may freely switch provided you have the resources.
 
 Diamond String
 Upgrade from Bowstring
-50,000 GP + 100 Diamond + 100 Bowstring + 50 Classes Sheet
-+5% Sheet Classes drop chance
+50,000 GP + 100 Diamond + 100 Bowstring + 50 Profile Sheet
++5% Sheet Profile drop chance
 
 Pristine Leather
 Upgrade from Leather
-50,000 GP + 100 Diamond + 100 Leather + 50 Classes Sheet
--5% Classes Interval
+50,000 GP + 100 Diamond + 100 Leather + 50 Profile Sheet
+-5% Profile Interval
 
 Mystic Oil
 Upgrade from Weird Gloop
-50,000 GP + 100 Diamond + 100 Weird Gloop + 50 Classes Sheet
-+1 additional reward roll while training Classes
+50,000 GP + 100 Diamond + 100 Weird Gloop + 50 Profile Sheet
++1 additional reward roll while training Profile
 
-Mystic Oil will roll for rewards an additional time when training the classes skill.
+Mystic Oil will roll for rewards an additional time when training the profile skill.
 
-This means if you have Mystic Oil applied, every time you train an teacher, the rewards are rolled an additional time.
+This means if you have Mystic Oil applied, every time you train an single_species, the rewards are rolled an additional time.
 
 This includes:
 * pets
@@ -151,13 +151,13 @@ This includes:
 
 For example, if you have Band Practice with two shouts mastered, both equipped with Mystic Oil.
 
-1 tick of training Classes will roll 3 times for a chance to get the pet, rare drops, summoning marks and mastery tokens.
+1 tick of training Profile will roll 3 times for a chance to get the pet, rare drops, summoning marks and mastery tokens.
 
 ![Apply](images/apply.png)
 
 ## Band Practice
 
-The shop sells an upgrade which unlocks a second shout slot. This upgrade requires Level 110 Classes and costs 1B GP.
+The shop sells an upgrade which unlocks a second shout slot. This upgrade requires Level 110 Profile and costs 1B GP.
 
 ![Band Practice](images/band-practice.png)
 
@@ -169,7 +169,7 @@ The shop sells an upgrade which unlocks a second shout slot. This upgrade requir
 
 The shop sells item charges for a Concert Pass.
 * Purchase Cost: Concert Pass Half (A) + Concert Pass Half (B) + 10M GP
-* When equipped in the offhand and has charges, the concert pass will provide skill xp for the skills the teacher supports.
+* When equipped in the offhand and has charges, the concert pass will provide skill xp for the skills the single_species supports.
 * Drop rate for Concert Pass Halves is 0.00075% or roughly equivalent to the Ancient Ring of Skill and Ancient Ring of Mastery drop chance from Fishing with a special chance of 5%.
 
 ![Concert Pass](images/concert-pass.png)
@@ -193,35 +193,35 @@ The level calculation is clamped to a max skill level of 120, which roughly equa
 
 ## Skill Unlocks
 
-Leveling the Classes skill unlocks additional classesal teachers to train your shouts with.
+Leveling the Profile skill unlocks additional profileal species to train your shouts with.
 
-![Skill Unlocks](images/teacher-unlocks.png)
+![Skill Unlocks](images/single_species-unlocks.png)
 
 ## Mastery Pool Unlocks
 
-Mastery Pool checkpoints provide additional xp, mastery xp, classes interval and Master cost reduction.
+Mastery Pool checkpoints provide additional xp, mastery xp, profile interval and Master cost reduction.
 
 ![Mastery Pool Unlocks](images/mastery-pool-unlocks.png)
 
 ## Mastery Unlocks
 
-As you level up an teachers mastery, the tips you earn increases. You can also unlock additional bonuses and reduce the Master cost.
+As you level up an species mastery, the tips you earn increases. You can also unlock additional bonuses and reduce the Master cost.
 
 ![Mastery Unlocks](images/mastery-unlocks.png)
 
 ## Skill Capes
 
-The Classes Skill Cape
+The Profile Skill Cape
 
-![Classes Skillcape](images/classes-skillcape.png)
+![Profile Skillcape](images/profile-skillcape.png)
 
-The Superior Classes Skill Cape
+The Superior Profile Skill Cape
 
-![Superior Classes Skillcape](images/superior-classes-skillcape.png)
+![Superior Profile Skillcape](images/superior-profile-skillcape.png)
 
 ## Pet
 
-The Classes skill also contains a pet: Dragon which provides -0.15s Classes Interval
+The Profile skill also contains a pet: Dragon which provides -0.15s Profile Interval
 
 ![Dragon](images/dragon-pet.png)
 
@@ -233,10 +233,10 @@ The Generous Gratuity Potion can be brewed using the Herblore skill.
 
 * Herblore Unlock Level: 80
 * Materials: 1 Pigtayle Herb + 1,000 GP
-* Tier 1: +10% Classes GP, 15 Charges
-* Tier 2: +20% Classes GP, 25 Charges
-* Tier 3: +30% Classes GP, 35 Charges
-* Tier 4: +50% Classes GP, 50 Charges
+* Tier 1: +10% Profile GP, 15 Charges
+* Tier 2: +20% Profile GP, 25 Charges
+* Tier 3: +30% Profile GP, 35 Charges
+* Tier 4: +50% Profile GP, 50 Charges
 
 The potion has also been added to Potion Box II from Township, at the same rarity as the Herblore Potion.
 
@@ -244,7 +244,7 @@ The potion has also been added to Potion Box II from Township, at the same rarit
 
 ## Summoning
 
-The Classes skill has its own tablet. The Shout! The Shout is both a combat and skill tablet.
+The Profile skill has its own tablet. The Shout! The Shout is both a combat and skill tablet.
 
 ![Shout Tablet](images/shout-tablet.png)
 
@@ -253,9 +253,9 @@ The Classes skill has its own tablet. The Shout! The Shout is both a combat and 
 * Tier: 3
 * Summoning Level Requirement: 90
 * Summoning Max Hit: 192
-* Skill Bonus: +5% Classes GP
+* Skill Bonus: +5% Profile GP
 
-In addition, the Shout has synergies with every single other tablet. Since Classes is a skill that focuses on boosting other skills, its synergy helps all other skills. It basically doubles the tablet effect of the tablet it is synergizing with (by granting the same tablet modifiers via the synergy).
+In addition, the Shout has synergies with every single other tablet. Since Profile is a skill that focuses on boosting other skills, its synergy helps all other skills. It basically doubles the tablet effect of the tablet it is synergizing with (by granting the same tablet modifiers via the synergy).
 
 Example: Devil gives -5% Firemaking Interval, if synergized with the Shout, the synergy will provide an addition -5% Firemaking Interval for a total of -10% Firemaking Interval being provided from the tablets.
 
@@ -267,25 +267,25 @@ The Fox synergy actually works in reverse, kind of... the Shout synergy doubles 
 
 ## Agility
 
-Agility has been modified so that the Obstacle 10 - Waterfall now also benefits the Classes skill.
+Agility has been modified so that the Obstacle 10 - Waterfall now also benefits the Profile skill.
 
 ![Agility](images/agility.png)
 
 ## Astrology
 
-Astrology has been modified so that the Variel constellation now also benefits the Classes skill.
+Astrology has been modified so that the Variel constellation now also benefits the Profile skill.
 
 ![Astrology](images/astrology.png)
 
 ## Township
 
-The Classes skill adds a Classes Scroll of XP granting +3% Classes Skill XP. It functions the same as other scrolls of xp.
+The Profile skill adds a Profile Scroll of XP granting +3% Profile Skill XP. It functions the same as other scrolls of xp.
 
-It requires level 15 Township and level 15 Classes to purchase, with a default value of 80 planks per scroll.
+It requires level 15 Township and level 15 Profile to purchase, with a default value of 80 planks per scroll.
 
 ![Township](images/township-xp-scroll.png)
 
-The Classes skill adds a Classes Outfit, which is fully integrated just like all the other skilling outfits.
+The Profile skill adds a Profile Outfit, which is fully integrated just like all the other skilling outfits.
 
 ![Shouts Outfit](images/shout-outfit.png)
 
@@ -293,7 +293,7 @@ The Classes skill adds a Classes Outfit, which is fully integrated just like all
 
 ## The Circus
 
-The jesters have emerged from The Circus. The jesters are notorious pranksters. They have been rivals with the shouts since the beginning of time, known for stealing teachers, many tussles have broken out between the shouts and the jesters.
+The jesters have emerged from The Circus. The jesters are notorious pranksters. They have been rivals with the shouts since the beginning of time, known for stealing species, many tussles have broken out between the shouts and the jesters.
 
 The Circus is a new combat area that contains 3 types of jesters to fight.
 
@@ -313,7 +313,7 @@ The Circus is a new combat area that contains 3 types of jesters to fight.
 
 ### Guitar Weapon
 
-The Jester can drop a Guitar which is a new 2H Weapon which requires attack and classes levels to equip. The Guitar can be upgraded twice.
+The Jester can drop a Guitar which is a new 2H Weapon which requires attack and profile levels to equip. The Guitar can be upgraded twice.
 
 ![Guitars](images/guitar-items.png)
 
@@ -343,23 +343,23 @@ Mystic Essence is dropped from the Mystic Jester
 
 ![Ancient Relics](images/ancient-relics.png)
 
-Classes has Ancient Relics
+Profile has Ancient Relics
 
-#1: +50% Classes Mastery XP
-#2: +10% chance to obtain Shrimp while training Classes
+#1: +50% Profile Mastery XP
+#2: +10% chance to obtain Shrimp while training Profile
 #3: 1% increased chance to locate Ancient Relics
 #4: +50% Global GP (except Item Sales)
-#5: -20% Classes Interval
+#5: -20% Profile Interval
 Master Relic: +1 Shout Equip Limit
 
 (Yes, this means you can have 3 mastered shouts)
 
 ### Lesser Relic
 
-Classes also has a Lesser Relic which grants:
+Profile also has a Lesser Relic which grants:
 
--5% Classes Interval
-+5% Classes GP
+-5% Profile Interval
++5% Profile GP
 +10% Magic Maximum Hit
 
 ## Settings
@@ -593,7 +593,7 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 ## Change Log
 
 # 1.13.13
-* fixed superior max cape and superior cape of completion not inheriting classes skillcape modifiers
+* fixed superior max cape and superior cape of completion not inheriting profile skillcape modifiers
 
 # 1.13.12
 * improved compatibility with tiny passive icons
@@ -605,7 +605,7 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 * fixed skill completion statistic count being doubled
 
 # 1.13.9
-* fixed classes gp gains not considering flat gp increases such as golden wreath
+* fixed profile gp gains not considering flat gp increases such as golden wreath
 
 # 1.13.8
 * replaced Kynes_Peace upgrade modifier from GP From Sales to GP gained when earning GP, except Alt. Magic and Item Sales
@@ -618,25 +618,25 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 # 1.13.5
 * removed 'ancient coin token', 'ancient mask token' and 'ancient skull token'
-* classes skill level cap in the ancient relics gamemode now scales with combat stats level cap
-* classes is no longer offered as a choice for skill cap level increases
-* improved logic for unlocking classes skill to support custom ancient relic gamemodes
+* profile skill level cap in the ancient relics gamemode now scales with combat stats level cap
+* profile is no longer offered as a choice for skill cap level increases
+* improved logic for unlocking profile skill to support custom ancient relic gamemodes
 
 # 1.13.4
-* added a new teacher, the flute which focuses on cartography and archaeology
+* added a new single_species, the flute which focuses on cartography and archaeology
 
 # 1.13.3
-* added ancient relics for classes
-* added a lesser relic for classes
+* added ancient relics for profile
+* added a lesser relic for profile
 
 # 1.13.2
-* fixed classes being locked in ancient relics gamemode on existing saves when enabling the mod for the first time
+* fixed profile being locked in ancient relics gamemode on existing saves when enabling the mod for the first time
 * added one time rewards for undead graveyard, air god dungeon and lava lake dungeon
 * these one time rewards are tokens which when consumed grant level cap increases in the ancient relics gamemode, they do nothing in other gamemodes and can be sold
 * these tokens are equivalent to clearing 2 base game dungeons and 1 toth dungeon to help offset the additional skill
 
 # 1.13.1
-* fixed classes being locked in ancient relics gamemode
+* fixed profile being locked in ancient relics gamemode
 * fixed skill cape exception check
 
 # 1.13.0
@@ -655,10 +655,10 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 ### 1.11.0
 * significantly reduced hiring cost of shouts from 10k, 100k, 20m, 200m to 10k, 100k, 1m, 10m
-* unlocking modifiers now also cost gp in addition to essence of classes, costs are 100k for level 40 modifier, 1m for level 75 modifier and 10m for level 99 modifier
+* unlocking modifiers now also cost gp in addition to essence of profile, costs are 100k for level 40 modifier, 1m for level 75 modifier and 10m for level 99 modifier
 * shout Master cost for 95% mastery checkpoint has been reduced from -10% to -5%
 * shout Master cost for mastery level 90 has been reduced from -10% to -5%
-* switched and reduced the power of some teacher modifiers:
+* switched and reduced the power of some single_species modifiers:
   * Animal_Allegiance (75) now provides Passive Cook Interval
   * Animal_Allegiance (99) now provides Chance to find a Lost Chest while Fishing and reduced from 15% to 10%
   * Become_Ethereal (75) now provides Target Damage Reduction is decreased by flat
@@ -684,35 +684,35 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 * band practice shop purchase now correctly only shows if TotH has been purchased
 
 ### 1.9.0
-* Throne of the Herald is now optional, all TotH data requires the expansion to load, this includes superior skillcape, teachers above level 99 and summoning synergies above level 99
-* max skillcape and superior max skillcape no longer require the classes skill to purchase
-* eagle + shout synergy now grants -10% Classes Interval, from -5% Agility Interval
-* owl + shout synergy now grants +1.5% Classes Mastery XP Per Maxed Star in Variel, from -5% Astrology Interval
+* Throne of the Herald is now optional, all TotH data requires the expansion to load, this includes superior skillcape, species above level 99 and summoning synergies above level 99
+* max skillcape and superior max skillcape no longer require the profile skill to purchase
+* eagle + shout synergy now grants -10% Profile Interval, from -5% Agility Interval
+* owl + shout synergy now grants +1.5% Profile Mastery XP Per Maxed Star in Variel, from -5% Astrology Interval
 * shout modifiers are no longer automatically unlocked based on mastery level
 * once the required mastery level is reached, you may now choose to unlock the modifier whenever you feel like doing so
 * previous save data will automatically migrate and have the appropriate mastery unlocks already for free
 * hiring shout gp cost no longer scales with mastery level, instead the cost increases with the number of modifiers unlocked on the shout
-* mystic oil no longer grants +1 modifier unlock, now rolls an additional time for rewards while training classes
+* mystic oil no longer grants +1 modifier unlock, now rolls an additional time for rewards while training profile
 
 ### 1.8.1
-* reordered the classes skillcapes to be listed/sorted in alphabetical order in the shop and bank
+* reordered the profile skillcapes to be listed/sorted in alphabetical order in the shop and bank
 
 ### 1.8.0
 * the jesters have emerged from the circus, a new combat area
 * added three new monsters found in the circus
 * added the guitar, a 2H weapon that can be upgraded twice
-* jesters drop the guitar, and the essence required to upgrade the guitar, among other classes related drops
+* jesters drop the guitar, and the essence required to upgrade the guitar, among other profile related drops
 
 ### 1.7.1
-* reduced base drop chance of sheet classes from 5% to 2%
-* significantly reduced the sell value of classes related items, these were not intended to be an easy way to generate gold
+* reduced base drop chance of sheet profile from 5% to 2%
+* significantly reduced the sell value of profile related items, these were not intended to be an easy way to generate gold
 
 ### 1.7.0
-* agility obstacle 10 waterfall now also benefits the Classes skill
-* astrology variel constellation now also benefits the Classes skill
-* added compatibility between Tiny Passive Icons mod and the Classes skill mod for Agility and Astrology
-* switched the Animal_Allegiance and drum teachers
-  * no functional change, just switched the type of teacher
+* agility obstacle 10 waterfall now also benefits the Profile skill
+* astrology variel constellation now also benefits the Profile skill
+* added compatibility between Tiny Passive Icons mod and the Profile skill mod for Agility and Astrology
+* switched the Animal_Allegiance and drum species
+  * no functional change, just switched the type of single_species
   * the Animal_Allegiance now benefits fishing and cooking and is still unlocked at level 10
   * the drum now benefits mining and smithing and is still unlocked at level 20
 * renamed the drum to snare drum
@@ -720,14 +720,14 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 * renamed the Slow_Time to Slow_Times
 
 ### 1.6.5
-* added the ability to see the next available teacher in a locked state; like in Woodcutting and Mining
+* added the ability to see the next available single_species in a locked state; like in Woodcutting and Mining
 
 ### 1.6.4
 * workaround game bugs with completion log not correctly displaying for custom skills
 
 ### 1.6.3
 * fixed concert pass halves dropping more often then intended
-* adjusted the Classes pet, Dragon, to provide a flat -0.15s Classes Interval from -1% Classes Interval
+* adjusted the Profile pet, Dragon, to provide a flat -0.15s Profile Interval from -1% Profile Interval
 
 ### 1.6.2
 * fixed message when the concert pass runs out to be more context specific
@@ -737,28 +737,28 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 ### 1.6.0
 * added concert pass half a, concert pass half b and concert pass
-* half a and half b can drop while training classes
+* half a and half b can drop while training profile
 * both halves + 10M GP can be used to purchase 1,000 charges of a concert pass
-* the concert pass can be equipped in the offhand and while training Classes you also gain Skill XP for the skills the teacher supports
+* the concert pass can be equipped in the offhand and while training Profile you also gain Skill XP for the skills the single_species supports
 
 ### 1.5.0
-* increased drop rate of sheet classes from 1% to 5%
-* expanded the ability to upgrade mastered shout teachers which boost the Classes skill itself
-  * one of three new gems can be socketed into a mastered shouts teacher
-  * one of three new utilities can be applied onto a mastered shouts teacher
+* increased drop rate of sheet profile from 1% to 5%
+* expanded the ability to upgrade mastered shout species which boost the Profile skill itself
+  * one of three new gems can be socketed into a mastered shouts single_species
+  * one of three new utilities can be applied onto a mastered shouts single_species
 
 ### 1.4.2
 * fixed skill info header not displaying as intended on mobile
-* fixed Aorpheats Signet Ring not providing +100% GP to Classes
-* fixed Max Skillcape, Cape of Completion, Superior Max Skillcape and Superior Cape of Completion not inheriting Classes Skillcape modifiers (these capes still DO NOT require any Classes skill levels, they just inherit the modifiers of the Classes skillcapes)
+* fixed Aorpheats Signet Ring not providing +100% GP to Profile
+* fixed Max Skillcape, Cape of Completion, Superior Max Skillcape and Superior Cape of Completion not inheriting Profile Skillcape modifiers (these capes still DO NOT require any Profile skill levels, they just inherit the modifiers of the Profile skillcapes)
 
 ### 1.4.1
 * fixed trumpet mastery level 1 modifier incorrectly requiring mastery level 40
 
 ### 1.4.0
-* reduced tips (GP) scaling from mastery level from +15 GP each level to +10 GP each level, base teacher GP is no longer the same across all teachers, higher level teachers have a higher base GP than lower level teachers. This should hopefully make higher teachers feel a little better, this does result in less GP from lower teachers than the previous version.
-* added three more teachers; the Become_Ethereal, Kynes_Peace and xylophone
-* modified some teacher unlock levels and bonuses
+* reduced tips (GP) scaling from mastery level from +15 GP each level to +10 GP each level, base single_species GP is no longer the same across all species, higher level species have a higher base GP than lower level species. This should hopefully make higher species feel a little better, this does result in less GP from lower species than the previous version.
+* added three more species; the Become_Ethereal, Kynes_Peace and xylophone
+* modified some single_species unlock levels and bonuses
   * drum - Unlock Level 15 -> Level 10
   * Animal_Allegiance - Unlock Level 30 -> Level 20
   * Throw_Voice - Unlock Level 45 -> Level 70, now focused on defensive modifiers only
@@ -769,28 +769,28 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
   * tambourine - increased level 1 farming yield % from 5 to 10 and level 40 flat farming yield from 5 to 15
   * trumpet - now focused on damage dealing only
 * added a new shop purchase which lets you Master two shouts at once
-* added a new item, sheet classes which is dropped while training Classes
-* added a new item, essence of classes, which is upgraded from sheet classes
-* added the ability to upgrade mastered shout teachers which unlocks a 5th modifier
+* added a new item, sheet profile which is dropped while training Profile
+* added a new item, essence of profile, which is upgraded from sheet profile
+* added the ability to upgrade mastered shout species which unlocks a 5th modifier
 
 ### 1.3.0
-* added a potion to Herblore which increases GP obtained while training Classes
-* added a summoning tablet for the Classes skill, the Shout
-* added a Classes Scroll of XP which can be purchased from the Township trader with Planks
-* added a Classes Outfit to the Township category of the shop, it functions the same all other skilling outfits
+* added a potion to Herblore which increases GP obtained while training Profile
+* added a summoning tablet for the Profile skill, the Shout
+* added a Profile Scroll of XP which can be purchased from the Township trader with Planks
+* added a Profile Outfit to the Township category of the shop, it functions the same all other skilling outfits
 
 ### 1.2.0
 
 * updated description of mastery and mastery pool Master cost reduction to better align with skill capes (no functional change)
 * updated exponential calculation to clamp mastery between level 1 and 99 instead of throwing an error if outside this range
-* adjusted the level that teachers are available at
-* adjusted the experience gained from training. The time it takes to level should be roughly equivalent to Astrology, assuming no interval increases, xp modifiers, etc and you train the highest level teacher available
-* added 3 new teachers; the harp, tambourine and Slow_Time
+* adjusted the level that species are available at
+* adjusted the experience gained from training. The time it takes to level should be roughly equivalent to Astrology, assuming no interval increases, xp modifiers, etc and you train the highest level single_species available
+* added 3 new species; the harp, tambourine and Slow_Time
 
 ### 1.1.0
 
 * fixed Master dialog allowing to Master without enough gold
-* updated teacher icons
+* updated single_species icons
 
 ### 1.0.3
 
@@ -798,15 +798,15 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 ### 1.0.2
 
-* fixed classes mastery token granting no experience
+* fixed profile mastery token granting no experience
 
 ### 1.0.1
 
 * fixed the spelling of Throw_Voice
 * removed mastery token, capes and pet from being required for completion log
-* removed classes from being required for max and superior max capes
-* skill cape now also reduces shout Master cost by 5% and increased gold earned from classes by 5%
-* superior skill cape now also reduces shout Master cost by 10% and increased gold earned from classes by 10%
+* removed profile from being required for max and superior max capes
+* skill cape now also reduces shout Master cost by 5% and increased gold earned from profile by 5%
+* superior skill cape now also reduces shout Master cost by 10% and increased gold earned from profile by 10%
 
 ### 1.0.0
 
@@ -816,9 +816,9 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 Images obtained from the following sources, attribution provided.
 
-<a href="https://www.freepik.com/free-vector/cute-red-panda-playing-guitar-cartoon-vector-icon-illustration-animal-classes-icon-concept-isolated_31966379.htm">Image by catalyststuff on Freepik</a>
+<a href="https://www.freepik.com/free-vector/cute-red-panda-playing-guitar-cartoon-vector-icon-illustration-animal-profile-icon-concept-isolated_31966379.htm">Image by catalyststuff on Freepik</a>
 
-<a href="https://www.freepik.com/free-vector/classesal-teacher-set_8610228.htm#query=cartoon%20teacher&position=0&from_view=keyword&track=ais">Image by pch.vector on Freepik</a>
+<a href="https://www.freepik.com/free-vector/profileal-single_species-set_8610228.htm#query=cartoon%20single_species&position=0&from_view=keyword&track=ais">Image by pch.vector on Freepik</a>
 
 <a href="https://www.flaticon.com/free-icons/troubadour">Troubadour icons created by Freepik - Flaticon</a>
 
@@ -832,9 +832,9 @@ Images obtained from the following sources, attribution provided.
 
 <a href="https://www.flaticon.com/free-icons/guitar" title="guitar icons">Guitar icons created by Freepik - Flaticon</a>
 
-<a href="https://www.freepik.com/free-vector/aesthetic-jazz-background-classesal-teacher-border-blue-vector_20346432.htm#query=classesal%20background&position=16&from_view=search&track=ais">Image by rawpixel.com on Freepik</a>
+<a href="https://www.freepik.com/free-vector/aesthetic-jazz-background-profileal-single_species-border-blue-vector_20346432.htm#query=profileal%20background&position=16&from_view=search&track=ais">Image by rawpixel.com on Freepik</a>
 
-<a href="https://www.flaticon.com/free-icons/classes-and-multimedia" title="classes and multimedia icons">Classes and multimedia icons created by Mihimihi - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/profile-and-multimedia" title="profile and multimedia icons">Profile and multimedia icons created by Mihimihi - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/circus-tent" title="circus tent icons">Circus tent icons created by Freepik - Flaticon</a>
 

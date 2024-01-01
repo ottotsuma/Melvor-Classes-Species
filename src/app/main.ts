@@ -1,15 +1,15 @@
-import { ClassesActionEventMatcher, ClassesActionEventMatcherOptions } from './classes/event';
-import { Classes } from './classes/classes';
-import { UserInterface } from './classes/user-interface';
-import { ClassesModifiers } from './classes/modifiers';
-// import { ClassesTownship } from './classes/township/township';
-// import { ClassesAgility } from './agility/agility';
-// import { ClassesAstrology } from './astrology/astrology';
+import { ProfileActionEventMatcher, ProfileActionEventMatcherOptions } from './profile/event';
+import { Profile } from './profile/profile';
+import { UserInterface } from './profile/user-interface';
+import { ProfileModifiers } from './profile/modifiers';
+// import { ProfileTownship } from './profile/township/township';
+// import { ProfileAgility } from './agility/agility';
+// import { ProfileAstrology } from './astrology/astrology';
 import { TinyPassiveIconsCompatibility } from './compatibility/tiny-passive-icons';
-import { ClassesSkillData } from './classes/classes.types';
+import { ProfileSkillData } from './profile/profile.types';
 import { languages } from './language';
-import { ClassesTranslation } from './classes/translation/translation';
-import { ClassesSettings } from './classes/settings';
+import { ProfileTranslation } from './profile/translation/translation';
+import { ProfileSettings } from './profile/settings';
 
 declare global {
     interface CloudManager {
@@ -20,7 +20,7 @@ declare global {
     const cloudManager: CloudManager;
 
     interface SkillIDDataMap {
-        'namespace_classes:Classes': ClassesSkillData;
+        'namespace_profile:Profile': ProfileSkillData;
     }
 
     interface SkillValue {
@@ -29,7 +29,7 @@ declare global {
     }
 
     interface Game {
-        classes: Classes;
+        profile: Profile;
     }
 
     interface Gamemode {
@@ -52,11 +52,11 @@ export class App {
     constructor(private readonly context: Modding.ModContext, private readonly game: Game) { }
 
     public async init() {
-        await this.context.loadTemplates('classes/classes.html');
-        await this.context.loadTemplates('classes/teacher/teacher.html');
-        await this.context.loadTemplates('classes/shout/shout.html');
-        await this.context.loadTemplates('classes/mastery/mastery.html');
-        await this.context.loadTemplates('classes/locked/locked.html');
+        await this.context.loadTemplates('profile/profile.html');
+        await this.context.loadTemplates('profile/single_species/single_species.html');
+        await this.context.loadTemplates('profile/shout/shout.html');
+        await this.context.loadTemplates('profile/mastery/mastery.html');
+        await this.context.loadTemplates('profile/locked/locked.html');
 
         this.initLanguage();
         this.initTranslation();
@@ -64,7 +64,7 @@ export class App {
         this.patchEventManager();
         this.initModifiers();
 
-        this.game.classes = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_classes'), Classes);
+        this.game.profile = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_profile'), Profile);
         const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
         if(!kcm) {
             return;
@@ -96,14 +96,14 @@ export class App {
             // await this.context.gameData
             //     .buildPackage(builder => {
             //         builder.skillData.add({
-            //             skillID: 'namespace_classes:Classes',
+            //             skillID: 'namespace_profile:Profile',
             //             data: {
             //                 minibar: {
-            //                     defaultItems: ['namespace_classes:Superior_Classes_Skillcape'],
+            //                     defaultItems: ['namespace_profile:Superior_Profile_Skillcape'],
             //                     upgrades: [],
             //                     pets: []
             //                 },
-            //                 teachers: []
+            //                 species: []
             //             }
             //         });
             //     })
@@ -157,21 +157,21 @@ export class App {
                 cmim.forceBaseModTypeActive("SeaCreature");
         })
 
-        this.patchGamemodes(this.game.classes);
-        this.patchUnlock(this.game.classes);
-        this.initCompatibility(this.game.classes);
-        // this.initAgility(this.game.classes);
-        // this.initAstrology(this.game.classes);
+        this.patchGamemodes(this.game.profile);
+        this.patchUnlock(this.game.profile);
+        this.initCompatibility(this.game.profile);
+        // this.initAgility(this.game.profile);
+        // this.initAstrology(this.game.profile);
         // this.initTownship();
 
-        this.game.classes.userInterface = this.initInterface(this.game.classes);
-        this.game.classes.initSettings(settings);
+        this.game.profile.userInterface = this.initInterface(this.game.profile);
+        this.game.profile.initSettings(settings);
     }
 
     private patchEventManager() {
         this.context.patch(GameEventSystem, 'constructMatcher').after((_patch, data) => {
-            if (this.isClassesEvent(data)) {
-                return new ClassesActionEventMatcher(data, this.game) as any;
+            if (this.isProfileEvent(data)) {
+                return new ProfileActionEventMatcher(data, this.game) as any;
             }
         });
         // @ts-ignore
@@ -180,11 +180,11 @@ export class App {
                 // if (game && game.activeAction && game.activeAction._localID) {
                     // if (game.activeAction._localID === "Combat") {
                         const combatLevel = game.combat.enemy.monster.combatLevel
-                        // const classes = game.skills.getObjectByID('namespace_classes:Classes') as Classes;
-                        const teacher = game.classes.shouts.get(1)
-                        const exp = Math.floor((combatLevel/teacher.teacher.baseExperience) + teacher.teacher.baseExperience)
-                        game.classes.addXP(exp)
-                        game.classes.addMasteryXP(teacher.teacher, exp)
+                        // const profile = game.skills.getObjectByID('namespace_profile:Profile') as Profile;
+                        const single_species = game.profile.shouts.get(1)
+                        const exp = Math.floor((combatLevel/single_species.single_species.baseExperience) + single_species.single_species.baseExperience)
+                        game.profile.addXP(exp)
+                        game.profile.addMasteryXP(single_species.single_species, exp)
                     // }
                 // }            
             } catch (error) {
@@ -193,7 +193,7 @@ export class App {
           });
     }
 
-    private patchGamemodes(classes: Classes) {
+    private patchGamemodes(profile: Profile) {
         this.game.gamemodes.forEach(gamemode => {
             if (gamemode.allowDungeonLevelCapIncrease) {
                 if (!gamemode.startingSkills) {
@@ -208,30 +208,30 @@ export class App {
                     gamemode.autoLevelSkillsPost99 = [];
                 }
 
-                gamemode.startingSkills.add(classes);
-                gamemode.autoLevelSkillsPre99.push({ skill: classes, value: 5 });
-                gamemode.autoLevelSkillsPost99.push({ skill: classes, value: 3 });
+                gamemode.startingSkills.add(profile);
+                gamemode.autoLevelSkillsPre99.push({ skill: profile, value: 5 });
+                gamemode.autoLevelSkillsPost99.push({ skill: profile, value: 3 });
             }
         });
     }
 
-    private patchUnlock(classes: Classes) {
+    private patchUnlock(profile: Profile) {
         this.context.patch(EventManager, 'loadEvents').after(() => {
             if (this.game.currentGamemode.allowDungeonLevelCapIncrease) {
-                classes.setUnlock(true);
-                classes.increasedLevelCap = this.game.attack.increasedLevelCap;
+                profile.setUnlock(true);
+                profile.increasedLevelCap = this.game.attack.increasedLevelCap;
             }
         });
     }
 
-    private isClassesEvent(
-        data: GameEventMatcherData | ClassesActionEventMatcherOptions
-    ): data is ClassesActionEventMatcherOptions {
-        return data.type === 'ClassesAction';
+    private isProfileEvent(
+        data: GameEventMatcherData | ProfileActionEventMatcherOptions
+    ): data is ProfileActionEventMatcherOptions {
+        return data.type === 'ProfileAction';
     }
 
     private initSettings() {
-        const settings = new ClassesSettings(this.context);
+        const settings = new ProfileSettings(this.context);
 
         settings.init();
 
@@ -239,37 +239,37 @@ export class App {
     }
 
     private initModifiers() {
-        const modifiers = new ClassesModifiers();
+        const modifiers = new ProfileModifiers();
 
         modifiers.registerModifiers();
     }
 
     // private initTownship() {
-    //     const township = new ClassesTownship(this.context, this.game);
+    //     const township = new ProfileTownship(this.context, this.game);
 
     //     township.register();
     // }
 
-    // private initAgility(classes: Classes) {
-    //     const agility = new ClassesAgility(this.game, classes);
+    // private initAgility(profile: Profile) {
+    //     const agility = new ProfileAgility(this.game, profile);
 
     //     agility.register();
     // }
 
-    // private initAstrology(classes: Classes) {
-    //     const astrology = new ClassesAstrology(this.game, classes);
+    // private initAstrology(profile: Profile) {
+    //     const astrology = new ProfileAstrology(this.game, profile);
 
     //     astrology.register();
     // }
 
-    private initCompatibility(classes: Classes) {
-        const tinyPassiveIcons = new TinyPassiveIconsCompatibility(this.context, classes);
+    private initCompatibility(profile: Profile) {
+        const tinyPassiveIcons = new TinyPassiveIconsCompatibility(this.context, profile);
 
         tinyPassiveIcons.patch();
     }
 
-    private initInterface(classes: Classes) {
-        const userInterface = new UserInterface(this.context, this.game, classes);
+    private initInterface(profile: Profile) {
+        const userInterface = new UserInterface(this.context, this.game, profile);
 
         userInterface.init();
 
@@ -277,7 +277,7 @@ export class App {
     }
 
     private initTranslation() {
-        const translation = new ClassesTranslation(this.context);
+        const translation = new ProfileTranslation(this.context);
 
         translation.init();
     }
@@ -308,7 +308,7 @@ export class App {
             if (keysToNotPrefix.some(prefix => key.includes(prefix))) {
                 loadedLangJson[key] = value;
             } else {
-                loadedLangJson[`Classes_Classes_${key}`] = value;
+                loadedLangJson[`Profile_Profile_${key}`] = value;
             }
         }
     }

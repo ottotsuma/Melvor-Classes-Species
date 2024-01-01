@@ -1,6 +1,6 @@
 {
     "$schema": "https://melvoridle.com/assets/schema/gameData.json",
-    "namespace": "namespace_classes",
+    "namespace": "namespace_profile",
     "modifications": {
         "items": [
             {
@@ -9,15 +9,15 @@
                     "add": {
                         "decreasedSkillInterval": [
                             {
-                                "skillID": "namespace_classes:Classes",
+                                "skillID": "namespace_profile:Profile",
                                 "value": 800
                             }
                         ],
-                        "decreasedClassesEquipCost": 10,
-                        "decreasedClassesGP": 10,
+                        "decreasedProfileEquipCost": 10,
+                        "decreasedProfileGP": 10,
                         "increasedMasteryXP": [
                             {
-                                "skillID": "namespace_classes:Classes",
+                                "skillID": "namespace_profile:Profile",
                                 "value": 10
                             }
                         ]
@@ -30,15 +30,15 @@
                     "add": {
                         "decreasedSkillInterval": [
                             {
-                                "skillID": "namespace_classes:Classes",
+                                "skillID": "namespace_profile:Profile",
                                 "value": 800
                             }
                         ],
-                        "decreasedClassesEquipCost": 10,
-                        "decreasedClassesGP": 10,
+                        "decreasedProfileEquipCost": 10,
+                        "decreasedProfileGP": 10,
                         "increasedMasteryXP": [
                             {
-                                "skillID": "namespace_classes:Classes",
+                                "skillID": "namespace_profile:Profile",
                                 "value": 10
                             }
                         ]
@@ -52,18 +52,18 @@
             {
                 "insertAt": "After",
                 "afterID": "melvorTotH:Superior_Mining_Skillcape",
-                "ids": ["namespace_classes:Superior_Classes_Skillcape"]
+                "ids": ["namespace_profile:Superior_Profile_Skillcape"]
             }
         ],
         "shopPurchases": [
             {
-                "id": "Superior_Classes_Skillcape",
-                "media": "assets/classes-superior-skillcape.png",
+                "id": "Superior_Profile_Skillcape",
+                "media": "assets/profile-superior-skillcape.png",
                 "category": "melvorTotH:SuperiorSkillcapes",
                 "contains": {
                     "items": [
                         {
-                            "id": "namespace_classes:Superior_Classes_Skillcape",
+                            "id": "namespace_profile:Superior_Profile_Skillcape",
                             "quantity": 1
                         }
                     ]
@@ -88,7 +88,7 @@
                 "purchaseRequirements": [
                     {
                         "type": "SkillLevel",
-                        "skillID": "namespace_classes:Classes",
+                        "skillID": "namespace_profile:Profile",
                         "level": 120
                     }
                 ],
@@ -101,17 +101,17 @@
             {
                 "insertAt": "After",
                 "afterID": "melvorTotH:Superior_Mining_Skillcape",
-                "ids": ["namespace_classes:Superior_Classes_Skillcape"]
+                "ids": ["namespace_profile:Superior_Profile_Skillcape"]
             }
         ],
         "items": [
             {
                 "itemType": "Equipment",
-                "id": "Superior_Classes_Skillcape",
-                "name": "Superior Classes Skillcape",
+                "id": "Superior_Profile_Skillcape",
+                "name": "Superior Profile Skillcape",
                 "category": "Combat",
                 "type": "Armour",
-                "media": "assets/classes-superior-skillcape.png",
+                "media": "assets/profile-superior-skillcape.png",
                 "ignoreCompletion": true,
                 "obtainFromItemLog": false,
                 "golbinRaidExclusive": false,
@@ -122,7 +122,7 @@
                 "equipRequirements": [
                     {
                         "type": "SkillLevel",
-                        "skillID": "namespace_classes:Classes",
+                        "skillID": "namespace_profile:Profile",
                         "level": 120
                     }
                 ],
@@ -143,15 +143,15 @@
                 "modifiers": {
                     "decreasedSkillInterval": [
                         {
-                            "skillID": "namespace_classes:Classes",
+                            "skillID": "namespace_profile:Profile",
                             "value": 800
                         }
                     ],
-                    "decreasedClassesEquipCost": 10,
-                    "decreasedClassesGP": 10,
+                    "decreasedProfileEquipCost": 10,
+                    "decreasedProfileGP": 10,
                     "increasedMasteryXP": [
                         {
-                            "skillID": "namespace_classes:Classes",
+                            "skillID": "namespace_profile:Profile",
                             "value": 10
                         }
                     ]
@@ -160,16 +160,16 @@
         ],
         "skillData": [
             {
-                "skillID": "namespace_classes:Classes",
+                "skillID": "namespace_profile:Profile",
                 "data": {
-                    "teachers": [
+                    "species": [
                         {
                             "id": "French_Horn",
                             "name": "French Horn",
-                            "media": "assets/teachers/french-horn.png",
+                            "media": "assets/species/french-horn.png",
                             "baseExperience": 155,
                             "maxGP": 551,
-                            "productId": "namespace_classes:French_Horn",
+                            "productId": "namespace_profile:French_Horn",
                             "level": 100,
                             "skills": ["melvorD:Summoning", "melvorD:Astrology"],
                             "standardModifiers": [
@@ -234,10 +234,10 @@
                         {
                             "id": "Harp",
                             "name": "Harp",
-                            "media": "assets/teachers/harp.png",
+                            "media": "assets/species/harp.png",
                             "baseExperience": 235,
                             "maxGP": 592,
-                            "productId": "namespace_classes:Harp",
+                            "productId": "namespace_profile:Harp",
                             "level": 105,
                             "skills": ["melvorD:Thieving", "melvorD:Herblore"],
                             "standardModifiers": [
@@ -302,10 +302,10 @@
                         {
                             "id": "Tambourine",
                             "name": "Tambourine",
-                            "media": "assets/teachers/tambourine.png",
+                            "media": "assets/species/tambourine.png",
                             "baseExperience": 335,
                             "maxGP": 633,
-                            "productId": "namespace_classes:Tambourine",
+                            "productId": "namespace_profile:Tambourine",
                             "level": 110,
                             "skills": ["melvorD:Township", "melvorD:Farming"],
                             "standardModifiers": [
@@ -366,10 +366,10 @@
                         {
                             "id": "Trumpet",
                             "name": "Trumpet",
-                            "media": "assets/teachers/trumpet.png",
+                            "media": "assets/species/trumpet.png",
                             "baseExperience": 475,
                             "maxGP": 680,
-                            "productId": "namespace_classes:Trumpet",
+                            "productId": "namespace_profile:Trumpet",
                             "level": 115,
                             "skills": ["melvorD:Attack", "melvorD:Strength", "melvorD:Ranged", "melvorD:Magic"],
                             "standardModifiers": [

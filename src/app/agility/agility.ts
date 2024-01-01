@@ -1,23 +1,23 @@
-import { Classes } from '../classes/classes';
+import { Profile } from '../profile/profile';
 
-export class ClassesAgility {
-    constructor(private readonly game: Game, private readonly classes: Classes) {}
+export class ProfileAgility {
+    constructor(private readonly game: Game, private readonly profile: Profile) {}
 
     public register() {
         const waterfall = this.game.agility.actions.registeredObjects.get('melvorF:Waterfall');
 
         waterfall.modifiers.decreasedSkillIntervalPercent.push({
-            skill: this.classes,
+            skill: this.profile,
             value: 5
         });
 
         waterfall.modifiers.increasedSkillXP.push({
-            skill: this.classes,
+            skill: this.profile,
             value: 5
         });
 
         waterfall.modifiers.increasedMasteryXP.push({
-            skill: this.classes,
+            skill: this.profile,
             value: 5
         });
 

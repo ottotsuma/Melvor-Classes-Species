@@ -1,21 +1,21 @@
 {
     "$schema": "https://melvoridle.com/assets/schema/gameData.json",
-    "namespace": "namespace_classes",
+    "namespace": "namespace_profile",
     "data": {
         "skillData": [
             {
-                "skillID": "namespace_classes:Classes",
+                "skillID": "namespace_profile:Profile",
                 "data": {
-                    "teachers": [
+                    "species": [
                         {
-                            "id": "cmim_teacher",
+                            "id": "cmim_single_species",
                             "name": "Combat Modifiers In Melvor",
                             "media": "assets/dragon.png",
                             "baseExperience": 155,
                             "maxGP": 551,
-                            "productId": "namespace_classes:cmim_teacher",
+                            "productId": "namespace_profile:cmim_single_species",
                             "level": 99,
-                            "skills": ["namespace_classes:Classes"],
+                            "skills": ["namespace_profile:Profile"],
                             "standardModifiers": [
                                 {
                                     "level": 1,
