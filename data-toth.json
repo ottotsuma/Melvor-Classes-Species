@@ -1,0 +1,439 @@
+{
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "namespace": "namespace_thuum",
+    "modifications": {
+        "items": [
+            {
+                "id": "melvorTotH:Superior_Max_Skillcape",
+                "modifiers": {
+                    "add": {
+                        "decreasedSkillInterval": [
+                            {
+                                "skillID": "namespace_thuum:Thuum",
+                                "value": 800
+                            }
+                        ],
+                        "decreasedThuumEquipCost": 10,
+                        "decreasedThuumGP": 10,
+                        "increasedMasteryXP": [
+                            {
+                                "skillID": "namespace_thuum:Thuum",
+                                "value": 10
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "id": "melvorTotH:Superior_Cape_Of_Completion",
+                "modifiers": {
+                    "add": {
+                        "decreasedSkillInterval": [
+                            {
+                                "skillID": "namespace_thuum:Thuum",
+                                "value": 800
+                            }
+                        ],
+                        "decreasedThuumEquipCost": 10,
+                        "decreasedThuumGP": 10,
+                        "increasedMasteryXP": [
+                            {
+                                "skillID": "namespace_thuum:Thuum",
+                                "value": 10
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "data": {
+        "bankSortOrder": [
+            {
+                "insertAt": "After",
+                "afterID": "melvorTotH:Superior_Mining_Skillcape",
+                "ids": ["namespace_thuum:Superior_Thuum_Skillcape"]
+            }
+        ],
+        "shopPurchases": [
+            {
+                "id": "Superior_Thuum_Skillcape",
+                "media": "assets/thuum-superior-skillcape.png",
+                "category": "melvorTotH:SuperiorSkillcapes",
+                "contains": {
+                    "items": [
+                        {
+                            "id": "namespace_thuum:Superior_Thuum_Skillcape",
+                            "quantity": 1
+                        }
+                    ]
+                },
+                "cost": {
+                    "gp": {
+                        "type": "Fixed",
+                        "cost": 10000000
+                    },
+                    "slayerCoins": {
+                        "type": "Fixed",
+                        "cost": 0
+                    },
+                    "items": [],
+                    "raidCoins": {
+                        "type": "Fixed",
+                        "cost": 0
+                    }
+                },
+                "allowQuantityPurchase": false,
+                "unlockRequirements": [],
+                "purchaseRequirements": [
+                    {
+                        "type": "SkillLevel",
+                        "skillID": "namespace_thuum:Thuum",
+                        "level": 120
+                    }
+                ],
+                "defaultBuyLimit": 1,
+                "buyLimitOverrides": [],
+                "showBuyLimit": false
+            }
+        ],
+        "shopDisplayOrder": [
+            {
+                "insertAt": "After",
+                "afterID": "melvorTotH:Superior_Mining_Skillcape",
+                "ids": ["namespace_thuum:Superior_Thuum_Skillcape"]
+            }
+        ],
+        "items": [
+            {
+                "itemType": "Equipment",
+                "id": "Superior_Thuum_Skillcape",
+                "name": "Superior Thuum Skillcape",
+                "category": "Combat",
+                "type": "Armour",
+                "media": "assets/thuum-superior-skillcape.png",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 1000000,
+                "tier": "Skillcape",
+                "validSlots": ["Cape"],
+                "occupiesSlots": [],
+                "equipRequirements": [
+                    {
+                        "type": "SkillLevel",
+                        "skillID": "namespace_thuum:Thuum",
+                        "level": 120
+                    }
+                ],
+                "equipmentStats": [
+                    {
+                        "key": "meleeDefenceBonus",
+                        "value": 9
+                    },
+                    {
+                        "key": "rangedDefenceBonus",
+                        "value": 9
+                    },
+                    {
+                        "key": "magicDefenceBonus",
+                        "value": 9
+                    }
+                ],
+                "modifiers": {
+                    "decreasedSkillInterval": [
+                        {
+                            "skillID": "namespace_thuum:Thuum",
+                            "value": 800
+                        }
+                    ],
+                    "decreasedThuumEquipCost": 10,
+                    "decreasedThuumGP": 10,
+                    "increasedMasteryXP": [
+                        {
+                            "skillID": "namespace_thuum:Thuum",
+                            "value": 10
+                        }
+                    ]
+                }
+            }
+        ],
+        "skillData": [
+            {
+                "skillID": "namespace_thuum:Thuum",
+                "data": {
+                    "teachers": [
+                        {
+                            "id": "French_Horn",
+                            "name": "French Horn",
+                            "media": "assets/teachers/french-horn.png",
+                            "baseInterval": 3000,
+                            "baseExperience": 155,
+                            "maxGP": 551,
+                            "productId": "namespace_thuum:French_Horn",
+                            "level": 100,
+                            "skills": ["melvorD:Summoning", "melvorD:Astrology"],
+                            "standardModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "increasedChanceToFindMeteorite",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "decreasedSkillInterval",
+                                    "skill": "melvorD:Astrology",
+                                    "value": 500
+                                },
+                                {
+                                    "level": 75,
+                                    "key": "decreasedSkillInterval",
+                                    "skill": "melvorD:Summoning",
+                                    "value": 1000
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedSummoningCreationCharges",
+                                    "value": 15
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedSummoningMaxHit",
+                                    "value": 35
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "increasedChanceToFindMeteorite",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "decreasedSkillInterval",
+                                    "skill": "melvorD:Astrology",
+                                    "value": 100
+                                },
+                                {
+                                    "level": 75,
+                                    "key": "decreasedSkillInterval",
+                                    "skill": "melvorD:Summoning",
+                                    "value": 250
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedSummoningCreationCharges",
+                                    "value": 3
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedSummoningMaxHit",
+                                    "value": 5
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Harp",
+                            "name": "Harp",
+                            "media": "assets/teachers/harp.png",
+                            "baseInterval": 3000,
+                            "baseExperience": 235,
+                            "maxGP": 592,
+                            "productId": "namespace_thuum:Harp",
+                            "level": 105,
+                            "skills": ["melvorD:Thieving", "melvorD:Herblore"],
+                            "standardModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "increasedChanceRandomPotionHerblore",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedThievingStealth",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 75,
+                                    "key": "doubleItemsSkill",
+                                    "skill": "melvorD:Herblore",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedThievingAreaUniqueChance",
+                                    "value": 15
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedChanceToDoubleItemsSkill",
+                                    "skill": "melvorD:Thieving",
+                                    "value": 20
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "increasedChanceRandomPotionHerblore",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedThievingStealth",
+                                    "value": 15
+                                },
+                                {
+                                    "level": 75,
+                                    "key": "doubleItemsSkill",
+                                    "skill": "melvorD:Herblore",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedThievingAreaUniqueChance",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedChanceToDoubleItemsSkill",
+                                    "skill": "melvorD:Thieving",
+                                    "value": 2
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Tambourine",
+                            "name": "Tambourine",
+                            "media": "assets/teachers/tambourine.png",
+                            "baseInterval": 3000,
+                            "baseExperience": 335,
+                            "maxGP": 633,
+                            "productId": "namespace_thuum:Tambourine",
+                            "level": 110,
+                            "skills": ["melvorD:Township", "melvorD:Farming"],
+                            "standardModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "increasedFarmingYield",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedFlatFarmingYield",
+                                    "value": 15
+                                },
+                                {
+                                    "level": 75,
+                                    "key": "increasedTownshipGPProduction",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedTownshipHappiness",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedChanceDoubleHarvest",
+                                    "value": 25
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "increasedFarmingYield",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedFlatFarmingYield",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 75,
+                                    "key": "increasedTownshipGPProduction",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedTownshipHappiness",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedChanceDoubleHarvest",
+                                    "value": 5
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Trumpet",
+                            "name": "Trumpet",
+                            "media": "assets/teachers/trumpet.png",
+                            "baseInterval": 3000,
+                            "baseExperience": 475,
+                            "maxGP": 680,
+                            "productId": "namespace_thuum:Trumpet",
+                            "level": 115,
+                            "skills": ["melvorD:Attack", "melvorD:Strength", "melvorD:Ranged", "melvorD:Magic"],
+                            "standardModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "increasedGlobalAccuracy",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinHitBasedOnMaxHit",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 75,
+                                    "key": "increasedMaxHitPercent",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "decreasedAttackInterval",
+                                    "value": 500
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedChanceToApplyDecayCurse",
+                                    "value": 20
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "increasedGlobalAccuracy",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinHitBasedOnMaxHit",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 75,
+                                    "key": "increasedMaxHitPercent",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "decreasedAttackInterval",
+                                    "value": 100
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedChanceToApplyDecayCurse",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

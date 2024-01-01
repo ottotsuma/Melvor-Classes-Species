@@ -1,0 +1,184 @@
+{
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "namespace": "namespace_thuum",
+    "data": {
+        "ancientRelics": [
+            {
+                "id": "ThuumRelic1",
+                "name": "Thuum Relic 1",
+                "skillID": "namespace_thuum:Thuum",
+                "number": 1,
+                "description": "A relic from the ancient greybeards.",
+                "modifiers": {
+                    "increasedMasteryXP": [
+                        {
+                            "skillID": "namespace_thuum:Thuum",
+                            "value": 50
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "ThuumRelic2",
+                "name": "Thuum Relic 2",
+                "skillID": "namespace_thuum:Thuum",
+                "number": 2,
+                "description": "A relic from the ancient greybeards.",
+                "modifiers": {
+                    "increasedMaxAirSpellDmg": 20
+                }
+            },
+            {
+                "id": "ThuumRelic3",
+                "name": "Thuum Relic 3",
+                "skillID": "namespace_thuum:Thuum",
+                "number": 3,
+                "description": "A relic from the ancient greybeards.",
+                "modifiers": {
+                    "increasedChanceToLocateAncientRelic": 1
+                }
+            },
+            {
+                "id": "ThuumRelic4",
+                "name": "Thuum Relic 4",
+                "skillID": "namespace_thuum:Thuum",
+                "number": 4,
+                "description": "A relic from the ancient greybeards.",
+                "modifiers": {
+                    "increasedGPGlobal": 50
+                }
+            },
+            {
+                "id": "ThuumRelic5",
+                "name": "Thuum Relic 5",
+                "skillID": "namespace_thuum:Thuum",
+                "number": 5,
+                "description": "A relic from the ancient greybeards.",
+                "modifiers": {
+                    "decreasedSkillIntervalPercent": [
+                        {
+                            "skillID": "namespace_thuum:Thuum",
+                            "value": 20
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "ThuumRelic6",
+                "name": "Thuum Master Relic",
+                "skillID": "namespace_thuum:Thuum",
+                "number": 6,
+                "description": "A relic from the ancient greybeards.",
+                "modifiers": {
+                    "bigRon": 1
+                }
+            }
+        ],
+        "bankSortOrder": [
+            {
+                "insertAt": "After",
+                "afterID": "melvorAoD:Astrology_Lesser_Relic",
+                "ids": ["namespace_thuum:Thuum_Lesser_Relic"]
+            }
+        ],
+        "items": [
+            {
+                "itemType": "Equipment",
+                "id": "Thuum_Lesser_Relic",
+                "name": "Thuum Lesser Relic",
+                "category": "Combat",
+                "type": "Consumable",
+                "media": "assets/items/thuum-lesser-relic.png",
+                "tier": "none",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 1,
+                "validSlots": ["Consumable"],
+                "occupiesSlots": [],
+                "equipRequirements": [],
+                "equipmentStats": [],
+                "modifiers": {
+                    "decreasedSkillIntervalPercent": [
+                        {
+                            "skillID": "namespace_thuum:Thuum",
+                            "value": 5
+                        }
+                    ],
+                    "decreasedThuumGP": 5,
+                    "increasedMagicMaxHit": 10
+                },
+                "consumesOn": [
+                    {
+                        "type": "ThuumAction"
+                    },
+                    {
+                        "type": "PlayerAttack"
+                    }
+                ]
+            }
+        ],
+        "skillData": [
+            {
+                "skillID": "namespace_thuum:Thuum",
+                "data": {
+                    "rareDrops": [
+                        {
+                            "itemID": "namespace_thuum:Thuum_Lesser_Relic",
+                            "quantity": 300,
+                            "requirements": [],
+                            "chance": {
+                                "type": "Fixed",
+                                "chance": 0.1
+                            },
+                            "gamemodes": ["melvorAoD:AncientRelics"]
+                        }
+                    ],
+                    "completedAncientRelic": "namespace_thuum:ThuumRelic6",
+                    "ancientRelics": [
+                        {
+                            "relicID": "namespace_thuum:ThuumRelic1",
+                            "requirements": [],
+                            "chance": {
+                                "type": "Fixed",
+                                "chance": 0.0005
+                            }
+                        },
+                        {
+                            "relicID": "namespace_thuum:ThuumRelic2",
+                            "requirements": [],
+                            "chance": {
+                                "type": "Fixed",
+                                "chance": 0.0005
+                            }
+                        },
+                        {
+                            "relicID": "namespace_thuum:ThuumRelic3",
+                            "requirements": [],
+                            "chance": {
+                                "type": "Fixed",
+                                "chance": 0.0005
+                            }
+                        },
+                        {
+                            "relicID": "namespace_thuum:ThuumRelic4",
+                            "requirements": [],
+                            "chance": {
+                                "type": "Fixed",
+                                "chance": 0.0005
+                            }
+                        },
+                        {
+                            "relicID": "namespace_thuum:ThuumRelic5",
+                            "requirements": [],
+                            "chance": {
+                                "type": "Fixed",
+                                "chance": 0.0005
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

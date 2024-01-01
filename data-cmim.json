@@ -1,0 +1,90 @@
+{
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "namespace": "namespace_thuum",
+    "data": {
+        "skillData": [
+            {
+                "skillID": "namespace_thuum:Thuum",
+                "data": {
+                    "teachers": [
+                        {
+                            "id": "cmim_teacher",
+                            "name": "Combat Modifiers In Melvor",
+                            "media": "assets/dragon.png",
+                            "baseInterval": 3000,
+                            "baseExperience": 155,
+                            "maxGP": 551,
+                            "productId": "namespace_thuum:cmim_teacher",
+                            "level": 99,
+                            "skills": ["namespace_thuum:Thuum"],
+                            "standardModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "increasedDamageTakenFromAirSpells",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedDamageAgainstDragons",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedDamageAgainstHumans",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedDamageAgainstAnimals",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedDamageAgainstUndead",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedDamageAgainstElves",
+                                    "value": 20
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "increasedDamageTakenFromAirSpells",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedDamageAgainstDragons",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedDamageAgainstHumans",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedDamageAgainstAnimals",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedDamageAgainstUndead",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedDamageAgainstElves",
+                                    "value": 10
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

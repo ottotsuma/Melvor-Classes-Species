@@ -1,0 +1,849 @@
+# [Thuum] Thuum
+
+Translations for all languages supported by melvor idle have been provided with this mod, however, I only speak English and cannot guarantee the accuracy of translations.
+
+All translations were generated using chat gpt.
+
+**If you see an incorrect or missing translation, please create an issue on github providing the correct translation. Thank you!**
+
+https://github.com/thuumridium/thuum
+
+Does not contain actual thuum. Sorry. :(
+
+Disclaimer: **Please backup your save file before installing this mod.**
+
+This mod should be safe to install and uninstall at any time, however the game is designed to automatically delete data for mods that aren't loaded. **So if you uninstall this mod and load your save game, the Thuum data will be deleted by the game.** If you re-install the mod after the data is deleted, the skill will be reset to level 1, including masteries. If you uninstall and re-install without ever loading your save game, the data should be safe and retained.
+
+Please provide any feedback or bug reports, would love to hear your thoughts.
+
+![Thuum](images/thuum.png)
+
+## Design Methodology
+
+When designing this skill, my aims were to take pressure off early game gold, while also providing a late game gold siphon. This makes it an attractive early game skill for adventure mode, and late game, especially once Township is up and running, the buffs are designed to be powerful enough that spending the gold is deemed worth it. By limiting to only a couple of shouts, the player will need to spend their masses of gold to get the bonuses for the skills they are training.
+
+## Change Log
+ Has been moved to the end of the mod description page.
+
+## Training
+
+Thuum is a brand new skill which combines themes from Astrology, Thieving and Agility. It provides an easy way to obtain gold and powerful bonuses that benefit other skills.
+
+Earn tips (GP) while you train shouts with various teachers, then Master the shouts you have trained to provide you with powerful bonuses while you train other skills.
+
+This mod includes a new mastery token for the skill and both skill cape and superior skill cape.
+
+## Mastery Unlocks
+
+To unlock additional modifiers, once the respective mastery level has been attained, you can choose to unlock a modifier mastery.
+
+Modifiers can be unlocked in any order once the mastery level has been attained, but once a mastery modifier has been unlocked the cost to Master the shout is increased.
+
+The cost to unlock a modifier is as follows
+
+* Level 40 Mastery Unlock - 100,000 GP + 1 Essence of Thuum
+* Level 75 Mastery Unlock - 1,000,000 GP + 1 Essence of Thuum
+* Level 99 Mastery Unlock - 10,000,000 GP + 1 Essence of Thuum
+
+![Teacher Mastery](images/teacher-mastery.png)
+
+![Unlock Mastery](images/unlock-mastery.png)
+
+## Hiring a Shout
+
+You can Master various shouts to play on your behalf. These shouts provide powerful bonuses to help you while you train other skills, however the more skilled a shout is, the more expensive it will become to Master them.
+
+You can only Master a single shout at a time (two if you purchase the Band Practice upgrade).
+
+The cost to Master a shout increases with the number of modifiers unlocked.
+
+The cost for hiring a shout is as follows (assuming no Master cost reduction)
+
+* 1st Mastery Unlocked - 10,000 GP
+* 2nd Mastery Unlocked - 100,000 GP
+* 3rd Mastery Unlocked - 1,000,000 GP
+* 4th Mastery Unlocked - 10,000,000 GP
+
+![Equip a Shout](images/Master-shout.png)
+
+### Drops
+
+While training you have a chance to obtain Signet Ring Half A, Circlet of Rhaelyx and Mysterious Stones, just like any other non combat skill.
+
+Tips (GP) earned while training do scale with global gold increases.
+
+### Sheet Thuum, Essence of Thuum, Gems and Utilities
+
+Training Thuum has a 2% chance to drop sheet thuum, these are used for mastered shout teacher upgrades.
+
+Sheet Thuum drop chance is a flat 2% and is not modified by any rarity increases, the only other boost to sheet thuum drop chance is applying Diamond String to your mastered shouts teacher. With two shouts, this means you can get a total of 12% drop chance for Sheet Thuum.
+
+![Items](images/items.png)
+
+## Mastered Shout Teacher
+
+Mastered shout teachers can be enhanced in various ways. They can be upgraded, socketed with a gem and applied with an utility.
+
+Upgrades are destroyed if you Master a new shout. Re-hiring a previously mastered shout will require upgrading, socketing and applying the teacher again.
+
+![Upgrade Teacher](images/upgrade-shout-teacher.png)
+
+### Upgrade
+
+Upgrading a mastered shouts teacher unlocks a 5th modifier, to do so, you require an Essence of Thuum.
+
+Essence of Thuum
+Upgrade from Sheet Thuum
+1,000,000GP + 50 Sheet Thuum
+Unlocks a 5th modifier on mastered shout teacher when upgraded.
+
+![Upgrade](images/upgrade.png)
+
+### Gem Socket
+
+You can select one of three gems to socket into your shouts teacher. Only one can be active at a time, and you may freely switch provided you have the resources.
+
+Polished Topaz Gem
+Upgrade from Topaz
+50,000 GP + 50 Topaz + 10 Sheet Thuum
++5% Thuum GP
+
+Polished Ruby Gem
+Upgrade from Ruby
+50,000 GP + 50 Ruby + 10 Sheet Thuum
++5% Thuum Skill XP
+
+Polished Sapphire Gem
+Upgrade from Sapphire
+50,000 GP + 50 Sapphire + 10 Sheet Thuum
++5% Thuum Mastery XP
+
+![Socket](images/gem.png)
+
+### Utility
+
+You can select one of three utilities to apply onto your shouts teacher. Only one can be active at a time, and you may freely switch provided you have the resources.
+
+Diamond String
+Upgrade from Bowstring
+50,000 GP + 100 Diamond + 100 Bowstring + 50 Thuum Sheet
++5% Sheet Thuum drop chance
+
+Pristine Leather
+Upgrade from Leather
+50,000 GP + 100 Diamond + 100 Leather + 50 Thuum Sheet
+-5% Thuum Interval
+
+Mystic Oil
+Upgrade from Weird Gloop
+50,000 GP + 100 Diamond + 100 Weird Gloop + 50 Thuum Sheet
++1 additional reward roll while training Thuum
+
+Mystic Oil will roll for rewards an additional time when training the thuum skill.
+
+This means if you have Mystic Oil applied, every time you train an teacher, the rewards are rolled an additional time.
+
+This includes:
+* pets
+* rare drops
+* summoning marks
+* mastery tokens
+
+For example, if you have Band Practice with two shouts mastered, both equipped with Mystic Oil.
+
+1 tick of training Thuum will roll 3 times for a chance to get the pet, rare drops, summoning marks and mastery tokens.
+
+![Apply](images/apply.png)
+
+## Band Practice
+
+The shop sells an upgrade which unlocks a second shout slot. This upgrade requires Level 110 Thuum and costs 1B GP.
+
+![Band Practice](images/band-practice.png)
+
+![Double Shout](images/double-shout.png)
+
+## Concert Pass
+
+![Concert Pass Purchase](images/concert-pass-purchase.png)
+
+The shop sells item charges for a Concert Pass.
+* Purchase Cost: Concert Pass Half (A) + Concert Pass Half (B) + 10M GP
+* When equipped in the offhand and has charges, the concert pass will provide skill xp for the skills the teacher supports.
+* Drop rate for Concert Pass Halves is 0.00075% or roughly equivalent to the Ancient Ring of Skill and Ancient Ring of Mastery drop chance from Fishing with a special chance of 5%.
+
+![Concert Pass](images/concert-pass.png)
+
+For example, the Guitar supports Woodcutting and Firemaking, while training the Guitar with the Concert Pass equipped and charges available. Woodcutting and Firemaking will also gain Skill XP.
+
+**The skill must be unlocked to gain skill xp in Adventure mode.**
+
+The amount of Skill XP should be roughly 1 level worth for every 1,000 charges. This is done by finding the xp difference between the current level and the next level, then dividing the amount by 1,000.
+
+For example:
+* level 55 requires 166,636 total experience and level 56 requires 184,040 total experience.
+* 184,040 - 166,636 = 15,764 experience to level up from 55 to 56
+* 15,764 / 1,000 = 15 experience per charge used
+
+When you level up, it will shift the calculation to the next level.
+
+The level calculation is clamped to a max skill level of 120, which roughly equates to ~10,000 xp per charge used at max level, and the minimum xp gained is clamped to 1, so the early levels will progress faster then 1 level per 1,000 charges since they would grant less then 1 xp without the clamp.
+
+![Concert Pass Charges](images/concert-pass-charges.png)
+
+## Skill Unlocks
+
+Leveling the Thuum skill unlocks additional thuumal teachers to train your shouts with.
+
+![Skill Unlocks](images/teacher-unlocks.png)
+
+## Mastery Pool Unlocks
+
+Mastery Pool checkpoints provide additional xp, mastery xp, thuum interval and Master cost reduction.
+
+![Mastery Pool Unlocks](images/mastery-pool-unlocks.png)
+
+## Mastery Unlocks
+
+As you level up an teachers mastery, the tips you earn increases. You can also unlock additional bonuses and reduce the Master cost.
+
+![Mastery Unlocks](images/mastery-unlocks.png)
+
+## Skill Capes
+
+The Thuum Skill Cape
+
+![Thuum Skillcape](images/thuum-skillcape.png)
+
+The Superior Thuum Skill Cape
+
+![Superior Thuum Skillcape](images/superior-thuum-skillcape.png)
+
+## Pet
+
+The Thuum skill also contains a pet: Dragon which provides -0.15s Thuum Interval
+
+![Dragon](images/dragon-pet.png)
+
+## Herblore
+
+The Generous Gratuity Potion can be brewed using the Herblore skill.
+
+![Potion](images/potion.png)
+
+* Herblore Unlock Level: 80
+* Materials: 1 Pigtayle Herb + 1,000 GP
+* Tier 1: +10% Thuum GP, 15 Charges
+* Tier 2: +20% Thuum GP, 25 Charges
+* Tier 3: +30% Thuum GP, 35 Charges
+* Tier 4: +50% Thuum GP, 50 Charges
+
+The potion has also been added to Potion Box II from Township, at the same rarity as the Herblore Potion.
+
+![Potion Box](images/potion-box.png)
+
+## Summoning
+
+The Thuum skill has its own tablet. The Shout! The Shout is both a combat and skill tablet.
+
+![Shout Tablet](images/shout-tablet.png)
+
+![Shout Mark](images/shout-mark.png)
+
+* Tier: 3
+* Summoning Level Requirement: 90
+* Summoning Max Hit: 192
+* Skill Bonus: +5% Thuum GP
+
+In addition, the Shout has synergies with every single other tablet. Since Thuum is a skill that focuses on boosting other skills, its synergy helps all other skills. It basically doubles the tablet effect of the tablet it is synergizing with (by granting the same tablet modifiers via the synergy).
+
+Example: Devil gives -5% Firemaking Interval, if synergized with the Shout, the synergy will provide an addition -5% Firemaking Interval for a total of -10% Firemaking Interval being provided from the tablets.
+
+The Fox synergy actually works in reverse, kind of... the Shout synergy doubles the Fox tablet modifier, which then boosts the Shouts Summoning max hit.
+
+![Summoning](images/summoning-1.png)
+
+![Summoning](images/summoning-2.png)
+
+## Agility
+
+Agility has been modified so that the Obstacle 10 - Waterfall now also benefits the Thuum skill.
+
+![Agility](images/agility.png)
+
+## Astrology
+
+Astrology has been modified so that the Variel constellation now also benefits the Thuum skill.
+
+![Astrology](images/astrology.png)
+
+## Township
+
+The Thuum skill adds a Thuum Scroll of XP granting +3% Thuum Skill XP. It functions the same as other scrolls of xp.
+
+It requires level 15 Township and level 15 Thuum to purchase, with a default value of 80 planks per scroll.
+
+![Township](images/township-xp-scroll.png)
+
+The Thuum skill adds a Thuum Outfit, which is fully integrated just like all the other skilling outfits.
+
+![Shouts Outfit](images/shout-outfit.png)
+
+![Skiller Upgrade](images/skiller-upgrade.png)
+
+## The Circus
+
+The jesters have emerged from The Circus. The jesters are notorious pranksters. They have been rivals with the shouts since the beginning of time, known for stealing teachers, many tussles have broken out between the shouts and the jesters.
+
+The Circus is a new combat area that contains 3 types of jesters to fight.
+
+![The Circus](images/the-circus.png)
+
+### Jester
+
+![Jester](images/jester.png)
+
+### Enchanted Jester
+
+![Enchanted Jester](images/enchanted-jester.png)
+
+### Mystic Jester
+
+![Mystic Jester](images/mystic-jester.png)
+
+### Guitar Weapon
+
+The Jester can drop a Guitar which is a new 2H Weapon which requires attack and thuum levels to equip. The Guitar can be upgraded twice.
+
+![Guitars](images/guitar-items.png)
+
+### Guitar
+
+Drops from the Jester
+
+![Guitar](images/guitar.png)
+
+### Enchanted Guitar
+
+Upgrade Cost: 100K GP + 50 Enchanted Essence + 1 Guitar
+
+Enchanted Essence is dropped from the Enchanted Jester
+
+![Enchanted Guitar](images/enchanted-guitar.png)
+
+### Mystic Guitar
+
+Upgrade Cost: 1M GP + 50 Mystic Essence + 1 Enchanted Guitar
+
+Mystic Essence is dropped from the Mystic Jester
+
+![Mystic Guitar](images/mystic-guitar.png)
+
+## Ancient Relics Gamemode
+
+![Ancient Relics](images/ancient-relics.png)
+
+Thuum has Ancient Relics
+
+#1: +50% Thuum Mastery XP
+#2: +10% chance to obtain Shrimp while training Thuum
+#3: 1% increased chance to locate Ancient Relics
+#4: +50% Global GP (except Item Sales)
+#5: -20% Thuum Interval
+Master Relic: +1 Shout Equip Limit
+
+(Yes, this means you can have 3 mastered shouts)
+
+### Lesser Relic
+
+Thuum also has a Lesser Relic which grants:
+
+-5% Thuum Interval
++5% Thuum GP
++10% Magic Maximum Hit
+
+## Settings
+
+You are able to set the base shout Master cost for each tier. Value must be between 100 and 999B.
+
+In addition, you can opt to use Standard or Hardcore modifier bonuses. Hardcore modifiers have been significantly reduced compared to Standard.
+
+Please note, Settings get reset if you switch your language.
+
+![Settings](images/settings.png)
+
+## Standard Scaling Shout Bonuses (can be set in settings, not exclusive to standard gamemode)
+
+The bonuses each shout provides is as follows:
+
+Guitar: Unlocked at skill level 1
+* Mastery Level 1: +5% Chance for Bird Nests to drop in Woodcutting
+* Mastery Level 40: -10% Firemaking Interval
+* Mastery Level 75: +15% Firemaking Mastery XP
+* Mastery Level 99: +2 minimum Bird Nest's received from Woodcutting
+* Upgrade: Bonfires in Firemaking require no logs to light. Automatically relights Bonfires when depleted
+
+Animal_Allegiance: Unlocked at skill level 10
+* Mastery Level 1: -0.5s Fishing Interval
+* Mastery Level 40: -10% Cooking Interval
+* Mastery Level 75: -30% Passive Cook Interval
+* Mastery Level 99: +10% chance to find a Lost Chest while Fishing (This is separate to the Special Fishing Chance)
+* Upgrade: +25% chance to gain 1 cooked version of a fish when Fishing
+
+Snare Drum: Unlocked at skill level 20
+* Mastery Level 1: -0.2s Mining Interval
+* Mastery Level 40: -0.2s Smithing Interval
+* Mastery Level 75: -3 Coal Ore Cost when Smithing
+* Mastery Level 99: x4 Ores received from Mining
+* Upgrade: x4 Rune Essence received from Mining
+
+Become_Ethereal: Unlocked at skill level 30
+* Mastery Level 1: +5% Hitpoint Regeneration
+* Mastery Level 40: +15% Auto Eat Efficiency
+* Mastery Level 75: Target Damage Reduction is decreased by flat 10%
+* Mastery Level 99: +5% Auto Eat Threshold
+* Upgrade: +5% Chance To Double Loot in Combat
+
+Kynes_Peace: Unlocked at skill level 40
+* Mastery Level 1: +10% Chance to Preserve Resources in Skills
+* Mastery Level 40: +10% Global GP (except Item Sales)
+* Mastery Level 75: +10% Chance to Double Items Globally
+* Mastery Level 99: 10% increased chance to receive Global Rare Items, Mastery Tokens, Bird Nests from Woodcutting, Gems from Mining, and Coal from Firemaking
+* Upgrade: +100 GP gained when earning GP, except Alt. Magic and Item Sales
+
+Flute: Unlocked at skill level 45 (AoD only)
+* Mastery Level 1: +10% chance to preserve dig site map excavation actions
+* Mastery Level 40: -10% Cartography survey interval
+* Mastery Level 75: -10% dig site map refinement cost
+* Mastery Level 99: +2 minimum Items found in Archaeology
+* Upgrade: Gain GP equal to +15 per Archaeology Skill Level per excavation action that locates no Artefacts
+
+Slow_Times: Unlocked at skill level 50
+* Mastery Level 1: +5% Crafting Skill XP
+* Mastery Level 40: +5% Fletching Skill XP
+* Mastery Level 75: x4 Items received from Fletching
+* Mastery Level 99: x4 Items received from Crafting
+* Upgrade: +2 base Javelins produced per action in Fletching
+
+Xylophone: Unlocked at skill level 60
+* Mastery Level 1: -10% Agility Obstacle Build Costs
+* Mastery Level 40: +15% GP From Agility
+* Mastery Level 75: -15% Agility Interval
+* Mastery Level 99: -10% Agility Pillar build costs
+* Upgrade: +25% GP from Agility per active Obstacle
+
+Saxaphone: Unlocked at skill level 70
+* Mastery Level 1: +5% Global Evasion
+* Mastery Level 40: +10% Lifesteal
+* Mastery Level 75: +5% Damage Reduction
+* Mastery Level 99: +5% Maximum Hitpoints
+* Upgrade: +50 Maximum Hitpoints
+
+Dismay: Unlocked at skill level 80
+* Mastery Level 1: +10% chance to preserve resources when Runecrafting runes
+* Mastery Level 40: Gain +1 Prayer Points for each successful Enemy hit on you
+* Mastery Level 75: Create +6 Additional Runes of the same type in Runecrafting
+* Mastery Level 99: -3 Prayer Point Cost for Prayers
+* Upgrade: +50% Chance to receive random Elemental Runes from Runecrafting when creating Runes
+
+Djembe: Unlocked at skill level 90
+* Mastery Level 1: -5% Slayer Task monster Accuracy Rating
+* Mastery Level 40: +10% Damage To Slayer Tasks
+* Mastery Level 75: +40% Slayer Coins
+* Mastery Level 99: +25% Flat Slayer Area Effect Negation
+* Upgrade: +20% Slayer Skill XP
+
+French Horn: Unlocked at skill level 100 (TotH only)
+* Mastery Level 1: +5% chance to locate a Meteorite in Astrology
+* Mastery Level 40: -0.5s Astrology Interval
+* Mastery Level 75: -1s Summoning Interval
+* Mastery Level 99: +15 Base Quantity for Summoning Tablet Creation
+* Upgrade: +35% Summoning Maximum Hit
+
+Harp: Unlocked at skill level 105 (TotH only)
+* Mastery Level 1: +10% Chance to receive a Random Tier of the same Potion in Herblore
+* Mastery Level 40: +50 Stealth while Thieving
+* Mastery Level 75: x4 Items received from Herblore
+* Mastery Level 99: +15% chance to receive Thieving Area Unique Item
+* Upgrade: +20% Chance to Double Items in Thieving
+
+Tambourine: Unlocked at skill level 110 (TotH only)
+* Mastery Level 1: +10% Farming Yield
+* Mastery Level 40: +15 harvest quantity from Farming (Cannot be doubled or multiplied)
+* Mastery Level 75: +10% Township GP Production
+* Mastery Level 99: +50% Township Happiness
+* Upgrade: +25% Chance to Double Farming Yield
+
+Trumpet: Unlocked at skill level 115 (TotH only)
+* Mastery Level 1: +5% Accuracy Rating
+* Mastery Level 40: +5% of Maximum Hit added to Minimum Hit
+* Mastery Level 75: +10% Maximum Hit
+* Mastery Level 99: -0.5s Attack Interval
+* Upgrade: +20% chance to apply Decay Curse to the Target per hit
+
+## Hardcore Scaling Shout Bonuses (can be set in settings, not exclusive to hardcore gamemode)
+
+The bonuses each shout provides is as follows:
+
+Guitar: Unlocked at skill level 1
+* Mastery Level 1: +2% Chance for Bird Nests to drop in Woodcutting
+* Mastery Level 40: -5% Firemaking Interval
+* Mastery Level 75: +5% Firemaking Mastery XP
+* Mastery Level 99: +1 minimum Bird Nest's received from Woodcutting
+* Upgrade: Bonfires in Firemaking require no logs to light. Automatically relights Bonfires when depleted
+
+Animal_Allegiance: Unlocked at skill level 10
+* Mastery Level 1: -0.2s Fishing Interval
+* Mastery Level 40: -5% Cooking Interval
+* Mastery Level 75: -10% Passive Cook Interval
+* Mastery Level 99: +1% chance to find a Lost Chest while Fishing (This is separate to the Special Fishing Chance)
+* Upgrade: +5% chance to gain 1 cooked version of a fish when Fishing
+
+Snare Drum: Unlocked at skill level 20
+* Mastery Level 1: -0.1s Mining Interval
+* Mastery Level 40: -0.1s Smithing Interval
+* Mastery Level 75: -1 Coal Ore Cost when Smithing
+* Mastery Level 99: x2 Ores received from Mining
+* Upgrade: x2 Rune Essence received from Mining
+
+Become_Ethereal: Unlocked at skill level 30
+* Mastery Level 1: +2% Hitpoint Regeneration
+* Mastery Level 40: +5% Auto Eat Efficiency
+* Mastery Level 75: Target Damage Reduction is decreased by flat 2%
+* Mastery Level 99: +2% Auto Eat Threshold
+* Upgrade: +2% Chance To Double Loot in Combat
+
+Kynes_Peace: Unlocked at skill level 40
+* Mastery Level 1: +5% Chance to Preserve Resources in Skills
+* Mastery Level 40: +5% Global GP (except Item Sales)
+* Mastery Level 75: +2% Chance to Double Items Globally
+* Mastery Level 99: 2% increased chance to receive Global Rare Items, Mastery Tokens, Bird Nests from Woodcutting, Gems from Mining, and Coal from Firemaking
+* Upgrade: +25 GP gained when earning GP, except Alt. Magic and Item Sales
+
+Flute: Unlocked at skill level 45 (AoD only)
+* Mastery Level 1: +5% chance to preserve dig site map excavation actions
+* Mastery Level 40: -5% Cartography survey interval
+* Mastery Level 75: -5% dig site map refinement cost
+* Mastery Level 99: +1 minimum Items found in Archaeology
+* Upgrade: Gain GP equal to +5 per Archaeology Skill Level per excavation action that locates no Artefacts
+
+Slow_Times: Unlocked at skill level 50
+* Mastery Level 1: +5% Crafting Skill XP
+* Mastery Level 40: +5% Fletching Skill XP
+* Mastery Level 75: x2 Items received from Fletching
+* Mastery Level 99: x2 Items received from Crafting
+* Upgrade: +1 base Javelins produced per action in Fletching
+
+Xylophone: Unlocked at skill level 60
+* Mastery Level 1: -5% Agility Obstacle Build Costs
+* Mastery Level 40: +5% GP From Agility
+* Mastery Level 75: -5% Agility Interval
+* Mastery Level 99: -5% Agility Pillar build costs
+* Upgrade: +5% GP from Agility per active Obstacle
+
+Saxaphone: Unlocked at skill level 70
+* Mastery Level 1: +2% Global Evasion
+* Mastery Level 40: +2% Lifesteal
+* Mastery Level 75: +2% Damage Reduction
+* Mastery Level 99: +2% Maximum Hitpoints
+* Upgrade: +10 Maximum Hitpoints
+
+Dismay: Unlocked at skill level 80
+* Mastery Level 1: +5% chance to preserve resources when Runecrafting runes
+* Mastery Level 40: Gain +1 Prayer Points for each successful Enemy hit on you
+* Mastery Level 75: Create +2 Additional Runes of the same type in Runecrafting
+* Mastery Level 99: -1 Prayer Point Cost for Prayers
+* Upgrade: +5% Chance to receive random Elemental Runes from Runecrafting when creating Runes
+
+Djembe: Unlocked at skill level 90
+* Mastery Level 1: -2% Slayer Task monster Accuracy Rating
+* Mastery Level 40: +2% Damage To Slayer Tasks
+* Mastery Level 75: +5% Slayer Coins
+* Mastery Level 99: +5% Flat Slayer Area Effect Negation
+* Upgrade: +5% Slayer Skill XP
+
+French Horn: Unlocked at skill level 100 (TotH Only)
+* Mastery Level 1: +1% chance to locate a Meteorite in Astrology
+* Mastery Level 40: -0.1s Astrology Interval
+* Mastery Level 75: -0.25s Summoning Interval
+* Mastery Level 99: +3 Base Quantity for Summoning Tablet Creation
+* Upgrade: +5% Summoning Maximum Hit
+
+Harp: Unlocked at skill level 105 (TotH Only)
+* Mastery Level 1: +2% Chance to receive a Random Tier of the same Potion in Herblore
+* Mastery Level 40: +15 Stealth while Thieving
+* Mastery Level 75: x2 Items received from Herblore
+* Mastery Level 99: +2% chance to receive Thieving Area Unique Item
+* Upgrade: +2% Chance to Double Items in Thieving
+
+Tambourine: Unlocked at skill level 110 (TotH Only)
+* Mastery Level 1: +5% Farming Yield
+* Mastery Level 40: +2 harvest quantity from Farming (Cannot be doubled or multiplied)
+* Mastery Level 75: +2% Township GP Production
+* Mastery Level 99: +5% Township Happiness
+* Upgrade: +5% Chance to Double Farming Yield
+
+Trumpet: Unlocked at skill level 115 (TotH Only)
+* Mastery Level 1: +2% Accuracy Rating
+* Mastery Level 40: +1% of Maximum Hit added to Minimum Hit
+* Mastery Level 75: +2% Maximum Hit
+* Mastery Level 99: -0.1s Attack Interval
+* Upgrade: +1% chance to apply Decay Curse to the Target per hit
+
+## Change Log
+
+# 1.13.13
+* fixed superior max cape and superior cape of completion not inheriting thuum skillcape modifiers
+
+# 1.13.12
+* improved compatibility with tiny passive icons
+
+# 1.13.11
+* fixed compatibility with tiny passive icons
+
+# 1.13.10
+* fixed skill completion statistic count being doubled
+
+# 1.13.9
+* fixed thuum gp gains not considering flat gp increases such as golden wreath
+
+# 1.13.8
+* replaced Kynes_Peace upgrade modifier from GP From Sales to GP gained when earning GP, except Alt. Magic and Item Sales
+
+# 1.13.7
+* added summoning synergy for tortoise + shout
+
+# 1.13.6
+* minor code cleanup, no change in functionality
+
+# 1.13.5
+* removed 'ancient coin token', 'ancient mask token' and 'ancient skull token'
+* thuum skill level cap in the ancient relics gamemode now scales with combat stats level cap
+* thuum is no longer offered as a choice for skill cap level increases
+* improved logic for unlocking thuum skill to support custom ancient relic gamemodes
+
+# 1.13.4
+* added a new teacher, the flute which focuses on cartography and archaeology
+
+# 1.13.3
+* added ancient relics for thuum
+* added a lesser relic for thuum
+
+# 1.13.2
+* fixed thuum being locked in ancient relics gamemode on existing saves when enabling the mod for the first time
+* added one time rewards for undead graveyard, air god dungeon and lava lake dungeon
+* these one time rewards are tokens which when consumed grant level cap increases in the ancient relics gamemode, they do nothing in other gamemodes and can be sold
+* these tokens are equivalent to clearing 2 base game dungeons and 1 toth dungeon to help offset the additional skill
+
+# 1.13.1
+* fixed thuum being locked in ancient relics gamemode
+* fixed skill cape exception check
+
+# 1.13.0
+* added support for atlas of discovery
+
+## 1.12.0
+* added settings to control the base shout Master cost
+* added a hardcore setting which significantly reduces the power of mastered shout modifiers
+* fixed djembe being named Battle_Fury, it is now correctly labelled as a djembe again
+
+## 1.11.2
+* fixed german translations being in dutch
+
+### 1.11.1
+* fixed chinese simplified and chinese traditional translations for shout
+
+### 1.11.0
+* significantly reduced hiring cost of shouts from 10k, 100k, 20m, 200m to 10k, 100k, 1m, 10m
+* unlocking modifiers now also cost gp in addition to essence of thuum, costs are 100k for level 40 modifier, 1m for level 75 modifier and 10m for level 99 modifier
+* shout Master cost for 95% mastery checkpoint has been reduced from -10% to -5%
+* shout Master cost for mastery level 90 has been reduced from -10% to -5%
+* switched and reduced the power of some teacher modifiers:
+  * Animal_Allegiance (75) now provides Passive Cook Interval
+  * Animal_Allegiance (99) now provides Chance to find a Lost Chest while Fishing and reduced from 15% to 10%
+  * Become_Ethereal (75) now provides Target Damage Reduction is decreased by flat
+  * Become_Ethereal (99) now provides Auto Eat Threshold and reduced from 10% to 5%
+  * Become_Ethereal (U) now provides Chance To Double Loot in Combat and reduced from 10% to 5%
+  * Kynes_Peace (75) Chance to Double Items Globally reduced from 15% to 10%
+  * Throw_Voice (75) now provides Damage Reduction and reduced from 10% to 5%
+  * Throw_Voice (99) now provides +5% Maximum Hitpoints
+  * Throw_Voice (U) now provides + Maximum Hitpoints and reduced from +100 to +50
+* adjusted some of the shout syngergies
+  * Golbin Thief + Shout synergy now also grants +175 GP on monster kill
+  * Ent + Shout synergy increased from 10% to 30%
+  * Pig + Shout synergy increased from 10% to 25%
+  * Salamander + Shout synergy increased from 5% to 25%
+
+* Dev Note: These changes came from feedback that some modifiers are not worth unlocking as the Master cost grows too high for the value the modifier provides. It was more advantageous to simply leave some not unlocked which was not the intended way to interact with the shouts. Hopefully, now that the gp costs of the skill have been reduced, the impact of unlocking some of the less desirable modifiers are not as painful. In addition a portion of the costs have been shifted to the one time cost of unlocking modifiers which should further reduce friction in switching shouts that may not have as desirable modifiers. I'm aware this goes against the original design of wanting switching shouts to be painful, but the design has evolved over time and no longer really fits with the current implementation.
+
+### 1.10.0
+* added translations for all languages supported by melvor idle
+* please note, I only speak English, these were all fed through chat gpt, if you see an incorrect or missing translation please report this on github
+
+### 1.9.1
+* band practice shop purchase now correctly only shows if TotH has been purchased
+
+### 1.9.0
+* Throne of the Herald is now optional, all TotH data requires the expansion to load, this includes superior skillcape, teachers above level 99 and summoning synergies above level 99
+* max skillcape and superior max skillcape no longer require the thuum skill to purchase
+* eagle + shout synergy now grants -10% Thuum Interval, from -5% Agility Interval
+* owl + shout synergy now grants +1.5% Thuum Mastery XP Per Maxed Star in Variel, from -5% Astrology Interval
+* shout modifiers are no longer automatically unlocked based on mastery level
+* once the required mastery level is reached, you may now choose to unlock the modifier whenever you feel like doing so
+* previous save data will automatically migrate and have the appropriate mastery unlocks already for free
+* hiring shout gp cost no longer scales with mastery level, instead the cost increases with the number of modifiers unlocked on the shout
+* mystic oil no longer grants +1 modifier unlock, now rolls an additional time for rewards while training thuum
+
+### 1.8.1
+* reordered the thuum skillcapes to be listed/sorted in alphabetical order in the shop and bank
+
+### 1.8.0
+* the jesters have emerged from the circus, a new combat area
+* added three new monsters found in the circus
+* added the guitar, a 2H weapon that can be upgraded twice
+* jesters drop the guitar, and the essence required to upgrade the guitar, among other thuum related drops
+
+### 1.7.1
+* reduced base drop chance of sheet thuum from 5% to 2%
+* significantly reduced the sell value of thuum related items, these were not intended to be an easy way to generate gold
+
+### 1.7.0
+* agility obstacle 10 waterfall now also benefits the Thuum skill
+* astrology variel constellation now also benefits the Thuum skill
+* added compatibility between Tiny Passive Icons mod and the Thuum skill mod for Agility and Astrology
+* switched the Animal_Allegiance and drum teachers
+  * no functional change, just switched the type of teacher
+  * the Animal_Allegiance now benefits fishing and cooking and is still unlocked at level 10
+  * the drum now benefits mining and smithing and is still unlocked at level 20
+* renamed the drum to snare drum
+* renamed the Battle_Fury to djembe
+* renamed the Slow_Time to Slow_Times
+
+### 1.6.5
+* added the ability to see the next available teacher in a locked state; like in Woodcutting and Mining
+
+### 1.6.4
+* workaround game bugs with completion log not correctly displaying for custom skills
+
+### 1.6.3
+* fixed concert pass halves dropping more often then intended
+* adjusted the Thuum pet, Dragon, to provide a flat -0.15s Thuum Interval from -1% Thuum Interval
+
+### 1.6.2
+* fixed message when the concert pass runs out to be more context specific
+
+### 1.6.1
+* fixed bank sort order for concert pass items
+
+### 1.6.0
+* added concert pass half a, concert pass half b and concert pass
+* half a and half b can drop while training thuum
+* both halves + 10M GP can be used to purchase 1,000 charges of a concert pass
+* the concert pass can be equipped in the offhand and while training Thuum you also gain Skill XP for the skills the teacher supports
+
+### 1.5.0
+* increased drop rate of sheet thuum from 1% to 5%
+* expanded the ability to upgrade mastered shout teachers which boost the Thuum skill itself
+  * one of three new gems can be socketed into a mastered shouts teacher
+  * one of three new utilities can be applied onto a mastered shouts teacher
+
+### 1.4.2
+* fixed skill info header not displaying as intended on mobile
+* fixed Aorpheats Signet Ring not providing +100% GP to Thuum
+* fixed Max Skillcape, Cape of Completion, Superior Max Skillcape and Superior Cape of Completion not inheriting Thuum Skillcape modifiers (these capes still DO NOT require any Thuum skill levels, they just inherit the modifiers of the Thuum skillcapes)
+
+### 1.4.1
+* fixed trumpet mastery level 1 modifier incorrectly requiring mastery level 40
+
+### 1.4.0
+* reduced tips (GP) scaling from mastery level from +15 GP each level to +10 GP each level, base teacher GP is no longer the same across all teachers, higher level teachers have a higher base GP than lower level teachers. This should hopefully make higher teachers feel a little better, this does result in less GP from lower teachers than the previous version.
+* added three more teachers; the Become_Ethereal, Kynes_Peace and xylophone
+* modified some teacher unlock levels and bonuses
+  * drum - Unlock Level 15 -> Level 10
+  * Animal_Allegiance - Unlock Level 30 -> Level 20
+  * Throw_Voice - Unlock Level 45 -> Level 70, now focused on defensive modifiers only
+  * Slow_Time - Unlock Level 60 -> Level 50
+  * Dismay - Unlock Level 75 -> Level 80
+  * Battle_Fury - now focused entirely on slayer, agility has been moved to xylophone
+  * french horn - switched level 1 and 40 modifier bonuses
+  * tambourine - increased level 1 farming yield % from 5 to 10 and level 40 flat farming yield from 5 to 15
+  * trumpet - now focused on damage dealing only
+* added a new shop purchase which lets you Master two shouts at once
+* added a new item, sheet thuum which is dropped while training Thuum
+* added a new item, essence of thuum, which is upgraded from sheet thuum
+* added the ability to upgrade mastered shout teachers which unlocks a 5th modifier
+
+### 1.3.0
+* added a potion to Herblore which increases GP obtained while training Thuum
+* added a summoning tablet for the Thuum skill, the Shout
+* added a Thuum Scroll of XP which can be purchased from the Township trader with Planks
+* added a Thuum Outfit to the Township category of the shop, it functions the same all other skilling outfits
+
+### 1.2.0
+
+* updated description of mastery and mastery pool Master cost reduction to better align with skill capes (no functional change)
+* updated exponential calculation to clamp mastery between level 1 and 99 instead of throwing an error if outside this range
+* adjusted the level that teachers are available at
+* adjusted the experience gained from training. The time it takes to level should be roughly equivalent to Astrology, assuming no interval increases, xp modifiers, etc and you train the highest level teacher available
+* added 3 new teachers; the harp, tambourine and Slow_Time
+
+### 1.1.0
+
+* fixed Master dialog allowing to Master without enough gold
+* updated teacher icons
+
+### 1.0.3
+
+* fixed Dismay 99 mastery bonus to reduce prayer cost instead of increase it
+
+### 1.0.2
+
+* fixed thuum mastery token granting no experience
+
+### 1.0.1
+
+* fixed the spelling of Throw_Voice
+* removed mastery token, capes and pet from being required for completion log
+* removed thuum from being required for max and superior max capes
+* skill cape now also reduces shout Master cost by 5% and increased gold earned from thuum by 5%
+* superior skill cape now also reduces shout Master cost by 10% and increased gold earned from thuum by 10%
+
+### 1.0.0
+
+* initial release
+
+## Attribution
+
+Images obtained from the following sources, attribution provided.
+
+<a href="https://www.freepik.com/free-vector/cute-red-panda-playing-guitar-cartoon-vector-icon-illustration-animal-thuum-icon-concept-isolated_31966379.htm">Image by catalyststuff on Freepik</a>
+
+<a href="https://www.freepik.com/free-vector/thuumal-teacher-set_8610228.htm#query=cartoon%20teacher&position=0&from_view=keyword&track=ais">Image by pch.vector on Freepik</a>
+
+<a href="https://www.flaticon.com/free-icons/troubadour">Troubadour icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Dragon Icons - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/gemstone" title="gemstone icons">Gemstone icons created by Kroffle - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/access" title="access icons">Access icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/famous" title="famous icons">Famous icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/guitar" title="guitar icons">Guitar icons created by Freepik - Flaticon</a>
+
+<a href="https://www.freepik.com/free-vector/aesthetic-jazz-background-thuumal-teacher-border-blue-vector_20346432.htm#query=thuumal%20background&position=16&from_view=search&track=ais">Image by rawpixel.com on Freepik</a>
+
+<a href="https://www.flaticon.com/free-icons/thuum-and-multimedia" title="thuum and multimedia icons">Thuum and multimedia icons created by Mihimihi - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/circus-tent" title="circus tent icons">Circus tent icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/professions-and-jobs" title="professions and jobs icons">Professions and jobs icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/jester" title="jester icons">Jester icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/jester" title="jester icons">Jester icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/cultures" title="cultures icons">Cultures icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/flute" title="flute icons">Flute icons created by Freepik - Flaticon</a>
