@@ -6,7 +6,6 @@ import { Single_Species } from './profile.types';
 
 export class UserInterface {
     public readonly species = new Map<Single_Species, ReturnType<typeof Single_SpeciesComponent>>();
-    // public readonly classes = new Map<Single_Species, ReturnType<typeof Single_SpeciesComponent>>();
 
     public locked: ReturnType<typeof LockedComponent>;
     public shout1: ReturnType<typeof ShoutComponent>;
@@ -43,16 +42,18 @@ export class UserInterface {
 
             for (const single_species of this.profile.sortedMasteryActions) {
                 const component = Single_SpeciesComponent(this.profile, single_species, this.game);
-
-                ui.create(component, this.speciesContainer);
-                // ui.create(component, this.classesContainer);
+                if(this.profile.classIds.includes(single_species._localID)) {
+                    ui.create(component, this.classesContainer);
+                } else {
+                    ui.create(component, this.speciesContainer);
+                }
 
                 this.species.set(single_species, component);
             }
 
             this.locked = LockedComponent(this.profile);
             ui.create(this.locked, this.speciesContainer);
-            // ui.create(this.locked, this.classesContainer);
+            ui.create(this.locked, this.classesContainer);
 
             this.shout1 = ShoutComponent(this.profile);
             this.shout2 = ShoutComponent(this.profile);

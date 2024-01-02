@@ -42,7 +42,7 @@
                     }
                 ],
                 "modifiers": {
-                    "decreasedProfileGP": 5                
+                    "decreasedProfileGP": 5
                 },
                 "consumesOn": [
                     {
@@ -190,7 +190,8 @@
                             "productId": "namespace_profile:Human",
                             "level": 1,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg"
+                                "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
+                                "https://cdn2-main.melvor.net/assets/media/main/coins.svg"
                             ],
                             "standardModifiers": [
                                 {
@@ -200,23 +201,28 @@
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedGPFromSales",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 60,
                                     "key": "increasedDamageAgainstAnimals",
                                     "value": 10
                                 },
                                 {
-                                    "level": 80,
+                                    "level": 60,
                                     "key": "increasedDamageAgainstHumans",
                                     "value": 10
                                 },
                                 {
-                                    "level": 99,
-                                    "key": "increasedGlobalAccuracyAgainstMythicalCreatures",
+                                    "level": 80,
+                                    "key": "increasedGPFromSales",
                                     "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedChanceForGoldFromCrafting30",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "decreasedGlobalSkillIntervalPercent",
+                                    "value": 5
                                 }
                             ],
                             "hardcoreModifiers": [
@@ -249,632 +255,19 @@
                                     "value": 1
                                 }
                             ]
-                        },
-                        {
-                            "id": "Animal_Allegiance",
-                            "name": "Animal Allegiance",
-                            "media": "assets/species/Animal_Allegiance.png",
-                            "baseExperience": 13,
-                            "maxGP": 182,
-                            "productId": "namespace_profile:Animal_Allegiance",
-                            "level": 10,
-                            "skills": [
-                                "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedFarmingYield",
-                                    "value": 20
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "decreasedSkillIntervalPercent",
-                                    "skill": "melvorD:Cooking",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "decreasedPassiveCookInterval",
-                                    "value": 30
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "decreasedSkillInterval",
-                                    "skill": "melvorD:Fishing",
-                                    "value": 500
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedFishingCookedChance",
-                                    "value": 25
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedChanceForAshInWoodcutting",
-                                    "value": 50
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "decreasedSkillIntervalPercent",
-                                    "skill": "melvorD:Cooking",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "decreasedPassiveCookInterval",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "decreasedSkillInterval",
-                                    "skill": "melvorD:Fishing",
-                                    "value": 200
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedFishingCookedChance",
-                                    "value": 5
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Cyclone",
-                            "name": "Cyclone",
-                            "media": "assets/species/Cyclone.png",
-                            "baseExperience": 21,
-                            "maxGP": 223,
-                            "productId": "namespace_profile:Cyclone",
-                            "level": 20,
-                            "skills": [
-                                "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedSkillPreservationChance",
-                                    "skill": "melvorD:Herblore",
-                                    "value": 20
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "decreasedSkillInterval",
-                                    "skill": "melvorD:Smithing",
-                                    "value": 200
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "decreasedSkillInterval",
-                                    "skill": "melvorD:Mining",
-                                    "value": 200
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "doubleOresMining",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "doubleRuneEssenceMining",
-                                    "value": 2
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "key": "decreasedSkillPreservationChance",
-                                    "skill": "melvorD:Herblore",
-                                    "value": 40
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "decreasedSkillInterval",
-                                    "skill": "melvorD:Smithing",
-                                    "value": 100
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "decreasedSkillInterval",
-                                    "skill": "melvorD:Mining",
-                                    "value": 200
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "doubleOresMining",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "doubleRuneEssenceMining",
-                                    "value": 1
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Become_Ethereal",
-                            "name": "Become Ethereal",
-                            "media": "assets/species/Become_Ethereal.png",
-                            "baseExperience": 29,
-                            "maxGP": 264,
-                            "productId": "namespace_profile:Become_Ethereal",
-                            "level": 30,
-                            "skills": [
-                                "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_green.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedDamageDealtIfPoisoned",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedAutoEatEfficiency",
-                                    "value": 15
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "decreasedEnemyDamageReduction",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedAutoEatThreshold",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedChanceToDoubleLootCombat",
-                                    "value": 5
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedDamageDealtIfPoisoned",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedAutoEatEfficiency",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "decreasedEnemyDamageReduction",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedAutoEatThreshold",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedChanceToDoubleLootCombat",
-                                    "value": 2
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Kynes_Peace",
-                            "name": "Kyne's Peace",
-                            "media": "assets/species/Kynes_Peace.png",
-                            "baseExperience": 37,
-                            "maxGP": 305,
-                            "productId": "namespace_profile:Kynes_Peace",
-                            "level": 40,
-                            "skills": [
-                                "https://cdn.melvor.net/core/v018/assets/media/monsters/frozen_mammoth.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedGlobalPreservationChance",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedGPGlobal",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedChanceToDoubleItemsGlobal",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedOffItemChance",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedGPFlat",
-                                    "value": 100
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedGlobalPreservationChance",
-                                    "value": 20
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedGPGlobal",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedChanceToDoubleItemsGlobal",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedOffItemChance",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedGPFlat",
-                                    "value": 25
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Slow_Time",
-                            "name": "Slow_Times",
-                            "media": "assets/species/Slow_Time.png",
-                            "baseExperience": 45,
-                            "maxGP": 346,
-                            "productId": "namespace_profile:Slow_Time",
-                            "level": 50,
-                            "skills": [
-                                "https://cdn.melvor.net/core/v018/assets/media/monsters/fierce_devil.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedAltMagicRunePreservation",
-                                    "value": 15
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedSkillXP",
-                                    "skill": "melvorD:Fletching",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "doubleItemsSkill",
-                                    "skill": "melvorD:Fletching",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "doubleItemsSkill",
-                                    "skill": "melvorD:Crafting",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedJavelinProduction",
-                                    "value": 2
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedAltMagicRunePreservation",
-                                    "value": 25
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedSkillXP",
-                                    "skill": "melvorD:Fletching",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "doubleItemsSkill",
-                                    "skill": "melvorD:Fletching",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "doubleItemsSkill",
-                                    "skill": "melvorD:Crafting",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedJavelinProduction",
-                                    "value": 1
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Whirlwind_Sprint",
-                            "name": "Whirlwind_Sprint",
-                            "media": "assets/species/Whirlwind_Sprint.png",
-                            "baseExperience": 53,
-                            "maxGP": 387,
-                            "productId": "namespace_profile:Whirlwind_Sprint",
-                            "level": 60,
-                            "skills": [
-                                "https://cdn.melvor.net/core/v018/assets/media/monsters/fire_spirit.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedFarmingYield",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedGPFromAgility",
-                                    "value": 15
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "decreasedSkillIntervalPercent",
-                                    "skill": "melvorD:Agility",
-                                    "value": 15
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "decreasedAgilityPillarCost",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedGPFromAgilityPerActiveObstacle",
-                                    "value": 25
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedFarmingYield",
-                                    "value": 25
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedGPFromAgility",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "decreasedSkillIntervalPercent",
-                                    "skill": "melvorD:Agility",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "decreasedAgilityPillarCost",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedGPFromAgilityPerActiveObstacle",
-                                    "value": 5
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Throw_Voice",
-                            "name": "Throw_Voice",
-                            "media": "assets/species/Throw_Voice.png",
-                            "baseExperience": 61,
-                            "maxGP": 428,
-                            "productId": "namespace_profile:Throw_Voice",
-                            "level": 70,
-                            "skills": [
-                                "https://cdn.melvor.net/core/v018/assets/media/monsters/large_crab.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedAccuracyIfCursed",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedLifesteal",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedDamageReduction",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedMaxHitpoints",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedFlatMaxHitpoints",
-                                    "value": 5
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedAccuracyIfCursed",
-                                    "value": 12
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedLifesteal",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedDamageReduction",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedMaxHitpoints",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedFlatMaxHitpoints",
-                                    "value": 1
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Dismay",
-                            "name": "Dismay",
-                            "media": "assets/species/Dismay.png",
-                            "baseExperience": 69,
-                            "maxGP": 469,
-                            "productId": "namespace_profile:Dismay",
-                            "level": 80,
-                            "skills": [
-                                "https://cdn.melvor.net/core/v018/assets/media/monsters/large_crab.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedSummoningCreationCharges",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedPrayerPointsWhenHit",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedAdditionalRunecraftCountRunes",
-                                    "value": 6
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedFlatPrayerCostReduction",
-                                    "value": 3
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedChanceForElementalRune",
-                                    "value": 50
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedSummoningCreationCharges",
-                                    "value": 20
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedPrayerPointsWhenHit",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedAdditionalRunecraftCountRunes",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedFlatPrayerCostReduction",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedChanceForElementalRune",
-                                    "value": 5
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Battle_Fury",
-                            "name": "Battle Fury",
-                            "media": "assets/species/Battle_Fury.png",
-                            "baseExperience": 81,
-                            "maxGP": 510,
-                            "productId": "namespace_profile:Battle_Fury",
-                            "level": 90,
-                            "skills": [
-                                "https://cdn.melvor.net/core/v018/assets/media/monsters/skeleton.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedGPGlobal",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedDamageToSlayerTasks",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedSlayerCoins",
-                                    "value": 40
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedSlayerAreaEffectNegationFlat",
-                                    "value": 25
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedSkillXP",
-                                    "skill": "melvorD:Slayer",
-                                    "value": 20
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedGPGlobal",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedDamageToSlayerTasks",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedSlayerCoins",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedSlayerAreaEffectNegationFlat",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedSkillXP",
-                                    "skill": "melvorD:Slayer",
-                                    "value": 5
-                                }
-                            ]
                         }
                     ],
                     "classes": [
                         {
                             "id": "Knight",
                             "name": "Knight",
-                            "media": "https://ottotsuma.github.io/images/portraits/human%20female%20barbarian%202.jpg",
+                            "media": "https://ottotsuma.github.io/images/people/knights.jpg",
                             "baseExperience": 5,
                             "maxGP": 141,
-                            "productId": "namespace_profile:Human",
+                            "productId": "namespace_profile:Knight",
                             "level": 1,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -901,6 +294,11 @@
                                     "level": 99,
                                     "key": "increasedGlobalAccuracyAgainstMythicalCreatures",
                                     "value": 25
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "gainSlayerCoinsBasedOnEnemyCombatLevelMelee",
+                                    "value": 1
                                 }
                             ],
                             "hardcoreModifiers": [

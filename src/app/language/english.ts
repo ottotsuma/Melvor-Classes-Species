@@ -1,6 +1,6 @@
 export const en = {
     Single_Species: 'Single_Species',
-    Shout_Title: 'Shout: ${name}',
+    Shout_Title: 'Equipped: ${name}',
     Shout_Not_Currently_Mastered: 'Shout: Not currently mastered',
     Manage_Shout_Single_Species: 'Manage Shout Single_Species:',
     Upgraded: 'Upgraded',
@@ -95,7 +95,7 @@ export const en = {
     MASTERY_BONUS_Profile_5: 'Ability to unlock the fourth Master modifier.',
     MASTERY_CHECKPOINT_Profile_0: '+3% increased Profile Skill XP',
     MASTERY_CHECKPOINT_Profile_1: '+5% increased Profile Mastery XP',
-    MASTERY_CHECKPOINT_Profile_2: 'Decreased Profile Interval by 0.25s',
+    MASTERY_CHECKPOINT_Profile_2: '???',
     MASTERY_CHECKPOINT_Profile_3: '-5% Shout Equip Cost',
     POTION_NAME_Generous_Gratuity_Potion: 'Generous Gratuity Potion',
     COMBAT_AREA_NAME_The_Circus: 'The Circus',

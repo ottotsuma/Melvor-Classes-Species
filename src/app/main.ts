@@ -67,7 +67,7 @@ export class App {
             return;
         }
         await this.context.gameData.addPackage('data.json');
-        await this.context.gameData.addPackage('data-cmim.json');
+        // await this.context.gameData.addPackage('data-cmim.json');
         const DragonList: any[] = [
             "melvorD:PratTheProtectorOfSecrets",
             "melvorD:GreenDragon",
@@ -175,10 +175,23 @@ export class App {
                     // if (game.activeAction._localID === "Combat") {
                         const combatLevel = game.combat.enemy.monster.combatLevel
                         // const profile = game.skills.getObjectByID('namespace_profile:Profile') as Profile;
+                        // game.profile.isPoolTierActive(0) // 3% skill exp
+                        // game.profile.isPoolTierActive(1) // 5% mastery exp
+                        // game.profile.isPoolTierActive(2) // ??
+                        // game.profile.isPoolTierActive(3) // 5% shout cost
+
                         const single_species = game.profile.shouts.get(1)
                         const exp = Math.floor((combatLevel/single_species.single_species.baseExperience) + single_species.single_species.baseExperience)
-                        game.profile.addXP(exp)
-                        game.profile.addMasteryXP(single_species.single_species, exp)
+                        let skillExp = exp
+                        let masteryExp = exp
+                        if(game.profile.isPoolTierActive(1)) {
+                            skillExp = skillExp + ((skillExp/100)*3)
+                        }
+                        if(game.profile.isPoolTierActive(1)) {
+                            masteryExp = masteryExp + ((masteryExp/100)*5)
+                        }
+                        game.profile.addXP(skillExp)
+                        game.profile.addMasteryXP(single_species.single_species, masteryExp)
                     // }
                 // }            
             } catch (error) {
