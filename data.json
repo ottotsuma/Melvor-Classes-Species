@@ -7,16 +7,13 @@
                 "id": "Profile",
                 "media": "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
                 "containerID": "profile-container",
-                "headerBgClass": "bg-profile",
+                "headerBgClass": "bg-combat",
                 "hasGameGuide": false,
                 "canBeDefault": true,
                 "skills": [
                     "namespace_profile:Profile"
                 ],
-                "sidebarItem": {
-                    "categoryID": "Passive",
-                    "icon": "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg"
-                  }
+                "skillSidebarCategoryID": "Passive"
             }
         ],
         "items": [
@@ -45,7 +42,7 @@
                     }
                 ],
                 "modifiers": {
-                    "decreasedProfileGP": 5                    
+                    "decreasedProfileGP": 5                
                 },
                 "consumesOn": [
                     {
@@ -882,28 +879,28 @@
                             "standardModifiers": [
                                 {
                                     "level": 1,
-                                    "key": "decreasedMagicMaxHit",
-                                    "value": 10
+                                    "key": "decreasedMagicAccuracyBonus",
+                                    "value": 40
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedGPFromSales",
-                                    "value": 10
+                                    "key": "increasedFlatMeleeDefenceBonus",
+                                    "value": 500
                                 },
                                 {
                                     "level": 60,
-                                    "key": "increasedDamageAgainstAnimals",
-                                    "value": 10
+                                    "key": "increasedFlatRangedDefenceBonus",
+                                    "value": 500
                                 },
                                 {
                                     "level": 80,
                                     "key": "increasedDamageAgainstHumans",
-                                    "value": 10
+                                    "value": 25
                                 },
                                 {
                                     "level": 99,
                                     "key": "increasedGlobalAccuracyAgainstMythicalCreatures",
-                                    "value": 10
+                                    "value": 25
                                 }
                             ],
                             "hardcoreModifiers": [

@@ -105,8 +105,7 @@
                             "value": 5
                         }
                     ],
-                    "decreasedProfileGP": 5,
-                    "increasedMagicMaxHit": 10
+                    "decreasedProfileGP": 5
                 },
                 "consumesOn": [
                     {

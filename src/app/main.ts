@@ -2,9 +2,6 @@ import { ProfileActionEventMatcher, ProfileActionEventMatcherOptions } from './p
 import { Profile } from './profile/profile';
 import { UserInterface } from './profile/user-interface';
 import { ProfileModifiers } from './profile/modifiers';
-// import { ProfileTownship } from './profile/township/township';
-// import { ProfileAgility } from './agility/agility';
-// import { ProfileAstrology } from './astrology/astrology';
 import { TinyPassiveIconsCompatibility } from './compatibility/tiny-passive-icons';
 import { ProfileSkillData } from './profile/profile.types';
 import { languages } from './language';
@@ -160,9 +157,6 @@ export class App {
         this.patchGamemodes(this.game.profile);
         this.patchUnlock(this.game.profile);
         this.initCompatibility(this.game.profile);
-        // this.initAgility(this.game.profile);
-        // this.initAstrology(this.game.profile);
-        // this.initTownship();
 
         this.game.profile.userInterface = this.initInterface(this.game.profile);
         this.game.profile.initSettings(settings);
@@ -243,24 +237,6 @@ export class App {
 
         modifiers.registerModifiers();
     }
-
-    // private initTownship() {
-    //     const township = new ProfileTownship(this.context, this.game);
-
-    //     township.register();
-    // }
-
-    // private initAgility(profile: Profile) {
-    //     const agility = new ProfileAgility(this.game, profile);
-
-    //     agility.register();
-    // }
-
-    // private initAstrology(profile: Profile) {
-    //     const astrology = new ProfileAstrology(this.game, profile);
-
-    //     astrology.register();
-    // }
 
     private initCompatibility(profile: Profile) {
         const tinyPassiveIcons = new TinyPassiveIconsCompatibility(this.context, profile);
