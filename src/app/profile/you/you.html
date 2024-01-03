@@ -22,7 +22,9 @@
                             </span>
                             )
                         </span>
-                        <span v-html="modifier.description"></span>
+                        <span v-if="modifier.level === 0" style="color: yellow;" v-html="modifier.description"></span>
+                        <span v-else v-html="modifier.description"></span>
+
                     </div>
                 </div>
 

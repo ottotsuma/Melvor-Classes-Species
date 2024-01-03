@@ -130,8 +130,11 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                         ${modifier.level})
                     </span>`;
                 }
-
-                html += `<span>${modifier.description}</span></small><br />`;
+                if(modifier.level === 0) {
+                    html += `<span style="color: yellow;">${modifier.description}</span></small><br />`;
+                } else {
+                    html += `<span>${modifier.description}</span></small><br />`;
+                }
             }
 
             html += `<h5 class="font-w600 text-danger font-size-sm mt-3 mb-1">${getLangString(
@@ -176,8 +179,10 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
                         if (confirmYou) {
                             confirmYou.onclick = () => {
-                                this.game.gp.remove(MasterCost);
-
+                                if(MasterCost > 0) {
+                                    this.game.gp.remove(MasterCost);
+                                }
+                                
                                 if (you) {
                                     this.yous.remove(you.single_species);
                                 }
@@ -294,7 +299,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         this.sortMilestones();
 
         for (const action of this.actions.allObjects) {
-            this.masteriesUnlocked.set(action, [true, false, false, false]);
+            this.masteriesUnlocked.set(action, [true, true, false, false, false]);
         }
 
         const capesToExclude = ['melvorF:Max_Skillcape'];

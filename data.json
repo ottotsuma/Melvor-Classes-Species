@@ -8,7 +8,7 @@
                 "media": "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
                 "containerID": "profile-container",
                 "headerBgClass": "bg-combat",
-                "hasGameGuide": false,
+                "hasGameGuide": true,
                 "canBeDefault": true,
                 "skills": [
                     "namespace_profile:Profile"
@@ -190,7 +190,7 @@
                             ],
                             "standardModifiers": [
                                 {
-                                    "level": 1,
+                                    "level": 0,
                                     "key": "humanTraitApplied",
                                     "value": 10
                                 },
@@ -200,27 +200,27 @@
                                     "value": 10
                                 },          
                                 {
-                                    "level": 40,
+                                    "level": 20,
                                     "key": "increasedDamageAgainstAnimals",
                                     "value": 10
                                 },
                                 {
-                                    "level": 60,
+                                    "level": 40,
                                     "key": "increasedDamageAgainstHumans",
                                     "value": 10
                                 },
                                 {
-                                    "level": 80,
+                                    "level": 60,
                                     "key": "increasedGPFromSales",
                                     "value": 10
                                 },
                                 {
-                                    "level": 99,
+                                    "level": 80,
                                     "key": "increasedChanceForGoldFromCrafting30",
                                     "value": 10
                                 },
                                 {
-                                    "level": 120,
+                                    "level": 99,
                                     "key": "decreasedGlobalSkillIntervalPercent",
                                     "value": 5
                                 }
@@ -270,32 +270,37 @@
                             ],
                             "standardModifiers": [
                                 {
+                                    "level": 0,
+                                    "key": "elfTraitApplied",
+                                    "value": 10
+                                },
+                                {
                                     "level": 1,
                                     "key": "decreasedMeleeMaxHit",
                                     "value": 10
                                 },
                                 {
-                                    "level": 40,
+                                    "level": 20,
                                     "key": "increasedFarmingYield",
                                     "value": 10
                                 },
                                 {
-                                    "level": 60,
+                                    "level": 40,
                                     "key": "increasedRangedAccuracyBonus",
                                     "value": 10
                                 },
                                 {
-                                    "level": 80,
+                                    "level": 60,
                                     "key": "increasedRangedCritChance",
                                     "value": 10
                                 },
                                 {
-                                    "level": 99,
+                                    "level": 80,
                                     "key": "increasedDamageAgainstMythicalCreatures",
                                     "value": 10
                                 },
                                 {
-                                    "level": 120,
+                                    "level": 99,
                                     "key": "increasedDamageAgainstElementals",
                                     "value": 5
                                 }
@@ -345,32 +350,37 @@
                             ],
                             "standardModifiers": [
                                 {
+                                    "level": 0,
+                                    "key": "knightTraitApplied",
+                                    "value": 10
+                                },
+                                {
                                     "level": 1,
                                     "key": "decreasedMagicAccuracyBonus",
                                     "value": 40
                                 },
                                 {
-                                    "level": 40,
+                                    "level": 20,
                                     "key": "increasedFlatMeleeDefenceBonus",
                                     "value": 500
                                 },
                                 {
-                                    "level": 60,
+                                    "level": 40,
                                     "key": "increasedFlatRangedDefenceBonus",
                                     "value": 500
                                 },
                                 {
-                                    "level": 80,
+                                    "level": 60,
                                     "key": "increasedDamageAgainstHumans",
                                     "value": 25
                                 },
                                 {
-                                    "level": 99,
+                                    "level": 80,
                                     "key": "increasedGlobalAccuracyAgainstMythicalCreatures",
                                     "value": 25
                                 },
                                 {
-                                    "level": 120,
+                                    "level": 99,
                                     "key": "gainSlayerCoinsBasedOnEnemyCombatLevelMelee",
                                     "value": 1
                                 }
@@ -418,32 +428,37 @@
                             ],
                             "standardModifiers": [
                                 {
+                                    "level": 0,
+                                    "key": "wizardTraitApplied",
+                                    "value": 10
+                                },
+                                {
                                     "level": 1,
                                     "key": "decreasedMeleeMaxHit",
                                     "value": 40
                                 },
                                 {
-                                    "level": 40,
+                                    "level": 20,
                                     "key": "increasedMagicAccuracyBonus",
                                     "value": 10
                                 },
                                 {
-                                    "level": 60,
+                                    "level": 40,
                                     "key": "increasedMagicMaxHitBonusAgainstMelee",
                                     "value": 10
                                 },
                                 {
-                                    "level": 80,
+                                    "level": 60,
                                     "key": "increasedRunePreservation",
                                     "value": 5
                                 },
                                 {
-                                    "level": 99,
+                                    "level": 80,
                                     "key": "increasedMinHitBasedOnMaxHitAgainstUndead",
                                     "value": 10
                                 },
                                 {
-                                    "level": 120,
+                                    "level": 99,
                                     "key": "allowNonMagicCurses",
                                     "value": 1
                                 }

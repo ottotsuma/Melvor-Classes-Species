@@ -54,6 +54,7 @@ export class App {
         await this.context.loadTemplates('profile/you/you.html');
         await this.context.loadTemplates('profile/mastery/mastery.html');
         await this.context.loadTemplates('profile/locked/locked.html');
+        await this.context.loadTemplates('profile/guide.html');
 
         this.initLanguage();
         this.initTranslation();
@@ -63,11 +64,10 @@ export class App {
 
         this.game.profile = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_profile'), Profile);
         const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
-        if(!kcm) {
+        if (!kcm) {
             return;
         }
-        await this.context.gameData.addPackage('data.json');
-        // await this.context.gameData.addPackage('data-cmim.json');
+
         const DragonList: any[] = [
             "melvorD:PratTheProtectorOfSecrets",
             "melvorD:GreenDragon",
@@ -82,13 +82,33 @@ export class App {
             "melvorF:MalcsTheLeaderOfDragons",
             "melvorF:GreaterSkeletalDragon",
         ]
-
         if (cloudManager.hasTotHEntitlement) {
-            // await this.context.gameData.addPackage('data-toth.json');
-
             DragonList.push(
                 "melvorTotH:Kongamato", "melvorTotH:GretYun", "melvorTotH:RaZu",
             )
+        }
+        const cmim = mod.api.customModifiersInMelvor;
+        // Species
+        cmim.addMonsters("Dragon", DragonList)
+        cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", [], true);
+        cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", [], true);
+        cmim.forceBaseModTypeActive("Dragon");
+        cmim.forceBaseModTypeActive("Undead");
+        cmim.forceBaseModTypeActive("Human");
+        cmim.forceBaseModTypeActive("Animal");
+        cmim.forceBaseModTypeActive("Demon");
+        cmim.forceBaseModTypeActive("Elemental");
+        cmim.forceBaseModTypeActive("MythicalCreature");
+        cmim.forceBaseModTypeActive("SeaCreature");
+
+        // Classes
+        cmim.registerOrUpdateType("Knight", "Knights", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", [], true);
+        cmim.registerOrUpdateType("Wizard", "Wizards", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", [], true);
+
+        await this.context.gameData.addPackage('data.json');
+        // await this.context.gameData.addPackage('data-cmim.json');
+        if (cloudManager.hasTotHEntitlement) {
+            // await this.context.gameData.addPackage('data-toth.json');
 
             // await this.context.gameData
             //     .buildPackage(builder => {
@@ -106,7 +126,6 @@ export class App {
             //     })
             //     .add();
         }
-
         if (cloudManager.hasAoDEntitlement) {
             await this.context.gameData.addPackage('data-aod.json');
         }
@@ -133,26 +152,15 @@ export class App {
             PASSIVES_NAME_EventPassive11: "Unusual Passive",
             PASSIVES_NAME_EventPassive12: "Unusual Passive",
             MODIFIER_DATA_increasedDamageAgainstElves: 'Damage to Elves'
-          }
-          for (const [key, value] of Object.entries(en_data)) {
+        }
+        for (const [key, value] of Object.entries(en_data)) {
             // @ts-ignore
             loadedLangJson[key] = value;
-          }
+        }
 
-        this.context.onCharacterLoaded(async () => {
-                const cmim = mod.api.customModifiersInMelvor;
-                cmim.addMonsters("Dragon", DragonList)
-                cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", [], true);
-                cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", [], true);
-                cmim.forceBaseModTypeActive("Dragon");
-                cmim.forceBaseModTypeActive("Undead");
-                cmim.forceBaseModTypeActive("Human");
-                cmim.forceBaseModTypeActive("Animal");
-                cmim.forceBaseModTypeActive("Demon");
-                cmim.forceBaseModTypeActive("Elemental");
-                cmim.forceBaseModTypeActive("MythicalCreature");
-                cmim.forceBaseModTypeActive("SeaCreature");
-        })
+        // this.context.onCharacterLoaded(async () => {
+
+        // })
 
         this.patchGamemodes(this.game.profile);
         this.patchUnlock(this.game.profile);
@@ -169,57 +177,62 @@ export class App {
             }
         });
         // @ts-ignore
-        this.context.patch(CombatManager, "onEnemyDeath").after(()=> {
+        this.context.patch(CombatManager, "onEnemyDeath").after(() => {
             try {
                 // if (game && game.activeAction && game.activeAction._localID) {
-                    // if (game.activeAction._localID === "Combat") {
-                        const combatLevel = game.combat.enemy.monster.combatLevel
-                        // const profile = game.skills.getObjectByID('namespace_profile:Profile') as Profile;
-                        // game.profile.isPoolTierActive(0) // 3% skill exp
-                        // game.profile.isPoolTierActive(1) // 5% mastery exp
-                        // game.profile.isPoolTierActive(2) // All modifier values +1
-                        // game.profile.isPoolTierActive(3) // 5% you cost
+                // if (game.activeAction._localID === "Combat") {
+                const combatLevel = game.combat.enemy.monster.combatLevel
+                // const profile = game.skills.getObjectByID('namespace_profile:Profile') as Profile;
+                // game.profile.isPoolTierActive(0) // 3% skill exp
+                // game.profile.isPoolTierActive(1) // 5% mastery exp
+                // game.profile.isPoolTierActive(2) // All modifier values +1
+                // game.profile.isPoolTierActive(3) // 5% you cost
 
-                        const single_species = game.profile.yous.get(1)
-                        const single_class = game.profile.yous.get(2)
+                const single_species = game.profile.yous.get(1)
+                const single_class = game.profile.yous.get(2)
+                let exp1 = 0
+                if(single_species) {
+                    exp1 = Math.floor((combatLevel / single_species.single_species.baseExperience) + single_species.single_species.baseExperience) || 0
+                }
+                let exp2 = 0
+                if(single_class) {
+                    exp2 = Math.floor((combatLevel / single_class.single_species.baseExperience) + single_class.single_species.baseExperience) || 0
+                }
 
-                        const exp1 = Math.floor((combatLevel/single_species.single_species.baseExperience) + single_species.single_species.baseExperience)
+                let skillExp1 = exp1 || 0
+                let masteryExp1 = exp1 || 0
 
-                        const exp2 = Math.floor((combatLevel/single_class.single_species.baseExperience) + single_class.single_species.baseExperience)
+                let skillExp2 = exp2 || 0
+                let masteryExp2 = exp2 || 0
+                if (game.profile.isPoolTierActive(1)) {
+                    skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
+                    skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
+                }
+                if (game.profile.isPoolTierActive(1)) {
+                    masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
+                    masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
+                }
 
-                        let skillExp1 = exp1
-                        let masteryExp1 = exp1
+                const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
+                // const globalEXPmodperSkill = game.modifiers.decreasedGlobalSkillXPPerLevel - game.modifiers.increasedGlobalSkillXPPerLevel
+                // const flatEXPmod = game.modifiers.increasedFlatGlobalSkillXP - game.modifiers.decreasedFlatGlobalSkillXP
+                // const flatEXPmodPerSkill = game.modifiers.decreasedFlatGlobalSkillXPPerSkillLevel - game.modifiers.increasedFlatGlobalSkillXPPerSkillLevel
+                const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
+                game.profile.addXP(totalExp)
 
-                        let skillExp2 = exp2
-                        let masteryExp2 = exp2
-                        if(game.profile.isPoolTierActive(1)) {
-                            skillExp1 = skillExp1 + ((skillExp1/100)*3) 
-                            skillExp2 = skillExp2 + ((skillExp2/100)*3)
-                        }
-                        if(game.profile.isPoolTierActive(1)) {                           
-                            masteryExp1 = masteryExp1 + ((masteryExp1/100)*5)
-                            masteryExp2 = masteryExp2 + ((masteryExp2/100)*5)
-                        }
+                const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
 
-                        const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP
-                        // const globalEXPmodperSkill = game.modifiers.decreasedGlobalSkillXPPerLevel - game.modifiers.increasedGlobalSkillXPPerLevel
-                        // const flatEXPmod = game.modifiers.increasedFlatGlobalSkillXP - game.modifiers.decreasedFlatGlobalSkillXP
-                        // const flatEXPmodPerSkill = game.modifiers.decreasedFlatGlobalSkillXPPerSkillLevel - game.modifiers.increasedFlatGlobalSkillXPPerSkillLevel
-                        const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2)/100) * globalEXPmod)
-                        game.profile.addXP(totalExp)
+                const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
+                const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
 
-                        const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP
+                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
 
-                        const totalMasteryExp1 = masteryExp1 + (((skillExp1 )/100) * globalMasteryEXPmod)
-                        const totalMasteryExp2 = masteryExp2 + (((skillExp2)/100) * globalMasteryEXPmod)
-
-                        game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                        game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-    
             } catch (error) {
-                console.log('addXP', error) 
+                console.log('addXP', error)
             }
-          });
+        });
     }
 
     private patchGamemodes(profile: Profile) {

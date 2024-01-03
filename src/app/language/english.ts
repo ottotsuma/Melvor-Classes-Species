@@ -17,7 +17,7 @@ export const en = {
     You_Have_Quantity: 'You have ${quantity}',
     Train: 'Study',
     Mastery: 'Mastery',
-    Mastered: 'Equiped',
+    Mastered: 'Equipped',
     Equip: 'Equip',
     Locked: 'Locked',
     Level: 'Level ${level}',
@@ -53,8 +53,6 @@ export const en = {
     ITEM_NAME_Summoning_Familiar_You: 'You',
     ITEM_NAME_Profile_Skillcape: 'Profile Skillcape',
     ITEM_NAME_Superior_Profile_Skillcape: 'Superior Profile Skillcape',
-    ITEM_NAME_Dragon_Soul: 'Dragon Soul',
-    ITEM_DESCRIPTION_Dragon_Soul: 'Used to upgrade mastered you species. Unlocks a 5th modifier.',
     ITEM_NAME_Yous_Hat: 'Yous Hat',
     ITEM_DESCRIPTION_Yous_Hat:
         '+2% Profile Skill XP<br><span class="text-warning">With all four Yous Outfit equipped: +8% Profile Mastery XP</span>',
@@ -115,6 +113,7 @@ export const en = {
     Settings_Base_You_Equip_Cost_3: 'Base you Master cost with 3 modifiers unlocked',
     Settings_Base_You_Equip_Cost_4: 'Base you Master cost with 4 modifiers unlocked',
     Settings_Base_You_Equip_Cost_5: 'Base you Master cost with 5 modifiers unlocked',
+    Settings_Base_You_Equip_Cost_6: 'Base you Master cost with 6 modifiers unlocked',
     Settings_Must_Be_Larger_Then: 'Value must be larger then 99',
     Settings_Must_Be_Smaller_Then: 'Value must be smaller then 1,000,000,000,000',
     MODIFIER_DATA_increasedDamageAgainstElves: 'Damage to Elves'

@@ -56,26 +56,34 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
             this.modifier = modifier;
 
             if (!this.modifier) {
-                this.unlockGPCost = 100000;
+                this.unlockGPCost = 10000;
                 return;
             }
 
             switch (this.modifier.level) {
-                case 40:
+                case 20:
                 default:
+                    this.unlockGPCost = 10000;
+                    break;
+                case 40:
                     this.unlockGPCost = 100000;
                     break;
-                case 75:
+                case 60:
                     this.unlockGPCost = 1000000;
                     break;
-                case 99:
+                case 80:
                     this.unlockGPCost = 10000000;
+                    break;
+                case 99:
+                    this.unlockGPCost = 100000000;
                     break;
             }
         },
         unlock: function (modifier: YouModifier) {
-            game.bank.removeItemQuantityByID('namespace_profile:Dragon_Soul', 1, true);
-            game.gp.remove(this.unlockGPCost);
+            game.bank.removeItemQuantityByID('melvorF:Stardust', 1, true);
+            if (this.unlockGPCost > 0) {
+                game.gp.remove(this.unlockGPCost);
+            }
 
             const single_speciesRef = profile.actions.find(action => action.id === single_species.id);
             const index = single_speciesRef
@@ -91,7 +99,7 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
             this.completeUpgrade();
         },
         updateCosts: function () {
-            const item = game.items.getObjectByID(`namespace_profile:Dragon_Soul`);
+            const item = game.items.getObjectByID(`melvorF:Stardust`);
 
             this.essenceOfProfile = {
                 item,

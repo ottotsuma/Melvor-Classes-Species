@@ -11,7 +11,7 @@ export class ProfileManager {
     }
 
     public get essenceOfProfileIcon() {
-        return this.game.items.getObjectByID('namespace_profile:Dragon_Soul')?.media;
+        return this.game.items.getObjectByID('melvorF:Stardust')?.media;
     }
 
     constructor(private readonly profile: Profile, private readonly game: Game) {}
@@ -74,10 +74,11 @@ export class ProfileManager {
     public calculateEquipCost(single_species: Single_Species) {
         const MasterCostMap = [
             this.profile.settings.youEquipCostOne || 0,
-            this.profile.settings.youEquipCostTwo || 10000,
-            this.profile.settings.youEquipCostThree || 100000,
-            this.profile.settings.youEquipCostFour || 10000000,
-            this.profile.settings.youEquipCostFive || 10000000
+            this.profile.settings.youEquipCostTwo || 0,
+            this.profile.settings.youEquipCostThree || 10000,
+            this.profile.settings.youEquipCostFour || 100000,
+            this.profile.settings.youEquipCostFive || 1000000,
+            this.profile.settings.youEquipCostSix || 10000000
         ];
         const single_speciesRef = this.profile.actions.find(action => action.id === single_species.id);
         const unlocked = this.profile.masteriesUnlocked.get(single_speciesRef).filter(isUnlocked => isUnlocked).length;
