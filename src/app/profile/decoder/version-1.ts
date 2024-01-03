@@ -1,5 +1,5 @@
 import { Profile } from '../profile';
-import { MasteredShout } from '../profile.types';
+import { MasteredYou } from '../profile.types';
 import { DecodeVersion } from './version.base';
 
 /**
@@ -36,16 +36,16 @@ export class Version1 implements DecodeVersion {
             if (typeof single_species === 'string' || single_species.level > this.profile.level) {
                 // this.profile.shouldResetAction = true;
             } else {
-                const masteredShout: MasteredShout = {
+                const masteredYou: MasteredYou = {
                     single_species,
                     slot: 1,
                     socket: undefined,
                     utility: undefined
                 };
 
-                this.profile.shouts.set(single_species, masteredShout);
+                this.profile.yous.set(single_species, masteredYou);
 
-                this.profile.userInterface.shout1.setShout(masteredShout);
+                this.profile.userInterface.you1.setYou(masteredYou);
             }
         }
 
@@ -55,16 +55,16 @@ export class Version1 implements DecodeVersion {
             if (typeof single_species === 'string' || single_species.level > this.profile.level) {
                 // this.profile.shouldResetAction = true;
             } else {
-                const masteredShout: MasteredShout = {
+                const masteredYou: MasteredYou = {
                     single_species,
                     slot: 2,
                     socket: undefined,
                     utility: undefined
                 };
 
-                this.profile.shouts.set(single_species, masteredShout);
+                this.profile.yous.set(single_species, masteredYou);
 
-                this.profile.userInterface.shout2.setShout(masteredShout);
+                this.profile.userInterface.you2.setYou(masteredYou);
             }
         }
 
@@ -74,14 +74,14 @@ export class Version1 implements DecodeVersion {
             if (typeof single_species === 'string' || single_species.level > this.profile.level) {
                 // this.profile.shouldResetAction = true;
             } else {
-                const masteredShout: MasteredShout = {
+                const masteredYou: MasteredYou = {
                     single_species,
                     slot: 2,
                     socket: undefined,
                     utility: undefined
                 };
 
-                this.profile.shouts.set(single_species, masteredShout);
+                this.profile.yous.set(single_species, masteredYou);
             }
         }
 

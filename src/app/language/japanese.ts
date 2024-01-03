@@ -1,8 +1,8 @@
 export const ja = {
     Single_Species: '楽器',
-    Shout_Title: 'バード：${name}',
-    Shout_Not_Currently_Mastered: 'バード：現在雇われていません',
-    Manage_Shout_Single_Species: 'バード楽器の管理：',
+    You_Title: 'バード：${name}',
+    You_Not_Currently_Mastered: 'バード：現在雇われていません',
+    Manage_You_Single_Species: 'バード楽器の管理：',
     Upgraded: 'アップグレード済み',
     Not_Upgraded: 'アップグレードされていません',
     Upgrade: 'アップグレード',
@@ -27,17 +27,17 @@ export const ja = {
     You_Do_Not_Have_Enough_Materials_Mastery: 'このマスタリーをロック解除するための材料が不足しています。',
     The_Cost_Of_Hiring: 'このバードを雇うコストは${cost}GPに増加します。',
     Back: '戻る',
-    Would_You_Like_To_Equip_This_Shout: 'このバードを雇いますか：',
-    You_Cannot_Afford_To_Equip_This_Shout: 'このバードを雇う余裕がありません：',
-    This_Will_Replace_The_Mastered_Shout:
+    Would_You_Like_To_Equip_This_You: 'このバードを雇いますか：',
+    You_Cannot_Afford_To_Equip_This_You: 'このバードを雇う余裕がありません：',
+    This_Will_Replace_The_Mastered_You:
         'これにより選択されたバードが置き換えられ、楽器のアップグレード、宝石、ユーティリティがすべて破棄されます。',
     Replace: '${name}を置き換える',
-    Shout_Equip_Cost_Positive: '+${value}% バードの雇用コスト',
-    Shout_Equip_Cost_Negative: '-${value}% バードの雇用コスト',
+    You_Equip_Cost_Positive: '+${value}% バードの雇用コスト',
+    You_Equip_Cost_Negative: '-${value}% バードの雇用コスト',
     Profile_GP_Positive: '+${value}% 音楽GP',
     Profile_GP_Negative: '-${value}% 音楽GP',
-    Shout_Equip_Limit_Positive: '+${value} バードの雇用制限',
-    Shout_Equip_Limit_Negative: '-${value} バードの雇用制限',
+    You_Equip_Limit_Positive: '+${value} バードの雇用制限',
+    You_Equip_Limit_Negative: '-${value} バードの雇用制限',
     Sheet_Profile_Drop_Chance_Positive: '+${value}% 楽譜のドロップ率',
     Sheet_Profile_Drop_Chance_Negative: '-${value}% 楽譜のドロップ率',
     Additional_Reward_Roll_Positive: '+${value} 音楽のトレーニング中に追加の報酬ロール',
@@ -60,22 +60,22 @@ export const ja = {
     Single_Species_Harp: 'ハープ',
     Single_Species_Tambourine: 'タンバリン',
     Single_Species_Trumpet: 'トランペット',
-    PET_NAME_Dragon: 'ミューズ',
-    ITEM_NAME_Summoning_Familiar_Shout: 'バード',
+    PET_NAME_Bob: 'ミューズ',
+    ITEM_NAME_Summoning_Familiar_You: 'バード',
     ITEM_NAME_Profile_Skillcape: '音楽スキルケープ',
     ITEM_NAME_Superior_Profile_Skillcape: '上位音楽スキルケープ',
     
-    ITEM_NAME_Shouts_Hat: 'バードの帽子',
-    ITEM_DESCRIPTION_Shouts_Hat:
+    ITEM_NAME_Yous_Hat: 'バードの帽子',
+    ITEM_DESCRIPTION_Yous_Hat:
         '+2% 音楽スキルXP<br><span class="text-warning">バードの衣装4点装備時：+8% 音楽マスタリーXP</span>',
-    ITEM_NAME_Shouts_Body: 'バードのボディ',
-    ITEM_DESCRIPTION_Shouts_Body:
+    ITEM_NAME_Yous_Body: 'バードのボディ',
+    ITEM_DESCRIPTION_Yous_Body:
         '+2% 音楽スキルXP<br><span class="text-warning">バードの衣装4点装備時：+8% 音楽マスタリーXP</span>',
-    ITEM_NAME_Shouts_Leggings: 'バードのレギンス',
-    ITEM_DESCRIPTION_Shouts_Leggings:
+    ITEM_NAME_Yous_Leggings: 'バードのレギンス',
+    ITEM_DESCRIPTION_Yous_Leggings:
         '+2% 音楽スキルXP<br><span class="text-warning">バードの衣装4点装備時：+8% 音楽マスタリーXP</span>',
-    ITEM_NAME_Shouts_Boots: 'バードのブーツ',
-    ITEM_DESCRIPTION_Shouts_Boots:
+    ITEM_NAME_Yous_Boots: 'バードのブーツ',
+    ITEM_DESCRIPTION_Yous_Boots:
         '+2% 音楽スキルXP<br><span class="text-warning">バードの衣装4点装備時：+8% 音楽マスタリーXP</span>',
     ITEM_NAME_Profile_Scroll_Of_XP: '音楽XPの巻物',
     ITEM_NAME_Generous_Gratuity_Potion_I: '気前の良い謝礼ポーションI',
@@ -114,16 +114,16 @@ export const ja = {
     SPECIAL_ATTACK_DESCRIPTION_Face_Melting_Guitar_Solo:
         '時間経過で${duration}sにわたり${attackDamageMaxValue0}x${hitCount}ダメージを与える回避不可の攻撃。命中した場合、${onHitEffect0chance}%の確率で${onHitEffect0duration}sにわたりバーンを付与し、現在の体力の${onHitEffect0DamageMaxValue0}%をダメージとして与えます。',
     Profile: '音楽',
-    Settings_Shout_Equip_Cost: 'バード雇用コスト',
+    Settings_You_Equip_Cost: 'バード雇用コスト',
     Settings_Modifiers: '修飾子',
     Settings_Modifier_Scale: '修飾子スケール',
     Settings_Modifier_Standard: '標準',
     Settings_Modifier_Hardcore: 'ハードコア',
-    Settings_Base_Shout_Equip_Cost_1: '1つの修飾子が解除された状態での基本バード雇用コスト',
-    Settings_Base_Shout_Equip_Cost_2: '2つの修飾子が解除された状態での基本バード雇用コスト',
-    Settings_Base_Shout_Equip_Cost_3: '3つの修飾子が解除された状態での基本バード雇用コスト',
-    Settings_Base_Shout_Equip_Cost_4: '4つの修飾子が解除された状態での基本バード雇用コスト',
-    Settings_Base_Shout_Equip_Cost_5: '5つの修飾子が解除された状態での基本バード雇用コスト',
+    Settings_Base_You_Equip_Cost_1: '1つの修飾子が解除された状態での基本バード雇用コスト',
+    Settings_Base_You_Equip_Cost_2: '2つの修飾子が解除された状態での基本バード雇用コスト',
+    Settings_Base_You_Equip_Cost_3: '3つの修飾子が解除された状態での基本バード雇用コスト',
+    Settings_Base_You_Equip_Cost_4: '4つの修飾子が解除された状態での基本バード雇用コスト',
+    Settings_Base_You_Equip_Cost_5: '5つの修飾子が解除された状態での基本バード雇用コスト',
 
     Settings_Must_Be_Larger_Then: '値は99より大きい必要があります',
     Settings_Must_Be_Smaller_Then: '値は1,000,000,000,000より小さくなる必要があります'

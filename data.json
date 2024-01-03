@@ -19,11 +19,11 @@
         "items": [
             {
                 "itemType": "Equipment",
-                "id": "Summoning_Familiar_Shout",
-                "name": "Shout",
+                "id": "Summoning_Familiar_You",
+                "name": "You",
                 "category": "Summoning",
                 "type": "Familiar",
-                "media": "assets/summoning/shout-tablet.png",
+                "media": "assets/summoning/you-tablet.png",
                 "ignoreCompletion": true,
                 "obtainFromItemLog": false,
                 "golbinRaidExclusive": false,
@@ -76,17 +76,12 @@
         ],
         "pets": [
             {
-                "id": "Dragon",
-                "name": "Dragon",
-                "media": "assets/dragon.png",
+                "id": "Bob",
+                "name": "Bob",
+                "media": "assets/bob.png",
                 "ignoreCompletion": false,
                 "modifiers": {
-                    "decreasedSkillInterval": [
-                        {
-                            "skillID": "namespace_profile:Profile",
-                            "value": 150
-                        }
-                    ]
+                    "increasedDamageAgainstAnimals": 1
                 },
                 "activeInRaid": false,
                 "scaleChanceWithMasteryPool": true,
@@ -98,7 +93,7 @@
                 "skillID": "namespace_profile:Profile",
                 "data": {
                     "pets": [
-                        "namespace_profile:Dragon"
+                        "namespace_profile:Bob"
                     ],
                     "rareDrops": [
                         {
@@ -144,7 +139,7 @@
                         ],
                         "upgrades": [],
                         "pets": [
-                            "namespace_profile:Dragon"
+                            "namespace_profile:Bob"
                         ]
                     },
                     "masteryTokenID": "namespace_profile:Mastery_Token_Profile",
@@ -172,7 +167,7 @@
                         {
                             "level": "80",
                             "descriptionID": 4,
-                            "description": "-5% Shout Equip Cost for this single_species only."
+                            "description": "-5% You Equip Cost for this single_species only."
                         },
                         {
                             "level": "99",
@@ -186,19 +181,24 @@
                             "name": "Human",
                             "media": "https://ottotsuma.github.io/images/portraits/human%20female%20barbarian%202.jpg",
                             "baseExperience": 5,
-                            "maxGP": 141,
                             "productId": "namespace_profile:Human",
                             "level": 1,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
-                                "https://cdn2-main.melvor.net/assets/media/main/coins.svg"
+                                "https://cdn2-main.melvor.net/assets/media/main/coins.svg",
+                                "https://cdn2-main.melvor.net/assets/media/skills/crafting/crafting.svg"
                             ],
                             "standardModifiers": [
                                 {
                                     "level": 1,
-                                    "key": "decreasedMagicMaxHit",
+                                    "key": "humanTraitApplied",
                                     "value": 10
                                 },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedMagicMaxHit",
+                                    "value": 10
+                                },          
                                 {
                                     "level": 40,
                                     "key": "increasedDamageAgainstAnimals",
@@ -255,6 +255,81 @@
                                     "value": 1
                                 }
                             ]
+                        },
+                        {
+                            "id": "Elf",
+                            "name": "Elf",
+                            "media": "https://ottotsuma.github.io/images/portraits/elf-male-4.png",
+                            "baseExperience": 12,
+                            "productId": "namespace_profile:Elf",
+                            "level": 10,
+                            "skills": [
+                                "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png",
+                                "https://cdn2-main.melvor.net/assets/media/skills/ranged/ranged.svg",
+                                "https://cdn2-main.melvor.net/assets/media/skills/farming/farming.svg"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedMeleeMaxHit",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedFarmingYield",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedRangedAccuracyBonus",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedRangedCritChance",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedDamageAgainstMythicalCreatures",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "increasedDamageAgainstElementals",
+                                    "value": 5
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
                         }
                     ],
                     "classes": [
@@ -263,7 +338,6 @@
                             "name": "Knight",
                             "media": "https://ottotsuma.github.io/images/people/knights.jpg",
                             "baseExperience": 5,
-                            "maxGP": 141,
                             "productId": "namespace_profile:Knight",
                             "level": 1,
                             "skills": [
@@ -331,6 +405,79 @@
                                     "value": 1
                                 }
                             ]
+                        },
+                        {
+                            "id": "Wizard",
+                            "name": "Wizard",
+                            "media": "https://ottotsuma.github.io/images/portraits/human%20male%20wizard%203.jpg",
+                            "baseExperience": 12,
+                            "productId": "namespace_profile:Wizard",
+                            "level": 10,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedMeleeMaxHit",
+                                    "value": 40
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMagicAccuracyBonus",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMagicMaxHitBonusAgainstMelee",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedRunePreservation",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinHitBasedOnMaxHitAgainstUndead",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 120,
+                                    "key": "allowNonMagicCurses",
+                                    "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
                         }
                     ]
                 }
@@ -340,9 +487,9 @@
                 "data": {
                     "recipes": [
                         {
-                            "id": "Shout",
+                            "id": "You",
                             "level": 90,
-                            "productID": "namespace_profile:Summoning_Familiar_Shout",
+                            "productID": "namespace_profile:Summoning_Familiar_You",
                             "baseQuantity": 25,
                             "baseExperience": 41,
                             "categoryID": "melvorD:TabletsFamiliars",
@@ -362,7 +509,7 @@
                             ],
                             "gpCost": 1000,
                             "scCost": 0,
-                            "markMedia": "assets/summoning/shout-mark.png",
+                            "markMedia": "assets/summoning/you-mark.png",
                             "nonShardItemCosts": [],
                             "tier": 3,
                             "skillIDs": [
@@ -374,7 +521,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:GolbinThief",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedGPOnEnemyHit": 30,
@@ -389,7 +536,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Occultist",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedGlobalEvasion": 10
@@ -406,7 +553,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Wolf",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedLifesteal": 2
@@ -420,7 +567,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Ent",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedChanceAdditionalSkillResource": [
@@ -439,7 +586,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Mole",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedChanceAdditionalSkillResource": [
@@ -458,7 +605,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Octopus",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedChanceAdditionalSkillResource": [
@@ -477,7 +624,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Minotaur",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedMeleeMaxHit": 3,
@@ -492,7 +639,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Centaur",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedRangedMaxHit": 3,
@@ -507,7 +654,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Witch",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedMagicMaxHit": 3,
@@ -522,7 +669,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Pig",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedSkillPreservationChance": [
@@ -541,7 +688,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Crow",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedAdditionalRunecraftCountRunes": 2
@@ -555,7 +702,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Leprechaun",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedGPFromThievingFlat": 50
@@ -570,7 +717,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Cyclops",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedSlayerCoins": 10
@@ -584,7 +731,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Yak",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedDamageReduction": 1
@@ -602,7 +749,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Unicorn",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedHitpointRegeneration": 50
@@ -616,7 +763,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Dragon",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedChanceToApplyBurn": 10
@@ -630,7 +777,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Monkey",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedChanceToDoubleItemsSkill": [
@@ -649,7 +796,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Salamander",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedSkillPreservationChance": [
@@ -668,7 +815,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Bear",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "increasedSkillPreservationChance": [
@@ -687,7 +834,7 @@
                         {
                             "summonIDs": [
                                 "melvorF:Devil",
-                                "namespace_profile:Shout"
+                                "namespace_profile:You"
                             ],
                             "modifiers": {
                                 "decreasedSkillIntervalPercent": [

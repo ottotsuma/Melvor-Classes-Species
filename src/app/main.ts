@@ -51,7 +51,7 @@ export class App {
     public async init() {
         await this.context.loadTemplates('profile/profile.html');
         await this.context.loadTemplates('profile/single_species/single_species.html');
-        await this.context.loadTemplates('profile/shout/shout.html');
+        await this.context.loadTemplates('profile/you/you.html');
         await this.context.loadTemplates('profile/mastery/mastery.html');
         await this.context.loadTemplates('profile/locked/locked.html');
 
@@ -177,23 +177,45 @@ export class App {
                         // const profile = game.skills.getObjectByID('namespace_profile:Profile') as Profile;
                         // game.profile.isPoolTierActive(0) // 3% skill exp
                         // game.profile.isPoolTierActive(1) // 5% mastery exp
-                        // game.profile.isPoolTierActive(2) // ??
-                        // game.profile.isPoolTierActive(3) // 5% shout cost
+                        // game.profile.isPoolTierActive(2) // All modifier values +1
+                        // game.profile.isPoolTierActive(3) // 5% you cost
 
-                        const single_species = game.profile.shouts.get(1)
-                        const exp = Math.floor((combatLevel/single_species.single_species.baseExperience) + single_species.single_species.baseExperience)
-                        let skillExp = exp
-                        let masteryExp = exp
+                        const single_species = game.profile.yous.get(1)
+                        const single_class = game.profile.yous.get(2)
+
+                        const exp1 = Math.floor((combatLevel/single_species.single_species.baseExperience) + single_species.single_species.baseExperience)
+
+                        const exp2 = Math.floor((combatLevel/single_class.single_species.baseExperience) + single_class.single_species.baseExperience)
+
+                        let skillExp1 = exp1
+                        let masteryExp1 = exp1
+
+                        let skillExp2 = exp2
+                        let masteryExp2 = exp2
                         if(game.profile.isPoolTierActive(1)) {
-                            skillExp = skillExp + ((skillExp/100)*3)
+                            skillExp1 = skillExp1 + ((skillExp1/100)*3) 
+                            skillExp2 = skillExp2 + ((skillExp2/100)*3)
                         }
-                        if(game.profile.isPoolTierActive(1)) {
-                            masteryExp = masteryExp + ((masteryExp/100)*5)
+                        if(game.profile.isPoolTierActive(1)) {                           
+                            masteryExp1 = masteryExp1 + ((masteryExp1/100)*5)
+                            masteryExp2 = masteryExp2 + ((masteryExp2/100)*5)
                         }
-                        game.profile.addXP(skillExp)
-                        game.profile.addMasteryXP(single_species.single_species, masteryExp)
-                    // }
-                // }            
+
+                        const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP
+                        // const globalEXPmodperSkill = game.modifiers.decreasedGlobalSkillXPPerLevel - game.modifiers.increasedGlobalSkillXPPerLevel
+                        // const flatEXPmod = game.modifiers.increasedFlatGlobalSkillXP - game.modifiers.decreasedFlatGlobalSkillXP
+                        // const flatEXPmodPerSkill = game.modifiers.decreasedFlatGlobalSkillXPPerSkillLevel - game.modifiers.increasedFlatGlobalSkillXPPerSkillLevel
+                        const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2)/100) * globalEXPmod)
+                        game.profile.addXP(totalExp)
+
+                        const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP
+
+                        const totalMasteryExp1 = masteryExp1 + (((skillExp1 )/100) * globalMasteryEXPmod)
+                        const totalMasteryExp2 = masteryExp2 + (((skillExp2)/100) * globalMasteryEXPmod)
+
+                        game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                        game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+    
             } catch (error) {
                 console.log('addXP', error) 
             }

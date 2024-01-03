@@ -2,9 +2,9 @@ import { ProfileActionEvent } from './event';
 import { UserInterface } from './user-interface';
 import { MasteryComponent } from './mastery/mastery';
 import { ProfileManager } from './manager';
-import { MasteredShout, Single_Species, ProfileSkillData } from './profile.types';
+import { MasteredYou, Single_Species, ProfileSkillData } from './profile.types';
 import { Decoder } from './decoder/decoder';
-import { MasteredShouts } from './mastered-shouts';
+import { MasteredYous } from './mastered-yous';
 import { ChangeType, ProfileSettings } from './settings';
 
 import './profile.scss';
@@ -18,7 +18,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public readonly renderQueue = new ProfileRenderQueue();
 
     public activeSingle_Species: Single_Species;
-    public shouts = new MasteredShouts(this);
+    public yous = new MasteredYous(this);
     public userInterface: UserInterface;
     public settings: ProfileSettings;
     public modifiers = new MappedModifiers();
@@ -65,7 +65,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     }
 
     public Master(single_species: Single_Species) {
-        if (this.shouts.isMastered(single_species)) {
+        if (this.yous.isMastered(single_species)) {
             return;
         }
 
@@ -78,7 +78,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         if (!canAfford) {
             let html = `
             <h5 class="font-w400 text-combat-smoke font-size-sm mb-2">
-                You cannot afford to Master this shout:
+                You cannot afford to Master this you:
                 <img class="single_species-icon align-middle" src="${single_species.media}" />
                 ${single_species.name}
             </h5>
@@ -110,7 +110,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             });
         } else {
             let html = `<h5 class="font-w400 text-combat-smoke font-size-sm mb-2">
-            ${getLangString('Profile_Profile_Would_You_Like_To_Equip_This_Shout')}
+            ${getLangString('Profile_Profile_Would_You_Like_To_Equip_This_You')}
             <img class="single_species-icon align-middle" src="${single_species.media}" />
             ${single_species.name}
             </h5>
@@ -135,26 +135,26 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             }
 
             html += `<h5 class="font-w600 text-danger font-size-sm mt-3 mb-1">${getLangString(
-                'Profile_Profile_This_Will_Replace_The_Mastered_Shout'
+                'Profile_Profile_This_Will_Replace_The_Mastered_You'
             )}</h5>`;
 
-            const shout1 = this.shouts.get(1);
-            const shout2 = this.shouts.get(2);
+            const you1 = this.yous.get(1);
+            const you2 = this.yous.get(2);
 
-            const masteredShouts = [shout1, shout2];
+            const masteredYous = [you1, you2];
 
-            const getText = (shout: MasteredShout) =>
-                shout
-                    ? templateLangString('Profile_Profile_Replace', { name: shout.single_species.name })
+            const getText = (you: MasteredYou) =>
+                you
+                    ? templateLangString('Profile_Profile_Replace', { name: you.single_species.name })
                     : getLangString('Profile_Profile_Equip');
 
             if( this.classIds.includes(single_species._localID)  ) {
-                html += `<div class="shout-Master-footer mt-3"><button type="button" class="shout-2-confirm font-size-xs btn btn-primary m-1" aria-label="" value="shout-2" style="display: inline-block;">${getText(
-                    shout2
+                html += `<div class="you-Master-footer mt-3"><button type="button" class="you-2-confirm font-size-xs btn btn-primary m-1" aria-label="" value="you-2" style="display: inline-block;">${getText(
+                    you2
                 )}</button>`;
             } else {
-                html += `<div class="shout-Master-footer mt-3"><button type="button" class="shout-1-confirm font-size-xs btn btn-primary m-1" aria-label="" value="shout-1" style="display: inline-block;">${getText(
-                    shout1
+                html += `<div class="you-Master-footer mt-3"><button type="button" class="you-1-confirm font-size-xs btn btn-primary m-1" aria-label="" value="you-1" style="display: inline-block;">${getText(
+                    you1
                 )}</button>`;
             }
 
@@ -171,27 +171,27 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                 },
                 icon: 'info',
                 didOpen: popup => {
-                    masteredShouts.forEach((shout, index) => {
-                        const confirmShout = popup.querySelector<HTMLButtonElement>(`.shout-${index + 1}-confirm`);
+                    masteredYous.forEach((you, index) => {
+                        const confirmYou = popup.querySelector<HTMLButtonElement>(`.you-${index + 1}-confirm`);
 
-                        if (confirmShout) {
-                            confirmShout.onclick = () => {
+                        if (confirmYou) {
+                            confirmYou.onclick = () => {
                                 this.game.gp.remove(MasterCost);
 
-                                if (shout) {
-                                    this.shouts.remove(shout.single_species);
+                                if (you) {
+                                    this.yous.remove(you.single_species);
                                 }
 
-                                const masteredShout: MasteredShout = {
+                                const masteredYou: MasteredYou = {
                                     single_species,
-                                    slot: shout?.slot ?? index + 1,
+                                    slot: you?.slot ?? index + 1,
                                     socket: undefined,
                                     utility: undefined
                                 };
 
-                                this.shouts.set(single_species, masteredShout);
+                                this.yous.set(single_species, masteredYou);
 
-                                (<any>this.userInterface)[`shout${masteredShout.slot}`].setShout(masteredShout);
+                                (<any>this.userInterface)[`you${masteredYou.slot}`].setYou(masteredYou);
 
                                 this.computeProvidedStats(true);
 
@@ -233,7 +233,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         this.computeProvidedStats(false);
 
         this.renderQueue.grants = true;
-        this.renderQueue.shoutModifiers = true;
+        this.renderQueue.youModifiers = true;
         this.renderQueue.visibleSpecies = true;
 
         for (const component of this.userInterface.species.values()) {
@@ -265,7 +265,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         }
 
         this.renderQueue.gpRange = true;
-        this.renderQueue.shoutModifiers = true;
+        this.renderQueue.youModifiers = true;
     }
 
     public onModifierChange() {
@@ -273,7 +273,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
         this.renderQueue.grants = true;
         this.renderQueue.gpRange = true;
-        this.renderQueue.shoutModifiers = true;
+        this.renderQueue.youModifiers = true;
     }
 
     public render() {
@@ -281,8 +281,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
         this.renderProgressBar();
         this.renderGrants();
-        this.renderGPRange();
-        this.renderShoutModifiers();
+        this.renderYouModifiers();
         this.renderVisibleSpecies();
     }
 
@@ -332,8 +331,8 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public computeProvidedStats(updatePlayer = true) {
         this.modifiers.reset();
 
-        for (const shout of this.shouts.all()) {
-            const modifiers = this.manager.getModifiersForApplication(shout.single_species);
+        for (const you of this.yous.all()) {
+            const modifiers = this.manager.getModifiersForApplication(you.single_species);
             this.modifiers.addArrayModifiers(modifiers);
         }
 
@@ -345,12 +344,6 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public get actionRewards() {
         const rewards = new Rewards(this.game);
         const actionEvent = new ProfileActionEvent(this, this.activeSingle_Species);
-        const costs = new Costs(this.game);
-
-        rewards.addXP(this, this.activeSingle_Species.baseExperience);
-        // rewards.addGP(this.manager.getGoldToAward(this.activeSingle_Species));
-        costs.addGP(this.manager.getGoldToTake(this.activeSingle_Species))        
-        costs.consumeCosts()
 
         this._events.emit('action', actionEvent);
 
@@ -405,33 +398,21 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         this.renderQueue.grants = false;
     }
 
-    public renderGPRange() {
-        if (!this.renderQueue.gpRange) {
+    public renderYouModifiers() {
+        if (!this.renderQueue.youModifiers) {
             return;
         }
 
-        for (const component of this.userInterface.species.values()) {
-            component.updateGPRange();
-        }
+        this.userInterface.you1.updateEnabled(true); // You 1 is always available.
+        this.userInterface.you2.updateEnabled(true);
 
-        this.renderQueue.gpRange = false;
-    }
+        this.userInterface.you1.updateModifiers();
+        this.userInterface.you2.updateModifiers();
 
-    public renderShoutModifiers() {
-        if (!this.renderQueue.shoutModifiers) {
-            return;
-        }
+        this.userInterface.you1.updateCurrentMasteryLevel();
+        this.userInterface.you2.updateCurrentMasteryLevel();
 
-        this.userInterface.shout1.updateEnabled(true); // Shout 1 is always available.
-        this.userInterface.shout2.updateEnabled(true);
-
-        this.userInterface.shout1.updateModifiers();
-        this.userInterface.shout2.updateModifiers();
-
-        this.userInterface.shout1.updateCurrentMasteryLevel();
-        this.userInterface.shout2.updateCurrentMasteryLevel();
-
-        this.renderQueue.shoutModifiers = false;
+        this.renderQueue.youModifiers = false;
     }
 
     public renderProgressBar() {
@@ -485,7 +466,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public resetActionState() {
 
         this.activeSingle_Species = undefined;
-        this.shouts.clear();
+        this.yous.clear();
     }
 
     public encode(writer: SaveWriter): SaveWriter {
@@ -508,7 +489,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             });
         });
 
-        writer.writeComplexMap(this.shouts.shouts, (key, value, writer) => {
+        writer.writeComplexMap(this.yous.yous, (key, value, writer) => {
             writer.writeNamespacedObject(key);
             writer.writeUint32(value.slot);
 
@@ -558,6 +539,6 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 export class ProfileRenderQueue extends GatheringSkillRenderQueue<Single_Species> {
     grants = false;
     gpRange = false;
-    shoutModifiers = false;
+    youModifiers = false;
     visibleSpecies = false;
 }

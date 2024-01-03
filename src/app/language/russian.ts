@@ -1,8 +1,8 @@
 export const ru = {
     Single_Species: 'Инструмент',
-    Shout_Title: 'Бард: ${name}',
-    Shout_Not_Currently_Mastered: 'Бард: В данный момент не нанят',
-    Manage_Shout_Single_Species: 'Управление инструментом барда:',
+    You_Title: 'Бард: ${name}',
+    You_Not_Currently_Mastered: 'Бард: В данный момент не нанят',
+    Manage_You_Single_Species: 'Управление инструментом барда:',
     Upgraded: 'Улучшен',
     Not_Upgraded: 'Не улучшен',
     Upgrade: 'Улучшить',
@@ -27,17 +27,17 @@ export const ru = {
     You_Do_Not_Have_Enough_Materials_Mastery: 'У вас недостаточно материалов для разблокировки этого мастерства.',
     The_Cost_Of_Hiring: 'Стоимость найма этого барда увеличится до ${cost} GP',
     Back: 'Назад',
-    Would_You_Like_To_Equip_This_Shout: 'Вы хотите нанять этого барда:',
-    You_Cannot_Afford_To_Equip_This_Shout: 'Вы не можете позволить себе нанять этого барда:',
-    This_Will_Replace_The_Mastered_Shout:
+    Would_You_Like_To_Equip_This_You: 'Вы хотите нанять этого барда:',
+    You_Cannot_Afford_To_Equip_This_You: 'Вы не можете позволить себе нанять этого барда:',
+    This_Will_Replace_The_Mastered_You:
         'Это заменит нанятого барда, выбранного вами, и уничтожит все улучшения, камни и утилиты на инструменте.',
     Replace: 'Заменить ${name}',
-    Shout_Equip_Cost_Positive: '+${value}% Стоимость найма барда',
-    Shout_Equip_Cost_Negative: '-${value}% Стоимость найма барда',
+    You_Equip_Cost_Positive: '+${value}% Стоимость найма барда',
+    You_Equip_Cost_Negative: '-${value}% Стоимость найма барда',
     Profile_GP_Positive: '+${value}% GP музыки',
     Profile_GP_Negative: '-${value}% GP музыки',
-    Shout_Equip_Limit_Positive: '+${value} Лимит найма барда',
-    Shout_Equip_Limit_Negative: '-${value} Лимит найма барда',
+    You_Equip_Limit_Positive: '+${value} Лимит найма барда',
+    You_Equip_Limit_Negative: '-${value} Лимит найма барда',
     Sheet_Profile_Drop_Chance_Positive: '+${value}% шанс выпадения нотного листа',
     Sheet_Profile_Drop_Chance_Negative: '-${value}% шанс выпадения нотного листа',
     Additional_Reward_Roll_Positive: '+${value} дополнительный бросок награды при обучении музыки',
@@ -63,22 +63,22 @@ export const ru = {
     Single_Species_Harp: 'Арфа',
     Single_Species_Tambourine: 'Тамбурин',
     Single_Species_Trumpet: 'Труба',
-    PET_NAME_Dragon: 'Муза',
-    ITEM_NAME_Summoning_Familiar_Shout: 'Бард',
+    PET_NAME_Bob: 'Муза',
+    ITEM_NAME_Summoning_Familiar_You: 'Бард',
     ITEM_NAME_Profile_Skillcape: 'Мантия музыкального мастерства',
     ITEM_NAME_Superior_Profile_Skillcape: 'Превосходная мантия музыкального мастерства',
     
-    ITEM_NAME_Shouts_Hat: 'Шляпа барда',
-    ITEM_DESCRIPTION_Shouts_Hat:
+    ITEM_NAME_Yous_Hat: 'Шляпа барда',
+    ITEM_DESCRIPTION_Yous_Hat:
         "+2% XP музыки<br><span class='text-warning'>Если надет весь комплект Барда: +8% XP мастерства музыки</span>",
-    ITEM_NAME_Shouts_Body: 'Тело барда',
-    ITEM_DESCRIPTION_Shouts_Body:
+    ITEM_NAME_Yous_Body: 'Тело барда',
+    ITEM_DESCRIPTION_Yous_Body:
         "+2% XP музыки<br><span class='text-warning'>Если надет весь комплект Барда: +8% XP мастерства музыки</span>",
-    ITEM_NAME_Shouts_Leggings: 'Поножи барда',
-    ITEM_DESCRIPTION_Shouts_Leggings:
+    ITEM_NAME_Yous_Leggings: 'Поножи барда',
+    ITEM_DESCRIPTION_Yous_Leggings:
         "+2% XP музыки<br><span class='text-warning'>Если надет весь комплект Барда: +8% XP мастерства музыки</span>",
-    ITEM_NAME_Shouts_Boots: 'Ботинки Барда',
-    ITEM_DESCRIPTION_Shouts_Boots:
+    ITEM_NAME_Yous_Boots: 'Ботинки Барда',
+    ITEM_DESCRIPTION_Yous_Boots:
         "+2% XP музыки<br><span class='text-warning'>Если надет весь комплект Барда: +8% XP мастерства музыки</span>",
     ITEM_NAME_Profile_Scroll_Of_XP: 'Свиток музыкального опыта',
     ITEM_NAME_Generous_Gratuity_Potion_I: 'Зелье щедрой чаевой I',
@@ -117,16 +117,16 @@ export const ru = {
     SPECIAL_ATTACK_DESCRIPTION_Face_Melting_Guitar_Solo:
         'Неизбежная атака, которая наносит ${attackDamageMaxValue0}x${hitCount} урона за ${duration} секунд. При попадании есть ${onHitEffect0chance}% шанс наложить ожог, который нанесет ${onHitEffect0DamageMaxValue0}% от ваших текущих очков здоровья в качестве урона за ${onHitEffect0duration} секунд.',
     Profile: 'Музыка',
-    Settings_Shout_Equip_Cost: 'Стоимость найма барда',
+    Settings_You_Equip_Cost: 'Стоимость найма барда',
     Settings_Modifiers: 'Модификаторы',
     Settings_Modifier_Scale: 'Масштаб модификатора',
     Settings_Modifier_Standard: 'Стандартный',
     Settings_Modifier_Hardcore: 'Хардкорный',
-    Settings_Base_Shout_Equip_Cost_1: 'Базовая стоимость найма барда с разблокированным 1 модификатором',
-    Settings_Base_Shout_Equip_Cost_2: 'Базовая стоимость найма барда с разблокированными 2 модификаторами',
-    Settings_Base_Shout_Equip_Cost_3: 'Базовая стоимость найма барда с разблокированными 3 модификаторами',
-    Settings_Base_Shout_Equip_Cost_4: 'Базовая стоимость найма барда с разблокированными 4 модификаторами',
-    Settings_Base_Shout_Equip_Cost_5: 'Базовая стоимость найма барда с разблокированными 5 модификаторами',
+    Settings_Base_You_Equip_Cost_1: 'Базовая стоимость найма барда с разблокированным 1 модификатором',
+    Settings_Base_You_Equip_Cost_2: 'Базовая стоимость найма барда с разблокированными 2 модификаторами',
+    Settings_Base_You_Equip_Cost_3: 'Базовая стоимость найма барда с разблокированными 3 модификаторами',
+    Settings_Base_You_Equip_Cost_4: 'Базовая стоимость найма барда с разблокированными 4 модификаторами',
+    Settings_Base_You_Equip_Cost_5: 'Базовая стоимость найма барда с разблокированными 5 модификаторами',
     Settings_Must_Be_Larger_Then: 'Значение должно быть больше 99',
     Settings_Must_Be_Smaller_Then: 'Значение должно быть меньше 1 000 000 000 000'
 };

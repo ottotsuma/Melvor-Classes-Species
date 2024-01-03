@@ -1,5 +1,5 @@
 import { Profile } from './profile';
-import { ShoutModifier, Single_Species, Single_SpeciesModifier, SpecieskillModifier } from './profile.types';
+import { YouModifier, Single_Species, Single_SpeciesModifier, SpecieskillModifier } from './profile.types';
 
 export class ProfileManager {
     public get elements() {
@@ -19,7 +19,7 @@ export class ProfileManager {
     /** Gets modifier metadata. */
     public getModifiers(single_species: Single_Species) {
         if (!single_species.id) {
-            return [] as ShoutModifier[];
+            return [] as YouModifier[];
         }
 
         return single_species.modifiers(this.profile.settings.modifierType).map(modifier => {
@@ -28,17 +28,17 @@ export class ProfileManager {
             if (this.isSkillModifier(modifier)) {
                 [description] = printPlayerModifier(modifier.key, {
                     skill: this.game.skills.find(skill => skill.id === modifier.skill),
-                    value: modifier.value
+                    value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
                 });
             } else {
-                [description] = printPlayerModifier(modifier.key, modifier.value);
+                [description] = printPlayerModifier(modifier.key, this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value);
             }
 
             return {
                 description,
                 isActive: this.isModifierActive(single_species, modifier),
                 level: modifier.level
-            } as ShoutModifier;
+            } as YouModifier;
         });
     }
 
@@ -58,58 +58,26 @@ export class ProfileManager {
                         values: [
                             {
                                 skill: this.game.skills.find(skill => skill.id === modifier.skill),
-                                value: modifier.value
+                                value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
                             }
                         ]
                     } as SkillModifierArrayElement;
                 } else {
                     return {
                         key: modifier.key,
-                        value: modifier.value
+                        value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
                     } as StandardModifierArrayElement;
                 }
             });
     }
 
-    public getGoldToTake(single_species: Single_Species) {
-        const component = this.profile.userInterface.species.get(single_species);
-        const minRoll = component.getMinGPRoll();
-        const maxRoll = component.getMaxGPRoll();
-
-        let gpToTake = rollInteger(minRoll, maxRoll);
-        let gpMultiplier = 1;
-
-        const increasedGPModifier = component.getGPModifier();
-
-        gpMultiplier *= 1 + increasedGPModifier / 100;
-        gpToTake = Math.floor((gpToTake/gpMultiplier)  - this.game.modifiers.increasedGPFlat);
-
-        return gpToTake;
-    }
-
-    public getGoldToAward(single_species: Single_Species) {
-        const component = this.profile.userInterface.species.get(single_species);
-        const minRoll = component.getMinGPRoll();
-        const maxRoll = component.getMaxGPRoll();
-
-        let gpToAdd = rollInteger(minRoll, maxRoll);
-        let gpMultiplier = 1;
-
-        const increasedGPModifier = component.getGPModifier();
-
-        gpMultiplier *= 1 + increasedGPModifier / 100;
-        gpToAdd = Math.floor(gpMultiplier * gpToAdd + this.game.modifiers.increasedGPFlat);
-
-        return gpToAdd;
-    }
-
     public calculateEquipCost(single_species: Single_Species) {
         const MasterCostMap = [
-            this.profile.settings.shoutEquipCostOne || 0,
-            this.profile.settings.shoutEquipCostTwo || 10000,
-            this.profile.settings.shoutEquipCostThree || 100000,
-            this.profile.settings.shoutEquipCostFour || 10000000,
-            this.profile.settings.shoutEquipCostFive || 10000000
+            this.profile.settings.youEquipCostOne || 0,
+            this.profile.settings.youEquipCostTwo || 10000,
+            this.profile.settings.youEquipCostThree || 100000,
+            this.profile.settings.youEquipCostFour || 10000000,
+            this.profile.settings.youEquipCostFive || 10000000
         ];
         const single_speciesRef = this.profile.actions.find(action => action.id === single_species.id);
         const unlocked = this.profile.masteriesUnlocked.get(single_speciesRef).filter(isUnlocked => isUnlocked).length;
@@ -138,7 +106,7 @@ export class ProfileManager {
 
         let unlockedMasteries = this.profile.masteriesUnlocked.get(single_species);
 
-        const shout = this.profile.shouts.get(single_species);
+        const you = this.profile.yous.get(single_species);
 
         const validModifierLevels = single_species
             .modifiers(this.profile.settings.modifierType)

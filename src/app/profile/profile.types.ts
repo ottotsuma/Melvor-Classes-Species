@@ -1,6 +1,6 @@
 import { ModifierType } from './settings';
 
-export interface ShoutModifier {
+export interface YouModifier {
     description: string;
     isActive: boolean;
     level: number;
@@ -29,13 +29,12 @@ export interface ProfileSkillData extends MasterySkillData {
 export interface Single_SpeciesData extends BasicSkillRecipeData {
     name: string;
     media: string;
-    maxGP: number;
     standardModifiers: Single_SpeciesModifier[];
     hardcoreModifiers: Single_SpeciesModifier[];
     skills: string[];
 }
 
-export interface MasteredShout {
+export interface MasteredYou {
     single_species: Single_Species;
     slot: number;
     socket: Item;
@@ -43,7 +42,6 @@ export interface MasteredShout {
 }
 
 export class Single_Species extends BasicSkillRecipe {
-    maxGP: number;
     skills: string[];
 
     private standardModifiers: Single_SpeciesModifier[];
@@ -69,7 +67,6 @@ export class Single_Species extends BasicSkillRecipe {
     constructor(namespace: DataNamespace, private readonly data: Single_SpeciesData) {
         super(namespace, data);
 
-        this.maxGP = data.maxGP;
         this.standardModifiers = data.standardModifiers;
         this.hardcoreModifiers = data.hardcoreModifiers;
         this.skills = data.skills;

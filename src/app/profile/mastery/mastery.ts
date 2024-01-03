@@ -1,5 +1,5 @@
 import { Profile } from '../profile';
-import { ShoutModifier, Single_Species } from '../profile.types';
+import { YouModifier, Single_Species } from '../profile.types';
 
 import './mastery.scss';
 
@@ -18,7 +18,7 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
         $template: '#profile-mastery',
         single_species,
         state: State.View,
-        modifier: undefined as ShoutModifier,
+        modifier: undefined as YouModifier,
         essenceOfProfile: undefined as EssenceOfProfile,
         unlockGPCost: 0,
         get unlockableModifiers() {
@@ -38,7 +38,7 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
 
             return unlockedMasteries[index];
         },
-        canUnlock: function (modifier: ShoutModifier) {
+        canUnlock: function (modifier: YouModifier) {
             const masteryLevel = profile.getMasteryLevel(single_species);
 
             return masteryLevel >= modifier.level;
@@ -51,7 +51,7 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
         ok: function () {
             SwalLocale.clickConfirm();
         },
-        setState: function (state: State, modifier: ShoutModifier | undefined) {
+        setState: function (state: State, modifier: YouModifier | undefined) {
             this.state = state;
             this.modifier = modifier;
 
@@ -73,7 +73,7 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
                     break;
             }
         },
-        unlock: function (modifier: ShoutModifier) {
+        unlock: function (modifier: YouModifier) {
             game.bank.removeItemQuantityByID('namespace_profile:Dragon_Soul', 1, true);
             game.gp.remove(this.unlockGPCost);
 
@@ -100,7 +100,7 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
         },
         completeUpgrade: function () {
             profile.computeProvidedStats(true);
-            profile.renderQueue.shoutModifiers = true;
+            profile.renderQueue.youModifiers = true;
             profile.renderQueue.gpRange = true;
             profile.renderQueue.grants = true;
 

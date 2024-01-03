@@ -10,7 +10,7 @@
                         {
                             "id": "cmim_single_species",
                             "name": "Combat Modifiers In Melvor",
-                            "media": "assets/dragon.png",
+                            "media": "assets/bob.png",
                             "baseExperience": 155,
                             "maxGP": 551,
                             "productId": "namespace_profile:cmim_single_species",

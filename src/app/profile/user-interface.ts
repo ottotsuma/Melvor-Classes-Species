@@ -1,4 +1,4 @@
-import { ShoutComponent } from './shout/shout';
+import { YouComponent } from './you/you';
 import { Single_SpeciesComponent } from './single_species/single_species';
 import { LockedComponent } from './locked/locked';
 import { Profile } from './profile';
@@ -8,8 +8,8 @@ export class UserInterface {
     public readonly species = new Map<Single_Species, ReturnType<typeof Single_SpeciesComponent>>();
 
     public locked: ReturnType<typeof LockedComponent>;
-    public shout1: ReturnType<typeof ShoutComponent>;
-    public shout2: ReturnType<typeof ShoutComponent>;
+    public you1: ReturnType<typeof YouComponent>;
+    public you2: ReturnType<typeof YouComponent>;
 
 
     public get mainContainer() {
@@ -24,8 +24,8 @@ export class UserInterface {
         return document.getElementById('classes-container');
     }
 
-    public get shoutContainer() {
-        return document.getElementById('shout-container');
+    public get youContainer() {
+        return document.getElementById('you-container');
     }
 
     constructor(
@@ -50,16 +50,15 @@ export class UserInterface {
 
                 this.species.set(single_species, component);
             }
-
             this.locked = LockedComponent(this.profile);
             ui.create(this.locked, this.speciesContainer);
             ui.create(this.locked, this.classesContainer);
 
-            this.shout1 = ShoutComponent(this.profile);
-            this.shout2 = ShoutComponent(this.profile);
+            this.you1 = YouComponent(this.profile);
+            this.you2 = YouComponent(this.profile);
 
-            ui.create(this.shout1, this.shoutContainer);
-            ui.create(this.shout2, this.shoutContainer);
+            ui.create(this.you1, this.youContainer);
+            ui.create(this.you2, this.youContainer);
         });
     }
 

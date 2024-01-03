@@ -27,9 +27,9 @@ export class ProfileModifiers {
     public registerModifiers() {
         modifierData.increasedProfileEquipCost = {
             get langDescription() {
-                return getLangString('Profile_Profile_Shout_Equip_Cost_Positive');
+                return getLangString('Profile_Profile_You_Equip_Cost_Positive');
             },
-            description: '+${value}% Shout Equip Cost',
+            description: '+${value}% You Equip Cost',
             isSkill: false,
             isNegative: true,
             tags: []
@@ -37,9 +37,9 @@ export class ProfileModifiers {
 
         modifierData.decreasedProfileEquipCost = {
             get langDescription() {
-                return getLangString('Profile_Profile_Shout_Equip_Cost_Negative');
+                return getLangString('Profile_Profile_You_Equip_Cost_Negative');
             },
-            description: '-${value}% Shout Equip Cost',
+            description: '-${value}% You Equip Cost',
             isSkill: false,
             isNegative: false,
             tags: []

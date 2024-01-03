@@ -20,7 +20,7 @@ Please provide any feedback or bug reports, would love to hear your thoughts.
 
 ## Design Methodology
 
-When designing this skill, my aims were to take pressure off early game gold, while also providing a late game gold siphon. This makes it an attractive early game skill for adventure mode, and late game, especially once Township is up and running, the buffs are designed to be powerful enough that spending the gold is deemed worth it. By limiting to only a couple of shouts, the player will need to spend their masses of gold to get the bonuses for the skills they are training.
+When designing this skill, my aims were to take pressure off early game gold, while also providing a late game gold siphon. This makes it an attractive early game skill for adventure mode, and late game, especially once Township is up and running, the buffs are designed to be powerful enough that spending the gold is deemed worth it. By limiting to only a couple of yous, the player will need to spend their masses of gold to get the bonuses for the skills they are training.
 
 ## Change Log
  Has been moved to the end of the mod description page.
@@ -29,7 +29,7 @@ When designing this skill, my aims were to take pressure off early game gold, wh
 
 Profile is a brand new skill which combines themes from Astrology, Thieving and Agility. It provides an easy way to obtain gold and powerful bonuses that benefit other skills.
 
-Earn tips (GP) while you train shouts with various species, then Master the shouts you have trained to provide you with powerful bonuses while you train other skills.
+Earn tips (GP) while you train yous with various species, then Master the yous you have trained to provide you with powerful bonuses while you train other skills.
 
 This mod includes a new mastery token for the skill and both skill cape and superior skill cape.
 
@@ -37,7 +37,7 @@ This mod includes a new mastery token for the skill and both skill cape and supe
 
 To unlock additional modifiers, once the respective mastery level has been attained, you can choose to unlock a modifier mastery.
 
-Modifiers can be unlocked in any order once the mastery level has been attained, but once a mastery modifier has been unlocked the cost to Master the shout is increased.
+Modifiers can be unlocked in any order once the mastery level has been attained, but once a mastery modifier has been unlocked the cost to Master the you is increased.
 
 The cost to unlock a modifier is as follows
 
@@ -49,22 +49,22 @@ The cost to unlock a modifier is as follows
 
 ![Unlock Mastery](images/unlock-mastery.png)
 
-## Hiring a Shout
+## Hiring a You
 
-You can Master various shouts to play on your behalf. These shouts provide powerful bonuses to help you while you train other skills, however the more skilled a shout is, the more expensive it will become to Master them.
+You can Master various yous to play on your behalf. These yous provide powerful bonuses to help you while you train other skills, however the more skilled a you is, the more expensive it will become to Master them.
 
-You can only Master a single shout at a time (two if you purchase the Band Practice upgrade).
+You can only Master a single you at a time (two if you purchase the Band Practice upgrade).
 
-The cost to Master a shout increases with the number of modifiers unlocked.
+The cost to Master a you increases with the number of modifiers unlocked.
 
-The cost for hiring a shout is as follows (assuming no Master cost reduction)
+The cost for hiring a you is as follows (assuming no Master cost reduction)
 
 * 1st Mastery Unlocked - 10,000 GP
 * 2nd Mastery Unlocked - 100,000 GP
 * 3rd Mastery Unlocked - 1,000,000 GP
 * 4th Mastery Unlocked - 10,000,000 GP
 
-![Equip a Shout](images/Master-shout.png)
+![Equip a You](images/Master-you.png)
 
 ### Drops
 
@@ -74,34 +74,34 @@ Tips (GP) earned while training do scale with global gold increases.
 
 ### Sheet Profile, Essence of Profile, Gems and Utilities
 
-Training Profile has a 2% chance to drop sheet profile, these are used for mastered shout single_species upgrades.
+Training Profile has a 2% chance to drop sheet profile, these are used for mastered you single_species upgrades.
 
-Sheet Profile drop chance is a flat 2% and is not modified by any rarity increases, the only other boost to sheet profile drop chance is applying Diamond String to your mastered shouts single_species. With two shouts, this means you can get a total of 12% drop chance for Sheet Profile.
+Sheet Profile drop chance is a flat 2% and is not modified by any rarity increases, the only other boost to sheet profile drop chance is applying Diamond String to your mastered yous single_species. With two yous, this means you can get a total of 12% drop chance for Sheet Profile.
 
 ![Items](images/items.png)
 
-## Mastered Shout Single_Species
+## Mastered You Single_Species
 
-Mastered shout species can be enhanced in various ways. They can be upgraded, socketed with a gem and applied with an utility.
+Mastered you species can be enhanced in various ways. They can be upgraded, socketed with a gem and applied with an utility.
 
-Upgrades are destroyed if you Master a new shout. Re-hiring a previously mastered shout will require upgrading, socketing and applying the single_species again.
+Upgrades are destroyed if you Master a new you. Re-hiring a previously mastered you will require upgrading, socketing and applying the single_species again.
 
-![Upgrade Single_Species](images/upgrade-shout-single_species.png)
+![Upgrade Single_Species](images/upgrade-you-single_species.png)
 
 ### Upgrade
 
-Upgrading a mastered shouts single_species unlocks a 5th modifier, to do so, you require an Essence of Profile.
+Upgrading a mastered yous single_species unlocks a 5th modifier, to do so, you require an Essence of Profile.
 
 Essence of Profile
 Upgrade from Sheet Profile
 1,000,000GP + 50 Sheet Profile
-Unlocks a 5th modifier on mastered shout single_species when upgraded.
+Unlocks a 5th modifier on mastered you single_species when upgraded.
 
 ![Upgrade](images/upgrade.png)
 
 ### Gem Socket
 
-You can select one of three gems to socket into your shouts single_species. Only one can be active at a time, and you may freely switch provided you have the resources.
+You can select one of three gems to socket into your yous single_species. Only one can be active at a time, and you may freely switch provided you have the resources.
 
 Polished Topaz Gem
 Upgrade from Topaz
@@ -122,7 +122,7 @@ Upgrade from Sapphire
 
 ### Utility
 
-You can select one of three utilities to apply onto your shouts single_species. Only one can be active at a time, and you may freely switch provided you have the resources.
+You can select one of three utilities to apply onto your yous single_species. Only one can be active at a time, and you may freely switch provided you have the resources.
 
 Diamond String
 Upgrade from Bowstring
@@ -149,7 +149,7 @@ This includes:
 * summoning marks
 * mastery tokens
 
-For example, if you have Band Practice with two shouts mastered, both equipped with Mystic Oil.
+For example, if you have Band Practice with two yous mastered, both equipped with Mystic Oil.
 
 1 tick of training Profile will roll 3 times for a chance to get the pet, rare drops, summoning marks and mastery tokens.
 
@@ -157,11 +157,11 @@ For example, if you have Band Practice with two shouts mastered, both equipped w
 
 ## Band Practice
 
-The shop sells an upgrade which unlocks a second shout slot. This upgrade requires Level 110 Profile and costs 1B GP.
+The shop sells an upgrade which unlocks a second you slot. This upgrade requires Level 110 Profile and costs 1B GP.
 
 ![Band Practice](images/band-practice.png)
 
-![Double Shout](images/double-shout.png)
+![Double You](images/double-you.png)
 
 ## Concert Pass
 
@@ -193,7 +193,7 @@ The level calculation is clamped to a max skill level of 120, which roughly equa
 
 ## Skill Unlocks
 
-Leveling the Profile skill unlocks additional profileal species to train your shouts with.
+Leveling the Profile skill unlocks additional profileal species to train your yous with.
 
 ![Skill Unlocks](images/single_species-unlocks.png)
 
@@ -244,22 +244,22 @@ The potion has also been added to Potion Box II from Township, at the same rarit
 
 ## Summoning
 
-The Profile skill has its own tablet. The Shout! The Shout is both a combat and skill tablet.
+The Profile skill has its own tablet. The You! The You is both a combat and skill tablet.
 
-![Shout Tablet](images/shout-tablet.png)
+![You Tablet](images/you-tablet.png)
 
-![Shout Mark](images/shout-mark.png)
+![You Mark](images/you-mark.png)
 
 * Tier: 3
 * Summoning Level Requirement: 90
 * Summoning Max Hit: 192
 * Skill Bonus: +5% Profile GP
 
-In addition, the Shout has synergies with every single other tablet. Since Profile is a skill that focuses on boosting other skills, its synergy helps all other skills. It basically doubles the tablet effect of the tablet it is synergizing with (by granting the same tablet modifiers via the synergy).
+In addition, the You has synergies with every single other tablet. Since Profile is a skill that focuses on boosting other skills, its synergy helps all other skills. It basically doubles the tablet effect of the tablet it is synergizing with (by granting the same tablet modifiers via the synergy).
 
-Example: Devil gives -5% Firemaking Interval, if synergized with the Shout, the synergy will provide an addition -5% Firemaking Interval for a total of -10% Firemaking Interval being provided from the tablets.
+Example: Devil gives -5% Firemaking Interval, if synergized with the You, the synergy will provide an addition -5% Firemaking Interval for a total of -10% Firemaking Interval being provided from the tablets.
 
-The Fox synergy actually works in reverse, kind of... the Shout synergy doubles the Fox tablet modifier, which then boosts the Shouts Summoning max hit.
+The Fox synergy actually works in reverse, kind of... the You synergy doubles the Fox tablet modifier, which then boosts the Yous Summoning max hit.
 
 ![Summoning](images/summoning-1.png)
 
@@ -287,13 +287,13 @@ It requires level 15 Township and level 15 Profile to purchase, with a default v
 
 The Profile skill adds a Profile Outfit, which is fully integrated just like all the other skilling outfits.
 
-![Shouts Outfit](images/shout-outfit.png)
+![Yous Outfit](images/you-outfit.png)
 
 ![Skiller Upgrade](images/skiller-upgrade.png)
 
 ## The Circus
 
-The jesters have emerged from The Circus. The jesters are notorious pranksters. They have been rivals with the shouts since the beginning of time, known for stealing species, many tussles have broken out between the shouts and the jesters.
+The jesters have emerged from The Circus. The jesters are notorious pranksters. They have been rivals with the yous since the beginning of time, known for stealing species, many tussles have broken out between the yous and the jesters.
 
 The Circus is a new combat area that contains 3 types of jesters to fight.
 
@@ -350,9 +350,9 @@ Profile has Ancient Relics
 #3: 1% increased chance to locate Ancient Relics
 #4: +50% Global GP (except Item Sales)
 #5: -20% Profile Interval
-Master Relic: +1 Shout Equip Limit
+Master Relic: +1 You Equip Limit
 
-(Yes, this means you can have 3 mastered shouts)
+(Yes, this means you can have 3 mastered yous)
 
 ### Lesser Relic
 
@@ -364,7 +364,7 @@ Profile also has a Lesser Relic which grants:
 
 ## Settings
 
-You are able to set the base shout Master cost for each tier. Value must be between 100 and 999B.
+You are able to set the base you Master cost for each tier. Value must be between 100 and 999B.
 
 In addition, you can opt to use Standard or Hardcore modifier bonuses. Hardcore modifiers have been significantly reduced compared to Standard.
 
@@ -372,9 +372,9 @@ Please note, Settings get reset if you switch your language.
 
 ![Settings](images/settings.png)
 
-## Standard Scaling Shout Bonuses (can be set in settings, not exclusive to standard gamemode)
+## Standard Scaling You Bonuses (can be set in settings, not exclusive to standard gamemode)
 
-The bonuses each shout provides is as follows:
+The bonuses each you provides is as follows:
 
 Guitar: Unlocked at skill level 1
 * Mastery Level 1: +5% Chance for Bird Nests to drop in Woodcutting
@@ -481,9 +481,9 @@ Trumpet: Unlocked at skill level 115 (TotH only)
 * Mastery Level 99: -0.5s Attack Interval
 * Upgrade: +20% chance to apply Decay Curse to the Target per hit
 
-## Hardcore Scaling Shout Bonuses (can be set in settings, not exclusive to hardcore gamemode)
+## Hardcore Scaling You Bonuses (can be set in settings, not exclusive to hardcore gamemode)
 
-The bonuses each shout provides is as follows:
+The bonuses each you provides is as follows:
 
 Guitar: Unlocked at skill level 1
 * Mastery Level 1: +2% Chance for Bird Nests to drop in Woodcutting
@@ -611,7 +611,7 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 * replaced Kynes_Peace upgrade modifier from GP From Sales to GP gained when earning GP, except Alt. Magic and Item Sales
 
 # 1.13.7
-* added summoning synergy for tortoise + shout
+* added summoning synergy for tortoise + you
 
 # 1.13.6
 * minor code cleanup, no change in functionality
@@ -643,21 +643,21 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 * added support for atlas of discovery
 
 ## 1.12.0
-* added settings to control the base shout Master cost
-* added a hardcore setting which significantly reduces the power of mastered shout modifiers
+* added settings to control the base you Master cost
+* added a hardcore setting which significantly reduces the power of mastered you modifiers
 * fixed djembe being named Battle_Fury, it is now correctly labelled as a djembe again
 
 ## 1.11.2
 * fixed german translations being in dutch
 
 ### 1.11.1
-* fixed chinese simplified and chinese traditional translations for shout
+* fixed chinese simplified and chinese traditional translations for you
 
 ### 1.11.0
-* significantly reduced hiring cost of shouts from 10k, 100k, 20m, 200m to 10k, 100k, 1m, 10m
+* significantly reduced hiring cost of yous from 10k, 100k, 20m, 200m to 10k, 100k, 1m, 10m
 * unlocking modifiers now also cost gp in addition to essence of profile, costs are 100k for level 40 modifier, 1m for level 75 modifier and 10m for level 99 modifier
-* shout Master cost for 95% mastery checkpoint has been reduced from -10% to -5%
-* shout Master cost for mastery level 90 has been reduced from -10% to -5%
+* you Master cost for 95% mastery checkpoint has been reduced from -10% to -5%
+* you Master cost for mastery level 90 has been reduced from -10% to -5%
 * switched and reduced the power of some single_species modifiers:
   * Animal_Allegiance (75) now provides Passive Cook Interval
   * Animal_Allegiance (99) now provides Chance to find a Lost Chest while Fishing and reduced from 15% to 10%
@@ -668,13 +668,13 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
   * Throw_Voice (75) now provides Damage Reduction and reduced from 10% to 5%
   * Throw_Voice (99) now provides +5% Maximum Hitpoints
   * Throw_Voice (U) now provides + Maximum Hitpoints and reduced from +100 to +50
-* adjusted some of the shout syngergies
-  * Golbin Thief + Shout synergy now also grants +175 GP on monster kill
-  * Ent + Shout synergy increased from 10% to 30%
-  * Pig + Shout synergy increased from 10% to 25%
-  * Salamander + Shout synergy increased from 5% to 25%
+* adjusted some of the you syngergies
+  * Golbin Thief + You synergy now also grants +175 GP on monster kill
+  * Ent + You synergy increased from 10% to 30%
+  * Pig + You synergy increased from 10% to 25%
+  * Salamander + You synergy increased from 5% to 25%
 
-* Dev Note: These changes came from feedback that some modifiers are not worth unlocking as the Master cost grows too high for the value the modifier provides. It was more advantageous to simply leave some not unlocked which was not the intended way to interact with the shouts. Hopefully, now that the gp costs of the skill have been reduced, the impact of unlocking some of the less desirable modifiers are not as painful. In addition a portion of the costs have been shifted to the one time cost of unlocking modifiers which should further reduce friction in switching shouts that may not have as desirable modifiers. I'm aware this goes against the original design of wanting switching shouts to be painful, but the design has evolved over time and no longer really fits with the current implementation.
+* Dev Note: These changes came from feedback that some modifiers are not worth unlocking as the Master cost grows too high for the value the modifier provides. It was more advantageous to simply leave some not unlocked which was not the intended way to interact with the yous. Hopefully, now that the gp costs of the skill have been reduced, the impact of unlocking some of the less desirable modifiers are not as painful. In addition a portion of the costs have been shifted to the one time cost of unlocking modifiers which should further reduce friction in switching yous that may not have as desirable modifiers. I'm aware this goes against the original design of wanting switching yous to be painful, but the design has evolved over time and no longer really fits with the current implementation.
 
 ### 1.10.0
 * added translations for all languages supported by melvor idle
@@ -686,12 +686,12 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 ### 1.9.0
 * Throne of the Herald is now optional, all TotH data requires the expansion to load, this includes superior skillcape, species above level 99 and summoning synergies above level 99
 * max skillcape and superior max skillcape no longer require the profile skill to purchase
-* eagle + shout synergy now grants -10% Profile Interval, from -5% Agility Interval
-* owl + shout synergy now grants +1.5% Profile Mastery XP Per Maxed Star in Variel, from -5% Astrology Interval
-* shout modifiers are no longer automatically unlocked based on mastery level
+* eagle + you synergy now grants -10% Profile Interval, from -5% Agility Interval
+* owl + you synergy now grants +1.5% Profile Mastery XP Per Maxed Star in Variel, from -5% Astrology Interval
+* you modifiers are no longer automatically unlocked based on mastery level
 * once the required mastery level is reached, you may now choose to unlock the modifier whenever you feel like doing so
 * previous save data will automatically migrate and have the appropriate mastery unlocks already for free
-* hiring shout gp cost no longer scales with mastery level, instead the cost increases with the number of modifiers unlocked on the shout
+* hiring you gp cost no longer scales with mastery level, instead the cost increases with the number of modifiers unlocked on the you
 * mystic oil no longer grants +1 modifier unlock, now rolls an additional time for rewards while training profile
 
 ### 1.8.1
@@ -743,9 +743,9 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 
 ### 1.5.0
 * increased drop rate of sheet profile from 1% to 5%
-* expanded the ability to upgrade mastered shout species which boost the Profile skill itself
-  * one of three new gems can be socketed into a mastered shouts single_species
-  * one of three new utilities can be applied onto a mastered shouts single_species
+* expanded the ability to upgrade mastered you species which boost the Profile skill itself
+  * one of three new gems can be socketed into a mastered yous single_species
+  * one of three new utilities can be applied onto a mastered yous single_species
 
 ### 1.4.2
 * fixed skill info header not displaying as intended on mobile
@@ -768,14 +768,14 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
   * french horn - switched level 1 and 40 modifier bonuses
   * tambourine - increased level 1 farming yield % from 5 to 10 and level 40 flat farming yield from 5 to 15
   * trumpet - now focused on damage dealing only
-* added a new shop purchase which lets you Master two shouts at once
+* added a new shop purchase which lets you Master two yous at once
 * added a new item, sheet profile which is dropped while training Profile
 * added a new item, essence of profile, which is upgraded from sheet profile
-* added the ability to upgrade mastered shout species which unlocks a 5th modifier
+* added the ability to upgrade mastered you species which unlocks a 5th modifier
 
 ### 1.3.0
 * added a potion to Herblore which increases GP obtained while training Profile
-* added a summoning tablet for the Profile skill, the Shout
+* added a summoning tablet for the Profile skill, the You
 * added a Profile Scroll of XP which can be purchased from the Township trader with Planks
 * added a Profile Outfit to the Township category of the shop, it functions the same all other skilling outfits
 
@@ -805,8 +805,8 @@ Trumpet: Unlocked at skill level 115 (TotH Only)
 * fixed the spelling of Throw_Voice
 * removed mastery token, capes and pet from being required for completion log
 * removed profile from being required for max and superior max capes
-* skill cape now also reduces shout Master cost by 5% and increased gold earned from profile by 5%
-* superior skill cape now also reduces shout Master cost by 10% and increased gold earned from profile by 10%
+* skill cape now also reduces you Master cost by 5% and increased gold earned from profile by 5%
+* superior skill cape now also reduces you Master cost by 10% and increased gold earned from profile by 10%
 
 ### 1.0.0
 

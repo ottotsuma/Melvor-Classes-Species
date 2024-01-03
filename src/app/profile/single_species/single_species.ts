@@ -11,8 +11,6 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
         media: single_species.media,
         id: single_species.id,
         localId: single_species.localID.toLowerCase(),
-        minGP: 0,
-        maxGP: 0,
         disabled: false,
         progressBar: {} as ProgressBar,
         mounted: function () {
@@ -44,23 +42,6 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
             this.masteryPoolIcon.setXP(masteryPoolXP);
             // this.intervalIcon.setInterval(interval);
         },
-        updateGPRange: function () {
-            let minGP = this.getMinGPRoll();
-            let maxGP = this.getMaxGPRoll();
-
-            const gpModifier = this.getGPModifier();
-            const modGp = (gp: number) => {
-                gp *= 1 + gpModifier / 100;
-                gp = Math.floor(gp + game.modifiers.increasedGPFlat);
-                return gp;
-            };
-
-            minGP = modGp(minGP);
-            maxGP = modGp(maxGP);
-
-            this.minGP = minGP;
-            this.maxGP = maxGP;
-        },
         Master: function () {
             profile.Master(single_species);
         },
@@ -68,7 +49,7 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
             profile.unlockMastery(single_species);
         },
         updateDisabled: function () {
-            this.disabled = profile.shouts.isMastered(single_species);
+            this.disabled = profile.yous.isMastered(single_species);
         },
         getSkillIcons: function () {
             return single_species.skills.map(media => {
@@ -76,18 +57,5 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
                 return media
             });
         },
-        getMinGPRoll: function () {
-            return Math.max(1, Math.floor(this.getMaxGPRoll() / 100));
-        },
-        getMaxGPRoll: function () {
-            // Each levels provides + 10 GP is here [profile.getMasteryLevel(single_species) * 10;]
-            return single_species.maxGP + profile.getMasteryLevel(single_species) * 10;
-        },
-        getGPModifier: function () {
-            let increasedGPModifier = game.modifiers.increasedGPGlobal - game.modifiers.decreasedGPGlobal;
-            increasedGPModifier += game.modifiers.increasedProfileGP - game.modifiers.decreasedProfileGP;
-
-            return increasedGPModifier;
-        }
     };
 }

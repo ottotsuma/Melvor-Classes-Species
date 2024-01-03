@@ -1,5 +1,5 @@
 export enum ChangeType {
-    ShoutEquipCost,
+    YouEquipCost,
     Modifiers
 }
 
@@ -8,11 +8,11 @@ export enum ModifierType {
     Hardcore = 'hardcore'
 }
 
-export type ShoutEquipCostCallback = (value: number, previousValue: number) => void;
+export type YouEquipCostCallback = (value: number, previousValue: number) => void;
 export type ModifierCallback = (value: ModifierType, previousValue: ModifierType) => void;
 
 export class ProfileSettings {
-    private shoutEquipCostCallbacks: ShoutEquipCostCallback[] = [];
+    private youEquipCostCallbacks: YouEquipCostCallback[] = [];
     private modifierCallbacks: ModifierCallback[] = [];
 
     constructor(private readonly context: Modding.ModContext) {}
@@ -20,11 +20,11 @@ export class ProfileSettings {
     public init() {
         const that = this;
 
-        this.context.settings.section(getLangString('Profile_Profile_Settings_Shout_Equip_Cost')).add([
+        this.context.settings.section(getLangString('Profile_Profile_Settings_You_Equip_Cost')).add([
             {
                 type: 'number',
                 name: 'one-mastery',
-                label: getLangString('Profile_Profile_Settings_Base_Shout_Equip_Cost_1'),
+                label: getLangString('Profile_Profile_Settings_Base_You_Equip_Cost_1'),
                 hint: '',
                 default: 0,
                 min: 100,
@@ -38,13 +38,13 @@ export class ProfileSettings {
                         return getLangString('Profile_Profile_Settings_Must_Be_Smaller_Then');
                     }
 
-                    that.emitChange(ChangeType.ShoutEquipCost, value, previousValue);
+                    that.emitChange(ChangeType.YouEquipCost, value, previousValue);
                 }
             } as Modding.Settings.NumberConfig,
             {
                 type: 'number',
                 name: 'two-mastery',
-                label: getLangString('Profile_Profile_Settings_Base_Shout_Equip_Cost_2'),
+                label: getLangString('Profile_Profile_Settings_Base_You_Equip_Cost_2'),
                 hint: '',
                 default: 100000,
                 min: 100,
@@ -58,13 +58,13 @@ export class ProfileSettings {
                         return getLangString('Profile_Profile_Settings_Must_Be_Smaller_Then');
                     }
 
-                    that.emitChange(ChangeType.ShoutEquipCost, value, previousValue);
+                    that.emitChange(ChangeType.YouEquipCost, value, previousValue);
                 }
             } as Modding.Settings.NumberConfig,
             {
                 type: 'number',
                 name: 'three-mastery',
-                label: getLangString('Profile_Profile_Settings_Base_Shout_Equip_Cost_3'),
+                label: getLangString('Profile_Profile_Settings_Base_You_Equip_Cost_3'),
                 hint: '',
                 default: 1000000,
                 min: 100,
@@ -78,13 +78,13 @@ export class ProfileSettings {
                         return getLangString('Profile_Profile_Settings_Must_Be_Smaller_Then');
                     }
 
-                    that.emitChange(ChangeType.ShoutEquipCost, value, previousValue);
+                    that.emitChange(ChangeType.YouEquipCost, value, previousValue);
                 }
             } as Modding.Settings.NumberConfig,
             {
                 type: 'number',
                 name: 'four-mastery',
-                label: getLangString('Profile_Profile_Settings_Base_Shout_Equip_Cost_4'),
+                label: getLangString('Profile_Profile_Settings_Base_You_Equip_Cost_4'),
                 hint: '',
                 default: 10000000,
                 min: 100,
@@ -98,13 +98,13 @@ export class ProfileSettings {
                         return getLangString('Profile_Profile_Settings_Must_Be_Smaller_Then');
                     }
 
-                    that.emitChange(ChangeType.ShoutEquipCost, value, previousValue);
+                    that.emitChange(ChangeType.YouEquipCost, value, previousValue);
                 }
             } as Modding.Settings.NumberConfig,
             {
                 type: 'number',
                 name: 'five-mastery',
-                label: getLangString('Profile_Profile_Settings_Base_Shout_Equip_Cost_5'),
+                label: getLangString('Profile_Profile_Settings_Base_You_Equip_Cost_5'),
                 hint: '',
                 default: 10000000,
                 min: 100,
@@ -118,7 +118,7 @@ export class ProfileSettings {
                         return getLangString('Profile_Profile_Settings_Must_Be_Smaller_Then');
                     }
 
-                    that.emitChange(ChangeType.ShoutEquipCost, value, previousValue);
+                    that.emitChange(ChangeType.YouEquipCost, value, previousValue);
                 }
             } as Modding.Settings.NumberConfig
         ]);
@@ -133,10 +133,6 @@ export class ProfileSettings {
                 {
                     value: ModifierType.Standard,
                     display: getLangString('Profile_Profile_Settings_Modifier_Standard')
-                },
-                {
-                    value: ModifierType.Hardcore,
-                    display: getLangString('Profile_Profile_Settings_Modifier_Hardcore')
                 }
             ],
             onChange(value, previousValue) {
@@ -145,33 +141,33 @@ export class ProfileSettings {
         } as Modding.Settings.DropdownConfig);
     }
 
-    public get shoutEquipCostOne() {
+    public get youEquipCostOne() {
         return this.context.settings
-            .section(getLangString('Profile_Profile_Settings_Shout_Equip_Cost'))
+            .section(getLangString('Profile_Profile_Settings_You_Equip_Cost'))
             .get('one-mastery') as number;
     }
 
-    public get shoutEquipCostTwo() {
+    public get youEquipCostTwo() {
         return this.context.settings
-            .section(getLangString('Profile_Profile_Settings_Shout_Equip_Cost'))
+            .section(getLangString('Profile_Profile_Settings_You_Equip_Cost'))
             .get('two-mastery') as number;
     }
 
-    public get shoutEquipCostThree() {
+    public get youEquipCostThree() {
         return this.context.settings
-            .section(getLangString('Profile_Profile_Settings_Shout_Equip_Cost'))
+            .section(getLangString('Profile_Profile_Settings_You_Equip_Cost'))
             .get('three-mastery') as number;
     }
 
-    public get shoutEquipCostFour() {
+    public get youEquipCostFour() {
         return this.context.settings
-            .section(getLangString('Profile_Profile_Settings_Shout_Equip_Cost'))
+            .section(getLangString('Profile_Profile_Settings_You_Equip_Cost'))
             .get('four-mastery') as number;
     }
 
-    public get shoutEquipCostFive() {
+    public get youEquipCostFive() {
         return this.context.settings
-            .section(getLangString('Profile_Profile_Settings_Shout_Equip_Cost'))
+            .section(getLangString('Profile_Profile_Settings_You_Equip_Cost'))
             .get('five-mastery') as number;
     }
 
@@ -181,12 +177,12 @@ export class ProfileSettings {
             .get('modifiers') as ModifierType;
     }
 
-    public onChange(type: ChangeType.ShoutEquipCost, callback: ShoutEquipCostCallback): void;
+    public onChange(type: ChangeType.YouEquipCost, callback: YouEquipCostCallback): void;
     public onChange(type: ChangeType.Modifiers, callback: ModifierCallback): void;
-    public onChange(type: ChangeType, callback: ShoutEquipCostCallback | ModifierCallback) {
+    public onChange(type: ChangeType, callback: YouEquipCostCallback | ModifierCallback) {
         switch (type) {
-            case ChangeType.ShoutEquipCost:
-                this.shoutEquipCostCallbacks.push(callback as ShoutEquipCostCallback);
+            case ChangeType.YouEquipCost:
+                this.youEquipCostCallbacks.push(callback as YouEquipCostCallback);
                 break;
             case ChangeType.Modifiers:
                 this.modifierCallbacks.push(callback as ModifierCallback);
@@ -196,8 +192,8 @@ export class ProfileSettings {
 
     private emitChange(type: ChangeType, value: unknown, previousValue: unknown) {
         switch (type) {
-            case ChangeType.ShoutEquipCost:
-                for (const callback of this.shoutEquipCostCallbacks) {
+            case ChangeType.YouEquipCost:
+                for (const callback of this.youEquipCostCallbacks) {
                     try {
                         callback(value as number, previousValue as number);
                     } catch {}

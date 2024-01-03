@@ -1,5 +1,5 @@
 import { Profile } from '../profile';
-import { MasteredShout } from '../profile.types';
+import { MasteredYou } from '../profile.types';
 import { DecodeVersion } from './version.base';
 
 export class Version4 implements DecodeVersion {
@@ -51,31 +51,31 @@ export class Version4 implements DecodeVersion {
                 utility = reader.getNamespacedObject(this.game.items);
             }
 
-            let masteredShout: MasteredShout;
+            let masteredYou: MasteredYou;
 
             if (typeof single_species !== 'string') {
-                masteredShout = {
+                masteredYou = {
                     single_species,
                     slot,
                     socket: typeof socket !== 'string' ? socket : undefined,
                     utility: typeof utility !== 'string' ? utility : undefined
                 };
 
-                this.profile.shouts.set(single_species, masteredShout);
+                this.profile.yous.set(single_species, masteredYou);
             }
 
             return {
                 key: single_species,
-                value: masteredShout
+                value: masteredYou
             };
         });
 
-        const shout1 = this.profile.shouts.get(1);
-        const shout2 = this.profile.shouts.get(2);
+        const you1 = this.profile.yous.get(1);
+        const you2 = this.profile.yous.get(2);
 
 
-        this.profile.userInterface.shout1.setShout(shout1);
-        this.profile.userInterface.shout2.setShout(shout2);
+        this.profile.userInterface.you1.setYou(you1);
+        this.profile.userInterface.you2.setYou(you2);
 
     }
 }

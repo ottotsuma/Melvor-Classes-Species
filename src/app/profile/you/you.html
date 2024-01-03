@@ -1,15 +1,15 @@
-<template id="profile-shout">
+<template id="profile-you">
     <div class="block block-rounded block-link-pop border-top border-profile border-4x" v-if="isEnabled">
         <div class="text-center mb-1">
             <div class="row gutters-tiny">
-                <div class="col-12 pt-3 font-size-lg mb-3" v-if="shout">
-                    <img class="single_species-icon" v-bind:src="shout.single_species.media" />
+                <div class="col-12 pt-3 font-size-lg mb-3" v-if="you">
+                    <img class="single_species-icon" v-bind:src="you.single_species.media" />
                     <span>
-                        {{ templateLangString('Profile_Profile_Shout_Title', { name: shout.single_species.name }) }}
+                        {{ templateLangString('Profile_Profile_You_Title', { name: you.single_species.name }) }}
                     </span>
                 </div>
 
-                <div class="col-12 pb-3 pr-3 pl-3" v-if="shout">
+                <div class="col-12 pb-3 pr-3 pl-3" v-if="you">
                     <div
                         v-for="modifier in modifiers"
                         :class="{ 'text-danger' : modifier.level === 1, 'text-success': modifier.isActive, 'profile-text-grey': !modifier.isActive }"
@@ -26,8 +26,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 font-size-lg pt-3 pb-3" v-if="!shout">
-                    <span>{{ getLangString('Profile_Profile_Shout_Not_Currently_Mastered') }}</span>
+                <div class="col-12 font-size-lg pt-3 pb-3" v-if="!you">
+                    <span>{{ getLangString('Profile_Profile_You_Not_Currently_Mastered') }}</span>
                 </div>
             </div>
         </div>
