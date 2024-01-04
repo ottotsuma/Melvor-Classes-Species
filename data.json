@@ -335,6 +335,85 @@
                                     "value": 1
                                 }
                             ]
+                        },
+                        {
+                            "id": "Aarakocra",
+                            "name": "Aarakocra",
+                            "media": "https://ottotsuma.github.io/images/portraits/aarakocra%20female.png",
+                            "baseExperience": 21,
+                            "productId": "namespace_profile:Aarakocra",
+                            "level": 20,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/torvair.png",
+                                "https://cdn2-main.melvor.net/assets/media/skills/fishing/fishing.svg"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "aarakocraTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedBirdNestDropRate",
+                                    "value": 100
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedDamageAgainstGoblins",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "summoningSynergy_Ent_Leprechaun",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedDamageAgainstSeaCreatures",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedChanceToCatchExtraSameAreaFish",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "reignOverTimePassive",
+                                    "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
                         }
                     ],
                     "classes": [
@@ -461,6 +540,84 @@
                                     "level": 99,
                                     "key": "allowNonMagicCurses",
                                     "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Scout",
+                            "name": "Scout",
+                            "media": "https://ottotsuma.github.io/images/people/2e0fee63d593cea1aada59d3f8f2a815.jpg",
+                            "baseExperience": 21,
+                            "productId": "namespace_profile:Wizard",
+                            "level": 20,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "scoutTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedAmmoPreservation",
+                                    "value": 25
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedEvasionAgainstRanged",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedSlayerAreaEffectNegationFlat",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedFlatRangedAccuracyBonusPerAttackInterval",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedDamageAgainstAnimals",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "decreasedAttackIntervalPercent",
+                                    "value": 10
                                 }
                             ],
                             "hardcoreModifiers": [

@@ -100,11 +100,15 @@ export class App {
         cmim.forceBaseModTypeActive("Elemental");
         cmim.forceBaseModTypeActive("MythicalCreature");
         cmim.forceBaseModTypeActive("SeaCreature");
+        cmim.registerOrUpdateType("Aarakocra", "Aarakocras", "https://cdn2-main.melvor.net/assets/media/monsters/torvair.png", [], true);
 
         // Classes
         cmim.registerOrUpdateType("Knight", "Knights", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", [], true);
         cmim.registerOrUpdateType("Wizard", "Wizards", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", [], true);
+        cmim.registerOrUpdateType("Scout", "Scouts", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", [], true);
 
+
+        
         await this.context.gameData.addPackage('data.json');
         // await this.context.gameData.addPackage('data-cmim.json');
         if (cloudManager.hasTotHEntitlement) {

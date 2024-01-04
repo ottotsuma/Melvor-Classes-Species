@@ -46,8 +46,11 @@ export const en = {
         '+${value}% ${skillName} Mastery XP per maxed Star in Variel constellation in Astrology',
     Single_Species_Human: 'Human',
     Single_Species_Elf: 'Elf',
+    Single_Species_Aarakocra: 'Aarakocra',
+
     Single_Species_Knight: 'Knight',
     Single_Species_Wizard: 'Wizard',
+    Single_Species_Scout: 'Scout',
 
     PET_NAME_Bob: 'Bob',
     ITEM_NAME_Summoning_Familiar_You: 'You',
