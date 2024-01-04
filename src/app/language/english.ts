@@ -121,5 +121,4 @@ export const en = {
     Settings_Must_Be_Smaller_Then: 'Value must be smaller then 1,000,000,000,000',
     MODIFIER_DATA_increasedDamageAgainstElves: 'Damage to Elves',
     MODIFIER_DATA_bigRon: '+100% Chance To Double Loot in Combat. For every 2000 base Maximum Hitpoints the enemy has (Capped at 10000): +9% Melee Strength Bonus from Equipment, +3% of Maximum Hit added to Minimum Hit and +1% Damage Reduction. Bonus is doubled if fighting a boss.'
-
 };
