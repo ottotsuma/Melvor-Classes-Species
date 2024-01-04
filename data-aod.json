@@ -8,7 +8,7 @@
                 "name": "Profile Relic 1",
                 "skillID": "namespace_profile:Profile",
                 "number": 1,
-                "description": "A relic from the ancient greybeards.",
+                "description": "A relic made by people of the past.",
                 "modifiers": {
                     "increasedMasteryXP": [
                         {
@@ -23,9 +23,9 @@
                 "name": "Profile Relic 2",
                 "skillID": "namespace_profile:Profile",
                 "number": 2,
-                "description": "A relic from the ancient greybeards.",
+                "description": "A relic made by people of the past.",
                 "modifiers": {
-                    "increasedMaxAirSpellDmg": 20
+                    "increasedDamageAgainstGoblins": 5
                 }
             },
             {
@@ -33,9 +33,9 @@
                 "name": "Profile Relic 3",
                 "skillID": "namespace_profile:Profile",
                 "number": 3,
-                "description": "A relic from the ancient greybeards.",
+                "description": "A relic made by people of the past.",
                 "modifiers": {
-                    "increasedChanceToLocateAncientRelic": 1
+                    "increasedDamageAgainstHumans": 5
                 }
             },
             {
@@ -43,9 +43,9 @@
                 "name": "Profile Relic 4",
                 "skillID": "namespace_profile:Profile",
                 "number": 4,
-                "description": "A relic from the ancient greybeards.",
+                "description": "A relic made by people of the past.",
                 "modifiers": {
-                    "increasedGPGlobal": 50
+                    "increasedDamageAgainstAnimals": 5
                 }
             },
             {
@@ -53,14 +53,9 @@
                 "name": "Profile Relic 5",
                 "skillID": "namespace_profile:Profile",
                 "number": 5,
-                "description": "A relic from the ancient greybeards.",
+                "description": "A relic made by people of the past.",
                 "modifiers": {
-                    "decreasedSkillIntervalPercent": [
-                        {
-                            "skillID": "namespace_profile:Profile",
-                            "value": 20
-                        }
-                    ]
+                    "increasedDamageAgainstDragons": 5
                 }
             },
             {
@@ -68,9 +63,9 @@
                 "name": "Profile Master Relic",
                 "skillID": "namespace_profile:Profile",
                 "number": 6,
-                "description": "A relic from the ancient greybeards.",
+                "description": "A relic made by people of the past.",
                 "modifiers": {
-                    "bigRon": 1
+                    "increasedChanceToLocateAncientRelic": 1
                 }
             }
         ],
@@ -99,13 +94,9 @@
                 "equipRequirements": [],
                 "equipmentStats": [],
                 "modifiers": {
-                    "decreasedSkillIntervalPercent": [
-                        {
-                            "skillID": "namespace_profile:Profile",
-                            "value": 5
-                        }
-                    ],
-                    "decreasedProfileGP": 5
+                    "increasedDamageAgainstHumans": 10,
+                    "increasedDamageAgainstUndead": 10,
+                    "increasedDamageAgainstDemons": 10
                 },
                 "consumesOn": [
                     {
