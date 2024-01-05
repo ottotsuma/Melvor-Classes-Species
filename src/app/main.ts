@@ -82,6 +82,12 @@ export class App {
             "melvorF:MalcsTheLeaderOfDragons",
             "melvorF:GreaterSkeletalDragon",
         ]
+        const AngelList: any[] =[
+            "melvorF:Angel",
+            "melvorF:Fairy",
+            "melvorF:Valkyrie",
+            "melvorF:HolyArcher"
+        ]
         if (cloudManager.hasTotHEntitlement) {
             DragonList.push(
                 "melvorTotH:Kongamato", "melvorTotH:GretYun", "melvorTotH:RaZu",
@@ -101,6 +107,7 @@ export class App {
         cmim.forceBaseModTypeActive("MythicalCreature");
         cmim.forceBaseModTypeActive("SeaCreature");
         cmim.registerOrUpdateType("Aarakocra", "Aarakocras", "https://cdn2-main.melvor.net/assets/media/monsters/torvair.png", [], true);
+        cmim.registerOrUpdateType("Angel", "Angels", "https://cdn2-main.melvor.net/assets/media/monsters/angel.png", AngelList, true);
 
         // Classes
         cmim.registerOrUpdateType("Knight", "Knights", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", [], true);
