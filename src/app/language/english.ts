@@ -74,7 +74,7 @@ export const en = {
     ITEM_NAME_Generous_Gratuity_Potion_III: 'Generous Gratuity Potion III',
     ITEM_NAME_Generous_Gratuity_Potion_IV: 'Generous Gratuity Potion IV',
     ITEM_NAME_Mastery_Token_Profile: 'Mastery Token (Profile)',
-    ITEM_NAME_Lesser_Relic: 'An old relic',
+    ITEM_NAME_Profile_Lesser_Relic: 'An old relic',
     MASTERY_BONUS_Profile_0: 'Each level increases the species cost by 10 GP for this single_species only.',
     MASTERY_BONUS_Profile_1: 'First Master modifier.',
     MASTERY_BONUS_Profile_2: 'Ability to unlock the second Master modifier.',
