@@ -753,7 +753,7 @@
                             "level": 70,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/infernal_golem.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/farming/farming.svg"
+                                "https://cdn2-main.melvor.net/assets/media/skills/runecrafting/runecrafting.svg"
                             ],
                             "standardModifiers": [
                                 {
@@ -768,7 +768,7 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedFarmingYield",
+                                    "key": "increasedRunecraftingEssencePreservation",
                                     "value": 20
                                 },
                                 {
@@ -778,13 +778,13 @@
                                 },
                                 {
                                     "level": 60,
-                                    "key": "increasedDamageAgainstElementals",
-                                    "value": 5
+                                    "key": "giveRandomComboRunesRunecrafting",
+                                    "value": 1
                                 },
                                 {
                                     "level": 80,
                                     "key": "increasedMaxHitpoints",
-                                    "value": 25
+                                    "value": 20
                                 },
                                 {
                                     "level": 99,

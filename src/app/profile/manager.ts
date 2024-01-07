@@ -78,7 +78,9 @@ export class ProfileManager {
             this.profile.settings.youEquipCostThree || 10000,
             this.profile.settings.youEquipCostFour || 100000,
             this.profile.settings.youEquipCostFive || 1000000,
-            this.profile.settings.youEquipCostSix || 10000000
+            this.profile.settings.youEquipCostSix || 10000000,
+            this.profile.settings.youEquipCostSeven || 100000000
+
         ];
         const single_speciesRef = this.profile.actions.find(action => action.id === single_species.id);
         const unlocked = this.profile.masteriesUnlocked.get(single_speciesRef).filter(isUnlocked => isUnlocked).length;
