@@ -546,7 +546,7 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "increasedGlobalAccuracyAgainstAarakocra",
+                                    "key": "increasedGlobalAccuracyAgainstAarakocras",
                                     "value": 50
                                 },
                                 {
@@ -842,32 +842,32 @@
                                 },
                                 {
                                     "level": 1,
-                                    "key": "",
+                                    "key": "decreasedGPFromAgility",
                                     "value": 100
                                 },
                                 {
                                     "level": 20,
-                                    "key": "",
+                                    "key": "increasedMaxWaterSpellDmg",
                                     "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "key": "",
-                                    "value": 1
+                                    "key": "decreasedAgilityObstacleCost",
+                                    "value": 20
                                 },
                                 {
                                     "level": 60,
-                                    "key": "",
+                                    "key": "increasedDamageAgainstDragons",
                                     "value": 10
                                 },
                                 {
                                     "level": 80,
-                                    "key": "",
+                                    "key": "decreasedDamageTakenFromDragons",
                                     "value": 10
                                 },
                                 {
                                     "level": 99,
-                                    "key": "",
+                                    "key": "removeDebuffsFromAgility",
                                     "value": 1
                                 }
                             ],

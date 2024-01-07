@@ -46,7 +46,7 @@ export class ProfileSettings {
                 name: 'two-mastery',
                 label: getLangString('Profile_Profile_Settings_Base_You_Equip_Cost_2'),
                 hint: '',
-                default: 10000,
+                default: 0,
                 min: 100,
                 max: 999999999999,
                 onChange(value: number, previousValue: number) {
@@ -66,7 +66,7 @@ export class ProfileSettings {
                 name: 'three-mastery',
                 label: getLangString('Profile_Profile_Settings_Base_You_Equip_Cost_3'),
                 hint: '',
-                default: 100000,
+                default: 10000,
                 min: 100,
                 max: 999999999999,
                 onChange(value: number, previousValue: number) {
@@ -86,7 +86,7 @@ export class ProfileSettings {
                 name: 'four-mastery',
                 label: getLangString('Profile_Profile_Settings_Base_You_Equip_Cost_4'),
                 hint: '',
-                default: 1000000,
+                default: 100000,
                 min: 100,
                 max: 999999999999,
                 onChange(value: number, previousValue: number) {
@@ -127,6 +127,26 @@ export class ProfileSettings {
                 label: getLangString('Profile_Profile_Settings_Base_You_Equip_Cost_6'),
                 hint: '',
                 default: 10000000,
+                min: 100,
+                max: 999999999999,
+                onChange(value: number, previousValue: number) {
+                    if (value < 100) {
+                        return getLangString('Profile_Profile_Settings_Must_Be_Larger_Then');
+                    }
+
+                    if (value > 999999999999) {
+                        return getLangString('Profile_Profile_Settings_Must_Be_Smaller_Then');
+                    }
+
+                    that.emitChange(ChangeType.YouEquipCost, value, previousValue);
+                }
+            } as Modding.Settings.NumberConfig,
+            {
+                type: 'number',
+                name: 'seven-mastery',
+                label: getLangString('Profile_Profile_Settings_Base_You_Equip_Cost_7'),
+                hint: '',
+                default: 100000000,
                 min: 100,
                 max: 999999999999,
                 onChange(value: number, previousValue: number) {
@@ -195,6 +215,12 @@ export class ProfileSettings {
         return this.context.settings
             .section(getLangString('Profile_Profile_Settings_You_Equip_Cost'))
             .get('six-mastery') as number;
+    }
+
+    public get youEquipCostSeven() {
+        return this.context.settings
+            .section(getLangString('Profile_Profile_Settings_You_Equip_Cost'))
+            .get('seven-mastery') as number;
     }
 
     public get modifierType() {
