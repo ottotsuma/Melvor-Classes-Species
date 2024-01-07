@@ -79,7 +79,8 @@ export class App {
             "melvorF:HuntingGreaterDragon",
             "melvorF:WickedGreaterDragon",
             "melvorF:MalcsTheLeaderOfDragons",
-            "melvorF:GreaterSkeletalDragon"
+            "melvorF:GreaterSkeletalDragon",
+            "melvorD:ProtectorofIce"
         ]
         const AngelList: any[] = [
             "melvorF:Angel",
@@ -224,7 +225,7 @@ export class App {
             "melvorF:FireMonster",
             "melvorTotH:IceHydra"
         ]
-        const BeastList = ["melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:StoneSnake", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorTotH:LargeIceTroll"]
+        const BeastList = ["melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:StoneSnake", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorTotH:LargeIceTroll", "melvorD:IceTroll", "melvorD:Ice", "melvorD:TheEye", "melvorD:ResurrectedEye"]
         const GiantList = ["melvorD:HillGiant", "melvorD:MossGiant", "melvorF:GiantMoth", "melvorD:GiantCrab", "melvorF:TurkulGiant"]
         if (cloudManager.hasTotHEntitlement) {
             BeastList.push("melvorTotH:GoliathWerewolf")
