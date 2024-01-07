@@ -901,6 +901,164 @@
                                     "value": 1
                                 }
                             ]
+                        },
+                        {
+                            "id": "MythicalCreature",
+                            "name": "Mythical Creature",
+                            "media": "https://i.pinimg.com/564x/19/cd/20/19cd20c3ea44128bb29e4432f2ca505f.jpg",
+                            "baseExperience": 77,
+                            "productId": "namespace_profile:MythicalCreature",
+                            "level": 90,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/elerine_mage.png",
+                                "https://cdn2-main.melvor.net/assets/media/skills/astrology/astrology.svg"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "mythicalCreatureTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedAutoEatThreshold",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedDamageAgainstAarakocras",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedGlobalAccuracyAgainstKnights",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedSlayerAreaEffectNegationFlat",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedHealingWhenHit",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "doubleModifiersInAstrologyForMaxedConstellations",
+                                    "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Angel",
+                            "name": "Angel",
+                            "media": "https://ottotsuma.github.io/images/monsters/155544adb53505632dccdb6edea8c83f.jpg",
+                            "baseExperience": 84,
+                            "productId": "namespace_profile:Angel",
+                            "level": 99,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/angel.png",
+                                "https://cdn2-main.melvor.net/assets/media/skills/prayer/prayer.svg"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "angelTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedSummoningChargePreservation",
+                                    "value": 100
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedDamageAgainstDemons",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedGlobalAccuracyAgainstDemons",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedChanceToPreservePrayerPoints",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedMaxHitBasedOnPrayerCost",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedPrayerPointsWhenHit",
+                                    "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
                         }
                     ],
                     "classes": [

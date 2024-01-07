@@ -246,8 +246,8 @@ export class App {
         });
         // @ts-ignore
         this.context.patch(Skill, 'addXP').after(function (amount, masteryAction) {
-            const single_class = game.profile.yous.get(1)
-            const single_species = game.profile.yous.get(2)
+            const single_species = game.profile.yous.get(1) // human
+            const single_class = game.profile.yous.get(2) // knight
 
             let exp1 = 0
             if (single_species) {
@@ -270,18 +270,17 @@ export class App {
                 masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
                 masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
             }
-            const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
+            // const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
 
-            const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
+            // const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
             
             const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
 
             const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
             const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
 
-            const currentClass = single_class.single_species.localID
-
-            if (game && game.activeAction && currentClass === 'Human' && game.activeAction._localID === 'Crafting') {
+            const currentSpeicies = single_species.single_species.localID
+            if (game && game.activeAction && currentSpeicies === 'Human' && game.activeAction._localID === 'Crafting') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
                 // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -289,7 +288,7 @@ export class App {
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
-            if (game && game.activeAction && currentClass === 'Elf' && game.activeAction._localID === 'Farming') {
+            if (game && game.activeAction && currentSpeicies === 'Elf' && game.activeAction._localID === 'Farming') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
                 // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -297,7 +296,7 @@ export class App {
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
-            if (game && game.activeAction && currentClass === 'Aarakocra' && game.activeAction._localID === 'Fishing') {
+            if (game && game.activeAction && currentSpeicies === 'Aarakocra' && game.activeAction._localID === 'Fishing') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
                 // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -305,7 +304,7 @@ export class App {
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
-            if (game && game.activeAction && currentClass === 'Goblin' && game.activeAction._localID === 'Thieving') {
+            if (game && game.activeAction && currentSpeicies === 'Goblin' && game.activeAction._localID === 'Thieving') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
                 // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -313,7 +312,7 @@ export class App {
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
-            if (game && game.activeAction && currentClass === 'Dragon' && game.activeAction._localID === 'Firemaking') {
+            if (game && game.activeAction && currentSpeicies === 'Dragon' && game.activeAction._localID === 'Firemaking') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
                 // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -321,7 +320,7 @@ export class App {
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
-            if (game && game.activeAction && currentClass === 'Undead' && game.activeAction._localID === 'Mining') {
+            if (game && game.activeAction && currentSpeicies === 'Undead' && game.activeAction._localID === 'Mining') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
                 // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -329,7 +328,7 @@ export class App {
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
-            if (game && game.activeAction && currentClass === 'Demon' && game.activeAction._localID === 'Summoning') {
+            if (game && game.activeAction && currentSpeicies === 'Demon' && game.activeAction._localID === 'Summoning') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
                 // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -337,7 +336,7 @@ export class App {
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
-            if (game && game.activeAction && currentClass === 'SeaCreature' && game.activeAction._localID === 'Agility') {
+            if (game && game.activeAction && currentSpeicies === 'SeaCreature' && game.activeAction._localID === 'Agility') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
                 // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -345,7 +344,15 @@ export class App {
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
-            if (game && game.activeAction && currentClass === 'Elemental' && game.activeAction._localID === 'Runecrafting') {
+            if (game && game.activeAction && currentSpeicies === 'Elemental' && game.activeAction._localID === 'Runecrafting') {
+                // && masteryAction !== totalExp // can kind of stop the re-triggering
+                // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
+                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
+            }
+
+            if (game && game.activeAction && currentSpeicies === 'MythicalCreature' && game.activeAction._localID === 'Astrology') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
                 // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -357,7 +364,6 @@ export class App {
             // {"melvorD:Smithing" => Smithing}
             // {"melvorD:Fletching" => Fletching}
             // {"melvorD:Herblore" => Herblore}
-            // {"melvorD:Astrology" => Astrology}
             // {"melvorD:Township" => Township}
             // {"melvorAoD:Cartography" => Cartography}
             // {"melvorAoD:Archaeology" => Archaeology}

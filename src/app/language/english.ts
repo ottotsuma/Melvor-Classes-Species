@@ -53,6 +53,8 @@ export const en = {
     Single_Species_Demon: 'Demon',
     Single_Species_Elemental: 'Elemental',
     Single_Species_SeaCreature: 'Sea Creature',
+    Single_Species_Angel: 'Angel',
+    Single_Species_MythicalCreature: 'Mythical Creature',
 
     Single_Species_Knight: 'Knight',
     Single_Species_Wizard: 'Wizard',
