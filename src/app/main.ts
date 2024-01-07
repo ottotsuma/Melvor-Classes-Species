@@ -67,7 +67,6 @@ export class App {
         if (!kcm) {
             return;
         }
-
         const DragonList: any[] = [
             "melvorD:PratTheProtectorOfSecrets",
             "melvorD:GreenDragon",
@@ -80,7 +79,7 @@ export class App {
             "melvorF:HuntingGreaterDragon",
             "melvorF:WickedGreaterDragon",
             "melvorF:MalcsTheLeaderOfDragons",
-            "melvorF:GreaterSkeletalDragon",
+            "melvorF:GreaterSkeletalDragon"
         ]
         const AngelList: any[] = [
             "melvorF:Angel",
@@ -88,16 +87,258 @@ export class App {
             "melvorF:Valkyrie",
             "melvorF:HolyArcher"
         ]
+        const PlantList: any[] = [
+            "melvorD:Plant"
+        ]
+        const OrcList: any[] = [
+            "melvorF:TurkulRiders",
+            "melvorF:TurkulArchers",
+            "melvorF:TurkulThrowers",
+            "melvorF:TurkulGiant",
+            "melvorF:TurkulGeneral"
+        ]
+        const elfList: any[] = [
+        ]
+        const UndeadList: any[] = [
+            "melvorD:PirateCaptain",
+            "melvorD:ZombieHand",
+            "melvorD:Zombie",
+            "melvorD:ZombieLeader",
+            "melvorD:Ghost",
+            "melvorD:Skeleton",
+            "melvorF:UndeadWerewolf",
+            "melvorF:CursedLich",
+            "melvorF:GreaterSkeletalDragon",
+            "melvorF:Mummy",
+            "melvorF:Vampire",
+            "melvorF:ElderVampire",
+            "melvorF:CursedMaiden"
+        ]
+        const AarakocraList: any[] = []
+        const SeaCreatureList: any[] = [
+            "melvorF:MioliteSprig",
+            "melvorF:MioliteTrio",
+            "melvorF:MioliteWarden",
+            "melvorF:MioliteMonarch",
+            "melvorD:GiantCrab",
+            "melvorD:Tentacle",
+            "melvorD:TheKraken",
+            "melvorF:Lissia",
+            "melvorF:Murtia",
+            "melvorF:Umbora",
+            "melvorF:Rokken",
+            "melvorF:Kutul",
+            "melvorF:Lissia",
+            "melvorF:Murtia",
+            "melvorF:MioliteWarden",
+        ]
+
+        const GoblinList = [
+            "melvorD:Golbin",
+            "melvorD:RangedGolbin"
+        ]
+        const AnimalList: any[] = [            
+            "melvorD:Chicken",
+            "melvorD:Cow",
+            "melvorD:Chick",
+            "melvorD:MummaChicken",
+            "melvorD:Leech",
+            "melvorD:Bat",
+            "melvorD:BigBat",
+            "melvorD:ViciousSerpent",
+            "melvorD:Spider",
+            "melvorD:BrownSpider",
+            "melvorD:EvilSpider",
+            "melvorD:SpiderKing",
+            "melvorD:Seagull",
+            "melvorD:FrozenMammoth",
+            "melvorF:AirGuard",
+            "melvorF:LegaranWurm",
+            "melvorF:NoxiousSerpent",
+            "melvorF:VenomousSnake",
+            "melvorF:GiantMoth",
+            "melvorF:RancoraSpider",
+            "melvorF:SpikedRedClaw"
+        ]
+        const ElementalCreatureList: any[] = [
+            "melvorD:Ice",
+            "MelvorD:FireSpirit",
+            "melvorF:AirGolem",
+            "melvorF:WaterGuard",
+            "melvorF:WaterMonster",
+            "melvorF:WaterGolem",
+            "melvorF:Glacia",
+            "melvorF:EarthGolem",
+            "melvorF:FireGolem",
+        ]
+        const HumansList: any[] = [
+            "melvorF:BountyHunter",
+            "melvorD:BlackKnight",
+            "melvorD:ConfusedPirate",
+            "melvorD:FrozenArcher",
+            "melvorD:Pirate",
+            "melvorD:FirstMate",
+            "melvorD:JuniorFarmer",
+            "melvorD:AdultFarmer",
+            "melvorD:MasterFarmer",
+            "melvorD:Wizard",
+            "melvorD:SteelKnight",
+            "melvorD:MithrilKnight",
+            "melvorD:AdamantKnight",
+            "melvorD:RuneKnight",
+            "melvorD:BanditTrainee",
+            "melvorD:Bandit",
+            "melvorD:BanditLeader",
+            "melvorD:DarkWizard",
+            "melvorD:MasterWizard",
+            "melvorD:ElderWizard",
+            "melvorF:Druid",
+            "melvorF:Thief",
+            "melvorF:Shaman",
+            "melvorF:Necromancer",
+            "melvorF:Elementalist",
+            "melvorF:Paladin",
+            "melvorF:Priest",
+            "melvorF:WanderingBard",
+
+        ]
+        const DemonList: any[] = [
+            "melvorF:RedDevil",
+            "melvorF:FierceDevil",
+            "melvorF:FireGuard",
+            "melvorF:Ignis",
+            "melvorF:Ragnar"
+        ]
+        const MythList: any[] = [
+            "melvorD:ElerineMage",
+            "melvorD:ElerineWarrior",
+            "melvorD:ElerineArcher",
+            "melvorF:Griffin",
+            "melvorF:Pegasus",
+            "melvorF:Cerberus",
+            "melvorF:Phoenix",
+            "melvorF:Aleron",
+            "melvorF:EarthGuard",
+            "melvorF:EarthMonster",
+            "melvorF:Ophidia",
+            "melvorF:FireMonster",
+            "melvorTotH:IceHydra"
+        ]
+        const BeastList = ["melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:StoneSnake", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorTotH:LargeIceTroll"]
+        const GiantList = ["melvorD:HillGiant", "melvorD:MossGiant", "melvorF:GiantMoth", "melvorD:GiantCrab", "melvorF:TurkulGiant"]
         if (cloudManager.hasTotHEntitlement) {
+            BeastList.push("melvorTotH:GoliathWerewolf")
+            MythList.push(
+                "melvorTotH:Manticore",
+                "melvorTotH:Cockatrice"
+            )
+            DemonList.push(
+                "melvorTotH:MagicFireDemon",
+                "melvorTotH:GuardianoftheHerald"
+            )
+            ElementalCreatureList.push(
+                "melvorTotH:InfernalGolem",
+                "melvorTotH:FrostGolem",
+                "melvorTotH:LightningSpirit"
+            )
+            HumansList.push(
+                "melvorTotH:PlagueDoctor", "melvorTotH:DarkKnight",
+            )
+            SeaCreatureList.push(
+                "melvorTotH:TwinSeaDragonSerpent",
+                "melvorTotH:Leviathan",
+                "melvorTotH:Siren",
+                "melvorTotH:MonsterCroc",
+            )
+            UndeadList.push(
+                "melvorTotH:CursedSkeletonWarrior",
+                "melvorTotH:CursedSpirit",
+                "melvorTotH:LadyDarkheart",
+                "melvorTotH:Phantom",
+                "melvorTotH:Banshee",
+                "melvorTotH:Spectre",
+                "melvorTotH:VorloranDevastator",
+                "melvorTotH:VorloranWatcher",
+                "melvorTotH:VorloranProtector",
+                "melvorTotH:Fiozor",
+            )
             DragonList.push(
-                "melvorTotH:Kongamato", "melvorTotH:GretYun", "melvorTotH:RaZu",
+                "melvorTotH:TwinSeaDragonSerpent",
+                "melvorTotH:RaZu",
+                "melvorTotH:Kongamato",
+                "melvorTotH:GretYun"
+            )
+            PlantList.push(
+                "melvorTotH:HungryPlant",
+                "melvorTotH:Alraune",
+                "melvorTotH:Morellia",
+                "melvorTotH:TreeGiant",
+                "melvorTotH:TreeSpirit",
+            )
+            AarakocraList.push(
+                "melvorTotH:Torvair",
+                "melvorTotH:Arctair",
+                "melvorTotH:Harkair"
+            )
+            AnimalList.push(
+                "melvorTotH:PoisonToad",
+                "melvorTotH:Conda",
+                "melvorTotH:BurningSnake",
+                "melvorTotH:PolarBear",
+                "melvorTotH:SpectralIceWolf",
+                "melvorTotH:MonsterCroc",
+                "melvorTotH:ScouterSpider",
+                "melvorTotH:TrapperSpider",
+                "melvorTotH:WickedSpider",
+                "melvorTotH:BasherSpider",
+                "melvorTotH:EnforcerSpider",
+                "melvorTotH:GuardianSpider",
+                "melvorTotH:SpiderQueen",
+                "melvorTotH:Beholder",
+                "melvorTotH:ShadowBeast"
+            )
+        }
+        if (cloudManager.hasAoDEntitlement) {
+            SeaCreatureList.push("melvorAoD:ShipwreckBeast",
+                "melvorAoD:Merman",
+                "melvorAoD:MermaidArcher",
+                "melvorAoD:MermanGuard",
+                "melvorAoD:TreacherousJellyfish",
+                "melvorAoD:Nagaia")
+            UndeadList.push(
+                "melvorAoD:BlindGhost",
+                "melvorAoD:Lich",
+                "melvorAoD:GhostSailor",
+                "melvorAoD:GhostMercenary",
+                "melvorAoD:CursedPirateCaptain"
+            )
+            HumansList.push(
+                "melvorAoD:BlindWarrior",
+                "melvorAoD:BlindArcher",
+                "melvorAoD:BlindMage",
+                "melvorAoD:SoulTakerWitch",
             )
         }
         const cmim = mod.api.customModifiersInMelvor;
         // Species
         cmim.addMonsters("Dragon", DragonList)
-        cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", [], true);
-        cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", [], true);
+        cmim.addMonsters("Animal", AnimalList)
+        cmim.addMonsters("Undead", UndeadList)
+        cmim.addMonsters("SeaCreature", SeaCreatureList)
+        cmim.addMonsters("Human", HumansList)
+        cmim.addMonsters("Demon", DemonList)
+        cmim.addMonsters("MythicalCreature", MythList)
+        cmim.addMonsters("Elemental", ElementalCreatureList)
+
+        cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", elfList, true);
+        cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", GoblinList, true);
+        cmim.registerOrUpdateType("Plant", "Plants", "https://cdn.melvor.net/core/v018/assets/media/monsters/plant.png", PlantList, true);
+        cmim.registerOrUpdateType("Orc", "Orcs", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", OrcList, true);
+        cmim.registerOrUpdateType("Giant", "Giants", "https://cdn2-main.melvor.net/assets/media/monsters/hill_giant.png", GiantList, true);
+        cmim.registerOrUpdateType("Beast", "Beasts", "https://cdn2-main.melvor.net/assets/media/monsters/m13.png", BeastList, true);
+        cmim.registerOrUpdateType("Aarakocra", "Aarakocras", "https://cdn2-main.melvor.net/assets/media/monsters/torvair.png", AarakocraList, true);
+        cmim.registerOrUpdateType("Angel", "Angels", "https://cdn2-main.melvor.net/assets/media/monsters/angel.png", AngelList, true);
+
         cmim.forceBaseModTypeActive("Dragon");
         cmim.forceBaseModTypeActive("Undead");
         cmim.forceBaseModTypeActive("Human");
@@ -106,15 +347,11 @@ export class App {
         cmim.forceBaseModTypeActive("Elemental");
         cmim.forceBaseModTypeActive("MythicalCreature");
         cmim.forceBaseModTypeActive("SeaCreature");
-        cmim.registerOrUpdateType("Aarakocra", "Aarakocras", "https://cdn2-main.melvor.net/assets/media/monsters/torvair.png", [], true);
-        cmim.registerOrUpdateType("Angel", "Angels", "https://cdn2-main.melvor.net/assets/media/monsters/angel.png", AngelList, true);
 
         // Classes
         cmim.registerOrUpdateType("Knight", "Knights", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", [], true);
         cmim.registerOrUpdateType("Wizard", "Wizards", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", [], true);
         cmim.registerOrUpdateType("Scout", "Scouts", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", [], true);
-
-
 
         await this.context.gameData.addPackage('data.json');
         // await this.context.gameData.addPackage('data-cmim.json');
@@ -273,7 +510,7 @@ export class App {
             // const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
 
             // const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
-            
+
             const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
 
             const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
