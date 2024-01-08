@@ -1,325 +1,167 @@
 {
     "$schema": "https://melvoridle.com/assets/schema/gameData.json",
     "namespace": "namespace_profile",
-    "modifications": {
-        "items": [
-            {
-                "id": "melvorTotH:Superior_Max_Skillcape",
-                "modifiers": {
-                    "add": {
-                        "decreasedSkillInterval": [
-                            {
-                                "skillID": "namespace_profile:Profile",
-                                "value": 800
-                            }
-                        ],
-                        "decreasedProfileEquipCost": 10,
-                        "decreasedProfileGP": 10,
-                        "increasedMasteryXP": [
-                            {
-                                "skillID": "namespace_profile:Profile",
-                                "value": 10
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "id": "melvorTotH:Superior_Cape_Of_Completion",
-                "modifiers": {
-                    "add": {
-                        "decreasedSkillInterval": [
-                            {
-                                "skillID": "namespace_profile:Profile",
-                                "value": 800
-                            }
-                        ],
-                        "decreasedProfileEquipCost": 10,
-                        "decreasedProfileGP": 10,
-                        "increasedMasteryXP": [
-                            {
-                                "skillID": "namespace_profile:Profile",
-                                "value": 10
-                            }
-                        ]
-                    }
-                }
-            }
-        ]
-    },
     "data": {
-        "bankSortOrder": [
-            {
-                "insertAt": "After",
-                "afterID": "melvorTotH:Superior_Mining_Skillcape",
-                "ids": ["namespace_profile:Superior_Profile_Skillcape"]
-            }
-        ],
         "skillData": [
             {
                 "skillID": "namespace_profile:Profile",
                 "data": {
                     "species": [
                         {
-                            "id": "French_Horn",
-                            "name": "French Horn",
-                            "media": "assets/species/french-horn.png",
-                            "baseExperience": 155,
-                            "maxGP": 551,
-                            "productId": "namespace_profile:French_Horn",
+                            "id": "Giant",
+                            "name": "Giant",
+                            "media": "https://ottotsuma.github.io/images/monsters/155544adb53505632dccdb6edea8c83f.jpg",
+                            "baseExperience": 90,
+                            "productId": "namespace_profile:Giant",
                             "level": 100,
-                            "skills": ["melvorD:Summoning", "melvorD:Astrology"],
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/hill_giant.png",
+                                "https://cdn2-main.melvor.net/assets/media/skills/woodcutting/woodcutting.svg"
+                            ],
                             "standardModifiers": [
                                 {
-                                    "level": 1,
-                                    "key": "increasedChanceToFindMeteorite",
-                                    "value": 5
+                                    "level": 0,
+                                    "key": "giantTraitApplied",
+                                    "value": 10
                                 },
-                                {
-                                    "level": 40,
-                                    "key": "decreasedSkillInterval",
-                                    "skill": "melvorD:Astrology",
-                                    "value": 500
-                                },
-                                {
-                                    "level": 75,
-                                    "key": "decreasedSkillInterval",
-                                    "skill": "melvorD:Summoning",
-                                    "value": 1000
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedSummoningCreationCharges",
-                                    "value": 15
-                                },
-                                {
-                                    "level": 120,
-                                    "key": "increasedSummoningMaxHit",
-                                    "value": 35
-                                }
-                            ],
-                            "hardcoreModifiers": [
                                 {
                                     "level": 1,
-                                    "key": "increasedChanceToFindMeteorite",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "decreasedSkillInterval",
-                                    "skill": "melvorD:Astrology",
+                                    "key": "",
                                     "value": 100
                                 },
                                 {
-                                    "level": 75,
-                                    "key": "decreasedSkillInterval",
-                                    "skill": "melvorD:Summoning",
-                                    "value": 250
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedSummoningCreationCharges",
-                                    "value": 3
-                                },
-                                {
-                                    "level": 120,
-                                    "key": "increasedSummoningMaxHit",
-                                    "value": 5
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Harp",
-                            "name": "Harp",
-                            "media": "assets/species/harp.png",
-                            "baseExperience": 235,
-                            "maxGP": 592,
-                            "productId": "namespace_profile:Harp",
-                            "level": 105,
-                            "skills": ["melvorD:Thieving", "melvorD:Herblore"],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "increasedChanceRandomPotionHerblore",
+                                    "level": 20,
+                                    "key": "",
                                     "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedThievingStealth",
-                                    "value": 50
+                                    "key": "",
+                                    "value": 20
                                 },
                                 {
-                                    "level": 75,
-                                    "key": "doubleItemsSkill",
-                                    "skill": "melvorD:Herblore",
-                                    "value": 2
+                                    "level": 60,
+                                    "key": "",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "",
+                                    "value": 10
                                 },
                                 {
                                     "level": 99,
-                                    "key": "increasedThievingAreaUniqueChance",
-                                    "value": 15
-                                },
-                                {
-                                    "level": 120,
-                                    "key": "increasedChanceToDoubleItemsSkill",
-                                    "skill": "melvorD:Thieving",
-                                    "value": 20
+                                    "key": "",
+                                    "value": 1
                                 }
                             ],
                             "hardcoreModifiers": [
                                 {
                                     "level": 1,
-                                    "key": "increasedChanceRandomPotionHerblore",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedThievingStealth",
-                                    "value": 15
-                                },
-                                {
-                                    "level": 75,
-                                    "key": "doubleItemsSkill",
-                                    "skill": "melvorD:Herblore",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedThievingAreaUniqueChance",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 120,
-                                    "key": "increasedChanceToDoubleItemsSkill",
-                                    "skill": "melvorD:Thieving",
-                                    "value": 2
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Tambourine",
-                            "name": "Tambourine",
-                            "media": "assets/species/tambourine.png",
-                            "baseExperience": 335,
-                            "maxGP": 633,
-                            "productId": "namespace_profile:Tambourine",
-                            "level": 110,
-                            "skills": ["melvorD:Township", "melvorD:Farming"],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "increasedFarmingYield",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedFlatFarmingYield",
-                                    "value": 15
-                                },
-                                {
-                                    "level": 75,
-                                    "key": "increasedTownshipGPProduction",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedTownshipHappiness",
+                                    "key": "decreasedChanceGoldenStardust",
                                     "value": 50
                                 },
                                 {
-                                    "level": 120,
-                                    "key": "increasedChanceDoubleHarvest",
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "classes": [
+                        {
+                            "id": "Inquisitor",
+                            "name": "Inquisitor",
+                            "media": "https://ottotsuma.github.io/images/people/knights.jpg",
+                            "baseExperience": 5,
+                            "productId": "namespace_profile:Inquisitor",
+                            "level": 100,
+                            "skills": [
+                                "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2FskuUeS-5K71wasTCTeygB27hQUX0_lDxH1obAssZfPa8L2_e5u-YDs49Uu8urKIBWTdFUrnuQxiNp1CGub5b4JAA3d6XV7a2FKZKJVqbePTHwizHVOt3Xgne_6zt0h-5kw%3Ds800&f=1&nofb=1&ipt=856a2de22cf5c3ccc940367000465b6b191368a975c6ab4362051d6a881eb46c&ipo=images"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "inquisitorTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedMagicAccuracyBonus",
+                                    "value": 40
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedFlatMeleeDefenceBonus",
+                                    "value": 500
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedFlatRangedDefenceBonus",
+                                    "value": 500
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedDamageAgainstHumans",
                                     "value": 25
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedGlobalAccuracyAgainstMythicalCreatures",
+                                    "value": 25
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "gainSlayerCoinsBasedOnEnemyCombatLevelMelee",
+                                    "value": 1
                                 }
                             ],
                             "hardcoreModifiers": [
                                 {
                                     "level": 1,
-                                    "key": "increasedFarmingYield",
-                                    "value": 5
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedFlatFarmingYield",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 75,
-                                    "key": "increasedTownshipGPProduction",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedTownshipHappiness",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 120,
-                                    "key": "increasedChanceDoubleHarvest",
-                                    "value": 5
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Trumpet",
-                            "name": "Trumpet",
-                            "media": "assets/species/trumpet.png",
-                            "baseExperience": 475,
-                            "maxGP": 680,
-                            "productId": "namespace_profile:Trumpet",
-                            "level": 115,
-                            "skills": ["melvorD:Attack", "melvorD:Strength", "melvorD:Ranged", "melvorD:Magic"],
-                            "standardModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "increasedGlobalAccuracy",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedMinHitBasedOnMaxHit",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 75,
-                                    "key": "increasedMaxHitPercent",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "decreasedAttackInterval",
-                                    "value": 500
-                                },
-                                {
-                                    "level": 120,
-                                    "key": "increasedChanceToApplyDecayCurse",
-                                    "value": 20
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "increasedGlobalAccuracy",
-                                    "value": 2
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedMinHitBasedOnMaxHit",
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
                                     "value": 1
                                 },
                                 {
-                                    "level": 75,
-                                    "key": "increasedMaxHitPercent",
-                                    "value": 2
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
                                 },
                                 {
                                     "level": 99,
-                                    "key": "decreasedAttackInterval",
-                                    "value": 100
-                                },
-                                {
-                                    "level": 120,
-                                    "key": "increasedChanceToApplyDecayCurse",
+                                    "key": "increasedMinBirdNestQuantity",
                                     "value": 1
                                 }
                             ]

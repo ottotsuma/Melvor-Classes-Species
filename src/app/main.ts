@@ -302,7 +302,10 @@ export class App {
             )
         }
         if (cloudManager.hasAoDEntitlement) {
-            SeaCreatureList.push("melvorAoD:ShipwreckBeast",
+            PlantList.push("melvorAoD:EvilOak", "melvorAoD:GrumpyWillow", "melvorAoD:AngryTeak", "melvorAoD:RagingMaple", "melvorAoD:IllusiveRoots", "melvorAoD:LavaGolem")
+            BeastList.push("melvorAoD:GreenSlime", "melvorAoD:SlimeShooter", "melvorAoD:PoisonRoamer", "melvorAoD:PoisonSlime", "melvorAoD:PoisonBloater", "melvorAoD:PoisonLeecher", "melvorAoD:MagicMirror", "melvorAoD:PossessedBarrel", "melvorAoD:FakeDoor", "melvorAoD:CultMonster", "melvorAoD:PuppetMaster")
+            SeaCreatureList.push(
+                "melvorAoD:ShipwreckBeast",
                 "melvorAoD:Merman",
                 "melvorAoD:MermaidArcher",
                 "melvorAoD:MermanGuard",
@@ -313,14 +316,18 @@ export class App {
                 "melvorAoD:Lich",
                 "melvorAoD:GhostSailor",
                 "melvorAoD:GhostMercenary",
-                "melvorAoD:CursedPirateCaptain"
+                "melvorAoD:CursedPirateCaptain", 
+                "melvorAoD:VampiricBat"
             )
             HumansList.push(
                 "melvorAoD:BlindWarrior",
                 "melvorAoD:BlindArcher",
                 "melvorAoD:BlindMage",
                 "melvorAoD:SoulTakerWitch",
+                "melvorAoD:CultMember"
             )
+            ElementalCreatureList.push("melvorAoD:CrystalBarrager", "melvorAoD:CrystalSmasher", "melvorAoD:CrystalProwler", "melvorAoD:GraniteGolem", "melvorAoD:RangedGolem", "melvorAoD:EarthGolem", "melvorAoD:MagicGolem", "melvorAoD:CrystalManipulator", "melvorAoD:CrystalShatterer", "melvorAoD:CrystalBehemoth", "melvorAoD:LavaGolem")
+            DemonList.push("melvorAoD:CultImp")
         }
         const cmim = mod.api.customModifiersInMelvor;
         // Species
@@ -352,30 +359,23 @@ export class App {
         cmim.forceBaseModTypeActive("SeaCreature");
 
         // Classes
+        // 1
         cmim.registerOrUpdateType("Knight", "Knights", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", [], true);
+        // 10
         cmim.registerOrUpdateType("Wizard", "Wizards", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", [], true);
+        // 20
         cmim.registerOrUpdateType("Scout", "Scouts", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", [], true);
+
+        // 100
+        cmim.registerOrUpdateType("Inquisitor", "Inquisitors", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2FskuUeS-5K71wasTCTeygB27hQUX0_lDxH1obAssZfPa8L2_e5u-YDs49Uu8urKIBWTdFUrnuQxiNp1CGub5b4JAA3d6XV7a2FKZKJVqbePTHwizHVOt3Xgne_6zt0h-5kw%3Ds800&f=1&nofb=1&ipt=856a2de22cf5c3ccc940367000465b6b191368a975c6ab4362051d6a881eb46c&ipo=images", [], true);
+
+
+        
 
         await this.context.gameData.addPackage('data.json');
         // await this.context.gameData.addPackage('data-cmim.json');
         if (cloudManager.hasTotHEntitlement) {
-            // await this.context.gameData.addPackage('data-toth.json');
-
-            // await this.context.gameData
-            //     .buildPackage(builder => {
-            //         builder.skillData.add({
-            //             skillID: 'namespace_profile:Profile',
-            //             data: {
-            //                 minibar: {
-            //                     defaultItems: ['namespace_profile:Superior_Profile_Skillcape'],
-            //                     upgrades: [],
-            //                     pets: []
-            //                 },
-            //                 species: []
-            //             }
-            //         });
-            //     })
-            //     .add();
+            await this.context.gameData.addPackage('data-toth.json');
         }
         if (cloudManager.hasAoDEntitlement) {
             await this.context.gameData.addPackage('data-aod.json');
@@ -542,6 +542,7 @@ export class App {
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
+            // Angel // Pray?
 
             if (game && game.activeAction && currentSpeicies === 'Aarakocra' && game.activeAction._localID === 'Fishing') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
@@ -606,14 +607,28 @@ export class App {
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
-            // {"melvorD:Woodcutting" => Woodcutting}
+
+            if (game && game.activeAction && currentSpeicies === 'Giant' && game.activeAction._localID === 'Woodcutting') {
+                // && masteryAction !== totalExp // can kind of stop the re-triggering
+                // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
+                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
+            }
+            // 100, 105, 110, 115, 120
+            // "Plant" Herblore  
+            // Orc Smithing
+
+            // Beast
+            // Animal 
+
             // {"melvorD:Cooking" => Cooking}
-            // {"melvorD:Smithing" => Smithing}
             // {"melvorD:Fletching" => Fletching}
-            // {"melvorD:Herblore" => Herblore}
+
             // {"melvorD:Township" => Township}
             // {"melvorAoD:Cartography" => Cartography}
             // {"melvorAoD:Archaeology" => Archaeology}
+
             // {"mythMusic:Music" => Music}
             // {"namespace_thuum:Thuum" => Thuum}
             return [amount, masteryAction]
