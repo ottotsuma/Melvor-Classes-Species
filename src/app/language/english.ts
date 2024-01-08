@@ -55,12 +55,21 @@ export const en = {
     Single_Species_SeaCreature: 'Sea Creature',
     Single_Species_Angel: 'Angel',
     Single_Species_MythicalCreature: 'Mythical Creature',
+    Single_Species_Giant: 'Giant',
+    Single_Species_Orc: 'Orc',
+    Single_Species_Plant: 'Plant',
+    Single_Species_Beast: 'Beast',
+    Single_Species_Animal: 'Animal',
 
     Single_Species_Knight: 'Knight',
     Single_Species_Wizard: 'Wizard',
     Single_Species_Scout: 'Scout',
+    Single_Species_Pirate: 'Pirate',
+    Single_Species_Inquisitor: 'Inquisitor',
 
     PET_NAME_Bob: 'Bob',
+    PET_NAME_abyssal_chicken: 'Abyssal Chicken',
+    
     ITEM_NAME_Summoning_Familiar_You: 'You',
     ITEM_NAME_Profile_Skillcape: 'Profile Skillcape',
     ITEM_NAME_Superior_Profile_Skillcape: 'Superior Profile Skillcape',

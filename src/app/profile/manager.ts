@@ -31,7 +31,12 @@ export class ProfileManager {
                     value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
                 });
             } else {
-                [description] = printPlayerModifier(modifier.key, this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value);
+                try {
+                    [description] = printPlayerModifier(modifier.key, this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value);
+                    if(!description) console.log('Fake modifier, no disc found ', modifier.key)
+                } catch (error) {
+                    console.log('Fake modifier ', modifier.key)
+                }
             }
 
             return {

@@ -10,7 +10,7 @@
                         {
                             "id": "Giant",
                             "name": "Giant",
-                            "media": "https://ottotsuma.github.io/images/monsters/155544adb53505632dccdb6edea8c83f.jpg",
+                            "media": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpluspng.com%2Fimg-png%2Fpng-giant-hill-giant-5e-full-png-450-616-450.png&f=1&nofb=1&ipt=03f0b66140237b4269326380a3797d0933ffbdfd6f684633c88667f5cef42484&ipo=images",
                             "baseExperience": 90,
                             "productId": "namespace_profile:Giant",
                             "level": 100,
@@ -26,33 +26,347 @@
                                 },
                                 {
                                     "level": 1,
-                                    "key": "",
-                                    "value": 100
+                                    "key": "decreasedGlobalEvasion",
+                                    "value": 50
                                 },
                                 {
                                     "level": 20,
-                                    "key": "",
-                                    "value": 10
+                                    "key": "increasedChanceToFindMushroomWoodcutting",
+                                    "value": 50
                                 },
                                 {
                                     "level": 40,
-                                    "key": "",
-                                    "value": 20
+                                    "key": "increasedChanceForAshInWoodcutting",
+                                    "value": 40
                                 },
                                 {
                                     "level": 60,
-                                    "key": "",
-                                    "value": 10
+                                    "key": "increasedMeleeMaxHitBasedOnMaxHitSlayerTask",
+                                    "value": 25
                                 },
                                 {
                                     "level": 80,
-                                    "key": "",
+                                    "key": "increasedMaxHitFlat",
                                     "value": 10
                                 },
                                 {
                                     "level": 99,
-                                    "key": "",
+                                    "key": "gain2MaxHitpointsPerTurn",
                                     "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Orc",
+                            "name": "Orc",
+                            "media": "https://ottotsuma.github.io/images/portraits/orc%20male%20fighter.jpg",
+                            "baseExperience": 102,
+                            "productId": "namespace_profile:Orc",
+                            "level": 105,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/turkul_throwers.png",
+                                "https://cdn2-main.melvor.net/assets/media/skills/smithing/smithing.svg"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "orcTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "disableLifesteal",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedMeleeStrengthBonus",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "decreasedFlatSmithingCoalCost",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedChanceAdditionalBarSmithing",
+                                    "value": 25
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedHPRegenFlat",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "bigRon",
+                                    "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Plant",
+                            "name": "Plant",
+                            "media": "https://ottotsuma.github.io/images/monsters/planty.jpg",
+                            "baseExperience": 117,
+                            "productId": "namespace_profile:Plant",
+                            "level": 110,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/plant.png",
+                                "https://cdn2-main.melvor.net/assets/media/skills/herblore/herblore.svg"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "plantTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedGlobalAccuracy",
+                                    "value": 60
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedHitpointRegeneration",
+                                    "value": 15
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedEndOfTurnHealing5",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedDeadlyToxinsFromHerblore",
+                                    "value": 3
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increased30Slow5TurnsChance",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedChanceRandomPotionHerblore",
+                                    "value": 20
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Beast",
+                            "name": "Beast",
+                            "media": "https://ottotsuma.github.io/images/gallery/companions/beast.jpg",
+                            "baseExperience": 121,
+                            "productId": "namespace_profile:Beast",
+                            "level": 115,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/m14.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "beastTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedDamageTakenFromHumans",
+                                    "value": 200
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedChanceToApplyAnimalTrait",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "decreasedDamageTakenFromAnimals",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedDamageAgainstAnimals",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedMinHitBasedOnMaxHitAgainstAnimals",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "summoningSynergy_13_14",
+                                    "value": 20
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Animal",
+                            "name": "Animal",
+                            "media": "https://ottotsuma.github.io/images/gallery/companions/lizard.jpg",
+                            "baseExperience": 128,
+                            "productId": "namespace_profile:Animal",
+                            "level": 120,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/chicken.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "animalTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "disabledSpecialAttacks",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedPoisonReflectChance",
+                                    "value": 15
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedTotalBleedDamage",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedBleedReflectChance",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedChanceToApplyDeadlyPoisonWhenPoisoned",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedDamageDealtPerEffect",
+                                    "value": 20
                                 }
                             ],
                             "hardcoreModifiers": [
@@ -91,8 +405,8 @@
                         {
                             "id": "Inquisitor",
                             "name": "Inquisitor",
-                            "media": "https://ottotsuma.github.io/images/people/knights.jpg",
-                            "baseExperience": 5,
+                            "media": "https://ottotsuma.github.io/images/people/inquisitor.jpg",
+                            "baseExperience": 90,
                             "productId": "namespace_profile:Inquisitor",
                             "level": 100,
                             "skills": [
@@ -106,32 +420,32 @@
                                 },
                                 {
                                     "level": 1,
-                                    "key": "decreasedMagicAccuracyBonus",
-                                    "value": 40
+                                    "key": "decreasedGPFromMonsters",
+                                    "value": 100
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedFlatMeleeDefenceBonus",
-                                    "value": 500
+                                    "key": "increasedMeleeCritChance",
+                                    "value": 25
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedFlatRangedDefenceBonus",
-                                    "value": 500
+                                    "key": "increasedDamageAgainstDemons",
+                                    "value": 30
                                 },
                                 {
                                     "level": 60,
-                                    "key": "increasedDamageAgainstHumans",
-                                    "value": 25
+                                    "key": "applyMagicMasterRelicEffect",
+                                    "value": 1
                                 },
                                 {
                                     "level": 80,
-                                    "key": "increasedGlobalAccuracyAgainstMythicalCreatures",
-                                    "value": 25
+                                    "key": "allowAttackAugmentingMagic",
+                                    "value": 1
                                 },
                                 {
                                     "level": 99,
-                                    "key": "gainSlayerCoinsBasedOnEnemyCombatLevelMelee",
+                                    "key": "allowNonMagicCurses",
                                     "value": 1
                                 }
                             ],
