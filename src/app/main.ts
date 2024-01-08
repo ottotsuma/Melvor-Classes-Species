@@ -476,8 +476,12 @@ export class App {
                 const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
                 const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
 
-                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                if(single_species) {
+                    game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                }
+                if(single_class) {
+                    game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                }
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
 
             } catch (error) {
@@ -518,8 +522,11 @@ export class App {
 
             const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
             const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
-
-            const currentSpeicies = single_species.single_species.localID
+            let currentSpeicies = ''
+            if(single_species) {
+                currentSpeicies = single_species.single_species.localID
+            }
+            
             if (game && game.activeAction && currentSpeicies === 'Human' && game.activeAction._localID === 'Crafting') {
                 // && masteryAction !== totalExp // can kind of stop the re-triggering
                 // game.profile.addXP(totalExp) // removed to only increase the mastery exp and not the skill exp causing a re-triggering
