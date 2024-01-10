@@ -76,6 +76,8 @@ export const en = {
     Single_Species_Archer: 'Archer',
     Single_Species_Necromancer: 'Necromancer',   
     
+    // UNDEFINED TRANSLATION: :MODIFIER_DATA_increasedDeadlyToxinsFromHerblore
+    // UNDEFINED TRANSLATION: :MODIFIER_DATA_bigRon
 
     PET_NAME_Bob: 'Bob',
     PET_NAME_abyssal_chicken: 'Abyssal Chicken',

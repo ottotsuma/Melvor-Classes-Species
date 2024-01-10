@@ -367,23 +367,10 @@ export class App {
         // @ts-ignore
         cmim.forceBaseModTypeActive("SeaCreature");
 
-        // Classes
-        cmim.registerOrUpdateType("Knight", "Knights", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", [], true);
-        cmim.registerOrUpdateType("Wizard", "Wizards", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", [], true);
-        cmim.registerOrUpdateType("Scout", "Scouts", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", [], true);
-        cmim.registerOrUpdateType("Pirate", "Pirates", "https://cdn2-main.melvor.net/assets/media/monsters/pirate.png", [], true);
-        cmim.registerOrUpdateType("Paladin", "Paladins", "https://cdn2-main.melvor.net/assets/media/monsters/paladin.png", [], true);
-        cmim.registerOrUpdateType("Cursemancer", "Cursemancers", "https://cdn2-main.melvor.net/assets/media/monsters/cursed_maiden.png", [], true);
-        cmim.registerOrUpdateType("Scholar", "Scholars", "https://vignette.wikia.nocookie.net/finalfantasy/images/b/b5/Scholar_Artwork_XIV.png/revision/latest?cb=20170723180726", [], true);
-        cmim.registerOrUpdateType("Witchdoctor", "Witchdoctors", "https://cdn2-main.melvor.net/assets/media/monsters/plague_doctor.png", [], true);
-        cmim.registerOrUpdateType("Assassin", "Assassins", "https://www.pngmart.com/files/15/Assassins-Creed-Transparent-PNG.png", [], true);
-        cmim.registerOrUpdateType("Monk", "Monks", "https://clipart-library.com/data_images/569075.png", [], true);
-        cmim.registerOrUpdateType("Archer", "Archers", "https://images.saymedia-content.com/.image/t_share/MTc2NDU4MzM1NjgyMzczNTk0/do-it-yourself-sterling-duchess-archer-halloween-costume-homemade-archer-cosplay.png", [], true);
-        // AoD
-        cmim.registerOrUpdateType("Necromancer", "Necromancers", "https://cdn2-main.melvor.net/assets/media/monsters/necromancer.png", [], true);
-        // TotH
-        cmim.registerOrUpdateType("Inquisitor", "Inquisitors", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2FskuUeS-5K71wasTCTeygB27hQUX0_lDxH1obAssZfPa8L2_e5u-YDs49Uu8urKIBWTdFUrnuQxiNp1CGub5b4JAA3d6XV7a2FKZKJVqbePTHwizHVOt3Xgne_6zt0h-5kw%3Ds800&f=1&nofb=1&ipt=856a2de22cf5c3ccc940367000465b6b191368a975c6ab4362051d6a881eb46c&ipo=images", [], true);
-
+        // Classes        
+        cmim.registerOrUpdateType("Fighter", "Fighters", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", [], true);
+        cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", [], true);
+        cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", [], true);
 
 
         await this.context.gameData.addPackage('data.json');

@@ -493,7 +493,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "inquisitorTraitApplied",
+                                    "key": "mageTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -524,6 +524,318 @@
                                 {
                                     "level": 99,
                                     "key": "allowNonMagicCurses",
+                                    "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Druid",
+                            "name": "Druid",
+                            "media": "https://ottotsuma.github.io/images/people/inquisitor.jpg",
+                            "baseExperience": 99,
+                            "productId": "namespace_profile:Druid",
+                            "level": 105,
+                            "skills": [
+                                "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2FskuUeS-5K71wasTCTeygB27hQUX0_lDxH1obAssZfPa8L2_e5u-YDs49Uu8urKIBWTdFUrnuQxiNp1CGub5b4JAA3d6XV7a2FKZKJVqbePTHwizHVOt3Xgne_6zt0h-5kw%3Ds800&f=1&nofb=1&ipt=856a2de22cf5c3ccc940367000465b6b191368a975c6ab4362051d6a881eb46c&ipo=images"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "mageTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedDamageTakenFromFireSpells",
+                                    "value": 100
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedMaxEarthSpellDmg",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinNatureSpellDamageBasedOnMaxHit",
+                                    "value": 30
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMinEarthSpellDmg",
+                                    "value": 25
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedDamageTakenFromAnimals",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "applySleepOnSpawn",
+                                    "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Viking",
+                            "name": "Viking",
+                            "media": "https://ottotsuma.github.io/images/people/inquisitor.jpg",
+                            "baseExperience": 106,
+                            "productId": "namespace_profile:Viking",
+                            "level": 110,
+                            "skills": [
+                                "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2FskuUeS-5K71wasTCTeygB27hQUX0_lDxH1obAssZfPa8L2_e5u-YDs49Uu8urKIBWTdFUrnuQxiNp1CGub5b4JAA3d6XV7a2FKZKJVqbePTHwizHVOt3Xgne_6zt0h-5kw%3Ds800&f=1&nofb=1&ipt=856a2de22cf5c3ccc940367000465b6b191368a975c6ab4362051d6a881eb46c&ipo=images"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "fighterTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedMagicEvasion",
+                                    "value": 60
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedMaxWaterSpellDmg",
+                                    "value": 15
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedChanceToApplyFreezeOnSpawn",
+                                    "value": 30
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "decreasedAttackIntervalPercent",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedChanceToApplyStackOfDeathMark",
+                                    "value": 3
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMeleeEvasion",
+                                    "value": 10
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Alchemist",
+                            "name": "Alchemist",
+                            "media": "https://ottotsuma.github.io/images/people/inquisitor.jpg",
+                            "baseExperience": 112,
+                            "productId": "namespace_profile:Alchemist",
+                            "level": 115,
+                            "skills": [
+                                "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2FskuUeS-5K71wasTCTeygB27hQUX0_lDxH1obAssZfPa8L2_e5u-YDs49Uu8urKIBWTdFUrnuQxiNp1CGub5b4JAA3d6XV7a2FKZKJVqbePTHwizHVOt3Xgne_6zt0h-5kw%3Ds800&f=1&nofb=1&ipt=856a2de22cf5c3ccc940367000465b6b191368a975c6ab4362051d6a881eb46c&ipo=images"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "rogueTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "",
+                                    "value": 100
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedChanceToPreservePotionCharge",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedPotionChargesFlat",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedChanceRandomPotionHerblore",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedPotionsHerblore",
+                                    "value": 6
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedTownshipPotionProduction",
+                                    "value": 100
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "King",
+                            "name": "King",
+                            "media": "https://ottotsuma.github.io/images/people/inquisitor.jpg",
+                            "baseExperience": 121,
+                            "productId": "namespace_profile:King",
+                            "level": 120,
+                            "skills": [
+                                "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2FskuUeS-5K71wasTCTeygB27hQUX0_lDxH1obAssZfPa8L2_e5u-YDs49Uu8urKIBWTdFUrnuQxiNp1CGub5b4JAA3d6XV7a2FKZKJVqbePTHwizHVOt3Xgne_6zt0h-5kw%3Ds800&f=1&nofb=1&ipt=856a2de22cf5c3ccc940367000465b6b191368a975c6ab4362051d6a881eb46c&ipo=images"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "fighterTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedGPGlobal",
+                                    "value": 100
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedChanceDarkBlade",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedDamageToAllMonsters",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedLeviathan",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "bypassAllSlayerItems",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "cleansed",
                                     "value": 1
                                 }
                             ],

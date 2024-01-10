@@ -1075,7 +1075,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "knightTraitApplied",
+                                    "key": "fighterTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -1153,7 +1153,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "wizardTraitApplied",
+                                    "key": "mageTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -1231,7 +1231,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "scoutTraitApplied",
+                                    "key": "rogueTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -1309,7 +1309,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "pirateTraitApplied",
+                                    "key": "rogueTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -1387,7 +1387,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "paladinTraitApplied",
+                                    "key": "fighterTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -1465,7 +1465,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "cursemancerTraitApplied",
+                                    "key": "mageTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -1543,7 +1543,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "scholarTraitApplied",
+                                    "key": "mageTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -1621,7 +1621,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "witchdoctorTraitApplied",
+                                    "key": "mageTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -1699,7 +1699,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "assassinTraitApplied",
+                                    "key": "rogueTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -1777,7 +1777,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "monkTraitApplied",
+                                    "key": "fighterTraitApplied",
                                     "value": 1
                                 },
                                 {
@@ -1855,7 +1855,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "archerTraitApplied",
+                                    "key": "fighterTraitApplied",
                                     "value": 1
                                 },
                                 {

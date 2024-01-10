@@ -181,7 +181,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "necromancerTraitApplied",
+                                    "key": "mageTraitApplied",
                                     "value": 1
                                 },
                                 {
