@@ -4,6 +4,11 @@ declare global {
         decreasedProfileEquipCost: Standard;
         increasedProfileGP: Standard;
         decreasedProfileGP: Standard;
+        mod_wardsave: Standard;
+        mod_increasedFlatDamageWhileTargetHasMaxHP: Standard;
+        mod_increasedPercDamageWhileTargetHasMaxHP: Standard;
+        mod_decreaseFlatDamageWhileTargetHasMaxHP: Standard;
+        mod_bypassDamageReduction: Standard;
         increasedProfileAdditionalRewardRoll: Standard;
         decreasedProfileAdditionalRewardRoll: Standard;
     }
@@ -17,6 +22,11 @@ declare global {
         decreasedProfileEquipCost: number;
         increasedProfileGP: number;
         decreasedProfileGP: number;
+        mod_wardsave: number;
+        mod_increasedFlatDamageWhileTargetHasMaxHP: number;
+        mod_increasedPercDamageWhileTargetHasMaxHP: number;
+        mod_decreaseFlatDamageWhileTargetHasMaxHP: number;
+        mod_bypassDamageReduction: number;
         increasedProfileAdditionalRewardRoll: number;
         decreasedProfileAdditionalRewardRoll: number;
         increasedSkillMasteryXPPerVariel: number;
@@ -94,5 +104,51 @@ export class ProfileModifiers {
             isNegative: false,
             tags: []
         };
+
+          modifierData.mod_wardsave = {
+            get langDescription() {
+              return getLangString('mod_wardsave');
+            },
+            description: '+${value}% (MAX: 90%) to take 0 damage from a hit.',
+            isSkill: false,
+            isNegative: true,
+            tags: ['combat']
+          };
+          modifierData.mod_increasedFlatDamageWhileTargetHasMaxHP = {
+            get langDescription() {
+              return getLangString('mod_increasedFlatDamageWhileTargetHasMaxHP');
+            },
+            description: '+${value} damage while the target is fully healed.',
+            isSkill: false,
+            isNegative: false,
+            tags: ['combat']
+          };
+          modifierData.mod_increasedPercDamageWhileTargetHasMaxHP = {
+            get langDescription() {
+              return getLangString('mod_increasedPercDamageWhileTargetHasMaxHP');
+            },
+            description: '+${value}% damage while the target is fully healed.',
+            isSkill: false,
+            isNegative: false,
+            tags: ['combat']
+          };
+          modifierData.mod_decreaseFlatDamageWhileTargetHasMaxHP = {
+            get langDescription() {
+              return getLangString('mod_decreaseFlatDamageWhileTargetHasMaxHP');
+            },
+            description: '-${value}% damage while you are fully healed.',
+            isSkill: false,
+            isNegative: false,
+            tags: ['combat']
+          };
+          modifierData.mod_bypassDamageReduction = {
+            get langDescription() {
+              return getLangString('mod_bypassDamageReduction');
+            },
+            description: '${value} damage, though damage reduction.',
+            isSkill: false,
+            isNegative: false,
+            tags: ['combat']
+          };
     }
 }

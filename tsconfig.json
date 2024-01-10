@@ -7,7 +7,10 @@
         "allowJs": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "noEmit": false,
+        "noEmitOnError": false
     },
-    "include": ["src/**/*", "node_modules/melvor-types"]
+    "include": ["src/**/*", "node_modules/melvor-types",
+    "../Custom-Modifiers-in-Melvor/**/*"]
 }

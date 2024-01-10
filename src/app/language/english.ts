@@ -60,12 +60,22 @@ export const en = {
     Single_Species_Plant: 'Plant',
     Single_Species_Beast: 'Beast',
     Single_Species_Animal: 'Animal',
+    Single_Species_Vampire: 'Vampire',
 
     Single_Species_Knight: 'Knight',
     Single_Species_Wizard: 'Wizard',
     Single_Species_Scout: 'Scout',
     Single_Species_Pirate: 'Pirate',
+    Single_Species_Paladin: 'Paladin',
+    Single_Species_Cursemancer: 'Cursemancer',
+    Single_Species_Scholar: 'Scholar',
+    Single_Species_Witchdoctor: 'Witchdoctor',
+    Single_Species_Assassin: 'Assassin',
     Single_Species_Inquisitor: 'Inquisitor',
+    Single_Species_Monk: 'Monk',
+    Single_Species_Archer: 'Archer',
+    Single_Species_Necromancer: 'Necromancer',   
+    
 
     PET_NAME_Bob: 'Bob',
     PET_NAME_abyssal_chicken: 'Abyssal Chicken',
@@ -138,5 +148,10 @@ export const en = {
     Settings_Must_Be_Larger_Then: 'Value must be larger then 99',
     Settings_Must_Be_Smaller_Then: 'Value must be smaller then 1,000,000,000,000',
     MODIFIER_DATA_increasedDamageAgainstElves: 'Damage to Elves',
-    MODIFIER_DATA_bigRon: '+100% Chance To Double Loot in Combat. For every 2000 base Maximum Hitpoints the enemy has (Capped at 10000): +9% Melee Strength Bonus from Equipment, +3% of Maximum Hit added to Minimum Hit and +1% Damage Reduction. Bonus is doubled if fighting a boss.'
+    MODIFIER_DATA_bigRon: '+100% Chance To Double Loot in Combat. For every 2000 base Maximum Hitpoints the enemy has (Capped at 10000): +9% Melee Strength Bonus from Equipment, +3% of Maximum Hit added to Minimum Hit and +1% Damage Reduction. Bonus is doubled if fighting a boss.',
+    mod_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
+    mod_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
+    mod_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
+    mod_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
+    mod_bypassDamageReduction: "${value} damage, though damage reduction.",
 };

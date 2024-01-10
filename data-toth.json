@@ -22,7 +22,7 @@
                                 {
                                     "level": 0,
                                     "key": "giantTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -101,7 +101,7 @@
                                 {
                                     "level": 0,
                                     "key": "orcTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -180,7 +180,7 @@
                                 {
                                     "level": 0,
                                     "key": "plantTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -258,7 +258,7 @@
                                 {
                                     "level": 0,
                                     "key": "beastTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -336,7 +336,7 @@
                                 {
                                     "level": 0,
                                     "key": "animalTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -399,6 +399,84 @@
                                     "value": 1
                                 }
                             ]
+                        },
+                        {
+                            "id": "Vampire",
+                            "name": "Vampire",
+                            "media": "https://ottotsuma.github.io/images/people/vampire.jpg",
+                            "baseExperience": 128,
+                            "productId": "namespace_profile:Vampire",
+                            "level": 120,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/vampire.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "undeadTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedDamageTakenPerAttack",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedLifesteal",
+                                    "value": 15
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedChanceToApplyBleed",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedSummoningAttackLifesteal",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedLifestealDamageBasedOnCurrentHitpoints",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "doubleLifesteal",
+                                    "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
                         }
                     ],
                     "classes": [
@@ -416,7 +494,7 @@
                                 {
                                     "level": 0,
                                     "key": "inquisitorTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,

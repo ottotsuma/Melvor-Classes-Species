@@ -205,7 +205,7 @@
                                 {
                                     "level": 0,
                                     "key": "humanTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -285,7 +285,7 @@
                                 {
                                     "level": 0,
                                     "key": "elfTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -364,7 +364,7 @@
                                 {
                                     "level": 0,
                                     "key": "aarakocraTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -443,7 +443,7 @@
                                 {
                                     "level": 0,
                                     "key": "goblinTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -522,7 +522,7 @@
                                 {
                                     "level": 0,
                                     "key": "dragonTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -601,7 +601,7 @@
                                 {
                                     "level": 0,
                                     "key": "undeadTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -680,7 +680,7 @@
                                 {
                                     "level": 0,
                                     "key": "demonTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -759,7 +759,7 @@
                                 {
                                     "level": 0,
                                     "key": "elementalTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -838,7 +838,7 @@
                                 {
                                     "level": 0,
                                     "key": "seaCreatureTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -917,7 +917,7 @@
                                 {
                                     "level": 0,
                                     "key": "mythicalCreatureTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -996,7 +996,7 @@
                                 {
                                     "level": 0,
                                     "key": "angelTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -1076,7 +1076,7 @@
                                 {
                                     "level": 0,
                                     "key": "knightTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -1154,7 +1154,7 @@
                                 {
                                     "level": 0,
                                     "key": "wizardTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -1232,7 +1232,7 @@
                                 {
                                     "level": 0,
                                     "key": "scoutTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -1310,7 +1310,7 @@
                                 {
                                     "level": 0,
                                     "key": "pirateTraitApplied",
-                                    "value": 10
+                                    "value": 1
                                 },
                                 {
                                     "level": 1,
@@ -1341,6 +1341,552 @@
                                     "level": 99,
                                     "key": "autoBurying",
                                     "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Paladin",
+                            "name": "Paladin",
+                            "media": "https://ottotsuma.github.io/images/people/w1.jpg",
+                            "baseExperience": 30,
+                            "productId": "namespace_profile:Paladin",
+                            "level": 40,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/paladin.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "paladinTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedDamageAgainstDemons",
+                                    "value": 100
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedGlobalAccuracyAgainstDemons",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedPrayerPointsPerMonsterKill",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedDamageReductionWithActivePrayer",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedMaxHitPercentAgainstDemons",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedChanceToPreservePrayerPoints",
+                                    "value": 50
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Cursemancer",
+                            "name": "Cursemancer",
+                            "media": "https://ottotsuma.github.io/images/people/wep.jpg",
+                            "baseExperience": 36,
+                            "productId": "namespace_profile:Cursemancer",
+                            "level": 50,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/cursed_maiden.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "cursemancerTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedDamageTaken",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "allowNonMagicCurses",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedCurseLifesteal",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedPotionChargesFlat",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "applyRandomCurseOnSpawn",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "curseImmunity",
+                                    "value": 1
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Scholar",
+                            "name": "Scholar",
+                            "media": "https://i.pinimg.com/originals/0f/09/f5/0f09f526aa8d26d64049951499029984.jpg",
+                            "baseExperience": 42,
+                            "productId": "namespace_profile:Scholar",
+                            "level": 60,
+                            "skills": [
+                                "https://vignette.wikia.nocookie.net/finalfantasy/images/b/b5/Scholar_Artwork_XIV.png/revision/latest?cb=20170723180726"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "scholarTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedGlobalSkillIntervalPercent",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedMasteryTokens",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedGlobalAccuracy",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedGlobalMasteryXP",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedGlobalSkillXP",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "decreasedGlobalSkillIntervalPercent",
+                                    "value": 20
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Witchdoctor",
+                            "name": "Witchdoctor",
+                            "media": "https://ottotsuma.github.io/images/people/witchdoctor.jpg",
+                            "baseExperience": 49,
+                            "productId": "namespace_profile:Witchdoctor",
+                            "level": 70,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/plague_doctor.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "witchdoctorTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedAttackIntervalPercent",
+                                    "value": 100
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedChanceToApplyPoison",
+                                    "value": 40
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedPoisonLifesteal",
+                                    "value": 100
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedPoisonReflectChance",
+                                    "value": 33
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedChanceToApplyDeadlyPoison",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "poisonImmunity",
+                                    "value": 50
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Assassin",
+                            "name": "Assassin",
+                            "media": "https://i.pinimg.com/236x/e1/86/96/e18696a590f3e8929813006b2121c547.jpg?nii=t",
+                            "baseExperience": 55,
+                            "productId": "namespace_profile:Assassin",
+                            "level": 80,
+                            "skills": [
+                                "https://www.pngmart.com/files/15/Assassins-Creed-Transparent-PNG.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "assassinTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedMaxHitPercentToSlayerAreaMonsters",
+                                    "value": 60
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedDeathMarkImmunity",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedDeathMarkOnHit",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedChanceToApplyStackOfDeathMark",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "mod_increasedPercDamageWhileTargetHasMaxHP",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "mod_increasedFlatDamageWhileTargetHasMaxHP",
+                                    "value": 30
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Monk",
+                            "name": "Monk",
+                            "media": "https://i.pinimg.com/originals/04/40/0f/04400f3062a019bd9e7e77be2fdf4b25.jpg",
+                            "baseExperience": 63,
+                            "productId": "namespace_profile:Monk",
+                            "level": 90,
+                            "skills": [
+                                "https://clipart-library.com/data_images/569075.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "monkTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedDamageTaken",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedMaxHitPercentToDungeonMonsters",
+                                    "value": 20
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "applyDemonTraitTurnsOnSpawn",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedDamageAgainstDemons",
+                                    "value": 30
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "mod_bypassDamageReduction",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "mod_wardsave",
+                                    "value": 10
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Archer",
+                            "name": "Archer",
+                            "media": "https://www.sharecg.com/images/original/50642.jpg",
+                            "baseExperience": 67,
+                            "productId": "namespace_profile:Archer",
+                            "level": 99,
+                            "skills": [
+                                "https://images.saymedia-content.com/.image/t_share/MTc2NDU4MzM1NjgyMzczNTk0/do-it-yourself-sterling-duchess-archer-halloween-costume-homemade-archer-cosplay.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "archerTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedSummoningMaxHit",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedRangedMaxHitBonusAgainstMagic",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedAmmoPreservation",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedRangedMaxHit",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedRangedCritChance",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedRangedStrengthBonusPer8Ranged",
+                                    "value": 10
                                 }
                             ],
                             "hardcoreModifiers": [

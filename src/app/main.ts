@@ -14,6 +14,7 @@ declare global {
         hasAoDEntitlement: boolean;
     }
 
+    // @ts-ignore
     const cloudManager: CloudManager;
 
     interface SkillIDDataMap {
@@ -137,7 +138,7 @@ export class App {
             "melvorD:Golbin",
             "melvorD:RangedGolbin"
         ]
-        const AnimalList: any[] = [            
+        const AnimalList: any[] = [
             "melvorD:Chicken",
             "melvorD:Cow",
             "melvorD:Chick",
@@ -316,7 +317,7 @@ export class App {
                 "melvorAoD:Lich",
                 "melvorAoD:GhostSailor",
                 "melvorAoD:GhostMercenary",
-                "melvorAoD:CursedPirateCaptain", 
+                "melvorAoD:CursedPirateCaptain",
                 "melvorAoD:VampiricBat"
             )
             HumansList.push(
@@ -349,27 +350,41 @@ export class App {
         cmim.registerOrUpdateType("Aarakocra", "Aarakocras", "https://cdn2-main.melvor.net/assets/media/monsters/torvair.png", AarakocraList, true);
         cmim.registerOrUpdateType("Angel", "Angels", "https://cdn2-main.melvor.net/assets/media/monsters/angel.png", AngelList, true);
 
+        // @ts-ignore
         cmim.forceBaseModTypeActive("Dragon");
+        // @ts-ignore
         cmim.forceBaseModTypeActive("Undead");
+        // @ts-ignore
         cmim.forceBaseModTypeActive("Human");
+        // @ts-ignore
         cmim.forceBaseModTypeActive("Animal");
+        // @ts-ignore
         cmim.forceBaseModTypeActive("Demon");
+        // @ts-ignore
         cmim.forceBaseModTypeActive("Elemental");
+        // @ts-ignore
         cmim.forceBaseModTypeActive("MythicalCreature");
+        // @ts-ignore
         cmim.forceBaseModTypeActive("SeaCreature");
 
         // Classes
-        // 1
         cmim.registerOrUpdateType("Knight", "Knights", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", [], true);
-        // 10
         cmim.registerOrUpdateType("Wizard", "Wizards", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", [], true);
-        // 20
         cmim.registerOrUpdateType("Scout", "Scouts", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", [], true);
-        // 30
         cmim.registerOrUpdateType("Pirate", "Pirates", "https://cdn2-main.melvor.net/assets/media/monsters/pirate.png", [], true);
-
-        // 100
+        cmim.registerOrUpdateType("Paladin", "Paladins", "https://cdn2-main.melvor.net/assets/media/monsters/paladin.png", [], true);
+        cmim.registerOrUpdateType("Cursemancer", "Cursemancers", "https://cdn2-main.melvor.net/assets/media/monsters/cursed_maiden.png", [], true);
+        cmim.registerOrUpdateType("Scholar", "Scholars", "https://vignette.wikia.nocookie.net/finalfantasy/images/b/b5/Scholar_Artwork_XIV.png/revision/latest?cb=20170723180726", [], true);
+        cmim.registerOrUpdateType("Witchdoctor", "Witchdoctors", "https://cdn2-main.melvor.net/assets/media/monsters/plague_doctor.png", [], true);
+        cmim.registerOrUpdateType("Assassin", "Assassins", "https://www.pngmart.com/files/15/Assassins-Creed-Transparent-PNG.png", [], true);
+        cmim.registerOrUpdateType("Monk", "Monks", "https://clipart-library.com/data_images/569075.png", [], true);
+        cmim.registerOrUpdateType("Archer", "Archers", "https://images.saymedia-content.com/.image/t_share/MTc2NDU4MzM1NjgyMzczNTk0/do-it-yourself-sterling-duchess-archer-halloween-costume-homemade-archer-cosplay.png", [], true);
+        // AoD
+        cmim.registerOrUpdateType("Necromancer", "Necromancers", "https://cdn2-main.melvor.net/assets/media/monsters/necromancer.png", [], true);
+        // TotH
         cmim.registerOrUpdateType("Inquisitor", "Inquisitors", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2FskuUeS-5K71wasTCTeygB27hQUX0_lDxH1obAssZfPa8L2_e5u-YDs49Uu8urKIBWTdFUrnuQxiNp1CGub5b4JAA3d6XV7a2FKZKJVqbePTHwizHVOt3Xgne_6zt0h-5kw%3Ds800&f=1&nofb=1&ipt=856a2de22cf5c3ccc940367000465b6b191368a975c6ab4362051d6a881eb46c&ipo=images", [], true);
+
+
 
         await this.context.gameData.addPackage('data.json');
         // await this.context.gameData.addPackage('data-cmim.json');
@@ -383,12 +398,12 @@ export class App {
             MODIFIER_DATA_summoningSynergy_Devil_Eagle: "While Thieving - 50% chance for +10% base Skill XP, 40% chance for 2.5x GP, and 10% chance to gain no Items or GP",
             MONSTER_TYPE_SINGULAR_Elf: "Elf",
             MONSTER_TYPE_PLURAL_Elf: "Elves",
-            tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
-            tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
-            tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
-            tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
-            tes_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
-            tes_bypassDamageReduction: "${value} damage, though damage reduction.",
+            mod_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
+            mod_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
+            mod_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
+            mod_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
+            mod_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
+            mod_bypassDamageReduction: "${value} damage, though damage reduction.",
             PASSIVES_NAME_EventPassive1: "Unusual Passive",
             PASSIVES_NAME_EventPassive2: "Unusual Passive",
             PASSIVES_NAME_EventPassive3: "Unusual Passive",
@@ -475,10 +490,10 @@ export class App {
                 const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
                 const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
 
-                if(single_species) {
+                if (single_species) {
                     game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 }
-                if(single_class) {
+                if (single_class) {
                     game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 }
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
@@ -487,6 +502,57 @@ export class App {
                 console.log('addXP', error)
             }
         });
+        // @ts-ignore
+        this.context.patch(Character, 'modifyAttackDamage').after((damage: any, target: any, attack: any) => {
+            const MonsterMods: any = game.combat.enemy.modifiers
+            const PlayerMods: any = game.combat.player.modifiers
+            const TargetMods: any = target.modifiers
+            let tesDamage = 0
+            const DR: any = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
+            // Remove all damage and return if wardsaved
+            if (TargetMods.mod_wardsave) {
+                let wardsaveChance = Math.min(TargetMods.mod_wardsave, 90);
+                if (rollPercentage(wardsaveChance)) {
+                    return 0;
+                }
+            }
+            // At HP full damage
+            if (!target.monster && target.stats.maxHitpoints === target.hitpoints) {
+                // do damage to player
+                let percDamage = 0
+                if (MonsterMods.mod_increasedPercDamageWhileTargetHasMaxHP) {
+                    percDamage = tesDamage * (MonsterMods.mod_increasedPercDamageWhileTargetHasMaxHP / 100)
+                }
+                let flatDam = 0
+                if (MonsterMods.mod_increasedFlatDamageWhileTargetHasMaxHP) {
+                    flatDam = MonsterMods.mod_increasedFlatDamageWhileTargetHasMaxHP
+                }
+                tesDamage = tesDamage + flatDam + percDamage
+            }
+            if (target.monster && target.stats.maxHitpoints === target.hitpoints) {
+                // Do damage to monster
+                let percDamage = 0
+                if (PlayerMods.mod_increasedPercDamageWhileTargetHasMaxHP) {
+                    percDamage = tesDamage * (PlayerMods.mod_increasedPercDamageWhileTargetHasMaxHP / 100)
+                }
+                let flatDam = 0
+                if (PlayerMods.mod_increasedFlatDamageWhileTargetHasMaxHP) {
+                    flatDam = PlayerMods.mod_increasedFlatDamageWhileTargetHasMaxHP
+                }
+                tesDamage = tesDamage + flatDam + percDamage
+            }
+            if (TargetMods.mod_decreaseFlatDamageWhileTargetHasMaxHP && target.stats.maxHitpoints === target.hitpoints) {
+                tesDamage = tesDamage - TargetMods.mod_decreaseFlatDamageWhileTargetHasMaxHP
+            }
+            // account for damage reduction
+            tesDamage = tesDamage - ((tesDamage / 100) * DR)
+            // Adding bypass damage
+            if (MonsterMods.mod_bypassDamageReduction) {
+                tesDamage = tesDamage + MonsterMods.mod_bypassDamageReduction
+            }
+            // return re-calced damage
+            return Math.floor(damage + tesDamage)
+        })
         // @ts-ignore
         this.context.patch(Player, 'addPrayerPoints').after(function (unknown, amount) {
             const single_species = game.profile.yous.get(1) // human
@@ -519,10 +585,10 @@ export class App {
             const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
             const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
             let currentSpeicies = ''
-            if(single_species) {
+            if (single_species) {
                 currentSpeicies = single_species.single_species.localID
             }
-            
+
             if (currentSpeicies === 'Angel') {
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
@@ -564,89 +630,89 @@ export class App {
             const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
             const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
             let currentSpeicies = ''
-            if(single_species) {
+            if (single_species) {
                 currentSpeicies = single_species.single_species.localID
             }
-            
+
             if (game && game.activeAction && currentSpeicies === 'Human' && game.activeAction._localID === 'Crafting') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'Aarakocra' && game.activeAction._localID === 'Fishing') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'Goblin' && game.activeAction._localID === 'Thieving') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'Dragon' && game.activeAction._localID === 'Firemaking') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'Undead' && game.activeAction._localID === 'Mining') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'Demon' && game.activeAction._localID === 'Summoning') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'SeaCreature' && game.activeAction._localID === 'Agility') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'Elemental' && game.activeAction._localID === 'Runecrafting') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'MythicalCreature' && game.activeAction._localID === 'Astrology') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'Giant' && game.activeAction._localID === 'Woodcutting') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'Plant' && game.activeAction._localID === 'Herblore') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
 
             if (game && game.activeAction && currentSpeicies === 'Orc' && game.activeAction._localID === 'Smithing') {
-                
+
                 game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)

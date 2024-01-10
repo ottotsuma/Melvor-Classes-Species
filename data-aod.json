@@ -166,9 +166,92 @@
                                 "chance": 0.0005
                             }
                         }
+                    ],
+                    "classes": [
+                        {
+                            "id": "Necromancer",
+                            "name": "Necromancer",
+                            "media": "https://ottotsuma.github.io/images/people/oldmage.jpg",
+                            "baseExperience": 30,
+                            "productId": "namespace_profile:Necromancer",
+                            "level": 45,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/necromancer.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "necromancerTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedDamageTakenBasedOnHP",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedSummoningMaxHit",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedBarrierSummonDamage",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedSummoningAttackLifesteal",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSummoningAttackIntervalPercent",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedFlatBarrierSummonDamageMagic",
+                                    "value": 10
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        }
                     ]
                 }
             }
         ]
     }
 }
+
+
+
