@@ -279,7 +279,7 @@
                             "skills": [
                                 "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png",
                                 "https://cdn2-main.melvor.net/assets/media/skills/ranged/ranged.svg",
-                                "https://cdn2-main.melvor.net/assets/media/skills/farming/farming.svg"
+                                "https://cdn2-main.melvor.net/assets/media/skills/fletching/fletching.svg"
                             ],
                             "standardModifiers": [
                                 {
@@ -294,7 +294,7 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedFarmingYield",
+                                    "key": "decreasedFletchingIntervalWithArrows",
                                     "value": 10
                                 },
                                 {
@@ -491,8 +491,7 @@
                                 {
                                     "level": 60,
                                     "key": "increasedMasteryXP",
-                                    "skill": "melvorD:Firemaking",
-                                    "value": 5
+                                    "skill": "melvorD:Firemaking"
                                 },
                                 {
                                     "level": 80,
@@ -931,7 +930,7 @@
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedGlobalAccuracyAgainstKnights",
+                                    "key": "increasedGlobalAccuracyAgainstFighters",
                                     "value": 20
                                 },
                                 {

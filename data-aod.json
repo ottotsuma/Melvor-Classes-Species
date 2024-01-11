@@ -25,7 +25,7 @@
                 "number": 2,
                 "description": "A relic made by people of the past.",
                 "modifiers": {
-                    "increasedDamageAgainstGoblins": 5
+                    "increasedDamageAgainstFighters": 5
                 }
             },
             {
@@ -35,7 +35,7 @@
                 "number": 3,
                 "description": "A relic made by people of the past.",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 5
+                    "increasedDamageAgainstMages": 5
                 }
             },
             {
@@ -45,7 +45,7 @@
                 "number": 4,
                 "description": "A relic made by people of the past.",
                 "modifiers": {
-                    "increasedDamageAgainstAnimals": 5
+                    "increasedDamageAgainstRogues": 5
                 }
             },
             {
@@ -55,7 +55,9 @@
                 "number": 5,
                 "description": "A relic made by people of the past.",
                 "modifiers": {
-                    "increasedDamageAgainstDragons": 5
+                    "increasedGlobalAccuracyAgainstFighters": 5,
+                    "increasedGlobalAccuracyAgainstMages": 5,
+                    "increasedGlobalAccuracyAgainstRogues": 5
                 }
             },
             {
@@ -65,7 +67,7 @@
                 "number": 6,
                 "description": "A relic made by people of the past.",
                 "modifiers": {
-                    "increasedChanceToLocateAncientRelic": 1
+                    "increasedBankSpace": 10
                 }
             }
         ],

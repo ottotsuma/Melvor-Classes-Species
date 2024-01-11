@@ -65,6 +65,12 @@ export class App {
 
         this.game.profile = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_profile'), Profile);
         const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
+        const AR = mod.manager.getLoadedModList().includes('Abyssal Rift')
+        const gen1 = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
+        const music = mod.manager.getLoadedModList().includes('[Myth] Music')
+        const ToB = mod.manager.getLoadedModList().includes('Theatre of Blood')
+        const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
+
         if (!kcm) {
             return;
         }
@@ -228,10 +234,413 @@ export class App {
             "melvorF:Voltaire",
             "melvorF:Aleron"
         ]
-        const BeastList = ["melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:StoneSnake", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorTotH:LargeIceTroll", "melvorD:IceTroll", "melvorD:Ice", "melvorD:TheEye", "melvorD:ResurrectedEye", "melvorF:AirMonster", "melvorF:AirGuard"]
-        const GiantList = ["melvorD:HillGiant", "melvorD:MossGiant", "melvorF:GiantMoth", "melvorD:GiantCrab", "melvorF:TurkulGiant"]
+        const BeastList = [
+            "melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:StoneSnake", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorTotH:LargeIceTroll", "melvorD:IceTroll", "melvorD:Ice", "melvorD:TheEye", "melvorD:ResurrectedEye", "melvorF:AirMonster", "melvorF:AirGuard"
+        ]
+        const GiantList = [
+            "melvorD:HillGiant", "melvorD:MossGiant", "melvorF:GiantMoth", "melvorD:GiantCrab", "melvorF:TurkulGiant"
+        ]
+
+        const FightersList: any[] = [
+            "melvorD:BlackKnight",
+            "melvorD:HillGiant",
+            "melvorD:MossGiant",
+            "melvorD:GiantCrab",
+            "melvorD:Tentacle",
+            "melvorD:Seagull",
+            "melvorD:ConfusedPirate",
+            "melvorD:FrozenMammoth",
+            "melvorD:WetMonster",
+            "melvorD:MoistMonster",
+            "melvorD:SweatyMonster",
+            "melvorD:Golbin",
+            "melvorD:Chicken",
+            "melvorD:Cow",
+            "melvorD:Chick",
+            "melvorD:MummaChicken",
+            "melvorD:Pirate",
+            "melvorD:PirateCaptain",
+            "melvorD:TheKraken",
+            "melvorD:Bat",
+            "melvorD:BigBat",
+            "melvorD:MalcsTheGuardianOfMelvor",
+            "melvorD:Spider",
+            "melvorD:BrownSpider",
+            "melvorD:EvilSpider",
+            "melvorD:SpiderKing",
+            "melvorD:IceMonster",
+            "melvorD:IceTroll",
+            "melvorD:Ice",
+            "melvorD:ProtectorofIce",
+            "melvorD:FirstMate",
+            "melvorD:ZombieHand",
+            "melvorD:Zombie",
+            "melvorD:ZombieLeader",
+            "melvorD:Ghost",
+            "melvorD:GreenDragon",
+            "melvorD:BlueDragon",
+            "melvorD:RedDragon",
+            "melvorD:BlackDragon",
+            "melvorD:JuniorFarmer",
+            "melvorD:AdultFarmer",
+            "melvorD:MasterFarmer",
+            "melvorD:SteelKnight",
+            "melvorD:MithrilKnight",
+            "melvorD:AdamantKnight",
+            "melvorD:RuneKnight",
+            "melvorD:Leech",
+            "melvorD:Plant",
+            "melvorD:ElerineWarrior",
+            "melvorF:Mummy",
+            "melvorF:Statue",
+            "melvorF:UndeadWerewolf",
+            "melvorF:FierceDevil",
+            "melvorF:StrangeEyedMonster",
+            "melvorF:LotsofEyes",
+            "melvorF:Eyes",
+            "melvorF:Griffin",
+            "melvorF:Pegasus",
+            "melvorF:Valkyrie",
+            "melvorF:GooMonster",
+            "melvorF:GreenGooMonster",
+            "melvorF:PurpleGooMonster",
+            "melvorF:ScatteredGooMonster",
+            "melvorF:RagingHornedElite",
+            "melvorF:DarkHornedElite",
+            "melvorF:AirMonster",
+            "melvorF:Aleron",
+            "melvorF:WaterMonster",
+            "melvorF:Murtia",
+            "melvorF:EarthMonster",
+            "melvorF:EarthGolem",
+            "melvorF:Ophidia",
+            "melvorF:Terran",
+            "melvorF:FireGuard",
+            "melvorF:FireMonster",
+            "melvorF:Ignis",
+            "melvorF:ElderDragon",
+            "melvorF:MioliteSprig",
+            "melvorF:MioliteWarden",
+            "melvorF:TurkulRiders",
+            "melvorF:TurkulGiant",
+            "melvorF:BountyHunter",
+            "melvorF:ChaoticGreaterDragon",
+            "melvorF:Umbora",
+            "melvorF:Paladin",
+            "melvorF:Cerberus",
+            "melvorF:RedDevil",
+            "melvorF:Incendius",
+            "melvorF:MalcsTheLeaderOfDragons",
+            "melvorF:MysteriousFigurePhase1",
+            "melvorF:EyeOfFear",
+            "melvorF:VenomousSnake",
+            "melvorF:SpikedRedClaw",
+            "melvorF:GreaterSkeletalDragon",
+        ]
+        const MagesList: any[] = [
+            "melvorD:TheEye",
+            "melvorD:ResurrectedEye",
+            "melvorD:Wizard",
+            "melvorD:DarkWizard",
+            "melvorD:MasterWizard",
+            "melvorD:ElderWizard",
+            "melvorD:FireSpirit",
+            "melvorD:ElerineMage",
+            "melvorF:StoneSnake",
+            "melvorF:Fairy",
+            "melvorF:Angel",
+            "melvorF:SeethingHornedElite",
+            "melvorF:WaterGuard",
+            "melvorF:WaterGolem",
+            "melvorF:Lissia",
+            "melvorF:Glacia",
+            "melvorF:Mistral",
+            "melvorF:FireGolem",
+            "melvorF:Pyra",
+            "melvorF:Ragnar",
+            "melvorF:MioliteTrio",
+            "melvorF:MioliteMonarch",
+            "melvorF:Druid",
+            "melvorF:Shaman",
+            "melvorF:Necromancer",
+            "melvorF:Elementalist",
+            "melvorF:CursedMaiden",
+            "melvorF:WickedGreaterDragon",
+            "melvorF:Kutul",
+            "melvorF:Priest",
+            "melvorF:WanderingBard",
+            "melvorF:FearfulEye",
+            "melvorF:Phoenix",
+            "melvorF:Ahrenia",
+            "melvorF:SuperiorEyedMonster",
+            "melvorF:GiantMoth",
+            "melvorF:CursedLich",
+        ]
+        const RoguesList: any[] = [
+            "melvorD:FrozenArcher",
+            "melvorD:RangedGolbin",
+            "melvorD:PratTheProtectorOfSecrets",
+            "melvorD:BanditTrainee",
+            "melvorD:Bandit",
+            "melvorD:BanditLeader",
+            "melvorD:Skeleton",
+            "melvorD:ViciousSerpent",
+            "melvorD:ElerineArcher",
+            "melvorF:Vampire",
+            "melvorF:ManyEyedMonster",
+            "melvorF:HolyArcher",
+            "melvorF:AirGuard",
+            "melvorF:AirGolem",
+            "melvorF:Voltaire",
+            "melvorF:Aeris",
+            "melvorF:EarthGuard",
+            "melvorF:FuriousHornedElite",
+            "melvorF:Thief",
+            "melvorF:TurkulArchers",
+            "melvorF:TurkulThrowers",
+            "melvorF:TurkulGeneral",
+            "melvorF:SandBeast",
+            "melvorF:RancoraSpider",
+            "melvorF:ElderVampire",
+            "melvorF:HuntingGreaterDragon",
+            "melvorF:Rokken",
+            "melvorF:PratTheGuardianOfSecrets",
+            "melvorF:MysteriousFigurePhase2",
+            "melvorF:NoxiousSerpent",
+            "melvorF:LegaranWurm",
+        ]
+        const randomList = [
+            "melvorF:RandomITM",
+            "melvorF:Bane",
+            "melvorF:BaneInstrumentOfFear",
+            "melvorTotH:RandomSpiderLair",
+            "melvorTotH:SpiderQueen"
+        ]
+
+        game.monsters.forEach(monster => {
+            if (monster.attackType === "magic") {
+                MagesList.push(monster._namespace.name + ':' + monster._localID)
+            }
+            if (monster.attackType === "melee") {
+                FightersList.push(monster._namespace.name + ':' + monster._localID)
+            }
+            if (monster.attackType === "ranged") {
+                RoguesList.push(monster._namespace.name + ':' + monster._localID)
+            }
+            if (monster.attackType === "random") {
+                randomList.push(monster._namespace.name + ':' + monster._localID)
+            }
+        })
+
+        if (ToB) {
+            RoguesList.push("ToBDungeon:Pestilent_Bloat",
+                "ToBDungeon:Nylocas_vasilias_ranged",
+                "ToBDungeon:Xarpus",
+                "ToBDungeon:Xarpus_p2")
+            MagesList.push("ToBDungeon:Maiden",
+                "ToBDungeon:Nylocas_vasilias_magic",
+                "ToBDungeon:Verzik_vitur")
+            FightersList.push("ToBDungeon:Nylocas_vasilias_melee",
+                "ToBDungeon:Sotetseg",
+                "ToBDungeon:Verzik_vitur_p2",
+                "ToBDungeon:Verzik_vitur_final")
+        }
+        if (AR) {
+            RoguesList.push("abyrift:Tick")
+            MagesList.push("abyrift:Screamer")
+            FightersList.push("abyrift:Lasher",
+                "abyrift:Crab_Wyrm",
+                "abyrift:Gore_Bear")
+        }
+        if (gen1) {
+            RoguesList.push("pokeworldAdditions:pwa_ProfOakLab_TrainerThree",
+                "pokeworldAdditions:pwa_kanto_elitefour_d_one",
+                "pokeworldAdditions:pwa_pallet_bulbasuar",
+                "pokeworldAdditions:pwa_mtmoon_zubat",
+                "pokeworldAdditions:pwa_pewter_brock_geodude",
+                "pokeworldAdditions:pwa_viridian_giovanni_persian",
+                "pokeworldAdditions:pwa_cerulean_misty_starmie",
+                "pokeworldAdditions:pwa_vermilion_ltsurge_magnemite",
+                "pokeworldAdditions:pwa_celadon_erika_vileplume",
+                "pokeworldAdditions:pwa_fuchsia_koga_weezing",
+                "pokeworldAdditions:pwa_fuchsia_koga_venomoth",
+                "pokeworldAdditions:pwa_saffron_sabrina_mrmime",
+                "pokeworldAdditions:pwa_cinnabar_blaine_arcanine",
+                "pokeworldAdditions:pwa_pinkin4",
+                "pokeworldAdditions:pwa_pinkin8")
+            MagesList.push(
+                "pokeworldAdditions:pwa_Kanto_TrainerFive",
+                "pokeworldAdditions:pwa_ProfOakLab_TrainerTwo",
+                "pokeworldAdditions:pwa_cerCave_ArmoredMewtwo",
+                "pokeworldAdditions:pwa_kanto_elitefour_a_one",
+                "pokeworldAdditions:pwa_kanto_elitefour_a_two",
+                "pokeworldAdditions:pwa_kanto_elitefour_a_three",
+                "pokeworldAdditions:pwa_kanto_elitefour_a_four",
+                "pokeworldAdditions:pwa_kanto_elitefour_a_five",
+                "pokeworldAdditions:pwa_kanto_elitefour_b_two",
+                "pokeworldAdditions:pwa_kanto_elitefour_b_three",
+                "pokeworldAdditions:pwa_kanto_elitefour_b_four",
+                "pokeworldAdditions:pwa_kanto_elitefour_c_two",
+                "pokeworldAdditions:pwa_kanto_elitefour_c_four",
+                "pokeworldAdditions:pwa_kanto_elitefour_d_three",
+                "pokeworldAdditions:pwa_pallet_charmander",
+                "pokeworldAdditions:pwa_mtmoon_sandshrew",
+                "pokeworldAdditions:pwa_pewter_brock",
+                "pokeworldAdditions:pwa_viridian_giovanni_rhyhorn",
+                "pokeworldAdditions:pwa_cerulean_misty_psyduck",
+                "pokeworldAdditions:pwa_vermilion_ltsurge_raichu",
+                "pokeworldAdditions:pwa_celadon_erika_tangela",
+                "pokeworldAdditions:pwa_saffron_sabrina_alakazam",
+                "pokeworldAdditions:pwa_cinnabar_blaine_magmar",
+                "pokeworldAdditions:pwa_pinkin7"
+            )
+            FightersList.push("pokeworldAdditions:pwa_Kanto_TrainerOne",
+                "pokeworldAdditions:pwa_Kanto_TrainerTwo",
+                "pokeworldAdditions:pwa_Kanto_TrainerThree",
+                "pokeworldAdditions:pwa_Kanto_TrainerFour",
+                "pokeworldAdditions:pwa_ProfOakLab_TrainerOne",
+                "pokeworldAdditions:pwa_cerCave_chansey",
+                "pokeworldAdditions:pwa_cerCave_rhydon",
+                "pokeworldAdditions:pwa_cerCave_slowbro",
+                "pokeworldAdditions:pwa_cerCave_wigglytuff",
+                "pokeworldAdditions:pwa_cerCave_golbat",
+                "pokeworldAdditions:pwa_digCave_diglettA",
+                "pokeworldAdditions:pwa_digCave_diglettB",
+                "pokeworldAdditions:pwa_digCave_diglettC",
+                "pokeworldAdditions:pwa_digCave_dugtrio",
+                "pokeworldAdditions:pwa_teamRocketsHideout_f",
+                "pokeworldAdditions:pwa_teamRocketsHideout_m",
+                "pokeworldAdditions:pwa_teamRocketsHideout_giovanni",
+                "pokeworldAdditions:pwa_vicRoad_machoke",
+                "pokeworldAdditions:pwa_vicRoad_graveler",
+                "pokeworldAdditions:pwa_vicRoad_golbat",
+                "pokeworldAdditions:pwa_vicRoad_moltres",
+                "pokeworldAdditions:pwa_kanto_elitefour_b_one",
+                "pokeworldAdditions:pwa_kanto_elitefour_c_one",
+                "pokeworldAdditions:pwa_kanto_elitefour_c_three",
+                "pokeworldAdditions:pwa_kanto_elitefour_d_two",
+                "pokeworldAdditions:pwa_kanto_elitefour_d_four",
+                "pokeworldAdditions:pwa_kanto_elitefour_d_five",
+                "pokeworldAdditions:pwa_pallet_squirtle",
+                "pokeworldAdditions:pwa_pallet_pikachu",
+                "pokeworldAdditions:pwa_pallet_eevee",
+                "pokeworldAdditions:pwa_mtmoon_geodude",
+                "pokeworldAdditions:pwa_mtmoon_paras",
+                "pokeworldAdditions:pwa_mtmoon_clefairy",
+                "pokeworldAdditions:pwa_pewter_brock_onix",
+                "pokeworldAdditions:pwa_viridian_giovanni",
+                "pokeworldAdditions:pwa_cerulean_misty",
+                "pokeworldAdditions:pwa_vermilion_ltsurge",
+                "pokeworldAdditions:pwa_vermilion_ltsurge_voltorb",
+                "pokeworldAdditions:pwa_celadon_erika",
+                "pokeworldAdditions:pwa_celadon_erika_weepinbell",
+                "pokeworldAdditions:pwa_fuchsia_koga",
+                "pokeworldAdditions:pwa_fuchsia_koga_golbat",
+                "pokeworldAdditions:pwa_saffron_sabrina",
+                "pokeworldAdditions:pwa_saffron_sabrina_jynx",
+                "pokeworldAdditions:pwa_cinnabar_blaine",
+                "pokeworldAdditions:pwa_cinnabar_blaine_rapidash",
+                "pokeworldAdditions:pwa_pinkin1",
+                "pokeworldAdditions:pwa_pinkin2",
+                "pokeworldAdditions:pwa_pinkin3",
+                "pokeworldAdditions:pwa_pinkin5",
+                "pokeworldAdditions:pwa_pinkin6",
+                "pokeworldAdditions:pwa_pinkin9")
+        }
+        if (music) {
+            // RoguesList.push()
+            MagesList.push("mythMusic:Enchanted_Jester",
+                "mythMusic:Mystic_Jester")
+            FightersList.push("mythMusic:Jester")
+        }
+        if (Runescape) {
+            MagesList.push(
+                "runescapeEncountersInMelvor:Dagannoth_Prime",
+                "runescapeEncountersInMelvor:Pthentraken",
+                "runescapeEncountersInMelvor:Glacor"
+            )
+            FightersList.push(
+                "runescapeEncountersInMelvor:Dagannoth_Rex",
+                "runescapeEncountersInMelvor:Orikalka",
+                "runescapeEncountersInMelvor:Helwyr",
+                "runescapeEncountersInMelvor:Gorvek_And_Vindicta",
+                "runescapeEncountersInMelvor:Enduring_Glacyte",
+                "runescapeEncountersInMelvor:Sapping_Glacyte",
+                "runescapeEncountersInMelvor:Unstable_Glacyte"
+            )
+            RoguesList.push(
+                "runescapeEncountersInMelvor:Dagannoth_Prime",
+                "runescapeEncountersInMelvor:Pthentraken",
+                "runescapeEncountersInMelvor:Glacor"
+            )
+        }
+
         if (cloudManager.hasTotHEntitlement) {
-            BeastList.push("melvorTotH:GoliathWerewolf")
+            RoguesList.push(
+                "melvorTotH:HungryPlant",
+                "melvorTotH:Alraune",
+                "melvorTotH:Morellia",
+                "melvorTotH:LightningGolem",
+                "melvorTotH:TwinSeaDragonSerpent",
+                "melvorTotH:TrapperSpider",
+                "melvorTotH:EnforcerSpider",
+                "melvorTotH:Cockatrice",
+                "melvorTotH:Phantom",
+                "melvorTotH:Arctair",
+                "melvorTotH:VorloranWatcher",
+                "melvorTotH:TheHeraldPhase2"
+            )
+            MagesList.push(
+                "melvorTotH:PoisonToad",
+                "melvorTotH:MagicFireDemon",
+                "melvorTotH:FrostGolem",
+                "melvorTotH:SpectralIceWolf",
+                "melvorTotH:IceHydra",
+                "melvorTotH:LightningSpirit",
+                "melvorTotH:RaZu",
+                "melvorTotH:Siren",
+                "melvorTotH:WickedSpider",
+                "melvorTotH:GuardianSpider",
+                "melvorTotH:PlagueDoctor",
+                "melvorTotH:TreeSpirit",
+                "melvorTotH:CursedSpirit",
+                "melvorTotH:LadyDarkheart",
+                "melvorTotH:Banshee",
+                "melvorTotH:Beholder",
+                "melvorTotH:Fiozor",
+                "melvorTotH:Harkair",
+                "melvorTotH:VorloranDevastator",
+                "melvorTotH:TheHeraldPhase3"
+            )
+            FightersList.push(
+                "melvorTotH:Kongamato",
+                "melvorTotH:Conda",
+                "melvorTotH:BurningSnake",
+                "melvorTotH:InfernalGolem",
+                "melvorTotH:Manticore",
+                "melvorTotH:GretYun",
+                "melvorTotH:Trogark",
+                "melvorTotH:LargeIceTroll",
+                "melvorTotH:PolarBear",
+                "melvorTotH:LightningMonkey",
+                "melvorTotH:MonsterCroc",
+                "melvorTotH:Leviathan",
+                "melvorTotH:ScouterSpider",
+                "melvorTotH:BasherSpider",
+                "melvorTotH:ShadowBeast",
+                "melvorTotH:GoliathWerewolf",
+                "melvorTotH:TreeGiant",
+                "melvorTotH:Spectre",
+                "melvorTotH:CursedSkeletonWarrior",
+                "melvorTotH:DarkKnight",
+                "melvorTotH:Torvair",
+                "melvorTotH:VorloranProtector",
+                "melvorTotH:GuardianoftheHerald",
+                "melvorTotH:TheHeraldPhase1"
+            )
+            BeastList.push(
+                "melvorTotH:GoliathWerewolf"
+            )
             MythList.push(
                 "melvorTotH:Manticore",
                 "melvorTotH:Cockatrice"
@@ -303,6 +712,52 @@ export class App {
             )
         }
         if (cloudManager.hasAoDEntitlement) {
+            RoguesList.push("melvorAoD:BlindArcher",
+                "melvorAoD:VampiricBat",
+                "melvorAoD:SlimeShooter",
+                "melvorAoD:RangedGolem",
+                "melvorAoD:CultImp",
+                "melvorAoD:PoisonLeecher",
+                "melvorAoD:PoisonRoamer",
+                "melvorAoD:PoisonSlime",
+                "melvorAoD:PoisonBloater",
+                "melvorAoD:GhostMercenary",
+                "melvorAoD:MermaidArcher",
+                "melvorAoD:Nagaia",
+                "melvorAoD:EvilOak",
+                "melvorAoD:FuriousMahogany",
+                "melvorAoD:CrystalBarrager",
+                "melvorAoD:CrystalShatterer",)
+            MagesList.push("melvorAoD:BlindMage",
+                "melvorAoD:BlindGhost",
+                "melvorAoD:MagicGolem",
+                "melvorAoD:CultMember",
+                "melvorAoD:Lich",
+                "melvorAoD:SoulTakerWitch",
+                "melvorAoD:MagicMirror",
+                "melvorAoD:PossessedBarrel",
+                "melvorAoD:FakeDoor",
+                "melvorAoD:IllusiveRoots",
+                "melvorAoD:PuppetMaster",
+                "melvorAoD:ShipwreckBeast",
+                "melvorAoD:Merman",
+                "melvorAoD:TreacherousJellyfish",
+                "melvorAoD:AngryTeak",
+                "melvorAoD:CrystalProwler",
+                "melvorAoD:CrystalManipulator",)
+            FightersList.push("melvorAoD:BlindWarrior",
+                "melvorAoD:GreenSlime",
+                "melvorAoD:GraniteGolem",
+                "melvorAoD:EarthGolem",
+                "melvorAoD:LavaGolem",
+                "melvorAoD:CultMonster",
+                "melvorAoD:GhostSailor",
+                "melvorAoD:CursedPirateCaptain",
+                "melvorAoD:MermanGuard",
+                "melvorAoD:GrumpyWillow",
+                "melvorAoD:RagingMaple",
+                "melvorAoD:CrystalSmasher",
+                "melvorAoD:CrystalBehemoth")
             PlantList.push("melvorAoD:EvilOak", "melvorAoD:GrumpyWillow", "melvorAoD:AngryTeak", "melvorAoD:RagingMaple", "melvorAoD:IllusiveRoots", "melvorAoD:LavaGolem")
             BeastList.push("melvorAoD:GreenSlime", "melvorAoD:SlimeShooter", "melvorAoD:PoisonRoamer", "melvorAoD:PoisonSlime", "melvorAoD:PoisonBloater", "melvorAoD:PoisonLeecher", "melvorAoD:MagicMirror", "melvorAoD:PossessedBarrel", "melvorAoD:FakeDoor", "melvorAoD:CultMonster", "melvorAoD:PuppetMaster")
             SeaCreatureList.push(
@@ -368,9 +823,9 @@ export class App {
         cmim.forceBaseModTypeActive("SeaCreature");
 
         // Classes        
-        cmim.registerOrUpdateType("Fighter", "Fighters", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", [], true);
-        cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", [], true);
-        cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", [], true);
+        cmim.registerOrUpdateType("Fighter", "Fighters", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", FightersList, true);
+        cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", MagesList, true);
+        cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", RoguesList, true);
 
 
         await this.context.gameData.addPackage('data.json');
@@ -706,26 +1161,21 @@ export class App {
                 game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
-            // 115, 120
-            // 
-            // Animal 
-            // increasedMaxHitPercentAgainstSeaCreatures
+            if (game && game.activeAction && currentSpeicies === 'Elf' && game.activeAction._localID === 'Fletching') {
+                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
+            }
 
             // {"melvorD:Cooking" => Cooking}
-            // {"melvorD:Fletching" => Fletching}
 
-            // {"melvorD:Township" => Township}
             // {"melvorAoD:Cartography" => Cartography}
             // {"melvorAoD:Archaeology" => Archaeology}
 
             // {"mythMusic:Music" => Music}
             // {"namespace_thuum:Thuum" => Thuum}
 
-            if (game && game.activeAction && currentSpeicies === 'Elf' && game.activeAction._localID === 'Farming') {
-                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
-            }
+
             return [amount, masteryAction]
         })
     }
