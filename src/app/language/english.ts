@@ -74,10 +74,11 @@ export const en = {
     Single_Species_Inquisitor: 'Inquisitor',
     Single_Species_Monk: 'Monk',
     Single_Species_Archer: 'Archer',
-    Single_Species_Necromancer: 'Necromancer',   
-    
-    // UNDEFINED TRANSLATION: :MODIFIER_DATA_increasedDeadlyToxinsFromHerblore
-    // UNDEFINED TRANSLATION: :MODIFIER_DATA_bigRon
+    Single_Species_Necromancer: 'Necromancer', 
+    Single_Species_Druid: 'Druid', 
+    Single_Species_Viking: 'Viking', 
+    Single_Species_Alchemist: 'Alchemist', 
+    Single_Species_King: 'King',
 
     PET_NAME_Bob: 'Bob',
     PET_NAME_abyssal_chicken: 'Abyssal Chicken',
@@ -149,8 +150,6 @@ export const en = {
     Settings_Base_You_Equip_Cost_7: 'Base you Master cost with 7 modifiers unlocked',
     Settings_Must_Be_Larger_Then: 'Value must be larger then 99',
     Settings_Must_Be_Smaller_Then: 'Value must be smaller then 1,000,000,000,000',
-    MODIFIER_DATA_increasedDamageAgainstElves: 'Damage to Elves',
-    MODIFIER_DATA_bigRon: '+100% Chance To Double Loot in Combat. For every 2000 base Maximum Hitpoints the enemy has (Capped at 10000): +9% Melee Strength Bonus from Equipment, +3% of Maximum Hit added to Minimum Hit and +1% Damage Reduction. Bonus is doubled if fighting a boss.',
     mod_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
     mod_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
     mod_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
