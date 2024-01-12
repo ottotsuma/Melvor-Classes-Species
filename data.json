@@ -1510,7 +1510,7 @@
                                 },
                                 {
                                     "level": 1,
-                                    "key": "decreasedDamageAgainstDemons",
+                                    "key": "decreasedDamageAgainstAngels",
                                     "value": 100
                                 },
                                 {
