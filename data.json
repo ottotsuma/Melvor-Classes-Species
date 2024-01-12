@@ -2,6 +2,126 @@
     "$schema": "https://melvoridle.com/assets/schema/gameData.json",
     "namespace": "namespace_profile",
     "data": {
+        "combatPassives": [
+            {
+                "id": "Dragon_traits",
+                "name": "Dragon Traits",
+                "modifiers": {
+                    "increasedDamageAgainstElves": 10,
+                    "increasedGlobalAccuracyAgainstAarakocras": 50
+                }
+            },
+            {
+                "id": "Elf_traits",
+                "name": "Elf Traits",
+                "modifiers": {
+                    "increasedDamageAgainstMythicalCreatures": 10,
+                    "increasedDamageAgainstElementals": 5
+                }
+            },
+            {
+                "id": "Undead_traits",
+                "name": "Undead Traits",
+                "modifiers": {
+                    "increasedDamageAgainstAngels": 10
+                }
+            },
+            {
+                "id": "SeaCreature_traits",
+                "name": "Sea Creature Traits",
+                "modifiers": {
+                    "increasedDamageAgainstDragons": 10,
+                    "increasedDamageAgainstDragons": 10
+                }
+            },
+            {
+                "id": "MythicalCreature_traits",
+                "name": "Mythical Creature Traits",
+                "modifiers": {
+                    "increasedDamageAgainstAarakocras": 10,
+                    "increasedGlobalAccuracyAgainstFighters": 20
+                }
+            },
+            {
+                "id": "Elemental_traits",
+                "name": "Elemental Traits",
+                "modifiers": {
+                    "increasedMaxHitpoints": 10
+                }
+            },
+            {
+                "id": "Demon_traits",
+                "name": "Demon Traits",
+                "modifiers": {
+                    "increasedDamageAgainstAngels": 10
+                }
+            },
+            {
+                "id": "Animal_traits",
+                "name": "Animal Traits",
+                "modifiers": {}
+            },
+            {
+                "id": "Human_traits",
+                "name": "Human Traits",
+                "modifiers": {
+                    "increasedDamageAgainstHumans": 10,
+                    "increasedDamageAgainstAnimals": 10
+                }
+            },
+            {
+                "id": "Angel_traits",
+                "name": "Angel Traits",
+                "modifiers": {
+                    "increasedDamageAgainstDemons": 10,
+                    "increasedGlobalAccuracyAgainstDemons": 20
+                }
+            },
+            {
+                "id": "Aarakocra_traits",
+                "name": "Aarakocra Traits",
+                "modifiers": {
+                    "increasedDamageAgainstGoblins": 10,
+                    "increasedDamageAgainstSeaCreatures": 10
+                }
+            },
+            {
+                "id": "Beast_traits",
+                "name": "Beast Traits",
+                "modifiers": {
+                    "increasedDamageTakenFromHumans": 20,
+                    "increasedChanceToApplyAnimalTrait": 5,
+                    "decreasedDamageTakenFromAnimals": 20,
+                    "increasedDamageAgainstAnimals": 10,
+                    "increasedMinHitBasedOnMaxHitAgainstAnimals": 5
+                }
+            },
+            {
+                "id": "Giant_traits",
+                "name": "Giant Traits",
+                "modifiers": {}
+            },
+            {
+                "id": "Orc_traits",
+                "name": "Orc Traits",
+                "modifiers": {}
+            },
+            {
+                "id": "Plant_traits",
+                "name": "Plant Traits",
+                "modifiers": {}
+            },
+            {
+                "id": "Goblin_traits",
+                "name": "Goblin Traits",
+                "modifiers": {}
+            },
+            {
+                "id": "Vampire_traits",
+                "name": "Vampire Traits",
+                "modifiers": {}
+            }
+        ],
         "pages": [
             {
                 "id": "Profile",
@@ -148,8 +268,7 @@
                         }
                     ],
                     "minibar": {
-                        "defaultItems": [
-                        ],
+                        "defaultItems": [],
                         "upgrades": [],
                         "pets": [
                             "namespace_profile:Bob"
@@ -211,7 +330,7 @@
                                     "level": 1,
                                     "key": "decreasedMagicMaxHit",
                                     "value": 10
-                                },          
+                                },
                                 {
                                     "level": 20,
                                     "key": "increasedDamageAgainstAnimals",
@@ -694,7 +813,7 @@
                                 {
                                     "level": 40,
                                     "key": "increasedDamageAgainstAngels",
-                                    "value": 1
+                                    "value": 10
                                 },
                                 {
                                     "level": 60,

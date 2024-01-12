@@ -27,6 +27,7 @@ declare global {
     }
 
     interface Game {
+        profileLog: any,
         profile: Profile;
     }
 
@@ -867,9 +868,160 @@ export class App {
             loadedLangJson[key] = value;
         }
 
-        // this.context.onCharacterLoaded(async () => {
-
-        // })
+        this.context.onModsLoaded(async () => {
+            const cmimSeaCreatureList: [String] = await cmim.getMonstersOfType('SeaCreature');
+            const cmimMythicalCreatureList: [String] = await cmim.getMonstersOfType('MythicalCreature');
+            const cmimElementalList: [String] = await cmim.getMonstersOfType('Elemental');
+            const cmimDemonList: [String] = await cmim.getMonstersOfType('Demon');
+            const cmimAnimalList: [String] = await cmim.getMonstersOfType('Animal');
+            const cmimHumanList: [String] = await cmim.getMonstersOfType('Human');
+            const cmimUndeadList: [String] = await cmim.getMonstersOfType('Undead');
+            const cmimAngelList: [String] = await cmim.getMonstersOfType('Angel');
+            const cmimAarakocraList: [String] = await cmim.getMonstersOfType('Aarakocra');
+            const cmimBeastList: [String] = await cmim.getMonstersOfType('Beast');
+            const cmimGiantList: [String] = await cmim.getMonstersOfType('Giant');
+            const cmimOrcList: [String] = await cmim.getMonstersOfType('Orc');
+            const cmimPlantList: [String] = await cmim.getMonstersOfType('Plant');
+            const cmimGoblinList: [String] = await cmim.getMonstersOfType('Goblin');
+            const cmimElfList: [String] = await cmim.getMonstersOfType('Elf');
+            const cmimDragonList: [String] = await cmim.getMonstersOfType('Dragon');
+            // cmim.registerOrUpdateType("Fighter", "Fighters", 
+            // cmim.registerOrUpdateType("Mage", "Mages", 
+            // cmim.registerOrUpdateType("Rogue", "Rogues", 
+            const initialPackage = this.context.gameData.buildPackage((itemPackage: any) => {
+                cmimDragonList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Dragon_traits"]
+                        }
+                    })
+                })
+                cmimElfList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Elf_traits"]
+                        }
+                    })
+                })
+                cmimGoblinList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Goblin_traits"]
+                        }
+                    })
+                })
+                cmimPlantList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Plant_traits"]
+                        }
+                    })
+                })
+                cmimOrcList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Orc_traits"]
+                        }
+                    })
+                })
+                cmimGiantList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Giant_traits"]
+                        }
+                    })
+                })
+                cmimBeastList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Beast_traits"]
+                        }
+                    })
+                })
+                cmimAarakocraList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Aarakocra_traits"]
+                        }
+                    })
+                })
+                cmimAngelList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Angel_traits"]
+                        }
+                    })
+                })
+                cmimUndeadList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Undead_traits"]
+                        }
+                    })
+                })
+                cmimHumanList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Human_traits"]
+                        }
+                    })
+                })
+                cmimAnimalList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Animal_traits"]
+                        }
+                    })
+                })
+                cmimElementalList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Elemental_traits"]
+                        }
+                    })
+                })
+                cmimDemonList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Demon_traits"]
+                        }
+                    })
+                })
+                cmimMythicalCreatureList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:MythicalCreature_traits"]
+                        }
+                    })
+                })
+                cmimSeaCreatureList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:SeaCreature_traits"]
+                        }
+                    })
+                }
+                )
+            })
+            this.game.profileLog = initialPackage
+            initialPackage.add();
+        })
 
         this.patchGamemodes(this.game.profile);
         this.patchUnlock(this.game.profile);
