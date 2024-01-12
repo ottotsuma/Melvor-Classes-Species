@@ -150,9 +150,9 @@ export const en = {
     Settings_Base_You_Equip_Cost_7: 'Base you Master cost with 7 modifiers unlocked',
     Settings_Must_Be_Larger_Then: 'Value must be larger then 99',
     Settings_Must_Be_Smaller_Then: 'Value must be smaller then 1,000,000,000,000',
-    mod_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
-    mod_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
-    mod_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
-    mod_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
-    mod_bypassDamageReduction: "${value} damage, though damage reduction.",
+    mod_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit",
+    mod_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}",
+    mod_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%",
+    mod_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}",
+    mod_bypassDamageReduction: "${value} damage, though damage reduction"
 };
