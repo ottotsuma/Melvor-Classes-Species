@@ -418,21 +418,6 @@ export class App {
             "melvorTotH:SpiderQueen"
         ]
 
-        game.monsters.forEach(monster => {
-            if (monster.attackType === "magic") {
-                MagesList.push(monster._namespace.name + ':' + monster._localID)
-            }
-            if (monster.attackType === "melee") {
-                FightersList.push(monster._namespace.name + ':' + monster._localID)
-            }
-            if (monster.attackType === "ranged") {
-                RoguesList.push(monster._namespace.name + ':' + monster._localID)
-            }
-            if (monster.attackType === "random") {
-                randomList.push(monster._namespace.name + ':' + monster._localID)
-            }
-        })
-
         if (ToB) {
             RoguesList.push("ToBDungeon:Pestilent_Bloat",
                 "ToBDungeon:Nylocas_vasilias_ranged",
@@ -575,7 +560,6 @@ export class App {
                 "runescapeEncountersInMelvor:Glacor"
             )
         }
-
         if (cloudManager.hasTotHEntitlement) {
             RoguesList.push(
                 "melvorTotH:HungryPlant",
@@ -869,6 +853,26 @@ export class App {
         }
 
         this.context.onModsLoaded(async () => {
+            // Giving monsters classes
+            game.monsters.forEach(monster => {
+                if (monster.attackType === "magic") {
+                    MagesList.push(monster._namespace.name + ':' + monster._localID)
+                }
+                if (monster.attackType === "melee") {
+                    FightersList.push(monster._namespace.name + ':' + monster._localID)
+                }
+                if (monster.attackType === "ranged") {
+                    RoguesList.push(monster._namespace.name + ':' + monster._localID)
+                }
+                if (monster.attackType === "random") {
+                    randomList.push(monster._namespace.name + ':' + monster._localID)
+                }
+            })
+            cmim.registerOrUpdateType("Fighter", "Fighters", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", FightersList, true);
+            cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", MagesList, true);
+            cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", RoguesList, true);
+
+            // adding monsters modifiers to effect species
             const cmimSeaCreatureList: [String] = await cmim.getMonstersOfType('SeaCreature');
             const cmimMythicalCreatureList: [String] = await cmim.getMonstersOfType('MythicalCreature');
             const cmimElementalList: [String] = await cmim.getMonstersOfType('Elemental');
