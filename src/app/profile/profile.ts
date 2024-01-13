@@ -485,13 +485,16 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         }
 
         writer.writeArray(this.actions.allObjects, action => {
-            writer.writeNamespacedObject(action);
+            try {
+                writer.writeNamespacedObject(action);
 
-            const masteriesUnlocked = this.masteriesUnlocked.get(action);
-
-            writer.writeArray(masteriesUnlocked, value => {
-                writer.writeBoolean(value);
-            });
+                const masteriesUnlocked = this.masteriesUnlocked.get(action);
+                    writer.writeArray(masteriesUnlocked, value => {
+                        writer.writeBoolean(value);
+                    });
+            } catch (error) {
+                console.log(error, this.actions.allObjects, action)
+            }
         });
 
         writer.writeComplexMap(this.yous.yous, (key, value, writer) => {
