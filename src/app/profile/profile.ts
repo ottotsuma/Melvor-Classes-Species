@@ -493,7 +493,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                         writer.writeBoolean(value);
                     });
             } catch (error) {
-                console.log(error, this.actions.allObjects, action)
+                console.log(error, this.actions.allObjects, action, this.masteriesUnlocked.get(action))
             }
         });
 

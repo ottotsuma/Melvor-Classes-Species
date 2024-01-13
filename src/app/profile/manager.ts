@@ -114,7 +114,7 @@ export class ProfileManager {
 
         let unlockedMasteries = this.profile.masteriesUnlocked.get(single_species);
 
-        const you = this.profile.yous.get(single_species);
+        // const you = this.profile.yous.get(single_species);
 
         const validModifierLevels = single_species
             .modifiers(this.profile.settings.modifierType)
