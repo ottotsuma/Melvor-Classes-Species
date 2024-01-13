@@ -170,7 +170,7 @@ export class App {
         ]
         const ElementalCreatureList: any[] = [
             "melvorD:Ice",
-            "MelvorD:FireSpirit",
+            "melvorD:FireSpirit",
             "melvorF:AirGolem",
             "melvorF:WaterGuard",
             "melvorF:WaterMonster",
