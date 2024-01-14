@@ -3,8 +3,9 @@
         <div
             class="block block-content block-content-full block-rounded-extra block-link-pop border-top border-profile border-4x text-center"
         >
-            <div class="row gutters-tiny" style="height: 100%;">
-                <div class="col-12 p-2">
+            <div class="row gutters-tiny" style="height: 100%; display: flex;
+            justify-content: center;">
+                <div style="max-height: 128px; max-width: 128px;" class="col-12 p-2">
                     <img class="single_species-img" v-bind:src="media" />
                 </div>
                 <div class="col-12 pt-2">
@@ -14,7 +15,9 @@
                     <img class="skill-icon-xs m-2" v-for="skillIcon in getSkillIcons()" :src="skillIcon" />
                 </div>
                 <div class="col-12 row justify-content-center gutters-tiny text-center" id="grants-container"></div>
-                <div class="col-12">
+                <div style="display: flex;
+                flex-direction: column;
+                align-items: center;" class="col-12">
                     <button class="btn btn-alt-info ml-3 mr-3 mb-3 mt-1" @click="Master()" :disabled="disabled">
                         {{ disabled ? getLangString('Profile_Profile_Mastered') : getLangString('Profile_Profile_Equip') }}
                     </button>

@@ -3,6 +3,7 @@
 }
 
 .single_species-img {
-    max-height: 128px;
-    max-width: 128px;
+    width: fit-content;
+    max-width: 100%;
+    max-height: 100%;
 }

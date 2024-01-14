@@ -861,9 +861,6 @@ export class App {
         this.context.onModsLoaded(async () => {
             // Giving monsters classes
             game.monsters.forEach(monster => {
-                if(monster._namespace.name + ':' + monster.localID === "MelvorD:FireSpirit") {
-                    return;
-                }
                 if (monster.attackType === "magic") {
                     MagesList.push(monster._namespace.name + ':' + monster._localID)
                 }
