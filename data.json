@@ -120,6 +120,27 @@
                 "id": "Vampire_traits",
                 "name": "Vampire Traits",
                 "modifiers": {}
+            },
+            {
+                "id": "Mage_traits",
+                "name": "Mage Traits",
+                "modifiers": {
+                    "increasedMagicMaxHitBonusAgainstMelee": 5
+                }
+            },
+            {
+                "id": "Fighter_traits",
+                "name": "Fighter Traits",
+                "modifiers": {
+                    "increasedMeleeMaxHitBonusAgainstRanged": 5
+                }
+            },
+            {
+                "id": "Rogue_traits",
+                "name": "Rogue Traits",
+                "modifiers": {
+                    "increasedRangedMaxHitBonusAgainstMagic": 5
+                }
             }
         ],
         "pages": [

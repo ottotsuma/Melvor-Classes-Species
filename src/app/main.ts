@@ -898,7 +898,36 @@ export class App {
             // cmim.registerOrUpdateType("Fighter", "Fighters", 
             // cmim.registerOrUpdateType("Mage", "Mages", 
             // cmim.registerOrUpdateType("Rogue", "Rogues", 
+            const cmimFighterList: [String] = await cmim.getMonstersOfType('Fighter');
+            const cmimMageList: [String] = await cmim.getMonstersOfType('Mage');
+            const cmimRogueList: [String] = await cmim.getMonstersOfType('Rogue');
+
             const initialPackage = this.context.gameData.buildPackage((itemPackage: any) => {
+                cmimRogueList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Rogue_traits"]
+                        }
+                    })
+                })
+                cmimMageList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Mage_traits"]
+                        }
+                    })
+                })
+                cmimFighterList.forEach(monsterId => {
+                    itemPackage.monsters.modify({
+                        "id": monsterId,
+                        "passives": {
+                            "add": ["namespace_profile:Fighter_traits"]
+                        }
+                    })
+                })
+
                 cmimDragonList.forEach(monsterId => {
                     itemPackage.monsters.modify({
                         "id": monsterId,
