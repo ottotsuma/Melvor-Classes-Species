@@ -1,5 +1,5 @@
 export const en = {
-    Single_Species: 'Single_Species',
+    Single_Species: 'Profile',
     You_Title: '${name}',
     You_Not_Currently_Mastered: 'Not currently mastered',
     OK: 'OK',
