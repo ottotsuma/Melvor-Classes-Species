@@ -45,7 +45,7 @@ export const ru = {
     Single_Species_Pirate: 'Пират',
     Single_Species_Paladin: 'Паладин',
     Single_Species_Cursemancer: 'Проклинатель',
-    Single_Species_Scholar: 'Scholar',
+    Single_Species_Scholar: 'Ученый',
     Single_Species_Witchdoctor: 'Колдун',
     Single_Species_Assassin: 'Ассасин',
     Single_Species_Inquisitor: 'Инквизитор',
@@ -58,7 +58,7 @@ export const ru = {
     Single_Species_King: 'Король',
 
     PET_NAME_Bob: 'Боб',
-    PET_NAME_abyssal_chicken: 'Abyssal Chicken',
+    PET_NAME_abyssal_chicken: 'Абиссальный цыпленок',
 
     ITEM_NAME_Mastery_Token_Profile: 'Жетон мастерства (профиль)',
     ITEM_NAME_Profile_Lesser_Relic: 'Старая реликвия',
@@ -73,7 +73,7 @@ export const ru = {
     MASTERY_CHECKPOINT_Profile_0: '+3% увеличенный профильный навык XP',
     MASTERY_CHECKPOINT_Profile_1: '+5% увеличенный Profile Mastery XP',
     MASTERY_CHECKPOINT_Profile_2: 'Все значения модификаторов +1',
-    MASTERY_CHECKPOINT_Profile_3: '-5% Equip Cost',
+    MASTERY_CHECKPOINT_Profile_3: '-5% Стоимость оборудования',
 
     Профиль: 'Профиль',
     Settings_You_Equip_Cost: 'Стоимость экипировки',

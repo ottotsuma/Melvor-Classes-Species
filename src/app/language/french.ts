@@ -16,11 +16,9 @@ export const fr = {
     Back: 'Back',
     Would_You_Like_To_Equip_This_You: 'Would you like to equit this one:',
     You_Cannot_Afford_To_Equip_This_You: 'You cannot afford to Master this one:',
-    This_Will_Replace_The_Mastered_You:
-        'This will replace the current equipped one.',
+    This_Will_Replace_The_Mastered_You: 'This will replace the current equipped one.',
     Replace: 'Replace ${name}',
-    Increased_Mastery_XP_Per_Variel:
-        '+${value}% ${skillName} Mastery XP per maxed Star in Variel constellation in Astrology',
+    Increased_Mastery_XP_Per_Variel: '+${value}% ${skillName} Mastery XP per maxed Star in Variel constellation in Astrology',
     Single_Species_Human: 'Human',
     Single_Species_Elf: 'Elf',
     Single_Species_Aarakocra: 'Aarakocra',
