@@ -6,8 +6,6 @@ export class TinyPassiveIconsCompatibility {
         decreasedProfileEquipCost: ['profile', 'gp'],
         increasedProfileGP: ['profile', 'gp'],
         decreasedProfileGP: ['profile', 'gp'],
-        increasedProfileAdditionalRewardRoll: ['profile'],
-        decreasedProfileAdditionalRewardRoll: ['profile'],
         increasedSkillMasteryXPPerVariel: ['skill']
     };
 

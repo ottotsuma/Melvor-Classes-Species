@@ -827,36 +827,6 @@ export class App {
         if (cloudManager.hasAoDEntitlement) {
             await this.context.gameData.addPackage('data-aod.json');
         }
-        const en_data = {
-            MODIFIER_DATA_summoningSynergy_Devil_Eagle: "While Thieving - 50% chance for +10% base Skill XP, 40% chance for 2.5x GP, and 10% chance to gain no Items or GP",
-            MONSTER_TYPE_SINGULAR_Elf: "Elf",
-            MONSTER_TYPE_PLURAL_Elf: "Elves",
-            mod_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
-            mod_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
-            mod_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
-            mod_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
-            mod_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
-            mod_bypassDamageReduction: "${value} damage, though damage reduction.",
-            PASSIVES_NAME_EventPassive1: "Unusual Passive",
-            PASSIVES_NAME_EventPassive2: "Unusual Passive",
-            PASSIVES_NAME_EventPassive3: "Unusual Passive",
-            PASSIVES_NAME_EventPassive4: "Unusual Passive",
-            PASSIVES_NAME_EventPassive5: "Unusual Passive",
-            PASSIVES_NAME_EventPassive6: "Unusual Passive",
-            PASSIVES_NAME_EventPassive7: "Unusual Passive",
-            PASSIVES_NAME_EventPassive8: "Unusual Passive",
-            PASSIVES_NAME_EventPassive9: "Unusual Passive",
-            PASSIVES_NAME_EventPassive10: "Unusual Passive",
-            PASSIVES_NAME_EventPassive11: "Unusual Passive",
-            PASSIVES_NAME_EventPassive12: "Unusual Passive",
-            MODIFIER_DATA_increasedDamageAgainstElves: 'Damage to Elves',
-            MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: 'When creating Lethal Toxins Potions in Herblore, gain +${value} Deadly Toxins Potion(s) as an additional Potion (Cannot be doubled)',
-            MODIFIER_DATA_bigRon: '+100% Chance To Double Loot in Combat. For every 2000 base Maximum Hitpoints the enemy has (Capped at 10000): +9% Melee Strength Bonus from Equipment, +3% of Maximum Hit added to Minimum Hit and +1% Damage Reduction. Bonus is doubled if fighting a boss.',
-        }
-        for (const [key, value] of Object.entries(en_data)) {
-            // @ts-ignore
-            loadedLangJson[key] = value;
-        }
 
         this.context.onModsLoaded(async () => {
             // Giving monsters classes
@@ -1461,7 +1431,10 @@ export class App {
             'MONSTER_NAME',
             'COMBAT_AREA_NAME',
             'SPECIAL_ATTACK_NAME',
-            'SPECIAL_ATTACK_DESCRIPTION'
+            'SPECIAL_ATTACK_DESCRIPTION',
+            'mod_',
+            'PASSIVES_NAME_',
+            'MODIFIER_DATA_'
         ];
 
         for (const [key, value] of Object.entries<string>(languages[lang])) {
@@ -1473,30 +1446,3 @@ export class App {
         }
     }
 }
-
-
-// {
-//     "level": 1,
-//     "key": "increasedDamageTakenFromAirSpells",
-//     "value": 20
-// },
-// {
-//     "level": 40,
-//     "key": "increasedDamageAgainstDragons",
-//     "value": 20
-// },
-// {
-//     "level": 75,
-//     "key": "increasedDamageAgainstHumans",
-//     "value": 20
-// },
-// {
-//     "level": 99,
-//     "key": "increasedDamageAgainstUndead",
-//     "value": 20
-// },
-// {
-//     "level": 120,
-//     "key": "increasedDamageAgainstElves",
-//     "value": 20
-// }
