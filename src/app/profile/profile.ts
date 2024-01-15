@@ -53,7 +53,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     }
 
     public get name() {
-        return getLangString('Profile_Profile_Profile');
+        return getLangString('Profile_Profile');
     }
 
     public get actionLevel() {
@@ -110,7 +110,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             });
         } else {
             let html = `<h5 class="font-w400 text-combat-smoke font-size-sm mb-2">
-            ${getLangString('Profile_Profile_Would_You_Like_To_Equip_This_You')}
+            ${getLangString('Profile_Would_You_Like_To_Equip_This_You')}
             <img class="single_species-icon align-middle" src="${single_species.media}" />
             ${single_species.name}
             </h5>
@@ -138,7 +138,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             }
 
             html += `<h5 class="font-w600 text-danger font-size-sm mt-3 mb-1">${getLangString(
-                'Profile_Profile_This_Will_Replace_The_Mastered_You'
+                'Profile_This_Will_Replace_The_Mastered_You'
             )}</h5>`;
 
             const you1 = this.yous.get(1);
@@ -148,8 +148,8 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
             const getText = (you: MasteredYou) =>
                 you
-                    ? templateLangString('Profile_Profile_Replace', { name: you.single_species.name })
-                    : getLangString('Profile_Profile_Equip');
+                    ? templateLangString('Profile_Replace', { name: you.single_species.name })
+                    : getLangString('Profile_Equip');
 
             if( this.classIds.includes(single_species._localID)  ) {
                 html += `<div class="you-Master-footer mt-3"><button type="button" class="you-2-confirm font-size-xs btn btn-primary m-1" aria-label="" value="you-2" style="display: inline-block;">${getText(

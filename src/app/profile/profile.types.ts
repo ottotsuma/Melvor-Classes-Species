@@ -48,7 +48,7 @@ export class Single_Species extends BasicSkillRecipe {
     private hardcoreModifiers: Single_SpeciesModifier[];
 
     public get name() {
-        return getLangString(`Profile_Profile_Single_Species_${this.localID}`);
+        return getLangString(`Profile_Single_Species_${this.localID}`);
     }
 
     public get media() {

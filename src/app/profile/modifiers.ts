@@ -33,7 +33,7 @@ export class ProfileModifiers {
   public registerModifiers() {
     modifierData.increasedProfileEquipCost = {
       get langDescription() {
-        return getLangString('Profile_Profile_You_Equip_Cost_Positive');
+        return getLangString('Profile_You_Equip_Cost_Positive');
       },
       description: '+${value}% You Equip Cost',
       isSkill: false,
@@ -42,7 +42,7 @@ export class ProfileModifiers {
     };
     modifierData.decreasedProfileEquipCost = {
       get langDescription() {
-        return getLangString('Profile_Profile_You_Equip_Cost_Negative');
+        return getLangString('Profile_You_Equip_Cost_Negative');
       },
       description: '-${value}% You Equip Cost',
       isSkill: false,
@@ -51,7 +51,7 @@ export class ProfileModifiers {
     };
     modifierData.increasedProfileGP = {
       get langDescription() {
-        return getLangString('Profile_Profile_Profile_GP_Positive');
+        return getLangString('Profile_Profile_GP_Positive');
       },
       description: '+${value}% Profile GP',
       isSkill: false,
@@ -60,7 +60,7 @@ export class ProfileModifiers {
     };
     modifierData.decreasedProfileGP = {
       get langDescription() {
-        return getLangString('Profile_Profile_Profile_GP_Negative');
+        return getLangString('Profile_Profile_GP_Negative');
       },
       description: '-${value}% Profile GP',
       isSkill: false,
@@ -69,7 +69,7 @@ export class ProfileModifiers {
     };
     modifierData.increasedSkillMasteryXPPerVariel = {
       get langDescription() {
-        return getLangString('Profile_Profile_Increased_Mastery_XP_Per_Variel');
+        return getLangString('Profile_Increased_Mastery_XP_Per_Variel');
       },
       description: '+${value}% ${skillName} Mastery XP per maxed Star in Variel constellation in Astrology',
       isSkill: true,

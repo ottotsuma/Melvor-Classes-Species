@@ -5,7 +5,7 @@
                 <div class="col-12 pt-3 font-size-lg mb-3" v-if="you">
                     <img class="single_species-icon" v-bind:src="you.single_species.media" />
                     <span>
-                        {{ templateLangString('Profile_Profile_You_Title', { name: you.single_species.name }) }}
+                        {{ templateLangString('Profile_You_Title', { name: you.single_species.name }) }}
                     </span>
                 </div>
 
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="col-12 font-size-lg pt-3 pb-3" v-if="!you">
-                    <span>{{ getLangString('Profile_Profile_You_Not_Currently_Mastered') }}</span>
+                    <span>{{ getLangString('Profile_You_Not_Currently_Mastered') }}</span>
                 </div>
             </div>
         </div>

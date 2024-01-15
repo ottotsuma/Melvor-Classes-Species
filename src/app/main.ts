@@ -1441,7 +1441,7 @@ export class App {
             if (keysToNotPrefix.some(prefix => key.includes(prefix))) {
                 loadedLangJson[key] = value;
             } else {
-                loadedLangJson[`Profile_Profile_${key}`] = value;
+                loadedLangJson[`Profile_${key}`] = value;
             }
         }
     }
