@@ -4,7 +4,7 @@ export const ja = {
     You_Not_Currently_Mastered: '現在装備されていない',
     OK: 'はい',
     Mastery: '熟練度',
-    Mastered: '取得',
+    Mastered: '習得済み',
     Equip: '装備する',
     Locked: '鍵付き',
     Level: 'レベル${level}',
@@ -112,4 +112,7 @@ export const ja = {
     MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: '調合で猛毒ポーションを得るを作成するとき、追加のポーションとして+${value}致死毒ポーションを得る（2倍にはできない）。',
 
     MODIFIER_DATA_bigRon: '戦闘で2倍の戦利品を回収する確率が100%上昇する。敵の最大基本HP 2,000につき（上限10,000まで）、装備による近距離威力ボーナス+9%、最大威力の3%が最小威力に加算されるとともに、ダメージ軽減度が1%上昇する。相手がボスの場合は、ボーナスが2倍になる。',
+
+    You_Equip_Cost_Positive: '+${value}% 装備料金',
+    You_Equip_Cost_Negative: '-${value}% 装備料金',
 };
