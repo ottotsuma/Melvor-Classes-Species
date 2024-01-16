@@ -430,6 +430,9 @@ export class App {
                 "ToBDungeon:Sotetseg",
                 "ToBDungeon:Verzik_vitur_p2",
                 "ToBDungeon:Verzik_vitur_final")
+            DemonList.push("ToBDungeon:Pestilent_Bloat", "ToBDungeon:Maiden", "ToBDungeon:Nylocas_vasilias_ranged", "ToBDungeon:Nylocas_vasilias_melee", "ToBDungeon:Nylocas_vasilias_magic", "ToBDungeon:Sotetseg", "ToBDungeon:Xarpus",
+            "ToBDungeon:Xarpus_p2", "ToBDungeon:Verzik_vitur_p2",
+            "ToBDungeon:Verzik_vitur_final")
         }
         if (AR) {
             RoguesList.push("abyrift:Tick")
@@ -437,6 +440,9 @@ export class App {
             FightersList.push("abyrift:Lasher",
                 "abyrift:Crab_Wyrm",
                 "abyrift:Gore_Bear")
+            DemonList.push("abyrift:Tick","abyrift:Screamer","abyrift:Lasher",
+            "abyrift:Crab_Wyrm",
+            "abyrift:Gore_Bear")
         }
         if (gen1) {
             RoguesList.push("pokeworldAdditions:pwa_ProfOakLab_TrainerThree",
@@ -538,6 +544,8 @@ export class App {
             MagesList.push("mythMusic:Enchanted_Jester",
                 "mythMusic:Mystic_Jester")
             FightersList.push("mythMusic:Jester")
+            HumansList.push("mythMusic:Enchanted_Jester",
+            "mythMusic:Mystic_Jester", "mythMusic:Jester")
         }
         if (Runescape) {
             MagesList.push(
