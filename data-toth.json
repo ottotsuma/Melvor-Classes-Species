@@ -16,7 +16,7 @@
                             "level": 100,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/hill_giant.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/woodcutting/woodcutting.svg"
+                                "melvorD:Woodcutting"
                             ],
                             "standardModifiers": [
                                 {
@@ -95,7 +95,7 @@
                             "level": 105,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/turkul_throwers.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/smithing/smithing.svg"
+                                "melvorD:Smithing"
                             ],
                             "standardModifiers": [
                                 {
@@ -174,7 +174,7 @@
                             "level": 110,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/plant.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/herblore/herblore.svg"
+                                "melvorD:Herblore"
                             ],
                             "standardModifiers": [
                                 {
@@ -488,7 +488,7 @@
                             "productId": "namespace_profile:Inquisitor",
                             "level": 100,
                             "skills": [
-                                "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2FskuUeS-5K71wasTCTeygB27hQUX0_lDxH1obAssZfPa8L2_e5u-YDs49Uu8urKIBWTdFUrnuQxiNp1CGub5b4JAA3d6XV7a2FKZKJVqbePTHwizHVOt3Xgne_6zt0h-5kw%3Ds800&f=1&nofb=1&ipt=856a2de22cf5c3ccc940367000465b6b191368a975c6ab4362051d6a881eb46c&ipo=images"
+                                "https://i.pinimg.com/originals/aa/1f/d0/aa1fd0ad19d6d67fb32c7b7d5b0c2ad0.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -566,7 +566,7 @@
                             "productId": "namespace_profile:Druid",
                             "level": 105,
                             "skills": [
-                                "https://gamepedia.cursecdn.com/witcher_gamepedia/5/53/People_Druid_full.png?version=05fea2d7f19456bface74d7d31543448"
+                                "https://gamepedia.cursecdn.com/witcher_gamepedia/5/53/People_Druid_full.png"
                             ],
                             "standardModifiers": [
                                 {

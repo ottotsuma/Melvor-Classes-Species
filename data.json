@@ -149,7 +149,7 @@
                 "media": "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
                 "containerID": "profile-container",
                 "headerBgClass": "bg-combat",
-                "hasGameGuide": false,
+                "hasGameGuide": true,
                 "canBeDefault": true,
                 "skills": [
                     "namespace_profile:Profile"
@@ -338,8 +338,7 @@
                             "level": 1,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
-                                "https://cdn2-main.melvor.net/assets/media/main/coins.svg",
-                                "https://cdn2-main.melvor.net/assets/media/skills/crafting/crafting.svg"
+                                "melvorD:Crafting"
                             ],
                             "standardModifiers": [
                                 {
@@ -418,8 +417,7 @@
                             "level": 10,
                             "skills": [
                                 "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/ranged/ranged.svg",
-                                "https://cdn2-main.melvor.net/assets/media/skills/fletching/fletching.svg"
+                                "melvorD:Fletching"
                             ],
                             "standardModifiers": [
                                 {
@@ -498,7 +496,7 @@
                             "level": 20,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/torvair.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/fishing/fishing.svg"
+                                "melvorD:Fishing"
                             ],
                             "standardModifiers": [
                                 {
@@ -577,7 +575,7 @@
                             "level": 30,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/goblin.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/thieving/thieving.svg"
+                                "melvorD:Thieving"
                             ],
                             "standardModifiers": [
                                 {
@@ -654,8 +652,8 @@
                             "productId": "namespace_profile:Dragon",
                             "level": 40,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/dragon_red.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/firemaking/firemaking.svg"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/dragon_green.png",
+                                "melvorD:Firemaking"
                             ],
                             "standardModifiers": [
                                 {
@@ -734,7 +732,7 @@
                             "level": 50,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/zombie_hand.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/mining/mining.svg"
+                                "melvorD:Mining"
                             ],
                             "standardModifiers": [
                                 {
@@ -813,7 +811,7 @@
                             "level": 60,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/fierce_devil.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/summoning/summoning.svg"
+                                "melvorD:Summoning"
                             ],
                             "standardModifiers": [
                                 {
@@ -892,7 +890,7 @@
                             "level": 70,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/infernal_golem.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/runecrafting/runecrafting.svg"
+                                "melvorD:Runecrafting"
                             ],
                             "standardModifiers": [
                                 {
@@ -971,7 +969,7 @@
                             "level": 80,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/twin_sea_dragon_serpents.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/agility/agility.svg"
+                                "melvorD:Agility"
                             ],
                             "standardModifiers": [
                                 {
@@ -1050,7 +1048,7 @@
                             "level": 90,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/elerine_mage.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/astrology/astrology.svg"
+                                "melvorD:Astrology"
                             ],
                             "standardModifiers": [
                                 {
@@ -1129,7 +1127,7 @@
                             "level": 99,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/angel.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/prayer/prayer.svg"
+                                "melvorD:Prayer"
                             ],
                             "standardModifiers": [
                                 {
@@ -1677,7 +1675,7 @@
                             "productId": "namespace_profile:Scholar",
                             "level": 60,
                             "skills": [
-                                "https://vignette.wikia.nocookie.net/finalfantasy/images/b/b5/Scholar_Artwork_XIV.png/revision/latest?cb=20170723180726"
+                                "https://vignette.wikia.nocookie.net/finalfantasy/images/b/b5/Scholar_Artwork_XIV.png"
                             ],
                             "standardModifiers": [
                                 {
@@ -1863,12 +1861,12 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "mod_increasedPercDamageWhileTargetHasMaxHP",
+                                    "key": "increasedDamagePercentWhileTargetHasMaxHP",
                                     "value": 20
                                 },
                                 {
                                     "level": 99,
-                                    "key": "mod_increasedFlatDamageWhileTargetHasMaxHP",
+                                    "key": "increasedDamageFlatWhileTargetHasMaxHP",
                                     "value": 30
                                 }
                             ],
@@ -1941,12 +1939,12 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "mod_bypassDamageReduction",
+                                    "key": "increasedDamageFlatIgnoringDamageReduction",
                                     "value": 10
                                 },
                                 {
                                     "level": 99,
-                                    "key": "mod_wardsave",
+                                    "key": "increasedChanceToReduceAttackDamageToZero",
                                     "value": 10
                                 }
                             ],

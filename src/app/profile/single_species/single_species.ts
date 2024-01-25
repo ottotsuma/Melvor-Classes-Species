@@ -53,8 +53,15 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
         },
         getSkillIcons: function () {
             return single_species.skills.map(media => {
-                // return game.skills.find(skill => skill.id === skillId)?.media;
-                return media
+                try {
+                    if(!/(jpg|gif|png|JPG|GIF|PNG|JPEG|jpeg|svg)$/.test(media)) {
+                        return game.skills.find(skill => skill.id === media)?.media;
+                    } else {
+                        return media
+                    }
+                } catch (error) {
+                    return "https://cdn2-main.melvor.net/assets/april/images/lemon.jpg"
+                }
             });
         },
     };

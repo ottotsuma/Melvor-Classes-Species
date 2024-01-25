@@ -43,8 +43,9 @@
         <div style="color: rgb(245, 245, 245); background-color: rgb(35, 42, 53); padding: 10px;">
             <div style="display: flex; justify-content: center;
         align-items: end;">
+
                 <img class="m-2" src="https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg" height="64px">
-                <h3>Profile</h3>
+                <h3 style="color: rgb(245, 245, 245);">Profile</h3>
             </div>
             <div>
                 <div>
@@ -66,25 +67,43 @@
                         my
                         or KumaV1's mods. I have tried to add species to the monsters of popular other content mods.
                     </p>
-                    <img class="m-2" src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.png">
+                    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
+        align-items: center;">
+                        <img class="m-2"
+                            src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.png">
+                    </div>
                 </div>
                 <div>
                     <p>At the top you can see which Class & Species you have equipped right now along with the active
                         and
                         inactive modifiers.</p>
-                    <img class="m-2" src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.3.png">
+                    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
+        align-items: center;">
+                        <img class="m-2"
+                            src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.3.png">
+                    </div>
                 </div>
                 <div>
-                    <p>Classes and Sepcies lists are shown just below with the ability to switch between any you like for free, until you unlock some modifiers, then things get costly.</p>
-
-                    <img class="m-2" src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.2.png">
+                    <p>Classes and Sepcies lists are shown just below with the ability to switch between any you like
+                        for free, until you unlock some modifiers, then things get costly.</p>
+                    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
+                        align-items: center;">
+                        <img class="m-2"
+                            src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.2.png">
+                    </div>
                     <p>
-                        You must have at least a class or species equipped to gain XP in this skill. You can gain skill XP and mastery by killing monsters in combat with classes / species equipped.
+                        You must have at least a class or species equipped to gain XP in this skill. You can gain skill
+                        XP and mastery by killing monsters in combat with classes / species equipped.
                     </p>
-                    <p> 
-                        You can gain mastery XP for a species doing a non-combat skill if that species is marked with that skills tag. The image below shows an Elf that gains mastery exp from fletching.
+                    <p>
+                        You can gain mastery XP for a species doing a non-combat skill if that species is marked with
+                        that skills tag. The image below shows an Elf that gains mastery exp from fletching.
                     </p>
-                    <img class="m-2" src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.1.png">
+                    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
+        align-items: center;">
+                        <img class="m-2"
+                            src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.1.png">
+                    </div>
                 </div>
                 <div>
                     <h4>
@@ -104,20 +123,11 @@
                         const profileSkill = mod.manager.getLoadedModList().includes('Class &amp; Species')
                     </p>
                     <p>
-                        Once inside, onModsLoaded. You might want to patch the 'addXP' function to add XP to a specific
-                        species for preforming a specific function.
-                    </p>
-                    <p style="font-style: italic; background-color: grey;">
-                        ctx.patch(Skill, 'addXP').after(function (amount, masteryAction)
-                    </p>
-                    <p style="font-style: italic; background-color: grey;">
-                        if (game && game.activeAction && currentSpeicies === 'Argonian' && game.activeAction._localID
-                        ===
-                        'Cooking')
-                    </p>
-                    <p>
-                        Always you need to add you new species or class into a .json which you can load after the
-                        "profileSkill" check.
+                        You can then check for {profileSkill} and if it's loaded then load your JSON you saved the below
+                        sample code in. Speaking of the below sample, in "skills" you can see two types of valid inputs.
+                        A melvor skill or an image. The image will appear below the name of your species. If you use a
+                        melvor or modded skill, then when preforming that skill you will gain mastery XP for that
+                        species. (Classes are coming soon, I had to redo the function)
                     </p>
                     <p style="font-style: italic; background-color: grey;">
                         "data": {
@@ -126,6 +136,89 @@
                         "skillID": "namespace_profile:Profile",
                         "data": {
                         "species": [
+                        {
+                        "id": "Human",
+                        "name": "Human",
+                        "media": "https://ottotsuma.github.io/images/portraits/human%20female%20barbarian%202.jpg",
+                        "baseExperience": 5,
+                        "productId": "namespace_profile:Human",
+                        "level": 1,
+                        "skills": [
+                        "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
+                        "melvorD:Crafting"
+                        ],
+                        "standardModifiers": [
+                        {
+                        "level": 0,
+                        "key": "humanTraitApplied",
+                        "value": 1
+                        },
+                        {
+                        "level": 1,
+                        "key": "decreasedMagicMaxHit",
+                        "value": 10
+                        },
+                        {
+                        "level": 20,
+                        "key": "increasedDamageAgainstAnimals",
+                        "value": 10
+                        },
+                        {
+                        "level": 40,
+                        "key": "increasedDamageAgainstHumans",
+                        "value": 10
+                        },
+                        {
+                        "level": 60,
+                        "key": "increasedGPFromSales",
+                        "value": 10
+                        },
+                        {
+                        "level": 80,
+                        "key": "increasedChanceForGoldFromCrafting30",
+                        "value": 10
+                        },
+                        {
+                        "level": 99,
+                        "key": "decreasedGlobalSkillIntervalPercent",
+                        "value": 5
+                        }
+                        ],
+                        "hardcoreModifiers": [
+                        {
+                        "level": 1,
+                        "key": "decreasedChanceGoldenStardust",
+                        "value": 50
+                        },
+                        {
+                        "level": 40,
+                        "key": "increasedMinBirdNestQuantity",
+                        "skill": "melvorD:Woodcutting",
+                        "value": 1
+                        },
+                        {
+                        "level": 60,
+                        "key": "increasedMasteryXP",
+                        "skill": "melvorD:Firemaking",
+                        "value": 5
+                        },
+                        {
+                        "level": 80,
+                        "key": "decreasedSkillIntervalPercent",
+                        "skill": "melvorD:Firemaking",
+                        "value": 5
+                        },
+                        {
+                        "level": 99,
+                        "key": "increasedMinBirdNestQuantity",
+                        "value": 1
+                        }
+                        ]
+                        }
+                        ]
+                        }
+                        }
+                        }
                     </p>
                 </div>
                 <div>
