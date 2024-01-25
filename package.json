@@ -6,7 +6,7 @@
     "scripts": {
         "pack": "webpack",
         "zip": "node scripts/zip.js",
-        "build": "webpack && node scripts/zip.js"
+        "buildzip": "webpack && node scripts/zip.js"
     },
     "author": "OttoTsuma",
     "license": "ISC",

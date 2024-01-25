@@ -3,12 +3,8 @@
         <div class="skill-info profile-skill-info">
             <div class="block block-rounded mb-2" id="skill-header-namespace_profile:Profile">
                 <div class="progress active mb-1 border border-top border-1x border-dark" style="height: 8px">
-                    <div
-                        class="progress-bar bg-info"
-                        id="skill-progress-bar-namespace_profile:Profile"
-                        role="progressbar"
-                        style="width: 0%"
-                    ></div>
+                    <div class="progress-bar bg-info" id="skill-progress-bar-namespace_profile:Profile"
+                        role="progressbar" style="width: 0%"></div>
                 </div>
                 <div class="block-header text-center pt-0 pb-0">
                     <ul class="nav-main nav-main-horizontal nav-main-horizontal-override font-size-xs w-100">
@@ -16,7 +12,8 @@
                             <span class="font-w600">
                                 <lang-string lang-id="MENU_TEXT_SKILL_LEVEL">Skill Level</lang-string>
                             </span>
-                            <span class="p-1 bg-success rounded font-w600" id="skill-progress-level-namespace_profile:Profile">
+                            <span class="p-1 bg-success rounded font-w600"
+                                id="skill-progress-level-namespace_profile:Profile">
                                 1 / 99
                             </span>
                         </li>
@@ -25,7 +22,8 @@
                             <span class="font-w600">
                                 <lang-string lang-id="MENU_TEXT_SKILL XP">Skill XP</lang-string>
                             </span>
-                            <span class="p-1 bg-info rounded font-w600" id="skill-progress-xp-namespace_profile:Profile">
+                            <span class="p-1 bg-info rounded font-w600"
+                                id="skill-progress-xp-namespace_profile:Profile">
                                 1 / 99
                             </span>
                         </li>
@@ -35,12 +33,108 @@
         </div>
 
         <div class="row row-deck">
+            <span style="color: rgb(245, 245, 245); background-color: rgb(35, 42, 53);">Guide is at the bottom</span>
             <div class="col-12" id="you-container"></div>
         </div>
         <h4>Species</h4>
         <div class="row row-deck gutters-tiny" id="species-container"></div>
         <h4>Classes</h4>
         <div class="row row-deck gutters-tiny" id="classes-container"></div>
+        <div style="color: rgb(245, 245, 245); background-color: rgb(35, 42, 53); padding: 10px;">
+            <div style="display: flex; justify-content: center;
+        align-items: end;">
+                <img class="m-2" src="https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg" height="64px">
+                <h3>Profile</h3>
+            </div>
+            <div>
+                <div>
+                    <h4>Guide</h4>
+                    <p>
+                        Profile is a passive skill giving you the ability to pick both a class and a species to play as
+                        in
+                        Melvor.
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Species and Classes will have an effect in combat, more then just the modifiers you unlock. You
+                        may
+                        notice for example modifiers having "extra damage" to a specific species.
+                    </p>
+                    <p>
+                        Species have been assiged to not only every Melvor monster but also modded monsters from any of
+                        my
+                        or KumaV1's mods. I have tried to add species to the monsters of popular other content mods.
+                    </p>
+                    <img class="m-2" src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.png">
+                </div>
+                <div>
+                    <p>At the top you can see which Class & Species you have equipped right now along with the active
+                        and
+                        inactive modifiers.</p>
+                    <img class="m-2" src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.3.png">
+                </div>
+                <div>
+                    <p>Classes and Sepcies lists are shown just below with the ability to switch between any you like for free, until you unlock some modifiers, then things get costly.</p>
 
+                    <img class="m-2" src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.2.png">
+                    <p>
+                        You must have at least a class or species equipped to gain XP in this skill. You can gain skill XP and mastery by killing monsters in combat with classes / species equipped.
+                    </p>
+                    <p> 
+                        You can gain mastery XP for a species doing a non-combat skill if that species is marked with that skills tag. The image below shows an Elf that gains mastery exp from fletching.
+                    </p>
+                    <img class="m-2" src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.1.png">
+                </div>
+                <div>
+                    <h4>
+                        Modding
+                    </h4>
+                    <p>
+                        You can create your own species and classes for this mod.
+
+                        Code for following along can be found at: https://github.com/ottotsuma/Melvor-TES for an
+                        example.
+                    </p>
+                    <p>
+                        Firstly, you need to check the mod was loaded. This can be done inside of onModsLoaded or
+                        before.
+                    </p>
+                    <p style="font-style: italic; background-color: grey;">
+                        const profileSkill = mod.manager.getLoadedModList().includes('Class &amp; Species')
+                    </p>
+                    <p>
+                        Once inside, onModsLoaded. You might want to patch the 'addXP' function to add XP to a specific
+                        species for preforming a specific function.
+                    </p>
+                    <p style="font-style: italic; background-color: grey;">
+                        ctx.patch(Skill, 'addXP').after(function (amount, masteryAction)
+                    </p>
+                    <p style="font-style: italic; background-color: grey;">
+                        if (game && game.activeAction && currentSpeicies === 'Argonian' && game.activeAction._localID
+                        ===
+                        'Cooking')
+                    </p>
+                    <p>
+                        Always you need to add you new species or class into a .json which you can load after the
+                        "profileSkill" check.
+                    </p>
+                    <p style="font-style: italic; background-color: grey;">
+                        "data": {
+                        "skillData": [
+                        {
+                        "skillID": "namespace_profile:Profile",
+                        "data": {
+                        "species": [
+                    </p>
+                </div>
+                <div>
+                    <h4>Thank you</h4>
+                    <p>
+                        Thank you again for testing the skill.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </template>

@@ -56,7 +56,7 @@ export class App {
         await this.context.loadTemplates('profile/you/you.html');
         await this.context.loadTemplates('profile/mastery/mastery.html');
         await this.context.loadTemplates('profile/locked/locked.html');
-        await this.context.loadTemplates('profile/guide.html');
+        // await this.context.loadTemplates('profile/guide.html');
 
         this.initLanguage();
         this.initTranslation();
@@ -1040,6 +1040,13 @@ export class App {
             initialPackage.add();
         })
 
+        // this.context.onCharacterLoaded(() => {
+        //     const guides = document.getElementById('tutorial-page-Woodcutting').parentElement
+        //     ui.createStatic('#tutorial-page-Profile', guides);
+        //     document.body.querySelector('.modal.tutorial-page-profile-contents').id = 'tutorial-page-profile-contents';
+        // })
+        // getMediaURL()
+        // manifest - "load": ["profile/guide.html"]
         this.patchGamemodes(this.game.profile);
         this.patchUnlock(this.game.profile);
         this.initCompatibility(this.game.profile);
