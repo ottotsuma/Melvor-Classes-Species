@@ -33,8 +33,12 @@ export class ProfileManager {
             } else {
                 try {
                     [description] = printPlayerModifier(modifier.key, this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value);
-                    if(!description) console.log('Fake modifier, no disc found ', modifier.key)
+                    if(!description) {
+                        [description] = 'Fake modifer'
+                        console.log('Fake modifier, no disc found ', modifier.key) 
+                }
                 } catch (error) {
+                    [description] = 'Fake modifer'
                     console.log('Fake modifier ', modifier.key)
                 }
             }

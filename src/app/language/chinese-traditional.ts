@@ -107,6 +107,8 @@ export const zhTW ={
     "PASSIVES_NAME_EventPassive11": "非同常的被動",
     "PASSIVES_NAME_EventPassive12": "非同常的被動",
     "MODIFIER_DATA_increasedDeadlyToxinsFromHerblore": "在煉金術製作致命毒素藥劑時，獲得額外的${value}致命毒素藥劑（不可加倍）",
-    "MODIFIER_DATA_bigRon": "在戰鬥中有+100%的機會使戰利品翻倍。敵人每具有2000基礎最大生命值（上限為10000）：來自裝備的+9%近戰力量獎勵，將最大命中點數的3%添加到最小傷害中，以及+1%的傷害減免。如果與boss戰鬥，則獎勵翻倍。"
+    "MODIFIER_DATA_bigRon": "在戰鬥中有+100%的機會使戰利品翻倍。敵人每具有2000基礎最大生命值（上限為10000）：來自裝備的+9%近戰力量獎勵，將最大命中點數的3%添加到最小傷害中，以及+1%的傷害減免。如果與boss戰鬥，則獎勵翻倍。",
+    MONSTER_NAME_Bob_monster: "Bob",
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
   }
   

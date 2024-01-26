@@ -146,6 +146,7 @@ export class App {
             "melvorD:RangedGolbin"
         ]
         const AnimalList: any[] = [
+            "namespace_profile:abyssal_chicken_monster",
             "melvorD:Chicken",
             "melvorD:Cow",
             "melvorD:Chick",
@@ -180,6 +181,7 @@ export class App {
             "melvorF:FireGolem",
         ]
         const HumansList: any[] = [
+            "namespace_profile:Bob_monster",
             "melvorF:BountyHunter",
             "melvorD:BlackKnight",
             "melvorD:ConfusedPirate",
@@ -1093,7 +1095,7 @@ export class App {
                 // game.profile.isPoolTierActive(1) // 5% mastery exp
                 // game.profile.isPoolTierActive(2) // All modifier values +1
                 // game.profile.isPoolTierActive(3) // 5% you cost
-
+                const profileLevel = game.profile._level
                 const single_species = game.profile.yous.get(1)
                 const single_class = game.profile.yous.get(2)
                 let exp1 = 0
@@ -1128,8 +1130,8 @@ export class App {
 
                 const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
 
-                const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
-                const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
+                const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + Math.floor(profileLevel/2) || 0
+                const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + Math.floor(profileLevel/2) || 0
 
                 if (single_species) {
                     game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -1197,7 +1199,7 @@ export class App {
                     try {
                         const single_species = game.profile.yous.get(1) // human
                         const single_class = game.profile.yous.get(2) // knight
-
+                        const profileLevel = game.profile._level
                         if (single_species && single_species.single_species.skills.includes(SkillObject.id)) {
                             let exp1 = 0
                             exp1 = Math.floor(single_species.single_species.baseExperience) || 0
@@ -1223,7 +1225,7 @@ export class App {
 
                             const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
 
-                            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
+                            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + Math.floor(profileLevel/2) || 0
                             // const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
                             game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                             // game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)

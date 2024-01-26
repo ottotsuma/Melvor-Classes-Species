@@ -115,4 +115,6 @@ export const ja = {
 
     You_Equip_Cost_Positive: '+${value}% 装備料金',
     You_Equip_Cost_Negative: '-${value}% 装備料金',
+    MONSTER_NAME_Bob_monster: "Bob",
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
 };

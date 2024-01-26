@@ -107,7 +107,9 @@ export const es = {
   "PASSIVES_NAME_EventPassive11": "Pasiva inusual",
   "PASSIVES_NAME_EventPassive12": "Pasiva inusual",
   "MODIFIER_DATA_increasedDeadlyToxinsFromHerblore": "Al crear pociones de Toxinas mortales en Herbología, obtén +${value} Pociones de Toxinas mortales adicionales como Poción (No se puede duplicar)",
-  "MODIFIER_DATA_bigRon": "+100% de probabilidad de duplicar el botín en combate. Por cada 2000 puntos de golpe máximo base que tenga el enemigo (con un límite de 10000): +9% de bonificación de fuerza en cuerpo a cuerpo por equipamiento, +3% de los puntos máximos de golpe añadidos al mínimo y +1% de reducción de daño. La bonificación se duplica si luchas contra un jefe."
-}
+  "MODIFIER_DATA_bigRon": "+100% de probabilidad de duplicar el botín en combate. Por cada 2000 puntos de golpe máximo base que tenga el enemigo (con un límite de 10000): +9% de bonificación de fuerza en cuerpo a cuerpo por equipamiento, +3% de los puntos máximos de golpe añadidos al mínimo y +1% de reducción de daño. La bonificación se duplica si luchas contra un jefe.",
+    MONSTER_NAME_Bob_monster: "Bob",
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
+  }
 
   

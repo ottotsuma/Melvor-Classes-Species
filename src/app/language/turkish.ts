@@ -102,6 +102,8 @@ export const tr = {
     "PASSIVES_NAME_EventPassive11": "Olağandışı Pasif",
     "PASSIVES_NAME_EventPassive12": "Olağandışı Pasif",
     "MODIFIER_DATA_increasedDeadlyToxinsFromHerblore": "Bitkibilim'de Ölümcül Zehir İksirleri yapılırken, +${value} Ölümcül Zehir İksiri ek olarak alırsınız (İkinci kez eklenemez)",
-    "MODIFIER_DATA_bigRon": "Savaşta Ganimetin İki Katına Çıkma Şansı +%100. Düşmanın sahip olduğu her 2000 temel Maksimum Can Puanı için (Maksimum 10000'e kadar): Ekipmandan +%9 Dövüş Gücü Bonusu, Minimum Vuruşa Maksimum Vuruşun %3'ü eklenir ve Maksimum Hasarın %1'i Azalır. Boss ile savaşılıyorsa bonus iki katına çıkar."
+    "MODIFIER_DATA_bigRon": "Savaşta Ganimetin İki Katına Çıkma Şansı +%100. Düşmanın sahip olduğu her 2000 temel Maksimum Can Puanı için (Maksimum 10000'e kadar): Ekipmandan +%9 Dövüş Gücü Bonusu, Minimum Vuruşa Maksimum Vuruşun %3'ü eklenir ve Maksimum Hasarın %1'i Azalır. Boss ile savaşılıyorsa bonus iki katına çıkar.",
+    MONSTER_NAME_Bob_monster: "Bob",
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
   }
   
