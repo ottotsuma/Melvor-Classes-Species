@@ -828,7 +828,6 @@ export class App {
         cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", MagesList, true);
         cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", RoguesList, true);
 
-
         await this.context.gameData.addPackage('data.json');
         // await this.context.gameData.addPackage('data-cmim.json');
         if (cloudManager.hasTotHEntitlement) {
@@ -1068,7 +1067,6 @@ export class App {
         //         $(`#tutorial-page-${page.localID}-1`).removeClass('d-none');
         //     $('#modal-game-guide').modal('show');
         // }
-
 
         this.patchGamemodes(this.game.profile);
         this.patchUnlock(this.game.profile);
