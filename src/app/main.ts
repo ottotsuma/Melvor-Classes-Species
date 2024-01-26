@@ -1130,8 +1130,8 @@ export class App {
 
                 const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
 
-                const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + Math.floor(profileLevel/2) || 0
-                const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + Math.floor(profileLevel/2) || 0
+                const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
+                const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
 
                 if (single_species) {
                     game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
@@ -1225,7 +1225,7 @@ export class App {
 
                             const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
 
-                            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + Math.floor(profileLevel/2) || 0
+                            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
                             // const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
                             game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                             // game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
