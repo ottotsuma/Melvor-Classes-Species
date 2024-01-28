@@ -5,7 +5,7 @@ export enum ChangeType {
 
 export enum ModifierType {
     Standard = 'standard',
-    Hardcore = 'hardcore'
+    // Hardcore = 'hardcore'
 }
 
 export type YouEquipCostCallback = (value: number, previousValue: number) => void;

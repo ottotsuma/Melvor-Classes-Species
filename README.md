@@ -1,849 +1,99 @@
-# [Profile] Profile
-
-Translations for all languages supported by melvor idle have been provided with this mod, however, I only speak English and cannot guarantee the accuracy of translations.
+Translations for all languages supported by melvor idle have been provided with this mod, however, I only speak English & Japanese and cannot guarantee the accuracy of translations.
 
 All translations were generated using chat gpt.
 
-**If you see an incorrect or missing translation, please create an issue on github providing the correct translation. Thank you!**
-
-https://github.com/profileridium/profile
-
-Does not contain actual profile. Sorry. :(
-
-Disclaimer: **Please backup your save file before installing this mod.**
-
-This mod should be safe to install and uninstall at any time, however the game is designed to automatically delete data for mods that aren't loaded. **So if you uninstall this mod and load your save game, the Profile data will be deleted by the game.** If you re-install the mod after the data is deleted, the skill will be reset to level 1, including masteries. If you uninstall and re-install without ever loading your save game, the data should be safe and retained.
-
-Please provide any feedback or bug reports, would love to hear your thoughts.
-
-![Profile](images/profile.png)
-
-## Design Methodology
-
-When designing this skill, my aims were to take pressure off early game gold, while also providing a late game gold siphon. This makes it an attractive early game skill for adventure mode, and late game, especially once Township is up and running, the buffs are designed to be powerful enough that spending the gold is deemed worth it. By limiting to only a couple of yous, the player will need to spend their masses of gold to get the bonuses for the skills they are training.
-
-## Change Log
- Has been moved to the end of the mod description page.
-
-## Training
-
-Profile is a brand new skill which combines themes from Astrology, Thieving and Agility. It provides an easy way to obtain gold and powerful bonuses that benefit other skills.
-
-Earn tips (GP) while you train yous with various species, then Master the yous you have trained to provide you with powerful bonuses while you train other skills.
-
-This mod includes a new mastery token for the skill and both skill cape and superior skill cape.
-
-## Mastery Unlocks
-
-To unlock additional modifiers, once the respective mastery level has been attained, you can choose to unlock a modifier mastery.
-
-Modifiers can be unlocked in any order once the mastery level has been attained, but once a mastery modifier has been unlocked the cost to Master the you is increased.
-
-The cost to unlock a modifier is as follows
-
-* Level 40 Mastery Unlock - 100,000 GP + 1 Essence of Profile
-* Level 75 Mastery Unlock - 1,000,000 GP + 1 Essence of Profile
-* Level 99 Mastery Unlock - 10,000,000 GP + 1 Essence of Profile
-
-![Single_Species Mastery](images/single_species-mastery.png)
-
-![Unlock Mastery](images/unlock-mastery.png)
-
-## Hiring a You
-
-You can Master various yous to play on your behalf. These yous provide powerful bonuses to help you while you train other skills, however the more skilled a you is, the more expensive it will become to Master them.
-
-You can only Master a single you at a time (two if you purchase the Band Practice upgrade).
-
-The cost to Master a you increases with the number of modifiers unlocked.
-
-The cost for hiring a you is as follows (assuming no Master cost reduction)
-
-* 1st Mastery Unlocked - 10,000 GP
-* 2nd Mastery Unlocked - 100,000 GP
-* 3rd Mastery Unlocked - 1,000,000 GP
-* 4th Mastery Unlocked - 10,000,000 GP
-
-![Equip a You](images/Master-you.png)
-
-### Drops
-
-While training you have a chance to obtain Signet Ring Half A, Circlet of Rhaelyx and Mysterious Stones, just like any other non combat skill.
-
-Tips (GP) earned while training do scale with global gold increases.
-
-### Sheet Profile, Essence of Profile, Gems and Utilities
-
-Training Profile has a 2% chance to drop sheet profile, these are used for mastered you single_species upgrades.
-
-Sheet Profile drop chance is a flat 2% and is not modified by any rarity increases, the only other boost to sheet profile drop chance is applying Diamond String to your mastered yous single_species. With two yous, this means you can get a total of 12% drop chance for Sheet Profile.
-
-![Items](images/items.png)
-
-## Mastered You Single_Species
-
-Mastered you species can be enhanced in various ways. They can be upgraded, socketed with a gem and applied with an utility.
-
-Upgrades are destroyed if you Master a new you. Re-hiring a previously mastered you will require upgrading, socketing and applying the single_species again.
-
-![Upgrade Single_Species](images/upgrade-you-single_species.png)
-
-### Upgrade
-
-Upgrading a mastered yous single_species unlocks a 5th modifier, to do so, you require an Essence of Profile.
-
-Essence of Profile
-Upgrade from Sheet Profile
-1,000,000GP + 50 Sheet Profile
-Unlocks a 5th modifier on mastered you single_species when upgraded.
-
-![Upgrade](images/upgrade.png)
-
-### Gem Socket
-
-You can select one of three gems to socket into your yous single_species. Only one can be active at a time, and you may freely switch provided you have the resources.
-
-Polished Topaz Gem
-Upgrade from Topaz
-50,000 GP + 50 Topaz + 10 Sheet Profile
-+5% Profile GP
-
-Polished Ruby Gem
-Upgrade from Ruby
-50,000 GP + 50 Ruby + 10 Sheet Profile
-+5% Profile Skill XP
-
-Polished Sapphire Gem
-Upgrade from Sapphire
-50,000 GP + 50 Sapphire + 10 Sheet Profile
-+5% Profile Mastery XP
-
-![Socket](images/gem.png)
-
-### Utility
-
-You can select one of three utilities to apply onto your yous single_species. Only one can be active at a time, and you may freely switch provided you have the resources.
-
-Diamond String
-Upgrade from Bowstring
-50,000 GP + 100 Diamond + 100 Bowstring + 50 Profile Sheet
-+5% Sheet Profile drop chance
-
-Pristine Leather
-Upgrade from Leather
-50,000 GP + 100 Diamond + 100 Leather + 50 Profile Sheet
--5% Profile Interval
-
-Mystic Oil
-Upgrade from Weird Gloop
-50,000 GP + 100 Diamond + 100 Weird Gloop + 50 Profile Sheet
-+1 additional reward roll while training Profile
-
-Mystic Oil will roll for rewards an additional time when training the profile skill.
-
-This means if you have Mystic Oil applied, every time you train an single_species, the rewards are rolled an additional time.
-
-This includes:
-* pets
-* rare drops
-* summoning marks
-* mastery tokens
-
-For example, if you have Band Practice with two yous mastered, both equipped with Mystic Oil.
-
-1 tick of training Profile will roll 3 times for a chance to get the pet, rare drops, summoning marks and mastery tokens.
-
-![Apply](images/apply.png)
-
-## Band Practice
-
-The shop sells an upgrade which unlocks a second you slot. This upgrade requires Level 110 Profile and costs 1B GP.
-
-![Band Practice](images/band-practice.png)
-
-![Double You](images/double-you.png)
-
-## Concert Pass
-
-![Concert Pass Purchase](images/concert-pass-purchase.png)
-
-The shop sells item charges for a Concert Pass.
-* Purchase Cost: Concert Pass Half (A) + Concert Pass Half (B) + 10M GP
-* When equipped in the offhand and has charges, the concert pass will provide skill xp for the skills the single_species supports.
-* Drop rate for Concert Pass Halves is 0.00075% or roughly equivalent to the Ancient Ring of Skill and Ancient Ring of Mastery drop chance from Fishing with a special chance of 5%.
-
-![Concert Pass](images/concert-pass.png)
-
-For example, the Guitar supports Woodcutting and Firemaking, while training the Guitar with the Concert Pass equipped and charges available. Woodcutting and Firemaking will also gain Skill XP.
-
-**The skill must be unlocked to gain skill xp in Adventure mode.**
-
-The amount of Skill XP should be roughly 1 level worth for every 1,000 charges. This is done by finding the xp difference between the current level and the next level, then dividing the amount by 1,000.
-
-For example:
-* level 55 requires 166,636 total experience and level 56 requires 184,040 total experience.
-* 184,040 - 166,636 = 15,764 experience to level up from 55 to 56
-* 15,764 / 1,000 = 15 experience per charge used
-
-When you level up, it will shift the calculation to the next level.
-
-The level calculation is clamped to a max skill level of 120, which roughly equates to ~10,000 xp per charge used at max level, and the minimum xp gained is clamped to 1, so the early levels will progress faster then 1 level per 1,000 charges since they would grant less then 1 xp without the clamp.
-
-![Concert Pass Charges](images/concert-pass-charges.png)
-
-## Skill Unlocks
-
-Leveling the Profile skill unlocks additional profileal species to train your yous with.
-
-![Skill Unlocks](images/single_species-unlocks.png)
-
-## Mastery Pool Unlocks
-
-Mastery Pool checkpoints provide additional xp, mastery xp, profile interval and Master cost reduction.
-
-![Mastery Pool Unlocks](images/mastery-pool-unlocks.png)
-
-## Mastery Unlocks
-
-As you level up an species mastery, the tips you earn increases. You can also unlock additional bonuses and reduce the Master cost.
-
-![Mastery Unlocks](images/mastery-unlocks.png)
-
-## Skill Capes
-
-The Profile Skill Cape
-
-![Profile Skillcape](images/profile-skillcape.png)
-
-The Superior Profile Skill Cape
-
-![Superior Profile Skillcape](images/superior-profile-skillcape.png)
-
-## Pet
-
-The Profile skill also contains a pet: Dragon which provides -0.15s Profile Interval
-
-![Dragon](images/dragon-pet.png)
-
-## Herblore
-
-The Generous Gratuity Potion can be brewed using the Herblore skill.
-
-![Potion](images/potion.png)
-
-* Herblore Unlock Level: 80
-* Materials: 1 Pigtayle Herb + 1,000 GP
-* Tier 1: +10% Profile GP, 15 Charges
-* Tier 2: +20% Profile GP, 25 Charges
-* Tier 3: +30% Profile GP, 35 Charges
-* Tier 4: +50% Profile GP, 50 Charges
-
-The potion has also been added to Potion Box II from Township, at the same rarity as the Herblore Potion.
-
-![Potion Box](images/potion-box.png)
-
-## Summoning
-
-The Profile skill has its own tablet. The You! The You is both a combat and skill tablet.
-
-![You Tablet](images/you-tablet.png)
-
-![You Mark](images/you-mark.png)
-
-* Tier: 3
-* Summoning Level Requirement: 90
-* Summoning Max Hit: 192
-* Skill Bonus: +5% Profile GP
-
-In addition, the You has synergies with every single other tablet. Since Profile is a skill that focuses on boosting other skills, its synergy helps all other skills. It basically doubles the tablet effect of the tablet it is synergizing with (by granting the same tablet modifiers via the synergy).
-
-Example: Devil gives -5% Firemaking Interval, if synergized with the You, the synergy will provide an addition -5% Firemaking Interval for a total of -10% Firemaking Interval being provided from the tablets.
-
-The Fox synergy actually works in reverse, kind of... the You synergy doubles the Fox tablet modifier, which then boosts the Yous Summoning max hit.
-
-![Summoning](images/summoning-1.png)
-
-![Summoning](images/summoning-2.png)
-
-## Agility
-
-Agility has been modified so that the Obstacle 10 - Waterfall now also benefits the Profile skill.
-
-![Agility](images/agility.png)
-
-## Astrology
-
-Astrology has been modified so that the Variel constellation now also benefits the Profile skill.
-
-![Astrology](images/astrology.png)
-
-## Township
-
-The Profile skill adds a Profile Scroll of XP granting +3% Profile Skill XP. It functions the same as other scrolls of xp.
-
-It requires level 15 Township and level 15 Profile to purchase, with a default value of 80 planks per scroll.
-
-![Township](images/township-xp-scroll.png)
-
-The Profile skill adds a Profile Outfit, which is fully integrated just like all the other skilling outfits.
-
-![Yous Outfit](images/you-outfit.png)
-
-![Skiller Upgrade](images/skiller-upgrade.png)
-
-## The Circus
-
-The jesters have emerged from The Circus. The jesters are notorious pranksters. They have been rivals with the yous since the beginning of time, known for stealing species, many tussles have broken out between the yous and the jesters.
-
-The Circus is a new combat area that contains 3 types of jesters to fight.
-
-![The Circus](images/the-circus.png)
-
-### Jester
-
-![Jester](images/jester.png)
-
-### Enchanted Jester
-
-![Enchanted Jester](images/enchanted-jester.png)
-
-### Mystic Jester
-
-![Mystic Jester](images/mystic-jester.png)
-
-### Guitar Weapon
-
-The Jester can drop a Guitar which is a new 2H Weapon which requires attack and profile levels to equip. The Guitar can be upgraded twice.
-
-![Guitars](images/guitar-items.png)
-
-### Guitar
-
-Drops from the Jester
-
-![Guitar](images/guitar.png)
-
-### Enchanted Guitar
-
-Upgrade Cost: 100K GP + 50 Enchanted Essence + 1 Guitar
-
-Enchanted Essence is dropped from the Enchanted Jester
-
-![Enchanted Guitar](images/enchanted-guitar.png)
-
-### Mystic Guitar
-
-Upgrade Cost: 1M GP + 50 Mystic Essence + 1 Enchanted Guitar
-
-Mystic Essence is dropped from the Mystic Jester
-
-![Mystic Guitar](images/mystic-guitar.png)
-
-## Ancient Relics Gamemode
-
-![Ancient Relics](images/ancient-relics.png)
-
-Profile has Ancient Relics
-
-#1: +50% Profile Mastery XP
-#2: +10% chance to obtain Shrimp while training Profile
-#3: 1% increased chance to locate Ancient Relics
-#4: +50% Global GP (except Item Sales)
-#5: -20% Profile Interval
-Master Relic: +1 You Equip Limit
-
-(Yes, this means you can have 3 mastered yous)
-
-### Lesser Relic
-
-Profile also has a Lesser Relic which grants:
-
--5% Profile Interval
-+5% Profile GP
-+10% Magic Maximum Hit
-
-## Settings
-
-You are able to set the base you Master cost for each tier. Value must be between 100 and 999B.
-
-In addition, you can opt to use Standard or Hardcore modifier bonuses. Hardcore modifiers have been significantly reduced compared to Standard.
-
-Please note, Settings get reset if you switch your language.
-
-![Settings](images/settings.png)
-
-## Standard Scaling You Bonuses (can be set in settings, not exclusive to standard gamemode)
-
-The bonuses each you provides is as follows:
-
-Guitar: Unlocked at skill level 1
-* Mastery Level 1: +5% Chance for Bird Nests to drop in Woodcutting
-* Mastery Level 40: -10% Firemaking Interval
-* Mastery Level 75: +15% Firemaking Mastery XP
-* Mastery Level 99: +2 minimum Bird Nest's received from Woodcutting
-* Upgrade: Bonfires in Firemaking require no logs to light. Automatically relights Bonfires when depleted
-
-Animal_Allegiance: Unlocked at skill level 10
-* Mastery Level 1: -0.5s Fishing Interval
-* Mastery Level 40: -10% Cooking Interval
-* Mastery Level 75: -30% Passive Cook Interval
-* Mastery Level 99: +10% chance to find a Lost Chest while Fishing (This is separate to the Special Fishing Chance)
-* Upgrade: +25% chance to gain 1 cooked version of a fish when Fishing
-
-Snare Drum: Unlocked at skill level 20
-* Mastery Level 1: -0.2s Mining Interval
-* Mastery Level 40: -0.2s Smithing Interval
-* Mastery Level 75: -3 Coal Ore Cost when Smithing
-* Mastery Level 99: x4 Ores received from Mining
-* Upgrade: x4 Rune Essence received from Mining
-
-Become_Ethereal: Unlocked at skill level 30
-* Mastery Level 1: +5% Hitpoint Regeneration
-* Mastery Level 40: +15% Auto Eat Efficiency
-* Mastery Level 75: Target Damage Reduction is decreased by flat 10%
-* Mastery Level 99: +5% Auto Eat Threshold
-* Upgrade: +5% Chance To Double Loot in Combat
-
-Kynes_Peace: Unlocked at skill level 40
-* Mastery Level 1: +10% Chance to Preserve Resources in Skills
-* Mastery Level 40: +10% Global GP (except Item Sales)
-* Mastery Level 75: +10% Chance to Double Items Globally
-* Mastery Level 99: 10% increased chance to receive Global Rare Items, Mastery Tokens, Bird Nests from Woodcutting, Gems from Mining, and Coal from Firemaking
-* Upgrade: +100 GP gained when earning GP, except Alt. Magic and Item Sales
-
-Flute: Unlocked at skill level 45 (AoD only)
-* Mastery Level 1: +10% chance to preserve dig site map excavation actions
-* Mastery Level 40: -10% Cartography survey interval
-* Mastery Level 75: -10% dig site map refinement cost
-* Mastery Level 99: +2 minimum Items found in Archaeology
-* Upgrade: Gain GP equal to +15 per Archaeology Skill Level per excavation action that locates no Artefacts
-
-Slow_Times: Unlocked at skill level 50
-* Mastery Level 1: +5% Crafting Skill XP
-* Mastery Level 40: +5% Fletching Skill XP
-* Mastery Level 75: x4 Items received from Fletching
-* Mastery Level 99: x4 Items received from Crafting
-* Upgrade: +2 base Javelins produced per action in Fletching
-
-Xylophone: Unlocked at skill level 60
-* Mastery Level 1: -10% Agility Obstacle Build Costs
-* Mastery Level 40: +15% GP From Agility
-* Mastery Level 75: -15% Agility Interval
-* Mastery Level 99: -10% Agility Pillar build costs
-* Upgrade: +25% GP from Agility per active Obstacle
-
-Saxaphone: Unlocked at skill level 70
-* Mastery Level 1: +5% Global Evasion
-* Mastery Level 40: +10% Lifesteal
-* Mastery Level 75: +5% Damage Reduction
-* Mastery Level 99: +5% Maximum Hitpoints
-* Upgrade: +50 Maximum Hitpoints
-
-Dismay: Unlocked at skill level 80
-* Mastery Level 1: +10% chance to preserve resources when Runecrafting runes
-* Mastery Level 40: Gain +1 Prayer Points for each successful Enemy hit on you
-* Mastery Level 75: Create +6 Additional Runes of the same type in Runecrafting
-* Mastery Level 99: -3 Prayer Point Cost for Prayers
-* Upgrade: +50% Chance to receive random Elemental Runes from Runecrafting when creating Runes
-
-Djembe: Unlocked at skill level 90
-* Mastery Level 1: -5% Slayer Task monster Accuracy Rating
-* Mastery Level 40: +10% Damage To Slayer Tasks
-* Mastery Level 75: +40% Slayer Coins
-* Mastery Level 99: +25% Flat Slayer Area Effect Negation
-* Upgrade: +20% Slayer Skill XP
-
-French Horn: Unlocked at skill level 100 (TotH only)
-* Mastery Level 1: +5% chance to locate a Meteorite in Astrology
-* Mastery Level 40: -0.5s Astrology Interval
-* Mastery Level 75: -1s Summoning Interval
-* Mastery Level 99: +15 Base Quantity for Summoning Tablet Creation
-* Upgrade: +35% Summoning Maximum Hit
-
-Harp: Unlocked at skill level 105 (TotH only)
-* Mastery Level 1: +10% Chance to receive a Random Tier of the same Potion in Herblore
-* Mastery Level 40: +50 Stealth while Thieving
-* Mastery Level 75: x4 Items received from Herblore
-* Mastery Level 99: +15% chance to receive Thieving Area Unique Item
-* Upgrade: +20% Chance to Double Items in Thieving
-
-Tambourine: Unlocked at skill level 110 (TotH only)
-* Mastery Level 1: +10% Farming Yield
-* Mastery Level 40: +15 harvest quantity from Farming (Cannot be doubled or multiplied)
-* Mastery Level 75: +10% Township GP Production
-* Mastery Level 99: +50% Township Happiness
-* Upgrade: +25% Chance to Double Farming Yield
-
-Trumpet: Unlocked at skill level 115 (TotH only)
-* Mastery Level 1: +5% Accuracy Rating
-* Mastery Level 40: +5% of Maximum Hit added to Minimum Hit
-* Mastery Level 75: +10% Maximum Hit
-* Mastery Level 99: -0.5s Attack Interval
-* Upgrade: +20% chance to apply Decay Curse to the Target per hit
-
-## Hardcore Scaling You Bonuses (can be set in settings, not exclusive to hardcore gamemode)
-
-The bonuses each you provides is as follows:
-
-Guitar: Unlocked at skill level 1
-* Mastery Level 1: +2% Chance for Bird Nests to drop in Woodcutting
-* Mastery Level 40: -5% Firemaking Interval
-* Mastery Level 75: +5% Firemaking Mastery XP
-* Mastery Level 99: +1 minimum Bird Nest's received from Woodcutting
-* Upgrade: Bonfires in Firemaking require no logs to light. Automatically relights Bonfires when depleted
-
-Animal_Allegiance: Unlocked at skill level 10
-* Mastery Level 1: -0.2s Fishing Interval
-* Mastery Level 40: -5% Cooking Interval
-* Mastery Level 75: -10% Passive Cook Interval
-* Mastery Level 99: +1% chance to find a Lost Chest while Fishing (This is separate to the Special Fishing Chance)
-* Upgrade: +5% chance to gain 1 cooked version of a fish when Fishing
-
-Snare Drum: Unlocked at skill level 20
-* Mastery Level 1: -0.1s Mining Interval
-* Mastery Level 40: -0.1s Smithing Interval
-* Mastery Level 75: -1 Coal Ore Cost when Smithing
-* Mastery Level 99: x2 Ores received from Mining
-* Upgrade: x2 Rune Essence received from Mining
-
-Become_Ethereal: Unlocked at skill level 30
-* Mastery Level 1: +2% Hitpoint Regeneration
-* Mastery Level 40: +5% Auto Eat Efficiency
-* Mastery Level 75: Target Damage Reduction is decreased by flat 2%
-* Mastery Level 99: +2% Auto Eat Threshold
-* Upgrade: +2% Chance To Double Loot in Combat
-
-Kynes_Peace: Unlocked at skill level 40
-* Mastery Level 1: +5% Chance to Preserve Resources in Skills
-* Mastery Level 40: +5% Global GP (except Item Sales)
-* Mastery Level 75: +2% Chance to Double Items Globally
-* Mastery Level 99: 2% increased chance to receive Global Rare Items, Mastery Tokens, Bird Nests from Woodcutting, Gems from Mining, and Coal from Firemaking
-* Upgrade: +25 GP gained when earning GP, except Alt. Magic and Item Sales
-
-Flute: Unlocked at skill level 45 (AoD only)
-* Mastery Level 1: +5% chance to preserve dig site map excavation actions
-* Mastery Level 40: -5% Cartography survey interval
-* Mastery Level 75: -5% dig site map refinement cost
-* Mastery Level 99: +1 minimum Items found in Archaeology
-* Upgrade: Gain GP equal to +5 per Archaeology Skill Level per excavation action that locates no Artefacts
-
-Slow_Times: Unlocked at skill level 50
-* Mastery Level 1: +5% Crafting Skill XP
-* Mastery Level 40: +5% Fletching Skill XP
-* Mastery Level 75: x2 Items received from Fletching
-* Mastery Level 99: x2 Items received from Crafting
-* Upgrade: +1 base Javelins produced per action in Fletching
-
-Xylophone: Unlocked at skill level 60
-* Mastery Level 1: -5% Agility Obstacle Build Costs
-* Mastery Level 40: +5% GP From Agility
-* Mastery Level 75: -5% Agility Interval
-* Mastery Level 99: -5% Agility Pillar build costs
-* Upgrade: +5% GP from Agility per active Obstacle
-
-Saxaphone: Unlocked at skill level 70
-* Mastery Level 1: +2% Global Evasion
-* Mastery Level 40: +2% Lifesteal
-* Mastery Level 75: +2% Damage Reduction
-* Mastery Level 99: +2% Maximum Hitpoints
-* Upgrade: +10 Maximum Hitpoints
-
-Dismay: Unlocked at skill level 80
-* Mastery Level 1: +5% chance to preserve resources when Runecrafting runes
-* Mastery Level 40: Gain +1 Prayer Points for each successful Enemy hit on you
-* Mastery Level 75: Create +2 Additional Runes of the same type in Runecrafting
-* Mastery Level 99: -1 Prayer Point Cost for Prayers
-* Upgrade: +5% Chance to receive random Elemental Runes from Runecrafting when creating Runes
-
-Djembe: Unlocked at skill level 90
-* Mastery Level 1: -2% Slayer Task monster Accuracy Rating
-* Mastery Level 40: +2% Damage To Slayer Tasks
-* Mastery Level 75: +5% Slayer Coins
-* Mastery Level 99: +5% Flat Slayer Area Effect Negation
-* Upgrade: +5% Slayer Skill XP
-
-French Horn: Unlocked at skill level 100 (TotH Only)
-* Mastery Level 1: +1% chance to locate a Meteorite in Astrology
-* Mastery Level 40: -0.1s Astrology Interval
-* Mastery Level 75: -0.25s Summoning Interval
-* Mastery Level 99: +3 Base Quantity for Summoning Tablet Creation
-* Upgrade: +5% Summoning Maximum Hit
-
-Harp: Unlocked at skill level 105 (TotH Only)
-* Mastery Level 1: +2% Chance to receive a Random Tier of the same Potion in Herblore
-* Mastery Level 40: +15 Stealth while Thieving
-* Mastery Level 75: x2 Items received from Herblore
-* Mastery Level 99: +2% chance to receive Thieving Area Unique Item
-* Upgrade: +2% Chance to Double Items in Thieving
-
-Tambourine: Unlocked at skill level 110 (TotH Only)
-* Mastery Level 1: +5% Farming Yield
-* Mastery Level 40: +2 harvest quantity from Farming (Cannot be doubled or multiplied)
-* Mastery Level 75: +2% Township GP Production
-* Mastery Level 99: +5% Township Happiness
-* Upgrade: +5% Chance to Double Farming Yield
-
-Trumpet: Unlocked at skill level 115 (TotH Only)
-* Mastery Level 1: +2% Accuracy Rating
-* Mastery Level 40: +1% of Maximum Hit added to Minimum Hit
-* Mastery Level 75: +2% Maximum Hit
-* Mastery Level 99: -0.1s Attack Interval
-* Upgrade: +1% chance to apply Decay Curse to the Target per hit
-
-## Change Log
-
-# 1.13.13
-* fixed superior max cape and superior cape of completion not inheriting profile skillcape modifiers
-
-# 1.13.12
-* improved compatibility with tiny passive icons
-
-# 1.13.11
-* fixed compatibility with tiny passive icons
-
-# 1.13.10
-* fixed skill completion statistic count being doubled
-
-# 1.13.9
-* fixed profile gp gains not considering flat gp increases such as golden wreath
-
-# 1.13.8
-* replaced Kynes_Peace upgrade modifier from GP From Sales to GP gained when earning GP, except Alt. Magic and Item Sales
-
-# 1.13.7
-* added summoning synergy for tortoise + you
-
-# 1.13.6
-* minor code cleanup, no change in functionality
-
-# 1.13.5
-* removed 'ancient coin token', 'ancient mask token' and 'ancient skull token'
-* profile skill level cap in the ancient relics gamemode now scales with combat stats level cap
-* profile is no longer offered as a choice for skill cap level increases
-* improved logic for unlocking profile skill to support custom ancient relic gamemodes
-
-# 1.13.4
-* added a new single_species, the flute which focuses on cartography and archaeology
-
-# 1.13.3
-* added ancient relics for profile
-* added a lesser relic for profile
-
-# 1.13.2
-* fixed profile being locked in ancient relics gamemode on existing saves when enabling the mod for the first time
-* added one time rewards for undead graveyard, air god dungeon and lava lake dungeon
-* these one time rewards are tokens which when consumed grant level cap increases in the ancient relics gamemode, they do nothing in other gamemodes and can be sold
-* these tokens are equivalent to clearing 2 base game dungeons and 1 toth dungeon to help offset the additional skill
-
-# 1.13.1
-* fixed profile being locked in ancient relics gamemode
-* fixed skill cape exception check
-
-# 1.13.0
-* added support for atlas of discovery
-
-## 1.12.0
-* added settings to control the base you Master cost
-* added a hardcore setting which significantly reduces the power of mastered you modifiers
-* fixed djembe being named Battle_Fury, it is now correctly labelled as a djembe again
-
-## 1.11.2
-* fixed german translations being in dutch
-
-### 1.11.1
-* fixed chinese simplified and chinese traditional translations for you
-
-### 1.11.0
-* significantly reduced hiring cost of yous from 10k, 100k, 20m, 200m to 10k, 100k, 1m, 10m
-* unlocking modifiers now also cost gp in addition to essence of profile, costs are 100k for level 40 modifier, 1m for level 75 modifier and 10m for level 99 modifier
-* you Master cost for 95% mastery checkpoint has been reduced from -10% to -5%
-* you Master cost for mastery level 90 has been reduced from -10% to -5%
-* switched and reduced the power of some single_species modifiers:
-  * Animal_Allegiance (75) now provides Passive Cook Interval
-  * Animal_Allegiance (99) now provides Chance to find a Lost Chest while Fishing and reduced from 15% to 10%
-  * Become_Ethereal (75) now provides Target Damage Reduction is decreased by flat
-  * Become_Ethereal (99) now provides Auto Eat Threshold and reduced from 10% to 5%
-  * Become_Ethereal (U) now provides Chance To Double Loot in Combat and reduced from 10% to 5%
-  * Kynes_Peace (75) Chance to Double Items Globally reduced from 15% to 10%
-  * Throw_Voice (75) now provides Damage Reduction and reduced from 10% to 5%
-  * Throw_Voice (99) now provides +5% Maximum Hitpoints
-  * Throw_Voice (U) now provides + Maximum Hitpoints and reduced from +100 to +50
-* adjusted some of the you syngergies
-  * Golbin Thief + You synergy now also grants +175 GP on monster kill
-  * Ent + You synergy increased from 10% to 30%
-  * Pig + You synergy increased from 10% to 25%
-  * Salamander + You synergy increased from 5% to 25%
-
-* Dev Note: These changes came from feedback that some modifiers are not worth unlocking as the Master cost grows too high for the value the modifier provides. It was more advantageous to simply leave some not unlocked which was not the intended way to interact with the yous. Hopefully, now that the gp costs of the skill have been reduced, the impact of unlocking some of the less desirable modifiers are not as painful. In addition a portion of the costs have been shifted to the one time cost of unlocking modifiers which should further reduce friction in switching yous that may not have as desirable modifiers. I'm aware this goes against the original design of wanting switching yous to be painful, but the design has evolved over time and no longer really fits with the current implementation.
-
-### 1.10.0
-* added translations for all languages supported by melvor idle
-* please note, I only speak English, these were all fed through chat gpt, if you see an incorrect or missing translation please report this on github
-
-### 1.9.1
-* band practice shop purchase now correctly only shows if TotH has been purchased
-
-### 1.9.0
-* Throne of the Herald is now optional, all TotH data requires the expansion to load, this includes superior skillcape, species above level 99 and summoning synergies above level 99
-* max skillcape and superior max skillcape no longer require the profile skill to purchase
-* eagle + you synergy now grants -10% Profile Interval, from -5% Agility Interval
-* owl + you synergy now grants +1.5% Profile Mastery XP Per Maxed Star in Variel, from -5% Astrology Interval
-* you modifiers are no longer automatically unlocked based on mastery level
-* once the required mastery level is reached, you may now choose to unlock the modifier whenever you feel like doing so
-* previous save data will automatically migrate and have the appropriate mastery unlocks already for free
-* hiring you gp cost no longer scales with mastery level, instead the cost increases with the number of modifiers unlocked on the you
-* mystic oil no longer grants +1 modifier unlock, now rolls an additional time for rewards while training profile
-
-### 1.8.1
-* reordered the profile skillcapes to be listed/sorted in alphabetical order in the shop and bank
-
-### 1.8.0
-* the jesters have emerged from the circus, a new combat area
-* added three new monsters found in the circus
-* added the guitar, a 2H weapon that can be upgraded twice
-* jesters drop the guitar, and the essence required to upgrade the guitar, among other profile related drops
-
-### 1.7.1
-* reduced base drop chance of sheet profile from 5% to 2%
-* significantly reduced the sell value of profile related items, these were not intended to be an easy way to generate gold
-
-### 1.7.0
-* agility obstacle 10 waterfall now also benefits the Profile skill
-* astrology variel constellation now also benefits the Profile skill
-* added compatibility between Tiny Passive Icons mod and the Profile skill mod for Agility and Astrology
-* switched the Animal_Allegiance and drum species
-  * no functional change, just switched the type of single_species
-  * the Animal_Allegiance now benefits fishing and cooking and is still unlocked at level 10
-  * the drum now benefits mining and smithing and is still unlocked at level 20
-* renamed the drum to snare drum
-* renamed the Battle_Fury to djembe
-* renamed the Slow_Time to Slow_Times
-
-### 1.6.5
-* added the ability to see the next available single_species in a locked state; like in Woodcutting and Mining
-
-### 1.6.4
-* workaround game bugs with completion log not correctly displaying for custom skills
-
-### 1.6.3
-* fixed concert pass halves dropping more often then intended
-* adjusted the Profile pet, Dragon, to provide a flat -0.15s Profile Interval from -1% Profile Interval
-
-### 1.6.2
-* fixed message when the concert pass runs out to be more context specific
-
-### 1.6.1
-* fixed bank sort order for concert pass items
-
-### 1.6.0
-* added concert pass half a, concert pass half b and concert pass
-* half a and half b can drop while training profile
-* both halves + 10M GP can be used to purchase 1,000 charges of a concert pass
-* the concert pass can be equipped in the offhand and while training Profile you also gain Skill XP for the skills the single_species supports
-
-### 1.5.0
-* increased drop rate of sheet profile from 1% to 5%
-* expanded the ability to upgrade mastered you species which boost the Profile skill itself
-  * one of three new gems can be socketed into a mastered yous single_species
-  * one of three new utilities can be applied onto a mastered yous single_species
-
-### 1.4.2
-* fixed skill info header not displaying as intended on mobile
-* fixed Aorpheats Signet Ring not providing +100% GP to Profile
-* fixed Max Skillcape, Cape of Completion, Superior Max Skillcape and Superior Cape of Completion not inheriting Profile Skillcape modifiers (these capes still DO NOT require any Profile skill levels, they just inherit the modifiers of the Profile skillcapes)
-
-### 1.4.1
-* fixed trumpet mastery level 1 modifier incorrectly requiring mastery level 40
-
-### 1.4.0
-* reduced tips (GP) scaling from mastery level from +15 GP each level to +10 GP each level, base single_species GP is no longer the same across all species, higher level species have a higher base GP than lower level species. This should hopefully make higher species feel a little better, this does result in less GP from lower species than the previous version.
-* added three more species; the Become_Ethereal, Kynes_Peace and xylophone
-* modified some single_species unlock levels and bonuses
-  * drum - Unlock Level 15 -> Level 10
-  * Animal_Allegiance - Unlock Level 30 -> Level 20
-  * Throw_Voice - Unlock Level 45 -> Level 70, now focused on defensive modifiers only
-  * Slow_Time - Unlock Level 60 -> Level 50
-  * Dismay - Unlock Level 75 -> Level 80
-  * Battle_Fury - now focused entirely on slayer, agility has been moved to xylophone
-  * french horn - switched level 1 and 40 modifier bonuses
-  * tambourine - increased level 1 farming yield % from 5 to 10 and level 40 flat farming yield from 5 to 15
-  * trumpet - now focused on damage dealing only
-* added a new shop purchase which lets you Master two yous at once
-* added a new item, sheet profile which is dropped while training Profile
-* added a new item, essence of profile, which is upgraded from sheet profile
-* added the ability to upgrade mastered you species which unlocks a 5th modifier
-
-### 1.3.0
-* added a potion to Herblore which increases GP obtained while training Profile
-* added a summoning tablet for the Profile skill, the You
-* added a Profile Scroll of XP which can be purchased from the Township trader with Planks
-* added a Profile Outfit to the Township category of the shop, it functions the same all other skilling outfits
-
-### 1.2.0
-
-* updated description of mastery and mastery pool Master cost reduction to better align with skill capes (no functional change)
-* updated exponential calculation to clamp mastery between level 1 and 99 instead of throwing an error if outside this range
-* adjusted the level that species are available at
-* adjusted the experience gained from training. The time it takes to level should be roughly equivalent to Astrology, assuming no interval increases, xp modifiers, etc and you train the highest level single_species available
-* added 3 new species; the harp, tambourine and Slow_Time
-
-### 1.1.0
-
-* fixed Master dialog allowing to Master without enough gold
-* updated single_species icons
-
-### 1.0.3
-
-* fixed Dismay 99 mastery bonus to reduce prayer cost instead of increase it
-
-### 1.0.2
-
-* fixed profile mastery token granting no experience
-
-### 1.0.1
-
-* fixed the spelling of Throw_Voice
-* removed mastery token, capes and pet from being required for completion log
-* removed profile from being required for max and superior max capes
-* skill cape now also reduces you Master cost by 5% and increased gold earned from profile by 5%
-* superior skill cape now also reduces you Master cost by 10% and increased gold earned from profile by 10%
-
-### 1.0.0
-
-* initial release
-
-## Attribution
-
-Images obtained from the following sources, attribution provided.
-
-<a href="https://www.freepik.com/free-vector/cute-red-panda-playing-guitar-cartoon-vector-icon-illustration-animal-profile-icon-concept-isolated_31966379.htm">Image by catalyststuff on Freepik</a>
-
-<a href="https://www.freepik.com/free-vector/profileal-single_species-set_8610228.htm#query=cartoon%20single_species&position=0&from_view=keyword&track=ais">Image by pch.vector on Freepik</a>
-
-<a href="https://www.flaticon.com/free-icons/troubadour">Troubadour icons created by Freepik - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Dragon Icons - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/gemstone" title="gemstone icons">Gemstone icons created by Kroffle - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/access" title="access icons">Access icons created by Freepik - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/famous" title="famous icons">Famous icons created by Freepik - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/guitar" title="guitar icons">Guitar icons created by Freepik - Flaticon</a>
-
-<a href="https://www.freepik.com/free-vector/aesthetic-jazz-background-profileal-single_species-border-blue-vector_20346432.htm#query=profileal%20background&position=16&from_view=search&track=ais">Image by rawpixel.com on Freepik</a>
-
-<a href="https://www.flaticon.com/free-icons/profile-and-multimedia" title="profile and multimedia icons">Profile and multimedia icons created by Mihimihi - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/circus-tent" title="circus tent icons">Circus tent icons created by Freepik - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/professions-and-jobs" title="professions and jobs icons">Professions and jobs icons created by Freepik - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/jester" title="jester icons">Jester icons created by Freepik - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/jester" title="jester icons">Jester icons created by Freepik - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/cultures" title="cultures icons">Cultures icons created by Freepik - Flaticon</a>
-
-<a href="https://www.flaticon.com/free-icons/flute" title="flute icons">Flute icons created by Freepik - Flaticon</a>
+If you see an incorrect or missing translation, please create an issue on github providing the correct translation. Thank you!
+
+https://github.com/ottotsuma/Melvor-Classes-Species
+https://mod.io/g/melvoridle/m/class-species
+
+This mod adds:
+
+Species:
+Which come with the ability to increase mastery based on their preferred skills, for the Elf below, you can see that is fletching.
+
+![elf](images/elf.png)
+
+Classes:
+
+![wizard](images/wizard.png)
+
+As you can see
+
+You can add new profiles into your own mods quite easily;
+
+First, in the setup.js you can check if this mod installed, by doing the following line of code:
+
+```javascript I'm A tab
+const profileSkill = mod.manager.getLoadedModList().includes('Class &amp; Species')
+```
+After checking this mod is installed, you can add the following code snippet to the JSON you will load (And change the values how you like):
+
+In the skills section, if you add a skill by It's name the image will be added for you. When this class/species uses that skill the new profile will gain mastery exp alongside it.
+
+```JSON I'm tab B
+"data": {
+"skillData": [
+{
+"skillID": "namespace_profile:Profile",
+"data": {
+"species": [
+{
+"id": "Human",
+"name": "Human",
+"media": "https://ottotsuma.github.io/images/portraits/human%20female%20barbarian%202.jpg",
+"baseExperience": 5,
+"productId": "namespace_profile:Human",
+"level": 1,
+"skills": [
+"https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
+"melvorD:Crafting"
+],
+"standardModifiers": [
+{
+"level": 0,
+"key": "humanTraitApplied",
+"value": 1
+},
+{
+"level": 1,
+"key": "decreasedMagicMaxHit",
+"value": 10
+},
+{
+"level": 20,
+"key": "increasedDamageAgainstAnimals",
+"value": 10
+},
+{
+"level": 40,
+"key": "increasedDamageAgainstHumans",
+"value": 10
+},
+{
+"level": 60,
+"key": "increasedGPFromSales",
+"value": 10
+},
+{
+"level": 80,
+"key": "increasedChanceForGoldFromCrafting30",
+"value": 10
+},
+{
+"level": 99,
+"key": "decreasedGlobalSkillIntervalPercent",
+"value": 5
+}
+]
+}
+]
+}
+}
+}
+```
+
+                        
+
+
+                                                
