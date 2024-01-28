@@ -22,6 +22,9 @@ As you can see
 
 You can add new profiles into your own mods quite easily;
 
+example from: https://github.com/ottotsuma/Melvor-TES
+![argonian](images/argonian.png)
+
 First, in the setup.js you can check if this mod installed, by doing the following line of code:
 
 ```javascript I'm A tab
