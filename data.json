@@ -522,7 +522,7 @@
                                 },
                                 {
                                     "level": 1,
-                                    "key": "decreasedAttackIntervalPercent",
+                                    "key": "increasedAttackIntervalPercent",
                                     "value": 10
                                 },
                                 {
