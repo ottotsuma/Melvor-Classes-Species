@@ -1,9 +1,12 @@
 #you-container {
-    display: block;
+    display: flex;
+    gap: 10px;
     margin-top: 22px;
 
     .block {
-        min-width: 100%;
+        width: 100%;
+        max-width: 50%;
+        min-width: 50%;
     }
 }
 

@@ -577,7 +577,7 @@
                                 {
                                     "level": 20,
                                     "key": "bleedImmunity",
-                                    "value": 100
+                                    "value": 99
                                 },
                                 {
                                     "level": 40,
@@ -592,7 +592,7 @@
                                 {
                                     "level": 80,
                                     "key": "doubleOresMining",
-                                    "value": 4
+                                    "value": 2
                                 },
                                 {
                                     "level": 99,

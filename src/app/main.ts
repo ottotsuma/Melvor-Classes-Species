@@ -838,6 +838,60 @@ export class App {
         }
 
         this.context.onModsLoaded(async () => {
+            this.game.skills.registeredObjects.forEach(SkillObject => {
+                // {"melvorD:Cooking" => Cooking}
+                // {"melvorAoD:Cartography" => Cartography}
+                // {"melvorAoD:Archaeology" => Archaeology}
+                // {"mythMusic:Music" => Music}
+                // {"namespace_thuum:Thuum" => Thuum}
+                const prototype = Object.getPrototypeOf(game.skills.getObjectByID(SkillObject.id));
+                try {
+                    this.context.patch(prototype.constructor, 'addXP').after(function (returnedValue, amount, masteryAction) {
+                        try {
+                            const single_species = game.profile.yous.get(1) // human
+                            const single_class = game.profile.yous.get(2) // knight
+                            const profileLevel = game.profile._level
+                            if (single_species && single_species.single_species.skills.includes(SkillObject.id)) {
+                                let exp1 = 0
+                                exp1 = Math.floor(single_species.single_species.baseExperience) || 0
+    
+                                let exp2 = 0
+                                if (single_class) {
+                                    exp2 = Math.floor(single_class.single_species.baseExperience) || 0
+                                }
+    
+                                let skillExp1 = exp1 || 0
+                                let masteryExp1 = exp1 || 0
+    
+                                let skillExp2 = exp2 || 0
+                                let masteryExp2 = exp2 || 0
+                                if (game.profile.isPoolTierActive(1)) {
+                                    skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
+                                    skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
+                                }
+                                if (game.profile.isPoolTierActive(1)) {
+                                    masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
+                                    masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
+                                }
+    
+                                const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
+    
+                                const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
+                                // const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
+                                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                                // game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                                // game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
+                                game.profile.addMasteryPoolXP(totalMasteryExp1)
+                            }
+                            return returnedValue
+                        } catch (error) {
+                            return returnedValue
+                        }
+                    })
+                } catch (error) {
+                    console.log(SkillObject._localID, error)
+                }
+            });
             // Giving monsters classes
             game.monsters.forEach(monster => {
                 if (monster.attackType === "magic") {
@@ -1185,60 +1239,6 @@ export class App {
                 game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
             }
         })
-        this.game.skills.registeredObjects.forEach(SkillObject => {
-            // {"melvorD:Cooking" => Cooking}
-            // {"melvorAoD:Cartography" => Cartography}
-            // {"melvorAoD:Archaeology" => Archaeology}
-            // {"mythMusic:Music" => Music}
-            // {"namespace_thuum:Thuum" => Thuum}
-            const prototype = Object.getPrototypeOf(game.skills.getObjectByID(SkillObject.id));
-            try {
-                this.context.patch(prototype.constructor, 'addXP').after(function (returnedValue, amount, masteryAction) {
-                    try {
-                        const single_species = game.profile.yous.get(1) // human
-                        const single_class = game.profile.yous.get(2) // knight
-                        const profileLevel = game.profile._level
-                        if (single_species && single_species.single_species.skills.includes(SkillObject.id)) {
-                            let exp1 = 0
-                            exp1 = Math.floor(single_species.single_species.baseExperience) || 0
-
-                            let exp2 = 0
-                            if (single_class) {
-                                exp2 = Math.floor(single_class.single_species.baseExperience) || 0
-                            }
-
-                            let skillExp1 = exp1 || 0
-                            let masteryExp1 = exp1 || 0
-
-                            let skillExp2 = exp2 || 0
-                            let masteryExp2 = exp2 || 0
-                            if (game.profile.isPoolTierActive(1)) {
-                                skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-                                skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
-                            }
-                            if (game.profile.isPoolTierActive(1)) {
-                                masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-                                masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
-                            }
-
-                            const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
-
-                            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
-                            // const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
-                            game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                            // game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-                            // game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
-                            game.profile.addMasteryPoolXP(totalMasteryExp1)
-                        }
-                        return returnedValue
-                    } catch (error) {
-                        return returnedValue
-                    }
-                })
-            } catch (error) {
-                console.log(SkillObject._localID, error)
-            }
-        });
     }
 
     private patchGamemodes(profile: Profile) {

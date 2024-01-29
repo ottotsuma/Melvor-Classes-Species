@@ -205,6 +205,9 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                                 });
 
                                 popup.querySelector<HTMLButtonElement>('.swal2-cancel').click();
+
+                                this.userInterface.you1.updateModifiers();
+                                this.userInterface.you2.updateModifiers();
                             };
                         }
                     });
