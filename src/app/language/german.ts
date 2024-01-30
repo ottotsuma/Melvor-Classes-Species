@@ -109,6 +109,7 @@ export const de = {
   "MODIFIER_DATA_increasedDeadlyToxinsFromHerblore": "Beim Herstellen von tödlichen Gifttrank-Potionen in Kräuterkunde erhältst du +${value} Tödliche Gifttrank-Potion(en) als zusätzliche Potion (Kann nicht verdoppelt werden)",
   "MODIFIER_DATA_bigRon": "+100% Chance, die Beute im Kampf zu verdoppeln. Für jeden 2000 Basis-Lebenspunkte, die der Feind hat (begrenzt auf 10000): +9% Stärkebonus im Nahkampf durch Ausrüstung, +3% der maximalen Lebenspunkte werden dem Minimalen Schaden hinzugefügt und +1% Schadensreduktion. Der Bonus wird verdoppelt, wenn du gegen einen Boss kämpfst.",
     MONSTER_NAME_Bob_monster: "Bob",
-    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken",
+    "ITEM_NAME_Profile_Token": "Upgrade token"
   }
 

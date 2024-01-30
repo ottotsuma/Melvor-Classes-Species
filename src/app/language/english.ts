@@ -117,5 +117,6 @@ export const en = {
     You_Equip_Cost_Positive: '+${value}% eqiup cost',
     You_Equip_Cost_Negative: '-${value}% eqiup cost',
     MONSTER_NAME_Bob_monster: "Bob",
-    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken",
+    "ITEM_NAME_Profile_Token": "Upgrade token"
 };

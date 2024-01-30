@@ -191,6 +191,18 @@
                         }
                     ]
                 }
+            },
+            {
+                "id": "Profile_Token",
+                "name": "Profile Token",
+                "category": "Misc",
+                "type": "Item",
+                "media": "assets/level.png",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 10,
+                "itemType": "Item"
             }
         ],
         "pets": [
@@ -381,7 +393,7 @@
                                 {
                                     "level": 20,
                                     "key": "decreasedFletchingIntervalWithArrows",
-                                    "value": 10
+                                    "value": 1000
                                 },
                                 {
                                     "level": 40,
@@ -1478,6 +1490,22 @@
                 "canSlayer": false,
                 "isBoss": false,
                 "selectedSpell": "melvorD:WaterStrike"
+            }
+        ],
+        "itemUpgrades": [
+            {
+                "rootItemIDs": ["namespace_profile:Profile_Token"],
+                "quantity": 1,
+                "upgradedItemID":"namespace_profile:Mastery_Token_Profile",
+                "gpCost": 0,
+                "isDowngrade": false,
+                "scCost": 0,
+                "itemCosts": [
+                    {
+                        "id":"namespace_profile:Profile_Token",
+                        "quantity": 10
+                    }
+                ]
             }
         ]
     },

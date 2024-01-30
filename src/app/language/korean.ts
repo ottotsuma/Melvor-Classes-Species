@@ -104,5 +104,6 @@ export const ko = {
         "MODIFIER_DATA_increasedDeadlyToxinsFromHerblore": "허블로에서 치명적인 독 물약을 만들 때, +${value} 개의 Deadly Toxins 물약을 추가로 획득합니다. (중복 불가)",
         "MODIFIER_DATA_bigRon": "전투에서 룻을 두 배로 얻을 확률 +100%. 적의 최대 히트 포인트가 2000씩 증가할 때마다 (최대 10000까지) 장비로부터 +9% 근접 공격력 보너스, 최소 히트에 최대 히트의 3% 추가 및 1% 데미지 감소. 보너스는 보스와 전투 중이면 두 배입니다.",
     MONSTER_NAME_Bob_monster: "Bob",
-    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken",
+    "ITEM_NAME_Profile_Token": "Upgrade token"
   };

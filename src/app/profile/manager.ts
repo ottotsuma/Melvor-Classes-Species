@@ -11,7 +11,7 @@ export class ProfileManager {
     }
 
     public get essenceOfProfileIcon() {
-        return this.game.items.getObjectByID('melvorF:Stardust')?.media;
+        return this.game.items.getObjectByID('namespace_profile:Profile_Token')?.media;
     }
 
     constructor(private readonly profile: Profile, private readonly game: Game) {}

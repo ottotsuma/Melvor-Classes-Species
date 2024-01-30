@@ -110,5 +110,6 @@ Single_Species: 'Profile',
     MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: "Quando crei Pozioni di Tossine Letali in Erboristeria, guadagni +${valore} Pozione/i di Tossine Letali come pozione aggiuntiva (non può essere raddoppiata)",
     MODIFIER_DATA_bigRon: "+100% Possibilità di raddoppiare il bottino in combattimento. Per ogni 2000 Punti Ferita massimi di base del nemico (con un tetto di 10000): +9% di bonus alla forza in mischia dall'equipaggiamento, +3% del colpo massimo aggiunto al colpo minimo e +1% di riduzione del danno. Il bonus è raddoppiato se si combatte contro un boss",
     MONSTER_NAME_Bob_monster: "Bob",
-    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken",
+    "ITEM_NAME_Profile_Token": "Upgrade token"
 };

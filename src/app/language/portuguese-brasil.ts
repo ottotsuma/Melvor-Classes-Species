@@ -104,6 +104,7 @@ export const ptBR = {
     "MODIFIER_DATA_increasedDeadlyToxinsFromHerblore": "Ao criar Poções de Toxinas Mortais em Herbologia, ganhe +${value} Poções de Toxinas Mortais como uma poção adicional (Não pode ser duplicado)",
     "MODIFIER_DATA_bigRon": "+100% de Chance de Duplicar Saque em Combate. Para cada 2000 de Pontos Máximos de Vida base que o inimigo tem (limitado a 10000): +9% de Bônus de Força de Combate do Equipamento, +3% do Máximo de Vida adicionado ao Mínimo de Dano e +1% de Redução de Dano. O bônus é duplicado se estiver lutando contra um chefe.",
     MONSTER_NAME_Bob_monster: "Bob",
-    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken",
+    "ITEM_NAME_Profile_Token": "Upgrade token"
   }
   

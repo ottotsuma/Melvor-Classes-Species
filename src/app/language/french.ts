@@ -104,6 +104,7 @@ export const fr = {
     "MODIFIER_DATA_increasedDeadlyToxinsFromHerblore": "Lors de la création de potions de toxines mortelles en herboristerie, gagnez +${value} potions de toxines mortelles en plus (ne peut pas être doublé)",
     "MODIFIER_DATA_bigRon": "+100% de chance de doubler le butin en combat. Pour chaque 2000 points de vie maximum de base que l'ennemi a (limité à 10000) : +9% de bonus de force de mêlée de l'équipement, +3% du maximum de vie ajouté au minimum de dégâts et +1% de réduction des dégâts. Le bonus est doublé en cas de combat contre un boss.",
     MONSTER_NAME_Bob_monster: "Bob",
-    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken",
+    "ITEM_NAME_Profile_Token": "Upgrade token"
   }
   

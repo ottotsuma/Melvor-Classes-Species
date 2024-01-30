@@ -80,7 +80,7 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
             }
         },
         unlock: function (modifier: YouModifier) {
-            game.bank.removeItemQuantityByID('melvorF:Stardust', 1, true);
+            game.bank.removeItemQuantityByID('namespace_profile:Profile_Token', 1, true);
             if (this.unlockGPCost > 0) {
                 game.gp.remove(this.unlockGPCost);
             }
@@ -99,7 +99,7 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
             this.completeUpgrade();
         },
         updateCosts: function () {
-            const item = game.items.getObjectByID(`melvorF:Stardust`);
+            const item = game.items.getObjectByID(`namespace_profile:Profile_Token`);
 
             this.essenceOfProfile = {
                 item,

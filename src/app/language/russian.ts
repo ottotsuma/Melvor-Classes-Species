@@ -114,5 +114,6 @@ export const ru = {
     MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: 'При создании зелий Смертельных Токсинов в Гербологии, получите +${value} Зелье(я) Смертельных Токсинов в качестве дополнительного зелья (не может быть удвоено)',
     MODIFIER_DATA_bigRon: '+100% шанс удвоить добычу в бою. За каждые 2000 базовых максимальных хитпоинтов противника (максимум 10000): +9% бонуса к силе ближнего боя от экипировки, +3% от максимального удара, добавляемые к минимальному удару, и +1% к снижению урона. Бонус удваивается, если вы сражаетесь с боссом.',
     MONSTER_NAME_Bob_monster: "Bob",
-    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken"
+    MONSTER_NAME_abyssal_chicken_monster: "Abyssal Chicken",
+    "ITEM_NAME_Profile_Token": "Upgrade token"
 };
