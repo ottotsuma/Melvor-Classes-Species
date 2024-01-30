@@ -849,9 +849,9 @@ export class App {
                 try {
                     this.context.patch(prototype.constructor, 'addXP').after(function (returnedValue: number, amount: number, masteryAction: string) {
                         try {
-                            if(rollPercentage(1)) {
+                            if(rollPercentage(0.1)) {
                                 game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true, masteryAction);
-                            } else if(rollPercentage(1)) {
+                            } else if (rollPercentage(0.01)) {
                                 game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, masteryAction);
                             }
                             const single_species = game.profile.yous.get(1) // human
