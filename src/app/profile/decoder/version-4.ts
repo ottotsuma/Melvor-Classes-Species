@@ -45,20 +45,12 @@ export class Version4 implements DecodeVersion {
                 socket = reader.getNamespacedObject(this.game.items);
             }
 
-            let utility: string | Item;
-
-            if (reader.getBoolean()) {
-                utility = reader.getNamespacedObject(this.game.items);
-            }
-
             let masteredYou: MasteredYou;
 
             if (typeof single_species !== 'string') {
                 masteredYou = {
                     single_species,
-                    slot,
-                    socket: typeof socket !== 'string' ? socket : undefined,
-                    utility: typeof utility !== 'string' ? utility : undefined
+                    slot
                 };
 
                 this.profile.yous.set(single_species, masteredYou);
