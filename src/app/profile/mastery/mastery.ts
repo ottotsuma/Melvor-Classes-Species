@@ -109,7 +109,6 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
         completeUpgrade: function () {
             profile.computeProvidedStats(true);
             profile.renderQueue.youModifiers = true;
-            profile.renderQueue.gpRange = true;
             profile.renderQueue.grants = true;
 
             this.state = State.View;

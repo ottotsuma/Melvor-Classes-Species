@@ -30,7 +30,6 @@ export interface Single_SpeciesData extends BasicSkillRecipeData {
     name: string;
     media: string;
     standardModifiers: Single_SpeciesModifier[];
-    // hardcoreModifiers: Single_SpeciesModifier[];
     skills: string[];
 }
 
@@ -43,7 +42,6 @@ export class Single_Species extends BasicSkillRecipe {
     skills: string[];
 
     private standardModifiers: Single_SpeciesModifier[];
-    // private hardcoreModifiers: Single_SpeciesModifier[];
 
     public get name() {
         return getLangString(`Profile_Single_Species_${this.localID}`);
@@ -57,8 +55,6 @@ export class Single_Species extends BasicSkillRecipe {
         switch (type) {
             case ModifierType.Standard:
                 return this.standardModifiers;
-            // case ModifierType.Hardcore:
-            //     return this.hardcoreModifiers;
         }
     }
 
@@ -66,7 +62,6 @@ export class Single_Species extends BasicSkillRecipe {
         super(namespace, data);
 
         this.standardModifiers = data.standardModifiers;
-        // this.hardcoreModifiers = data.hardcoreModifiers;
         this.skills = data.skills;
     }
 }
