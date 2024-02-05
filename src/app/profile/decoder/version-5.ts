@@ -2,14 +2,14 @@ import { Profile } from '../profile';
 import { MasteredYou } from '../profile.types';
 import { DecodeVersion } from './version.base';
 
-export class Version4 implements DecodeVersion {
+export class Version5 implements DecodeVersion {
     constructor(private readonly game: Game, private readonly profile: Profile) {}
 
     public decode(reader: SaveWriter) {
         const version = reader.getUint32();
 
-        if (version !== 4) {
-            throw new Error(`Did not read correct version number: ${version} - trying version 4`);
+        if (version !== 5) {
+            throw new Error(`Did not read correct version number: ${version} - trying version 5`);
         }
 
         if (reader.getBoolean()) {
@@ -39,26 +39,14 @@ export class Version4 implements DecodeVersion {
         reader.getComplexMap(reader => {
             const single_species = reader.getNamespacedObject(this.profile.actions);
             const slot = reader.getUint32();
-            let socket: string | Item;
-
-            if (reader.getBoolean()) {
-                socket = reader.getNamespacedObject(this.game.items);
-            }
-
-            let utility: string | Item;
-
-            if (reader.getBoolean()) {
-                utility = reader.getNamespacedObject(this.game.items);
-            }
 
             let masteredYou: MasteredYou;
 
             if (typeof single_species !== 'string') {
+                // @ts-ignore
                 masteredYou = {
                     single_species,
-                    slot,
-                    socket: typeof socket !== 'string' ? socket : undefined,
-                    utility: typeof utility !== 'string' ? utility : undefined
+                    slot
                 };
 
                 this.profile.yous.set(single_species, masteredYou);

@@ -37,8 +37,6 @@ export interface Single_SpeciesData extends BasicSkillRecipeData {
 export interface MasteredYou {
     single_species: Single_Species;
     slot: number;
-    socket: Item;
-    utility: Item;
 }
 
 export class Single_Species extends BasicSkillRecipe {

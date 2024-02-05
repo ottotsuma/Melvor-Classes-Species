@@ -10,7 +10,7 @@ import { ChangeType, ProfileSettings } from './settings';
 import './profile.scss';
 
 export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> {
-    public readonly version = 4;
+    public readonly version = 5;
     public readonly _media = 'https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg';
     public readonly _events = window.mitt();
     public readonly on = this._events.on;
@@ -189,9 +189,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
                                 const masteredYou: MasteredYou = {
                                     single_species,
-                                    slot: you?.slot ?? index + 1,
-                                    socket: undefined,
-                                    utility: undefined
+                                    slot: you?.slot ?? index + 1
                                 };
 
                                 this.yous.set(single_species, masteredYou);
@@ -503,22 +501,6 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         writer.writeComplexMap(this.yous.yous, (key, value, writer) => {
             writer.writeNamespacedObject(key);
             writer.writeUint32(value.slot);
-
-            writer.writeBoolean(value.socket !== undefined);
-
-            if (value.socket) {
-                const socket = this.game.items.getObjectByID(value.socket.id);
-
-                writer.writeNamespacedObject(socket);
-            }
-
-            writer.writeBoolean(value.utility !== undefined);
-
-            if (value.utility) {
-                const utility = this.game.items.getObjectByID(value.utility.id);
-
-                writer.writeNamespacedObject(utility);
-            }
         });
 
         return writer;
