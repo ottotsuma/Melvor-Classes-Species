@@ -2,14 +2,14 @@ import { Profile } from '../profile';
 import { MasteredYou } from '../profile.types';
 import { DecodeVersion } from './version.base';
 
-export class Version4 implements DecodeVersion {
+export class Version3 implements DecodeVersion {
     constructor(private readonly game: Game, private readonly profile: Profile) {}
 
     public decode(reader: SaveWriter) {
         const version = reader.getUint32();
 
-        if (version !== 4) {
-            throw new Error(`Did not read correct version number: ${version} - trying version 4`);
+        if (version !== 3) {
+            throw new Error(`Did not read correct version number: ${version} - trying version 3`);
         }
 
         if (reader.getBoolean()) {
@@ -20,21 +20,6 @@ export class Version4 implements DecodeVersion {
                 this.profile.activeSingle_Species = single_species;
             }
         }
-
-        reader.getArray(reader => {
-            const single_species = reader.getNamespacedObject(this.profile.actions);
-
-            if (typeof single_species !== 'string') {
-                const masteriesUnlocked: boolean[] = [];
-
-                reader.getArray(reader => {
-                    const isUnlocked = reader.getBoolean();
-                    masteriesUnlocked.push(isUnlocked);
-                });
-
-                this.profile.masteriesUnlocked.set(single_species, masteriesUnlocked);
-            }
-        });
 
         reader.getComplexMap(reader => {
             const single_species = reader.getNamespacedObject(this.profile.actions);
@@ -64,18 +49,27 @@ export class Version4 implements DecodeVersion {
                 this.profile.yous.set(single_species, masteredYou);
             }
 
+            const you1 = this.profile.yous.get(1);
+            const you2 = this.profile.yous.get(2);
+
+            this.profile.userInterface.you1.setYou(you1);
+            this.profile.userInterface.you2.setYou(you2);
+
             return {
                 key: single_species,
                 value: masteredYou
             };
         });
 
-        const you1 = this.profile.yous.get(1);
-        const you2 = this.profile.yous.get(2);
+        // Migrate legacy data to new unlocked state.
+        for (const action of this.profile.actions.allObjects) {
+            const masteryLevel = this.profile.getMasteryLevel(action);
+            const isUnlocked = action
+                .modifiers(this.profile.settings.modifierType)
+                .filter(modifier => modifier.level <= 100)
+                .map(modifier => modifier.level <= masteryLevel);
 
-
-        this.profile.userInterface.you1.setYou(you1);
-        this.profile.userInterface.you2.setYou(you2);
-
+            this.profile.masteriesUnlocked.set(action, isUnlocked);
+        }
     }
 }

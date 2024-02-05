@@ -190,6 +190,8 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                                 const masteredYou: MasteredYou = {
                                     single_species,
                                     slot: you?.slot ?? index + 1,
+                                    socket: undefined,
+                                    utility: undefined
                                 };
 
                                 this.yous.set(single_species, masteredYou);
@@ -409,8 +411,8 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             return;
         }
 
-        this.userInterface.you1.updateEnabled(true); // Is always available.
-        this.userInterface.you2.updateEnabled(true); // Is always available.
+        this.userInterface.you1.updateEnabled(true); // You 1 is always available.
+        this.userInterface.you2.updateEnabled(true);
 
         this.userInterface.you1.updateModifiers();
         this.userInterface.you2.updateModifiers();
@@ -501,6 +503,22 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         writer.writeComplexMap(this.yous.yous, (key, value, writer) => {
             writer.writeNamespacedObject(key);
             writer.writeUint32(value.slot);
+
+            writer.writeBoolean(value.socket !== undefined);
+
+            if (value.socket) {
+                const socket = this.game.items.getObjectByID(value.socket.id);
+
+                writer.writeNamespacedObject(socket);
+            }
+
+            writer.writeBoolean(value.utility !== undefined);
+
+            if (value.utility) {
+                const utility = this.game.items.getObjectByID(value.utility.id);
+
+                writer.writeNamespacedObject(utility);
+            }
         });
 
         return writer;
