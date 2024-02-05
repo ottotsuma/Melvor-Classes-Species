@@ -233,7 +233,6 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         super.onLoad();
 
         for (const single_species of this.actions.registeredObjects.values()) {
-            console.log('onLoad', single_species)
             this.renderQueue.actionMastery.add(single_species);
         }
 
@@ -490,15 +489,8 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             writer.writeNamespacedObject(this.activeSingle_Species);
         }
 // mod.manager.getLoadedModList().includes(
-        writer.writeArray(this.actions.allObjects.filter(action => {
-            return action._namespace.name === 'namespace_profile'
-        }), action => {
-            try {
-                console.log('1', action.localID)
-                if(action._namespace.name !== 'namespace_profile') {
-                    console.log('2', action._namespace.name)
-                }
-                
+        writer.writeArray(this.actions.allObjects, action => {
+            try {                
                 writer.writeNamespacedObject(action);
                 
                 const masteriesUnlocked = this.masteriesUnlocked.get(action);
@@ -520,7 +512,6 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
     public decode(reader: SaveWriter, version: number): void {
         super.decode(reader, version);
-        console.log('decode', reader, this)
         const decoder = new Decoder(this.game, this, reader.byteOffset);
 
         decoder.decode(reader);
