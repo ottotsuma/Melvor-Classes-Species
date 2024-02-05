@@ -233,7 +233,6 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         super.onLoad();
 
         for (const single_species of this.actions.registeredObjects.values()) {
-            console.log('onLoad', single_species)
             this.renderQueue.actionMastery.add(single_species);
         }
 
@@ -490,37 +489,43 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             writer.writeNamespacedObject(this.activeSingle_Species);
         }
 // mod.manager.getLoadedModList().includes(
-        writer.writeArray(this.actions.allObjects.filter(action => {
-            return action._namespace.name === 'namespace_profile'
-        }), action => {
-            try {
-                console.log('1', action.localID)
-                if(action._namespace.name !== 'namespace_profile') {
-                    console.log('2', action._namespace.name)
+        // writer.writeArray(this.actions.allObjects.filter(action => {
+        //     return action._namespace.name === 'namespace_profile'
+        // }), action => {
+        //     try {
+        //         writer.writeNamespacedObject(action);  
+        //         const masteriesUnlocked = this.masteriesUnlocked.get(action);
+        //             writer.writeArray(masteriesUnlocked, value => {
+        //                 writer.writeBoolean(value);
+        //             });
+        //     } catch (error) {
+        //         console.log(error, this.actions.allObjects, action, this.masteriesUnlocked.get(action))
+        //     }
+        // });
+
+            writer.writeComplexMap(this.yous.yous,(key, value, writer)  => {
+                try {                
+                        writer.writeNamespacedObject(key);
+                        const masteriesUnlocked = this.masteriesUnlocked.get(key);
+                            writer.writeArray(masteriesUnlocked, value => {
+                                writer.writeBoolean(value);
+                            });
+                } catch (error) {
+                    console.log(error, this.yous.yous, key, this.masteriesUnlocked.get(key))
                 }
-                
-                writer.writeNamespacedObject(action);
-                
-                const masteriesUnlocked = this.masteriesUnlocked.get(action);
-                    writer.writeArray(masteriesUnlocked, value => {
-                        writer.writeBoolean(value);
-                    });
-            } catch (error) {
-                console.log(error, this.actions.allObjects, action, this.masteriesUnlocked.get(action))
-            }
-        });
+                return writer
+            });
+
 
         writer.writeComplexMap(this.yous.yous, (key, value, writer) => {
             writer.writeNamespacedObject(key);
             writer.writeUint32(value.slot);
         });
-
         return writer;
     }
 
     public decode(reader: SaveWriter, version: number): void {
         super.decode(reader, version);
-        console.log('decode', reader, this)
         const decoder = new Decoder(this.game, this, reader.byteOffset);
 
         decoder.decode(reader);
