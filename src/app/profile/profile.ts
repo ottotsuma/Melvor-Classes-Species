@@ -502,6 +502,8 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             }
         });
 
+        // console.log(JSON.stringify(array).replace(/[\[\]\,\"]/g,'').length)
+
         writer.writeComplexMap(this.yous.yous, (key, value, writer) => {
             writer.writeNamespacedObject(key);
             writer.writeUint32(value.slot);
