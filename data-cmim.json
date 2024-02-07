@@ -23,6 +23,11 @@
                                     "value": 20
                                 },
                                 {
+                                    "level": 20,
+                                    "key": "increasedDamageAgainstElves",
+                                    "value": 20
+                                },
+                                {
                                     "level": 40,
                                     "key": "increasedDamageAgainstDragons",
                                     "value": 20
@@ -40,11 +45,6 @@
                                 {
                                     "level": 99,
                                     "key": "increasedDamageAgainstUndead",
-                                    "value": 20
-                                },
-                                {
-                                    "level": 120,
-                                    "key": "increasedDamageAgainstElves",
                                     "value": 20
                                 }
                             ]

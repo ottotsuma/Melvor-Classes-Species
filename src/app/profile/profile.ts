@@ -272,7 +272,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             this.computeProvidedStats(true);
         }
 
-        if(oldLevel < 40 && newLevel > 39) {
+        if(oldLevel < 20 && newLevel > 19) {
             game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, 'Gift from creator');
         }
 

@@ -7,7 +7,7 @@ import { ProfileSkillData } from './profile/profile.types';
 import { languages } from './language';
 import { ProfileTranslation } from './profile/translation/translation';
 import { ProfileSettings } from './profile/settings';
-
+import {classList} from './../../class'
 declare global {
     interface CloudManager {
         hasTotHEntitlement: boolean;
@@ -71,6 +71,7 @@ export class App {
         const music = mod.manager.getLoadedModList().includes('[Myth] Music')
         const ToB = mod.manager.getLoadedModList().includes('Theatre of Blood')
         const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
+        const monad = mod.manager.getLoadedModList().includes('Monad')
 
         if (!kcm) {
             return;
@@ -934,9 +935,6 @@ export class App {
             const cmimGoblinList: [String] = await cmim.getMonstersOfType('Goblin');
             const cmimElfList: [String] = await cmim.getMonstersOfType('Elf');
             const cmimDragonList: [String] = await cmim.getMonstersOfType('Dragon');
-            // cmim.registerOrUpdateType("Fighter", "Fighters", 
-            // cmim.registerOrUpdateType("Mage", "Mages", 
-            // cmim.registerOrUpdateType("Rogue", "Rogues", 
             const cmimFighterList: [String] = await cmim.getMonstersOfType('Fighter');
             const cmimMageList: [String] = await cmim.getMonstersOfType('Mage');
             const cmimRogueList: [String] = await cmim.getMonstersOfType('Rogue');
@@ -1099,8 +1097,94 @@ export class App {
             })
             this.game.profileLog = initialPackage
             initialPackage.add();
-        })
 
+            if(monad) {
+                try {
+                    this.context.gameData.buildPackage((itemPackage: any) => {
+                    const newClasses: any[] = []
+                    const classKeys = Object.keys(classList)
+                    function getModifier(negative: boolean, perc = 0.5) {
+                        let test = ""
+                        Object.keys(game.modifiers).forEach(modifier => {
+                            // 1731 total
+                            if(!test && modifierData[modifier]) {
+                                if(negative && modifierData[modifier].isNegative) {
+                                    if(rollPercentage(perc)) {
+                                        test = modifier
+                                    }
+                                } else if(!negative && !modifierData[modifier].isNegative) {
+                                    if(rollPercentage(perc)) {
+                                        test = modifier
+                                    }
+                                }
+                            }
+                        })
+                        return test ? test : negative ? "increasedAttackIntervalPercent" : "increasedRegenPerDamageTaken"
+                    }
+                    classKeys.forEach(className =>{
+                    const newClass = {
+                        "id": className.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, ""),
+                        "name": className,
+                        // @ts-ignore
+                        "media": classList[className].images && classList[className].images[0] ? classList[className].images[0] : 'assets/bob.png',
+                        "baseExperience": 155,
+                        "maxGP": 551,
+                        "productId": "namespace_profile:"+className.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, ""),
+                        "level": 99,
+                        "skills": ["namespace_profile:Profile"],
+                        "standardModifiers": [
+                            {
+                                "level": 0,
+                                "key": "fighterTraitApplied",
+                                "value": 1
+                            },
+                            {
+                                "level": 1,
+                                "key": getModifier(true, 10),
+                                "value": Math.floor(Math.random() * 20) + 1
+                            },
+                            {
+                                "level": 20,
+                                "key": getModifier(false),
+                                "value": Math.floor(Math.random() * 20) + 1
+                            },
+                            {
+                                "level": 40,
+                                "key": getModifier(false),
+                                "value": Math.floor(Math.random() * 20) + 1
+                            },
+                            {
+                                "level": 60,
+                                "key": getModifier(false),
+                                "value": Math.floor(Math.random() * 20) + 1
+                            },
+                            {
+                                "level": 80,
+                                "key": getModifier(false),
+                                "value": Math.floor(Math.random() * 20) + 1
+                            },
+                            {
+                                "level": 99,
+                                "key": getModifier(false),
+                                "value": Math.floor(Math.random() * 20) + 1
+                            }
+                        ]
+                    }
+                    newClasses.push(newClass)
+                    })
+                    const newsilldata = {
+                        "skillID": "namespace_profile:Profile",
+                        "data": {
+                            "classes": newClasses
+                        }
+                    }
+                    itemPackage.skillData.add(newsilldata)
+                    }).add();
+                    } catch (error) {
+                    console.log(error)
+                }
+            }
+        })
         // this.context.onCharacterLoaded(() => {
         //     const guides = document.getElementById('tutorial-page-Woodcutting').parentElement
         //     ui.createStatic('#tutorial-page-Profile', guides);

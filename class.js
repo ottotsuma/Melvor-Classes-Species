@@ -1,63 +1,4 @@
 export const classList = {
-    // Generally should be "Team" not "Self"
-    Mage: {
-      name: "Mage",
-      stats: {
-        magic: 1,
-      },
-      team: "Magic +1.",
-  
-      images: [
-        "https://ottotsuma.github.io/images/people/b5185cca016eecd75b62833fdf2cfc43.jpg",
-      ],
-      notes:
-        "Solve all your problems with magic. Mages are the basic class for magical classes.",
-      tier: "normal",
-      description: "Solve all your problems with magic. Mages are the basic class for magical classes.",
-    },
-    Fighter: {
-      stats: {
-        strength: 1,
-      },
-      team: "Strength +1.",
-  
-      images: [
-        "https://ottotsuma.github.io/images/people/f7327f5068dcdd7e858b87e1da393c62.jpg",
-      ],
-      notes: "Fighters are the base class for physical classes.",
-      tier: "normal",
-    },
-    Rogue: {
-      stats: {
-        dexterity: 1,
-      },
-      team: "Dexterity +1.",
-  
-      images: [
-        "https://ottotsuma.github.io/images/people/0156c7576b1704ee70a55e4d1bd0db74.jpg",
-      ],
-      notes: `What doesn't kill you makes you stronger. Combine with beast souls to gain their power.`,
-      tier: "normal",
-    },
-    Kʼawiil: {
-      stats: {},
-      team: "",
-      notes: "lightning, serpents, fertility and maize",
-      tier: "legendary",
-      description: ""
-    },
-    Necromancer: {
-      name: "Necromancer",
-      stats: {},
-      team: "Undead slowly passively heal within range of the Necromancer.",
-      images: [
-        "https://ottotsuma.github.io/images/people/necro.jpg",
-        "https://ottotsuma.github.io/images/people/oldmage.jpg",
-      ],
-      notes: "",
-      tier: "normal",
-      description: "A Mage who supposed practice of communicating with the dead, especially in order to predict the future. History dose repeat itself, but most Necromancers just end up commanding hoards of undead into battle rather then winning the lottery.",
-    },
     "Shield Warrior": {
       stats: {
         "Shield Skills": "+1",
@@ -94,15 +35,6 @@ export const classList = {
       description: "",
       tier: "",
     },
-    Cursemancer: {
-      stats: {},
-      team: "Aggro skills are slightly more effective.",
-  
-      images: [],
-      description: "",
-      notes: "Can curse up a storm of colorful language.",
-      tier: "",
-    },
     Witch: {
       stats: {},
       team: "The more witches in your team, the stronger Coven spells become.",
@@ -119,17 +51,6 @@ export const classList = {
       notes: "",
       images: [],
       tier: "normal",
-    },
-    Paladin: {
-      name: "Paladin",
-      team: "Unholy protection, unholy attacks deal 3% less.",
-      self: "Can use holy objects, cannot use unholy objects.",
-      description: "",
-      notes: "",
-      images: [],
-      tier: "normal",
-      stats: {},
-      InnateSkills: ['Holy Practitioner'],
     },
     "Fallen Paladin": {
       name: "Fallen Paladin",
@@ -153,16 +74,6 @@ export const classList = {
       tier: "normal",
       description: "",
     },
-    Knight: {
-      name: "Knight",
-      stats: {},
-      team: "Test",
-  
-      images: [],
-      notes: "",
-      tier: "normal",
-      description: "Test description",
-    },
     Pyromancer: {
       stats: {},
       team: "Fire spells cost 5% less.",
@@ -184,16 +95,6 @@ export const classList = {
       notes: "",
       tier: "normal",
     },
-    Scout: {
-      stats: {
-        sense: 2,
-      },
-      team: "Sense +1.",
-      images: [],
-      description: "",
-      notes: "",
-      tier: "normal",
-    },
     Thief: {
       stats: {
         dexterity: 1,
@@ -204,15 +105,6 @@ export const classList = {
       notes: "",
       tier: "normal",
     },
-    Assassin: {
-      stats: {},
-      team: "Damage from sneak attacks is increased.",
-  
-      images: [],
-      description: "",
-      notes: "",
-      tier: "rare",
-    },
     "Knight Commander": {
       stats: {},
       team: "Commanded units HP is increased.",
@@ -221,32 +113,7 @@ export const classList = {
       notes: "",
       tier: "rare",
     },
-    Pirate: {
-      stats: {},
-      team: "🏴‍☠️ Swimming +5% movement speed.",
-      images: ["https://ottotsuma.github.io/images/people/f93a36fab2810f29163626fd22075750.jpg", "https://ottotsuma.github.io/images/ships/66ac653f7b03e727d39d9072dfb79887.jpg"], // 8169a4b7ab02aa720cafb7b0ea803385, 2db7f9e0803d4d7f5a77990ae3115354
-      description: "",
-      notes: "",
-      tier: "rare",
-    },
-    Witchdoctor: {
-      stats: {},
-      team: "",
-      images: [],
-      description: "",
-      notes: "",
-      tier: "rare",
-    },
     Priest: {
-      stats: {},
-      team: "",
-      self: "Can use holy objects, cannot use unholy objects",
-      images: [],
-      description: "",
-      notes: "",
-      tier: "rare",
-    },
-    Inquisitor: {
       stats: {},
       team: "",
       self: "Can use holy objects, cannot use unholy objects",
@@ -263,15 +130,6 @@ export const classList = {
       description: "",
       notes: "",
       tier: "rare",
-    },
-    Viking: {
-      stats: {},
-      team: "",
-      self: "Swimming +5% movement speed.",
-      images: [],
-      description: "",
-      notes: "",
-      tier: "epic",
     },
     "Blood Warrior": {
       stats: {},
@@ -290,25 +148,6 @@ export const classList = {
       description: "",
       notes: "",
       tier: "epic",
-    },
-    King: {
-      stats: {
-        HP: "*2",
-        MP: "*1.5",
-        Vitality: "*1.10",
-        Endurance: "*1.10",
-        Willpower: "*1.10",
-        Magic: "*1.10",
-        Strength: "*1.10",
-        Dexterity: "*1.10",
-        Sense: "*1.10",
-        Charisma: "*1.10",
-      },
-      team: "",
-      self: "All Stats + 10%, HP + 100%, MP + 50%, movement speed -10%.",
-      images: ["https://ottotsuma.github.io/images/people/king.jpg"],
-      notes: "Born to rule.",
-      tier: "legendary",
     },
     Demiurge: {
       stats: {},
@@ -343,19 +182,6 @@ export const classList = {
       notes:
         "phenix is a long-lived bird that is cyclically regenerated or reborn.",
       tier: "epic",
-    },
-    Druid: {
-      name: "Druid",
-      stats: {
-      },
-      team: "",
-      images: [
-        "",
-      ],
-      notes:
-        "",
-      tier: "rare",
-      description: "",
     },
     Swordsmen: {
       name: "Swordsmen",
@@ -409,19 +235,6 @@ export const classList = {
       tier: "normal",
       description: "",
     },
-    archer: {
-      name: "archer",
-      stats: {
-      },
-      team: "",
-      images: [
-        "",
-      ],
-      notes:
-        "",
-      tier: "normal",
-      description: "",
-    },
     bowman: {
       name: "bowman",
       stats: {
@@ -461,19 +274,6 @@ export const classList = {
       tier: "normal",
       description: "",
     },
-    Wizard: {
-      name: "Wizard",
-      stats: {
-      },
-      team: "",
-      images: [
-        "",
-      ],
-      notes:
-        "",
-      tier: "normal",
-      description: "",
-    },
     Sage: {
       name: "Sage",
       stats: {
@@ -502,19 +302,6 @@ export const classList = {
     },
     Whitesmith: {
       name: "Whitesmith",
-      stats: {
-      },
-      team: "",
-      images: [
-        "",
-      ],
-      notes:
-        "",
-      tier: "normal",
-      description: "",
-    },
-    Alchemist: {
-      name: "Alchemist",
       stats: {
       },
       team: "",
@@ -593,19 +380,6 @@ export const classList = {
     },
     Clown: {
       name: "Clown",
-      stats: {
-      },
-      team: "",
-      images: [
-        "",
-      ],
-      notes:
-        "",
-      tier: "normal",
-      description: "",
-    },
-    Monk: {
-      name: "Monk",
       stats: {
       },
       team: "",
@@ -812,19 +586,6 @@ export const classList = {
       tier: "normal",
       description: "",
     },
-    Scholar: {
-      name: "Scholar",
-      stats: {
-      },
-      team: "",
-      images: [
-        "",
-      ],
-      notes:
-        "",
-      tier: "normal",
-      description: "",
-    },
     "Demon Hunter": {
       name: "Demon Hunter",
       stats: {
@@ -928,20 +689,6 @@ export const classList = {
         "",
       tier: "normal",
       description: "",
-    },
-    "Tentacle Summoner": {
-      name: "Zealot",
-      stats: {
-        charisma: -3
-      },
-      team: "Charisma -3.",
-      images: [
-        "",
-      ],
-      notes:
-        "",
-      tier: "epic",
-      description: "An atypical summoner who focuses on a single type of summon, tentacles. Unlike the usual kind found attached to monsters or sea creatures of the world the tentacles summoned by this summoner has no greater body to which it attaches to.",
     },
     "Witcher": {
       name: "Witcher",
