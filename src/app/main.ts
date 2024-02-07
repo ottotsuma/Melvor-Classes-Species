@@ -1097,94 +1097,94 @@ export class App {
             })
             this.game.profileLog = initialPackage
             initialPackage.add();
+        })
 
-            if(monad) {
-                try {
-                    this.context.gameData.buildPackage((itemPackage: any) => {
-                    const newClasses: any[] = []
-                    const classKeys = Object.keys(classList)
-                    function getModifier(negative: boolean, perc = 0.5) {
-                        let test = ""
-                        Object.keys(game.modifiers).forEach(modifier => {
-                            // 1731 total
-                            if(!test && modifierData[modifier]) {
-                                if(negative && modifierData[modifier].isNegative) {
-                                    if(rollPercentage(perc)) {
-                                        test = modifier
-                                    }
-                                } else if(!negative && !modifierData[modifier].isNegative) {
-                                    if(rollPercentage(perc)) {
-                                        test = modifier
-                                    }
+        if(monad) {
+            try {
+                this.context.gameData.buildPackage((itemPackage: any) => {
+                const newClasses: any[] = []
+                const classKeys = Object.keys(classList)
+                function getModifier(negative: boolean, perc = 0.5) {
+                    let test = ""
+                    Object.keys(game.modifiers).forEach(modifier => {
+                        // 1731 total
+                        if(!test && modifierData[modifier]) {
+                            if(negative && modifierData[modifier].isNegative) {
+                                if(rollPercentage(perc)) {
+                                    test = modifier
+                                }
+                            } else if(!negative && !modifierData[modifier].isNegative) {
+                                if(rollPercentage(perc)) {
+                                    test = modifier
                                 }
                             }
-                        })
-                        return test ? test : negative ? "increasedAttackIntervalPercent" : "increasedRegenPerDamageTaken"
-                    }
-                    classKeys.forEach(className =>{
-                    const newClass = {
-                        "id": className.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, ""),
-                        "name": className,
-                        // @ts-ignore
-                        "media": classList[className].images && classList[className].images[0] ? classList[className].images[0] : 'assets/bob.png',
-                        "baseExperience": 155,
-                        "maxGP": 551,
-                        "productId": "namespace_profile:"+className.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, ""),
-                        "level": 99,
-                        "skills": ["namespace_profile:Profile"],
-                        "standardModifiers": [
-                            {
-                                "level": 0,
-                                "key": "fighterTraitApplied",
-                                "value": 1
-                            },
-                            {
-                                "level": 1,
-                                "key": getModifier(true, 10),
-                                "value": Math.floor(Math.random() * 20) + 1
-                            },
-                            {
-                                "level": 20,
-                                "key": getModifier(false),
-                                "value": Math.floor(Math.random() * 20) + 1
-                            },
-                            {
-                                "level": 40,
-                                "key": getModifier(false),
-                                "value": Math.floor(Math.random() * 20) + 1
-                            },
-                            {
-                                "level": 60,
-                                "key": getModifier(false),
-                                "value": Math.floor(Math.random() * 20) + 1
-                            },
-                            {
-                                "level": 80,
-                                "key": getModifier(false),
-                                "value": Math.floor(Math.random() * 20) + 1
-                            },
-                            {
-                                "level": 99,
-                                "key": getModifier(false),
-                                "value": Math.floor(Math.random() * 20) + 1
-                            }
-                        ]
-                    }
-                    newClasses.push(newClass)
-                    })
-                    const newsilldata = {
-                        "skillID": "namespace_profile:Profile",
-                        "data": {
-                            "classes": newClasses
                         }
-                    }
-                    itemPackage.skillData.add(newsilldata)
-                    }).add();
-                    } catch (error) {
-                    console.log(error)
+                    })
+                    return test ? test : negative ? "increasedAttackIntervalPercent" : "increasedRegenPerDamageTaken"
                 }
+                classKeys.forEach(className =>{
+                const newClass = {
+                    "id": className.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, ""),
+                    "name": className,
+                    // @ts-ignore
+                    "media": classList[className].images && classList[className].images[0] ? classList[className].images[0] : 'assets/bob.png',
+                    "baseExperience": 155,
+                    "maxGP": 551,
+                    "productId": "namespace_profile:"+className.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, ""),
+                    "level": 99,
+                    "skills": ["namespace_profile:Profile"],
+                    "standardModifiers": [
+                        {
+                            "level": 0,
+                            "key": "fighterTraitApplied",
+                            "value": 1
+                        },
+                        {
+                            "level": 1,
+                            "key": getModifier(true, 10),
+                            "value": Math.floor(Math.random() * 20) + 1
+                        },
+                        {
+                            "level": 20,
+                            "key": getModifier(false),
+                            "value": Math.floor(Math.random() * 20) + 1
+                        },
+                        {
+                            "level": 40,
+                            "key": getModifier(false),
+                            "value": Math.floor(Math.random() * 20) + 1
+                        },
+                        {
+                            "level": 60,
+                            "key": getModifier(false),
+                            "value": Math.floor(Math.random() * 20) + 1
+                        },
+                        {
+                            "level": 80,
+                            "key": getModifier(false),
+                            "value": Math.floor(Math.random() * 20) + 1
+                        },
+                        {
+                            "level": 99,
+                            "key": getModifier(false),
+                            "value": Math.floor(Math.random() * 20) + 1
+                        }
+                    ]
+                }
+                newClasses.push(newClass)
+                })
+                const newsilldata = {
+                    "skillID": "namespace_profile:Profile",
+                    "data": {
+                        "classes": newClasses
+                    }
+                }
+                itemPackage.skillData.add(newsilldata)
+                }).add();
+                } catch (error) {
+                console.log(error)
             }
-        })
+        }
         // this.context.onCharacterLoaded(() => {
         //     const guides = document.getElementById('tutorial-page-Woodcutting').parentElement
         //     ui.createStatic('#tutorial-page-Profile', guides);

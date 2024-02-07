@@ -34,7 +34,7 @@ export class Version5 implements DecodeVersion {
 
                 this.profile.masteriesUnlocked.set(single_species, masteriesUnlocked);
             } else {
-                console.log(single_species)
+                console.log('removing: ',single_species)
                 reader.getArray(reader => {
                     const isUnlocked = reader.getBoolean();
                 });
