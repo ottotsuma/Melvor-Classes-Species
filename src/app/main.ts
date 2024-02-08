@@ -890,9 +890,8 @@ export class App {
                                 // game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
                                 game.profile.addMasteryPoolXP(totalMasteryExp1)
                             }
-                            return returnedValue
                         } catch (error) {
-                            return returnedValue
+                            console.log(SkillObject._localID, error)
                         }
                     })
                 } catch (error) {
