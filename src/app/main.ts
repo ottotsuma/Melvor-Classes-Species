@@ -1099,7 +1099,7 @@ export class App {
             initialPackage.add();
         })
 
-        if(monad) {
+        if(false && monad) {
             try {
                 this.context.gameData.buildPackage((itemPackage: any) => {
                 const newClasses: any[] = []
