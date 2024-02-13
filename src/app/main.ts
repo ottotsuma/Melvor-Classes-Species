@@ -844,20 +844,15 @@ export class App {
                 // {"melvorAoD:Cartography" => Cartography}
                 // {"melvorAoD:Archaeology" => Archaeology}
                 // {"mythMusic:Music" => Music}
-                // {"namespace_thuum:Thuum" => Thuum}
                 // namespace_profile:Profile_Token
                 const prototype = Object.getPrototypeOf(game.skills.getObjectByID(SkillObject.id));
                 try {
                     this.context.patch(prototype.constructor, 'addXP').after(function (returnedValue: number, amount: number, masteryAction: string) {
-                        try {
-                            if(rollPercentage(0.1)) {
-                                game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true, masteryAction);
-                            } else if (rollPercentage(0.01)) {
-                                game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, masteryAction);
-                            }
+                        try {                            
                             const single_species = game.profile.yous.get(1) // human
                             const single_class = game.profile.yous.get(2) // knight
                             const profileLevel = game.profile._level
+                            // console.log('addXP', returnedValue, amount, masteryAction, single_species, single_species && single_species.single_species.skills.includes(SkillObject.id), SkillObject)
                             if (single_species && single_species.single_species.skills.includes(SkillObject.id)) {
                                 let exp1 = 0
                                 exp1 = Math.floor(single_species.single_species.baseExperience) || 0
@@ -889,6 +884,12 @@ export class App {
                                 // game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                                 // game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
                                 game.profile.addMasteryPoolXP(totalMasteryExp1)
+
+                                if(rollPercentage(0.1)) {
+                                    game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true, masteryAction);
+                                } else if (rollPercentage(0.01)) {
+                                    game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, masteryAction);
+                                }
                             }
                         } catch (error) {
                             console.log(SkillObject._localID, error)
