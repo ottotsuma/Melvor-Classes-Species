@@ -304,7 +304,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         this.sortMilestones();
 
         for (const action of this.actions.allObjects) {
-            this.masteriesUnlocked.set(action, [true, true, false, false, false]);
+            this.masteriesUnlocked.set(action, [true, true, false, false, false, false, false]);
         }
 
         const capesToExclude = ['melvorF:Max_Skillcape'];
