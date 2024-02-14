@@ -35,12 +35,10 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
             masteryXP: number,
             baseMasteryXP: number,
             masteryPoolXP: number,
-            // interval: number
         ) {
             this.xpIcon.setXP(xp, baseXP);
             this.masteryIcon.setXP(masteryXP, baseMasteryXP);
             this.masteryPoolIcon.setXP(masteryPoolXP);
-            // this.intervalIcon.setInterval(interval);
         },
         Master: function () {
             profile.Master(single_species);

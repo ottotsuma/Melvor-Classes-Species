@@ -436,18 +436,20 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         }
 
         for (const component of this.userInterface.species.values()) {
-            const masteryXP = this.getMasteryXPToAddForAction(
-                component.single_species, 0
-            );
+            let masteryExp1 = Math.floor(component.single_species.baseExperience)
+            masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5)
+            let skillExp1 = masteryExp1 + ((masteryExp1 / 100) * 3)
+            const profileLevel = game.profile._level
+            const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP
+            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel
+            const masteryXP = totalMasteryExp1
 
-            const baseMasteryXP = this.getBaseMasteryXPToAddForAction(
-                component.single_species, 0
-            );
+            const baseMasteryXP = Math.floor(component.single_species.baseExperience)
 
             const poolXP = this.getMasteryXPToAddToPool(masteryXP);
 
             component.updateGrants(
-                this.modifyXP(component.single_species.baseExperience, component.single_species),
+                this.modifyXP(component.single_species.baseExperience, component.single_species) + profileLevel,
                 component.single_species.baseExperience,
                 masteryXP,
                 baseMasteryXP,
