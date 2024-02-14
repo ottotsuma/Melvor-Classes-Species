@@ -844,7 +844,7 @@ export class App {
         this.context.onModsLoaded(async () => {              
               function addXP(returnedValue: number, amount: number, masteryAction: any) {                
                 skillsList.forEach(skill => {
-                    if(skill.id === game.activeAction.id) {
+                    if(game.activeAction && skill.id === game.activeAction.id) {
                         const single_species = game.profile.yous.get(1) // human
                         const single_class = game.profile.yous.get(2) // knight
                         const profileLevel = game.profile._level
