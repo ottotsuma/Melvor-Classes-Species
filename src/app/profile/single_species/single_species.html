@@ -18,11 +18,14 @@
                 <div style="display: flex;
                 flex-direction: column;
                 align-items: center;" class="col-12">
-                    <button class="btn btn-alt-info ml-3 mr-3 mb-3 mt-1" @click="Master()" :disabled="disabled">
+                    <button class="btn btn-alt-success ml-3 mr-3 mb-3 mt-1" @click="Master()" :disabled="disabled">
                         {{ disabled ? getLangString('Profile_Mastered') : getLangString('Profile_Equip') }}
                     </button>
                     <button class="btn btn-alt-info ml-3 mr-3 mb-3 mt-1" @click="mastery()">
                         {{ getLangString('Profile_Mastery') }}
+                    </button>
+                    <button class="btn btn-alt-info ml-3 mr-3 mb-3 mt-1" @click="Explain()">
+                        {{ getLangString('Profile_Explain') }}
                     </button>
                 </div>
                 <div class="col-12">

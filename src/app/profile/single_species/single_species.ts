@@ -48,6 +48,9 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
         mastery: function () {
             profile.unlockMastery(single_species);
         },
+        Explain: function () {
+            profile.Explain(single_species);
+        },
         updateDisabled: function () {
             this.disabled = profile.yous.isMastered(single_species);
         },

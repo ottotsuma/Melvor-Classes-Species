@@ -78,7 +78,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         if (!canAfford) {
             let html = `
             <h5 class="font-w400 text-combat-smoke font-size-sm mb-2">
-                You cannot afford to Master this you:
+                You cannot afford to Master this:
                 <img class="single_species-icon align-middle" src="${single_species.media}" />
                 ${single_species.name}
             </h5>
@@ -212,6 +212,56 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                 }
             });
         }
+    }
+    public Explain(single_species: Single_Species) {
+        let html = `<div>${single_species.name}</div><br />`;
+        html += `<img style="width: 20%;" class="single_species-img" src="${single_species.media}" /><br />`;
+        // const images = single_species.skills.map(media => {
+        //     try {
+        //         if(!/(jpg|gif|png|JPG|GIF|PNG|JPEG|jpeg|svg)$/.test(media)) {
+        //             return game.skills.find(skill => skill.id === media)?.media;
+        //         } else {
+        //             return media
+        //         }
+        //     } catch (error) {
+        //         return "https://cdn2-main.melvor.net/assets/april/images/lemon.jpg"
+        //     }
+        // });
+        let skills = single_species.skills.map(media => {
+            try {
+                if(!/(jpg|gif|png|JPG|GIF|PNG|JPEG|jpeg|svg)$/.test(media)) {
+                    const ans = {
+                        name: game.skills.find(skill => skill.id === media)?.name,
+                        media: game.skills.find(skill => skill.id === media)?.media
+                    }
+                    return ans
+                } else {
+                    return ''
+                }
+            } catch (error) {
+                return ''
+            }
+        });
+        // images.forEach(image => {
+        //     html += `<img class="skill-icon-xs m-2" src="${image}" />`;
+        // });
+        skills.forEach(skill => {
+            if(skill) {
+                html += `<div><small>You can gain mastery XP for ${single_species.name} from ${skill.name}</small><img class="skill-icon-xs m-2" src="${skill.media}" /></div><br />`;
+            }
+        });        
+        if(single_species._localID === "Angel") {
+            html += `<small>${getLangString('Profile_Angels_burying')}</small><br />`
+        }
+        html += `<small>You can gain mastery & skill XP for ${single_species.name} by killing monsters</small>`;
+
+        html = `<div class="explain-wrap">${html}</div>`
+        
+        SwalLocale.fire({
+            html,
+            showCancelButton: false,
+            confirmButtonText: 'Ok'
+        });
     }
 
     public unlockMastery(single_species: Single_Species) {
