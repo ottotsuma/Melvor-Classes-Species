@@ -436,38 +436,31 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         }
 
         for (const component of this.userInterface.species.values()) {
-                    const single_species = component.single_species
-                    const combatLevel = game.combat.enemy.monster.combatLevel
-                    const profileLevel = game.profile._level
-                    let exp1 = 0
-                    if (single_species) {
-                        exp1 = Math.floor((combatLevel / single_species.baseExperience) + single_species.baseExperience) || 0
-                    }
-    
-                    let skillExp1 = exp1 || 0
-                    let masteryExp1 = exp1 || 0
-    
-                    if (game.profile.isPoolTierActive(1)) {
-                        skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-                    }
-                    if (game.profile.isPoolTierActive(1)) {
-                        masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-                    }
-    
-                    const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
-                    const totalExp = skillExp1 + (((skillExp1) / 100) * globalEXPmod) || 0
-    
-                    const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
-    
-                    const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
+            const single_species = component.single_species
+            const combatLevel = game.combat.enemy.monster.combatLevel
+            const profileLevel = game.profile._level
+            let exp1 = 0
+            if (single_species) {
+                exp1 = Math.floor((combatLevel / single_species.baseExperience) + single_species.baseExperience) || 0
+            }
 
-            // old
-            // let masteryExp1 = Math.floor(component.single_species.baseExperience)
-            // masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5)
-            // let skillExp1 = masteryExp1 + ((masteryExp1 / 100) * 3)
-            // const profileLevel = game.profile._level
-            // const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP
-            // const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel
+            let skillExp1 = exp1 || 0
+            let masteryExp1 = exp1 || 0
+
+            if (game.profile.isPoolTierActive(1)) {
+                skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
+            }
+            if (game.profile.isPoolTierActive(1)) {
+                masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
+            }
+
+            const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
+            const totalExp = skillExp1 + (((skillExp1) / 100) * globalEXPmod) || 0
+
+            const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
+
+            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
+
             const masteryXP = totalMasteryExp1
 
             const baseMasteryXP = Math.floor(component.single_species.baseExperience)
