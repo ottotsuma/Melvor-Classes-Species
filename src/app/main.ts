@@ -1232,7 +1232,7 @@ export class App {
             try {
                 // if (game && game.activeAction && game.activeAction._localID) {
                 // if (game.activeAction._localID === "Combat") {
-                const combatLevel = game.combat.enemy.monster.combatLevel
+                const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
                 // const profile = game.skills.getObjectByID('namespace_profile:Profile') as Profile;
                 // game.profile.isPoolTierActive(0) // 3% skill exp
                 // game.profile.isPoolTierActive(1) // 5% mastery exp

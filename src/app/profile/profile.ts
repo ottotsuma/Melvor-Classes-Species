@@ -437,7 +437,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
         for (const component of this.userInterface.species.values()) {
             const single_species = component.single_species
-            const combatLevel = game.combat.enemy.monster.combatLevel
+            const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
             const profileLevel = game.profile._level
             let exp1 = 0
             if (single_species) {
