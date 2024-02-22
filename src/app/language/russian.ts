@@ -178,4 +178,5 @@ Single_Species_ShieldWarrior:"ShieldWarrior",
     Single_Species_Esper:"Esper",
 Explain: "Explain",
 Angels_burying: "Angels can also gain mastery XP by burying bones",
+Single_Species_Gambler:"Gambler",
 };
