@@ -1122,13 +1122,13 @@ export class App {
                     return test ? test : negative ? "increasedAttackIntervalPercent" : "increasedRegenPerDamageTaken"
                 }
                 const randomClass = {
-                    "id": 'Random'.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, ""),
+                    "id": 'Gambler',
                     "name": 'Gambler',
                     // @ts-ignore
                     "media": 'https://static.vecteezy.com/system/resources/previews/015/081/534/original/white-rolling-dice-3d-rendering-isometric-icon-png.png',
                     "baseExperience": 155,
                     "maxGP": 551,
-                    "productId": "namespace_profile:"+'Random'.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, ""),
+                    "productId": "namespace_profile:Gambler",
                     "level": 99,
                     "skills": ["namespace_profile:Profile"],
                     "standardModifiers": [
