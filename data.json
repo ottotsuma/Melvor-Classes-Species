@@ -883,13 +883,13 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedFlatMeleeDefenceBonus",
-                                    "value": 500
+                                    "key": "increasedFlatMeleeDefenceBonusPer30Defence",
+                                    "value": 125
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedFlatRangedDefenceBonus",
-                                    "value": 500
+                                    "key": "increasedFlatRangedDefenceBonusPer30Defence",
+                                    "value": 125
                                 },
                                 {
                                     "level": 60,

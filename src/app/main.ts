@@ -72,6 +72,27 @@ export class App {
         const ToB = mod.manager.getLoadedModList().includes('Theatre of Blood')
         const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
         const monad = mod.manager.getLoadedModList().includes('Monad')
+        
+
+        modifierData.increasedFlatRangedDefenceBonusPer30Defence = {
+            get langDescription() {
+              return getLangString('increasedFlatRangedDefenceBonusPer30Defence');
+            },
+            description: '${value} increased flat ranged defence per 30 defence levels',
+            isSkill: false,
+            isNegative: false,
+            tags: ['combat']
+          };
+
+        modifierData.increasedFlatMeleeDefenceBonusPer30Defence = {
+            get langDescription() {
+              return getLangString('increasedFlatMeleeDefenceBonusPer30Defence');
+            },
+            description: '${value} increased flat melee defence per 30 defence levels',
+            isSkill: false,
+            isNegative: false,
+            tags: ['combat']
+          };
 
         if (!kcm) {
             return;
@@ -899,7 +920,17 @@ export class App {
                     console.log(error)
                 }
             })
+            // @ts-ignore
+            this.context.patch(Character, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
+                    return meleeDefenceBonus + Math.floor(game.combat.player.levels.Defence/30) * this.modifiers.increasedFlatMeleeDefenceBonusPer30Defence
+            })
 
+        // @ts-ignore
+        this.context.patch(Character, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) {
+            return rangedDefenceBonus + Math.floor(game.combat.player.levels.Defence/30) * this.modifiers.increasedFlatRangedDefenceBonusPer30Defence
+                    })
+
+            
             // Giving monsters classes
             game.monsters.forEach(monster => {
                 if (monster.attackType === "magic") {
@@ -1212,6 +1243,7 @@ export class App {
         this.patchGamemodes(this.game.profile);
         this.patchUnlock(this.game.profile);
         this.initCompatibility(this.game.profile);
+        this.patchCombatModifiersReset();
 
         this.game.profile.userInterface = this.initInterface(this.game.profile);
         this.game.profile.initSettings(settings);
@@ -1357,6 +1389,12 @@ export class App {
                 profile.increasedLevelCap = this.game.attack.increasedLevelCap;
             }
         });
+    }
+
+    private patchCombatModifiersReset() {
+        this.context.patch(CombatModifiers, "reset").after(function () {
+            this.increasedFlatMeleeDefenceBonusPer30Defence ??= 0;
+         });
     }
 
     private isProfileEvent(

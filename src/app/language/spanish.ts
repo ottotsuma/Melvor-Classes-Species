@@ -174,6 +174,8 @@ Single_Species_ShieldWarrior:"ShieldWarrior",
 Explain: "Explain",
 Angels_burying: "Angels can also gain mastery XP by burying bones",
 Single_Species_Gambler:"Gambler",
+ITEM_NAME_increasedFlatMeleeDefenceBonusPer30Defence: "increasedFlatMeleeDefenceBonusPer30Defence",
+ITEM_NAME_increasedFlatRangedDefenceBonusPer30Defence: "increasedFlatRangedDefenceBonusPer30Defence"
   }
 
   
