@@ -333,17 +333,17 @@
                                 },
                                 {
                                     "level": 60,
+                                    "key": "increasedDamageReductionWithActivePrayer",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
                                     "key": "applyMagicMasterRelicEffect",
                                     "value": 1
                                 },
                                 {
-                                    "level": 80,
-                                    "key": "allowAttackAugmentingMagic",
-                                    "value": 1
-                                },
-                                {
                                     "level": 99,
-                                    "key": "allowNonMagicCurses",
+                                    "key": "allowAttackAugmentingMagic",
                                     "value": 1
                                 }
                             ]
@@ -435,7 +435,7 @@
                                 {
                                     "level": 80,
                                     "key": "increasedChanceToApplyStackOfDeathMark",
-                                    "value": 3
+                                    "value": 60
                                 },
                                 {
                                     "level": 99,

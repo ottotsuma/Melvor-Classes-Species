@@ -501,7 +501,7 @@
                                 {
                                     "level": 60,
                                     "key": "increasedThievingAreaUniqueChance",
-                                    "value": 10
+                                    "value": 5
                                 },
                                 {
                                     "level": 80,
@@ -594,12 +594,12 @@
                                 {
                                     "level": 40,
                                     "key": "increasedBonusCoalMining",
-                                    "value": 4
+                                    "value": 2
                                 },
                                 {
                                     "level": 60,
                                     "key": "increasedDamageReduction",
-                                    "value": 10
+                                    "value": 5
                                 },
                                 {
                                     "level": 80,
@@ -638,7 +638,7 @@
                                 {
                                     "level": 20,
                                     "key": "decreasedSummoningShardCost",
-                                    "value": 5
+                                    "value": 3
                                 },
                                 {
                                     "level": 40,
@@ -686,28 +686,29 @@
                                 },
                                 {
                                     "level": 20,
+                                    "key": "increasedSkillMasteryXPPerArachi",
+                                    "value": 10,
+                                    "skill": "melvorD:Runecrafting"
+                                },
+                                {
+                                    "level": 40,
                                     "key": "increasedRunecraftingEssencePreservation",
                                     "value": 20
                                 },
                                 {
-                                    "level": 40,
+                                    "level": 60,
                                     "key": "increasedMagicLifesteal",
                                     "value": 10
                                 },
                                 {
-                                    "level": 60,
+                                    "level": 80,
                                     "key": "giveRandomComboRunesRunecrafting",
                                     "value": 1
                                 },
                                 {
-                                    "level": 80,
+                                    "level": 99,
                                     "key": "increasedMaxHitpoints",
                                     "value": 20
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedXPFromMasteryTokens",
-                                    "value": 1
                                 }
                             ]
                         },
@@ -883,13 +884,13 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedFlatMeleeDefenceBonusPer30Defence",
-                                    "value": 125
+                                    "key": "increasedFlatMeleeDefenceBonusPerDefence",
+                                    "value": 2
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedFlatRangedDefenceBonusPer30Defence",
-                                    "value": 125
+                                    "key": "increasedFlatRangedDefenceBonusPerDefence",
+                                    "value": 2
                                 },
                                 {
                                     "level": 60,
@@ -951,8 +952,8 @@
                                 },
                                 {
                                     "level": 99,
-                                    "key": "allowNonMagicCurses",
-                                    "value": 1
+                                    "key": "increasedMagicDamageBonus",
+                                    "value": 10
                                 }
                             ]
                         },
@@ -961,7 +962,7 @@
                             "name": "Scout",
                             "media": "https://ottotsuma.github.io/images/people/2e0fee63d593cea1aada59d3f8f2a815.jpg",
                             "baseExperience": 21,
-                            "productId": "namespace_profile:Wizard",
+                            "productId": "namespace_profile:Scout",
                             "level": 20,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png"
@@ -1176,8 +1177,8 @@
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedGlobalAccuracy",
-                                    "value": 10
+                                    "key": "increasedAltMagicSkillXP",
+                                    "value": 5
                                 },
                                 {
                                     "level": 60,
@@ -1191,8 +1192,8 @@
                                 },
                                 {
                                     "level": 99,
-                                    "key": "decreasedGlobalSkillIntervalPercent",
-                                    "value": 20
+                                    "key": "increasedXPFromMasteryTokens",
+                                    "value": 1
                                 }
                             ]
                         },
@@ -1234,13 +1235,13 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "increasedChanceToApplyDeadlyPoison",
-                                    "value": 20
+                                    "key": "poisonImmunity",
+                                    "value": 50
                                 },
                                 {
                                     "level": 99,
-                                    "key": "poisonImmunity",
-                                    "value": 50
+                                    "key": "increasedChanceToApplyDeadlyPoison",
+                                    "value": 20
                                 }
                             ]
                         },
@@ -1273,12 +1274,12 @@
                                 {
                                     "level": 40,
                                     "key": "increasedDeathMarkOnHit",
-                                    "value": 10
+                                    "value": 2
                                 },
                                 {
                                     "level": 60,
                                     "key": "increasedChanceToApplyStackOfDeathMark",
-                                    "value": 10
+                                    "value": 50
                                 },
                                 {
                                     "level": 80,
@@ -1321,7 +1322,7 @@
                                 {
                                     "level": 40,
                                     "key": "applyDemonTraitTurnsOnSpawn",
-                                    "value": 5
+                                    "value": 2
                                 },
                                 {
                                     "level": 60,
@@ -1374,17 +1375,17 @@
                                 {
                                     "level": 60,
                                     "key": "increasedRangedMaxHit",
-                                    "value": 10
+                                    "value": 15
                                 },
                                 {
                                     "level": 80,
                                     "key": "increasedRangedCritChance",
-                                    "value": 10
+                                    "value": 25
                                 },
                                 {
                                     "level": 99,
                                     "key": "increasedRangedStrengthBonusPer8Ranged",
-                                    "value": 10
+                                    "value": 5
                                 }
                             ]
                         }

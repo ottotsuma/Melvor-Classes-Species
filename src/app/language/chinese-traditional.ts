@@ -174,7 +174,12 @@ export const zhTW ={
 Explain: "Explain",
 Angels_burying: "Angels can also gain mastery XP by burying bones",
 Single_Species_Gambler:"Gambler",
-ITEM_NAME_increasedFlatMeleeDefenceBonusPer30Defence: "increasedFlatMeleeDefenceBonusPer30Defence",
-ITEM_NAME_increasedFlatRangedDefenceBonusPer30Defence: "increasedFlatRangedDefenceBonusPer30Defence"
+ITEM_NAME_increasedFlatMeleeDefenceBonusPerDefence: "increasedFlatMeleeDefenceBonusPerDefence",
+ITEM_NAME_increasedFlatRangedDefenceBonusPerDefence: "increasedFlatRangedDefenceBonusPerDefence",
+
+Profile_increasedFlatMeleeDefenceBonusPerDefence: "increasedFlatMeleeDefenceBonusPerDefence",
+Profile_increasedFlatRangedDefenceBonusPerDefence: "increasedFlatRangedDefenceBonusPerDefence",
+increasedFlatMeleeDefenceBonusPerDefence: "increasedFlatMeleeDefenceBonusPerDefence",
+increasedFlatRangedDefenceBonusPerDefence: "increasedFlatRangedDefenceBonusPerDefence"
   }
   

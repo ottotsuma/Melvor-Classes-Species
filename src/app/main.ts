@@ -7,7 +7,7 @@ import { ProfileSkillData } from './profile/profile.types';
 import { languages } from './language';
 import { ProfileTranslation } from './profile/translation/translation';
 import { ProfileSettings } from './profile/settings';
-import {classList} from './../../class'
+import { classList } from './../../class'
 declare global {
     interface CloudManager {
         hasTotHEntitlement: boolean;
@@ -72,27 +72,27 @@ export class App {
         const ToB = mod.manager.getLoadedModList().includes('Theatre of Blood')
         const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
         const monad = mod.manager.getLoadedModList().includes('Monad')
-        
 
-        modifierData.increasedFlatRangedDefenceBonusPer30Defence = {
+
+        modifierData.increasedFlatRangedDefenceBonusPerDefence = {
             get langDescription() {
-              return getLangString('increasedFlatRangedDefenceBonusPer30Defence');
+                return getLangString('Profile_increasedFlatRangedDefenceBonusPerDefence');
             },
-            description: '${value} increased flat ranged defence per 30 defence levels',
+            description: '${value} increased flat ranged defence per defence level',
             isSkill: false,
             isNegative: false,
             tags: ['combat']
-          };
+        };
 
-        modifierData.increasedFlatMeleeDefenceBonusPer30Defence = {
+        modifierData.increasedFlatMeleeDefenceBonusPerDefence = {
             get langDescription() {
-              return getLangString('increasedFlatMeleeDefenceBonusPer30Defence');
+                return getLangString('Profile_increasedFlatMeleeDefenceBonusPerDefence');
             },
-            description: '${value} increased flat melee defence per 30 defence levels',
+            description: '${value} increased flat melee defence per defence level',
             isSkill: false,
             isNegative: false,
             tags: ['combat']
-          };
+        };
 
         if (!kcm) {
             return;
@@ -862,24 +862,24 @@ export class App {
         this.game.skills.registeredObjects.forEach(SkillObject => {
             skillsList.push(SkillObject)
         })
-        this.context.onModsLoaded(async () => {              
-              function addXP(returnedValue: number, amount: number, masteryAction: any) {                
+        this.context.onModsLoaded(async () => {
+            function addXP(returnedValue: number, amount: number, masteryAction: any) {
                 skillsList.forEach(skill => {
-                    if(game.activeAction && skill.id === game.activeAction.id) {
+                    if (game.activeAction && skill.id === game.activeAction.id) {
                         const single_species = game.profile.yous.get(1) // human
                         const single_class = game.profile.yous.get(2) // knight
                         const profileLevel = game.profile._level
                         let exp1 = 0
                         exp1 = Math.floor(single_species.single_species.baseExperience) || 0
-        
+
                         let exp2 = 0
                         if (single_class) {
                             exp2 = Math.floor(single_class.single_species.baseExperience) || 0
                         }
-        
+
                         let skillExp1 = exp1 || 0
                         let masteryExp1 = exp1 || 0
-        
+
                         let skillExp2 = exp2 || 0
                         let masteryExp2 = exp2 || 0
                         if (game.profile.isPoolTierActive(1)) {
@@ -890,27 +890,27 @@ export class App {
                             masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
                             masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
                         }
-        
+
                         const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
-        
+
                         const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
                         const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
-                        if(single_species.single_species.skills.includes(skill.id)) {
+                        if (single_species.single_species.skills.includes(skill.id)) {
                             game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
                             game.profile.addMasteryPoolXP(totalMasteryExp1)
                         }
-                        if(single_class.single_species.skills.includes(skill.id)) {
+                        if (single_class.single_species.skills.includes(skill.id)) {
                             game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
                             game.profile.addMasteryPoolXP(totalMasteryExp2)
                         }
                     }
                 })
-              }
+            }
 
             // @ts-ignore
             this.context.patch(Skill, 'addXP').after(function (returnedValue: number, amount: number, masteryAction: string) {
-                try {                            
-                    if(rollPercentage(0.1)) {
+                try {
+                    if (rollPercentage(0.1)) {
                         game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true, masteryAction);
                     } else if (rollPercentage(0.01)) {
                         game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, masteryAction);
@@ -922,15 +922,15 @@ export class App {
             })
             // @ts-ignore
             this.context.patch(Character, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
-                    return meleeDefenceBonus + Math.floor(game.combat.player.levels.Defence/30) * this.modifiers.increasedFlatMeleeDefenceBonusPer30Defence
+                return meleeDefenceBonus + (game.combat.player.levels.Defence * this.modifiers.increasedFlatMeleeDefenceBonusPerDefence)
             })
 
-        // @ts-ignore
-        this.context.patch(Character, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) {
-            return rangedDefenceBonus + Math.floor(game.combat.player.levels.Defence/30) * this.modifiers.increasedFlatRangedDefenceBonusPer30Defence
-                    })
+            // @ts-ignore
+            this.context.patch(Character, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) {
+                return rangedDefenceBonus + (game.combat.player.levels.Defence * this.modifiers.increasedFlatRangedDefenceBonusPerDefence)
+            })
 
-            
+
             // Giving monsters classes
             game.monsters.forEach(monster => {
                 if (monster.attackType === "magic") {
@@ -1131,20 +1131,20 @@ export class App {
             initialPackage.add();
         })
 
-            try {
-                this.context.gameData.buildPackage((itemPackage: any) => {
+        try {
+            this.context.gameData.buildPackage((itemPackage: any) => {
                 const newClasses: any[] = []
                 function getModifier(negative: boolean, perc = 0.5) {
                     let test = ""
                     Object.keys(game.modifiers).forEach(modifier => {
                         // 1731 total
-                        if(!test && modifierData[modifier]) {
-                            if(negative && modifierData[modifier].isNegative) {
-                                if(rollPercentage(perc)) {
+                        if (!test && modifierData[modifier]) {
+                            if (negative && modifierData[modifier].isNegative) {
+                                if (rollPercentage(perc)) {
                                     test = modifier
                                 }
-                            } else if(!negative && !modifierData[modifier].isNegative) {
-                                if(rollPercentage(perc)) {
+                            } else if (!negative && !modifierData[modifier].isNegative) {
+                                if (rollPercentage(perc)) {
                                     test = modifier
                                 }
                             }
@@ -1208,11 +1208,11 @@ export class App {
                     }
                 }
                 itemPackage.skillData.add(newsilldata)
-                }).add();
-                } catch (error) {
-                console.log(error)
-            }
-        
+            }).add();
+        } catch (error) {
+            console.log(error)
+        }
+
         // this.context.onCharacterLoaded(() => {
         //     const guides = document.getElementById('tutorial-page-Woodcutting').parentElement
         //     ui.createStatic('#tutorial-page-Profile', guides);
@@ -1393,8 +1393,8 @@ export class App {
 
     private patchCombatModifiersReset() {
         this.context.patch(CombatModifiers, "reset").after(function () {
-            this.increasedFlatMeleeDefenceBonusPer30Defence ??= 0;
-         });
+            this.increasedFlatMeleeDefenceBonusPerDefence ??= 0;
+        });
     }
 
     private isProfileEvent(
