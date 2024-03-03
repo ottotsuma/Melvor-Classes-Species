@@ -1171,32 +1171,32 @@ export class App {
                         {
                             "level": 1,
                             "key": getModifier(true, 10),
-                            "value": Math.floor(Math.random() * 20) + 1
+                            "value": Math.floor(Math.random() * 200) + 1
                         },
                         {
                             "level": 20,
                             "key": getModifier(false),
-                            "value": Math.floor(Math.random() * 20) + 1
+                            "value": Math.floor(Math.random() * 200) + 1
                         },
                         {
                             "level": 40,
                             "key": getModifier(false),
-                            "value": Math.floor(Math.random() * 20) + 1
+                            "value": Math.floor(Math.random() * 200) + 1
                         },
                         {
                             "level": 60,
                             "key": getModifier(false),
-                            "value": Math.floor(Math.random() * 20) + 1
+                            "value": Math.floor(Math.random() * 200) + 1
                         },
                         {
                             "level": 80,
                             "key": getModifier(false),
-                            "value": Math.floor(Math.random() * 20) + 1
+                            "value": Math.floor(Math.random() * 200) + 1
                         },
                         {
                             "level": 99,
                             "key": getModifier(false),
-                            "value": Math.floor(Math.random() * 20) + 1
+                            "value": Math.floor(Math.random() * 200) + 1
                         }
                     ]
                 }
@@ -1394,6 +1394,7 @@ export class App {
     private patchCombatModifiersReset() {
         this.context.patch(CombatModifiers, "reset").after(function () {
             this.increasedFlatMeleeDefenceBonusPerDefence ??= 0;
+            this.increasedFlatRangedDefenceBonusPerDefence ??= 0;
         });
     }
 
