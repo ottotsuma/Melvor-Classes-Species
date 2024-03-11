@@ -377,7 +377,7 @@
                                 {
                                     "level": 40,
                                     "key": "increasedMinNatureSpellDamageBasedOnMaxHit",
-                                    "value": 30
+                                    "value": 0.3
                                 },
                                 {
                                     "level": 60,
