@@ -129,6 +129,7 @@ export class App {
             "melvorF:TurkulGeneral"
         ]
         const elfList: any[] = [
+            "melvorD:ElderWizard",
         ]
         const UndeadList: any[] = [
             "melvorD:PirateCaptain",
@@ -223,7 +224,6 @@ export class App {
             "melvorD:BanditLeader",
             "melvorD:DarkWizard",
             "melvorD:MasterWizard",
-            "melvorD:ElderWizard",
             "melvorF:Druid",
             "melvorF:Thief",
             "melvorF:Shaman",
@@ -775,7 +775,7 @@ export class App {
                 "melvorAoD:RagingMaple",
                 "melvorAoD:CrystalSmasher",
                 "melvorAoD:CrystalBehemoth")
-            PlantList.push("melvorAoD:EvilOak", "melvorAoD:GrumpyWillow", "melvorAoD:AngryTeak", "melvorAoD:RagingMaple", "melvorAoD:IllusiveRoots", "melvorAoD:LavaGolem")
+            PlantList.push("melvorAoD:EvilOak", "melvorAoD:GrumpyWillow", "melvorAoD:AngryTeak", "melvorAoD:RagingMaple", "melvorAoD:IllusiveRoots")
             BeastList.push("melvorAoD:GreenSlime", "melvorAoD:SlimeShooter", "melvorAoD:PoisonRoamer", "melvorAoD:PoisonSlime", "melvorAoD:PoisonBloater", "melvorAoD:PoisonLeecher", "melvorAoD:MagicMirror", "melvorAoD:PossessedBarrel", "melvorAoD:FakeDoor", "melvorAoD:CultMonster", "melvorAoD:PuppetMaster")
             SeaCreatureList.push(
                 "melvorAoD:ShipwreckBeast",
