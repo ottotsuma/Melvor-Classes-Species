@@ -119,7 +119,8 @@ export class App {
             "melvorF:HolyArcher"
         ]
         const PlantList: any[] = [
-            "melvorD:Plant"
+            "melvorD:Plant",
+            "namespace_profile:plant_golem"
         ]
         const OrcList: any[] = [
             "melvorF:TurkulRiders",
@@ -130,6 +131,7 @@ export class App {
         ]
         const elfList: any[] = [
             "melvorD:ElderWizard",
+            "melvorD:FrozenArcher",
         ]
         const UndeadList: any[] = [
             "melvorD:PirateCaptain",
@@ -193,6 +195,10 @@ export class App {
             "melvorF:SpikedRedClaw"
         ]
         const ElementalCreatureList: any[] = [
+            "namespace_profile:plant_golem",
+            "namespace_profile:fire_golem",
+            "namespace_profile:air_golem",
+            "namespace_profile:sand_golem",
             "melvorD:Ice",
             "melvorD:FireSpirit",
             "melvorF:AirGolem",
@@ -208,7 +214,6 @@ export class App {
             "melvorF:BountyHunter",
             "melvorD:BlackKnight",
             "melvorD:ConfusedPirate",
-            "melvorD:FrozenArcher",
             "melvorD:Pirate",
             "melvorD:FirstMate",
             "melvorD:JuniorFarmer",

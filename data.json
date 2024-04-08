@@ -155,6 +155,86 @@
                 "modifiers": {
                     "increasedDamageAgainstMages": 5
                 }
+            },
+            {
+                "id": "damage_reduction_100",
+                "name": "High Tolerance",
+                "modifiers": {
+                    "increasedDamageReduction": 100
+                }
+            },
+            {
+                "id": "weak_to_fire",
+                "name": "Fire Weakness",
+                "modifiers": {
+                    "increasedDamageTakenFromFireSpells": 100
+                }
+            },
+            {
+                "id": "weak_to_earth",
+                "name": "Earth Weakness",
+                "modifiers": {
+                    "increasedDamageTakenFromEarthSpells": 100
+                }
+            },
+            {
+                "id": "weak_to_water",
+                "name": "Water Weakness",
+                "modifiers": {
+                    "increasedDamageTakenFromWaterSpells": 100
+                }
+            },
+            {
+                "id": "weak_to_air",
+                "name": "Air Weakness",
+                "modifiers": {
+                    "increasedDamageTakenFromAirSpells": 100
+                }
+            }
+        ],
+        "dungeons": [
+            {
+                "id": "trial",
+                "name": "Trial of Magic",
+                "media": "https://i.pinimg.com/564x/7e/b6/49/7eb6495df1da8e613f0b323b564bd536.jpg",
+                "monsterIDs": [
+                    "namespace_profile:plant_golem",
+                    "namespace_profile:fire_golem",
+                    "namespace_profile:air_golem",
+                    "namespace_profile:sand_golem"
+                ],
+                "difficulty": [
+                    1
+                ],
+                "entryRequirements": [],
+                "rewardItemIDs": [
+                    "namespace_profile:Burnt_Loot_Box"
+                ],
+                "dropBones": true,
+                "pet": {
+                    "petID": "namespace_profile:abyssal_chicken",
+                    "weight": 6
+                },
+                "fixedPetClears": false,
+                "pauseOnBosses": false,
+                "nonBossPassives": [
+                    "namespace_profile:damage_reduction_100"
+                ],
+                "floors": [
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            }
+        ],
+        "dungeonDisplayOrder": [
+            {
+                "afterID": "melvorD:Frozen_Cove",
+                "ids": [
+                    "namespace_profile:trial"
+                ],
+                "insertAt": "After"
             }
         ],
         "pages": [
@@ -203,7 +283,130 @@
                 "golbinRaidExclusive": false,
                 "sellsFor": 10,
                 "itemType": "Item"
-            }
+            },
+            {
+                "id": "Burnt_Loot_Box",
+                "name": "Burnt Loot",
+                "category": "Dungeons",
+                "type": "Item",
+                "media": "https://i.pinimg.com/564x/42/09/73/42097348a84edc610c8928dbba681d45.jpg",
+                "ignoreCompletion": false,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 250,
+                "itemType": "Openable",
+                "dropTable": [
+                  {
+                    "itemID": "melvorD:Burnt_Anglerfish",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Carp",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Cave_Fish",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Crab",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Fanfish",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Herring",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Lobster",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Manta_Ray",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Salmon",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Sardine",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Seahorse",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Shark",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Swordfish",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Trout",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burnt_Whale",
+                    "minQuantity": 1,
+                    "maxQuantity": 10,
+                    "weight": 100
+                  },
+                  {
+                    "itemID": "melvorD:Burning_Ring",
+                    "minQuantity": 1,
+                    "maxQuantity": 1,
+                    "weight": 10
+                  },
+                  {
+                    "itemID": "melvorD:Burning_Wand",
+                    "minQuantity": 1,
+                    "maxQuantity": 1,
+                    "weight": 10
+                  },
+                  {
+                    "itemID": "melvorD:Amulet_Of_Burning_Leech",
+                    "minQuantity": 1,
+                    "maxQuantity": 1,
+                    "weight": 6
+                  }
+                ],
+                "customDescription": "Smells of fire."
+              }
         ],
         "pets": [
             {
@@ -1491,19 +1694,173 @@
                 "canSlayer": false,
                 "isBoss": false,
                 "selectedSpell": "melvorD:WaterStrike"
+            },
+            {
+                "id": "plant_golem",
+                "name": "Plant Golem",
+                "media": "https://i.pinimg.com/564x/86/a2/30/86a230dc9355ee707d5385795efcdfac.jpg",
+                "levels": {
+                    "Attack": 160,
+                    "Defence": 160,
+                    "Hitpoints": 160,
+                    "Magic": 1,
+                    "Ranged": 160,
+                    "Strength": 160
+                },
+                "equipmentStats": [
+                    {
+                        "key": "attackSpeed",
+                        "value": 2400
+                    }
+                ],
+                "ignoreCompletion": false,
+                "attackType": "melee",
+                "specialAttacks": [],
+                "passives": [
+                    "namespace_profile:weak_to_fire"
+                ],
+                "lootChance": 1,
+                "lootTable": [],
+                "gpDrops": {
+                    "min": 5,
+                    "max": 1
+                },
+                "bones": {
+                    "itemID": "melvorD:Bones",
+                    "quantity": 1
+                },
+                "canSlayer": false,
+                "isBoss": false,
+                "selectedSpell": "melvorD:EarthStrike"
+            },
+            {
+                "id": "fire_golem",
+                "name": "Fire Golem",
+                "media": "https://i.pinimg.com/564x/79/bc/19/79bc19040b5e8b445a163c7c033e461e.jpg",
+                "levels": {
+                    "Attack": 160,
+                    "Defence": 160,
+                    "Hitpoints": 160,
+                    "Magic": 1,
+                    "Ranged": 160,
+                    "Strength": 160
+                },
+                "equipmentStats": [
+                    {
+                        "key": "attackSpeed",
+                        "value": 2400
+                    }
+                ],
+                "ignoreCompletion": false,
+                "attackType": "melee",
+                "specialAttacks": [],
+                "passives": [
+                    "namespace_profile:weak_to_water"
+                ],
+                "lootChance": 1,
+                "lootTable": [],
+                "gpDrops": {
+                    "min": 5,
+                    "max": 1
+                },
+                "bones": {
+                    "itemID": "melvorD:Bones",
+                    "quantity": 1
+                },
+                "canSlayer": false,
+                "isBoss": false,
+                "selectedSpell": "melvorD:EarthStrike"
+            },
+            {
+                "id": "air_golem",
+                "name": "Air Golem",
+                "media": "https://i.pinimg.com/564x/6d/fe/b7/6dfeb785fafe85ddb85fd0b6ae7f9bcf.jpg",
+                "levels": {
+                    "Attack": 160,
+                    "Defence": 160,
+                    "Hitpoints": 160,
+                    "Magic": 1,
+                    "Ranged": 160,
+                    "Strength": 160
+                },
+                "equipmentStats": [
+                    {
+                        "key": "attackSpeed",
+                        "value": 2400
+                    }
+                ],
+                "ignoreCompletion": false,
+                "attackType": "melee",
+                "specialAttacks": [],
+                "passives": [
+                    "namespace_profile:weak_to_earth"
+                ],
+                "lootChance": 1,
+                "lootTable": [],
+                "gpDrops": {
+                    "min": 5,
+                    "max": 1
+                },
+                "bones": {
+                    "itemID": "melvorD:Bones",
+                    "quantity": 1
+                },
+                "canSlayer": false,
+                "isBoss": false,
+                "selectedSpell": "melvorD:EarthStrike"
+            },
+            {
+                "id": "sand_golem",
+                "name": "Sand Golem",
+                "media": "https://i.pinimg.com/564x/41/2c/14/412c147ddd889658914f868f8d52cd38.jpg",
+                "levels": {
+                    "Attack": 160,
+                    "Defence": 160,
+                    "Hitpoints": 160,
+                    "Magic": 1,
+                    "Ranged": 160,
+                    "Strength": 160
+                },
+                "equipmentStats": [
+                    {
+                        "key": "attackSpeed",
+                        "value": 2400
+                    }
+                ],
+                "ignoreCompletion": false,
+                "attackType": "melee",
+                "specialAttacks": [],
+                "passives": [
+                    "namespace_profile:weak_to_air"
+                ],
+                "lootChance": 1,
+                "lootTable": [],
+                "gpDrops": {
+                    "min": 5,
+                    "max": 1
+                },
+                "bones": {
+                    "itemID": "melvorD:Bones",
+                    "quantity": 1
+                },
+                "canSlayer": false,
+                "isBoss": false,
+                "selectedSpell": "melvorD:EarthStrike"
             }
         ],
         "itemUpgrades": [
             {
-                "rootItemIDs": ["namespace_profile:Profile_Token"],
+                "rootItemIDs": [
+                    "namespace_profile:Profile_Token"
+                ],
                 "quantity": 1,
-                "upgradedItemID":"namespace_profile:Mastery_Token_Profile",
+                "upgradedItemID": "namespace_profile:Mastery_Token_Profile",
                 "gpCost": 0,
                 "isDowngrade": false,
                 "scCost": 0,
                 "itemCosts": [
                     {
-                        "id":"namespace_profile:Profile_Token",
+                        "id": "namespace_profile:Profile_Token",
                         "quantity": 10
                     }
                 ]

@@ -166,16 +166,22 @@ Single_Species_ShieldWarrior:"ShieldWarrior",
     Single_Species_zealot:"zealot",
     Single_Species_Witcher:"Witcher",
     Single_Species_Esper:"Esper",
+MONSTER_NAME_sand_golem: "Sand Golem",
+MONSTER_NAME_air_golem: "Air Golem",
+MONSTER_NAME_plant_golem: "Plant Golem",
+MONSTER_NAME_fire_golem: "Fire Golem",
 Explain: "Explain",
 Angels_burying: "Angels can also gain mastery XP by burying bones",
 Single_Species_Gambler:"Gambler",
 ITEM_NAME_increasedFlatMeleeDefenceBonusPerDefence: "+${value} increased flat melee defence per defence level",
 ITEM_NAME_increasedFlatRangedDefenceBonusPerDefence: "+${value} increased flat ranged defence per defence level",
-
+ITEM_NAME_Burnt_Loot_Box: "Burnt loot box",
 Profile_increasedFlatMeleeDefenceBonusPerDefence: "+${value} increased flat melee defence per defence level",
 Profile_increasedFlatRangedDefenceBonusPerDefence: "+${value} increased flat ranged defence per defence level",
 increasedFlatMeleeDefenceBonusPerDefence: "+${value} increased flat melee defence per defence level",
 increasedFlatRangedDefenceBonusPerDefence: "+${value} increased flat ranged defence per defence level",
+
+
 
 }
   
