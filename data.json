@@ -1065,12 +1065,157 @@
                     ],
                     "classes": [
                         {
+                            "id": "Fighter",
+                            "name": "Fighter",
+                            "media": "https://ottotsuma.github.io/images/people/knights.jpg",
+                            "baseExperience": 5,
+                            "productId": "namespace_profile:Fighter",
+                            "level": 1,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "fighterTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedAttackIntervalPercent",
+                                    "value": 30
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedFlatMeleeDefenceBonus",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMeleeStunChance",
+                                    "value": 2
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMeleeAccuracyBonus",
+                                    "value": 15
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "",
+                                    "value": 25
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "meleeProtection",
+                                    "value": 2
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Mage",
+                            "name": "Mage",
+                            "media": "https://ottotsuma.github.io/images/portraits/human%20male%20wizard%204.png",
+                            "baseExperience": 5,
+                            "productId": "namespace_profile:Mage",
+                            "level": 1,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "mageTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedDamageTaken",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedFlatMagicDefenceBonus",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMagicMaxHitBonusAgainstMelee",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMagicDamageBonus",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedMagicEvasion",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "magicProtection",
+                                    "value": 2
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Rogue",
+                            "name": "Rogue",
+                            "media": "https://www.sharecg.com/images/original/50642.jpg",
+                            "baseExperience": 5,
+                            "productId": "namespace_profile:Archer",
+                            "level": 1,
+                            "skills": [
+                                "https://images.saymedia-content.com/.image/t_share/MTc2NDU4MzM1NjgyMzczNTk0/do-it-yourself-sterling-duchess-archer-halloween-costume-homemade-archer-cosplay.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "fighterTraitApplied",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedSummoningMaxHit",
+                                    "value": 60
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedRangedMaxHitBonusAgainstMagic",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedAmmoPreservation",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedRangedMaxHit",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedRangedCritChance",
+                                    "value": 25
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedRangedStrengthBonusPer8Ranged",
+                                    "value": 2
+                                }
+                            ]
+                        },
+
+                        {
                             "id": "Knight",
                             "name": "Knight",
                             "media": "https://ottotsuma.github.io/images/people/knights.jpg",
-                            "baseExperience": 5,
+                            "baseExperience": 12,
                             "productId": "namespace_profile:Knight",
-                            "level": 1,
+                            "level": 10,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png"
                             ],
@@ -1109,54 +1254,6 @@
                                     "level": 99,
                                     "key": "gainSlayerCoinsBasedOnEnemyCombatLevelMelee",
                                     "value": 1
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Wizard",
-                            "name": "Wizard",
-                            "media": "https://ottotsuma.github.io/images/portraits/human%20male%20wizard%203.jpg",
-                            "baseExperience": 12,
-                            "productId": "namespace_profile:Wizard",
-                            "level": 10,
-                            "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 0,
-                                    "key": "mageTraitApplied",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 1,
-                                    "key": "decreasedMeleeMaxHit",
-                                    "value": 40
-                                },
-                                {
-                                    "level": 20,
-                                    "key": "increasedMagicAccuracyBonus",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedMagicMaxHitBonusAgainstMelee",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedRunePreservation",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedMinHitBasedOnMaxHitAgainstUndead",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedMagicDamageBonus",
-                                    "value": 10
                                 }
                             ]
                         },
@@ -1208,6 +1305,7 @@
                                 }
                             ]
                         },
+
                         {
                             "id": "Pirate",
                             "name": "Pirate",
@@ -1545,50 +1643,50 @@
                             ]
                         },
                         {
-                            "id": "Archer",
-                            "name": "Archer",
-                            "media": "https://www.sharecg.com/images/original/50642.jpg",
+                            "id": "Wizard",
+                            "name": "Wizard",
+                            "media": "https://ottotsuma.github.io/images/portraits/human%20male%20wizard%203.jpg",
                             "baseExperience": 67,
-                            "productId": "namespace_profile:Archer",
+                            "productId": "namespace_profile:Wizard",
                             "level": 99,
                             "skills": [
-                                "https://images.saymedia-content.com/.image/t_share/MTc2NDU4MzM1NjgyMzczNTk0/do-it-yourself-sterling-duchess-archer-halloween-costume-homemade-archer-cosplay.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png"
                             ],
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "fighterTraitApplied",
+                                    "key": "mageTraitApplied",
                                     "value": 1
                                 },
                                 {
                                     "level": 1,
-                                    "key": "decreasedSummoningMaxHit",
-                                    "value": 50
+                                    "key": "decreasedMeleeMaxHit",
+                                    "value": 40
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedRangedMaxHitBonusAgainstMagic",
+                                    "key": "increasedMagicAccuracyBonus",
                                     "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedAmmoPreservation",
+                                    "key": "increasedMagicMaxHitBonusAgainstMelee",
                                     "value": 10
                                 },
                                 {
                                     "level": 60,
-                                    "key": "increasedRangedMaxHit",
-                                    "value": 15
+                                    "key": "increasedRunePreservation",
+                                    "value": 5
                                 },
                                 {
                                     "level": 80,
-                                    "key": "increasedRangedCritChance",
-                                    "value": 25
+                                    "key": "increasedMinHitBasedOnMaxHitAgainstUndead",
+                                    "value": 10
                                 },
                                 {
                                     "level": 99,
-                                    "key": "increasedRangedStrengthBonusPer8Ranged",
-                                    "value": 5
+                                    "key": "increasedMagicDamageBonus",
+                                    "value": 10
                                 }
                             ]
                         }
