@@ -1102,8 +1102,8 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "",
-                                    "value": 25
+                                    "key": "increasedEvasionAgainstMelee",
+                                    "value": 5
                                 },
                                 {
                                     "level": 99,
