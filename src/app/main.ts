@@ -1245,6 +1245,21 @@ export class App {
         //     $('#modal-game-guide').modal('show');
         // }
 
+        this.context.onCharacterLoaded(() => {
+            this.game.gamemodes.registeredObjects.forEach((mode, key) => {
+                const startingSkills = game.gamemodes.getObjectByID(key).startingSkills
+                if(startingSkills) {
+                    startingSkills.add(this.game.skills.getObjectByID("namespace_profile:Profile"))
+                    this.game.gamemodes.getObjectByID(key).startingSkills = startingSkills
+                }
+            })
+            // const profileSkill = game.skills.getObjectByID('')
+            // const checkGameMode = this.game.currentGamemode.rules.includes("Skills are locked and must be purchased using GP to access.")
+            // if (checkGameMode && !profileSkill.isUnlocked) {
+            //     profileSkill.setUnlock(true)
+            // }
+        })
+
         this.patchGamemodes(this.game.profile);
         this.patchUnlock(this.game.profile);
         this.initCompatibility(this.game.profile);
