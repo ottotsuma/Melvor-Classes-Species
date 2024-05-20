@@ -184,7 +184,7 @@ Single_Species_Gambler:"Gambler",
 ITEM_NAME_increasedFlatMeleeDefenceBonusPerDefence: "+${value} increased flat melee defence per defence level",
 ITEM_NAME_increasedFlatRangedDefenceBonusPerDefence: "+${value} increased flat ranged defence per defence level",
 ITEM_NAME_Burnt_Loot_Box: "Burnt loot box",
-
+ITEM_DESCRIPTION_Burnt_Loot_Box:"Smells...",
 
 
 Profile_increasedFlatMeleeDefenceBonusPerDefence: "+${value} increased flat melee defence per defence level",
