@@ -60,7 +60,7 @@
                 "id": "Elemental_traits",
                 "name": "Elemental Traits",
                 "modifiers": {
-                    "increasedMaxHitpoints": 10
+                    "maxHitpoints": 10
                 }
             },
             {
@@ -160,7 +160,12 @@
                 "id": "damage_reduction_100",
                 "name": "High Tolerance",
                 "modifiers": {
-                    "increasedDamageReduction": 100
+                    "flatResistance": [
+                        {
+                            "damageTypeID": "melvorD:Normal",
+                            "value": 100
+                        }
+                    ]
                 }
             },
             {
@@ -228,15 +233,6 @@
                 ]
             }
         ],
-        "dungeonDisplayOrder": [
-            {
-                "afterID": "melvorD:Frozen_Cove",
-                "ids": [
-                    "namespace_profile:trial"
-                ],
-                "insertAt": "After"
-            }
-        ],
         "pages": [
             {
                 "id": "Profile",
@@ -262,7 +258,7 @@
                 "obtainFromItemLog": false,
                 "golbinRaidExclusive": false,
                 "sellsFor": 1500,
-                "itemType": "Token",
+                "itemType": "MasteryToken",
                 "modifiers": {
                     "masteryToken": [
                         {
@@ -270,7 +266,10 @@
                             "value": 0.1
                         }
                     ]
-                }
+                },
+                "skill": "namespace_profile:Profile",
+                "realm": "melvorD:Melvor",
+                "percent": 0.1
             },
             {
                 "id": "Profile_Token",
@@ -296,117 +295,117 @@
                 "sellsFor": 250,
                 "itemType": "Openable",
                 "dropTable": [
-                  {
-                    "itemID": "melvorD:Burnt_Anglerfish",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Carp",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Cave_Fish",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Crab",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Fanfish",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Herring",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Lobster",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Manta_Ray",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Salmon",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Sardine",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Seahorse",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Shark",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Swordfish",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Trout",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burnt_Whale",
-                    "minQuantity": 1,
-                    "maxQuantity": 10,
-                    "weight": 100
-                  },
-                  {
-                    "itemID": "melvorD:Burning_Ring",
-                    "minQuantity": 1,
-                    "maxQuantity": 1,
-                    "weight": 10
-                  },
-                  {
-                    "itemID": "melvorD:Burning_Wand",
-                    "minQuantity": 1,
-                    "maxQuantity": 1,
-                    "weight": 10
-                  },
-                  {
-                    "itemID": "melvorD:Amulet_Of_Burning_Leech",
-                    "minQuantity": 1,
-                    "maxQuantity": 1,
-                    "weight": 6
-                  }
+                    {
+                        "itemID": "melvorD:Burnt_Anglerfish",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Carp",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Cave_Fish",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Crab",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Fanfish",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Herring",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Lobster",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Manta_Ray",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Salmon",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Sardine",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Seahorse",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Shark",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Swordfish",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Trout",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burnt_Whale",
+                        "minQuantity": 1,
+                        "maxQuantity": 10,
+                        "weight": 100
+                    },
+                    {
+                        "itemID": "melvorD:Burning_Ring",
+                        "minQuantity": 1,
+                        "maxQuantity": 1,
+                        "weight": 10
+                    },
+                    {
+                        "itemID": "melvorD:Burning_Wand",
+                        "minQuantity": 1,
+                        "maxQuantity": 1,
+                        "weight": 10
+                    },
+                    {
+                        "itemID": "melvorD:Amulet_Of_Burning_Leech",
+                        "minQuantity": 1,
+                        "maxQuantity": 1,
+                        "weight": 6
+                    }
                 ],
                 "customDescription": "Smells of fire."
-              }
+            }
         ],
         "pets": [
             {
@@ -414,22 +413,22 @@
                 "name": "Bob",
                 "media": "assets/bob.png",
                 "ignoreCompletion": false,
-                "modifiers": {
-                    "increasedDamageAgainstAnimals": 1
-                },
                 "activeInRaid": false,
                 "scaleChanceWithMasteryPool": true,
-                "skillID": "namespace_profile:Profile"
+                "skillID": "namespace_profile:Profile",
+                "modifiers": {
+                    "increasedDamageAgainstAnimals": 1
+                }
             },
             {
                 "id": "abyssal_chicken",
                 "name": "Abyssal Chicken",
                 "media": "https://ottotsuma.github.io/images/gallery/companions/abyssal%20chicken.jpg",
                 "ignoreCompletion": false,
+                "activeInRaid": false,
                 "modifiers": {
                     "increasedDamageAgainstDemons": 1
                 },
-                "activeInRaid": false,
                 "scaleChanceWithMasteryPool": true,
                 "skillID": "namespace_profile:Profile"
             }
@@ -1208,7 +1207,6 @@
                                 }
                             ]
                         },
-
                         {
                             "id": "Knight",
                             "name": "Knight",
@@ -1305,7 +1303,6 @@
                                 }
                             ]
                         },
-
                         {
                             "id": "Pirate",
                             "name": "Pirate",
@@ -1732,10 +1729,13 @@
                         "weight": 1
                     }
                 ],
-                "gpDrops": {
-                    "min": 20,
-                    "max": 1
-                },
+                "currencyDrops": [
+                    {
+                        "currencyID": "melvorD:GP",
+                        "min": 20,
+                        "max": 1
+                    }
+                ],
                 "bones": {
                     "itemID": "melvorD:Bones",
                     "quantity": 1
@@ -1781,10 +1781,13 @@
                         "weight": 1
                     }
                 ],
-                "gpDrops": {
-                    "min": 20,
-                    "max": 1
-                },
+                "currencyDrops": [
+                    {
+                        "currencyID": "melvorD:GP",
+                        "min": 20,
+                        "max": 1
+                    }
+                ],
                 "bones": {
                     "itemID": "melvorD:Bones",
                     "quantity": 1
@@ -1819,10 +1822,13 @@
                 ],
                 "lootChance": 1,
                 "lootTable": [],
-                "gpDrops": {
-                    "min": 5,
-                    "max": 1
-                },
+                "currencyDrops": [
+                    {
+                        "currencyID": "melvorD:GP",
+                        "min": 5,
+                        "max": 1
+                    }
+                ],
                 "bones": {
                     "itemID": "melvorD:Bones",
                     "quantity": 1
@@ -1857,10 +1863,13 @@
                 ],
                 "lootChance": 1,
                 "lootTable": [],
-                "gpDrops": {
-                    "min": 5,
-                    "max": 1
-                },
+                "currencyDrops": [
+                    {
+                        "currencyID": "melvorD:GP",
+                        "min": 5,
+                        "max": 1
+                    }
+                ],
                 "bones": {
                     "itemID": "melvorD:Bones",
                     "quantity": 1
@@ -1895,10 +1904,13 @@
                 ],
                 "lootChance": 1,
                 "lootTable": [],
-                "gpDrops": {
-                    "min": 5,
-                    "max": 1
-                },
+                "currencyDrops": [
+                    {
+                        "currencyID": "melvorD:GP",
+                        "min": 5,
+                        "max": 1
+                    }
+                ],
                 "bones": {
                     "itemID": "melvorD:Bones",
                     "quantity": 1
@@ -1933,10 +1945,13 @@
                 ],
                 "lootChance": 1,
                 "lootTable": [],
-                "gpDrops": {
-                    "min": 5,
-                    "max": 1
-                },
+                "currencyDrops": [
+                    {
+                        "currencyID": "melvorD:GP",
+                        "min": 5,
+                        "max": 1
+                    }
+                ],
                 "bones": {
                     "itemID": "melvorD:Bones",
                     "quantity": 1
@@ -1953,9 +1968,7 @@
                 ],
                 "quantity": 1,
                 "upgradedItemID": "namespace_profile:Mastery_Token_Profile",
-                "gpCost": 0,
                 "isDowngrade": false,
-                "scCost": 0,
                 "itemCosts": [
                     {
                         "id": "namespace_profile:Profile_Token",
@@ -1976,6 +1989,22 @@
                         },
                         {
                             "monsterID": "namespace_profile:abyssal_chicken_monster"
+                        }
+                    ]
+                }
+            }
+        ],
+        "combatAreaCategories": [
+            {
+                "id": "melvorD:Dungeons",
+                "areas": {
+                    "add": [
+                        {
+                            "afterID": "melvorD:Frozen_Cove",
+                            "ids": [
+                                "namespace_profile:trial"
+                            ],
+                            "insertAt": "After"
                         }
                     ]
                 }

@@ -15,7 +15,9 @@
                             "maxGP": 551,
                             "productId": "namespace_profile:cmim_single_species",
                             "level": 99,
-                            "skills": ["namespace_profile:Profile"],
+                            "skills": [
+                                "namespace_profile:Profile"
+                            ],
                             "standardModifiers": [
                                 {
                                     "level": 1,

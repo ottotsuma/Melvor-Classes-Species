@@ -2,228 +2,234 @@
     "$schema": "https://melvoridle.com/assets/schema/gameData.json",
     "namespace": "namespace_profile",
     "data": {
-        "ancientRelics": [
-            {
-                "id": "ProfileRelic1",
-                "name": "Profile Relic 1",
+      "ancientRelics": [
+        {
+          "id": "ProfileRelic1",
+          "name": "Profile Relic 1",
+          "skillID": "namespace_profile:Profile",
+          "number": 1,
+          "modifiers": {
+            "masteryXP": [
+              {
                 "skillID": "namespace_profile:Profile",
-                "number": 1,
-                "description": "A relic made by people of the past.",
-                "modifiers": {
-                    "increasedMasteryXP": [
-                        {
-                            "skillID": "namespace_profile:Profile",
-                            "value": 50
-                        }
-                    ]
-                }
+                "value": 50
+              }
+            ]
+          }
+        },
+        {
+          "id": "ProfileRelic2",
+          "name": "Profile Relic 2",
+          "skillID": "namespace_profile:Profile",
+          "number": 2,
+          "modifiers": {
+              "increasedDamageAgainstFighters": 5
+          }
+        },
+        {
+          "id": "ProfileRelic3",
+          "name": "Profile Relic 3",
+          "skillID": "namespace_profile:Profile",
+          "number": 3,
+          "modifiers": {
+              "increasedDamageAgainstMages": 5
+          }
+        },
+        {
+          "id": "ProfileRelic4",
+          "name": "Profile Relic 4",
+          "skillID": "namespace_profile:Profile",
+          "number": 4,
+          "modifiers": {
+              "increasedDamageAgainstRogues": 5
+          }
+        },
+        {
+          "id": "ProfileRelic5",
+          "name": "Profile Relic 5",
+          "skillID": "namespace_profile:Profile",
+          "number": 5,
+          "modifiers": {
+              "increasedGlobalAccuracyAgainstFighters": 5,
+              "increasedGlobalAccuracyAgainstMages": 5,
+              "increasedGlobalAccuracyAgainstRogues": 5
+          }
+        },
+        {
+          "id": "ProfileRelic6",
+          "name": "Profile Master Relic",
+          "skillID": "namespace_profile:Profile",
+          "number": 6,
+          "modifiers": {
+            "bankSpace": 10
+          }
+        }
+      ],
+      "bankSortOrder": [
+        {
+          "insertAt": "After",
+          "afterID": "melvorAoD:Astrology_Lesser_Relic",
+          "ids": [
+            "namespace_profile:Profile_Lesser_Relic"
+          ]
+        }
+      ],
+      "items": [
+        {
+          "itemType": "Equipment",
+          "id": "Profile_Lesser_Relic",
+          "name": "Profile Lesser Relic",
+          "category": "Combat",
+          "type": "Consumable",
+          "media": "assets/items/profile-lesser-relic.png",
+          "tier": "none",
+          "ignoreCompletion": true,
+          "obtainFromItemLog": false,
+          "golbinRaidExclusive": false,
+          "sellsFor": 1,
+          "validSlots": [
+            "Consumable"
+          ],
+          "occupiesSlots": [],
+          "equipRequirements": [],
+          "equipmentStats": [],
+          "consumesOn": [
+            {
+              "type": "ProfileAction"
             },
             {
-                "id": "ProfileRelic2",
-                "name": "Profile Relic 2",
-                "skillID": "namespace_profile:Profile",
-                "number": 2,
-                "description": "A relic made by people of the past.",
-                "modifiers": {
-                    "increasedDamageAgainstFighters": 5
-                }
-            },
-            {
-                "id": "ProfileRelic3",
-                "name": "Profile Relic 3",
-                "skillID": "namespace_profile:Profile",
-                "number": 3,
-                "description": "A relic made by people of the past.",
-                "modifiers": {
-                    "increasedDamageAgainstMages": 5
-                }
-            },
-            {
-                "id": "ProfileRelic4",
-                "name": "Profile Relic 4",
-                "skillID": "namespace_profile:Profile",
-                "number": 4,
-                "description": "A relic made by people of the past.",
-                "modifiers": {
-                    "increasedDamageAgainstRogues": 5
-                }
-            },
-            {
-                "id": "ProfileRelic5",
-                "name": "Profile Relic 5",
-                "skillID": "namespace_profile:Profile",
-                "number": 5,
-                "description": "A relic made by people of the past.",
-                "modifiers": {
-                    "increasedGlobalAccuracyAgainstFighters": 5,
-                    "increasedGlobalAccuracyAgainstMages": 5,
-                    "increasedGlobalAccuracyAgainstRogues": 5
-                }
-            },
-            {
-                "id": "ProfileRelic6",
-                "name": "Profile Master Relic",
-                "skillID": "namespace_profile:Profile",
-                "number": 6,
-                "description": "A relic made by people of the past.",
-                "modifiers": {
-                    "increasedBankSpace": 10
-                }
+              "type": "PlayerAttack"
             }
-        ],
-        "bankSortOrder": [
-            {
-                "insertAt": "After",
-                "afterID": "melvorAoD:Astrology_Lesser_Relic",
-                "ids": ["namespace_profile:Profile_Lesser_Relic"]
-            }
-        ],
-        "items": [
-            {
-                "itemType": "Equipment",
-                "id": "Profile_Lesser_Relic",
-                "name": "Profile Lesser Relic",
-                "category": "Combat",
-                "type": "Consumable",
-                "media": "assets/items/profile-lesser-relic.png",
-                "tier": "none",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 1,
-                "validSlots": ["Consumable"],
-                "occupiesSlots": [],
-                "equipRequirements": [],
-                "equipmentStats": [],
-                "modifiers": {
-                    "increasedDamageAgainstHumans": 10,
-                    "increasedDamageAgainstUndead": 10,
-                    "increasedDamageAgainstDemons": 10
+          ],
+          "modifiers": {
+              "increasedDamageAgainstHumans": 10,
+              "increasedDamageAgainstUndead": 10,
+              "increasedDamageAgainstDemons": 10
+          }
+        }
+      ],
+      "skillData": [
+        {
+          "skillID": "namespace_profile:Profile",
+          "data": {
+            "rareDrops": [
+              {
+                "itemID": "namespace_profile:Profile_Lesser_Relic",
+                "quantity": 300,
+                "requirements": [],
+                "chance": {
+                  "type": "Fixed",
+                  "chance": 0.1
                 },
-                "consumesOn": [
-                    {
-                        "type": "ProfileAction"
-                    },
-                    {
-                        "type": "PlayerAttack"
-                    }
+                "gamemodes": [
+                  "melvorAoD:AncientRelics"
                 ]
-            }
-        ],
-        "skillData": [
-            {
-                "skillID": "namespace_profile:Profile",
-                "data": {
-                    "rareDrops": [
-                        {
-                            "itemID": "namespace_profile:Profile_Lesser_Relic",
-                            "quantity": 300,
-                            "requirements": [],
-                            "chance": {
-                                "type": "Fixed",
-                                "chance": 0.1
-                            },
-                            "gamemodes": ["melvorAoD:AncientRelics"]
-                        }
-                    ],
-                    "completedAncientRelic": "namespace_profile:ProfileRelic6",
-                    "ancientRelics": [
-                        {
-                            "relicID": "namespace_profile:ProfileRelic1",
-                            "requirements": [],
-                            "chance": {
-                                "type": "Fixed",
-                                "chance": 0.0005
-                            }
-                        },
-                        {
-                            "relicID": "namespace_profile:ProfileRelic2",
-                            "requirements": [],
-                            "chance": {
-                                "type": "Fixed",
-                                "chance": 0.0005
-                            }
-                        },
-                        {
-                            "relicID": "namespace_profile:ProfileRelic3",
-                            "requirements": [],
-                            "chance": {
-                                "type": "Fixed",
-                                "chance": 0.0005
-                            }
-                        },
-                        {
-                            "relicID": "namespace_profile:ProfileRelic4",
-                            "requirements": [],
-                            "chance": {
-                                "type": "Fixed",
-                                "chance": 0.0005
-                            }
-                        },
-                        {
-                            "relicID": "namespace_profile:ProfileRelic5",
-                            "requirements": [],
-                            "chance": {
-                                "type": "Fixed",
-                                "chance": 0.0005
-                            }
-                        }
-                    ],
-                    "classes": [
-                        {
-                            "id": "Necromancer",
-                            "name": "Necromancer",
-                            "media": "https://ottotsuma.github.io/images/people/oldmage.jpg",
-                            "baseExperience": 30,
-                            "productId": "namespace_profile:Necromancer",
-                            "level": 45,
-                            "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/necromancer.png"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 0,
-                                    "key": "mageTraitApplied",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 1,
-                                    "key": "increasedDamageTakenBasedOnHP",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 20,
-                                    "key": "increasedSummoningMaxHit",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedBarrierSummonDamage",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedSummoningAttackLifesteal",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "decreasedSummoningAttackIntervalPercent",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedFlatBarrierSummonDamageMagic",
-                                    "value": 10
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        ]
+              }
+            ],
+            "ancientRelicSets": [
+              {
+                "realmID": "melvorD:Melvor",
+                "relicDrops": [
+                  {
+                    "relicID": "namespace_profile:ProfileRelic1",
+                    "requirements": [],
+                    "chance": {
+                      "type": "Fixed",
+                      "chance": 0.0005
+                    }
+                  },
+                  {
+                    "relicID": "namespace_profile:ProfileRelic2",
+                    "requirements": [],
+                    "chance": {
+                      "type": "Fixed",
+                      "chance": 0.0005
+                    }
+                  },
+                  {
+                    "relicID": "namespace_profile:ProfileRelic3",
+                    "requirements": [],
+                    "chance": {
+                      "type": "Fixed",
+                      "chance": 0.0005
+                    }
+                  },
+                  {
+                    "relicID": "namespace_profile:ProfileRelic4",
+                    "requirements": [],
+                    "chance": {
+                      "type": "Fixed",
+                      "chance": 0.0005
+                    }
+                  },
+                  {
+                    "relicID": "namespace_profile:ProfileRelic5",
+                    "requirements": [],
+                    "chance": {
+                      "type": "Fixed",
+                      "chance": 0.0005
+                    }
+                  }
+                ],
+                "completedRelicID": "namespace_profile:ProfileRelic6",
+                "levelUpUnlocks": [
+                  20,
+                  99
+                ]
+              }
+            ],
+            "classes": [
+              {
+                "id": "Necromancer",
+                "name": "Necromancer",
+                "media": "https://ottotsuma.github.io/images/people/oldmage.jpg",
+                "baseExperience": 30,
+                "productId": "namespace_profile:Necromancer",
+                "level": 45,
+                "skills": [
+                  "https://cdn2-main.melvor.net/assets/media/monsters/necromancer.png"
+                ],
+                "standardModifiers": [
+                  {
+                    "level": 0,
+                    "key": "mageTraitApplied",
+                    "value": 1
+                  },
+                  {
+                    "level": 1,
+                    "key": "increasedDamageTakenBasedOnHP",
+                    "value": 10
+                  },
+                  {
+                    "level": 20,
+                    "key": "increasedSummoningMaxHit",
+                    "value": 10
+                  },
+                  {
+                    "level": 40,
+                    "key": "increasedBarrierSummonDamage",
+                    "value": 5
+                  },
+                  {
+                    "level": 60,
+                    "key": "increasedSummoningAttackLifesteal",
+                    "value": 5
+                  },
+                  {
+                    "level": 80,
+                    "key": "decreasedSummoningAttackIntervalPercent",
+                    "value": 5
+                  },
+                  {
+                    "level": 99,
+                    "key": "increasedFlatBarrierSummonDamageMagic",
+                    "value": 10
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
     }
-}
-
-
-
+  }
