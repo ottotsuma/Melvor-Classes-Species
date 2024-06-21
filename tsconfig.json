@@ -11,6 +11,6 @@
         "noEmit": false,
         "noEmitOnError": false
     },
-    "include": ["src/**/*", "node_modules/melvor-types"]
+    "include": ["src/**/*", "node_modules/melvor-types", "../Custom-Modifiers-in-Melvor/_definitions/**/*"]
 }
 // , "../Custom-Modifiers-in-Melvor/**/*"
