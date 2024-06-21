@@ -956,25 +956,25 @@ export class App {
             cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", RoguesList, true);
 
             // adding monsters modifiers to effect species
-            const cmimSeaCreatureList: [String] = await cmim.getMonstersOfType('SeaCreature');
-            const cmimMythicalCreatureList: [String] = await cmim.getMonstersOfType('MythicalCreature');
-            const cmimElementalList: [String] = await cmim.getMonstersOfType('Elemental');
-            const cmimDemonList: [String] = await cmim.getMonstersOfType('Demon');
-            const cmimAnimalList: [String] = await cmim.getMonstersOfType('Animal');
-            const cmimHumanList: [String] = await cmim.getMonstersOfType('Human');
-            const cmimUndeadList: [String] = await cmim.getMonstersOfType('Undead');
-            const cmimAngelList: [String] = await cmim.getMonstersOfType('Angel');
-            const cmimAarakocraList: [String] = await cmim.getMonstersOfType('Aarakocra');
-            const cmimBeastList: [String] = await cmim.getMonstersOfType('Beast');
-            const cmimGiantList: [String] = await cmim.getMonstersOfType('Giant');
-            const cmimOrcList: [String] = await cmim.getMonstersOfType('Orc');
-            const cmimPlantList: [String] = await cmim.getMonstersOfType('Plant');
-            const cmimGoblinList: [String] = await cmim.getMonstersOfType('Goblin');
-            const cmimElfList: [String] = await cmim.getMonstersOfType('Elf');
-            const cmimDragonList: [String] = await cmim.getMonstersOfType('Dragon');
-            const cmimFighterList: [String] = await cmim.getMonstersOfType('Fighter');
-            const cmimMageList: [String] = await cmim.getMonstersOfType('Mage');
-            const cmimRogueList: [String] = await cmim.getMonstersOfType('Rogue');
+            const cmimSeaCreatureList: String[] = await cmim.getMonstersOfType('SeaCreature');
+            const cmimMythicalCreatureList:String[] = await cmim.getMonstersOfType('MythicalCreature');
+            const cmimElementalList:String[] = await cmim.getMonstersOfType('Elemental');
+            const cmimDemonList:String[] = await cmim.getMonstersOfType('Demon');
+            const cmimAnimalList:String[] = await cmim.getMonstersOfType('Animal');
+            const cmimHumanList:String[] = await cmim.getMonstersOfType('Human');
+            const cmimUndeadList:String[] = await cmim.getMonstersOfType('Undead');
+            const cmimAngelList:String[] = await cmim.getMonstersOfType('Angel');
+            const cmimAarakocraList:String[] = await cmim.getMonstersOfType('Aarakocra');
+            const cmimBeastList:String[] = await cmim.getMonstersOfType('Beast');
+            const cmimGiantList:String[] = await cmim.getMonstersOfType('Giant');
+            const cmimOrcList:String[] = await cmim.getMonstersOfType('Orc');
+            const cmimPlantList:String[] = await cmim.getMonstersOfType('Plant');
+            const cmimGoblinList:String[] = await cmim.getMonstersOfType('Goblin');
+            const cmimElfList:String[] = await cmim.getMonstersOfType('Elf');
+            const cmimDragonList:String[] = await cmim.getMonstersOfType('Dragon');
+            const cmimFighterList:String[] = await cmim.getMonstersOfType('Fighter');
+            const cmimMageList:String[] = await cmim.getMonstersOfType('Mage');
+            const cmimRogueList:String[] = await cmim.getMonstersOfType('Rogue');
 
             const initialPackage = this.context.gameData.buildPackage((itemPackage: any) => {
                 cmimRogueList.forEach(monsterId => {
