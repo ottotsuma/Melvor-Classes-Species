@@ -65,6 +65,10 @@ export class App {
         this.initModifiers();
 
         this.game.profile = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_profile'), Profile);
+        const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
+        if (combatSim) {
+          mod.api.mythCombatSimulator?.registerNamespace('namespace_profile');
+        }
         const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
         const AR = mod.manager.getLoadedModList().includes('Abyssal Rift')
         const gen1 = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
@@ -72,7 +76,6 @@ export class App {
         const ToB = mod.manager.getLoadedModList().includes('Theatre of Blood')
         const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
         const monad = mod.manager.getLoadedModList().includes('Monad')
-
 
         modifierData.increasedFlatRangedDefenceBonusPerDefence = {
             get langDescription() {
@@ -817,8 +820,9 @@ export class App {
         cmim.addMonsters("Demon", DemonList)
         cmim.addMonsters("MythicalCreature", MythList)
         cmim.addMonsters("Elemental", ElementalCreatureList)
+        cmim.addMonsters("Elf", elfList)
 
-        cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", elfList, true);
+
         cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", GoblinList, true);
         cmim.registerOrUpdateType("Plant", "Plants", "https://cdn.melvor.net/core/v018/assets/media/monsters/plant.png", PlantList, true);
         cmim.registerOrUpdateType("Orc", "Orcs", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", OrcList, true);
@@ -833,6 +837,8 @@ export class App {
         // cmim.registerOrUpdateType("Fey", "Feys", "https://cdn.melvor.net/core/v018/assets/media/monsters/plant.png", FeyList, true);
         // cmim.registerOrUpdateType("Fiend", "Fiends", "https://cdn.melvor.net/core/v018/assets/media/monsters/plant.png", FiendList, true);
         // cmim.registerOrUpdateType("Monstrosity", "Monstrosities", "https://cdn.melvor.net/core/v018/assets/media/monsters/plant.png", MonstrositiesList, true);
+        // @ts-ignore
+        cmim.forceBaseModTypeActive("Elf");
         // @ts-ignore
         cmim.forceBaseModTypeActive("Dragon");
         // @ts-ignore

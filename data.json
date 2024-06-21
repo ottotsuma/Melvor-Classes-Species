@@ -7,53 +7,53 @@
                 "id": "bob_traits",
                 "name": "Bob's Kindness",
                 "modifiers": {
-                    "decreasedDamageAgainstHumans": 100
+                    "damageDealtHuman": -100
                 }
             },
             {
                 "id": "abyssal_chicken_traits",
                 "name": "Abyssal Chicken's Anger",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 10000
+                    "damageDealtHuman": 10000
                 }
             },
             {
                 "id": "Dragon_traits",
                 "name": "Dragon Traits",
                 "modifiers": {
-                    "increasedDamageAgainstElves": 10,
-                    "increasedGlobalAccuracyAgainstAarakocras": 50
+                    "damageDealtElf": 10,
+                    "accuracyRatingAarakocra": 50
                 }
             },
             {
                 "id": "Elf_traits",
                 "name": "Elf Traits",
                 "modifiers": {
-                    "increasedDamageAgainstMythicalCreatures": 10,
-                    "increasedDamageAgainstElementals": 5
+                    "damageDealtMythicalCreatures": 10,
+                    "damageDealtElementals": 5
                 }
             },
             {
                 "id": "Undead_traits",
                 "name": "Undead Traits",
                 "modifiers": {
-                    "increasedDamageAgainstAngels": 10
+                    "damageDealtAngels": 10
                 }
             },
             {
                 "id": "SeaCreature_traits",
                 "name": "Sea Creature Traits",
                 "modifiers": {
-                    "increasedDamageAgainstDragons": 10,
-                    "increasedDamageAgainstDragons": 10
+                    "damageDealtDragons": 10,
+                    "damageDealtDragons": 10
                 }
             },
             {
                 "id": "MythicalCreature_traits",
                 "name": "Mythical Creature Traits",
                 "modifiers": {
-                    "increasedDamageAgainstAarakocras": 10,
-                    "increasedGlobalAccuracyAgainstFighters": 20
+                    "damageDealtAarakocra": 10,
+                    "accuracyRatingFighters": 20
                 }
             },
             {
@@ -67,7 +67,7 @@
                 "id": "Demon_traits",
                 "name": "Demon Traits",
                 "modifiers": {
-                    "increasedDamageAgainstAngels": 10
+                    "damageDealtAngels": 10
                 }
             },
             {
@@ -79,34 +79,34 @@
                 "id": "Human_traits",
                 "name": "Human Traits",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 10,
-                    "increasedDamageAgainstAnimals": 10
+                    "damageDealtHuman": 10,
+                    "damageDealtAnimals": 10
                 }
             },
             {
                 "id": "Angel_traits",
                 "name": "Angel Traits",
                 "modifiers": {
-                    "increasedDamageAgainstDemons": 10,
-                    "increasedGlobalAccuracyAgainstDemons": 20
+                    "damageDealtDemons": 10,
+                    "accuracyRatingDemons": 20
                 }
             },
             {
                 "id": "Aarakocra_traits",
                 "name": "Aarakocra Traits",
                 "modifiers": {
-                    "increasedDamageAgainstGoblins": 10,
-                    "increasedDamageAgainstSeaCreatures": 10
+                    "damageDealtGoblins": 10,
+                    "damageDealtSeaCreatures": 10
                 }
             },
             {
                 "id": "Beast_traits",
                 "name": "Beast Traits",
                 "modifiers": {
-                    "increasedDamageTakenFromHumans": 20,
+                    "increasedDamageTakenFromHuman": 20,
                     "increasedChanceToApplyAnimalTrait": 5,
                     "decreasedDamageTakenFromAnimals": 20,
-                    "increasedDamageAgainstAnimals": 10,
+                    "damageDealtAnimals": 10,
                     "increasedMinHitBasedOnMaxHitAgainstAnimals": 5
                 }
             },
@@ -139,21 +139,21 @@
                 "id": "Mage_traits",
                 "name": "Mage Traits",
                 "modifiers": {
-                    "increasedDamageAgainstFighters": 5
+                    "damageDealtFighters": 5
                 }
             },
             {
                 "id": "Fighter_traits",
                 "name": "Fighter Traits",
                 "modifiers": {
-                    "increasedDamageAgainstRogues": 5
+                    "damageDealtRogues": 5
                 }
             },
             {
                 "id": "Rogue_traits",
                 "name": "Rogue Traits",
                 "modifiers": {
-                    "increasedDamageAgainstMages": 5
+                    "damageDealtMages": 5
                 }
             },
             {
@@ -417,7 +417,7 @@
                 "scaleChanceWithMasteryPool": true,
                 "skillID": "namespace_profile:Profile",
                 "modifiers": {
-                    "increasedDamageAgainstAnimals": 1
+                    "damageDealtAnimals": 1
                 }
             },
             {
@@ -427,7 +427,7 @@
                 "ignoreCompletion": false,
                 "activeInRaid": false,
                 "modifiers": {
-                    "increasedDamageAgainstDemons": 1
+                    "damageDealtDemons": 1
                 },
                 "scaleChanceWithMasteryPool": true,
                 "skillID": "namespace_profile:Profile"
@@ -487,6 +487,71 @@
                             "namespace_profile:Bob"
                         ]
                     },
+                    "masteryLevelBonuses": [
+                        {
+                            "modifiers": {
+                                "melvorD:bankSpace":[
+                                    {
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "level": 1,
+                            "levelScalingSlope": 1,
+                            "levelScalingMax": 99
+                        },
+                        {
+                            "modifiers": {
+                                "namespace_profile:equipCost": -5
+                            },
+                            "level": 90
+                        }
+                    ],
+                    "masteryPoolBonuses": [
+                        {
+                            "realm": "melvorD:Melvor",
+                            "modifiers": {
+                                "increasedSkillXP": [
+                                    {
+                                        "skillID": "namespace_profile:Profile",
+                                        "value": 3
+                                    }
+                                ]
+                            },
+                            "percent": 10
+                        },
+                        {
+                            "realm": "melvorD:Melvor",
+                            "modifiers": {
+                                "increasedMasteryXP": [
+                                    {
+                                        "skillID": "namespace_profile:Profile",
+                                        "value": 3
+                                    }
+                                ]
+                            },
+                            "percent": 25
+                        },
+                        {
+                            "realm": "melvorD:Melvor",
+                            "modifiers": {
+                                "decreasedSkillInterval": [
+                                    {
+                                        "skillID": "namespace_profile:Profile",
+                                        "value": 250
+                                    }
+                                ]
+                            },
+                            "percent": 50
+                        },
+                        {
+                            "realm": "melvorD:Melvor",
+                            "modifiers": {
+                                "namespace_profile:equipCost": -5
+                            },
+                            "percent": 95
+                        }
+                    ],
                     "masteryTokenID": "namespace_profile:Mastery_Token_Profile",
                     "masteryLevelUnlocks": [
                         {
@@ -535,7 +600,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "humanTraitApplied",
+                                    "key": "traitAppliedHuman",
                                     "value": 1
                                 },
                                 {
@@ -545,12 +610,12 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedDamageAgainstAnimals",
+                                    "key": "damageDealtAnimals",
                                     "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedDamageAgainstHumans",
+                                    "key": "damageDealtHuman",
                                     "value": 10
                                 },
                                 {
@@ -584,7 +649,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "elfTraitApplied",
+                                    "key": "traitAppliedElf",
                                     "value": 1
                                 },
                                 {
@@ -609,12 +674,12 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "increasedDamageAgainstMythicalCreatures",
+                                    "key": "damageDealtMythicalCreatures",
                                     "value": 10
                                 },
                                 {
                                     "level": 99,
-                                    "key": "increasedDamageAgainstElementals",
+                                    "key": "damageDealtElementals",
                                     "value": 5
                                 }
                             ]
@@ -633,7 +698,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "aarakocraTraitApplied",
+                                    "key": "traitAppliedAarakocra",
                                     "value": 1
                                 },
                                 {
@@ -643,7 +708,7 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedDamageAgainstGoblins",
+                                    "key": "damageDealtGoblins",
                                     "value": 10
                                 },
                                 {
@@ -653,7 +718,7 @@
                                 },
                                 {
                                     "level": 60,
-                                    "key": "increasedDamageAgainstSeaCreatures",
+                                    "key": "damageDealtSeaCreatures",
                                     "value": 10
                                 },
                                 {
@@ -682,7 +747,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "goblinTraitApplied",
+                                    "key": "traitAppliedGoblin",
                                     "value": 1
                                 },
                                 {
@@ -731,7 +796,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "dragonTraitApplied",
+                                    "key": "traitAppliedDragon",
                                     "value": 1
                                 },
                                 {
@@ -741,7 +806,7 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedDamageAgainstElves",
+                                    "key": "damageDealtElf",
                                     "value": 10
                                 },
                                 {
@@ -756,7 +821,7 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "increasedGlobalAccuracyAgainstAarakocras",
+                                    "key": "accuracyRatingAarakocra",
                                     "value": 50
                                 },
                                 {
@@ -780,7 +845,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "undeadTraitApplied",
+                                    "key": "traitAppliedUndead",
                                     "value": 1
                                 },
                                 {
@@ -829,7 +894,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "demonTraitApplied",
+                                    "key": "traitAppliedDemon",
                                     "value": 1
                                 },
                                 {
@@ -844,7 +909,7 @@
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedDamageAgainstAngels",
+                                    "key": "damageDealtAngels",
                                     "value": 10
                                 },
                                 {
@@ -878,7 +943,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "elementalTraitApplied",
+                                    "key": "traitAppliedElemental",
                                     "value": 1
                                 },
                                 {
@@ -928,7 +993,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "seaCreatureTraitApplied",
+                                    "key": "traitAppliedSeaCreature",
                                     "value": 1
                                 },
                                 {
@@ -948,7 +1013,7 @@
                                 },
                                 {
                                     "level": 60,
-                                    "key": "increasedDamageAgainstDragons",
+                                    "key": "damageDealtDragons",
                                     "value": 10
                                 },
                                 {
@@ -977,7 +1042,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "mythicalCreatureTraitApplied",
+                                    "key": "traitAppliedMythicalCreature",
                                     "value": 1
                                 },
                                 {
@@ -987,12 +1052,12 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedDamageAgainstAarakocras",
+                                    "key": "damageDealtAarakocra",
                                     "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedGlobalAccuracyAgainstFighters",
+                                    "key": "accuracyRatingFighters",
                                     "value": 20
                                 },
                                 {
@@ -1026,7 +1091,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "angelTraitApplied",
+                                    "key": "traitAppliedAngel",
                                     "value": 1
                                 },
                                 {
@@ -1036,12 +1101,12 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedDamageAgainstDemons",
+                                    "key": "damageDealtDemons",
                                     "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedGlobalAccuracyAgainstDemons",
+                                    "key": "accuracyRatingDemons",
                                     "value": 20
                                 },
                                 {
@@ -1076,7 +1141,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "fighterTraitApplied",
+                                    "key": "traitAppliedFighter",
                                     "value": 1
                                 },
                                 {
@@ -1124,7 +1189,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "mageTraitApplied",
+                                    "key": "traitAppliedMage",
                                     "value": 1
                                 },
                                 {
@@ -1172,7 +1237,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "fighterTraitApplied",
+                                    "key": "traitAppliedFighter",
                                     "value": 1
                                 },
                                 {
@@ -1220,7 +1285,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "fighterTraitApplied",
+                                    "key": "traitAppliedFighter",
                                     "value": 1
                                 },
                                 {
@@ -1240,12 +1305,12 @@
                                 },
                                 {
                                     "level": 60,
-                                    "key": "increasedDamageAgainstHumans",
+                                    "key": "damageDealtHuman",
                                     "value": 25
                                 },
                                 {
                                     "level": 80,
-                                    "key": "increasedGlobalAccuracyAgainstMythicalCreatures",
+                                    "key": "accuracyRatingMythicalCreatures",
                                     "value": 25
                                 },
                                 {
@@ -1268,7 +1333,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "rogueTraitApplied",
+                                    "key": "traitAppliedRogue",
                                     "value": 1
                                 },
                                 {
@@ -1293,7 +1358,7 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "increasedDamageAgainstAnimals",
+                                    "key": "damageDealtAnimals",
                                     "value": 10
                                 },
                                 {
@@ -1316,17 +1381,17 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "rogueTraitApplied",
+                                    "key": "traitAppliedRogue",
                                     "value": 1
                                 },
                                 {
                                     "level": 1,
-                                    "key": "decreasedDamageAgainstAarakocras",
-                                    "value": 100
+                                    "key": "damageDealtAarakocra",
+                                    "value": -100
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedGlobalAccuracyAgainstSeaCreatures",
+                                    "key": "accuracyRatingSeaCreatures",
                                     "value": 10
                                 },
                                 {
@@ -1364,17 +1429,17 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "fighterTraitApplied",
+                                    "key": "traitAppliedFighter",
                                     "value": 1
                                 },
                                 {
                                     "level": 1,
-                                    "key": "decreasedDamageAgainstAngels",
-                                    "value": 100
+                                    "key": "damageDealtAngels",
+                                    "value": -100
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedGlobalAccuracyAgainstDemons",
+                                    "key": "accuracyRatingDemons",
                                     "value": 10
                                 },
                                 {
@@ -1412,7 +1477,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "mageTraitApplied",
+                                    "key": "traitAppliedMage",
                                     "value": 1
                                 },
                                 {
@@ -1460,7 +1525,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "mageTraitApplied",
+                                    "key": "traitAppliedMage",
                                     "value": 1
                                 },
                                 {
@@ -1508,7 +1573,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "mageTraitApplied",
+                                    "key": "traitAppliedMage",
                                     "value": 1
                                 },
                                 {
@@ -1556,7 +1621,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "rogueTraitApplied",
+                                    "key": "traitAppliedRogue",
                                     "value": 1
                                 },
                                 {
@@ -1604,7 +1669,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "fighterTraitApplied",
+                                    "key": "traitAppliedFighter",
                                     "value": 1
                                 },
                                 {
@@ -1624,7 +1689,7 @@
                                 },
                                 {
                                     "level": 60,
-                                    "key": "increasedDamageAgainstDemons",
+                                    "key": "damageDealtDemons",
                                     "value": 30
                                 },
                                 {
@@ -1652,7 +1717,7 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "mageTraitApplied",
+                                    "key": "traitAppliedMage",
                                     "value": 1
                                 },
                                 {
