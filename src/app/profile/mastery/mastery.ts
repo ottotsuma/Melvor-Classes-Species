@@ -107,6 +107,7 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
             };
         },
         completeUpgrade: function () {
+            // @ts-ignore // TODO: TYPES
             profile.computeProvidedStats(true);
             profile.renderQueue.youModifiers = true;
             profile.renderQueue.grants = true;

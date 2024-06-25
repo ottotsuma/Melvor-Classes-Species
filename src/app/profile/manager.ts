@@ -98,18 +98,8 @@ export class ProfileManager {
     }
 
     public getEquipCostModifier(single_species: Single_Species) {
-        let modifier = this.game.modifiers.increasedProfileEquipCost - this.game.modifiers.decreasedProfileEquipCost;
-
-        if (this.profile.isPoolTierActive(3)) {
-            modifier -= 5;
-        }
-
-        const masteryLevel = this.profile.getMasteryLevel(single_species);
-
-        if (masteryLevel >= 90) {
-            modifier -= 5;
-        }
-
+        // @ts-ignore // TODO: TYPES
+        let modifier = this.game.modifiers.getValue('namespace_profile:ProfileEquipCost', this.profile.getActionModifierQuery(single_species));
         return Math.max(modifier, -95);
     }
 

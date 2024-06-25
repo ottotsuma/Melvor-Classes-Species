@@ -2,6 +2,173 @@
     "$schema": "https://melvoridle.com/assets/schema/gameData.json",
     "namespace": "namespace_profile",
     "data": {
+        "modifiers": [
+            {
+                "id": "ProfileEquipCost",
+                "isCombat": true,
+                "allowEnemy": true,
+                "allowedScopes": [
+                    {
+                        "scopes": {},
+                        "descriptions": [
+                            {
+                                "text": "-${value}% Cost",
+                                "lang": "Profile_You_Equip_Cost_Negative",
+                                "below": 0,
+                                "includeSign": false
+                            },
+                            {
+                                "text": "+${value}% Cost",
+                                "lang": "Profile_You_Equip_Cost_Positive",
+                                "above": 0,
+                                "includeSign": false
+                            }
+                        ],
+                        "posAliases": [
+                            {
+                                "key": "increasedProfileEquipCost"
+                            }
+                        ],
+                        "negAliases": [
+                            {
+                                "key": "decreasedProfileEquipCost"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "ProfileGP",
+                "isCombat": true,
+                "allowEnemy": true,
+                "allowedScopes": [
+                    {
+                        "scopes": {},
+                        "descriptions": [
+                            {
+                                "text": "-${value}% GP",
+                                "lang": "Profile_Profile_GP_Negative",
+                                "below": 0,
+                                "includeSign": false
+                            },
+                            {
+                                "text": "+${value}% GP",
+                                "lang": "Profile_Profile_GP_Positive",
+                                "above": 0,
+                                "includeSign": false
+                            }
+                        ],
+                        "posAliases": [
+                            {
+                                "key": "increasedProfileGP"
+                            }
+                        ],
+                        "negAliases": [
+                            {
+                                "key": "decreasedProfileGP"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "skillMasteryXPPerVariel",
+                "allowNegative": false,
+                "allowedScopes": [
+                    {
+                        "scopes": {
+                            "skill": true
+                        },
+                        "descriptions": [
+                            {
+                                "text": "+${value}% ${skillName} Mastery XP per maxed Star in Variel constellation in Astrology",
+                                "lang": "Profile_Increased_Mastery_XP_Per_Variel",
+                                "above": 0,
+                                "includeSign": false
+                            }
+                        ],
+                        "posAliases": [
+                            {
+                                "key": "increasedSkillMasteryXPPerVariel"
+                            }
+                        ],
+                        "negAliases": [
+                            {
+                                "key": "decreasedSkillMasteryXPPerVariel"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "FlatRangedDefenceBonusPerDefence",
+                "isCombat": true,
+                "allowEnemy": true,
+                "allowedScopes": [
+                    {
+                        "scopes": {},
+                        "descriptions": [
+                            {
+                                "text": "-${value} decreased flat ranged defence per defence level",
+                                "lang": "Profile_decreasedFlatRangedDefenceBonusPerDefence",
+                                "below": 0,
+                                "includeSign": false
+                            },
+                            {
+                                "text": "+${value} increased flat ranged defence per defence level",
+                                "lang": "Profile_increasedFlatRangedDefenceBonusPerDefence",
+                                "above": 0,
+                                "includeSign": false
+                            }
+                        ],
+                        "posAliases": [
+                            {
+                                "key": "increasedFlatRangedDefenceBonusPerDefence"
+                            }
+                        ],
+                        "negAliases": [
+                            {
+                                "key": "decreasedFlatRangedDefenceBonusPerDefence"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "FlatMeleeDefenceBonusPerDefence",
+                "isCombat": true,
+                "allowEnemy": true,
+                "allowedScopes": [
+                    {
+                        "scopes": {},
+                        "descriptions": [
+                            {
+                                "text": "-${value} decreased flat Melee defence per defence level",
+                                "lang": "Profile_decreasedFlatMeleeefenceBonusPerDefence",
+                                "below": 0,
+                                "includeSign": false
+                            },
+                            {
+                                "text": "+${value} increased flat Melee defence per defence level",
+                                "lang": "Profile_increasedFlatMeleeDefenceBonusPerDefence",
+                                "above": 0,
+                                "includeSign": false
+                            }
+                        ],
+                        "posAliases": [
+                            {
+                                "key": "increasedFlatMeleeDefenceBonusPerDefence"
+                            }
+                        ],
+                        "negAliases": [
+                            {
+                                "key": "decreasedFlatMeleeDefenceBonusPerDefence"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
         "combatPassives": [
             {
                 "id": "bob_traits",
@@ -490,7 +657,7 @@
                     "masteryLevelBonuses": [
                         {
                             "modifiers": {
-                                "melvorD:bankSpace":[
+                                "melvorD:bankSpace": [
                                     {
                                         "value": 1
                                     }
@@ -502,7 +669,7 @@
                         },
                         {
                             "modifiers": {
-                                "namespace_profile:equipCost": -5
+                                "namespace_profile:ProfileEquipCost": -5
                             },
                             "level": 90
                         }
@@ -547,7 +714,7 @@
                         {
                             "realm": "melvorD:Melvor",
                             "modifiers": {
-                                "namespace_profile:equipCost": -5
+                                "namespace_profile:ProfileEquipCost": -5
                             },
                             "percent": 95
                         }

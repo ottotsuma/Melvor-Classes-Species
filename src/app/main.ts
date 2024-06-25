@@ -1,7 +1,6 @@
 import { ProfileActionEventMatcher, ProfileActionEventMatcherOptions } from './profile/event';
 import { Profile } from './profile/profile';
 import { UserInterface } from './profile/user-interface';
-import { ProfileModifiers } from './profile/modifiers';
 import { TinyPassiveIconsCompatibility } from './compatibility/tiny-passive-icons';
 import { ProfileSkillData } from './profile/profile.types';
 import { languages } from './language';
@@ -62,12 +61,11 @@ export class App {
         this.initTranslation();
         const settings = this.initSettings();
         this.patchEventManager();
-        this.initModifiers();
 
         this.game.profile = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_profile'), Profile);
         const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
         if (combatSim) {
-          mod.api.mythCombatSimulator?.registerNamespace('namespace_profile');
+            mod.api.mythCombatSimulator?.registerNamespace('namespace_profile');
         }
         const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
         const AR = mod.manager.getLoadedModList().includes('Abyssal Rift')
@@ -75,27 +73,7 @@ export class App {
         const music = mod.manager.getLoadedModList().includes('[Myth] Music')
         const ToB = mod.manager.getLoadedModList().includes('Theatre of Blood')
         const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
-        const monad = mod.manager.getLoadedModList().includes('Monad')
-
-        modifierData.increasedFlatRangedDefenceBonusPerDefence = {
-            get langDescription() {
-                return getLangString('Profile_increasedFlatRangedDefenceBonusPerDefence');
-            },
-            description: '${value} increased flat ranged defence per defence level',
-            isSkill: false,
-            isNegative: false,
-            tags: ['combat']
-        };
-
-        modifierData.increasedFlatMeleeDefenceBonusPerDefence = {
-            get langDescription() {
-                return getLangString('Profile_increasedFlatMeleeDefenceBonusPerDefence');
-            },
-            description: '${value} increased flat melee defence per defence level',
-            isSkill: false,
-            isNegative: false,
-            tags: ['combat']
-        };
+        // const monad = mod.manager.getLoadedModList().includes('Monad')
 
         if (!kcm) {
             return;
@@ -893,16 +871,16 @@ export class App {
 
                         let skillExp2 = exp2 || 0
                         let masteryExp2 = exp2 || 0
-                        if (game.profile.isPoolTierActive(1)) {
-                            skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-                            skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
-                        }
-                        if (game.profile.isPoolTierActive(1)) {
-                            masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-                            masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
-                        }
-
-                        const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
+                        // if (game.profile.isPoolTierActive(1)) {
+                        //     skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
+                        //     skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
+                        // }
+                        // if (game.profile.isPoolTierActive(1)) {
+                        //     masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
+                        //     masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
+                        // }
+                        //@ts-ignore
+                        const globalMasteryEXPmod = game.modifiers.getValue("melvorD:masteryXP", {})
 
                         const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
                         const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
@@ -933,12 +911,12 @@ export class App {
             })
             // @ts-ignore
             this.context.patch(Character, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
-                return meleeDefenceBonus + (game.combat.player.levels.Defence * this.modifiers.increasedFlatMeleeDefenceBonusPerDefence)
+                return meleeDefenceBonus + (game.combat.player.levels.Defence * this.game.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
             })
 
             // @ts-ignore
             this.context.patch(Character, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) {
-                return rangedDefenceBonus + (game.combat.player.levels.Defence * this.modifiers.increasedFlatRangedDefenceBonusPerDefence)
+                return rangedDefenceBonus + (game.combat.player.levels.Defence * this.game.modifiers.getValue('namespace_profile:FlatRangedDefenceBonusPerDefence', {}))
             })
 
 
@@ -963,24 +941,24 @@ export class App {
 
             // adding monsters modifiers to effect species
             const cmimSeaCreatureList: String[] = await cmim.getMonstersOfType('SeaCreature');
-            const cmimMythicalCreatureList:String[] = await cmim.getMonstersOfType('MythicalCreature');
-            const cmimElementalList:String[] = await cmim.getMonstersOfType('Elemental');
-            const cmimDemonList:String[] = await cmim.getMonstersOfType('Demon');
-            const cmimAnimalList:String[] = await cmim.getMonstersOfType('Animal');
-            const cmimHumanList:String[] = await cmim.getMonstersOfType('Human');
-            const cmimUndeadList:String[] = await cmim.getMonstersOfType('Undead');
-            const cmimAngelList:String[] = await cmim.getMonstersOfType('Angel');
-            const cmimAarakocraList:String[] = await cmim.getMonstersOfType('Aarakocra');
-            const cmimBeastList:String[] = await cmim.getMonstersOfType('Beast');
-            const cmimGiantList:String[] = await cmim.getMonstersOfType('Giant');
-            const cmimOrcList:String[] = await cmim.getMonstersOfType('Orc');
-            const cmimPlantList:String[] = await cmim.getMonstersOfType('Plant');
-            const cmimGoblinList:String[] = await cmim.getMonstersOfType('Goblin');
-            const cmimElfList:String[] = await cmim.getMonstersOfType('Elf');
-            const cmimDragonList:String[] = await cmim.getMonstersOfType('Dragon');
-            const cmimFighterList:String[] = await cmim.getMonstersOfType('Fighter');
-            const cmimMageList:String[] = await cmim.getMonstersOfType('Mage');
-            const cmimRogueList:String[] = await cmim.getMonstersOfType('Rogue');
+            const cmimMythicalCreatureList: String[] = await cmim.getMonstersOfType('MythicalCreature');
+            const cmimElementalList: String[] = await cmim.getMonstersOfType('Elemental');
+            const cmimDemonList: String[] = await cmim.getMonstersOfType('Demon');
+            const cmimAnimalList: String[] = await cmim.getMonstersOfType('Animal');
+            const cmimHumanList: String[] = await cmim.getMonstersOfType('Human');
+            const cmimUndeadList: String[] = await cmim.getMonstersOfType('Undead');
+            const cmimAngelList: String[] = await cmim.getMonstersOfType('Angel');
+            const cmimAarakocraList: String[] = await cmim.getMonstersOfType('Aarakocra');
+            const cmimBeastList: String[] = await cmim.getMonstersOfType('Beast');
+            const cmimGiantList: String[] = await cmim.getMonstersOfType('Giant');
+            const cmimOrcList: String[] = await cmim.getMonstersOfType('Orc');
+            const cmimPlantList: String[] = await cmim.getMonstersOfType('Plant');
+            const cmimGoblinList: String[] = await cmim.getMonstersOfType('Goblin');
+            const cmimElfList: String[] = await cmim.getMonstersOfType('Elf');
+            const cmimDragonList: String[] = await cmim.getMonstersOfType('Dragon');
+            const cmimFighterList: String[] = await cmim.getMonstersOfType('Fighter');
+            const cmimMageList: String[] = await cmim.getMonstersOfType('Mage');
+            const cmimRogueList: String[] = await cmim.getMonstersOfType('Rogue');
 
             const initialPackage = this.context.gameData.buildPackage((itemPackage: any) => {
                 cmimRogueList.forEach(monsterId => {
@@ -1254,7 +1232,7 @@ export class App {
         this.context.onCharacterLoaded(() => {
             this.game.gamemodes.registeredObjects.forEach((mode, key) => {
                 const startingSkills = game.gamemodes.getObjectByID(key).startingSkills
-                if(startingSkills) {
+                if (startingSkills) {
                     startingSkills.add(this.game.skills.getObjectByID("namespace_profile:Profile"))
                     this.game.gamemodes.getObjectByID(key).startingSkills = startingSkills
                 }
@@ -1309,23 +1287,20 @@ export class App {
 
                 let skillExp2 = exp2 || 0
                 let masteryExp2 = exp2 || 0
-                if (game.profile.isPoolTierActive(1)) {
-                    skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-                    skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
-                }
-                if (game.profile.isPoolTierActive(1)) {
-                    masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-                    masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
-                }
-
-                const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
-                // const globalEXPmodperSkill = game.modifiers.decreasedGlobalSkillXPPerLevel - game.modifiers.increasedGlobalSkillXPPerLevel
-                // const flatEXPmod = game.modifiers.increasedFlatGlobalSkillXP - game.modifiers.decreasedFlatGlobalSkillXP
-                // const flatEXPmodPerSkill = game.modifiers.decreasedFlatGlobalSkillXPPerSkillLevel - game.modifiers.increasedFlatGlobalSkillXPPerSkillLevel
+                // if (game.profile.isPoolTierActive(1)) {
+                //     skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
+                //     skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
+                // }
+                // if (game.profile.isPoolTierActive(1)) {
+                //     masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
+                //     masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
+                // }
+//@ts-ignore
+                const globalEXPmod = game.modifiers.getValue("melvorD:skillXP", {}) 
                 const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
                 game.profile.addXP(totalExp)
-
-                const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
+                //@ts-ignore
+                const globalMasteryEXPmod = game.modifiers.getValue("melvorD:masteryXP", {})
 
                 const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
                 const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
@@ -1360,16 +1335,16 @@ export class App {
 
             let skillExp2 = exp2 || 0
             let masteryExp2 = exp2 || 0
-            if (game.profile.isPoolTierActive(1)) {
-                skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-                skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
-            }
-            if (game.profile.isPoolTierActive(1)) {
-                masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-                masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
-            }
-
-            const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
+            // if (game.profile.isPoolTierActive(1)) {
+            //     skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
+            //     skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
+            // }
+            // if (game.profile.isPoolTierActive(1)) {
+            //     masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
+            //     masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
+            // }
+            //@ts-ignore
+            const globalMasteryEXPmod = game.modifiers.getValue("melvorD:masteryXP", {})
 
             const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
             const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
@@ -1436,12 +1411,6 @@ export class App {
         settings.init();
 
         return settings;
-    }
-
-    private initModifiers() {
-        const modifiers = new ProfileModifiers();
-
-        modifiers.registerModifiers();
     }
 
     private initCompatibility(profile: Profile) {

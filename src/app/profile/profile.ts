@@ -21,7 +21,6 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public yous = new MasteredYous(this);
     public userInterface: UserInterface;
     public settings: ProfileSettings;
-    public modifiers = new MappedModifiers();
     public masteriesUnlocked = new Map<Single_Species, boolean[]>();
     public changesMade: any;
     public classIds: any[] = [];
@@ -195,7 +194,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                                 this.yous.set(single_species, masteredYou);
 
                                 (<any>this.userInterface)[`you${masteredYou.slot}`].setYou(masteredYou);
-
+// @ts-ignore // TODO: TYPES
                                 this.computeProvidedStats(true);
 
                                 this.userInterface.species.forEach(component => {
@@ -285,7 +284,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         for (const single_species of this.actions.registeredObjects.values()) {
             this.renderQueue.actionMastery.add(single_species);
         }
-
+// @ts-ignore // TODO: TYPES
         this.computeProvidedStats(false);
 
         this.renderQueue.grants = true;
@@ -302,6 +301,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
         this.settings.onChange(ChangeType.Modifiers, () => {
             setTimeout(() => {
+                // @ts-ignore // TODO: TYPES
                 this.computeProvidedStats(true);
             }, 10);
         });
@@ -319,6 +319,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         super.onMasteryLevelUp(action, oldLevel, newLevel);
 
         if (newLevel >= action.level) {
+            // @ts-ignore // TODO: TYPES
             this.computeProvidedStats(true);
         }
 
@@ -388,18 +389,18 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
     public onEquipmentChange() {}
 
-    public computeProvidedStats(updatePlayer = true) {
-        this.modifiers.reset();
+    // public computeProvidedStats(updatePlayer = true) {
+    //     this.modifiers.reset();
 
-        for (const you of this.yous.all()) {
-            const modifiers = this.manager.getModifiersForApplication(you.single_species);
-            this.modifiers.addArrayModifiers(modifiers);
-        }
+    //     for (const you of this.yous.all()) {
+    //         const modifiers = this.manager.getModifiersForApplication(you.single_species);
+    //         this.modifiers.addArrayModifiers(modifiers);
+    //     }
 
-        if (updatePlayer) {
-            this.game.combat.player.computeAllStats();
-        }
-    }
+    //     if (updatePlayer) {
+    //         this.game.combat.player.computeAllStats();
+    //     }
+    // }
 
     public get actionRewards() {
         const rewards = new Rewards(this.game);
@@ -413,19 +414,11 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public getXPModifier(single_species?: Single_Species) {
         let modifier = super.getXPModifier(single_species);
 
-        if (this.isPoolTierActive(0)) {
-            modifier += 3;
-        }
-
         return modifier;
     }
 
     public getMasteryXPModifier(single_species: Single_Species) {
         let modifier = super.getMasteryXPModifier(single_species);
-
-        if (this.isPoolTierActive(1)) {
-            modifier += 5;
-        }
 
         return modifier;
     }
@@ -447,12 +440,12 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             let skillExp1 = exp1 || 0
             let masteryExp1 = exp1 || 0
 
-            if (game.profile.isPoolTierActive(1)) {
-                skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-            }
-            if (game.profile.isPoolTierActive(1)) {
-                masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-            }
+            // if (game.profile.isPoolTierActive(1)) {
+            //     skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
+            // }
+            // if (game.profile.isPoolTierActive(1)) {
+            //     masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
+            // }
 
             const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
             const totalExp = skillExp1 + (((skillExp1) / 100) * globalEXPmod) || 0
