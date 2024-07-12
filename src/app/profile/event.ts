@@ -27,7 +27,8 @@ export class ProfileActionEventMatcher extends SkillActionEventMatcher<ProfileAc
 
         if (options.actionIDs !== undefined) {
             const profile = game.skills.find(skill => skill.id === 'namespace_profile:Profile') as Profile;
-            this.actions = profile.actions.getSetForConstructor(options.actionIDs, this, Single_Species.name);
+            // @ts-ignore
+            this.actions = profile.actions.getSetFromIds(options.actionIDs, this, Single_Species.name);
         }
     }
 

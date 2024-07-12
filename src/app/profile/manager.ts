@@ -1,5 +1,5 @@
 import { Profile } from './profile';
-import { YouModifier, Single_Species, Single_SpeciesModifier, SpecieskillModifier } from './profile.types';
+import { YouModifier, Single_Species } from './profile.types';
 
 export class ProfileManager {
     public get elements() {
@@ -23,24 +23,12 @@ export class ProfileManager {
         }
 
         return single_species.modifiers(this.profile.settings.modifierType).map(modifier => {
-            let description = '';
+            let description:any[] = [];
 
-            if (this.isSkillModifier(modifier)) {
-                [description] = printPlayerModifier(modifier.key, {
-                    skill: this.game.skills.find(skill => skill.id === modifier.skill),
-                    value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
-                });
-            } else {
-                try {
-                    [description] = printPlayerModifier(modifier.key, this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value);
-                    if(!description) {
-                        [description] = 'Fake modifer'
-                        console.log('Fake modifier, no disc found ', modifier.key) 
-                }
-                } catch (error) {
-                    [description] = 'Fake modifer'
-                    console.log('Fake modifier ', modifier.key)
-                }
+            // @ts-ignore 
+            for (let index = 0; index < modifier.modifiers.length; index++) {
+                // @ts-ignore 
+                description.push(modifier.modifiers[index].getDescription())
             }
 
             return {
@@ -57,27 +45,28 @@ export class ProfileManager {
             return [];
         }
 
-        return single_species
-            .modifiers(this.profile.settings.modifierType)
-            .filter(modifier => this.isModifierActive(single_species, modifier))
-            .map(modifier => {
-                if ('skill' in modifier) {
-                    return {
-                        key: modifier.key,
-                        values: [
-                            {
-                                skill: this.game.skills.find(skill => skill.id === modifier.skill),
-                                value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
-                            }
-                        ]
-                    } as SkillModifierArrayElement;
-                } else {
-                    return {
-                        key: modifier.key,
-                        value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
-                    } as StandardModifierArrayElement;
-                }
-            });
+        return single_species.modifiers(this.profile.settings.modifierType).filter(modifier => this.isModifierActive(single_species, modifier));
+
+            // .modifiers(this.profile.settings.modifierType)
+            // .filter(modifier => this.isModifierActive(single_species, modifier))
+            // .map(modifier => {
+            //     if ('skill' in modifier) {
+            //         return {
+            //             key: modifier.key,
+            //             values: [
+            //                 {
+            //                     skill: this.game.skills.find(skill => skill.id === modifier.skill),
+            //                     value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
+            //                 }
+            //             ]
+            //         } as SkillModifierArrayElement;
+            //     } else {
+            //         return {
+            //             key: modifier.key,
+            //             value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
+            //         } as StandardModifierArrayElement;
+            //     }
+            // });
     }
 
     public calculateEquipCost(single_species: Single_Species) {
@@ -98,17 +87,15 @@ export class ProfileManager {
     }
 
     public getEquipCostModifier(single_species: Single_Species) {
-        // @ts-ignore // TODO: TYPES
+        // @ts-ignore 
         let modifier = this.game.modifiers.getValue('namespace_profile:ProfileEquipCost', this.profile.getActionModifierQuery(single_species));
         return Math.max(modifier, -95);
     }
 
-    private isModifierActive(single_species: Single_Species, modifier: Single_SpeciesModifier) {
+    private isModifierActive(single_species: Single_Species, modifier: StatObject) {
         single_species = this.profile.actions.find(action => action.id === single_species.id);
 
         let unlockedMasteries = this.profile.masteriesUnlocked.get(single_species);
-
-        // const you = this.profile.yous.get(single_species);
 
         const validModifierLevels = single_species
             .modifiers(this.profile.settings.modifierType)
@@ -116,9 +103,5 @@ export class ProfileManager {
             .map(single_species => single_species.level);
 
         return validModifierLevels.includes(modifier.level);
-    }
-
-    private isSkillModifier(modifier: Single_SpeciesModifier): modifier is SpecieskillModifier {
-        return 'skill' in modifier;
     }
 }

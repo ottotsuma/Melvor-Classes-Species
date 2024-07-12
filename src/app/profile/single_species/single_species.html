@@ -14,7 +14,11 @@
                 <div class="col-12 profile-skill-icon-container">
                     <img class="skill-icon-xs m-2" v-for="skillIcon in getSkillIcons()" :src="skillIcon" />
                 </div>
-                <div class="col-12 row justify-content-center gutters-tiny text-center" id="grants-container"></div>
+                <div class="col-12 row justify-content-center gutters-tiny text-center icon-size-48" id="grants-container">
+                    <xp-icon id="thuum-xp"></xp-icon>
+                    <mastery-xp-icon id="thuum-mastery-xp"></mastery-xp-icon>
+                    <mastery-pool-icon id="thuum-pool-xp"></mastery-pool-icon>
+                </div>
                 <div style="display: flex;
                 flex-direction: column;
                 align-items: center;" class="col-12">

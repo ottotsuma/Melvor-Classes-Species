@@ -15,7 +15,7 @@ export class ProfileSettings {
     private youEquipCostCallbacks: YouEquipCostCallback[] = [];
     private modifierCallbacks: ModifierCallback[] = [];
 
-    constructor(private readonly context: Modding.ModContext) {}
+    constructor(private readonly context: Modding.ModContext) { }
 
     public init() {
         const that = this;
@@ -248,14 +248,14 @@ export class ProfileSettings {
                 for (const callback of this.youEquipCostCallbacks) {
                     try {
                         callback(value as number, previousValue as number);
-                    } catch {}
+                    } catch { }
                 }
                 break;
             case ChangeType.Modifiers:
                 for (const callback of this.modifierCallbacks) {
                     try {
                         callback(value as ModifierType, previousValue as ModifierType);
-                    } catch {}
+                    } catch { }
                 }
                 break;
         }

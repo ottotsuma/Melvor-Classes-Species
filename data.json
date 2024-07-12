@@ -169,58 +169,64 @@
                 ]
             }
         ],
+        "combatEffects": [
+            {
+                "id":"I_Apply_Animal_Trait",
+                "templateID":"customModifiersInMelvor:Animal_Trait_Static_Non_Counting_Effect_Base"
+            }
+        ],
         "combatPassives": [
             {
                 "id": "bob_traits",
                 "name": "Bob's Kindness",
                 "modifiers": {
-                    "damageDealtHuman": -100
-                }
+                    "customModifiersInMelvor:damageDealtHuman": -100
+                } 
             },
             {
                 "id": "abyssal_chicken_traits",
                 "name": "Abyssal Chicken's Anger",
                 "modifiers": {
-                    "damageDealtHuman": 10000
+                    "customModifiersInMelvor:damageDealtHuman": 10000
                 }
             },
             {
                 "id": "Dragon_traits",
                 "name": "Dragon Traits",
                 "modifiers": {
-                    "damageDealtElf": 10,
-                    "accuracyRatingAarakocra": 50
+                    "customModifiersInMelvor:damageDealtElf": 10,
+                    "customModifiersInMelvor:accuracyRatingAarakocra": 50
                 }
             },
             {
                 "id": "Elf_traits",
                 "name": "Elf Traits",
                 "modifiers": {
-                    "damageDealtMythicalCreatures": 10,
-                    "damageDealtElementals": 5
+                    "customModifiersInMelvor:damageDealtMythicalCreature": 10,
+                    "customModifiersInMelvor:damageDealtElemental": 5
                 }
             },
             {
                 "id": "Undead_traits",
                 "name": "Undead Traits",
                 "modifiers": {
-                    "damageDealtAngels": 10
+                    "customModifiersInMelvor:damageDealtAngel": 10
                 }
             },
             {
                 "id": "SeaCreature_traits",
                 "name": "Sea Creature Traits",
                 "modifiers": {
-                    "damageDealtDragons": 10,
-                    "damageDealtDragons": 10
+                    "customModifiersInMelvor:damageDealtDragon": 10,
+                    "customModifiersInMelvor:damageDealtDragon": 10
                 }
             },
             {
                 "id": "MythicalCreature_traits",
                 "name": "Mythical Creature Traits",
                 "modifiers": {
-                    "damageDealtAarakocra": 10,
-                    "accuracyRatingFighters": 20
+                    "customModifiersInMelvor:damageDealtAarakocra": 10,
+                    "customModifiersInMelvor:accuracyRatingFighter": 20
                 }
             },
             {
@@ -234,7 +240,7 @@
                 "id": "Demon_traits",
                 "name": "Demon Traits",
                 "modifiers": {
-                    "damageDealtAngels": 10
+                    "customModifiersInMelvor:damageDealtAngel": 10
                 }
             },
             {
@@ -246,35 +252,40 @@
                 "id": "Human_traits",
                 "name": "Human Traits",
                 "modifiers": {
-                    "damageDealtHuman": 10,
-                    "damageDealtAnimals": 10
+                    "customModifiersInMelvor:damageDealtHuman": 10,
+                    "customModifiersInMelvor:damageDealtAnimal": 10
                 }
             },
             {
                 "id": "Angel_traits",
                 "name": "Angel Traits",
                 "modifiers": {
-                    "damageDealtDemons": 10,
-                    "accuracyRatingDemons": 20
+                    "customModifiersInMelvor:damageDealtDemon": 10,
+                    "customModifiersInMelvor:accuracyRatingDemon": 20
                 }
             },
             {
                 "id": "Aarakocra_traits",
                 "name": "Aarakocra Traits",
                 "modifiers": {
-                    "damageDealtGoblins": 10,
-                    "damageDealtSeaCreatures": 10
+                    "customModifiersInMelvor:damageDealtGoblin": 10,
+                    "customModifiersInMelvor:damageDealtSeaCreature": 10
                 }
             },
             {
                 "id": "Beast_traits",
                 "name": "Beast Traits",
+                "combatEffects": [
+                    {
+                        "effectID":"namespace_profile:I_Apply_Animal_Trait",
+                        "chance": 10,
+                        "appliesWhen": "StartOfFight"
+                    }
+                ],
                 "modifiers": {
-                    "increasedDamageTakenFromHuman": 20,
-                    "increasedChanceToApplyAnimalTrait": 5,
-                    "decreasedDamageTakenFromAnimals": 20,
-                    "damageDealtAnimals": 10,
-                    "increasedMinHitBasedOnMaxHitAgainstAnimals": 5
+                    "customModifiersInMelvor:damageTakenHuman": 20,
+                    "customModifiersInMelvor:damageTakenAnimal": -20,
+                    "customModifiersInMelvor:damageDealtAnimal": 10
                 }
             },
             {
@@ -306,21 +317,21 @@
                 "id": "Mage_traits",
                 "name": "Mage Traits",
                 "modifiers": {
-                    "damageDealtFighters": 5
+                    "customModifiersInMelvor:damageDealtFighter": 5
                 }
             },
             {
                 "id": "Fighter_traits",
                 "name": "Fighter Traits",
                 "modifiers": {
-                    "damageDealtRogues": 5
+                    "customModifiersInMelvor:damageDealtRogue": 5
                 }
             },
             {
                 "id": "Rogue_traits",
                 "name": "Rogue Traits",
                 "modifiers": {
-                    "damageDealtMages": 5
+                    "customModifiersInMelvor:damageDealtMage": 5
                 }
             },
             {
@@ -339,28 +350,26 @@
                 "id": "weak_to_fire",
                 "name": "Fire Weakness",
                 "modifiers": {
-                    "increasedDamageTakenFromFireSpells": 100
                 }
             },
             {
                 "id": "weak_to_earth",
                 "name": "Earth Weakness",
                 "modifiers": {
-                    "increasedDamageTakenFromEarthSpells": 100
                 }
             },
             {
                 "id": "weak_to_water",
                 "name": "Water Weakness",
                 "modifiers": {
-                    "increasedDamageTakenFromWaterSpells": 100
+
                 }
             },
             {
                 "id": "weak_to_air",
                 "name": "Air Weakness",
                 "modifiers": {
-                    "increasedDamageTakenFromAirSpells": 100
+
                 }
             }
         ],
@@ -584,7 +593,7 @@
                 "scaleChanceWithMasteryPool": true,
                 "skillID": "namespace_profile:Profile",
                 "modifiers": {
-                    "damageDealtAnimals": 1
+                    "customModifiersInMelvor:damageDealtAnimal": 1
                 }
             },
             {
@@ -594,7 +603,7 @@
                 "ignoreCompletion": false,
                 "activeInRaid": false,
                 "modifiers": {
-                    "damageDealtDemons": 1
+                    "customModifiersInMelvor:damageDealtDemon": 1
                 },
                 "scaleChanceWithMasteryPool": true,
                 "skillID": "namespace_profile:Profile"
@@ -724,32 +733,7 @@
                         {
                             "level": "1",
                             "descriptionID": 0,
-                            "description": "Each level increases the species cost by 10 GP for this single_species only."
-                        },
-                        {
-                            "level": "1",
-                            "descriptionID": 1,
-                            "description": "First Master modifier."
-                        },
-                        {
-                            "level": "40",
-                            "descriptionID": 2,
-                            "description": "Ability to unlock the second Master modifier."
-                        },
-                        {
-                            "level": "60",
-                            "descriptionID": 3,
-                            "description": "Ability to unlock the third Master modifier."
-                        },
-                        {
-                            "level": "80",
-                            "descriptionID": 4,
-                            "description": "-5% You Equip Cost for this single_species only."
-                        },
-                        {
-                            "level": "99",
-                            "descriptionID": 5,
-                            "description": "Ability to unlock the fourth Master modifier."
+                            "description": "Each level increases the species cost."
                         }
                     ],
                     "species": [
@@ -777,12 +761,12 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "damageDealtAnimals",
+                                    "key": "customModifiersInMelvor:damageDealtAnimal",
                                     "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "key": "damageDealtHuman",
+                                    "key": "customModifiersInMelvor:damageDealtHuman",
                                     "value": 10
                                 },
                                 {
@@ -841,12 +825,12 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "damageDealtMythicalCreatures",
+                                    "key": "customModifiersInMelvor:damageDealtMythicalCreatures",
                                     "value": 10
                                 },
                                 {
                                     "level": 99,
-                                    "key": "damageDealtElementals",
+                                    "key": "customModifiersInMelvor:damageDealtElementals",
                                     "value": 5
                                 }
                             ]
@@ -875,7 +859,7 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "damageDealtGoblins",
+                                    "key": "customModifiersInMelvor:damageDealtGoblin",
                                     "value": 10
                                 },
                                 {
@@ -885,7 +869,7 @@
                                 },
                                 {
                                     "level": 60,
-                                    "key": "damageDealtSeaCreatures",
+                                    "key": "customModifiersInMelvor:damageDealtSeaCreatures",
                                     "value": 10
                                 },
                                 {
@@ -973,7 +957,7 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "damageDealtElf",
+                                    "key": "customModifiersInMelvor:damageDealtElf",
                                     "value": 10
                                 },
                                 {
@@ -988,7 +972,7 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "accuracyRatingAarakocra",
+                                    "key": "customModifiersInMelvor:accuracyRatingAarakocra",
                                     "value": 50
                                 },
                                 {
@@ -1076,7 +1060,7 @@
                                 },
                                 {
                                     "level": 40,
-                                    "key": "damageDealtAngels",
+                                    "key": "customModifiersInMelvor:damageDealtAngel",
                                     "value": 10
                                 },
                                 {
@@ -1180,13 +1164,13 @@
                                 },
                                 {
                                     "level": 60,
-                                    "key": "damageDealtDragons",
+                                    "key": "customModifiersInMelvor:damageDealtDragons",
                                     "value": 10
                                 },
                                 {
                                     "level": 80,
-                                    "key": "decreasedDamageTakenFromDragons",
-                                    "value": 10
+                                    "key": "damageTakenDragon",
+                                    "value": -10
                                 },
                                 {
                                     "level": 99,
@@ -1219,12 +1203,12 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "damageDealtAarakocra",
+                                    "key": "customModifiersInMelvor:damageDealtAarakocra",
                                     "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "key": "accuracyRatingFighters",
+                                    "key": "customModifiersInMelvor:accuracyRatingFighter",
                                     "value": 20
                                 },
                                 {
@@ -1268,12 +1252,12 @@
                                 },
                                 {
                                     "level": 20,
-                                    "key": "damageDealtDemons",
+                                    "key": "customModifiersInMelvor:damageDealtDemon",
                                     "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "key": "accuracyRatingDemons",
+                                    "key": "customModifiersInMelvor:accuracyRatingDemon",
                                     "value": 20
                                 },
                                 {
@@ -1472,7 +1456,7 @@
                                 },
                                 {
                                     "level": 60,
-                                    "key": "damageDealtHuman",
+                                    "key": "customModifiersInMelvor:damageDealtHuman",
                                     "value": 25
                                 },
                                 {
@@ -1525,7 +1509,7 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "damageDealtAnimals",
+                                    "key": "customModifiersInMelvor:damageDealtAnimal",
                                     "value": 10
                                 },
                                 {
@@ -1553,7 +1537,7 @@
                                 },
                                 {
                                     "level": 1,
-                                    "key": "damageDealtAarakocra",
+                                    "key": "customModifiersInMelvor:damageDealtAarakocra",
                                     "value": -100
                                 },
                                 {
@@ -1601,12 +1585,12 @@
                                 },
                                 {
                                     "level": 1,
-                                    "key": "damageDealtAngels",
+                                    "key": "customModifiersInMelvor:damageDealtAngel",
                                     "value": -100
                                 },
                                 {
                                     "level": 20,
-                                    "key": "accuracyRatingDemons",
+                                    "key": "customModifiersInMelvor:accuracyRatingDemon",
                                     "value": 10
                                 },
                                 {
@@ -1621,7 +1605,7 @@
                                 },
                                 {
                                     "level": 80,
-                                    "key": "increasedMaxHitPercentAgainstDemons",
+                                    "key": "increasedMaxHitPercentAgainstDemon",
                                     "value": 5
                                 },
                                 {
@@ -1856,7 +1840,7 @@
                                 },
                                 {
                                     "level": 60,
-                                    "key": "damageDealtDemons",
+                                    "key": "customModifiersInMelvor:damageDealtDemon",
                                     "value": 30
                                 },
                                 {
@@ -2206,6 +2190,15 @@
                         "id": "namespace_profile:Profile_Token",
                         "quantity": 10
                     }
+                ]
+            }
+        ],
+        "bankSortOrder": [
+            {
+                "insertAt": "After",
+                "afterID": "melvorF:Mastery_Token_Astrology",
+                "ids": [
+                    "namespace_profile:Mastery_Token_Profile"
                 ]
             }
         ]

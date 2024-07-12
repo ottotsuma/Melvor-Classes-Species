@@ -17,34 +17,35 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public readonly off = this._events.off;
     public readonly renderQueue = new ProfileRenderQueue();
 
-    public activeSingle_Species: Single_Species;
-    public yous = new MasteredYous(this);
-    public userInterface: UserInterface;
-    public settings: ProfileSettings;
-    public masteriesUnlocked = new Map<Single_Species, boolean[]>();
-    public changesMade: any;
-    public classIds: any[] = [];
+    public activeSingle_Species: Single_Species; // not found
+    public yous = new MasteredYous(this); // found
+    public userInterface: UserInterface; // not found
+    public settings: ProfileSettings;  // not found
+    public masteriesUnlocked = new Map<Single_Species, boolean[]>(); // empty map
+    public changesMade: any; // not found
+    public classIds: any[] = []; // empty array
+    // @ts-ignore 
+    private renderedProgressBar?: ProgressBarElement; // not found
 
-    private renderedProgressBar?: ProgressBar;
-
-    public readonly manager = new ProfileManager(this, this.game);
+    public readonly manager = new ProfileManager(this, this.game); // found
 
     constructor(namespace: DataNamespace, public readonly game: Game) {
         super(namespace, 'Profile', game);
+        this.manager = new ProfileManager(this, this.game);
     }
-    public getErrorLog () {return 'a'}
+    public getErrorLog() { return 'Profile died, I dunno' }
     public registerData(namespace: DataNamespace, data: ProfileSkillData) {
         super.registerData(namespace, data);
-
+        console.log('profile', data, namespace)
         if (data.species) {
             for (const single_species of data.species) {
-                this.actions.registerObject(new Single_Species(namespace, single_species));
+                this.actions.registerObject(new Single_Species(namespace, single_species, this.game));
             }
         }
 
         if (data.classes) {
             for (const single_species of data.classes) {
-                const newClass = new Single_Species(namespace, single_species)
+                const newClass = new Single_Species(namespace, single_species, this.game)
                 this.actions.registerObject(newClass);
                 this.classIds.push(newClass._localID);
             }
@@ -129,7 +130,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                         ${modifier.level})
                     </span>`;
                 }
-                if(modifier.level === 0) {
+                if (modifier.level === 0) {
                     html += `<span style="color: yellow;">${modifier.description}</span></small><br />`;
                 } else {
                     html += `<span>${modifier.description}</span></small><br />`;
@@ -150,7 +151,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                     ? templateLangString('Profile_Replace', { name: you.single_species.name })
                     : getLangString('Profile_Equip');
 
-            if( this.classIds.includes(single_species._localID)  ) {
+            if (this.classIds.includes(single_species._localID)) {
                 html += `<div class="you-Master-footer mt-3"><button type="button" class="you-2-confirm font-size-xs btn btn-primary m-1" aria-label="" value="you-2" style="display: inline-block;">${getText(
                     you2
                 )}</button>`;
@@ -178,10 +179,10 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
                         if (confirmYou) {
                             confirmYou.onclick = () => {
-                                if(MasterCost > 0) {
+                                if (MasterCost > 0) {
                                     this.game.gp.remove(MasterCost);
                                 }
-                                
+
                                 if (you) {
                                     this.yous.remove(you.single_species);
                                 }
@@ -194,7 +195,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                                 this.yous.set(single_species, masteredYou);
 
                                 (<any>this.userInterface)[`you${masteredYou.slot}`].setYou(masteredYou);
-// @ts-ignore // TODO: TYPES
+                                // @ts-ignore 
                                 this.computeProvidedStats(true);
 
                                 this.userInterface.species.forEach(component => {
@@ -228,7 +229,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         // });
         let skills = single_species.skills.map(media => {
             try {
-                if(!/(jpg|gif|png|JPG|GIF|PNG|JPEG|jpeg|svg)$/.test(media)) {
+                if (!/(jpg|gif|png|JPG|GIF|PNG|JPEG|jpeg|svg)$/.test(media)) {
                     const ans = {
                         name: game.skills.find(skill => skill.id === media)?.name,
                         media: game.skills.find(skill => skill.id === media)?.media
@@ -245,17 +246,17 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         //     html += `<img class="skill-icon-xs m-2" src="${image}" />`;
         // });
         skills.forEach(skill => {
-            if(skill) {
+            if (skill) {
                 html += `<div><small>You can gain mastery XP for ${single_species.name} from ${skill.name}</small><img class="skill-icon-xs m-2" src="${skill.media}" /></div><br />`;
             }
-        });        
-        if(single_species._localID === "Angel") {
+        });
+        if (single_species._localID === "Angel") {
             html += `<small>${getLangString('Profile_Angels_burying')}</small><br />`
         }
         html += `<small>You can gain mastery & skill XP for ${single_species.name} by killing monsters</small>`;
 
         html = `<div class="explain-wrap">${html}</div>`
-        
+
         SwalLocale.fire({
             html,
             showCancelButton: false,
@@ -280,17 +281,19 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
     public onLoad() {
         super.onLoad();
-
+        console.log('onLoad')
         for (const single_species of this.actions.registeredObjects.values()) {
             this.renderQueue.actionMastery.add(single_species);
         }
-// @ts-ignore // TODO: TYPES
+        console.log('computeProvidedStats')
+        // @ts-ignore 
         this.computeProvidedStats(false);
 
         this.renderQueue.grants = true;
         this.renderQueue.youModifiers = true;
         this.renderQueue.visibleSpecies = true;
 
+        console.log('updateDisabled', this, 'known error here')
         for (const component of this.userInterface.species.values()) {
             component.updateDisabled();
         }
@@ -301,7 +304,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
         this.settings.onChange(ChangeType.Modifiers, () => {
             setTimeout(() => {
-                // @ts-ignore // TODO: TYPES
+                // @ts-ignore 
                 this.computeProvidedStats(true);
             }, 10);
         });
@@ -309,7 +312,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
     public onLevelUp(oldLevel: number, newLevel: number) {
         super.onLevelUp(oldLevel, newLevel);
-        if(oldLevel < 2 && newLevel > 1) {
+        if (oldLevel < 2 && newLevel > 1) {
             game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1000, true, true, false, true, 'Gift from creator');
         }
         this.renderQueue.visibleSpecies = true;
@@ -319,11 +322,11 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         super.onMasteryLevelUp(action, oldLevel, newLevel);
 
         if (newLevel >= action.level) {
-            // @ts-ignore // TODO: TYPES
+            // @ts-ignore 
             this.computeProvidedStats(true);
         }
 
-        if(oldLevel < 20 && newLevel > 19) {
+        if (oldLevel < 20 && newLevel > 19) {
             game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, 'Gift from creator');
         }
 
@@ -331,7 +334,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     }
 
     public onModifierChange() {
-        super.onModifierChange();
+        super.renderModifierChange();
 
         this.renderQueue.grants = true;
         this.renderQueue.youModifiers = true;
@@ -360,7 +363,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
         const capesToExclude = ['melvorF:Max_Skillcape'];
 
-        if (cloudManager.hasTotHEntitlement) {
+        if (cloudManager.hasTotHEntitlementAndIsEnabled) {
             capesToExclude.push('melvorTotH:Superior_Max_Skillcape');
         }
 
@@ -381,13 +384,27 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         }
     }
 
-    public preAction() {}
+    public preAction() { }
 
     public postAction() {
         this.renderQueue.grants = true;
     }
 
-    public onEquipmentChange() {}
+    public onEquipmentChange() { }
+
+    public addProvidedStats() {
+        // @ts-ignore 
+        super.addProvidedStats();
+
+        for (const you of this.yous.all()) {
+            const modifiers = this.manager.getModifiersForApplication(you.single_species);
+
+            for (const modifier of modifiers) {
+                // @ts-ignore 
+                this.providedStats.addStatObject(you.single_species, modifier);
+            }
+        }
+    }
 
     // public computeProvidedStats(updatePlayer = true) {
     //     this.modifiers.reset();
@@ -401,6 +418,11 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     //         this.game.combat.player.computeAllStats();
     //     }
     // }
+
+    public isMasteryActionUnlocked(action: Single_Species) {
+        // @ts-ignore 
+        return this.isBasicSkillRecipeUnlocked(action);
+    }
 
     public get actionRewards() {
         const rewards = new Rewards(this.game);
@@ -427,7 +449,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         if (!this.renderQueue.grants) {
             return;
         }
-
+        console.log('2', this)
         for (const component of this.userInterface.species.values()) {
             const single_species = component.single_species
             const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
@@ -446,11 +468,11 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             // if (game.profile.isPoolTierActive(1)) {
             //     masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
             // }
-
-            const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
+            // @ts-ignore
+            const globalEXPmod = game.modifiers.getValue('skillXP', {}) // game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
             const totalExp = skillExp1 + (((skillExp1) / 100) * globalEXPmod) || 0
-
-            const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
+            // @ts-ignore
+            const globalMasteryEXPmod = game.modifiers.getValue('masteryXP', {}) // game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
 
             const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
 
@@ -533,8 +555,13 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         this.renderQueue.visibleSpecies = false;
     }
 
-    public getTotalUnlockedMasteryActions() {
-        return this.actions.reduce(levelUnlockSum(this), 0);
+    // @ts-ignore 
+    public getRegistry(type: ScopeSourceType) {
+        switch (type) {
+            // @ts-ignore 
+            case ScopeSourceType.Action:
+                return this.actions;
+        }
     }
 
     public resetActionState() {
@@ -552,15 +579,15 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         if (this.activeSingle_Species) {
             writer.writeNamespacedObject(this.activeSingle_Species);
         }
-// mod.manager.getLoadedModList().includes(
+        // mod.manager.getLoadedModList().includes(
         writer.writeArray(this.actions.allObjects, action => {
-            try {                
+            try {
                 writer.writeNamespacedObject(action);
-                
+
                 const masteriesUnlocked = this.masteriesUnlocked.get(action);
-                    writer.writeArray(masteriesUnlocked, value => {
-                        writer.writeBoolean(value);
-                    });
+                writer.writeArray(masteriesUnlocked, value => {
+                    writer.writeBoolean(value);
+                });
             } catch (error) {
                 console.log(error, this.actions.allObjects, action, this.masteriesUnlocked.get(action))
             }
@@ -579,7 +606,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public decode(reader: SaveWriter, version: number): void {
         super.decode(reader, version);
         const decoder = new Decoder(this.game, this, reader.byteOffset);
-
+        console.log('decoding 2')
         decoder.decode(reader);
     }
 

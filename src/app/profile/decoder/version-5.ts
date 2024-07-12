@@ -6,6 +6,7 @@ export class Version5 implements DecodeVersion {
     constructor(private readonly game: Game, private readonly profile: Profile) {}
 
     public decode(reader: SaveWriter) {
+        console.log('decoding')
         const version = reader.getUint32();
 
         if (version !== 5) {
@@ -69,6 +70,5 @@ export class Version5 implements DecodeVersion {
 
         this.profile.userInterface.you1.setYou(you1);
         this.profile.userInterface.you2.setYou(you2);
-
     }
 }

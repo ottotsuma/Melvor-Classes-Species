@@ -4,7 +4,7 @@ import { Single_Species, MasteredYou } from './profile.types';
 export class MasteredYous {
     public readonly yous = new Map<Single_Species, MasteredYou>();
 
-    constructor(private readonly profile: Profile) {}
+    constructor(private readonly profile: Profile) { }
 
     public get(single_species: Single_Species): MasteredYou | undefined;
     public get(slot: number): MasteredYou | undefined;

@@ -1,23 +1,23 @@
-declare class WoodcuttingTreeElement extends HTMLElement {
+declare class WoodcuttingTreeElement extends HTMLElement implements CustomElement {
     _content: DocumentFragment;
     button: HTMLAnchorElement;
-    unlockedText: HTMLDivElement;
     treeName: HTMLSpanElement;
     xpText: HTMLSpanElement;
     intervalText: HTMLSpanElement;
-    lockedText: HTMLDivElement;
     treeImage: HTMLImageElement;
-    progressContainer: HTMLDivElement;
     progressBar: HTMLDivElement;
     requirements: HTMLDivElement;
     requirementElements: HTMLElement[];
-    levelRequired: HTMLDivElement;
-    shopPurchaseRequired: HTMLElement;
-    masteryContainer: HTMLDivElement;
-    mastery: MasteryDisplay;
+    levelRequired: HTMLSpanElement;
+    abyssalLevelRequired: HTMLDivElement;
+    mastery: MasteryDisplayElement;
+    lockedContainer: HTMLDivElement;
     constructor();
     connectedCallback(): void;
-    setTreeUnlocked(tree: WoodcuttingTree, woodcutting: Woodcutting): void;
+    updateTreeVisibility(tree: WoodcuttingTree, woodcutting: Woodcutting): void;
+    setMastery(woodcutting: Woodcutting, tree: WoodcuttingTree): void;
+    setTree(tree: WoodcuttingTree, woodcutting: Woodcutting): void;
+    setTreeUnlocked(): void;
     setTreeLocked(tree: WoodcuttingTree, game: Game): void;
     updateLockedRequirements(tree: WoodcuttingTree, game: Game): void;
     updateRates(tree: WoodcuttingTree, woodcutting: Woodcutting): void;
@@ -28,15 +28,16 @@ declare class WoodcuttingTreeElement extends HTMLElement {
 declare class WoodcuttingMenu {
     woodcutting: Woodcutting;
     treeMenus: Map<WoodcuttingTree, WoodcuttingTreeElement>;
-    progressBar: ProgressBar;
+    progressBar: ProgressBarElement;
     infoMessage: HTMLHeadingElement;
     grantsContainer: HTMLDivElement;
     treeContainer: HTMLDivElement;
     treeGrants: TreeGrantElements[];
     lowerGrants: HTMLDivElement;
-    xpIcon: XPIcon;
-    poolXPIcon: MasteryPoolIcon;
-    intervalIcon: IntervalIcon;
+    xpIcon: XpIconElement;
+    abyssalXPIcon: AbyssalXpIconElement;
+    poolXPIcon: MasteryPoolIconElement;
+    intervalIcon: IntervalIconElement;
     selectedTrees: Set<WoodcuttingTree>;
     constructor(woodcutting: Woodcutting);
     createTreeMenus(game: Game): void;
@@ -48,7 +49,7 @@ declare class WoodcuttingMenu {
     updateSelectedTrees(): void;
 }
 interface TreeGrantElements {
-    itemIcon: ItemQtyIcon;
-    masteryXPIcon: MasteryXPIcon;
+    itemIcon: ItemQuantityIconElement;
+    masteryXPIcon: MasteryXpIconElement;
     container: HTMLDivElement;
 }

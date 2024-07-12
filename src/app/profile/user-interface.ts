@@ -35,11 +35,14 @@ export class UserInterface {
     ) {}
 
     public init() {
+        console.log('user-interface init')
         this.context.onInterfaceAvailable(async () => {
             this.mainContainer.append(...this.profile.manager.elements);
 
             this.modifySkillInfoClass(this.mainContainer);
-
+            // single_species = teacher
+            // profile = thuum
+            // you = shout
             for (const single_species of this.profile.sortedMasteryActions) {
                 const component = Single_SpeciesComponent(this.profile, single_species, this.game);
                 if(this.profile.classIds.includes(single_species._localID)) {

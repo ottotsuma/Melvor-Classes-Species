@@ -1,24 +1,9 @@
 import { ModifierType } from './settings';
 
 export interface YouModifier {
-    description: string;
+    description: any[];
     isActive: boolean;
     level: number;
-}
-
-export type Single_SpeciesModifier = SpecieskillModifier | SpeciestandardModifier;
-
-export interface SpecieskillModifier {
-    level: number;
-    key: SkillModifierKeys;
-    value: number;
-    skill: string | AnySkill;
-}
-
-export interface SpeciestandardModifier {
-    level: number;
-    key: StandardModifierKeys;
-    value: number;
 }
 
 export interface ProfileSkillData extends MasterySkillData {
@@ -29,7 +14,7 @@ export interface ProfileSkillData extends MasterySkillData {
 export interface Single_SpeciesData extends BasicSkillRecipeData {
     name: string;
     media: string;
-    standardModifiers: Single_SpeciesModifier[];
+    standardModifiers: StatObject[];
     skills: string[];
 }
 
@@ -41,7 +26,7 @@ export interface MasteredYou {
 export class Single_Species extends BasicSkillRecipe {
     skills: string[];
 
-    private standardModifiers: Single_SpeciesModifier[];
+    private standardModifiers: StatObject[];
 
     public get name() {
         return getLangString(`Profile_Single_Species_${this.localID}`);
@@ -58,10 +43,58 @@ export class Single_Species extends BasicSkillRecipe {
         }
     }
 
-    constructor(namespace: DataNamespace, private readonly data: Single_SpeciesData) {
-        super(namespace, data);
+    constructor(namespace: DataNamespace, private readonly data: Single_SpeciesData, game: Game) {
+        // @ts-ignore
+        super(namespace, data, game);
 
-        this.standardModifiers = data.standardModifiers;
+        // this.standardModifiers = data.standardModifiers;
+        this.standardModifiers = data.standardModifiers.map(modifier => {
+            // @ts-ignore 
+            if (modifier.value) {
+                const newModifier = {
+                    level: modifier.level,
+                    // @ts-ignore 
+                    modifiers: {
+                        "increasedMasteryXP": [
+                            {
+                                "value": 5,
+                                "skillID": "melvorD:Firemaking"
+                            }
+                        ]
+                    }
+                }
+                // @ts-ignore 
+                const stats = new StatObject(newModifier, game, `${Single_Species.name}`);
+                stats.level = modifier.level;
+                return stats;
+            } else {
+                // @ts-ignore 
+                const stats = new StatObject(modifier, game, `${Single_Species.name}`);
+                stats.level = modifier.level;
+                return stats;
+            }
+        });
         this.skills = data.skills;
+    }
+}
+
+
+export interface UpgradeData {
+    itemId: string;
+    modifiers: StatObject[];
+}
+
+export class UpgradeModifier {
+    itemId: string;
+    // @ts-ignore 
+    modifiers: StatObject[];
+
+    constructor(private readonly data: UpgradeData, private readonly game: Game) {
+        this.itemId = this.data.itemId;
+        // @ts-ignore 
+        this.modifiers = new StatObject(this.data, this.game, `${UpgradeModifier.name} with id ${this.itemId}`);
+
+        // @ts-ignore 
+        this.modifiers.registerSoftDependencies(this.data, this.game);
     }
 }

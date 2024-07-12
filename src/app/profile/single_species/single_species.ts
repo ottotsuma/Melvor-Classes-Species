@@ -3,6 +3,12 @@ import { Single_Species } from '../profile.types';
 
 import './single_species.scss';
 
+export interface Single_SpeciesContext {
+    media: string;
+    name: string;
+    single_speciesId: string;
+}
+// TeacherComponent ? 
 export function Single_SpeciesComponent(profile: Profile, single_species: Single_Species, game: Game) {
     return {
         $template: '#profile-single_species',
@@ -11,23 +17,20 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
         media: single_species.media,
         id: single_species.id,
         localId: single_species.localID.toLowerCase(),
-        disabled: false,
-        progressBar: {} as ProgressBar,
+        disabled: false, // @ts-ignore 
+        progressBar: {} as ProgressBarElement,
         mounted: function () {
             const grantsContainer = document
                 .querySelector(`#${this.localId}`)
                 .querySelector('#grants-container') as HTMLElement;
 
-            this.xpIcon = new XPIcon(grantsContainer, 0, 0, 32);
-            this.masteryIcon = new MasteryXPIcon(grantsContainer, 0, 0, 32);
-            this.masteryPoolIcon = new MasteryPoolIcon(grantsContainer, 0, 32);
-            // this.intervalIcon = new IntervalIcon(grantsContainer, 0, 32);
+            this.xpIcon = grantsContainer.querySelector('#thuum-xp');
+            this.masteryIcon = grantsContainer.querySelector('#thuum-mastery-xp');
+            this.masteryPoolIcon = grantsContainer.querySelector('#thuum-pool-xp');
 
             const progressBar = document
-                .querySelector(`#${this.localId}`)
-                .querySelector('.progress-bar') as HTMLElement;
-
-            this.progressBar = new ProgressBar(progressBar, 'bg-secondary');
+                .querySelector(`#${this.localId}`) // @ts-ignore 
+                .querySelector<ProgressBarElement>('progress-bar');
         },
         updateGrants: function (
             xp: number,
@@ -36,9 +39,14 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
             baseMasteryXP: number,
             masteryPoolXP: number,
         ) {
-            this.xpIcon.setXP(xp, baseXP);
-            this.masteryIcon.setXP(masteryXP, baseMasteryXP);
+            this.xpIcon.setXP(xp, baseXP); // @ts-ignore 
+            this.xpIcon.setSources(game.profile.getXPSources(single_species));
+            this.masteryIcon.setXP(masteryXP, baseMasteryXP); // @ts-ignore 
+            this.masteryIcon.setSources(game.profile.getMasteryXPSources(single_species));
             this.masteryPoolIcon.setXP(masteryPoolXP);
+            // this.intervalIcon.setInterval(interval);
+            // @ts-ignore 
+            game.unlockedRealms.length > 1 ? this.masteryPoolIcon.setRealm(realm) : this.masteryPoolIcon.hideRealms();
         },
         Master: function () {
             profile.Master(single_species);
@@ -55,7 +63,7 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
         getSkillIcons: function () {
             return single_species.skills.map(media => {
                 try {
-                    if(!/(jpg|gif|png|JPG|GIF|PNG|JPEG|jpeg|svg)$/.test(media)) {
+                    if (!/(jpg|gif|png|JPG|GIF|PNG|JPEG|jpeg|svg)$/.test(media)) {
                         return game.skills.find(skill => skill.id === media)?.media;
                     } else {
                         return media
