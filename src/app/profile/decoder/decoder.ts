@@ -3,7 +3,7 @@ import { Version5 } from './version-5';
 
 
 export class Decoder {
-    constructor(private readonly game: Game, private readonly profile: Profile, private readonly start: number) {}
+    constructor(private readonly game: Game, private readonly profile: Profile, private readonly start: number) { }
 
     public decode(reader: SaveWriter) {
         const saveVersions = [
@@ -20,6 +20,7 @@ export class Decoder {
 
             // Reset the byte offset if we failed to load this version of the save.
             reader.byteOffset = this.start;
+
         }
     }
 

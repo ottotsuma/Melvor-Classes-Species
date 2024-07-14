@@ -35,7 +35,6 @@ export class UserInterface {
     ) {}
 
     public init() {
-        console.log('user-interface init')
         this.context.onInterfaceAvailable(async () => {
             this.mainContainer.append(...this.profile.manager.elements);
 

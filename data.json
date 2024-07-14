@@ -751,13 +751,15 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "traitAppliedHuman",
-                                    "value": 1
+                                    "modifiers": {
+                                        "customModifiersInMelvor:traitAppliedHuman" : 1
+                                    }
                                 },
                                 {
                                     "level": 1,
-                                    "key": "decreasedMagicMaxHit",
-                                    "value": 10
+                                    "modifiers": {
+                                        "magicMaxHit": 10
+                                    }
                                 },
                                 {
                                     "level": 20,
@@ -947,8 +949,9 @@
                             "standardModifiers": [
                                 {
                                     "level": 0,
-                                    "key": "traitAppliedDragon",
-                                    "value": 1
+                                    "modifiers": {
+                                        "customModifiersInMelvor:traitAppliedDragon": 1
+                                    }
                                 },
                                 {
                                     "level": 1,

@@ -57,7 +57,7 @@ export class Single_Species extends BasicSkillRecipe {
                     modifiers: {
                         "increasedMasteryXP": [
                             {
-                                "value": 5,
+                                "value": -5,
                                 "skillID": "melvorD:Firemaking"
                             }
                         ]

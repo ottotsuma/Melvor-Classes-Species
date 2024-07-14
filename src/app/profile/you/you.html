@@ -3,9 +3,9 @@
         <div class="text-center mb-1">
             <div class="row gutters-tiny">
                 <div class="col-12 pt-3 font-size-lg mb-3" v-if="you">
-                    <img class="single_species-icon" v-bind:src="you.single_species.media" />
+                    <img class="single_species-icon" v-bind:src="media" />
                     <span>
-                        {{ templateLangString('Profile_You_Title', { name: you.single_species.name }) }}
+                        {{ templateLangString('Profile_You_Title', { name: name }) }}
                     </span>
                 </div>
 
@@ -22,8 +22,13 @@
                             </span>
                             )
                         </span>
-                        <span v-if="modifier.level === 0" style="color: yellow;" v-html="modifier.description"></span>
-                        <span v-else v-html="modifier.description"></span>
+                        <span v-for="mod in modifier.description">
+                            <span v-if="!mod.description.includes('Error')"
+                                :class="{ 'profile-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }"
+                                v-html="mod.description"></span>
+                            <span v-else
+                                :class="{ 'profile-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs forgot the description for this modifier</span>
+                        </span>
 
                     </div>
                 </div>

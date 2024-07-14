@@ -36,7 +36,6 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public getErrorLog() { return 'Profile died, I dunno' }
     public registerData(namespace: DataNamespace, data: ProfileSkillData) {
         super.registerData(namespace, data);
-        console.log('profile', data, namespace)
         if (data.species) {
             for (const single_species of data.species) {
                 this.actions.registerObject(new Single_Species(namespace, single_species, this.game));
@@ -99,7 +98,10 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                     </span>`;
                 }
 
-                html += `<span>${modifier.description}</span></small><br />`;
+                for (let index = 0; index < modifier.description.length; index++) {
+                    html += `<span class="${modifier.isActive ? modifier.description[index].isNegative ? 'text-danger' : 'text-success' : 'thuum-text-grey'}">${modifier.description[index].description}</span>`;
+                }
+                html += `</small><br />`
             }
 
             SwalLocale.fire({
@@ -130,11 +132,10 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                         ${modifier.level})
                     </span>`;
                 }
-                if (modifier.level === 0) {
-                    html += `<span style="color: yellow;">${modifier.description}</span></small><br />`;
-                } else {
-                    html += `<span>${modifier.description}</span></small><br />`;
+                for (let index = 0; index < modifier.description.length; index++) {
+                    html += `<span class="${modifier.isActive ? modifier.description[index].isNegative ? 'text-danger' : 'text-success' : 'thuum-text-grey'}">${modifier.description[index].description}</span>`;
                 }
+                html += `</small><br />`
             }
 
             html += `<h5 class="font-w600 text-danger font-size-sm mt-3 mb-1">${getLangString(
@@ -281,11 +282,9 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
     public onLoad() {
         super.onLoad();
-        console.log('onLoad')
         for (const single_species of this.actions.registeredObjects.values()) {
             this.renderQueue.actionMastery.add(single_species);
         }
-        console.log('computeProvidedStats')
         // @ts-ignore 
         this.computeProvidedStats(false);
 
@@ -293,7 +292,6 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         this.renderQueue.youModifiers = true;
         this.renderQueue.visibleSpecies = true;
 
-        console.log('updateDisabled', this, 'known error here')
         for (const component of this.userInterface.species.values()) {
             component.updateDisabled();
         }
@@ -449,7 +447,6 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         if (!this.renderQueue.grants) {
             return;
         }
-        console.log('2', this)
         for (const component of this.userInterface.species.values()) {
             const single_species = component.single_species
             const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
@@ -572,19 +569,18 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
     public encode(writer: SaveWriter): SaveWriter {
         super.encode(writer);
-
         writer.writeUint32(this.version);
         writer.writeBoolean(this.activeSingle_Species !== undefined);
 
         if (this.activeSingle_Species) {
             writer.writeNamespacedObject(this.activeSingle_Species);
         }
-        // mod.manager.getLoadedModList().includes(
         writer.writeArray(this.actions.allObjects, action => {
             try {
                 writer.writeNamespacedObject(action);
 
                 const masteriesUnlocked = this.masteriesUnlocked.get(action);
+
                 writer.writeArray(masteriesUnlocked, value => {
                     writer.writeBoolean(value);
                 });
@@ -592,21 +588,16 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                 console.log(error, this.actions.allObjects, action, this.masteriesUnlocked.get(action))
             }
         });
-
-        // console.log(JSON.stringify(array).replace(/[\[\]\,\"]/g,'').length)
-
         writer.writeComplexMap(this.yous.yous, (key, value, writer) => {
             writer.writeNamespacedObject(key);
             writer.writeUint32(value.slot);
         });
-
         return writer;
     }
 
     public decode(reader: SaveWriter, version: number): void {
         super.decode(reader, version);
         const decoder = new Decoder(this.game, this, reader.byteOffset);
-        console.log('decoding 2')
         decoder.decode(reader);
     }
 

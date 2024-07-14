@@ -6,18 +6,18 @@ export class Version5 implements DecodeVersion {
     constructor(private readonly game: Game, private readonly profile: Profile) {}
 
     public decode(reader: SaveWriter) {
-        console.log('decoding')
         const version = reader.getUint32();
-
         if (version !== 5) {
             throw new Error(`Did not read correct version number: ${version} - trying version 5`);
         }
-
+        
         if (reader.getBoolean()) {
             const single_species = reader.getNamespacedObject(this.profile.actions);
+
             if (typeof single_species === 'string' || single_species.level > this.profile.level) {
                 // this.profile.shouldResetAction = true;
             } else {
+                console.log('decoding activeSingle_Species', single_species)
                 this.profile.activeSingle_Species = single_species;
             }
         }
@@ -35,7 +35,6 @@ export class Version5 implements DecodeVersion {
 
                 this.profile.masteriesUnlocked.set(single_species, masteriesUnlocked);
             } else {
-                console.log('removing: ',single_species)
                 reader.getArray(reader => {
                     const isUnlocked = reader.getBoolean();
                 });
@@ -54,7 +53,7 @@ export class Version5 implements DecodeVersion {
                     single_species,
                     slot
                 };
-
+                
                 this.profile.yous.set(single_species, masteredYou);
             }
 
@@ -66,7 +65,6 @@ export class Version5 implements DecodeVersion {
 
         const you1 = this.profile.yous.get(1);
         const you2 = this.profile.yous.get(2);
-
 
         this.profile.userInterface.you1.setYou(you1);
         this.profile.userInterface.you2.setYou(you2);

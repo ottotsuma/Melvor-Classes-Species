@@ -21,10 +21,8 @@ export class ProfileManager {
         if (!single_species.id) {
             return [] as YouModifier[];
         }
-
         return single_species.modifiers(this.profile.settings.modifierType).map(modifier => {
             let description:any[] = [];
-
             // @ts-ignore 
             for (let index = 0; index < modifier.modifiers.length; index++) {
                 // @ts-ignore 

@@ -51,7 +51,6 @@ export class App {
     constructor(private readonly context: Modding.ModContext, private readonly game: Game) { }
 
     public async init() {
-        console.log('init')
         mod.api.mythCombatSimulator?.registerNamespace('namespace_profile');
         await this.context.loadTemplates('profile/profile.html');
         await this.context.loadTemplates('profile/single_species/single_species.html');
@@ -59,21 +58,13 @@ export class App {
         await this.context.loadTemplates('profile/mastery/mastery.html');
         await this.context.loadTemplates('profile/locked/locked.html');
         // await this.context.loadTemplates('profile/guide.html');
-        console.log('initLanguage')
         this.initLanguage();
-        console.log('initTranslation')
         this.initTranslation();
-        console.log('initSettings')
         const settings = this.initSettings();
-        console.log('patchEventManager')
         this.patchEventManager();
-        console.log('registerSkill')
         this.game.profile = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_profile'), Profile);
-        console.log('skill registered', game.profile)
 
-        console.log('onModsLoading')
         this.context.onModsLoaded(async () => {
-            console.log('onModsLoaded')
             const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
             const AR = mod.manager.getLoadedModList().includes('Abyssal Rift')
             const gen1 = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
@@ -795,7 +786,6 @@ export class App {
                 DemonList.push("melvorAoD:CultImp")
             }
             const cmim = mod.api.customModifiersInMelvor;
-            console.log('cmim')
 
             // Species
             cmim.addMonsters("Dragon", DragonList)
@@ -846,7 +836,6 @@ export class App {
             cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", MagesList, true);
             cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", RoguesList, true);
             // @ts-ignore
-            console.log('load data.json')
             
             await this.context.gameData.addPackage('data.json');
 
@@ -860,11 +849,8 @@ export class App {
                     game.skills.getObjectByID('namespace_profile:Profile').setUnlock(true)
                 }
             }
-            console.log('initGamemodes')
             await this.initGamemodes();
-            console.log('patchUnlock')
             this.patchUnlock(this.game.profile);
-            console.log('initCompatibility')
             this.initCompatibility(this.game.profile);
             const skillsList: AnySkill[] = []
             this.game.skills.registeredObjects.forEach(SkillObject => {
@@ -916,7 +902,6 @@ export class App {
                     }
                 })
             }
-            console.log('onModsLoaded patching')
             // @ts-ignore
             this.context.patch(Skill, 'addXP').after(function (returnedValue: number, amount: number, masteryAction: string) {
                 try {
@@ -939,7 +924,6 @@ export class App {
                 return rangedDefenceBonus + (game.combat.player.levels.Defence * this.game.modifiers.getValue('namespace_profile:FlatRangedDefenceBonusPerDefence', {}))
             })
 
-            console.log('onModsLoaded monsters')
             // Giving monsters classes
             game.monsters.forEach(monster => {
                 if (monster.attackType === "magic") {
@@ -979,7 +963,6 @@ export class App {
             const cmimFighterList: String[] = await cmim.getMonstersOfType('Fighter');
             const cmimMageList: String[] = await cmim.getMonstersOfType('Mage');
             const cmimRogueList: String[] = await cmim.getMonstersOfType('Rogue');
-            console.log('onModsLoaded package')
             const initialPackage = this.context.gameData.buildPackage((itemPackage: any) => {
                 cmimRogueList.forEach(monsterId => {
                     itemPackage.monsters.modify({
@@ -1247,26 +1230,8 @@ export class App {
         //         $(`#tutorial-page-${page.localID}-1`).removeClass('d-none');
         //     $('#modal-game-guide').modal('show');
         // }
-        console.log('onCharacterLoading')
-        this.context.onCharacterLoaded(() => {
-            console.log('onCharacterLoaded')
-            this.game.gamemodes.registeredObjects.forEach((mode, key) => {
-                const startingSkills = game.gamemodes.getObjectByID(key).startingSkills
-                if (startingSkills) {
-                    startingSkills.add(this.game.skills.getObjectByID("namespace_profile:Profile"))
-                    this.game.gamemodes.getObjectByID(key).startingSkills = startingSkills
-                }
-            })
-            // const profileSkill = game.skills.getObjectByID('')
-            // const checkGameMode = this.game.currentGamemode.rules.includes("Skills are locked and must be purchased using GP to access.")
-            // if (checkGameMode && !profileSkill.isUnlocked) {
-            //     profileSkill.setUnlock(true)
-            // }
-        })
 
-        console.log('initInterface')
         this.game.profile.userInterface = this.initInterface(this.game.profile);
-        console.log('initSettings')
         this.game.profile.initSettings(settings);
     }
 

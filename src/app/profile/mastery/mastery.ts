@@ -5,7 +5,8 @@ import './mastery.scss';
 
 enum State {
     View = 'view',
-    Unlock = 'unlock'
+    Unlock = 'unlock',
+    lock = 'lock'
 }
 
 interface EssenceOfProfile {
@@ -71,6 +72,20 @@ export function MasteryComponent(game: Game, profile: Profile, single_species: S
             }
             this.unlockGPCost = getUnlockGPCost(this.modifier.level);
 
+        },
+        lock: function (modifier: YouModifier) {
+            const single_speciesRef = profile.actions.find(action => action.id === single_species.id);
+            const index = single_speciesRef
+                .modifiers(profile.settings.modifierType)
+                .findIndex(mod => mod.level === modifier.level);
+            const unlockedMasteries = profile.masteriesUnlocked.get(single_speciesRef);
+
+            unlockedMasteries[index] = false;
+
+            profile.masteriesUnlocked.set(single_speciesRef, unlockedMasteries);
+
+            this.updateCosts();
+            this.completeUpgrade();
         },
         unlock: function (modifier: YouModifier) {
             game.bank.removeItemQuantityByID('namespace_profile:Profile_Token', 1, true);

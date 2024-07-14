@@ -7,32 +7,27 @@
         </h5>
 
         <div class="manage" v-if="state === 'view'">
-            <div
-                class="manage-section upgrade"
-                v-for="(modifier, index) in unlockableModifiers"
-                :class="{ 'with-border': index + 1 !== unlockableModifiers.length, 'with-bottom-border': index + 1 === unlockableModifiers.length }"
-            >
-                <div
-                    class="profile-info font-size-sm"
-                    :class="{ 'text-danger': modifier.level === 1, 'text-success': isUnlocked(index), 'profile-text-grey': !isUnlocked(index) }"
-                >
+            <div class="manage-section upgrade" v-for="(modifier, index) in unlockableModifiers"
+                :class="{ 'with-border': index + 1 !== unlockableModifiers.length, 'with-bottom-border': index + 1 === unlockableModifiers.length }">
+                <div class="profile-info font-size-sm"
+                    :class="{ 'text-danger': modifier.level === 1, 'text-success': isUnlocked(index), 'profile-text-grey': !isUnlocked(index) }">
                     <span v-if="!isUnlocked(index)">
                         (<img class="skill-icon-xxs mr-1" :src="cdnMedia('assets/media/main/mastery_header.svg')" />
                         <span :class="{ 'text-success': currentMasteryLevel >= modifier.level }">
-                            {{ modifier.level }} </span
-                        >)
+                            {{ modifier.level }} </span>)
                     </span>
-                    <span v-if="modifier.level === 0" style="color: yellow;" v-html="modifier.description"></span>
-                    <span v-else v-html="modifier.description"></span>
+                    <span v-for="mod in modifier.description">
+                        <span v-if="!mod.description.includes('Error')"
+                            :class="{ 'thuum-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }"
+                            v-html="mod.description"></span>
+                        <span v-else
+                            :class="{ 'thuum-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs
+                            forgot the description for this modifier</span>
+                    </span>
                 </div>
 
-                <button
-                    type="button"
-                    class="btn btn-lg btn-success ml-2"
-                    @click="setState('unlock', modifier)"
-                    v-if="!isUnlocked(index)"
-                    :disabled="!canUnlock(modifier)"
-                >
+                <button type="button" class="btn btn-lg btn-success ml-2" @click="setState('unlock', modifier)"
+                    v-if="!isUnlocked(index)" :disabled="!canUnlock(modifier)">
                     {{ getLangString('Profile_Unlock') }}
                 </button>
             </div>
@@ -52,44 +47,68 @@
             </h5>
 
             <div>
-                <small
-                    :class="essenceOfProfile.quantity > 0 ? 'text-success' : 'profile-text-grey'"
-                    v-html="modifier.description"
-                ></small>
-            </div>
-
-            <div class="mt-3">
-                <small class="text-danger">
-                    {{ templateLangString('Profile_The_Cost_Of_Hiring', { cost: getNextEquipCost() }) }}
-                </small>
-            </div>
-
-            <div class="font-size-sm bg-combat-inner-dark p-2 mt-4">
-                <img class="skill-icon-xs ml-1 mr-1" :src="cdnMedia('assets/media/main/coins.svg')" />
-                <span class="mr-3" :class="game.gp.amount >= unlockGPCost ? 'text-success' : 'text-danger'">
-                    {{ formatNumber(unlockGPCost) }}
+                <span v-for="mod in modifier.description">
+                    <small v-if="essenceOfThuum.quantity > 0" class="'thuum-text-grey'" v-html="mod.description">
+                    </small>
+                    <small v-else-if="!mod.description.includes('Error')"
+                        :class="{ 'text-danger': mod.isNegative, 'text-success': !mod.isNegative }"
+                        v-html="mod.description">
+                    </small>
+                    <small v-else
+                        :class="{ 'thuum-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs
+                        forgot the description for this modifier</small>
                 </span>
 
-                <span :class="essenceOfProfile.quantity > 0 ? 'text-success' : 'text-danger'">1</span>
-                <img class="skill-icon-xs ml-1 mr-1" :src="essenceOfProfile.item.media" />
-                <span :class="essenceOfProfile.quantity > 0 ? 'text-success' : 'text-danger'">
-                    {{ essenceOfProfile.item.name }}
+                <div class="mt-3">
+                    <small class="text-danger">
+                        {{ templateLangString('Profile_The_Cost_Of_Hiring', { cost: getNextEquipCost() }) }}
+                    </small>
+                </div>
+
+                <div class="font-size-sm bg-combat-inner-dark p-2 mt-4">
+                    <img class="skill-icon-xs ml-1 mr-1" :src="cdnMedia('assets/media/main/coins.svg')" />
+                    <span class="mr-3" :class="game.gp.amount >= unlockGPCost ? 'text-success' : 'text-danger'">
+                        {{ formatNumber(unlockGPCost) }}
+                    </span>
+
+                    <span :class="essenceOfProfile.quantity > 0 ? 'text-success' : 'text-danger'">1</span>
+                    <img class="skill-icon-xs ml-1 mr-1" :src="essenceOfProfile.item.media" />
+                    <span :class="essenceOfProfile.quantity > 0 ? 'text-success' : 'text-danger'">
+                        {{ essenceOfProfile.item.name }}
+                    </span>
+                </div>
+
+                <div class="profile-footer-buttons mt-4">
+                    <button type="button" class="btn btn-lg btn-primary mr-2" @click="unlock(modifier)"
+                        v-if="essenceOfProfile.quantity > 0 && game.gp.amount >= unlockGPCost">
+                        {{ getLangString('Profile_Unlock') }}
+                    </button>
+                    <button type="button" class="btn btn-lg btn-danger" @click="setState('view')">
+                        {{ getLangString('Profile_Back') }}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Lock -->
+        <div class="lock" v-if="state === 'lock'">
+            <div>
+                <span v-for="mod in modifier.description">
+                    <small v-if="!mod.description.includes('Error')"
+                        :class="{ 'thuum-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }"
+                        v-html="mod.description"></small>
+                    <small v-else
+                        :class="{ 'thuum-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs
+                        forgot the description for this modifier</small>
                 </span>
             </div>
 
-            <div class="profile-footer-buttons mt-4">
-                <button
-                    type="button"
-                    class="btn btn-lg btn-primary mr-2"
-                    @click="unlock(modifier)"
-                    v-if="essenceOfProfile.quantity > 0 && game.gp.amount >= unlockGPCost"
-                >
-                    {{ getLangString('Profile_Unlock') }}
+            <div class="thuum-footer-buttons mt-4">
+                <button type="button" class="btn btn-lg btn-primary mr-2" @click="lock(modifier)">
+                    {{ getLangString('Thuum_Thuum_lock') }}
                 </button>
                 <button type="button" class="btn btn-lg btn-danger" @click="setState('view')">
-                    {{ getLangString('Profile_Back') }}
+                    {{ getLangString('Thuum_Thuum_Back') }}
                 </button>
             </div>
         </div>
-    </div>
 </template>

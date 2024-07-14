@@ -3,15 +3,24 @@ import { YouModifier, MasteredYou } from '../profile.types';
 
 import './you.scss';
 
+export interface YouContext {
+    media: string;
+    name: string;
+    youId: string;
+}
 export function YouComponent(profile: Profile) {
+    let MasteredYou: MasteredYou = undefined;
     return {
         $template: '#profile-you',
-        you: undefined as MasteredYou,
+        you: undefined as YouContext,
         get media() {
             return this.you?.media;
         },
         get name() {
             return this.you?.name;
+        },
+        get hasYou() {
+            return this.you !== undefined;
         },
         isEnabled: false,
         modifiers: [] as YouModifier[],
@@ -20,17 +29,21 @@ export function YouComponent(profile: Profile) {
             return profile.manager.essenceOfProfileIcon;
         },
         setYou: function (you: MasteredYou) {
+            MasteredYou = you;
             if (!you) {
                 this.you = undefined
             } else {
-
-                this.you = you
+                this.you = {
+                    youId: you.single_species?.id,
+                    media: you.single_species?.media,
+                    name: you.single_species?.name
+                }
                 this.updateCurrentMasteryLevel();
             }
         },
         updateCurrentMasteryLevel: function () {
             if (this.you) {
-                const single_speciesRef = profile.actions.allObjects.find(action => action.id === this.you.single_species.id);
+                const single_speciesRef = profile.actions.allObjects.find(action => action.id === this.you.youId);
 
                 this.currentMasteryLevel = profile.getMasteryLevel(single_speciesRef);
             }
@@ -42,7 +55,10 @@ export function YouComponent(profile: Profile) {
             this.modifiers = [];
 
             if (this.you) {
-                this.modifiers = profile.manager.getModifiers(this.you.single_species);
+                const Ref = profile.actions.allObjects.find(action => action.id === this.you.youId);
+                this.modifiers = profile.manager.getModifiers(Ref);
+
+                // this.modifiers = profile.manager.getModifiers(this.you.single_species);
             }
         }
     };
