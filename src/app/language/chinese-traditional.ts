@@ -187,6 +187,12 @@ ITEM_NAME_increasedFlatRangedDefenceBonusPerDefence: "increasedFlatRangedDefence
 Profile_increasedFlatMeleeDefenceBonusPerDefence: "increasedFlatMeleeDefenceBonusPerDefence",
 Profile_increasedFlatRangedDefenceBonusPerDefence: "increasedFlatRangedDefenceBonusPerDefence",
 increasedFlatMeleeDefenceBonusPerDefence: "increasedFlatMeleeDefenceBonusPerDefence",
-increasedFlatRangedDefenceBonusPerDefence: "increasedFlatRangedDefenceBonusPerDefence"
+increasedFlatRangedDefenceBonusPerDefence: "increasedFlatRangedDefenceBonusPerDefence",
+Profile_Profile_Single_Species_Khajiit: '虎人',
+Profile_Profile_Single_Species_Argonian: '亚龙',
+Profile_Single_Species_Khajiit: '虎人',
+Profile_Single_Species_Argonian: '亚龙',
+    Profile_Profile_Single_Species_Pokemon: 'Pokemon Trainer',
+  Profile_Single_Species_Pokemon: 'Pokemon Trainer'
   }
   

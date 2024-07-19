@@ -10,14 +10,13 @@
                 </div>
 
                 <div class="col-12 pb-3 pr-3 pl-3" v-if="you">
-                    <div
-                        v-for="modifier in modifiers"
-                        :class="{ 'text-danger' : modifier.level === 1, 'text-success': modifier.isActive, 'profile-text-grey': !modifier.isActive }"
-                    >
+                    <div v-for="modifier in modifiers"
+                        :class="{ 'text-danger' : modifier.level === 1, 'text-success': modifier.isActive, 'profile-text-grey': !modifier.isActive }">
                         <span v-if="!modifier.isActive">
                             (
                             <img class="skill-icon-xxs mr-1" :src="cdnMedia('assets/media/main/mastery_header.svg')" />
-                            <span :class="{ 'text-danger' : modifier.level === 1, 'text-success': currentMasteryLevel >= modifier.level }">
+                            <span
+                                :class="{ 'text-danger' : modifier.level === 1, 'text-success': currentMasteryLevel >= modifier.level }">
                                 {{ modifier.level }}
                             </span>
                             )
@@ -27,12 +26,12 @@
                                 :class="{ 'profile-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }"
                                 v-html="mod.description"></span>
                             <span v-else
-                                :class="{ 'profile-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs forgot the description for this modifier</span>
+                                :class="{ 'profile-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs
+                                forgot the description for this modifier</span>
                         </span>
 
                     </div>
                 </div>
-
                 <div class="col-12 font-size-lg pt-3 pb-3" v-if="!you">
                     <span>{{ getLangString('Profile_You_Not_Currently_Mastered') }}</span>
                 </div>

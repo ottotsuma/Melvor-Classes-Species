@@ -48,7 +48,7 @@
 
             <div>
                 <span v-for="mod in modifier.description">
-                    <small v-if="essenceOfThuum.quantity > 0" class="'thuum-text-grey'" v-html="mod.description">
+                    <small v-if="essenceOfProfile.quantity > 0" class="'thuum-text-grey'" v-html="mod.description">
                     </small>
                     <small v-else-if="!mod.description.includes('Error')"
                         :class="{ 'text-danger': mod.isNegative, 'text-success': !mod.isNegative }"

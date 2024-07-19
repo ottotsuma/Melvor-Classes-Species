@@ -356,6 +356,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         this.sortMilestones();
 
         for (const action of this.actions.allObjects) {
+            // Set default for unlocks
             this.masteriesUnlocked.set(action, [true, true, false, false, false, false, false]);
         }
 

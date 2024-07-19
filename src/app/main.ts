@@ -51,7 +51,7 @@ export class App {
     constructor(private readonly context: Modding.ModContext, private readonly game: Game) { }
 
     public async init() {
-        mod.api.mythCombatSimulator?.registerNamespace('namespace_profile');
+        // mod.api.mythCombatSimulator?.registerNamespace('namespace_profile');
         await this.context.loadTemplates('profile/profile.html');
         await this.context.loadTemplates('profile/single_species/single_species.html');
         await this.context.loadTemplates('profile/you/you.html');
@@ -71,6 +71,10 @@ export class App {
             const music = mod.manager.getLoadedModList().includes('[Myth] Music')
             const ToB = mod.manager.getLoadedModList().includes('Theatre of Blood')
             const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
+            const Pokemon = mod.manager.getLoadedModList().includes('pokemon')
+            const tes = mod.manager.getLoadedModList().includes('The Elder Scrolls')
+
+
             // const monad = mod.manager.getLoadedModList().includes('Monad')
             if (!kcm) {
                 console.log('kcm not found')
@@ -836,7 +840,7 @@ export class App {
             cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", MagesList, true);
             cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", RoguesList, true);
             // @ts-ignore
-            
+
             await this.context.gameData.addPackage('data.json');
 
             // await this.context.gameData.addPackage('data-cmim.json');
@@ -863,7 +867,7 @@ export class App {
                         const chosen_class = game.profile.yous.get(2) // knight
                         const profileLevel = game.profile._level
                         let exp1 = 0
-                        if(chosen_species) {
+                        if (chosen_species) {
                             exp1 = Math.floor(chosen_species.single_species.baseExperience) || 0
                         }
 
@@ -1120,6 +1124,12 @@ export class App {
             })
             this.game.profileLog = initialPackage
             initialPackage.add();
+            if (Pokemon) {
+                await this.context.gameData.addPackage('pokemon.json');
+            }
+            if (tes) {
+                await this.context.gameData.addPackage('tes.json');
+            }
         })
 
         // try {
@@ -1483,9 +1493,22 @@ export class App {
     }
 }
 
+// class CombatEffectApplicator {
+
+
+//     get descriptionTemplate() {
+//         if (this._descriptionLang !== undefined) {
+//             return getLangString(this._descriptionLang);
+//         } else if (this._customDescription !== undefined) {
+//             return this._customDescription;
+//         }
+//         return getLangString(`EFFECT_APPLICATOR_${this.appliesWhen}`);
+//     }
+// }
 
 
 // increasedChanceToReduceAttackDamageToZero: Standard,
+
 // decreasedChanceToReduceAttackDamageToZero: Standard,
 // increasedDamageFlatWhileTargetHasMaxHP: Standard,
 // decreasedDamageFlatWhileTargetHasMaxHP: Standard,
