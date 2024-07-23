@@ -53,11 +53,9 @@ export function YouComponent(profile: Profile) {
         },
         updateModifiers: function () {
             this.modifiers = [];
-
             if (this.you) {
                 const Ref = profile.actions.allObjects.find(action => action.id === this.you.youId);
                 this.modifiers = profile.manager.getModifiers(Ref);
-
                 // this.modifiers = profile.manager.getModifiers(this.you.single_species);
             }
         }

@@ -26,7 +26,7 @@ export interface MasteredYou {
 export class Single_Species extends BasicSkillRecipe {
     skills: string[];
 
-    private standardModifiers: StatObject[];
+    public standardModifiers: StatObject[];
 
     public get name() {
         return getLangString(`Profile_Single_Species_${this.localID}`);
@@ -47,7 +47,6 @@ export class Single_Species extends BasicSkillRecipe {
         // @ts-ignore
         super(namespace, data, game);
 
-        // this.standardModifiers = data.standardModifiers;
         this.standardModifiers = data.standardModifiers.map(modifier => {
             // @ts-ignore 
             if (modifier.value) {
@@ -78,6 +77,25 @@ export class Single_Species extends BasicSkillRecipe {
     }
 }
 
+// .map(modifier => {
+//     return {
+//         ...modifier,
+//         modifiers: modifier.modifiers.map(mod => {
+//             // @ts-ignore 
+//             if (this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})) {
+//                 if (mod.value < 0) {
+//                     // @ts-ignore 
+//                     mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+//                 } else {
+//                     // @ts-ignore 
+//                     mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+//                 }
+
+//             }
+//             return mod
+//         })
+//     }
+// })
 
 export interface UpgradeData {
     itemId: string;

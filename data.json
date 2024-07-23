@@ -7,6 +7,7 @@
                 "id": "ProfileEquipCost",
                 "isCombat": true,
                 "allowEnemy": true,
+                "inverted": true,
                 "allowedScopes": [
                     {
                         "scopes": {},
@@ -163,6 +164,40 @@
                         "negAliases": [
                             {
                                 "key": "decreasedFlatMeleeDefenceBonusPerDefence"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "UpgradeProfileModifers",
+                "isCombat": true,
+                "allowEnemy": true,
+                "allowedScopes": [
+                    {
+                        "scopes": {},
+                        "descriptions": [
+                            {
+                                "text": "-${value} decreased modifier values in Profile",
+                                "lang": "Profile_decreasedUpgradeProfileModifers",
+                                "below": 0,
+                                "includeSign": false
+                            },
+                            {
+                                "text": "+${value} increased modifier values in Profile",
+                                "lang": "Profile_increasedUpgradeProfileModifers",
+                                "above": 0,
+                                "includeSign": false
+                            }
+                        ],
+                        "posAliases": [
+                            {
+                                "key": "increasedUpgradeProfileModifers"
+                            }
+                        ],
+                        "negAliases": [
+                            {
+                                "key": "decreasedUpgradeProfileModifers"
                             }
                         ]
                     }
@@ -672,9 +707,17 @@
                         },
                         {
                             "modifiers": {
-                                "namespace_profile:ProfileEquipCost": -5
+                                "increasedMasteryXP": [
+                                    {
+                                        "skillID": "namespace_profile:Profile",
+                                        "value": 1
+                                    }
+                                ]
                             },
-                            "level": 90
+                            "level": 1,
+                            "levelScalingSlope": 1,
+                            "levelScalingMax": 99,
+                            "autoScopeToAction": true
                         }
                     ],
                     "masteryPoolBonuses": [
@@ -693,12 +736,7 @@
                         {
                             "realm": "melvorD:Melvor",
                             "modifiers": {
-                                "increasedMasteryXP": [
-                                    {
-                                        "skillID": "namespace_profile:Profile",
-                                        "value": 3
-                                    }
-                                ]
+                                "namespace_profile:ProfileEquipCost": -5
                             },
                             "percent": 25
                         },
@@ -717,7 +755,7 @@
                         {
                             "realm": "melvorD:Melvor",
                             "modifiers": {
-                                "namespace_profile:ProfileEquipCost": -5
+                                "namespace_profile:UpgradeProfileModifers": 1
                             },
                             "percent": 95
                         }
@@ -728,6 +766,16 @@
                             "level": "1",
                             "descriptionID": 0,
                             "description": "Each level increases the species cost."
+                        },
+                        {
+                            "level": "50",
+                            "descriptionID": 1,
+                            "description": "Decrease Equip Cost."
+                        },
+                        {
+                            "level": "99",
+                            "descriptionID": 2,
+                            "description": "Decrease Equip Cost."
                         }
                     ],
                     "species": [
@@ -752,17 +800,11 @@
                                 {
                                     "level": 10,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "modifiers": {
                                         "magicMaxHit": -10
                                     }
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
                                     "modifiers": {
                                         "customModifiersInMelvor:damageDealtAnimal": 10
                                     }
@@ -770,17 +812,11 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "modifiers": {
                                         "customModifiersInMelvor:damageDealtHuman": 10
                                     }
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
                                     "modifiers": {
                                         "itemSaleCurrencyGain": [
                                             {
@@ -793,9 +829,6 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "modifiers": {
                                         "crafting30CurrencyGainChance": [
                                             {
                                                 "currencyID": "melvorD:GP",
@@ -806,9 +839,6 @@
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
                                     "modifiers": {
                                         "skillInterval": -5
                                     }
@@ -836,50 +866,43 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "meleeMaxHit": -10
                                     }
-                                    "key": "decreasedMeleeMaxHit",
-                                    "value": 10
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatSkillInterval": [
+                                            {
+                                                "skillID": "melvorD:Fletching",
+                                                "value": -1000
+                                            }
+                                        ]
                                     }
-                                    "key": "decreasedFletchingIntervalWithArrows",
-                                    "value": 1000
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "rangedAccuracyRating": 20
                                     }
-                                    "key": "increasedRangedAccuracyBonus",
-                                    "value": 10
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "rangedCritChance": 10
                                     }
-                                    "key": "increasedRangedCritChance",
-                                    "value": 10
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtMythicalCreature": 10
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtMythicalCreatures",
-                                    "value": 10
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtElemental": 5
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtElementals",
-                                    "value": 5
                                 }
                             ]
                         },
@@ -904,50 +927,42 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "randomProductChance": [
+                                            {
+                                                "skillID": "melvorD:Woodcutting",
+                                                "itemID": "melvorD:Bird_Nest",
+                                                "value": -100
+                                            }
+                                        ]
                                     }
-                                    "key": "decreasedBirdNestDropRate",
-                                    "value": 100
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtGoblin": 10
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtGoblin",
-                                    "value": 10
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "summoningSynergy_Ent_Leprechaun": 1
                                     }
-                                    "key": "summoningSynergy_Ent_Leprechaun",
-                                    "value": 1
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtSeaCreature": 10
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtSeaCreatures",
-                                    "value": 10
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "additionalSameAreaFishChance": 10
                                     }
-                                    "key": "increasedChanceToCatchExtraSameAreaFish",
-                                    "value": 10
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "reignOverTimePassive",
-                                    "value": 1
+                                    "modifiers": {}
                                 }
                             ]
                         },
@@ -972,50 +987,44 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "maxHitpoints": -10
                                     }
-                                    "key": "decreasedMaxHitpoints",
-                                    "value": 10
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "thievingStealth": 100
                                     }
-                                    "key": "increasedThievingStealth",
-                                    "value": 100
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "currencyGain": [
+                                            {
+                                                "currencyID": "melvorD:GP",
+                                                "skillID": "melvorD:Thieving",
+                                                "value": 5
+                                            }
+                                        ]
                                     }
-                                    "key": "increasedGPFromThieving",
-                                    "value": 5
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "thievingAreaUniqueChance": 5
                                     }
-                                    "key": "increasedThievingAreaUniqueChance",
-                                    "value": 5
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "globalEvasionHPScaling": 10
                                     }
-                                    "key": "globalEvasionHPScaling",
-                                    "value": 10
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "summoningSynergy_Devil_Eagle": 1
                                     }
-                                    "key": "summoningSynergy_Devil_Eagle",
-                                    "value": 1
                                 }
                             ]
                         },
@@ -1040,50 +1049,50 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "attackInterval": 10
                                     }
-                                    "key": "increasedAttackIntervalPercent",
-                                    "value": 10
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtElf": 10
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtElf",
-                                    "value": 10
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "randomProductChance": [
+                                            {
+                                                "skillID": "melvorD:Firemaking",
+                                                "value": 10,
+                                                "itemID": "melvorF:Stardust"
+                                            }
+                                        ]
                                     }
-                                    "key": "increasedChanceForStardustInFiremaking",
-                                    "value": 10
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "randomProductChance": [
+                                            {
+                                                "skillID": "melvorD:Firemaking",
+                                                "value": 20,
+                                                "itemID": "melvorD:Coal_Ore"
+                                            }
+                                        ]
                                     }
-                                    "key": "increasedFiremakingCoalChance",
-                                    "value": 20
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:accuracyRatingAarakocra": 50
                                     }
-                                    "key": "customModifiersInMelvor:accuracyRatingAarakocra",
-                                    "value": 50
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "freeBonfires": 1
                                     }
-                                    "key": "freeBonfires",
-                                    "value": 1
                                 }
                             ]
                         },
@@ -1108,50 +1117,51 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "skillInterval": 25
                                     }
-                                    "key": "increasedGlobalSkillIntervalPercent",
-                                    "value": 25
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "effectIgnoreChance": [
+                                            {
+                                                "effectGroupID": "melvorD:BleedDOT",
+                                                "value": 99
+                                            }
+                                        ]
                                     }
-                                    "key": "bleedImmunity",
-                                    "value": 99
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "bonusCoalMining": 2
                                     }
-                                    "key": "increasedBonusCoalMining",
-                                    "value": 2
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatResistance": [
+                                            {
+                                                "damageTypeID": "melvorD:Normal",
+                                                "value": 5
+                                            }
+                                        ]
                                     }
-                                    "key": "increasedDamageReduction",
-                                    "value": 5
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "doubleItemsSkill": [
+                                            {
+                                                "skillID": "melvorD:Mining",
+                                                "value": 2
+                                            }
+                                        ]
                                     }
-                                    "key": "doubleOresMining",
-                                    "value": 2
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedMeleeRangedDefenceBonusBasedOnDR",
-                                    "value": 1
+                                    "modifiers": {}
                                 }
                             ]
                         },
@@ -1176,50 +1186,38 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "prayerPointCost": 100
                                     }
-                                    "key": "increasedPrayerCost",
-                                    "value": 100
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatSummoningShardCost": 2
                                     }
-                                    "key": "decreasedSummoningShardCost",
-                                    "value": 3
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtAngel": 10
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtAngel",
-                                    "value": 10
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "summoningMaxHit": 10
                                     }
-                                    "key": "increasedSummoningMaxHit",
-                                    "value": 10
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "summoningAttackLifesteal": 10
                                     }
-                                    "key": "increasedSummoningAttackLifesteal",
-                                    "value": 10
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "summoningAttackInterval": 25
                                     }
-                                    "key": "decreasedSummoningAttackIntervalPercent",
-                                    "value": 25
                                 }
                             ]
                         },
@@ -1244,51 +1242,53 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "halveResistance": [
+                                            {
+                                                "damageTypeID": "melvorD:Normal",
+                                                "value": 1
+                                            }
+                                        ]
                                     }
-                                    "key": "halveDamageReduction",
-                                    "value": 1
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "skillMasteryXPPerArachi": [
+                                            {
+                                                "skillID": "melvorD:Runecrafting",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
-                                    "key": "increasedSkillMasteryXPPerArachi",
-                                    "value": 10,
-                                    "skill": "melvorD:Runecrafting"
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "skillPreservationChance": [
+                                            {
+                                                "skillID": "melvorD:Runecrafting",
+                                                "value": 20
+                                            }
+                                        ]
                                     }
-                                    "key": "increasedRunecraftingEssencePreservation",
-                                    "value": 20
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "magicLifesteal": 10
                                     }
-                                    "key": "increasedMagicLifesteal",
-                                    "value": 10
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "giveRandomComboRunesRunecrafting": 1
                                     }
-                                    "key": "giveRandomComboRunesRunecrafting",
-                                    "value": 1
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "maxHitpoints": 20
                                     }
-                                    "key": "increasedMaxHitpoints",
-                                    "value": 20
                                 }
                             ]
                         },
@@ -1313,50 +1313,42 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "currencyGain": [
+                                            {
+                                                "skillID": "melvorD:Agility",
+                                                "currencyID": "melvorD:GP",
+                                                "value": 100
+                                            }
+                                        ]
                                     }
-                                    "key": "decreasedGPFromAgility",
-                                    "value": 100
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedMaxWaterSpellDmg",
-                                    "value": 10
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "agilityObstacleCost": 20
                                     }
-                                    "key": "decreasedAgilityObstacleCost",
-                                    "value": 20
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtDragon": 10
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtDragons",
-                                    "value": 10
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageTakenDragon": -10
                                     }
-                                    "key": "damageTakenDragon",
-                                    "value": -10
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "removeDebuffsFromAgility": 1
                                     }
-                                    "key": "removeDebuffsFromAgility",
-                                    "value": 1
                                 }
                             ]
                         },
@@ -1381,50 +1373,38 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "autoEatThreshold": -50
                                     }
-                                    "key": "decreasedAutoEatThreshold",
-                                    "value": 50
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtAarakocra": 10
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtAarakocra",
-                                    "value": 10
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:accuracyRatingFighter": 20
                                     }
-                                    "key": "customModifiersInMelvor:accuracyRatingFighter",
-                                    "value": 20
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatSlayerAreaEffectNegation": 20
                                     }
-                                    "key": "increasedSlayerAreaEffectNegationFlat",
-                                    "value": 20
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "healingWhenHit": 5
                                     }
-                                    "key": "increasedHealingWhenHit",
-                                    "value": 5
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "doubleModifiersInAstrologyForMaxedConstellations": 1
                                     }
-                                    "key": "doubleModifiersInAstrologyForMaxedConstellations",
-                                    "value": 1
                                 }
                             ]
                         },
@@ -1449,50 +1429,38 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "summoningChargePreservationChance": -100
                                     }
-                                    "key": "decreasedSummoningChargePreservation",
-                                    "value": 100
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtDemon": 10
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtDemon",
-                                    "value": 10
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:accuracyRatingDemon": 20
                                     }
-                                    "key": "customModifiersInMelvor:accuracyRatingDemon",
-                                    "value": 20
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "prayerPointPreservationChance": 10
                                     }
-                                    "key": "increasedChanceToPreservePrayerPoints",
-                                    "value": 10
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "maxHitBasedOnPrayerCost": 10
                                     }
-                                    "key": "increasedMaxHitBasedOnPrayerCost",
-                                    "value": 10
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatPrayerPointsWhenHit": 1
                                     }
-                                    "key": "increasedPrayerPointsWhenHit",
-                                    "value": 1
                                 }
                             ]
                         }
@@ -1518,50 +1486,36 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "attackInterval": 30
                                     }
-                                    "key": "increasedAttackIntervalPercent",
-                                    "value": 30
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatMeleeDefenceBonus": 10
                                     }
-                                    "key": "increasedFlatMeleeDefenceBonus",
-                                    "value": 10
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedMeleeStunChance",
-                                    "value": 2
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "meleeAccuracyRating": 15
                                     }
-                                    "key": "increasedMeleeAccuracyBonus",
-                                    "value": 15
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "evasionAgainstMelee": 5
                                     }
-                                    "key": "increasedEvasionAgainstMelee",
-                                    "value": 5
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "meleeProtection": 2
                                     }
-                                    "key": "meleeProtection",
-                                    "value": 2
                                 }
                             ]
                         },
@@ -1585,50 +1539,38 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "damageTaken": 5
                                     }
-                                    "key": "increasedDamageTaken",
-                                    "value": 5
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatMagicDefenceBonus": 10
                                     }
-                                    "key": "increasedFlatMagicDefenceBonus",
-                                    "value": 10
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "magicMaxHitAgainstMelee": 10
                                     }
-                                    "key": "increasedMagicMaxHitBonusAgainstMelee",
-                                    "value": 10
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "magicDamageBonus": 5
                                     }
-                                    "key": "increasedMagicDamageBonus",
-                                    "value": 5
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "magicEvasion": 5
                                     }
-                                    "key": "increasedMagicEvasion",
-                                    "value": 5
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "magicProtection": 2
                                     }
-                                    "key": "magicProtection",
-                                    "value": 2
                                 }
                             ]
                         },
@@ -1652,50 +1594,38 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "summoningMaxHit": -60
                                     }
-                                    "key": "decreasedSummoningMaxHit",
-                                    "value": 60
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "rangedMaxHitAgainstMagic": 5
                                     }
-                                    "key": "increasedRangedMaxHitBonusAgainstMagic",
-                                    "value": 5
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "ammoPreservationChance": 10
                                     }
-                                    "key": "increasedAmmoPreservation",
-                                    "value": 10
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "rangedMaxHit": 10
                                     }
-                                    "key": "increasedRangedMaxHit",
-                                    "value": 10
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "rangedCritChance": 25
                                     }
-                                    "key": "increasedRangedCritChance",
-                                    "value": 25
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "rangedStrengthBonusPer8Ranged": 1
                                     }
-                                    "key": "increasedRangedStrengthBonusPer8Ranged",
-                                    "value": 2
                                 }
                             ]
                         },
@@ -1719,50 +1649,43 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "magicAccuracyRating": -40
                                     }
-                                    "key": "decreasedMagicAccuracyBonus",
-                                    "value": 40
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "namespace_profile:FlatMeleeDefenceBonusPerDefence": 2
                                     }
-                                    "key": "increasedFlatMeleeDefenceBonusPerDefence",
-                                    "value": 2
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "namespace_profile:FlatRangedDefenceBonusPerDefence": 2
                                     }
-                                    "key": "increasedFlatRangedDefenceBonusPerDefence",
-                                    "value": 2
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtHuman": 25
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtHuman",
-                                    "value": 25
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:accuracyRatingMythicalCreature": 25
                                     }
-                                    "key": "accuracyRatingMythicalCreatures",
-                                    "value": 25
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatCurrencyGainFromMeleeSlayerTasksBasedOnCombatLevel": [
+                                            {
+                                                "currencyID": "melvorD:SlayerCoins",
+                                                "value": 1
+                                            }
+                                        ]
                                     }
-                                    "key": "gainSlayerCoinsBasedOnEnemyCombatLevelMelee",
-                                    "value": 1
                                 }
                             ]
                         },
@@ -1786,50 +1709,38 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "ammoPreservationChance": -25
                                     }
-                                    "key": "decreasedAmmoPreservation",
-                                    "value": 25
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "evasionAgainstRanged": 10
                                     }
-                                    "key": "increasedEvasionAgainstRanged",
-                                    "value": 10
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatSlayerAreaEffectNegation": 10
                                     }
-                                    "key": "increasedSlayerAreaEffectNegationFlat",
-                                    "value": 10
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatRangedAccuracyBonusPerAttackInterval": 5
                                     }
-                                    "key": "increasedFlatRangedAccuracyBonusPerAttackInterval",
-                                    "value": 5
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtAnimal": 10
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtAnimal",
-                                    "value": 10
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "attackInterval": 10
                                     }
-                                    "key": "decreasedAttackIntervalPercent",
-                                    "value": 10
                                 }
                             ]
                         },
@@ -1853,50 +1764,34 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtAarakocra": -100
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtAarakocra",
-                                    "value": -100
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:accuracyRatingSeaCreature": 10
                                     }
-                                    "key": "accuracyRatingSeaCreatures",
-                                    "value": 10
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "curseLifesteal": 5
                                     }
-                                    "key": "increasedCurseLifesteal",
-                                    "value": 5
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedChanceToDoubleLootCombat",
-                                    "value": 5
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedMaxHitPercentAgainstSeaCreatures",
-                                    "value": 5
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "autoBurying": 1
                                     }
-                                    "key": "autoBurying",
-                                    "value": 1
                                 }
                             ]
                         },
@@ -1920,50 +1815,41 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtAngel": -100
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtAngel",
-                                    "value": -100
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:accuracyRatingDemon": 10
                                     }
-                                    "key": "customModifiersInMelvor:accuracyRatingDemon",
-                                    "value": 10
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatPrayerPointsPerMonsterKill": 5
                                     }
-                                    "key": "increasedPrayerPointsPerMonsterKill",
-                                    "value": 5
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatResistanceWithActivePrayer": [
+                                            {
+                                                "value": 5,
+                                                "damageTypeID": "melvorD:Normal"
+                                            }
+                                        ]
                                     }
-                                    "key": "increasedDamageReductionWithActivePrayer",
-                                    "value": 5
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedMaxHitPercentAgainstDemon",
-                                    "value": 5
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "prayerPointPreservationChance": 35
                                     }
-                                    "key": "increasedChanceToPreservePrayerPoints",
-                                    "value": 50
                                 }
                             ]
                         },
@@ -1987,50 +1873,41 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "damageTaken": 10
                                     }
-                                    "key": "increasedDamageTaken",
-                                    "value": 10
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "allowNonMagicCurses": 1
                                     }
-                                    "key": "allowNonMagicCurses",
-                                    "value": 1
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "curseLifesteal": 5
                                     }
-                                    "key": "increasedCurseLifesteal",
-                                    "value": 5
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatPotionCharges": 5
                                     }
-                                    "key": "increasedPotionChargesFlat",
-                                    "value": 5
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "applyRandomCurseOnSpawn",
-                                    "value": 1
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "effectImmunity": [
+                                            {
+                                                "effectGroupID": "melvorD:Curse",
+                                                "value": 1
+                                            }
+                                        ]
                                     }
-                                    "key": "curseImmunity",
-                                    "value": 1
                                 }
                             ]
                         },
@@ -2054,50 +1931,38 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "skillInterval": 10
                                     }
-                                    "key": "increasedGlobalSkillIntervalPercent",
-                                    "value": 10
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "flatMasteryTokens": 1
                                     }
-                                    "key": "increasedMasteryTokens",
-                                    "value": 2
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "altMagicSkillXP": 5
                                     }
-                                    "key": "increasedAltMagicSkillXP",
-                                    "value": 5
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "masteryXP": 10
                                     }
-                                    "key": "increasedGlobalMasteryXP",
-                                    "value": 20
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "skillXP": 10
                                     }
-                                    "key": "increasedGlobalSkillXP",
-                                    "value": 10
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "xpFromMasteryTokens": 1
                                     }
-                                    "key": "increasedXPFromMasteryTokens",
-                                    "value": 1
                                 }
                             ]
                         },
@@ -2121,50 +1986,41 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "attackInterval": 100
                                     }
-                                    "key": "increasedAttackIntervalPercent",
-                                    "value": 100
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedChanceToApplyPoison",
-                                    "value": 40
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "poisonLifesteal": 100
                                     }
-                                    "key": "increasedPoisonLifesteal",
-                                    "value": 100
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedPoisonReflectChance",
-                                    "value": 33
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "effectIgnoreChance": [
+                                            {
+                                                "value": 50,
+                                                "effectGroupID": "melvorD:PoisonDOT"
+                                            },
+                                            {
+                                                "value": 50,
+                                                "effectGroupID": "melvorD:DeadlyPoisonDOT"
+                                            }
+                                        ]
                                     }
-                                    "key": "poisonImmunity",
-                                    "value": 50
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedChanceToApplyDeadlyPoison",
-                                    "value": 20
+                                    "modifiers": {}
                                 }
                             ]
                         },
@@ -2187,51 +2043,31 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "decreasedMaxHitPercentToSlayerAreaMonsters",
-                                    "value": 60
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedDeathMarkImmunity",
-                                    "value": 20
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedDeathMarkOnHit",
-                                    "value": 2
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedChanceToApplyStackOfDeathMark",
-                                    "value": 50
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damagePercentWhileTargetHasMaxHP": 20
                                     }
-                                    "key": "increasedDamagePercentWhileTargetHasMaxHP",
-                                    "value": 20
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageFlatWhileTargetHasMaxHP": 30
                                     }
-                                    "key": "increasedDamageFlatWhileTargetHasMaxHP",
-                                    "value": 30
                                 }
                             ]
                         },
@@ -2255,50 +2091,34 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "damageTaken": -50
                                     }
-                                    "key": "increasedDamageTaken",
-                                    "value": 50
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedMaxHitPercentToDungeonMonsters",
-                                    "value": 20
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "applyDemonTraitTurnsOnSpawn",
-                                    "value": 2
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageDealtDemon": 30
                                     }
-                                    "key": "customModifiersInMelvor:damageDealtDemon",
-                                    "value": 30
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:damageFlatIgnoringResistance": 10
                                     }
-                                    "key": "increasedDamageFlatIgnoringDamageReduction",
-                                    "value": 10
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:chanceToReduceAttackDamageToZero": 10
                                     }
-                                    "key": "increasedChanceToReduceAttackDamageToZero",
-                                    "value": 10
                                 }
                             ]
                         },
@@ -2321,51 +2141,27 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "decreasedMeleeMaxHit",
-                                    "value": 40
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedMagicAccuracyBonus",
-                                    "value": 10
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedMagicMaxHitBonusAgainstMelee",
-                                    "value": 10
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedRunePreservation",
-                                    "value": 5
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedMinHitBasedOnMaxHitAgainstUndead",
-                                    "value": 10
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
-                                    }
-                                    "key": "increasedMagicDamageBonus",
-                                    "value": 10
+                                    "modifiers": {}
                                 }
                             ]
                         }

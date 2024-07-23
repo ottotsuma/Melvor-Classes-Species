@@ -14,7 +14,7 @@ export class ProfileManager {
         return this.game.items.getObjectByID('namespace_profile:Profile_Token')?.media;
     }
 
-    constructor(private readonly profile: Profile, private readonly game: Game) {}
+    constructor(private readonly profile: Profile, private readonly game: Game) { }
 
     /** Gets modifier metadata. */
     public getModifiers(single_species: Single_Species) {
@@ -22,11 +22,24 @@ export class ProfileManager {
             return [] as YouModifier[];
         }
         return single_species.modifiers(this.profile.settings.modifierType).map(modifier => {
-            let description:any[] = [];
-            // @ts-ignore 
-            for (let index = 0; index < modifier.modifiers.length; index++) {
-                // @ts-ignore 
-                description.push(modifier.modifiers[index].getDescription())
+            let description: any[] = [];
+            if (modifier.modifiers) {
+                for (let index = 0; index < modifier.modifiers.length; index++) {
+                    // @ts-ignore 
+                    description.push(modifier.modifiers[index].getDescription())
+                }
+            }
+            if (modifier.combatEffects) {
+                for (let index = 0; index < modifier.combatEffects.length; index++) {
+                    // @ts-ignore 
+                    const obj1 = modifier.combatEffects[index].getDescription()
+                    // @ts-ignore 
+                    obj1.description = obj1.text
+                    description.push(obj1)
+                }
+            }
+            if (!modifier.modifiers && !modifier.combatEffects) {
+                console.log('Nothing here: ', modifier)
             }
 
             return {
@@ -42,29 +55,28 @@ export class ProfileManager {
         if (this.profile.level < single_species.level) {
             return [];
         }
-
         return single_species.modifiers(this.profile.settings.modifierType).filter(modifier => this.isModifierActive(single_species, modifier));
+        
+        // .map(modifier => {
+        //     return {
+        //         ...modifier,
+        //         modifiers: modifier.modifiers.map(mod => {
+        //             // @ts-ignore 
+        //             if (this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})) {
+        //                 if (mod.value < 0) {
+        //                     // @ts-ignore 
+        //                     mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+        //                 } else {
+        //                     // @ts-ignore 
+        //                     mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+        //                 }
 
-            // .modifiers(this.profile.settings.modifierType)
-            // .filter(modifier => this.isModifierActive(single_species, modifier))
-            // .map(modifier => {
-            //     if ('skill' in modifier) {
-            //         return {
-            //             key: modifier.key,
-            //             values: [
-            //                 {
-            //                     skill: this.game.skills.find(skill => skill.id === modifier.skill),
-            //                     value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
-            //                 }
-            //             ]
-            //         } as SkillModifierArrayElement;
-            //     } else {
-            //         return {
-            //             key: modifier.key,
-            //             value: this.profile.isPoolTierActive(2) && modifier.value > 1 ? modifier.value + 1 : modifier.value
-            //         } as StandardModifierArrayElement;
-            //     }
-            // });
+        //             }
+        //             return mod
+        //         })
+        //     }
+        // }
+        // );
     }
 
     public calculateEquipCost(single_species: Single_Species) {
@@ -76,7 +88,6 @@ export class ProfileManager {
             this.profile.settings.youEquipCostFive || 1000000,
             this.profile.settings.youEquipCostSix || 10000000,
             this.profile.settings.youEquipCostSeven || 100000000
-
         ];
         const single_speciesRef = this.profile.actions.find(action => action.id === single_species.id);
         const unlocked = this.profile.masteriesUnlocked.get(single_speciesRef).filter(isUnlocked => isUnlocked).length;

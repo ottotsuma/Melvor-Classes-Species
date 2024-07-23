@@ -893,8 +893,8 @@ export class App {
                         const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
                         // const globalMasteryEXPmod = game.modifiers.masteryXP || 0
 
-                        const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
-                        const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
+                        const totalMasteryExp1 = 9999 * masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
+                        const totalMasteryExp2 = 9999 * masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
                         if (chosen_species && chosen_species.single_species.skills.includes(skill.id)) {
                             game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
                             game.profile.addMasteryPoolXP(this.game.defaultRealm, totalMasteryExp1)
@@ -1136,22 +1136,19 @@ export class App {
         //     this.context.gameData.buildPackage((itemPackage: any) => {
         //         const newClasses: any[] = []
         //         function getModifier(negative: boolean, perc = 0.5) {
-        //             let test = ""
-        //             Object.keys(game.modifiers).forEach(modifier => {
-        //                 // 1731 total
-        //                 if (!test && modifierData[modifier]) {
-        //                     if (negative && modifierData[modifier].isNegative) {
-        //                         if (rollPercentage(perc)) {
-        //                             test = modifier
+        //             const newModifier = {
+        //                     "increasedMasteryXP": [
+        //                         {
+        //                             "value": Math.floor(Math.random() * 200) + 1,
+        //                             "skillID": "melvorD:Firemaking"
         //                         }
-        //                     } else if (!negative && !modifierData[modifier].isNegative) {
-        //                         if (rollPercentage(perc)) {
-        //                             test = modifier
-        //                         }
-        //                     }
+        //                     ]
         //                 }
-        //             })
-        //             return test ? test : negative ? "increasedAttackIntervalPercent" : "increasedRegenPerDamageTaken"
+
+        //             // Object.keys(game.modifiers).forEach(modifier => {
+        //             //     // Math.floor(Math.random() * 200) + 1
+        //             // })
+        //            return newModifier
         //         }
         //         const randomClass = {
         //             "id": 'Gambler',
@@ -1166,38 +1163,31 @@ export class App {
         //             "standardModifiers": [
         //                 {
         //                     "level": 0,
-        //                     "key": "fighterTraitApplied",
-        //                     "value": 1
+        //                     "modifiers": "traitAppliedFighter"
         //                 },
         //                 {
         //                     "level": 1,
-        //                     "key": getModifier(true, 10),
-        //                     "value": Math.floor(Math.random() * 200) + 1
+        //                     "modifiers": getModifier(true, 10)
         //                 },
         //                 {
         //                     "level": 20,
-        //                     "key": getModifier(false),
-        //                     "value": Math.floor(Math.random() * 200) + 1
+        //                     "modifiers": getModifier(false)
         //                 },
         //                 {
         //                     "level": 40,
-        //                     "key": getModifier(false),
-        //                     "value": Math.floor(Math.random() * 200) + 1
+        //                     "modifiers": getModifier(false)
         //                 },
         //                 {
         //                     "level": 60,
-        //                     "key": getModifier(false),
-        //                     "value": Math.floor(Math.random() * 200) + 1
+        //                     "modifiers": getModifier(false)
         //                 },
         //                 {
         //                     "level": 80,
-        //                     "key": getModifier(false),
-        //                     "value": Math.floor(Math.random() * 200) + 1
+        //                     "modifiers": getModifier(false)
         //                 },
         //                 {
         //                     "level": 99,
-        //                     "key": getModifier(false),
-        //                     "value": Math.floor(Math.random() * 200) + 1
+        //                     "modifiers": getModifier(false)
         //                 }
         //             ]
         //         }
@@ -1213,6 +1203,48 @@ export class App {
         // } catch (error) {
         //     console.log(error)
         // }
+
+        this.context.onCharacterLoaded(() => {
+            game.profile.actions.registeredObjects.forEach(single => {
+                single.standardModifiers.forEach(modifier => {
+                    modifier?.modifiers?.forEach(mod => {
+                        if (mod.value < 0) {
+                            // @ts-ignore 
+                            mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+                        } else {
+                            // @ts-ignore 
+                            mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+                        }
+                    })
+                })
+            });
+            game.profile.computeProvidedStats(true)
+
+            // this.userInterface.you1.updateModifiers();
+            // this.userInterface.you2.updateModifiers();
+            // for (const you of this.game.profile.yous.all()) {
+            //     const modifiers = this.game.profile.manager.getModifiersForApplication(you.single_species);
+            //     for (const modifier of modifiers) {
+            //         const newModifier = { ...modifier }
+            //         for (let index = 0; index < modifier?.modifiers?.length || 0; index++) {
+            //             const mod = modifier.modifiers[index]
+            //             // @ts-ignore 
+            //             if (this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})) {
+            //                 if (mod.value < 0) {
+            //                     // @ts-ignore 
+            //                     mod.value = mod.value 
+            //                 } else {
+            //                     // @ts-ignore 
+            //                     mod.value = mod.value 
+            //                 }
+            //             }
+            //         }
+            //         // @ts-ignore 
+            //         console.log('Ending', newModifier, this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {}), this.game.modifiers.getValue('melvorD:magicMaxHit', {}))
+            //     }
+            // }
+        })
+
 
         // this.context.onCharacterLoaded(() => {
         //     const guides = document.getElementById('tutorial-page-Woodcutting').parentElement

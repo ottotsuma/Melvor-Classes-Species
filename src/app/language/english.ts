@@ -63,12 +63,12 @@ export const en = {
     ITEM_NAME_Mastery_Token_Profile: 'Mastery Token (Profile)',
     ITEM_NAME_Profile_Lesser_Relic: 'An old relic',
 
-    MASTERY_BONUS_Profile_0: '',
-    MASTERY_BONUS_Profile_1: 'First Master modifier.',
-    MASTERY_BONUS_Profile_2: 'Ability to unlock the second Master modifier.',
-    MASTERY_BONUS_Profile_3: 'Ability to unlock the third Master modifier.',
-    MASTERY_BONUS_Profile_4: '-5% Equip Cost for this one only.',
-    MASTERY_BONUS_Profile_5: 'Ability to unlock the fourth Master modifier.',
+    MASTERY_BONUS_Profile_0: 'Increased bank space per level.',
+    MASTERY_BONUS_Profile_1: '-5% Equip Cost for this one only.',
+    MASTERY_BONUS_Profile_2: 'Upgrade Effects',
+    MASTERY_BONUS_Profile_3: '',
+    MASTERY_BONUS_Profile_4: '',
+    MASTERY_BONUS_Profile_5: '',
 
     MASTERY_CHECKPOINT_Profile_0: '+3% increased Profile Skill XP',
     MASTERY_CHECKPOINT_Profile_1: '+5% increased Profile Mastery XP',
@@ -203,4 +203,7 @@ export const en = {
     Profile_Profile_Single_Species_Argonian: 'Argonian',
     Profile_Single_Species_Khajiit: 'Khajiit',
     Profile_Single_Species_Argonian: 'Argonian',
+    MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal:"Animal",
+    Profile_decreasedUpgradeProfileModifers:"-${value} decreased modifier values in Profile",
+    Profile_increasedUpgradeProfileModifers:"+${value} increased modifier values in Profile",
 };
