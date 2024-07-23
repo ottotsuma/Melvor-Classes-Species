@@ -389,24 +389,57 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         this.renderQueue.grants = true;
     }
 
-    public onEquipmentChange() { 
-        console.log('change')
-        game.profile.actions.registeredObjects.forEach(single => {
-            single.standardModifiers.forEach(modifier => {
-                modifier?.modifiers?.forEach(mod => {
-                    console.log(mod.modifier._localID, mod.value)
-                    if (mod.value < 0) {
-                        // @ts-ignore 
-                        mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
-                    } else {
-                        // @ts-ignore 
-                        mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
-                    }
-                })
-            })
-        });
-        game.profile.computeProvidedStats(true)
-     }
+    public updateModifiers(Inital = false) {
+        try {
+            // @ts-ignore 
+            const profileModifer = this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+            if (Inital) { // @ts-ignore
+                this.game.saveUpdateProfileModifiers = profileModifer
+                game.profile.actions.registeredObjects.forEach(single => {
+                    single.standardModifiers.forEach(modifier => {
+                        modifier?.modifiers?.forEach(mod => {
+                            if (mod.value < 0) {
+                                mod.value = mod.value - profileModifer
+                            } else {
+                                mod.value = mod.value + profileModifer
+                            }
+                        })
+                    })
+                });
+                game.profile.computeProvidedStats(true)
+            } else {
+                // Need to have a saved state from the start
+                let differece = 0
+                // @ts-ignore 
+                if (this.game?.saveUpdateProfileModifiers != profileModifer) {
+                    // @ts-ignore 
+                    differece = Math.abs(this.game?.saveUpdateProfileModifiers - profileModifer)
+                    console.log(differece, 'test')
+                    // @ts-ignore 
+                    this.game.saveUpdateProfileModifiers = profileModifer
+                }
+                if (differece !== 0) {
+                    game.profile.actions.registeredObjects.forEach(single => {
+                        single.standardModifiers.forEach(modifier => {
+                            modifier?.modifiers?.forEach(mod => {
+                                if (mod.value < 0) {
+                                    mod.value = mod.value - (differece - profileModifer)
+                                } else {
+                                    mod.value = mod.value + (differece - profileModifer)
+                                }
+                            })
+                        })
+                    });
+                    game.profile.computeProvidedStats(true)
+                }
+            }
+
+        } catch (error) {
+            console.log('updateModifiers', error)
+        }
+    }
+
+    public onEquipmentChange() { }
 
     public addProvidedStats() {
         // @ts-ignore 

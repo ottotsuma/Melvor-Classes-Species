@@ -1205,44 +1205,21 @@ export class App {
         // }
 
         this.context.onCharacterLoaded(() => {
-            game.profile.actions.registeredObjects.forEach(single => {
-                single.standardModifiers.forEach(modifier => {
-                    modifier?.modifiers?.forEach(mod => {
-                        if (mod.value < 0) {
-                            // @ts-ignore 
-                            mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
-                        } else {
-                            // @ts-ignore 
-                            mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
-                        }
-                    })
-                })
-            });
-            game.profile.computeProvidedStats(true)
-
-            // this.userInterface.you1.updateModifiers();
-            // this.userInterface.you2.updateModifiers();
-            // for (const you of this.game.profile.yous.all()) {
-            //     const modifiers = this.game.profile.manager.getModifiersForApplication(you.single_species);
-            //     for (const modifier of modifiers) {
-            //         const newModifier = { ...modifier }
-            //         for (let index = 0; index < modifier?.modifiers?.length || 0; index++) {
-            //             const mod = modifier.modifiers[index]
-            //             // @ts-ignore 
-            //             if (this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})) {
-            //                 if (mod.value < 0) {
-            //                     // @ts-ignore 
-            //                     mod.value = mod.value 
-            //                 } else {
-            //                     // @ts-ignore 
-            //                     mod.value = mod.value 
-            //                 }
+            this.game.profile.updateModifiers(true)
+            // game.profile.actions.registeredObjects.forEach(single => {
+            //     single.standardModifiers.forEach(modifier => {
+            //         modifier?.modifiers?.forEach(mod => {
+            //             if (mod.value < 0) {
+            //                 // @ts-ignore 
+            //                 mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+            //             } else {
+            //                 // @ts-ignore 
+            //                 mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
             //             }
-            //         }
-            //         // @ts-ignore 
-            //         console.log('Ending', newModifier, this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {}), this.game.modifiers.getValue('melvorD:magicMaxHit', {}))
-            //     }
-            // }
+            //         })
+            //     })
+            // });
+            // game.profile.computeProvidedStats(true)
         })
 
 
@@ -1278,6 +1255,14 @@ export class App {
     }
 
     private patchEventManager() {
+        this.context.patch(Player, 'equipItem').after((_patch, data) => {
+            console.log('equipItem')
+            this.game.profile.updateModifiers()
+        });
+        this.context.patch(Player, 'unequipItem').after((_patch, data) => {
+            console.log('unequipItem')
+            this.game.profile.updateModifiers()
+        });
         this.context.patch(GameEventSystem, 'constructMatcher').after((_patch, data) => {
             if (this.isProfileEvent(data)) {
                 return new ProfileActionEventMatcher(data, this.game) as any;

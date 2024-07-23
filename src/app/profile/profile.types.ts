@@ -77,26 +77,6 @@ export class Single_Species extends BasicSkillRecipe {
     }
 }
 
-// .map(modifier => {
-//     return {
-//         ...modifier,
-//         modifiers: modifier.modifiers.map(mod => {
-//             // @ts-ignore 
-//             if (this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})) {
-//                 if (mod.value < 0) {
-//                     // @ts-ignore 
-//                     mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
-//                 } else {
-//                     // @ts-ignore 
-//                     mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
-//                 }
-
-//             }
-//             return mod
-//         })
-//     }
-// })
-
 export interface UpgradeData {
     itemId: string;
     modifiers: StatObject[];
