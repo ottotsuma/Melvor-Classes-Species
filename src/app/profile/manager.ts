@@ -62,13 +62,13 @@ export class ProfileManager {
         //         ...modifier,
         //         modifiers: modifier.modifiers.map(mod => {
         //             // @ts-ignore 
-        //             if (this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})) {
+        //             if (this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})) {
         //                 if (mod.value < 0) {
         //                     // @ts-ignore 
-        //                     mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+        //                     mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
         //                 } else {
         //                     // @ts-ignore 
-        //                     mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+        //                     mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
         //                 }
 
         //             }

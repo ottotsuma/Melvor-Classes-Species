@@ -204,6 +204,6 @@ export const en = {
     Profile_Single_Species_Khajiit: 'Khajiit',
     Profile_Single_Species_Argonian: 'Argonian',
     MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal:"Animal",
-    Profile_decreasedUpgradeProfileModifers:"-${value} decreased modifier values in Profile",
-    Profile_increasedUpgradeProfileModifers:"+${value} increased modifier values in Profile",
+    decreasedUpgradeProfileModifiers:"-${value} decreased modifier values in Profile",
+    increasedUpgradeProfileModifiers:"+${value} increased modifier values in Profile",
 };

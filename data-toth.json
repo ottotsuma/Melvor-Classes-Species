@@ -244,7 +244,7 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAnimal": 10
+                                        "customModifiersInMelvor:damageDealtAnimal": 30
                                     }
                                 },
                                 {
@@ -286,7 +286,13 @@
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {}
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:Bleed100",
+                                            "chance": 10,
+                                            "appliesWhen": "HitWithAttack"
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 40,
@@ -296,15 +302,29 @@
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {}
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:Bleed200",
+                                            "chance": 10,
+                                            "appliesWhen": "HitByAttack"
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "bleedLifesteal": 5
+                                    }
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {}
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:Bleed400",
+                                            "chance": 90,
+                                            "appliesWhen": "StartOfFight"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -418,7 +438,9 @@
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "magicMaxHitWithActivePrayer": 40
+                                    }
                                 },
                                 {
                                     "level": 99,
@@ -447,29 +469,55 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "cantEvade": 1
+                                    }
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "summoningAttackInterval": [
+                                            {
+                                                "value": 15
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "summoningAttackLifesteal": [
+                                            {
+                                                "value": 15
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "summoningMaxHit": [
+                                            {
+                                                "value": 10
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageTakenAnimal": -10
+                                        "customModifiersInMelvor:damageTakenAnimal": -40
                                     }
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {}
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorF:WeakeningIII",
+                                            "appliesWhen": "StartOfFight",
+                                            "chance": 12
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -493,32 +541,50 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "magicEvasion": -60
+                                        "magicEvasion": -100
                                     }
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "meleeEvasion": 10
+                                    }
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {}
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:Fear",
+                                            "appliesWhen": "StartOfFight",
+                                            "chance": 50
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "attackInterval": -5
+                                        "attackInterval": -15
                                     }
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {}
+                                        "combatEffects": [
+                                            {
+                                                "effectID": "melvorTotH:OceanSongEnemy0",
+                                                "appliesWhen": "StartOfFight",
+                                                "chance": 15
+                                            }
+                                        ]
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "meleeEvasion": 10
-                                    }
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorTotH:WaterDance0",
+                                            "appliesWhen": "StartOfFight",
+                                            "chance": 10
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -616,7 +682,12 @@
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {}
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorTotH:Leviathan",
+                                            "appliesWhen": "StartOfFight"
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 40,
@@ -626,7 +697,9 @@
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "flatTownshipHappiness": 100
+                                    }
                                 },
                                 {
                                     "level": 80,

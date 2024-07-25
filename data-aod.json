@@ -571,38 +571,45 @@
               "standardModifiers": [
                 {
                   "level": 0,
-                  "key": "mageTraitApplied",
-                  "value": 1
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedMage": 1
+                }
                 },
                 {
                   "level": 1,
-                  "key": "increasedDamageTakenBasedOnHP",
-                  "value": 10
+                  "modifiers": {
+                    "damageTakenBasedOnHP": 10
+                }
                 },
                 {
                   "level": 20,
-                  "key": "increasedSummoningMaxHit",
-                  "value": 10
+                  "modifiers": {
+                    "summoningMaxHit": 50
+                }
                 },
                 {
                   "level": 40,
-                  "key": "increasedBarrierSummonDamage",
-                  "value": 5
+                  "modifiers": {
+                    "barrierSummonDamage": 5
+                }
                 },
                 {
                   "level": 60,
-                  "key": "increasedSummoningAttackLifesteal",
-                  "value": 5
+                  "modifiers": {
+                    "summoningAttackLifesteal": 5
+                }
                 },
                 {
                   "level": 80,
-                  "key": "decreasedSummoningAttackIntervalPercent",
-                  "value": 5
+                  "modifiers": {
+                    "flatBarrierSummonDamageMagic": 5
+                }
                 },
                 {
                   "level": 99,
-                  "key": "increasedFlatBarrierSummonDamageMagic",
-                  "value": 10
+                  "modifiers": {
+                    "flatBarrierSummonDamageMagic": 10
+                }
                 }
               ]
             }

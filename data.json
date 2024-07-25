@@ -170,7 +170,7 @@
                 ]
             },
             {
-                "id": "UpgradeProfileModifers",
+                "id": "UpgradeProfileModifiers",
                 "isCombat": true,
                 "allowEnemy": true,
                 "allowedScopes": [
@@ -179,25 +179,25 @@
                         "descriptions": [
                             {
                                 "text": "-${value} decreased modifier values in Profile",
-                                "lang": "Profile_decreasedUpgradeProfileModifers",
+                                "lang": "Profile_decreasedUpgradeProfileModifiers",
                                 "below": 0,
                                 "includeSign": false
                             },
                             {
                                 "text": "+${value} increased modifier values in Profile",
-                                "lang": "Profile_increasedUpgradeProfileModifers",
+                                "lang": "Profile_increasedUpgradeProfileModifiers",
                                 "above": 0,
                                 "includeSign": false
                             }
                         ],
                         "posAliases": [
                             {
-                                "key": "increasedUpgradeProfileModifers"
+                                "key": "increasedUpgradeProfileModifiers"
                             }
                         ],
                         "negAliases": [
                             {
-                                "key": "decreasedUpgradeProfileModifers"
+                                "key": "decreasedUpgradeProfileModifiers"
                             }
                         ]
                     }
@@ -455,7 +455,7 @@
         "items": [
             {
                 "id": "testHat",
-                "name": "UpgradeProfileModifers",
+                "name": "UpgradeProfileModifiers",
                 "category": "Combat",
                 "type": "Helmet",
                 "media": "https://cdn2-main.melvor.net/assets/media/main/MI-Into-the-Abyss-Title.png",
@@ -465,7 +465,7 @@
                 "sellsFor": 999999999,
                 "itemType": "Equipment",
                 "modifiers": {
-                    "namespace_profile:UpgradeProfileModifers": 6
+                    "namespace_profile:UpgradeProfileModifiers": 6
                 },
                 "equipmentStats": [
                     {
@@ -783,7 +783,7 @@
                         {
                             "realm": "melvorD:Melvor",
                             "modifiers": {
-                                "namespace_profile:UpgradeProfileModifers": 1
+                                "namespace_profile:UpgradeProfileModifiers": 1
                             },
                             "percent": 95
                         }
@@ -834,28 +834,17 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAnimal": 10
+                                        "customModifiersInMelvor:damageDealtAnimal": 30
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtHuman": 10
+                                        "customModifiersInMelvor:damageDealtHuman": 30
                                     }
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "itemSaleCurrencyGain": [
-                                            {
-                                                "currencyID": "melvorD:GP",
-                                                "value": 10
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "level": 80,
                                     "modifiers": {
                                         "crafting30CurrencyGainChance": [
                                             {
@@ -866,9 +855,20 @@
                                     }
                                 },
                                 {
-                                    "level": 99,
+                                    "level": 80,
                                     "modifiers": {
                                         "skillInterval": -5
+                                    }
+                                },
+                                {
+                                    "level": 99,
+                                    "modifiers": {
+                                        "itemSaleCurrencyGain": [
+                                            {
+                                                "currencyID": "melvorD:GP",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 }
                             ]
@@ -917,19 +917,19 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "rangedCritChance": 10
+                                        "rangedCritChance": 5
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtMythicalCreature": 10
+                                        "customModifiersInMelvor:damageDealtMythicalCreature": 30
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtElemental": 5
+                                        "customModifiersInMelvor:damageDealtElemental": 30
                                     }
                                 }
                             ]
@@ -967,7 +967,7 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtGoblin": 10
+                                        "customModifiersInMelvor:damageDealtGoblin": 30
                                     }
                                 },
                                 {
@@ -979,7 +979,7 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtSeaCreature": 10
+                                        "customModifiersInMelvor:damageDealtSeaCreature": 30
                                     }
                                 },
                                 {
@@ -990,7 +990,14 @@
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "skillInterval": [
+                                            {
+                                                "skillID": "melvorD:Fishing",
+                                                "value": 30
+                                            }
+                                        ]
+                                    }
                                 }
                             ]
                         },
@@ -1031,7 +1038,7 @@
                                             {
                                                 "currencyID": "melvorD:GP",
                                                 "skillID": "melvorD:Thieving",
-                                                "value": 5
+                                                "value": 4
                                             }
                                         ]
                                     }
@@ -1039,13 +1046,13 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "thievingAreaUniqueChance": 5
+                                        "thievingAreaUniqueChance": 4
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "globalEvasionHPScaling": 10
+                                        "globalEvasionHPScaling": 2
                                     }
                                 },
                                 {
@@ -1083,7 +1090,7 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtElf": 10
+                                        "customModifiersInMelvor:damageDealtElf": 30
                                     }
                                 },
                                 {
@@ -1162,7 +1169,7 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "bonusCoalMining": 2
+                                        "bonusCoalMining": 1
                                     }
                                 },
                                 {
@@ -1182,14 +1189,16 @@
                                         "doubleItemsSkill": [
                                             {
                                                 "skillID": "melvorD:Mining",
-                                                "value": 2
+                                                "value": 1
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "miningNodeRespawnInterval": 20
+                                    }
                                 }
                             ]
                         },
@@ -1226,7 +1235,7 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAngel": 10
+                                        "customModifiersInMelvor:damageDealtAngel": 30
                                     }
                                 },
                                 {
@@ -1244,7 +1253,7 @@
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "summoningAttackInterval": 25
+                                        "flatSummoningAttackInterval": 1000
                                     }
                                 }
                             ]
@@ -1270,10 +1279,10 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "halveResistance": [
+                                        "resistance": [
                                             {
                                                 "damageTypeID": "melvorD:Normal",
-                                                "value": 1
+                                                "value": -50
                                             }
                                         ]
                                     }
@@ -1345,25 +1354,32 @@
                                             {
                                                 "skillID": "melvorD:Agility",
                                                 "currencyID": "melvorD:GP",
-                                                "value": 100
+                                                "value": -100
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "skillInterval": [
+                                            {
+                                                "skillID": "melvorD:Agility",
+                                                "value": 1
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "agilityObstacleCost": 20
+                                        "agilityObstacleCost": -20
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtDragon": 10
+                                        "customModifiersInMelvor:damageDealtDragon": 30
                                     }
                                 },
                                 {
@@ -1407,7 +1423,7 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAarakocra": 10
+                                        "customModifiersInMelvor:damageDealtAarakocra": 30
                                     }
                                 },
                                 {
@@ -1463,7 +1479,7 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtDemon": 10
+                                        "customModifiersInMelvor:damageDealtDemon": 30
                                     }
                                 },
                                 {
@@ -1525,7 +1541,9 @@
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "magicProtection": 1
+                                    }
                                 },
                                 {
                                     "level": 60,
@@ -1695,7 +1713,7 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtHuman": 25
+                                        "customModifiersInMelvor:damageDealtHuman": 30
                                     }
                                 },
                                 {
@@ -1761,7 +1779,7 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAnimal": 10
+                                        "customModifiersInMelvor:damageDealtAnimal": 30
                                     }
                                 },
                                 {
@@ -1809,11 +1827,20 @@
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "evasion": 10
+                                    }
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "currencyGain": [
+                                            {
+                                                "currencyID": "melvorD:GP",
+                                                "value": 10
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "level": 99,
@@ -1871,7 +1898,9 @@
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "bypassSlayerItems": 1
+                                    }
                                 },
                                 {
                                     "level": 99,
@@ -1924,7 +1953,9 @@
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "magicEvasion": 20
+                                    }
                                 },
                                 {
                                     "level": 99,
@@ -2019,7 +2050,9 @@
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "magicCritChance": 20
+                                    }
                                 },
                                 {
                                     "level": 40,
@@ -2029,7 +2062,9 @@
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "magicMinHitBasedOnMaxHitSlayerTask": 20
+                                    }
                                 },
                                 {
                                     "level": 80,
@@ -2048,7 +2083,9 @@
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "magicLifesteal": 33
+                                    }
                                 }
                             ]
                         },
@@ -2071,19 +2108,44 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "ammoPreservationChance": [
+                                            {
+                                                "value": -90
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {}
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:RapidFire0",
+                                            "chance": 50,
+                                            "appliesWhen": "StartOfFight"
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {}
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:Poison",
+                                            "chance": 20,
+                                            "appliesWhen": "StartOfFight"
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "ignoreResistanceWhenAttackingChance": [
+                                            {
+                                                "damageTypeID": "melvorD:Normal",
+                                                "value": 15
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "level": 80,
@@ -2119,16 +2181,24 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "damageTaken": -50
+                                        "damageTaken": 50
                                     }
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "doubleSlayerTaskKillChance": [
+                                            {
+                                                "value": 30
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "evasion": 10
+                                    }
                                 },
                                 {
                                     "level": 60,
@@ -2169,27 +2239,39 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "magicAttackInterval": 50
+                                    }
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "magicAccuracyRating": 20
+                                    }
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "magicDamageBonus": 30
+                                    }
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "magicMinHitBasedOnMaxHit": 10
+                                    }
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "runePreservationChance": 20
+                                    }
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "bypassRunePreservationChance": 5
+                                    }
                                 }
                             ]
                         }

@@ -893,8 +893,8 @@ export class App {
                         const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
                         // const globalMasteryEXPmod = game.modifiers.masteryXP || 0
 
-                        const totalMasteryExp1 = 9999 * masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
-                        const totalMasteryExp2 = 9999 * masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
+                        const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
+                        const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
                         if (chosen_species && chosen_species.single_species.skills.includes(skill.id)) {
                             game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
                             game.profile.addMasteryPoolXP(this.game.defaultRealm, totalMasteryExp1)
@@ -1211,10 +1211,10 @@ export class App {
             //         modifier?.modifiers?.forEach(mod => {
             //             if (mod.value < 0) {
             //                 // @ts-ignore 
-            //                 mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+            //                 mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
             //             } else {
             //                 // @ts-ignore 
-            //                 mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+            //                 mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
             //             }
             //         })
             //     })
@@ -1256,11 +1256,9 @@ export class App {
 
     private patchEventManager() {
         this.context.patch(Player, 'equipItem').after((_patch, data) => {
-            console.log('equipItem')
             this.game.profile.updateModifiers()
         });
         this.context.patch(Player, 'unequipItem').after((_patch, data) => {
-            console.log('unequipItem')
             this.game.profile.updateModifiers()
         });
         this.context.patch(GameEventSystem, 'constructMatcher').after((_patch, data) => {

@@ -392,7 +392,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public updateModifiers(Inital = false) {
         try {
             // @ts-ignore 
-            const profileModifer = this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifers', {})
+            const profileModifer = this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
             if (Inital) { // @ts-ignore
                 this.game.saveUpdateProfileModifiers = profileModifer
                 game.profile.actions.registeredObjects.forEach(single => {
@@ -409,31 +409,31 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                 game.profile.computeProvidedStats(true)
             } else {
                 // Need to have a saved state from the start
-                let differece = 0
+                let difference = 0;
                 // @ts-ignore 
-                if (this.game?.saveUpdateProfileModifiers != profileModifer) {
+                if (this.game?.saveUpdateProfileModifiers !== profileModifer) {
+                    // Calculate the difference correctly 
                     // @ts-ignore 
-                    differece = Math.abs(this.game?.saveUpdateProfileModifiers - profileModifer)
-                    console.log(differece, 'test')
+                    difference = profileModifer - this.game?.saveUpdateProfileModifiers;
                     // @ts-ignore 
-                    this.game.saveUpdateProfileModifiers = profileModifer
+                    this.game.saveUpdateProfileModifiers = profileModifer;
                 }
-                if (differece !== 0) {
+                if (difference !== 0) {
                     game.profile.actions.registeredObjects.forEach(single => {
                         single.standardModifiers.forEach(modifier => {
                             modifier?.modifiers?.forEach(mod => {
+                                // Update mod.value by the difference
                                 if (mod.value < 0) {
-                                    mod.value = mod.value - (differece - profileModifer)
+                                    mod.value -= difference;
                                 } else {
-                                    mod.value = mod.value + (differece - profileModifer)
+                                    mod.value += difference;
                                 }
-                            })
-                        })
+                            });
+                        });
                     });
-                    game.profile.computeProvidedStats(true)
+                    game.profile.computeProvidedStats(true);
                 }
             }
-
         } catch (error) {
             console.log('updateModifiers', error)
         }
