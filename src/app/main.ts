@@ -860,7 +860,12 @@ export class App {
             this.game.skills.registeredObjects.forEach(SkillObject => {
                 skillsList.push(SkillObject)
             })
-            function addXP(returnedValue: number, amount: number, masteryAction: any) {
+            function addXP(returnedValue: number, amount: number, masteryAction: any) {                
+                if (rollPercentage(0.1)) {
+                    game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true, masteryAction);
+                } else if (rollPercentage(0.01)) {
+                    game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, masteryAction);
+                }
                 skillsList.forEach(skill => {
                     if (game.activeAction && skill.id === game.activeAction.id) {
                         const chosen_species = game.profile.yous.get(1) // human
@@ -897,11 +902,11 @@ export class App {
                         const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
                         if (chosen_species && chosen_species.single_species.skills.includes(skill.id)) {
                             game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
-                            game.profile.addMasteryPoolXP(this.game.defaultRealm, totalMasteryExp1)
+                            game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
                         }
                         if (chosen_class && chosen_class.single_species.skills.includes(skill.id)) {
                             game.profile.addMasteryXP(chosen_class.single_species, totalMasteryExp2)
-                            game.profile.addMasteryPoolXP(this.game.defaultRealm, totalMasteryExp2)
+                            game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp2)
                         }
                     }
                 })
@@ -909,11 +914,6 @@ export class App {
             // @ts-ignore
             this.context.patch(Skill, 'addXP').after(function (returnedValue: number, amount: number, masteryAction: string) {
                 try {
-                    if (rollPercentage(0.1)) {
-                        game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true, masteryAction);
-                    } else if (rollPercentage(0.01)) {
-                        game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, masteryAction);
-                    }
                     addXP(returnedValue, amount, masteryAction)
                 } catch (error) {
                     console.log(error)
@@ -921,11 +921,12 @@ export class App {
             })
             // @ts-ignore
             this.context.patch(Character, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
-                return meleeDefenceBonus + (game.combat.player.levels.Defence * this.game.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
+                // @ts-ignore
+                return meleeDefenceBonus + (game.combat.player.levels.Defence * game.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
             })
             // @ts-ignore
-            this.context.patch(Character, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) {
-                return rangedDefenceBonus + (game.combat.player.levels.Defence * this.game.modifiers.getValue('namespace_profile:FlatRangedDefenceBonusPerDefence', {}))
+            this.context.patch(Character, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) { // @ts-ignore
+                return rangedDefenceBonus + (game.combat.player.levels.Defence * game.modifiers.getValue('namespace_profile:FlatRangedDefenceBonusPerDefence', {}))
             })
 
             // Giving monsters classes
@@ -1211,10 +1212,10 @@ export class App {
             //         modifier?.modifiers?.forEach(mod => {
             //             if (mod.value < 0) {
             //                 // @ts-ignore 
-            //                 mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
+            //                 mod.value = mod.value - game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
             //             } else {
             //                 // @ts-ignore 
-            //                 mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
+            //                 mod.value = mod.value + game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
             //             }
             //         })
             //     })

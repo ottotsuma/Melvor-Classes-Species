@@ -682,6 +682,9 @@
                                 },
                                 {
                                     "level": 20,
+                                    "modifiers": {
+                                        "namespace_profile:UpgradeProfileModifiers": 10
+                                    },
                                     "combatEffects": [
                                         {
                                             "effectID": "melvorTotH:Leviathan",

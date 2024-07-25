@@ -454,34 +454,6 @@
         ],
         "items": [
             {
-                "id": "testHat",
-                "name": "UpgradeProfileModifiers",
-                "category": "Combat",
-                "type": "Helmet",
-                "media": "https://cdn2-main.melvor.net/assets/media/main/MI-Into-the-Abyss-Title.png",
-                "ignoreCompletion": false,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 999999999,
-                "itemType": "Equipment",
-                "modifiers": {
-                    "namespace_profile:UpgradeProfileModifiers": 6
-                },
-                "equipmentStats": [
-                    {
-                        "key": "resistance",
-                        "damageType": "melvorD:Normal",
-                        "value": 100
-                    }
-                ],
-                "tier": "none",
-                "validSlots": [
-                    "Helmet"
-                ],
-                "equipRequirements": [],
-                "occupiesSlots": []
-            },
-            {
                 "id": "Mastery_Token_Profile",
                 "name": "Mastery Token (Profile)",
                 "category": "Mastery",
