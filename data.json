@@ -695,18 +695,6 @@
                     "masteryLevelBonuses": [
                         {
                             "modifiers": {
-                                "melvorD:bankSpace": [
-                                    {
-                                        "value": 1
-                                    }
-                                ]
-                            },
-                            "level": 1,
-                            "levelScalingSlope": 1,
-                            "levelScalingMax": 99
-                        },
-                        {
-                            "modifiers": {
                                 "increasedMasteryXP": [
                                     {
                                         "skillID": "namespace_profile:Profile",
@@ -743,10 +731,10 @@
                         {
                             "realm": "melvorD:Melvor",
                             "modifiers": {
-                                "decreasedSkillInterval": [
+                                "masteryXP": [
                                     {
                                         "skillID": "namespace_profile:Profile",
-                                        "value": 250
+                                        "value": 3
                                     }
                                 ]
                             },
@@ -766,16 +754,6 @@
                             "level": "1",
                             "descriptionID": 0,
                             "description": "Each level increases the species cost."
-                        },
-                        {
-                            "level": "50",
-                            "descriptionID": 1,
-                            "description": "Decrease Equip Cost."
-                        },
-                        {
-                            "level": "99",
-                            "descriptionID": 2,
-                            "description": "Decrease Equip Cost."
                         }
                     ],
                     "species": [

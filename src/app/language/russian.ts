@@ -204,7 +204,7 @@ export const ru = {
     Profile_Profile_Single_Species_Argonian: 'Argonian',
     Profile_Single_Species_Khajiit: 'Khajiit',
     Profile_Single_Species_Argonian: 'Argonian',
-
-
-
+    MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal: "Animal",
+    decreasedUpgradeProfileModifiers: "-${value} decreased modifier values in Profile",
+    increasedUpgradeProfileModifiers: "+${value} increased modifier values in Profile",
 };

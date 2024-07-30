@@ -573,43 +573,43 @@
                   "level": 0,
                   "modifiers": {
                     "customModifiersInMelvor:traitAppliedMage": 1
-                }
+                  }
                 },
                 {
                   "level": 1,
                   "modifiers": {
                     "damageTakenBasedOnHP": 10
-                }
+                  }
                 },
                 {
                   "level": 20,
                   "modifiers": {
                     "summoningMaxHit": 50
-                }
+                  }
                 },
                 {
                   "level": 40,
                   "modifiers": {
                     "barrierSummonDamage": 5
-                }
+                  }
                 },
                 {
                   "level": 60,
                   "modifiers": {
                     "summoningAttackLifesteal": 5
-                }
+                  }
                 },
                 {
                   "level": 80,
                   "modifiers": {
                     "flatBarrierSummonDamageMagic": 5
-                }
+                  }
                 },
                 {
                   "level": 99,
                   "modifiers": {
                     "flatBarrierSummonDamageMagic": 10
-                }
+                  }
                 }
               ]
             }

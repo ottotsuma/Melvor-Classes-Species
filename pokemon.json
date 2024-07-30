@@ -1,74 +1,74 @@
 {
-    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
-    "namespace": "namespace_profile",
-    "data": {
-      "skillData": [
-        {
-          "skillID": "namespace_profile:Profile",
-          "data": {
-            "classes": [
-              {
-                "id": "Pokemon",
-                "name": "Pokemon Trainer",
-                "media": "https://www.giantbomb.com/a/uploads/original/12/120992/2258109-heartgold_soulsilver_ethan.png",
-                "baseExperience": 5,
-                "productId": "namespace_profile:Pokemon",
-                "level": 5,
-                "skills": [
-                  "https://i.pinimg.com/originals/e4/1a/27/e41a2738f3f20d7c5342a119d1d0246e.png"
-                ],
-                "standardModifiers": [
-                  {
-                    "level": 0,
-                    "modifiers": {
-                      "customModifiersInMelvor:traitAppliedMage": 1
-                    }
-                  },
-                  {
-                    "level": 1,
-                    "modifiers": {
-                      "foodHealingValue": -40
-                    }
-                  },
-                  {
-                    "level": 20,
-                    "modifiers": {
-                      "skillPetLocationChance": 10
-                    }
-                  },
-                  {
-                    "level": 40,
-                    "modifiers": {
-                      "summoningMaxHit": 10
-                    }
-                  },
-                  {
-                    "level": 60,
-                    "modifiers": {
-                      "skillPetLocationChance": 10
-                    }
-                  },
-                  {
-                    "level": 80,
-                    "modifiers": {
-                      "summoningAttackInterval": [
-                        {
-                          "value": 5
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "level": 99,
-                    "modifiers": {
-                      "skillPetLocationChance": 5
-                    }
+  "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+  "namespace": "namespace_profile",
+  "data": {
+    "skillData": [
+      {
+        "skillID": "namespace_profile:Profile",
+        "data": {
+          "classes": [
+            {
+              "id": "Pokemon",
+              "name": "Pokemon Trainer",
+              "media": "https://www.giantbomb.com/a/uploads/original/12/120992/2258109-heartgold_soulsilver_ethan.png",
+              "baseExperience": 5,
+              "productId": "namespace_profile:Pokemon",
+              "level": 5,
+              "skills": [
+                "https://i.pinimg.com/originals/e4/1a/27/e41a2738f3f20d7c5342a119d1d0246e.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedMage": 1
                   }
-                ]
-              }
-            ]
-          }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "foodHealingValue": -40
+                  }
+                },
+                {
+                  "level": 20,
+                  "modifiers": {
+                    "skillPetLocationChance": 10
+                  }
+                },
+                {
+                  "level": 40,
+                  "modifiers": {
+                    "summoningMaxHit": 10
+                  }
+                },
+                {
+                  "level": 60,
+                  "modifiers": {
+                    "skillPetLocationChance": 10
+                  }
+                },
+                {
+                  "level": 80,
+                  "modifiers": {
+                    "summoningAttackInterval": [
+                      {
+                        "value": 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "level": 99,
+                  "modifiers": {
+                    "skillPetLocationChance": 5
+                  }
+                }
+              ]
+            }
+          ]
         }
-      ]
-    }
+      }
+    ]
   }
+}

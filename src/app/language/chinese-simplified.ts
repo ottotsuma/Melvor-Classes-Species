@@ -192,7 +192,10 @@ export const zhCN = {
   Profile_Profile_Single_Species_Argonian: '亚龙',
   Profile_Single_Species_Khajiit: '虎人',
   Profile_Single_Species_Argonian: '亚龙',
-      Profile_Profile_Single_Species_Pokemon: 'Pokemon Trainer',
-    Profile_Single_Species_Pokemon: 'Pokemon Trainer'
+  Profile_Profile_Single_Species_Pokemon: 'Pokemon Trainer',
+  Profile_Single_Species_Pokemon: 'Pokemon Trainer',
+  MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal: "Animal",
+  decreasedUpgradeProfileModifiers: "-${value} decreased modifier values in Profile",
+  increasedUpgradeProfileModifiers: "+${value} increased modifier values in Profile",
 }
 

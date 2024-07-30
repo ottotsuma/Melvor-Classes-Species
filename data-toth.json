@@ -568,13 +568,13 @@
                                 },
                                 {
                                     "level": 80,
-                                        "combatEffects": [
-                                            {
-                                                "effectID": "melvorTotH:OceanSongEnemy0",
-                                                "appliesWhen": "StartOfFight",
-                                                "chance": 15
-                                            }
-                                        ]
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorTotH:OceanSongEnemy0",
+                                            "appliesWhen": "StartOfFight",
+                                            "chance": 15
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 99,
