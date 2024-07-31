@@ -58,12 +58,12 @@ export const zhCN = {
   "ITEM_NAME_Mastery_Token_Profile": "精通令牌（个人资料）",
   "ITEM_NAME_Profile_Lesser_Relic": "一件古老的文物",
 
-  "MASTERY_BONUS_Profile_0": "",
-  "MASTERY_BONUS_Profile_1": "第一个大师修饰符。",
-  "MASTERY_BONUS_Profile_2": "解锁第二个大师修饰符的能力。",
-  "MASTERY_BONUS_Profile_3": "解锁第三个大师修饰符的能力。",
-  "MASTERY_BONUS_Profile_4": "仅此物品的-5%装备成本。",
-  "MASTERY_BONUS_Profile_5": "解锁第四个大师修饰符的能力。",
+  MASTERY_BONUS_Profile_0: 'Increased Profile Mastery one per twenty levels',
+  MASTERY_BONUS_Profile_1: '',
+  MASTERY_BONUS_Profile_2: '',
+  MASTERY_BONUS_Profile_3: '',
+  MASTERY_BONUS_Profile_4: '',
+  MASTERY_BONUS_Profile_5: '',
 
   "MASTERY_CHECKPOINT_Profile_0": "+3% 增加个人资料技能经验",
   "MASTERY_CHECKPOINT_Profile_1": "+5% 增加个人资料精通经验",

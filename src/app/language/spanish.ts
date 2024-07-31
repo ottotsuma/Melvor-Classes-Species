@@ -58,12 +58,12 @@ export const es = {
   "ITEM_NAME_Mastery_Token_Profile": "Ficha de maestría (Perfil)",
   "ITEM_NAME_Profile_Lesser_Relic": "Una reliquia antigua",
 
-  "MASTERY_BONUS_Profile_0": "",
-  "MASTERY_BONUS_Profile_1": "Primer modificador de maestro.",
-  "MASTERY_BONUS_Profile_2": "Habilidad para desbloquear el segundo modificador de maestro.",
-  "MASTERY_BONUS_Profile_3": "Habilidad para desbloquear el tercer modificador de maestro.",
-  "MASTERY_BONUS_Profile_4": "-5% Costo de equipamiento solo para este.",
-  "MASTERY_BONUS_Profile_5": "Habilidad para desbloquear el cuarto modificador de maestro.",
+  MASTERY_BONUS_Profile_0: 'Increased Profile Mastery one per twenty levels',
+  MASTERY_BONUS_Profile_1: '',
+  MASTERY_BONUS_Profile_2: '',
+  MASTERY_BONUS_Profile_3: '',
+  MASTERY_BONUS_Profile_4: '',
+  MASTERY_BONUS_Profile_5: '',
 
   "MASTERY_CHECKPOINT_Profile_0": "+3% de aumento en experiencia de habilidad de perfil",
   "MASTERY_CHECKPOINT_Profile_1": "+5% de aumento en experiencia de maestría de perfil",

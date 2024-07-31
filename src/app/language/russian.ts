@@ -63,12 +63,12 @@ export const ru = {
     ITEM_NAME_Mastery_Token_Profile: 'Жетон мастерства (профиль)',
     ITEM_NAME_Profile_Lesser_Relic: 'Старая реликвия',
 
-    MASTERY_BONUS_Profile_0: '',
-    MASTERY_BONUS_Profile_1: 'Модификатор первого мастера',
-    MASTERY_BONUS_Profile_2: 'Возможность разблокировать второй модификатор Мастера',
-    MASTERY_BONUS_Profile_3: 'Возможность разблокировать третий модификатор мастера',
-    MASTERY_BONUS_Profile_4: '-5% стоимости экипировки только для этого предмета',
-    MASTERY_BONUS_Profile_5: 'Возможность разблокировать четвертый модификатор Мастера',
+    MASTERY_BONUS_Profile_0: 'Increased Profile Mastery one per twenty levels',
+    MASTERY_BONUS_Profile_1: '',
+    MASTERY_BONUS_Profile_2: '',
+    MASTERY_BONUS_Profile_3: '',
+    MASTERY_BONUS_Profile_4: '',
+    MASTERY_BONUS_Profile_5: '',
 
     MASTERY_CHECKPOINT_Profile_0: '+3% увеличенный профильный навык XP',
     MASTERY_CHECKPOINT_Profile_1: '+5% увеличенный Profile Mastery XP',

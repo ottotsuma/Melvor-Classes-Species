@@ -22,13 +22,12 @@ export const ja = {
 
     ITEM_NAME_Mastery_Token_Profile: '熟練度トークン（プロフィール）',
 
-    MASTERY_BONUS_Profile_0: '',
-    MASTERY_BONUS_Profile_1: '最初の装備属性変更。',
-    MASTERY_BONUS_Profile_2: '2つ目の装備属性変更の解除が可能になります。',
-    MASTERY_BONUS_Profile_3: '3つ目の装備属性変更の解除が可能になります。',
-    MASTERY_BONUS_Profile_4: 'この楽器のクラス装備料金が-5%されます。',
-    MASTERY_BONUS_Profile_5: '4つ目の装備属性変更の解除が可能になります。',
-
+    MASTERY_BONUS_Profile_0: 'Increased Profile Mastery one per twenty levels',
+    MASTERY_BONUS_Profile_1: '',
+    MASTERY_BONUS_Profile_2: '',
+    MASTERY_BONUS_Profile_3: '',
+    MASTERY_BONUS_Profile_4: '',
+    MASTERY_BONUS_Profile_5: '',
     MASTERY_CHECKPOINT_Profile_0: '+3% プロフィールスキルXP増加',
     MASTERY_CHECKPOINT_Profile_1: '+5% プロフィール熟練度XP増加',
     MASTERY_CHECKPOINT_Profile_2: 'すべての修正値+1',

@@ -58,12 +58,12 @@ export const zhTW = {
     "ITEM_NAME_Mastery_Token_Profile": "精通令牌（個人檔案）",
     "ITEM_NAME_Profile_Lesser_Relic": "一件古老的文物",
 
-    "MASTERY_BONUS_Profile_0": "",
-    "MASTERY_BONUS_Profile_1": "第一個大師修飾符。",
-    "MASTERY_BONUS_Profile_2": "解鎖第二個大師修飾符的能力。",
-    "MASTERY_BONUS_Profile_3": "解鎖第三個大師修飾符的能力。",
-    "MASTERY_BONUS_Profile_4": "僅此物品的-5%裝備成本。",
-    "MASTERY_BONUS_Profile_5": "解鎖第四個大師修飾符的能力。",
+    MASTERY_BONUS_Profile_0: 'Increased Profile Mastery one per twenty levels',
+    MASTERY_BONUS_Profile_1: '',
+    MASTERY_BONUS_Profile_2: '',
+    MASTERY_BONUS_Profile_3: '',
+    MASTERY_BONUS_Profile_4: '',
+    MASTERY_BONUS_Profile_5: '',
 
     "MASTERY_CHECKPOINT_Profile_0": "+3% 增加個人檔案技能經驗",
     "MASTERY_CHECKPOINT_Profile_1": "+5% 增加個人檔案精通經驗",

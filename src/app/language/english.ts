@@ -63,7 +63,7 @@ export const en = {
     ITEM_NAME_Mastery_Token_Profile: 'Mastery Token (Profile)',
     ITEM_NAME_Profile_Lesser_Relic: 'An old relic',
 
-    MASTERY_BONUS_Profile_0: 'Increased Profile Mastery one per level',
+    MASTERY_BONUS_Profile_0: 'Increased Profile Mastery one per twenty levels',
     MASTERY_BONUS_Profile_1: '',
     MASTERY_BONUS_Profile_2: '',
     MASTERY_BONUS_Profile_3: '',

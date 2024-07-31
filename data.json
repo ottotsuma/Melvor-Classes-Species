@@ -702,8 +702,8 @@
                                     }
                                 ]
                             },
-                            "level": 1,
-                            "levelScalingSlope": 1,
+                            "level": 20,
+                            "levelScalingSlope": 20,
                             "levelScalingMax": 99,
                             "autoScopeToAction": true
                         }
@@ -751,9 +751,9 @@
                     "masteryTokenID": "namespace_profile:Mastery_Token_Profile",
                     "masteryLevelUnlocks": [
                         {
-                            "level": "1",
+                            "level": "20",
                             "descriptionID": 0,
-                            "description": "Each level increases the species cost."
+                            "description": ""
                         }
                     ],
                     "species": [
