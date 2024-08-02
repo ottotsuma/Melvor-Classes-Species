@@ -37,15 +37,16 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
             baseXP: number,
             masteryXP: number,
             baseMasteryXP: number,
-            masteryPoolXP: number,
+            masteryPoolXP: number,            
+            // @ts-ignore // TODO: TYPES
+            realm: Realm
         ) {
             this.xpIcon.setXP(xp, baseXP); // @ts-ignore 
             this.xpIcon.setSources(game.profile.getXPSources(single_species));
             this.masteryIcon.setXP(masteryXP, baseMasteryXP); // @ts-ignore 
             this.masteryIcon.setSources(game.profile.getMasteryXPSources(single_species));
             this.masteryPoolIcon.setXP(masteryPoolXP);
-            // this.intervalIcon.setInterval(interval);
-            // @ts-ignore 
+
             game.unlockedRealms.length > 1 ? this.masteryPoolIcon.setRealm(realm) : this.masteryPoolIcon.hideRealms();
         },
         Master: function () {

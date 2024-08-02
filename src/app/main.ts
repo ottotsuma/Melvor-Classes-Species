@@ -860,61 +860,80 @@ export class App {
             this.game.skills.registeredObjects.forEach(SkillObject => {
                 skillsList.push(SkillObject)
             })
-            function addXP(returnedValue: number, amount: number, masteryAction: any) {                
+            function addMasteryXP() {
                 if (rollPercentage(0.1)) {
-                    game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true, masteryAction);
+                    game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true);
                 } else if (rollPercentage(0.01)) {
-                    game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, masteryAction);
+                    game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true);
+                }
+
+                const chosen_species = game.profile.yous.get(1) // human
+                const chosen_class = game.profile.yous.get(2) // knight
+                const profileLevel = game.profile._level
+                let exp1 = 0
+                if (chosen_species) {
+                    exp1 = Math.floor(chosen_species.single_species.baseExperience) || 0
+                }
+
+                let exp2 = 0
+                if (chosen_class) {
+                    exp2 = Math.floor(chosen_class.single_species.baseExperience) || 0
+                }
+
+                let skillExp1 = exp1 || 0
+                let masteryExp1 = exp1 || 0
+
+                let skillExp2 = exp2 || 0
+                let masteryExp2 = exp2 || 0
+
+                // @ts-ignore
+                const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
+
+                const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
+                const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
+
+                if ((chosen_species || chosen_class ) && game?.combat?.isActive) {
+                    const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
+                    //@ts-ignore both
+                    const globalEXPmod = game.modifiers.getValue("skillXP", {})
+                    // Calculate the base XP
+                    const baseExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0;
+
+                    // Scale the XP based on combat level
+                    const scaledExp = baseExp * (combatLevel / 100);
+
+                    // Ensure the XP is not less than a minimum value
+                    const totalExp = Math.max(scaledExp, 1);
+                    game.profile.addXP(totalExp, game.profile)
+                    game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
                 }
                 skillsList.forEach(skill => {
                     if (game.activeAction && skill.id === game.activeAction.id) {
-                        const chosen_species = game.profile.yous.get(1) // human
-                        const chosen_class = game.profile.yous.get(2) // knight
-                        const profileLevel = game.profile._level
-                        let exp1 = 0
-                        if (chosen_species) {
-                            exp1 = Math.floor(chosen_species.single_species.baseExperience) || 0
-                        }
-
-                        let exp2 = 0
-                        if (chosen_class) {
-                            exp2 = Math.floor(chosen_class.single_species.baseExperience) || 0
-                        }
-
-                        let skillExp1 = exp1 || 0
-                        let masteryExp1 = exp1 || 0
-
-                        let skillExp2 = exp2 || 0
-                        let masteryExp2 = exp2 || 0
-                        // if (game.profile.isPoolTierActive(1)) {
-                        //     skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-                        //     skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
-                        // }
-                        // if (game.profile.isPoolTierActive(1)) {
-                        //     masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-                        //     masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
-                        // }
-                        // @ts-ignore
-                        const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
-                        // const globalMasteryEXPmod = game.modifiers.masteryXP || 0
-
-                        const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
-                        const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
                         if (chosen_species && chosen_species.single_species.skills.includes(skill.id)) {
                             game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
                             game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
+
+                            //@ts-ignore species
+                            const globalEXPmod = game.modifiers.getValue("skillXP", {})
+                            const totalExp = skillExp1 + (((skillExp1) / 100) * globalEXPmod) || 0
+                            game.profile.addXP(totalExp, game.profile)
                         }
                         if (chosen_class && chosen_class.single_species.skills.includes(skill.id)) {
                             game.profile.addMasteryXP(chosen_class.single_species, totalMasteryExp2)
                             game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp2)
+
+                            //@ts-ignore class
+                            const globalEXPmod = game.modifiers.getValue("skillXP", {})
+                            const totalExp = skillExp2 + (((skillExp2) / 100) * globalEXPmod) || 0
+                            game.profile.addXP(totalExp, game.profile)
                         }
                     }
                 })
             }
             // @ts-ignore
-            this.context.patch(Skill, 'addXP').after(function (returnedValue: number, amount: number, masteryAction: string) {
+            this.context.patch(SkillWithMastery, 'rollForPets').after(function (interval: number) {
                 try {
-                    addXP(returnedValue, amount, masteryAction)
+                    addMasteryXP()
                 } catch (error) {
                     console.log(error)
                 }
@@ -1268,63 +1287,47 @@ export class App {
             }
         });
         // @ts-ignore
-        this.context.patch(CombatManager, "onEnemyDeath").after(() => {
-            try {
-                // if (game && game.activeAction && game.activeAction._localID) {
-                // if (game.activeAction._localID === "Combat") {
-                const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
-                // const profile = game.skills.getObjectByID('namespace_profile:Profile') as Profile;
-                // game.profile.isPoolTierActive(0) // 3% skill exp
-                // game.profile.isPoolTierActive(1) // 5% mastery exp
-                // game.profile.isPoolTierActive(2) // All modifier values +1
-                // game.profile.isPoolTierActive(3) // 5% you cost
-                const profileLevel = game.profile._level
-                const single_species = game.profile.yous.get(1)
-                const single_class = game.profile.yous.get(2)
-                let exp1 = 0
-                if (single_species) {
-                    exp1 = Math.floor((combatLevel / single_species.single_species.baseExperience) + single_species.single_species.baseExperience) || 0
-                }
-                let exp2 = 0
-                if (single_class) {
-                    exp2 = Math.floor((combatLevel / single_class.single_species.baseExperience) + single_class.single_species.baseExperience) || 0
-                }
+        // this.context.patch(CombatManager, "onEnemyDeath").after(() => {
+        //     try {
+        //         const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
+        //         const profileLevel = game.profile._level
+        //         const single_species = game.profile.yous.get(1)
+        //         const single_class = game.profile.yous.get(2)
+        //         let exp1 = 0
+        //         if (single_species) {
+        //             exp1 = Math.floor((combatLevel / single_species.single_species.baseExperience) + single_species.single_species.baseExperience) || 0
+        //         }
+        //         let exp2 = 0
+        //         if (single_class) {
+        //             exp2 = Math.floor((combatLevel / single_class.single_species.baseExperience) + single_class.single_species.baseExperience) || 0
+        //         }
 
-                let skillExp1 = exp1 || 0
-                let masteryExp1 = exp1 || 0
+        //         let skillExp1 = exp1 || 0
+        //         let masteryExp1 = exp1 || 0
 
-                let skillExp2 = exp2 || 0
-                let masteryExp2 = exp2 || 0
-                // if (game.profile.isPoolTierActive(1)) {
-                //     skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-                //     skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
-                // }
-                // if (game.profile.isPoolTierActive(1)) {
-                //     masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-                //     masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
-                // }
-                //@ts-ignore
-                const globalEXPmod = game.modifiers.getValue("skillXP", {})
-                const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
-                game.profile.addXP(totalExp)
-                //@ts-ignore
-                const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
+        //         let skillExp2 = exp2 || 0
+        //         let masteryExp2 = exp2 || 0
+        //         //@ts-ignore
+        //         const globalEXPmod = game.modifiers.getValue("skillXP", {})
+        //         const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
+        //         game.profile.addXP(totalExp)
+        //         //@ts-ignore
+        //         const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
 
-                const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
-                const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
+        //         const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
+        //         const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
 
-                if (single_species) {
-                    game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                }
-                if (single_class) {
-                    game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-                }
-                game.profile.addMasteryPoolXP(this.game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
-
-            } catch (error) {
-                console.log('addXP', error)
-            }
-        });
+        //         if (single_species) {
+        //             game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+        //         }
+        //         if (single_class) {
+        //             game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+        //         }
+        //         game.profile.addMasteryPoolXP(this.game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
+        //     } catch (error) {
+        //         console.log('addXP', error)
+        //     }
+        // });
         // @ts-ignore
         this.context.patch(Player, 'addPrayerPoints').after(function (unknown, amount) {
             const single_species = game.profile.yous.get(1) // human

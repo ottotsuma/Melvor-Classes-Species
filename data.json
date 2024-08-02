@@ -778,28 +778,49 @@
                                 {
                                     "level": 10,
                                     "modifiers": {
-                                        "magicMaxHit": -10
+                                        "skillPreservationChance": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": -30
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAnimal": 30
+                                        "skillXP": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": 3
+                                            }
+                                        ],
+                                        "masteryXP": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": 3
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtHuman": 30
+                                        "skillItemDoublingChance": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": 5
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "crafting30CurrencyGainChance": [
+                                        "skillInterval": [
                                             {
-                                                "currencyID": "melvorD:GP",
-                                                "value": 10
+                                                "skillID": "melvorD:Crafting",
+                                                "value": -10
                                             }
                                         ]
                                     }
@@ -807,13 +828,18 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "skillInterval": -5
+                                        "additionalRandomGemChance": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": 3
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "itemSaleCurrencyGain": [
+                                        "crafting30CurrencyGainChance": [
                                             {
                                                 "currencyID": "melvorD:GP",
                                                 "value": 10
@@ -844,16 +870,33 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "meleeMaxHit": -10
+                                        "skillInterval": [
+                                            {
+                                                "skillID": "melvorD:Fletching",
+                                                "value": 30
+                                            }
+                                        ],
+                                        "flatSkillInterval": [
+                                            {
+                                                "skillID": "melvorD:Fletching",
+                                                "value": 1000
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "flatSkillInterval": [
+                                        "skillXP": [
                                             {
                                                 "skillID": "melvorD:Fletching",
-                                                "value": -1000
+                                                "value": 3
+                                            }
+                                        ],
+                                        "masteryXP": [
+                                            {
+                                                "skillID": "melvorD:Fletching",
+                                                "value": 3
                                             }
                                         ]
                                     }
@@ -861,25 +904,45 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "rangedAccuracyRating": 20
+                                        "skillPreservationChance": [
+                                            {
+                                                "skillID": "melvorD:Fletching",
+                                                "value": 20
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "rangedCritChance": 5
+                                        "fletchingItemToCurrencyChance": [
+                                            {
+                                                "currencyID": "melvorD:GP",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtMythicalCreature": 30
+                                        "skillCostReduction": [
+                                            {
+                                                "skillID": "melvorD:Fletching",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtElemental": 30
+                                        "skillPreservationCap": [
+                                            {
+                                                "skillID": "melvorD:Fletching",
+                                                "value": 5
+                                            }
+                                        ]
                                     }
                                 }
                             ]
@@ -905,11 +968,10 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "randomProductChance": [
+                                        "skillInterval": [
                                             {
-                                                "skillID": "melvorD:Woodcutting",
-                                                "itemID": "melvorD:Bird_Nest",
-                                                "value": -100
+                                                "skillID": "melvorD:Fishing",
+                                                "value": 50
                                             }
                                         ]
                                     }
@@ -917,35 +979,69 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtGoblin": 30
+                                        "additionalSameAreaFishChance": 10
                                     }
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {
-                                        "summoningSynergy_Ent_Leprechaun": 1
+                                    "modifiers": {                                        
+                                        "bonusFishingSpecialChance": [
+                                            {
+                                                "value": 5
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtSeaCreature": 30
+                                        "fishingAdditionalSpecialItemChance": [
+                                            {
+                                                "value": 5
+                                            }
+                                        ],
+                                        "fishingSpecialChance": [
+                                            {
+                                                "value": 5
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "additionalSameAreaFishChance": 10
+                                        "fishingCurrencyGainChance": [
+                                            {
+                                                "currencyID": "melvorD:GP",
+                                                "value": 3
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "skillInterval": [
-                                            {
-                                                "skillID": "melvorD:Fishing",
-                                                "value": 30
-                                            }
+                                        "randomProductChance": [
+                                          {
+                                            "skillID": "melvorD:Fishing",
+                                            "itemID": "melvorD:Shark",
+                                            "value": 30
+                                          },
+                                          {
+                                            "skillID": "melvorD:Fishing",
+                                            "itemID": "melvorD:Shark_Perfect",
+                                            "value": 5
+                                          },
+                                          {
+                                            "skillID": "melvorD:Fishing",
+                                            "itemID": "melvorD:Raw_Shark",
+                                            "value": 50
+                                          },
+                                          {
+                                            "skillID": "melvorD:Fishing",
+                                            "itemID": "melvorD:Burnt_Shark",
+                                            "value": 5
+                                          }
                                         ]
                                     }
                                 }

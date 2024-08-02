@@ -522,7 +522,9 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                 component.single_species.baseExperience,
                 masteryXP,
                 baseMasteryXP,
-                poolXP
+                poolXP,                
+                // @ts-ignore // TODO: TYPES
+                this.game.defaultRealm
             );
         }
 
