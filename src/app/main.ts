@@ -834,12 +834,10 @@ export class App {
             cmim.forceBaseModTypeActive("MythicalCreature");
             // @ts-ignore
             cmim.forceBaseModTypeActive("SeaCreature");
-
-            // Classes        
+            // @ts-ignore
             cmim.registerOrUpdateType("Fighter", "Fighters", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", FightersList, true);
             cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", MagesList, true);
             cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", RoguesList, true);
-            // @ts-ignore
 
             await this.context.gameData.addPackage('data.json');
 
@@ -853,120 +851,35 @@ export class App {
                     game.skills.getObjectByID('namespace_profile:Profile').setUnlock(true)
                 }
             }
+            if (Pokemon) {
+                await this.context.gameData.addPackage('pokemon.json');
+            }
+            if (tes) {
+                await this.context.gameData.addPackage('tes.json');
+            }
             await this.initGamemodes();
             this.patchUnlock(this.game.profile);
             this.initCompatibility(this.game.profile);
-            const skillsList: AnySkill[] = []
-            this.game.skills.registeredObjects.forEach(SkillObject => {
-                skillsList.push(SkillObject)
-            })
-            function addMasteryXP() {
-                if (rollPercentage(0.1)) {
-                    game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true);
-                } else if (rollPercentage(0.01)) {
-                    game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true);
-                }
-
-                const chosen_species = game.profile.yous.get(1) // human
-                const chosen_class = game.profile.yous.get(2) // knight
-                const profileLevel = game.profile._level
-                let exp1 = 0
-                if (chosen_species) {
-                    exp1 = Math.floor(chosen_species.single_species.baseExperience) || 0
-                }
-
-                let exp2 = 0
-                if (chosen_class) {
-                    exp2 = Math.floor(chosen_class.single_species.baseExperience) || 0
-                }
-
-                let skillExp1 = exp1 || 0
-                let masteryExp1 = exp1 || 0
-
-                let skillExp2 = exp2 || 0
-                let masteryExp2 = exp2 || 0
-
-                // @ts-ignore
-                const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
-
-                const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
-                const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
-
-                if ((chosen_species || chosen_class ) && game?.combat?.isActive) {
-                    const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
-                    //@ts-ignore both
-                    const globalEXPmod = game.modifiers.getValue("skillXP", {})
-                    // Calculate the base XP
-                    const baseExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0;
-
-                    // Scale the XP based on combat level
-                    const scaledExp = baseExp * (combatLevel / 100);
-
-                    // Ensure the XP is not less than a minimum value
-                    const totalExp = Math.max(scaledExp, 1);
-                    game.profile.addXP(totalExp, game.profile)
-                    game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
-                }
-                skillsList.forEach(skill => {
-                    if (game.activeAction && skill.id === game.activeAction.id) {
-                        if (chosen_species && chosen_species.single_species.skills.includes(skill.id)) {
-                            game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
-                            game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
-
-                            //@ts-ignore species
-                            const globalEXPmod = game.modifiers.getValue("skillXP", {})
-                            const totalExp = skillExp1 + (((skillExp1) / 100) * globalEXPmod) || 0
-                            game.profile.addXP(totalExp, game.profile)
-                        }
-                        if (chosen_class && chosen_class.single_species.skills.includes(skill.id)) {
-                            game.profile.addMasteryXP(chosen_class.single_species, totalMasteryExp2)
-                            game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp2)
-
-                            //@ts-ignore class
-                            const globalEXPmod = game.modifiers.getValue("skillXP", {})
-                            const totalExp = skillExp2 + (((skillExp2) / 100) * globalEXPmod) || 0
-                            game.profile.addXP(totalExp, game.profile)
-                        }
-                    }
-                })
-            }
-            // @ts-ignore
-            this.context.patch(SkillWithMastery, 'rollForPets').after(function (interval: number) {
-                try {
-                    addMasteryXP()
-                } catch (error) {
-                    console.log(error)
-                }
-            })
-            // @ts-ignore
-            this.context.patch(Character, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
-                // @ts-ignore
-                return meleeDefenceBonus + (game.combat.player.levels.Defence * game.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
-            })
-            // @ts-ignore
-            this.context.patch(Character, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) { // @ts-ignore
-                return rangedDefenceBonus + (game.combat.player.levels.Defence * game.modifiers.getValue('namespace_profile:FlatRangedDefenceBonusPerDefence', {}))
-            })
 
             // Giving monsters classes
             game.monsters.forEach(monster => {
-                if (monster.attackType === "magic") {
+                if (monster.attackType === "magic" && !MagesList.includes(monster._namespace.name + ':' + monster._localID)) {
                     MagesList.push(monster._namespace.name + ':' + monster._localID)
                 }
-                if (monster.attackType === "melee") {
+                if (monster.attackType === "melee" && !FightersList.includes(monster._namespace.name + ':' + monster._localID)) {
                     FightersList.push(monster._namespace.name + ':' + monster._localID)
                 }
-                if (monster.attackType === "ranged") {
+                if (monster.attackType === "ranged" && !RoguesList.includes(monster._namespace.name + ':' + monster._localID)) {
                     RoguesList.push(monster._namespace.name + ':' + monster._localID)
                 }
-                if (monster.attackType === "random") {
+                if (monster.attackType === "random" && !randomList.includes(monster._namespace.name + ':' + monster._localID)) {
                     randomList.push(monster._namespace.name + ':' + monster._localID)
                 }
             })
+
             cmim.registerOrUpdateType("Fighter", "Fighters", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", FightersList, true);
             cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", MagesList, true);
             cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", RoguesList, true);
-
             // adding monsters modifiers to effect species
             const cmimSeaCreatureList: String[] = await cmim.getMonstersOfType('SeaCreature');
             const cmimMythicalCreatureList: String[] = await cmim.getMonstersOfType('MythicalCreature');
@@ -1144,12 +1057,6 @@ export class App {
             })
             this.game.profileLog = initialPackage
             initialPackage.add();
-            if (Pokemon) {
-                await this.context.gameData.addPackage('pokemon.json');
-            }
-            if (tes) {
-                await this.context.gameData.addPackage('tes.json');
-            }
         })
 
         // try {
@@ -1275,6 +1182,120 @@ export class App {
     }
 
     private patchEventManager() {
+        function addMasteryXP() {
+            if (rollPercentage(0.1)) {
+                game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true);
+            } else if (rollPercentage(0.01)) {
+                game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true);
+            }
+            const chosen_species = game.profile.yous.get(1) // human
+            const chosen_class = game.profile.yous.get(2) // knight
+            const profileLevel = game.profile._level
+            let exp1 = 0
+            if (chosen_species) {
+                exp1 = Math.floor(chosen_species.single_species.baseExperience) || 0
+            }
+
+            let exp2 = 0
+            if (chosen_class) {
+                exp2 = Math.floor(chosen_class.single_species.baseExperience) || 0
+            }
+
+            let skillExp1 = exp1 || 0
+            let masteryExp1 = exp1 || 0
+
+            let skillExp2 = exp2 || 0
+            let masteryExp2 = exp2 || 0
+
+            // @ts-ignore
+            const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
+
+            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
+            const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
+
+            // Add xp while in combat
+            if ((chosen_species || chosen_class) && game?.combat?.isActive) {
+                const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
+                //@ts-ignore both
+                const globalEXPmod = game.modifiers.getValue("skillXP", {})
+                // Calculate the base XP
+                const baseExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0;
+
+                // Scale the XP based on combat level
+                const scaledExp = baseExp * (combatLevel / 100);
+
+                // Ensure the XP is not less than a minimum value
+                const totalExp = Math.max(scaledExp, 1);
+                game.profile.addXP(totalExp, game.profile)
+                game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
+            }
+
+            if (SkillsMatch(chosen_species.single_species.skills, [game.skills.getObjectByID('melvorD:Prayer')])) {
+                game.profile.addXP(skillExp1, game.profile)
+                game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryPoolXP(this.game.defaultRealm, totalMasteryExp1)
+            }
+
+            function SkillsMatch(ClassArray: string[], ActiveSkills: AnySkill[]) {
+                const classesArray: AnySkill[] = []
+                ClassArray.forEach(skill => classesArray.push(game.skills.getObjectByID(skill)))
+                if (classesArray.some(item => ActiveSkills.includes(item))) {
+                    return true
+                }
+            }
+            // Add xp while in non combat
+            if ((chosen_species || chosen_class) && game?.activeAction?.activeSkills) {
+                if (chosen_species && SkillsMatch(chosen_species.single_species.skills, game.activeAction.activeSkills)) {
+                    game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
+                    game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
+
+                    //@ts-ignore species
+                    const globalEXPmod = game.modifiers.getValue("skillXP", {})
+                    const totalExp = skillExp1 + (((skillExp1) / 100) * globalEXPmod) || 0
+                    game.profile.addXP(totalExp, game.profile)
+                }
+                if (chosen_class && SkillsMatch(chosen_class.single_species.skills, game.activeAction.activeSkills)) {
+                    game.profile.addMasteryXP(chosen_class.single_species, totalMasteryExp2)
+                    game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp2)
+
+                    //@ts-ignore class
+                    const globalEXPmod = game.modifiers.getValue("skillXP", {})
+                    const totalExp = skillExp2 + (((skillExp2) / 100) * globalEXPmod) || 0
+                    game.profile.addXP(totalExp, game.profile)
+                }
+            }
+        }
+        this.context.patch(CombatManager, "onEnemyDeath").after(() => {
+            try {
+                addMasteryXP()
+            } catch (error) {
+                console.log('addXP', error)
+            }
+        });
+        this.context.patch(Player, 'addPrayerPoints').after(function (unknown, amount) {
+            try {
+                addMasteryXP()
+            } catch (error) {
+                console.log(error)
+            }
+        })
+        // @ts-ignore
+        this.context.patch(SkillWithMastery, 'rollForMasteryTokens').after(function (rewards: Rewards, realm: Realm) {
+            try {
+                addMasteryXP()
+            } catch (error) {
+                console.log(error)
+            }
+        })
+        // @ts-ignore
+        this.context.patch(Character, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
+            // @ts-ignore
+            return meleeDefenceBonus + (game.combat.player.levels.Defence * game.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
+        })
+        // @ts-ignore
+        this.context.patch(Character, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) { // @ts-ignore
+            return rangedDefenceBonus + (game.combat.player.levels.Defence * game.modifiers.getValue('namespace_profile:FlatRangedDefenceBonusPerDefence', {}))
+        })
         this.context.patch(Player, 'equipItem').after((_patch, data) => {
             this.game.profile.updateModifiers()
         });
@@ -1286,90 +1307,6 @@ export class App {
                 return new ProfileActionEventMatcher(data, this.game) as any;
             }
         });
-        // @ts-ignore
-        // this.context.patch(CombatManager, "onEnemyDeath").after(() => {
-        //     try {
-        //         const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
-        //         const profileLevel = game.profile._level
-        //         const single_species = game.profile.yous.get(1)
-        //         const single_class = game.profile.yous.get(2)
-        //         let exp1 = 0
-        //         if (single_species) {
-        //             exp1 = Math.floor((combatLevel / single_species.single_species.baseExperience) + single_species.single_species.baseExperience) || 0
-        //         }
-        //         let exp2 = 0
-        //         if (single_class) {
-        //             exp2 = Math.floor((combatLevel / single_class.single_species.baseExperience) + single_class.single_species.baseExperience) || 0
-        //         }
-
-        //         let skillExp1 = exp1 || 0
-        //         let masteryExp1 = exp1 || 0
-
-        //         let skillExp2 = exp2 || 0
-        //         let masteryExp2 = exp2 || 0
-        //         //@ts-ignore
-        //         const globalEXPmod = game.modifiers.getValue("skillXP", {})
-        //         const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
-        //         game.profile.addXP(totalExp)
-        //         //@ts-ignore
-        //         const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
-
-        //         const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
-        //         const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
-
-        //         if (single_species) {
-        //             game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-        //         }
-        //         if (single_class) {
-        //             game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-        //         }
-        //         game.profile.addMasteryPoolXP(this.game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
-        //     } catch (error) {
-        //         console.log('addXP', error)
-        //     }
-        // });
-        // @ts-ignore
-        this.context.patch(Player, 'addPrayerPoints').after(function (unknown, amount) {
-            const single_species = game.profile.yous.get(1) // human
-            const single_class = game.profile.yous.get(2) // knight
-
-            let exp1 = 0
-            if (single_species) {
-                exp1 = Math.floor(single_species.single_species.baseExperience) || 0
-            }
-            let exp2 = 0
-            if (single_class) {
-                exp2 = Math.floor(single_class.single_species.baseExperience) || 0
-            }
-            let skillExp1 = exp1 || 0
-            let masteryExp1 = exp1 || 0
-
-            let skillExp2 = exp2 || 0
-            let masteryExp2 = exp2 || 0
-            // if (game.profile.isPoolTierActive(1)) {
-            //     skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-            //     skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
-            // }
-            // if (game.profile.isPoolTierActive(1)) {
-            //     masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-            //     masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
-            // }
-            //@ts-ignore
-            const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
-
-            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
-            const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
-            let currentSpeicies = ''
-            if (single_species) {
-                currentSpeicies = single_species.single_species.localID
-            }
-
-            if (currentSpeicies === 'Angel') {
-                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-                game.profile.addMasteryPoolXP(this.game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
-            }
-        })
     }
 
     // private patchGamemodes(profile: Profile) {
