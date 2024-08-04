@@ -54,6 +54,7 @@ export const ja = {
     Single_Species_Elf: 'エルフ',
     Single_Species_Aarakocra: 'アーラコクラ',
     Single_Species_Goblin: 'ゴブリン',
+    Single_Species_Naga: 'Naga',
     Single_Species_Dragon: 'ドラゴン',
     Single_Species_Undead: '屍',
     Single_Species_Demon: '悪魔',

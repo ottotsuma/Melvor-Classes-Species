@@ -247,14 +247,18 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         //     html += `<img class="skill-icon-xs m-2" src="${image}" />`;
         // });
         skills.forEach(skill => {
-            if (skill) {
-                html += `<div><small>You can gain mastery XP for ${single_species.name} from ${skill.name}</small><img class="skill-icon-xs m-2" src="${skill.media}" /></div><br />`;
+            if (skill && skill.name === "Profile") {
+                html += `<div><small>You can gain XP for ${single_species.name} from any skill.</small><img class="skill-icon-xs m-2" src="${skill.media}" /></div><br />`;
+            }
+            else if (skill) {
+                html += `<div><small>You can gain XP for ${single_species.name} from ${skill.name}</small><img class="skill-icon-xs m-2" src="${skill.media}" /></div><br />`;
             }
         });
-        if (single_species._localID === "Angel") {
-            html += `<small>${getLangString('Profile_Angels_burying')}</small><br />`
+        if (single_species.skills.includes('melvorD:Prayer')) {
+            // html += `<small>${getLangString('Profile_Angels_burying')}</small><br />`
+            html += `<small>${single_species.name} can also gain XP from burying bones.</small><br />`
         }
-        html += `<small>You can gain mastery & skill XP for ${single_species.name} by killing monsters</small>`;
+        html += `<small>You can gain XP for ${single_species.name} by killing monsters</small>`;
 
         html = `<div class="explain-wrap">${html}</div>`
 

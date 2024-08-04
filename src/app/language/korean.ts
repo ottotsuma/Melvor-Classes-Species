@@ -23,6 +23,7 @@ export const ko = {
     "Single_Species_Elf": "엘프",
     "Single_Species_Aarakocra": "아라코크라",
     "Single_Species_Goblin": "고블린",
+    Single_Species_Naga: 'Naga',
     "Single_Species_Dragon": "드래곤",
     "Single_Species_Undead": "언데드",
     "Single_Species_Demon": "악마",

@@ -765,8 +765,7 @@
                             "productId": "namespace_profile:Human",
                             "level": 1,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
-                                "melvorD:Crafting"
+                                "namespace_profile:Profile"
                             ],
                             "standardModifiers": [
                                 {
@@ -780,8 +779,7 @@
                                     "modifiers": {
                                         "skillPreservationChance": [
                                             {
-                                                "skillID": "melvorD:Crafting",
-                                                "value": -30
+                                                "value": -25
                                             }
                                         ]
                                     }
@@ -789,16 +787,14 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "skillXP": [
+                                        "townshipTraderCost": [
                                             {
-                                                "skillID": "melvorD:Crafting",
-                                                "value": 3
+                                                "value": -10
                                             }
                                         ],
-                                        "masteryXP": [
+                                        "farmingSeedCost": [
                                             {
-                                                "skillID": "melvorD:Crafting",
-                                                "value": 3
+                                                "value": -10
                                             }
                                         ]
                                     }
@@ -806,10 +802,9 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "skillItemDoublingChance": [
+                                        "skillCostReduction": [
                                             {
-                                                "skillID": "melvorD:Crafting",
-                                                "value": 5
+                                                "value": 10
                                             }
                                         ]
                                     }
@@ -817,10 +812,14 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "skillInterval": [
+                                        "skillXP": [
                                             {
-                                                "skillID": "melvorD:Crafting",
-                                                "value": -10
+                                                "value": 5
+                                            }
+                                        ],
+                                        "masteryXP": [
+                                            {
+                                                "value": 5
                                             }
                                         ]
                                     }
@@ -828,10 +827,9 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "additionalRandomGemChance": [
+                                        "skillInterval": [
                                             {
-                                                "skillID": "melvorD:Crafting",
-                                                "value": 3
+                                                "value": -10
                                             }
                                         ]
                                     }
@@ -839,12 +837,7 @@
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "crafting30CurrencyGainChance": [
-                                            {
-                                                "currencyID": "melvorD:GP",
-                                                "value": 10
-                                            }
-                                        ]
+                                        "flatAdditionalPrimaryProductQuantity": 1
                                     }
                                 }
                             ]
@@ -984,7 +977,7 @@
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {                                        
+                                    "modifiers": {
                                         "bonusFishingSpecialChance": [
                                             {
                                                 "value": 5
@@ -1022,26 +1015,26 @@
                                     "level": 99,
                                     "modifiers": {
                                         "randomProductChance": [
-                                          {
-                                            "skillID": "melvorD:Fishing",
-                                            "itemID": "melvorD:Shark",
-                                            "value": 30
-                                          },
-                                          {
-                                            "skillID": "melvorD:Fishing",
-                                            "itemID": "melvorD:Shark_Perfect",
-                                            "value": 5
-                                          },
-                                          {
-                                            "skillID": "melvorD:Fishing",
-                                            "itemID": "melvorD:Raw_Shark",
-                                            "value": 50
-                                          },
-                                          {
-                                            "skillID": "melvorD:Fishing",
-                                            "itemID": "melvorD:Burnt_Shark",
-                                            "value": 5
-                                          }
+                                            {
+                                                "skillID": "melvorD:Fishing",
+                                                "itemID": "melvorD:Shark",
+                                                "value": 30
+                                            },
+                                            {
+                                                "skillID": "melvorD:Fishing",
+                                                "itemID": "melvorD:Shark_Perfect",
+                                                "value": 5
+                                            },
+                                            {
+                                                "skillID": "melvorD:Fishing",
+                                                "itemID": "melvorD:Raw_Shark",
+                                                "value": 50
+                                            },
+                                            {
+                                                "skillID": "melvorD:Fishing",
+                                                "itemID": "melvorD:Burnt_Shark",
+                                                "value": 5
+                                            }
                                         ]
                                     }
                                 }
@@ -1068,7 +1061,7 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "maxHitpoints": -10
+                                        "thievingStunInterval": 100
                                     }
                                 },
                                 {
@@ -1080,6 +1073,23 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
+                                        "minThievingCurrencyGain": [
+                                            {
+                                                "currencyID": "melvorD:GP",
+                                                "value": 50
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level": 60,
+                                    "modifiers": {
+                                        "thievingAreaUniqueChance": 1
+                                    }
+                                },
+                                {
+                                    "level": 80,
+                                    "modifiers": {
                                         "currencyGain": [
                                             {
                                                 "currencyID": "melvorD:GP",
@@ -1090,21 +1100,101 @@
                                     }
                                 },
                                 {
+                                    "level": 99,
+                                    "modifiers": {
+                                        "summoningSynergy_Devil_Eagle": 1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Naga",
+                            "name": "Naga",
+                            "media": "https://ottotsuma.github.io/images/people/The_Serpent_People.jpg",
+                            "baseExperience": 32,
+                            "productId": "namespace_profile:Naga",
+                            "level": 35,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/Stone_Snake.png",
+                                "melvorD:Crafting"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "modifiers": {
+                                        "customModifiersInMelvor:traitAppliedHuman": 1
+                                    }
+                                },
+                                {
+                                    "level": 10,
+                                    "modifiers": {
+                                        "skillPreservationChance": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": -30
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level": 20,
+                                    "modifiers": {
+                                        "skillXP": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": 3
+                                            }
+                                        ],
+                                        "masteryXP": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": 3
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level": 40,
+                                    "modifiers": {
+                                        "skillItemDoublingChance": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": 5
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
                                     "level": 60,
                                     "modifiers": {
-                                        "thievingAreaUniqueChance": 4
+                                        "skillInterval": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": -10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "globalEvasionHPScaling": 2
+                                        "additionalRandomGemChance": [
+                                            {
+                                                "skillID": "melvorD:Crafting",
+                                                "value": 3
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "summoningSynergy_Devil_Eagle": 1
+                                        "crafting30CurrencyGainChance": [
+                                            {
+                                                "currencyID": "melvorD:GP",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 }
                             ]
@@ -1564,7 +1654,8 @@
                             "productId": "namespace_profile:Fighter",
                             "level": 1,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/turkul_throwers.png",
+                                "melvorD:Attack", "melvorD:Strength", "melvorD:Defence", "melvorD:Hitpoints", "melvorD:Ranged"
                             ],
                             "standardModifiers": [
                                 {
@@ -1619,7 +1710,8 @@
                             "productId": "namespace_profile:Mage",
                             "level": 1,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png",
+                                "melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {
@@ -1674,7 +1766,8 @@
                             "productId": "namespace_profile:Archer",
                             "level": 1,
                             "skills": [
-                                "https://images.saymedia-content.com/.image/t_share/MTc2NDU4MzM1NjgyMzczNTk0/do-it-yourself-sterling-duchess-archer-halloween-costume-homemade-archer-cosplay.png"
+                                "https://images.saymedia-content.com/.image/t_share/MTc2NDU4MzM1NjgyMzczNTk0/do-it-yourself-sterling-duchess-archer-halloween-costume-homemade-archer-cosplay.png",
+                                "melvorD:Slayer"
                             ],
                             "standardModifiers": [
                                 {
@@ -1729,7 +1822,8 @@
                             "productId": "namespace_profile:Knight",
                             "level": 10,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png",
+                                "melvorD:Attack", "melvorD:Strength", "melvorD:Defence"
                             ],
                             "standardModifiers": [
                                 {
@@ -1789,7 +1883,7 @@
                             "productId": "namespace_profile:Scout",
                             "level": 20,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png","melvorD:Ranged"
                             ],
                             "standardModifiers": [
                                 {
@@ -1844,7 +1938,8 @@
                             "productId": "namespace_profile:Pirate",
                             "level": 30,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/pirate.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/pirate.png",
+                                "melvorD:Attack", "melvorD:Ranged"
                             ],
                             "standardModifiers": [
                                 {
@@ -1904,7 +1999,8 @@
                             "productId": "namespace_profile:Paladin",
                             "level": 40,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/paladin.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/paladin.png",
+                                "melvorD:Defence", "melvorD:Prayer"
                             ],
                             "standardModifiers": [
                                 {
@@ -1964,7 +2060,8 @@
                             "productId": "namespace_profile:Cursemancer",
                             "level": 50,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/cursed_maiden.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/cursed_maiden.png",
+                                "melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {
@@ -2024,7 +2121,8 @@
                             "productId": "namespace_profile:Scholar",
                             "level": 60,
                             "skills": [
-                                "https://vignette.wikia.nocookie.net/finalfantasy/images/b/b5/Scholar_Artwork_XIV.png"
+                                "https://vignette.wikia.nocookie.net/finalfantasy/images/b/b5/Scholar_Artwork_XIV.png",
+                                "namespace_profile:Profile"
                             ],
                             "standardModifiers": [
                                 {
@@ -2079,7 +2177,8 @@
                             "productId": "namespace_profile:Witchdoctor",
                             "level": 70,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/plague_doctor.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/plague_doctor.png",
+                                "melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {
@@ -2143,7 +2242,8 @@
                             "productId": "namespace_profile:Assassin",
                             "level": 80,
                             "skills": [
-                                "https://www.pngmart.com/files/15/Assassins-Creed-Transparent-PNG.png"
+                                "https://www.pngmart.com/files/15/Assassins-Creed-Transparent-PNG.png",
+                                "melvorD:Attack", "melvorD:Ranged", "melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {
@@ -2215,7 +2315,8 @@
                             "productId": "namespace_profile:Monk",
                             "level": 90,
                             "skills": [
-                                "https://clipart-library.com/data_images/569075.png"
+                                "https://clipart-library.com/data_images/569075.png",
+                                "melvorD:Hitpoints"
                             ],
                             "standardModifiers": [
                                 {
@@ -2274,7 +2375,8 @@
                             "productId": "namespace_profile:Wizard",
                             "level": 99,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png",
+                                "melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {

@@ -73,7 +73,7 @@ export class App {
             const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
             const Pokemon = mod.manager.getLoadedModList().includes('pokemon')
             const tes = mod.manager.getLoadedModList().includes('The Elder Scrolls')
-
+            const necromancy = mod.manager.getLoadedModList().includes("Necromancy")
 
             // const monad = mod.manager.getLoadedModList().includes('Monad')
             if (!kcm) {
@@ -152,6 +152,9 @@ export class App {
             const GoblinList = [
                 "melvorD:Golbin",
                 "melvorD:RangedGolbin"
+            ]
+            const NagaList: any[] = [
+                "melvorF:StoneSnake",
             ]
             const AnimalList: any[] = [
                 "namespace_profile:abyssal_chicken_monster",
@@ -248,7 +251,7 @@ export class App {
                 "melvorF:Aleron"
             ]
             const BeastList = [
-                "melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:StoneSnake", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorTotH:LargeIceTroll", "melvorD:IceTroll", "melvorD:Ice", "melvorD:TheEye", "melvorD:ResurrectedEye", "melvorF:AirMonster", "melvorF:AirGuard"
+                "melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorTotH:LargeIceTroll", "melvorD:IceTroll", "melvorD:Ice", "melvorD:TheEye", "melvorD:ResurrectedEye", "melvorF:AirMonster", "melvorF:AirGuard"
             ]
             const GiantList = [
                 "melvorD:HillGiant", "melvorD:MossGiant", "melvorF:GiantMoth", "melvorD:GiantCrab", "melvorF:TurkulGiant"
@@ -802,6 +805,8 @@ export class App {
             cmim.addMonsters("Elemental", ElementalCreatureList)
             cmim.addMonsters("Elf", elfList)
 
+            cmim.registerOrUpdateType("Naga", "Nagas", "https://cdn.melvor.net/core/v018/assets/media/monsters/Stone_Snake.png", NagaList, true);
+
             cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", GoblinList, true);
             cmim.registerOrUpdateType("Plant", "Plants", "https://cdn.melvor.net/core/v018/assets/media/monsters/plant.png", PlantList, true);
             cmim.registerOrUpdateType("Orc", "Orcs", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", OrcList, true);
@@ -856,6 +861,9 @@ export class App {
             }
             if (tes) {
                 await this.context.gameData.addPackage('tes.json');
+            }
+            if(necromancy) {
+                await this.context.gameData.addPackage('necromancy.json');
             }
             await this.initGamemodes();
             this.patchUnlock(this.game.profile);
@@ -1183,6 +1191,13 @@ export class App {
 
     private patchEventManager() {
         function addMasteryXP() {
+            function SkillsMatch(ClassArray: string[], ActiveSkills: AnySkill[]) {
+                const classesArray: AnySkill[] = []
+                ClassArray.forEach(skill => classesArray.push(game.skills.getObjectByID(skill)))
+                if (classesArray.some(item => ActiveSkills.includes(item))) {
+                    return true
+                }
+            }
             if (rollPercentage(0.1)) {
                 game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true);
             } else if (rollPercentage(0.01)) {
@@ -1214,36 +1229,35 @@ export class App {
             const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
 
             // Add xp while in combat
-            if ((chosen_species || chosen_class) && game?.combat?.isActive) {
-                const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
-                //@ts-ignore both
-                const globalEXPmod = game.modifiers.getValue("skillXP", {})
-                // Calculate the base XP
-                const baseExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0;
+            // if ((chosen_species || chosen_class) && game?.combat?.isActive) {
+            //     const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
+            //     //@ts-ignore both
+            //     const globalEXPmod = game.modifiers.getValue("skillXP", {})
+            //     // Calculate the base XP
+            //     const baseExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0;
 
-                // Scale the XP based on combat level
-                const scaledExp = baseExp * (combatLevel / 100);
+            //     // Scale the XP based on combat level
+            //     const scaledExp = baseExp * (combatLevel / 100);
 
-                // Ensure the XP is not less than a minimum value
-                const totalExp = Math.max(scaledExp, 1);
-                game.profile.addXP(totalExp, game.profile)
-                game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
-            }
+            //     // Ensure the XP is not less than a minimum value
+            //     const totalExp = Math.max(scaledExp, 1);
+            //     game.profile.addXP(totalExp, game.profile)
+            //     game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
+            // }
 
+            // Burying bones
             if (SkillsMatch(chosen_species.single_species.skills, [game.skills.getObjectByID('melvorD:Prayer')])) {
                 game.profile.addXP(skillExp1, game.profile)
                 game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryPoolXP(this.game.defaultRealm, totalMasteryExp1)
+                game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
             }
-
-            function SkillsMatch(ClassArray: string[], ActiveSkills: AnySkill[]) {
-                const classesArray: AnySkill[] = []
-                ClassArray.forEach(skill => classesArray.push(game.skills.getObjectByID(skill)))
-                if (classesArray.some(item => ActiveSkills.includes(item))) {
-                    return true
-                }
+            // Generic 
+            if (SkillsMatch(chosen_species.single_species.skills, [game.skills.getObjectByID("namespace_profile:Profile")])) {
+                game.profile.addXP(skillExp1, game.profile)
+                game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
             }
-            // Add xp while in non combat
+            // Add xp
             if ((chosen_species || chosen_class) && game?.activeAction?.activeSkills) {
                 if (chosen_species && SkillsMatch(chosen_species.single_species.skills, game.activeAction.activeSkills)) {
                     game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)

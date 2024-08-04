@@ -25,6 +25,7 @@ export const ru = {
     Single_Species_Elf: 'Эльф',
     Single_Species_Aarakocra: 'Ааракокра',
     Single_Species_Goblin: 'Гоблин',
+    Single_Species_Naga: 'Naga',
     Single_Species_Dragon: 'Дракон',
     Single_Species_Undead: 'Нежить',
     Single_Species_Demon: 'Демон',

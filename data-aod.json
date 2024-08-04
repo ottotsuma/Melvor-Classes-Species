@@ -559,14 +559,14 @@
           ],
           "classes": [
             {
-              "id": "Necromancer",
-              "name": "Necromancer",
-              "media": "https://ottotsuma.github.io/images/people/oldmage.jpg",
+              "id": "Summoner",
+              "name": "Summoner",
+              "media": "https://sv.bagoum.com/getRawImage/0/0/113341020/s",
               "baseExperience": 30,
-              "productId": "namespace_profile:Necromancer",
+              "productId": "namespace_profile:Summoner",
               "level": 45,
               "skills": [
-                "https://cdn2-main.melvor.net/assets/media/monsters/necromancer.png"
+                "https://cdn2-main.melvor.net/assets/media/monsters/shaman.png","melvorD:Magic"
               ],
               "standardModifiers": [
                 {

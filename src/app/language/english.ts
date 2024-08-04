@@ -25,6 +25,7 @@ export const en = {
     Single_Species_Elf: 'Elf',
     Single_Species_Aarakocra: 'Aarakocra',
     Single_Species_Goblin: 'Goblin',
+    Single_Species_Naga: 'Naga',
     Single_Species_Dragon: 'Dragon',
     Single_Species_Undead: 'Undead',
     Single_Species_Demon: 'Demon',

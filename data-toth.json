@@ -16,7 +16,7 @@
                             "level": 100,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/hill_giant.png",
-                                "melvorD:Woodcutting"
+                                "melvorD:Hitpoints"
                             ],
                             "standardModifiers": [
                                 {
@@ -210,7 +210,8 @@
                             "productId": "namespace_profile:Beast",
                             "level": 115,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/m14.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/m14.png",
+                                "melvorD:Strength"
                             ],
                             "standardModifiers": [
                                 {
@@ -269,7 +270,8 @@
                             "productId": "namespace_profile:Animal",
                             "level": 120,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/chicken.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/chicken.png",
+                                "melvorD:Attack"
                             ],
                             "standardModifiers": [
                                 {
@@ -336,7 +338,8 @@
                             "productId": "namespace_profile:Vampire",
                             "level": 120,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/vampire.png"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/vampire.png",
+                                "melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {
@@ -393,7 +396,7 @@
                             "productId": "namespace_profile:Inquisitor",
                             "level": 100,
                             "skills": [
-                                "https://i.pinimg.com/originals/aa/1f/d0/aa1fd0ad19d6d67fb32c7b7d5b0c2ad0.png"
+                                "https://i.pinimg.com/originals/aa/1f/d0/aa1fd0ad19d6d67fb32c7b7d5b0c2ad0.png","melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {
@@ -458,7 +461,7 @@
                             "productId": "namespace_profile:Druid",
                             "level": 105,
                             "skills": [
-                                "https://gamepedia.cursecdn.com/witcher_gamepedia/5/53/People_Druid_full.png"
+                                "https://gamepedia.cursecdn.com/witcher_gamepedia/5/53/People_Druid_full.png","melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {
@@ -529,7 +532,8 @@
                             "productId": "namespace_profile:Viking",
                             "level": 110,
                             "skills": [
-                                "https://pngimg.com/uploads/viking/viking_PNG26.png"
+                                "https://pngimg.com/uploads/viking/viking_PNG26.png",
+                                "melvorD:Strength","melvorD:Hitpoints"
                             ],
                             "standardModifiers": [
                                 {
@@ -596,7 +600,8 @@
                             "productId": "namespace_profile:Alchemist",
                             "level": 115,
                             "skills": [
-                                "https://i.pinimg.com/originals/9f/44/28/9f442894bec6ab5311e1c00ca5735ce7.png"
+                                "https://i.pinimg.com/originals/9f/44/28/9f442894bec6ab5311e1c00ca5735ce7.png",
+                                "melvorD:Herblore"
                             ],
                             "standardModifiers": [
                                 {

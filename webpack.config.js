@@ -34,6 +34,7 @@ module.exports = {
                 { from: 'data-aod.json', to: 'data-aod.json', noErrorOnMissing: true },
                 { from: 'data-cmim.json', to: 'data-cmim.json', noErrorOnMissing: true },
                 { from: 'tes.json', to: 'tes.json', noErrorOnMissing: true },
+                { from: 'necromancy.json', to: 'necromancy.json', noErrorOnMissing: true },
                 { from: 'pokemon.json', to: 'pokemon.json', noErrorOnMissing: true },
                 { from: 'src/assets', to: 'assets', noErrorOnMissing: true }
             ]

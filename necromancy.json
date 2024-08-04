@@ -1,0 +1,71 @@
+{
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "namespace": "namespace_profile",
+    "data": {
+        "skillData": [
+            {
+                "skillID": "namespace_profile:Profile",
+                "data": {
+                    "classes": [
+                        {
+                            "id": "Necromancer",
+                            "name": "Necromancer",
+                            "media": "https://ottotsuma.github.io/images/people/oldmage.jpg",
+                            "baseExperience": 30,
+                            "productId": "namespace_profile:Necromancer",
+                            "level": 45,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/monsters/necromancer.png",
+                                "necromancy:Necromancy"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "modifiers": {
+                                        "customModifiersInMelvor:traitAppliedMage": 1
+                                    }
+                                },
+                                {
+                                    "level": 1,
+                                    "modifiers": {
+                                        "necromancy:necroEvasion": -10
+                                    }
+                                },
+                                {
+                                    "level": 20,
+                                    "modifiers": {
+                                        "necromancy:necromancyAccuracyRating": 10
+                                    }
+                                },
+                                {
+                                    "level": 40,
+                                    "modifiers": {
+                                        "necromancy:necromancyAccuracyRating": 10
+                                    }
+                                },
+                                {
+                                    "level": 60,
+                                    "modifiers": {
+                                        "necromancy:necromancyLifesteal": 10
+                                    }
+                                },
+                                {
+                                    "level": 80,
+                                    "modifiers": {
+                                        "necromancy:necromancyStrengthBonus": 10
+                                    }
+                                },
+                                {
+                                    "level": 99,
+                                    "modifiers": {
+                                        "necromancy:flatNecromancyAttackBonus": 10
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

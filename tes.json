@@ -16,8 +16,7 @@
               "level": 5,
               "skills": [
                 "https://cdn2-main.melvor.net/assets/media/pets/mister_fuzzbutt.png",
-                "melvorD:Thieving",
-                "https://cdn2-main.melvor.net/assets/media/main/coins.svg"
+                "melvorD:Thieving"
               ],
               "standardModifiers": [
                 {
@@ -29,7 +28,13 @@
                 {
                   "level": 1,
                   "modifiers": {
-                    "thievingStunInterval": 100
+                    "currencyGain": [
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "value": -50,
+                        "currencyID":"melvorD:GP"
+                      }
+                    ]
                   }
                 },
                 {
@@ -41,11 +46,16 @@
                 {
                   "level": 40,
                   "modifiers": {
-                    "currencyGain": [
+                    "skillXP": [
                       {
-                        "currencyID": "melvorD:GP",
                         "skillID": "melvorD:Thieving",
-                        "value": 10
+                        "value": 5
+                      }
+                    ],
+                    "masteryXP": [
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "value": 5
                       }
                     ]
                   }
@@ -53,10 +63,10 @@
                 {
                   "level": 60,
                   "modifiers": {
-                    "itemSaleCurrencyGain": [
+                    "thievingStunAvoidanceChance": [
                       {
-                        "currencyID": "melvorD:GP",
-                        "value": 10
+                        "value": 25,
+                        "realmID":"melvorD:Melvor"
                       }
                     ]
                   }
@@ -64,16 +74,28 @@
                 {
                   "level": 80,
                   "modifiers": {
-                    "dodgeChance": 5
+                    "skillInterval": [
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "value": -5
+                      }
+                    ]
                   }
                 },
                 {
                   "level": 99,
                   "modifiers": {
-                    "flatCurrencyGainOnEnemyHit": [
+                    "skillInterval": [
                       {
-                        "currencyID": "melvorD:GP",
-                        "value": 5
+                        "skillID": "melvorD:Thieving",
+                        "value": -10
+                      }
+                    ],
+                    "randomProductChance": [
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "value": 10,
+                        "itemID":"melvorF:Chest_Of_Gems"
                       }
                     ]
                   }
@@ -89,7 +111,6 @@
               "level": 15,
               "skills": [
                 "https://static.wikia.nocookie.net/skyrim_gamepedia/images/c/c0/Deeja.png",
-                "melvorD:Fishing",
                 "melvorD:Cooking"
               ],
               "standardModifiers": [
