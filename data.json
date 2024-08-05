@@ -781,6 +781,11 @@
                                             {
                                                 "value": -25
                                             }
+                                        ],
+                                        "flatSkillInterval": [
+                                            {
+                                                "value": 500
+                                            }
                                         ]
                                     }
                                 },
@@ -792,9 +797,9 @@
                                                 "value": -10
                                             }
                                         ],
-                                        "farmingSeedCost": [
+                                        "townshipTaxPerCitizen": [
                                             {
-                                                "value": -10
+                                                "value": 5
                                             }
                                         ]
                                     }
@@ -868,12 +873,6 @@
                                                 "skillID": "melvorD:Fletching",
                                                 "value": 30
                                             }
-                                        ],
-                                        "flatSkillInterval": [
-                                            {
-                                                "skillID": "melvorD:Fletching",
-                                                "value": 1000
-                                            }
                                         ]
                                     }
                                 },
@@ -883,13 +882,13 @@
                                         "skillXP": [
                                             {
                                                 "skillID": "melvorD:Fletching",
-                                                "value": 3
+                                                "value": 10
                                             }
                                         ],
                                         "masteryXP": [
                                             {
                                                 "skillID": "melvorD:Fletching",
-                                                "value": 3
+                                                "value": 10
                                             }
                                         ]
                                     }
@@ -910,7 +909,7 @@
                                     "modifiers": {
                                         "fletchingItemToCurrencyChance": [
                                             {
-                                                "currencyID": "melvorD:GP",
+                                                "currencyID": "melvorD:",
                                                 "value": 10
                                             }
                                         ]
@@ -1094,7 +1093,7 @@
                                             {
                                                 "currencyID": "melvorD:GP",
                                                 "skillID": "melvorD:Thieving",
-                                                "value": 4
+                                                "value": 25
                                             }
                                         ]
                                     }
@@ -1142,13 +1141,13 @@
                                         "skillXP": [
                                             {
                                                 "skillID": "melvorD:Crafting",
-                                                "value": 3
+                                                "value": 10
                                             }
                                         ],
                                         "masteryXP": [
                                             {
                                                 "skillID": "melvorD:Crafting",
-                                                "value": 3
+                                                "value": 10
                                             }
                                         ]
                                     }
@@ -1159,7 +1158,7 @@
                                         "skillItemDoublingChance": [
                                             {
                                                 "skillID": "melvorD:Crafting",
-                                                "value": 5
+                                                "value": 10
                                             }
                                         ]
                                     }
@@ -1170,7 +1169,7 @@
                                         "skillInterval": [
                                             {
                                                 "skillID": "melvorD:Crafting",
-                                                "value": -10
+                                                "value": -20
                                             }
                                         ]
                                     }
@@ -1178,10 +1177,10 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "additionalRandomGemChance": [
+                                        "crafting30CurrencyGainChance": [
                                             {
-                                                "skillID": "melvorD:Crafting",
-                                                "value": 3
+                                                "currencyID": "melvorD:GP",
+                                                "value": 10
                                             }
                                         ]
                                     }
@@ -1189,12 +1188,7 @@
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "crafting30CurrencyGainChance": [
-                                            {
-                                                "currencyID": "melvorD:GP",
-                                                "value": 10
-                                            }
-                                        ]
+                                        "craftingEnchantedUrnChance": 1
                                     }
                                 }
                             ]
@@ -1219,51 +1213,40 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {
-                                        "attackInterval": 10
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtElf": 30
+                                        "skillXP": [
+                                            {
+                                                "skillID": "melvorD:Firemaking",
+                                                "value": 10
+                                            }
+                                        ],
+                                        "masteryXP": [
+                                            {
+                                                "skillID": "melvorD:Firemaking",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {
-                                        "randomProductChance": [
-                                            {
-                                                "skillID": "melvorD:Firemaking",
-                                                "value": 10,
-                                                "itemID": "melvorF:Stardust"
-                                            }
-                                        ]
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "randomProductChance": [
-                                            {
-                                                "skillID": "melvorD:Firemaking",
-                                                "value": 20,
-                                                "itemID": "melvorD:Coal_Ore"
-                                            }
-                                        ]
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:accuracyRatingAarakocra": 50
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "freeBonfires": 1
-                                    }
+                                    "modifiers": {}
                                 }
                             ]
                         },
@@ -1288,16 +1271,27 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "skillInterval": 25
+                                        "skillInterval": [
+                                            {
+                                                "skillID": "melvorD:Mining",
+                                                "value": 25
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "effectIgnoreChance": [
+                                        "skillXP": [
                                             {
-                                                "effectGroupID": "melvorD:BleedDOT",
-                                                "value": 99
+                                                "skillID": "melvorD:Mining",
+                                                "value": 10
+                                            }
+                                        ],
+                                        "masteryXP": [
+                                            {
+                                                "skillID": "melvorD:Mining",
+                                                "value": 10
                                             }
                                         ]
                                     }
@@ -1311,12 +1305,7 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "flatResistance": [
-                                            {
-                                                "damageTypeID": "melvorD:Normal",
-                                                "value": 5
-                                            }
-                                        ]
+                                        "miningNodeRespawnInterval": -50
                                     }
                                 },
                                 {
@@ -1332,9 +1321,7 @@
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "miningNodeRespawnInterval": 20
-                                    }
+                                    "modifiers": {}
                                 }
                             ]
                         },
@@ -1358,39 +1345,42 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {
-                                        "prayerPointCost": 100
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "flatSummoningShardCost": 2
+                                        "skillXP": [
+                                            {
+                                                "skillID": "melvorD:Summoning",
+                                                "value": 10
+                                            }
+                                        ],
+                                        "masteryXP": [
+                                            {
+                                                "skillID": "melvorD:Summoning",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAngel": 30
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "summoningMaxHit": 10
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "summoningAttackLifesteal": 10
+                                        "flatSummoningShardCost": -1
                                     }
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "flatSummoningAttackInterval": 1000
-                                    }
+                                    "modifiers": {}
                                 }
                             ]
                         },
@@ -1414,14 +1404,7 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {
-                                        "resistance": [
-                                            {
-                                                "damageTypeID": "melvorD:Normal",
-                                                "value": -50
-                                            }
-                                        ]
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 20,
@@ -1447,9 +1430,7 @@
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "magicLifesteal": 10
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 80,
@@ -1459,9 +1440,7 @@
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "maxHitpoints": 20
-                                    }
+                                    "modifiers": {}
                                 }
                             ]
                         },
@@ -1498,10 +1477,16 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "skillInterval": [
+                                        "skillXP": [
                                             {
                                                 "skillID": "melvorD:Agility",
-                                                "value": 1
+                                                "value": 10
+                                            }
+                                        ],
+                                        "masteryXP": [
+                                            {
+                                                "skillID": "melvorD:Agility",
+                                                "value": 10
                                             }
                                         ]
                                     }
@@ -1509,19 +1494,22 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "agilityObstacleCost": -20
+                                        "skillInterval": [
+                                            {
+                                                "skillID": "melvorD:Agility",
+                                                "value": -20
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:damageDealtDragon": 30
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageTakenDragon": -10
+                                        "agilityObstacleCost": -20
                                     }
                                 },
                                 {
@@ -1552,33 +1540,36 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {
-                                        "autoEatThreshold": -50
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAarakocra": 30
+                                        "skillXP": [
+                                            {
+                                                "skillID": "melvorD:Astrology",
+                                                "value": 10
+                                            }
+                                        ],
+                                        "masteryXP": [
+                                            {
+                                                "skillID": "melvorD:Astrology",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 40,
-                                    "modifiers": {
-                                        "customModifiersInMelvor:accuracyRatingFighter": 20
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "flatSlayerAreaEffectNegation": 20
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {
-                                        "healingWhenHit": 5
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 99,
@@ -1627,7 +1618,7 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "prayerPointPreservationChance": 10
+                                        "prayerPointPreservationChance": 40
                                     }
                                 },
                                 {
@@ -1655,7 +1646,11 @@
                             "level": 1,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/turkul_throwers.png",
-                                "melvorD:Attack", "melvorD:Strength", "melvorD:Defence", "melvorD:Hitpoints", "melvorD:Ranged"
+                                "melvorD:Attack",
+                                "melvorD:Strength",
+                                "melvorD:Defence",
+                                "melvorD:Hitpoints",
+                                "melvorD:Ranged"
                             ],
                             "standardModifiers": [
                                 {
@@ -1823,7 +1818,9 @@
                             "level": 10,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png",
-                                "melvorD:Attack", "melvorD:Strength", "melvorD:Defence"
+                                "melvorD:Attack",
+                                "melvorD:Strength",
+                                "melvorD:Defence"
                             ],
                             "standardModifiers": [
                                 {
@@ -1883,7 +1880,8 @@
                             "productId": "namespace_profile:Scout",
                             "level": 20,
                             "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png","melvorD:Ranged"
+                                "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png",
+                                "melvorD:Ranged"
                             ],
                             "standardModifiers": [
                                 {
@@ -1939,7 +1937,8 @@
                             "level": 30,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/pirate.png",
-                                "melvorD:Attack", "melvorD:Ranged"
+                                "melvorD:Attack",
+                                "melvorD:Ranged"
                             ],
                             "standardModifiers": [
                                 {
@@ -2000,7 +1999,8 @@
                             "level": 40,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/paladin.png",
-                                "melvorD:Defence", "melvorD:Prayer"
+                                "melvorD:Defence",
+                                "melvorD:Prayer"
                             ],
                             "standardModifiers": [
                                 {
@@ -2243,7 +2243,9 @@
                             "level": 80,
                             "skills": [
                                 "https://www.pngmart.com/files/15/Assassins-Creed-Transparent-PNG.png",
-                                "melvorD:Attack", "melvorD:Ranged", "melvorD:Magic"
+                                "melvorD:Attack",
+                                "melvorD:Ranged",
+                                "melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {

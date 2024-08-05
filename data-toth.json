@@ -34,43 +34,33 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "additionalRandomSkillItemChance": [
-                                            {
-                                                "skillID": "melvorD:Woodcutting",
-                                                "itemID": "melvorTotH:Mushrooms",
-                                                "value": 50
-                                            }
-                                        ]
+                                        "flatMaxHitpoints": 50
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "additionalRandomSkillItemChance": [
-                                            {
-                                                "skillID": "melvorD:Woodcutting",
-                                                "itemID": "melvorF:Ash",
-                                                "value": 40
-                                            }
-                                        ]
+                                        "regenPerDamageTaken": 10
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "meleeMinHitBasedOnMaxHitSlayerTask": 25
+                                        "hPRegenBasedOnMaxHP": 5
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "flatMaxHit": 1
+                                        "maxHitpoints": 20,
+                                        "hpRegenWhenEnemyHasMoreEvasion": 10
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "flatRegenerationInterval": 2
+                                        "hitpointRegeneration": 10,
+                                        "flatRegenerationInterval": -1000
                                     }
                                 }
                             ]
@@ -96,28 +86,49 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "disableLifesteal": 1
+                                        "additionalPrimaryProductChance": [
+                                            {
+                                                "skillID": "melvorD:Smithing",
+                                                "value": -100
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "meleeStrengthBonus": 10
+                                        "skillXP": [
+                                            {
+                                                "skillID": "melvorD:Smithing",
+                                                "value": 10
+                                            }
+                                        ],
+                                        "masteryXP": [
+                                            {
+                                                "skillID": "melvorD:Smithing",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "flatSmithingCoalCost": -2
+                                        "skillInterval": [
+                                            {
+                                                "skillID": "melvorD:Smithing",
+                                                "value": 5
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "additionalPrimaryProductChance": [
+                                        "skillCostReduction": [
                                             {
                                                 "skillID": "melvorD:Smithing",
-                                                "value": 25
+                                                "value": 30
                                             }
                                         ]
                                     }
@@ -125,13 +136,18 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "flatHPRegen": 10
+                                        "flatSmithingCoalCost": -1
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "autoLooting": 1
+                                        "skillInterval": [
+                                            {
+                                                "skillID": "melvorD:Smithing",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 }
                             ]
@@ -157,22 +173,38 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "accuracyRating": -60
+                                        "skillPreservationCap": [
+                                            {
+                                                "skillID": "melvorD:Herblore",
+                                                "value": -10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "hitpointRegeneration": 15
+                                        "skillXP": [
+                                            {
+                                                "skillID": "melvorD:Herblore",
+                                                "value": 10
+                                            }
+                                        ],
+                                        "skillMasteryXPPerQimican": [
+                                            {
+                                                "skillID": "melvorD:Herblore",
+                                                "value": 5
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "healingOnAttackBasedOnResistance": [
+                                        "skillInterval": [
                                             {
-                                                "damageTypeID": "melvorD:Normal",
-                                                "value": 10
+                                                "skillID": "melvorD:Herblore",
+                                                "value": -10
                                             }
                                         ]
                                     }
@@ -183,7 +215,7 @@
                                         "flatAdditionalSkillItem": [
                                             {
                                                 "itemID": "melvorTotH:Deadly_Toxins_Potion",
-                                                "value": 3
+                                                "value": 1
                                             }
                                         ]
                                     }
@@ -191,7 +223,12 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "onHitSlowMagnitude": 5
+                                        "skillCostReduction": [
+                                            {
+                                                "skillID": "melvorD:Herblore",
+                                                "value": 30
+                                            }
+                                        ]
                                     }
                                 },
                                 {
@@ -223,7 +260,7 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageTakenHuman": 200
+                                        "damageTaken": 20
                                     }
                                 },
                                 {
@@ -239,7 +276,7 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageTakenAnimal": -10
+                                        "slashAttackBonus": 10
                                     }
                                 },
                                 {
@@ -251,13 +288,13 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "regenPerDamageTaken": 10
+                                        "meleeAttackInterval": -5
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "damageTakenPerMissedAttack": -5
+                                        "meleeStrengthBonus": 40
                                     }
                                 }
                             ]
@@ -299,6 +336,7 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
+                                        "bleedLifesteal": 5,
                                         "flatTotalBleedDamage": 5
                                     }
                                 },
@@ -315,7 +353,7 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "bleedLifesteal": 5
+                                        "flatStabAttackBonus": 35
                                     }
                                 },
                                 {
@@ -357,19 +395,26 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "lifesteal": 15
+                                        "lifesteal": 25
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "flatTotalBleedDamage": 20
+                                        "combatEffects": [
+                                            {
+                                                "effectID": "melvorD:Bleed100",
+                                                "chance": 5,
+                                                "appliesWhen": "HitWithAttack"
+                                            }
+                                        ],
+                                        "bleedLifesteal": 50
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "summoningAttackLifesteal": 10
+                                        "magicLifesteal": 50
                                     }
                                 },
                                 {
@@ -396,7 +441,8 @@
                             "productId": "namespace_profile:Inquisitor",
                             "level": 100,
                             "skills": [
-                                "https://i.pinimg.com/originals/aa/1f/d0/aa1fd0ad19d6d67fb32c7b7d5b0c2ad0.png","melvorD:Magic"
+                                "https://i.pinimg.com/originals/aa/1f/d0/aa1fd0ad19d6d67fb32c7b7d5b0c2ad0.png",
+                                "melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {
@@ -461,7 +507,8 @@
                             "productId": "namespace_profile:Druid",
                             "level": 105,
                             "skills": [
-                                "https://gamepedia.cursecdn.com/witcher_gamepedia/5/53/People_Druid_full.png","melvorD:Magic"
+                                "https://gamepedia.cursecdn.com/witcher_gamepedia/5/53/People_Druid_full.png",
+                                "melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {
@@ -533,7 +580,8 @@
                             "level": 110,
                             "skills": [
                                 "https://pngimg.com/uploads/viking/viking_PNG26.png",
-                                "melvorD:Strength","melvorD:Hitpoints"
+                                "melvorD:Strength",
+                                "melvorD:Hitpoints"
                             ],
                             "standardModifiers": [
                                 {

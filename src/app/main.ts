@@ -67,10 +67,10 @@ export class App {
         this.context.onModsLoaded(async () => {
             const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
             const AR = mod.manager.getLoadedModList().includes('Abyssal Rift')
-            const gen1 = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
+            // const gen1 = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
             const music = mod.manager.getLoadedModList().includes('[Myth] Music')
             const ToB = mod.manager.getLoadedModList().includes('Theatre of Blood')
-            const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
+            // const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
             const Pokemon = mod.manager.getLoadedModList().includes('pokemon')
             const tes = mod.manager.getLoadedModList().includes('The Elder Scrolls')
             const necromancy = mod.manager.getLoadedModList().includes("Necromancy")
@@ -432,32 +432,32 @@ export class App {
                 "melvorTotH:SpiderQueen"
             ]
 
-            // if (ToB) {
-            //     RoguesList.push("ToBDungeon:Pestilent_Bloat",
-            //         "ToBDungeon:Nylocas_vasilias_ranged",
-            //         "ToBDungeon:Xarpus",
-            //         "ToBDungeon:Xarpus_p2")
-            //     MagesList.push("ToBDungeon:Maiden",
-            //         "ToBDungeon:Nylocas_vasilias_magic",
-            //         "ToBDungeon:Verzik_vitur")
-            //     FightersList.push("ToBDungeon:Nylocas_vasilias_melee",
-            //         "ToBDungeon:Sotetseg",
-            //         "ToBDungeon:Verzik_vitur_p2",
-            //         "ToBDungeon:Verzik_vitur_final")
-            //     DemonList.push("ToBDungeon:Pestilent_Bloat", "ToBDungeon:Maiden", "ToBDungeon:Nylocas_vasilias_ranged", "ToBDungeon:Nylocas_vasilias_melee", "ToBDungeon:Nylocas_vasilias_magic", "ToBDungeon:Sotetseg", "ToBDungeon:Xarpus",
-            //         "ToBDungeon:Xarpus_p2", "ToBDungeon:Verzik_vitur_p2",
-            //         "ToBDungeon:Verzik_vitur_final")
-            // }
-            // if (AR) {
-            //     RoguesList.push("abyrift:Tick")
-            //     MagesList.push("abyrift:Screamer")
-            //     FightersList.push("abyrift:Lasher",
-            //         "abyrift:Crab_Wyrm",
-            //         "abyrift:Gore_Bear")
-            //     DemonList.push("abyrift:Tick", "abyrift:Screamer", "abyrift:Lasher",
-            //         "abyrift:Crab_Wyrm",
-            //         "abyrift:Gore_Bear")
-            // }
+            if (ToB) {
+                // RoguesList.push("ToBDungeon:Pestilent_Bloat",
+                //     "ToBDungeon:Nylocas_vasilias_ranged",
+                //     "ToBDungeon:Xarpus",
+                //     "ToBDungeon:Xarpus_p2")
+                // MagesList.push("ToBDungeon:Maiden",
+                //     "ToBDungeon:Nylocas_vasilias_magic",
+                //     "ToBDungeon:Verzik_vitur")
+                // FightersList.push("ToBDungeon:Nylocas_vasilias_melee",
+                //     "ToBDungeon:Sotetseg",
+                //     "ToBDungeon:Verzik_vitur_p2",
+                //     "ToBDungeon:Verzik_vitur_final")
+                DemonList.push("ToBDungeon:Pestilent_Bloat", "ToBDungeon:Maiden", "ToBDungeon:Nylocas_vasilias_ranged", "ToBDungeon:Nylocas_vasilias_melee", "ToBDungeon:Nylocas_vasilias_magic", "ToBDungeon:Sotetseg", "ToBDungeon:Xarpus",
+                    "ToBDungeon:Xarpus_p2", "ToBDungeon:Verzik_vitur_p2",
+                    "ToBDungeon:Verzik_vitur_final")
+            }
+            if (AR) {
+                // RoguesList.push("abyrift:Tick")
+                // MagesList.push("abyrift:Screamer")
+                // FightersList.push("abyrift:Lasher",
+                //     "abyrift:Crab_Wyrm",
+                //     "abyrift:Gore_Bear")
+                DemonList.push("abyrift:Tick", "abyrift:Screamer", "abyrift:Lasher",
+                    "abyrift:Crab_Wyrm",
+                    "abyrift:Gore_Bear")
+            }
             // if (gen1) {
             //     RoguesList.push("pokeworldAdditions:pwa_ProfOakLab_TrainerThree",
             //         "pokeworldAdditions:pwa_kanto_elitefour_d_one",
@@ -553,35 +553,10 @@ export class App {
             //         "pokeworldAdditions:pwa_pinkin6",
             //         "pokeworldAdditions:pwa_pinkin9")
             // }
-            // if (music) {
-            //     // RoguesList.push()
-            //     MagesList.push("mythMusic:Enchanted_Jester",
-            //         "mythMusic:Mystic_Jester")
-            //     FightersList.push("mythMusic:Jester")
-            //     HumansList.push("mythMusic:Enchanted_Jester",
-            //         "mythMusic:Mystic_Jester", "mythMusic:Jester")
-            // }
-            // if (Runescape) {
-            //     MagesList.push(
-            //         "runescapeEncountersInMelvor:Dagannoth_Prime",
-            //         "runescapeEncountersInMelvor:Pthentraken",
-            //         "runescapeEncountersInMelvor:Glacor"
-            //     )
-            //     FightersList.push(
-            //         "runescapeEncountersInMelvor:Dagannoth_Rex",
-            //         "runescapeEncountersInMelvor:Orikalka",
-            //         "runescapeEncountersInMelvor:Helwyr",
-            //         "runescapeEncountersInMelvor:Gorvek_And_Vindicta",
-            //         "runescapeEncountersInMelvor:Enduring_Glacyte",
-            //         "runescapeEncountersInMelvor:Sapping_Glacyte",
-            //         "runescapeEncountersInMelvor:Unstable_Glacyte"
-            //     )
-            //     RoguesList.push(
-            //         "runescapeEncountersInMelvor:Dagannoth_Prime",
-            //         "runescapeEncountersInMelvor:Pthentraken",
-            //         "runescapeEncountersInMelvor:Glacor"
-            //     )
-            // }
+            if (music) {
+                HumansList.push("mythMusic:Enchanted_Jester",
+                    "mythMusic:Mystic_Jester", "mythMusic:Jester")
+            }
             if (cloudManager.hasTotHEntitlementAndIsEnabled) {
                 RoguesList.push(
                     "melvorTotH:HungryPlant",
@@ -792,6 +767,42 @@ export class App {
                 ElementalCreatureList.push("melvorAoD:CrystalBarrager", "melvorAoD:CrystalSmasher", "melvorAoD:CrystalProwler", "melvorAoD:GraniteGolem", "melvorAoD:RangedGolem", "melvorAoD:EarthGolem", "melvorAoD:MagicGolem", "melvorAoD:CrystalManipulator", "melvorAoD:CrystalShatterer", "melvorAoD:CrystalBehemoth", "melvorAoD:LavaGolem")
                 DemonList.push("melvorAoD:CultImp")
             }
+            if (necromancy) {
+                await this.context.gameData.addPackage('necromancy.json');
+                UndeadList.push([
+                    "necromancy:Baby_Necromancer",
+                    "necromancy:Teen_Necromancer",
+                    "necromancy:Adult_Necromancer",
+                    "necromancy:Ancient_Necromancer",
+                    "necromancy:Skeletal_Deckhand",
+                    "necromancy:Old_One_Cultist",
+                    "necromancy:Old_One_Captain",
+                    "necromancy:Great_Old_One",
+                    "necromancy:Poison_Necromancer",
+                    "necromancy:Toxic_Ooze",
+                    "necromancy:Oozing_Necromancer",
+                    "necromancy:Putrid_Necromancer",
+                    "necromancy:Hellhound",
+                    "necromancy:Hellrider",
+                    "necromancy:Hulking_Beast",
+                    "necromancy:Blood_Necromancer",
+                    "necromancy:Yakar_The_Carver",
+                    "necromancy:Raulazar_The_Defiler",
+                    "necromancy:Elite_Hellhound",
+                    "necromancy:Skeletal_Rider",
+                    "necromancy:Lumbering_Beast",
+                    "necromancy:Oracle_Trio",
+                    "necromancy:Hooded_Figure",
+                    "necromancy:Hermod_The_Spirit_Of_War",
+                    "necromancy:Skeletal_Gatekeeper",
+                    "necromancy:Unleashed_Necromancer",
+                    "necromancy:Druidic_Necromancer",
+                    "necromancy:Rasials_Disciple",
+                    "necromancy:Hooded_Figure_Revisited",
+                    "necromancy:Rasial_The_First_Necromancer",
+                    "necromancy:Rasials_True_Form",
+                ])
+            }
             const cmim = mod.api.customModifiersInMelvor;
 
             // Species
@@ -861,9 +872,6 @@ export class App {
             }
             if (tes) {
                 await this.context.gameData.addPackage('tes.json');
-            }
-            if(necromancy) {
-                await this.context.gameData.addPackage('necromancy.json');
             }
             await this.initGamemodes();
             this.patchUnlock(this.game.profile);
@@ -1076,19 +1084,15 @@ export class App {
         //                         {
         //                             "value": Math.floor(Math.random() * 200) + 1,
         //                             "skillID": "melvorD:Firemaking"
+        //                             // game.modifierRegistry.registeredObjects
         //                         }
         //                     ]
         //                 }
-
-        //             // Object.keys(game.modifiers).forEach(modifier => {
-        //             //     // Math.floor(Math.random() * 200) + 1
-        //             // })
         //            return newModifier
         //         }
         //         const randomClass = {
         //             "id": 'Gambler',
         //             "name": 'Gambler',
-        //             // @ts-ignore
         //             "media": 'https://static.vecteezy.com/system/resources/previews/015/081/534/original/white-rolling-dice-3d-rendering-isometric-icon-png.png',
         //             "baseExperience": 155,
         //             "maxGP": 551,

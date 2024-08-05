@@ -22,7 +22,8 @@
                 {
                   "level": 0,
                   "modifiers": {
-                    "customModifiersInMelvor:traitAppliedKhajiit": 1
+                    "customModifiersInMelvor:traitAppliedKhajiit": 1,
+                    "thievingStealth": 50
                   }
                 },
                 {
@@ -31,20 +32,21 @@
                     "currencyGain": [
                       {
                         "skillID": "melvorD:Thieving",
-                        "value": -50,
-                        "currencyID":"melvorD:GP"
+                        "value": -100,
+                        "currencyID": "melvorD:GP"
+                      }
+                    ],
+                    "randomProductChance": [
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "itemID": "tes:gold_coin",
+                        "value": 1
                       }
                     ]
                   }
                 },
                 {
                   "level": 20,
-                  "modifiers": {
-                    "thievingStealth": 150
-                  }
-                },
-                {
-                  "level": 40,
                   "modifiers": {
                     "skillXP": [
                       {
@@ -57,6 +59,26 @@
                         "skillID": "melvorD:Thieving",
                         "value": 5
                       }
+                    ],
+                    "randomProductChance": [
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "itemID": "tes:gold_coin",
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "level": 40,
+                  "modifiers": {
+                    "thievingStealth": 150,
+                    "randomProductChance": [
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "itemID": "tes:gold_coin",
+                        "value": 1
+                      }
                     ]
                   }
                 },
@@ -66,7 +88,14 @@
                     "thievingStunAvoidanceChance": [
                       {
                         "value": 25,
-                        "realmID":"melvorD:Melvor"
+                        "realmID": "melvorD:Melvor"
+                      }
+                    ],
+                    "randomProductChance": [
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "itemID": "tes:gold_coin",
+                        "value": 1
                       }
                     ]
                   }
@@ -77,7 +106,14 @@
                     "skillInterval": [
                       {
                         "skillID": "melvorD:Thieving",
-                        "value": -5
+                        "value": -10
+                      }
+                    ],
+                    "randomProductChance": [
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "itemID": "tes:gold_coin",
+                        "value": 1
                       }
                     ]
                   }
@@ -85,17 +121,31 @@
                 {
                   "level": 99,
                   "modifiers": {
-                    "skillInterval": [
-                      {
-                        "skillID": "melvorD:Thieving",
-                        "value": -10
-                      }
-                    ],
                     "randomProductChance": [
                       {
                         "skillID": "melvorD:Thieving",
-                        "value": 10,
-                        "itemID":"melvorF:Chest_Of_Gems"
+                        "itemID": "tes:gold_coin",
+                        "value": 5
+                      },
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "itemID": "tes:Soul_Gem",
+                        "value": 5
+                      },
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "itemID": "tes:Sweetroll",
+                        "value": 5
+                      },
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "itemID": "tes:ElsweyrSpicedTea",
+                        "value": 5
+                      },
+                      {
+                        "skillID": "melvorD:Thieving",
+                        "itemID": "tes:Lockpick",
+                        "value": 50
                       }
                     ]
                   }
@@ -117,53 +167,70 @@
                 {
                   "level": 0,
                   "modifiers": {
-                    "customModifiersInMelvor:traitAppliedArgonian": 1
-                  }
-                },
-                {
-                  "level": 1,
-                  "modifiers": {
-                    "cookingSuccessCap": -10
-                  }
-                },
-                {
-                  "level": 20,
-                  "modifiers": {
-                    "successfulCookChance": 10
-                  }
-                },
-                {
-                  "level": 40,
-                  "modifiers": {
-                    "currencyGainFromRawFishSales": [
-                      {
-                        "currencyID": "melvorD:GP",
-                        "value": 10
-                      }
-                    ]
-                  }
-                },
-                {
-                  "level": 60,
-                  "modifiers": {
-                    "perfectCookChance": 10
-                  }
-                },
-                {
-                  "level": 80,
-                  "modifiers": {
-                    "fishingCookedChance": 5
-                  }
-                },
-                {
-                  "level": 99,
-                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedArgonian": 1,
                     "effectIgnoreChance": [
                       {
                         "effectGroupID": "melvorD:PoisonDOT",
                         "value": 50
                       }
                     ]
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "cookingSuccessCap": 10
+                  }
+                },
+                {
+                  "level": 20,
+                  "modifiers": {
+                    "skillXP": [
+                      {
+                        "skillID": "melvorD:Cooking",
+                        "value": 10
+                      }
+                    ],
+                    "masteryXP": [
+                      {
+                        "skillID": "melvorD:Cooking",
+                        "value": 10
+                      }
+                    ]
+                  }
+                },
+                {
+                  "level": 40,
+                  "modifiers": {
+                    "successfulCookChance": 10
+                  }
+                },
+                {
+                  "level": 60,
+                  "modifiers": {
+                    "skillPreservationChance": [
+                      {
+                        "skillID": "melvorD:Cooking",
+                        "value": 20
+                      }
+                    ]
+                  }
+                },
+                {
+                  "level": 80,
+                  "modifiers": {
+                    "skillInterval": [
+                      {
+                        "skillID": "melvorD:Cooking",
+                        "value": -15
+                      }
+                    ]
+                  }
+                },
+                {
+                  "level": 99,
+                  "modifiers": {
+                    "perfectCookChance": 5
                   }
                 }
               ]
