@@ -245,13 +245,12 @@ export class App {
                 "melvorF:EarthMonster",
                 "melvorF:Ophidia",
                 "melvorF:FireMonster",
-                "melvorTotH:IceHydra",
                 "melvorF:Aeris",
                 "melvorF:Voltaire",
                 "melvorF:Aleron"
             ]
             const BeastList = [
-                "melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorTotH:LargeIceTroll", "melvorD:IceTroll", "melvorD:Ice", "melvorD:TheEye", "melvorD:ResurrectedEye", "melvorF:AirMonster", "melvorF:AirGuard"
+                "melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorD:IceTroll", "melvorD:Ice", "melvorD:TheEye", "melvorD:ResurrectedEye", "melvorF:AirMonster", "melvorF:AirGuard"
             ]
             const GiantList = [
                 "melvorD:HillGiant", "melvorD:MossGiant", "melvorF:GiantMoth", "melvorD:GiantCrab", "melvorF:TurkulGiant"
@@ -558,68 +557,68 @@ export class App {
                     "mythMusic:Mystic_Jester", "mythMusic:Jester")
             }
             if (cloudManager.hasTotHEntitlementAndIsEnabled) {
-                RoguesList.push(
-                    "melvorTotH:HungryPlant",
-                    "melvorTotH:Alraune",
-                    "melvorTotH:Morellia",
-                    "melvorTotH:LightningGolem",
-                    "melvorTotH:TwinSeaDragonSerpent",
-                    "melvorTotH:TrapperSpider",
-                    "melvorTotH:EnforcerSpider",
-                    "melvorTotH:Cockatrice",
-                    "melvorTotH:Phantom",
-                    "melvorTotH:Arctair",
-                    "melvorTotH:VorloranWatcher",
-                    "melvorTotH:TheHeraldPhase2"
-                )
-                MagesList.push(
-                    "melvorTotH:PoisonToad",
-                    "melvorTotH:MagicFireDemon",
-                    "melvorTotH:FrostGolem",
-                    "melvorTotH:SpectralIceWolf",
-                    "melvorTotH:IceHydra",
-                    "melvorTotH:LightningSpirit",
-                    "melvorTotH:RaZu",
-                    "melvorTotH:Siren",
-                    "melvorTotH:WickedSpider",
-                    "melvorTotH:GuardianSpider",
-                    "melvorTotH:PlagueDoctor",
-                    "melvorTotH:TreeSpirit",
-                    "melvorTotH:CursedSpirit",
-                    "melvorTotH:LadyDarkheart",
-                    "melvorTotH:Banshee",
-                    "melvorTotH:Beholder",
-                    "melvorTotH:Fiozor",
-                    "melvorTotH:Harkair",
-                    "melvorTotH:VorloranDevastator",
-                    "melvorTotH:TheHeraldPhase3"
-                )
-                FightersList.push(
-                    "melvorTotH:Kongamato",
-                    "melvorTotH:Conda",
-                    "melvorTotH:BurningSnake",
-                    "melvorTotH:InfernalGolem",
-                    "melvorTotH:Manticore",
-                    "melvorTotH:GretYun",
-                    "melvorTotH:Trogark",
-                    "melvorTotH:LargeIceTroll",
-                    "melvorTotH:PolarBear",
-                    "melvorTotH:LightningMonkey",
-                    "melvorTotH:MonsterCroc",
-                    "melvorTotH:Leviathan",
-                    "melvorTotH:ScouterSpider",
-                    "melvorTotH:BasherSpider",
-                    "melvorTotH:ShadowBeast",
-                    "melvorTotH:GoliathWerewolf",
-                    "melvorTotH:TreeGiant",
-                    "melvorTotH:Spectre",
-                    "melvorTotH:CursedSkeletonWarrior",
-                    "melvorTotH:DarkKnight",
-                    "melvorTotH:Torvair",
-                    "melvorTotH:VorloranProtector",
-                    "melvorTotH:GuardianoftheHerald",
-                    "melvorTotH:TheHeraldPhase1"
-                )
+                // RoguesList.push(
+                //     "melvorTotH:HungryPlant",
+                //     "melvorTotH:Alraune",
+                //     "melvorTotH:Morellia",
+                //     "melvorTotH:LightningGolem",
+                //     "melvorTotH:TwinSeaDragonSerpent",
+                //     "melvorTotH:TrapperSpider",
+                //     "melvorTotH:EnforcerSpider",
+                //     "melvorTotH:Cockatrice",
+                //     "melvorTotH:Phantom",
+                //     "melvorTotH:Arctair",
+                //     "melvorTotH:VorloranWatcher",
+                //     "melvorTotH:TheHeraldPhase2"
+                // )
+                // MagesList.push(
+                //     "melvorTotH:PoisonToad",
+                //     "melvorTotH:MagicFireDemon",
+                //     "melvorTotH:FrostGolem",
+                //     "melvorTotH:SpectralIceWolf",
+                //     "melvorTotH:IceHydra",
+                //     "melvorTotH:LightningSpirit",
+                //     "melvorTotH:RaZu",
+                //     "melvorTotH:Siren",
+                //     "melvorTotH:WickedSpider",
+                //     "melvorTotH:GuardianSpider",
+                //     "melvorTotH:PlagueDoctor",
+                //     "melvorTotH:TreeSpirit",
+                //     "melvorTotH:CursedSpirit",
+                //     "melvorTotH:LadyDarkheart",
+                //     "melvorTotH:Banshee",
+                //     "melvorTotH:Beholder",
+                //     "melvorTotH:Fiozor",
+                //     "melvorTotH:Harkair",
+                //     "melvorTotH:VorloranDevastator",
+                //     "melvorTotH:TheHeraldPhase3"
+                // )
+                // FightersList.push(
+                //     "melvorTotH:Kongamato",
+                //     "melvorTotH:Conda",
+                //     "melvorTotH:BurningSnake",
+                //     "melvorTotH:InfernalGolem",
+                //     "melvorTotH:Manticore",
+                //     "melvorTotH:GretYun",
+                //     "melvorTotH:Trogark",
+                //     "melvorTotH:LargeIceTroll",
+                //     "melvorTotH:PolarBear",
+                //     "melvorTotH:LightningMonkey",
+                //     "melvorTotH:MonsterCroc",
+                //     "melvorTotH:Leviathan",
+                //     "melvorTotH:ScouterSpider",
+                //     "melvorTotH:BasherSpider",
+                //     "melvorTotH:ShadowBeast",
+                //     "melvorTotH:GoliathWerewolf",
+                //     "melvorTotH:TreeGiant",
+                //     "melvorTotH:Spectre",
+                //     "melvorTotH:CursedSkeletonWarrior",
+                //     "melvorTotH:DarkKnight",
+                //     "melvorTotH:Torvair",
+                //     "melvorTotH:VorloranProtector",
+                //     "melvorTotH:GuardianoftheHerald",
+                //     "melvorTotH:TheHeraldPhase1"
+                // )
                 BeastList.push(
                     "melvorTotH:GoliathWerewolf"
                 )
@@ -694,52 +693,52 @@ export class App {
                 )
             }
             if (cloudManager.hasAoDEntitlementAndIsEnabled) {
-                RoguesList.push("melvorAoD:BlindArcher",
-                    "melvorAoD:VampiricBat",
-                    "melvorAoD:SlimeShooter",
-                    "melvorAoD:RangedGolem",
-                    "melvorAoD:CultImp",
-                    "melvorAoD:PoisonLeecher",
-                    "melvorAoD:PoisonRoamer",
-                    "melvorAoD:PoisonSlime",
-                    "melvorAoD:PoisonBloater",
-                    "melvorAoD:GhostMercenary",
-                    "melvorAoD:MermaidArcher",
-                    "melvorAoD:Nagaia",
-                    "melvorAoD:EvilOak",
-                    "melvorAoD:FuriousMahogany",
-                    "melvorAoD:CrystalBarrager",
-                    "melvorAoD:CrystalShatterer",)
-                MagesList.push("melvorAoD:BlindMage",
-                    "melvorAoD:BlindGhost",
-                    "melvorAoD:MagicGolem",
-                    "melvorAoD:CultMember",
-                    "melvorAoD:Lich",
-                    "melvorAoD:SoulTakerWitch",
-                    "melvorAoD:MagicMirror",
-                    "melvorAoD:PossessedBarrel",
-                    "melvorAoD:FakeDoor",
-                    "melvorAoD:IllusiveRoots",
-                    "melvorAoD:PuppetMaster",
-                    "melvorAoD:ShipwreckBeast",
-                    "melvorAoD:Merman",
-                    "melvorAoD:TreacherousJellyfish",
-                    "melvorAoD:AngryTeak",
-                    "melvorAoD:CrystalProwler",
-                    "melvorAoD:CrystalManipulator",)
-                FightersList.push("melvorAoD:BlindWarrior",
-                    "melvorAoD:GreenSlime",
-                    "melvorAoD:GraniteGolem",
-                    "melvorAoD:EarthGolem",
-                    "melvorAoD:LavaGolem",
-                    "melvorAoD:CultMonster",
-                    "melvorAoD:GhostSailor",
-                    "melvorAoD:CursedPirateCaptain",
-                    "melvorAoD:MermanGuard",
-                    "melvorAoD:GrumpyWillow",
-                    "melvorAoD:RagingMaple",
-                    "melvorAoD:CrystalSmasher",
-                    "melvorAoD:CrystalBehemoth")
+                // RoguesList.push("melvorAoD:BlindArcher",
+                //     "melvorAoD:VampiricBat",
+                //     "melvorAoD:SlimeShooter",
+                //     "melvorAoD:RangedGolem",
+                //     "melvorAoD:CultImp",
+                //     "melvorAoD:PoisonLeecher",
+                //     "melvorAoD:PoisonRoamer",
+                //     "melvorAoD:PoisonSlime",
+                //     "melvorAoD:PoisonBloater",
+                //     "melvorAoD:GhostMercenary",
+                //     "melvorAoD:MermaidArcher",
+                //     "melvorAoD:Nagaia",
+                //     "melvorAoD:EvilOak",
+                //     "melvorAoD:FuriousMahogany",
+                //     "melvorAoD:CrystalBarrager",
+                //     "melvorAoD:CrystalShatterer",)
+                // MagesList.push("melvorAoD:BlindMage",
+                //     "melvorAoD:BlindGhost",
+                //     "melvorAoD:MagicGolem",
+                //     "melvorAoD:CultMember",
+                //     "melvorAoD:Lich",
+                //     "melvorAoD:SoulTakerWitch",
+                //     "melvorAoD:MagicMirror",
+                //     "melvorAoD:PossessedBarrel",
+                //     "melvorAoD:FakeDoor",
+                //     "melvorAoD:IllusiveRoots",
+                //     "melvorAoD:PuppetMaster",
+                //     "melvorAoD:ShipwreckBeast",
+                //     "melvorAoD:Merman",
+                //     "melvorAoD:TreacherousJellyfish",
+                //     "melvorAoD:AngryTeak",
+                //     "melvorAoD:CrystalProwler",
+                //     "melvorAoD:CrystalManipulator",)
+                // FightersList.push("melvorAoD:BlindWarrior",
+                //     "melvorAoD:GreenSlime",
+                //     "melvorAoD:GraniteGolem",
+                //     "melvorAoD:EarthGolem",
+                //     "melvorAoD:LavaGolem",
+                //     "melvorAoD:CultMonster",
+                //     "melvorAoD:GhostSailor",
+                //     "melvorAoD:CursedPirateCaptain",
+                //     "melvorAoD:MermanGuard",
+                //     "melvorAoD:GrumpyWillow",
+                //     "melvorAoD:RagingMaple",
+                //     "melvorAoD:CrystalSmasher",
+                //     "melvorAoD:CrystalBehemoth")
                 PlantList.push("melvorAoD:EvilOak", "melvorAoD:GrumpyWillow", "melvorAoD:AngryTeak", "melvorAoD:RagingMaple", "melvorAoD:IllusiveRoots")
                 BeastList.push("melvorAoD:GreenSlime", "melvorAoD:SlimeShooter", "melvorAoD:PoisonRoamer", "melvorAoD:PoisonSlime", "melvorAoD:PoisonBloater", "melvorAoD:PoisonLeecher", "melvorAoD:MagicMirror", "melvorAoD:PossessedBarrel", "melvorAoD:FakeDoor", "melvorAoD:CultMonster", "melvorAoD:PuppetMaster")
                 SeaCreatureList.push(
@@ -768,7 +767,6 @@ export class App {
                 DemonList.push("melvorAoD:CultImp")
             }
             if (necromancy) {
-                await this.context.gameData.addPackage('necromancy.json');
                 UndeadList.push([
                     "necromancy:Baby_Necromancer",
                     "necromancy:Teen_Necromancer",
@@ -873,10 +871,12 @@ export class App {
             if (tes) {
                 await this.context.gameData.addPackage('tes.json');
             }
+            if(necromancy) {
+                await this.context.gameData.addPackage('necromancy.json');
+            }
             await this.initGamemodes();
             this.patchUnlock(this.game.profile);
             this.initCompatibility(this.game.profile);
-
             // Giving monsters classes
             game.monsters.forEach(monster => {
                 if (monster.attackType === "magic" && !MagesList.includes(monster._namespace.name + ':' + monster._localID)) {

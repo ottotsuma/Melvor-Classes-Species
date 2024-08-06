@@ -400,14 +400,14 @@
                                 },
                                 {
                                     "level": 40,
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:Bleed100",
+                                            "chance": 10,
+                                            "appliesWhen": "HitWithAttack"
+                                        }
+                                    ],
                                     "modifiers": {
-                                        "combatEffects": [
-                                            {
-                                                "effectID": "melvorD:Bleed100",
-                                                "chance": 5,
-                                                "appliesWhen": "HitWithAttack"
-                                            }
-                                        ],
                                         "bleedLifesteal": 50
                                     }
                                 },
