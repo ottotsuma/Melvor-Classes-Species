@@ -1213,14 +1213,7 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {
-                                        "skillCostReduction": [
-                                            {
-                                                "skillID": "melvorD:Firemaking",
-                                                "value": -100
-                                            }
-                                        ]
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 20,
@@ -1242,15 +1235,15 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "woodcuttingXPAddedAsFiremakingXP": [
-                                            {
-                                                "value": 1
-                                            }
-                                        ],
                                         "firemakingLogCurrencyGain": [
                                             {
                                                 "currencyID": "melvorD:GP",
                                                 "value": 50
+                                            }
+                                        ],
+                                        "woodcuttingXPAddedAsFiremakingXP": [
+                                            {
+                                                "value": 1
                                             }
                                         ]
                                     }
@@ -1339,28 +1332,11 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "bonusCoalMining": 1
-                                    }
-                                },
-                                {
-                                    "level": 60,
-                                    "modifiers": {
                                         "miningNodeRespawnInterval": -50
                                     }
                                 },
                                 {
-                                    "level": 80,
-                                    "modifiers": {
-                                        "doubleItemsSkill": [
-                                            {
-                                                "skillID": "melvorD:Mining",
-                                                "value": 1
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "level": 99,
+                                    "level": 60,
                                     "modifiers": {
                                         "randomProductChance": [
                                             {
@@ -1372,6 +1348,23 @@
                                                 "skillID": "melvorD:Mining",
                                                 "itemID": "namespace_profile:Mastery_Token_Profile",
                                                 "value": 5
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level": 80,
+                                    "modifiers": {
+                                        "bonusCoalMining": 1
+                                    }
+                                },
+                                {
+                                    "level": 99,
+                                    "modifiers": {
+                                        "doubleItemsSkill": [
+                                            {
+                                                "skillID": "melvorD:Mining",
+                                                "value": 1
                                             }
                                         ]
                                     }
@@ -1433,19 +1426,19 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "flatTier1SummoningShardCost": 1
+                                        "flatTier1SummoningShardCost": -1
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "flatTier2SummoningShardCost": 1
+                                        "flatTier2SummoningShardCost": -1
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "flatTier3SummoningShardCost": 1
+                                        "flatTier3SummoningShardCost": -1
                                     }
                                 }
                             ]
@@ -1632,14 +1625,7 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {
-                                        "flatBasePrimaryProductQuantity": [
-                                            {
-                                                "skillID": "melvorD:Astrology",
-                                                "value": -1
-                                            }
-                                        ]
-                                    }
+                                    "modifiers": {}
                                 },
                                 {
                                     "level": 20,

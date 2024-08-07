@@ -766,41 +766,41 @@ export class App {
                 ElementalCreatureList.push("melvorAoD:CrystalBarrager", "melvorAoD:CrystalSmasher", "melvorAoD:CrystalProwler", "melvorAoD:GraniteGolem", "melvorAoD:RangedGolem", "melvorAoD:EarthGolem", "melvorAoD:MagicGolem", "melvorAoD:CrystalManipulator", "melvorAoD:CrystalShatterer", "melvorAoD:CrystalBehemoth", "melvorAoD:LavaGolem")
                 DemonList.push("melvorAoD:CultImp")
             }
-            if (necromancy) {
-                UndeadList.push([
-                    "necromancy:Baby_Necromancer",
-                    "necromancy:Teen_Necromancer",
-                    "necromancy:Adult_Necromancer",
-                    "necromancy:Ancient_Necromancer",
-                    "necromancy:Skeletal_Deckhand",
-                    "necromancy:Old_One_Cultist",
-                    "necromancy:Old_One_Captain",
-                    "necromancy:Great_Old_One",
-                    "necromancy:Poison_Necromancer",
-                    "necromancy:Toxic_Ooze",
-                    "necromancy:Oozing_Necromancer",
-                    "necromancy:Putrid_Necromancer",
-                    "necromancy:Hellhound",
-                    "necromancy:Hellrider",
-                    "necromancy:Hulking_Beast",
-                    "necromancy:Blood_Necromancer",
-                    "necromancy:Yakar_The_Carver",
-                    "necromancy:Raulazar_The_Defiler",
-                    "necromancy:Elite_Hellhound",
-                    "necromancy:Skeletal_Rider",
-                    "necromancy:Lumbering_Beast",
-                    "necromancy:Oracle_Trio",
-                    "necromancy:Hooded_Figure",
-                    "necromancy:Hermod_The_Spirit_Of_War",
-                    "necromancy:Skeletal_Gatekeeper",
-                    "necromancy:Unleashed_Necromancer",
-                    "necromancy:Druidic_Necromancer",
-                    "necromancy:Rasials_Disciple",
-                    "necromancy:Hooded_Figure_Revisited",
-                    "necromancy:Rasial_The_First_Necromancer",
-                    "necromancy:Rasials_True_Form",
-                ])
-            }
+            // if (necromancy) {
+            //     UndeadList.push([
+            //         "necromancy:Baby_Necromancer",
+            //         "necromancy:Teen_Necromancer",
+            //         "necromancy:Adult_Necromancer",
+            //         "necromancy:Ancient_Necromancer",
+            //         "necromancy:Skeletal_Deckhand",
+            //         "necromancy:Old_One_Cultist",
+            //         "necromancy:Old_One_Captain",
+            //         "necromancy:Great_Old_One",
+            //         "necromancy:Poison_Necromancer",
+            //         "necromancy:Toxic_Ooze",
+            //         "necromancy:Oozing_Necromancer",
+            //         "necromancy:Putrid_Necromancer",
+            //         "necromancy:Hellhound",
+            //         "necromancy:Hellrider",
+            //         "necromancy:Hulking_Beast",
+            //         "necromancy:Blood_Necromancer",
+            //         "necromancy:Yakar_The_Carver",
+            //         "necromancy:Raulazar_The_Defiler",
+            //         "necromancy:Elite_Hellhound",
+            //         "necromancy:Skeletal_Rider",
+            //         "necromancy:Lumbering_Beast",
+            //         "necromancy:Oracle_Trio",
+            //         "necromancy:Hooded_Figure",
+            //         "necromancy:Hermod_The_Spirit_Of_War",
+            //         "necromancy:Skeletal_Gatekeeper",
+            //         "necromancy:Unleashed_Necromancer",
+            //         "necromancy:Druidic_Necromancer",
+            //         "necromancy:Rasials_Disciple",
+            //         "necromancy:Hooded_Figure_Revisited",
+            //         "necromancy:Rasial_The_First_Necromancer",
+            //         "necromancy:Rasials_True_Form",
+            //     ])
+            // }
             const cmim = mod.api.customModifiersInMelvor;
 
             // Species
