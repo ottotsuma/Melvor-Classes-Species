@@ -56,27 +56,6 @@ export class ProfileManager {
             return [];
         }
         return single_species.modifiers(this.profile.settings.modifierType).filter(modifier => this.isModifierActive(single_species, modifier));
-        
-        // .map(modifier => {
-        //     return {
-        //         ...modifier,
-        //         modifiers: modifier.modifiers.map(mod => {
-        //             // @ts-ignore 
-        //             if (this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})) {
-        //                 if (mod.value < 0) {
-        //                     // @ts-ignore 
-        //                     mod.value = mod.value - this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
-        //                 } else {
-        //                     // @ts-ignore 
-        //                     mod.value = mod.value + this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
-        //                 }
-
-        //             }
-        //             return mod
-        //         })
-        //     }
-        // }
-        // );
     }
 
     public calculateEquipCost(single_species: Single_Species) {

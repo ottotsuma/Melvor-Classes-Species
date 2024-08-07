@@ -396,7 +396,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public updateModifiers(Inital = false) {
         try {
             // @ts-ignore 
-            const profileModifer = this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
+            const profileModifer = this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0
             if (Inital) { // @ts-ignore
                 this.game.saveUpdateProfileModifiers = profileModifer
                 game.profile.actions.registeredObjects.forEach(single => {
@@ -415,10 +415,10 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                 // Need to have a saved state from the start
                 let difference = 0;
                 // @ts-ignore 
-                if (this.game?.saveUpdateProfileModifiers !== profileModifer) {
-                    // Calculate the difference correctly 
-                    // @ts-ignore 
-                    difference = profileModifer - this.game?.saveUpdateProfileModifiers;
+                const savedValue = this.game?.saveUpdateProfileModifiers || 0
+                if (savedValue !== profileModifer) {
+                    // Calculate the difference correctly
+                    difference = profileModifer - savedValue;
                     // @ts-ignore 
                     this.game.saveUpdateProfileModifiers = profileModifer;
                 }

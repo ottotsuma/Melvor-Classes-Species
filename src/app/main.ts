@@ -1145,20 +1145,6 @@ export class App {
 
         this.context.onCharacterLoaded(() => {
             this.game.profile.updateModifiers(true)
-            // game.profile.actions.registeredObjects.forEach(single => {
-            //     single.standardModifiers.forEach(modifier => {
-            //         modifier?.modifiers?.forEach(mod => {
-            //             if (mod.value < 0) {
-            //                 // @ts-ignore 
-            //                 mod.value = mod.value - game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
-            //             } else {
-            //                 // @ts-ignore 
-            //                 mod.value = mod.value + game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {})
-            //             }
-            //         })
-            //     })
-            // });
-            // game.profile.computeProvidedStats(true)
         })
 
 
