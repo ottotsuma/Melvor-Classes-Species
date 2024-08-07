@@ -1213,7 +1213,13 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "potionCharges": [
+                                            {
+                                                "value": -50
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "level": 20,
@@ -1240,21 +1246,20 @@
                                                 "currencyID": "melvorD:GP",
                                                 "value": 50
                                             }
-                                        ],
-                                        "woodcuttingXPAddedAsFiremakingXP": [
-                                            {
-                                                "value": 1
-                                            }
                                         ]
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "basePrimaryProductQuantity": [
+                                        "potionCharges": [
                                             {
-                                                "skillID": "melvorD:Firemaking",
-                                                "value": 50
+                                                "value": 20
+                                            }
+                                        ],
+                                        "woodcuttingXPAddedAsFiremakingXP": [
+                                            {
+                                                "value": 1
                                             }
                                         ]
                                     }
@@ -1625,7 +1630,14 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {}
+                                    "modifiers": {
+                                        "skillInterval": [
+                                            {
+                                                "skillID": "melvorD:Astrology",
+                                                "value": 20
+                                            }
+                                        ]
+                                    }
                                 },
                                 {
                                     "level": 20,
@@ -1653,17 +1665,6 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "skillInterval": [
-                                            {
-                                                "skillID": "melvorD:Astrology",
-                                                "value": -20
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "level": 80,
-                                    "modifiers": {
                                         "randomProductChance": [
                                             {
                                                 "skillID": "melvorD:Astrology",
@@ -1676,6 +1677,12 @@
                                                 "value": 1
                                             }
                                         ]
+                                    }
+                                },
+                                {
+                                    "level": 80,
+                                    "modifiers": {
+                                        "meteoriteLocationChance": 2
                                     }
                                 },
                                 {

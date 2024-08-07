@@ -1249,17 +1249,31 @@ export class App {
             //     game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
             // }
 
-            // Burying bones
+            // Burying bones species
             if (SkillsMatch(chosen_species.single_species.skills, [game.skills.getObjectByID('melvorD:Prayer')])) {
                 game.profile.addXP(skillExp1, game.profile)
                 game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
             }
-            // Generic 
-            if (SkillsMatch(chosen_species.single_species.skills, [game.skills.getObjectByID("namespace_profile:Profile")])) {
+            // Burying bones class
+            if (SkillsMatch(chosen_class.single_species.skills, [game.skills.getObjectByID('melvorD:Prayer')])) {
+                game.profile.addXP(skillExp2, game.profile)
+                game.profile.addMasteryXP(chosen_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp2)
+            }
+            // Generic Species
+            const allSkills: AnySkill[] = []
+            game.skills.registeredObjects.forEach(skill => allSkills.push(skill))            
+            if (SkillsMatch(chosen_species.single_species.skills, [game.skills.getObjectByID("namespace_profile:Profile")]) || SkillsMatch(chosen_species.single_species.skills, allSkills)) {
                 game.profile.addXP(skillExp1, game.profile)
                 game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
                 game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
+            }
+            // Generic class
+            if (SkillsMatch(chosen_class.single_species.skills, [game.skills.getObjectByID("namespace_profile:Profile")]) || SkillsMatch(chosen_class.single_species.skills, allSkills)) {
+                game.profile.addXP(skillExp2, game.profile)
+                game.profile.addMasteryXP(chosen_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp2)
             }
             // Add xp
             if ((chosen_species || chosen_class) && game?.activeAction?.activeSkills) {
