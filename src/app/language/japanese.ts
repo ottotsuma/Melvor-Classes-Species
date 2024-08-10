@@ -204,5 +204,7 @@ export const ja = {
     "Profile_Single_Species_Argonian": "アルゴニアン",
     "MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal": "動物",
     "decreasedUpgradeProfileModifiers": "-${value} プロファイルの修正値減少",
-    "increasedUpgradeProfileModifiers": "+${value} プロファイルの修正値増加"
+    "increasedUpgradeProfileModifiers": "+${value} プロファイルの修正値増加",
+    MODIFIER_DATA_applyRandomCurseOnCrit: "Chance to apply a random curse on critically hitting",
+    MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",
 };

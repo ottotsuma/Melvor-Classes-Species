@@ -442,7 +442,8 @@
                             "level": 100,
                             "skills": [
                                 "https://i.pinimg.com/originals/aa/1f/d0/aa1fd0ad19d6d67fb32c7b7d5b0c2ad0.png",
-                                "melvorD:Magic"
+                                "melvorD:Magic",
+                                "melvorD:Prayer"
                             ],
                             "standardModifiers": [
                                 {
@@ -713,7 +714,8 @@
                             "productId": "namespace_profile:King",
                             "level": 120,
                             "skills": [
-                                "https://i.pinimg.com/originals/df/69/95/df69950bc011ab119f7cd70b39cc5329.png"
+                                "https://i.pinimg.com/originals/df/69/95/df69950bc011ab119f7cd70b39cc5329.png",
+                                "namespace_profile:Profile"
                             ],
                             "standardModifiers": [
                                 {

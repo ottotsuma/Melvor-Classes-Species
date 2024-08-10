@@ -203,7 +203,8 @@ Single_Species_Naga: 'Naga',
   decreasedUpgradeProfileModifiers: "-${value} decreased modifier values in Profile",
   increasedUpgradeProfileModifiers: "+${value} increased modifier values in Profile",
 
-
+  MODIFIER_DATA_applyRandomCurseOnCrit: "Chance to apply a random curse on critically hitting",
+  MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",
 
 }
 

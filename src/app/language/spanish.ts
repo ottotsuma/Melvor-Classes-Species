@@ -23,7 +23,7 @@ export const es = {
   "Single_Species_Elf": "Elfo",
   "Single_Species_Aarakocra": "Aarakocra",
   Single_Species_Goblin: 'Goblin',
-Single_Species_Naga: 'Naga',
+  Single_Species_Naga: 'Naga',
   "Single_Species_Dragon": "Dragón",
   "Single_Species_Undead": "No muerto",
   "Single_Species_Demon": "Demonio",
@@ -203,6 +203,8 @@ Single_Species_Naga: 'Naga',
   MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal: "Animal",
   decreasedUpgradeProfileModifiers: "-${value} decreased modifier values in Profile",
   increasedUpgradeProfileModifiers: "+${value} increased modifier values in Profile",
+  MODIFIER_DATA_applyRandomCurseOnCrit: "Chance to apply a random curse on critically hitting",
+  MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",
 }
 
 

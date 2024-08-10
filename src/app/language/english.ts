@@ -14,7 +14,7 @@ export const en = {
     You_Do_Not_Have_Enough_Materials_Mastery: 'You do not have enough materials to unlock this mastery.',
     The_Cost_Of_Hiring: 'The cost of hiring this one will increase to ${cost} GP',
     Back: 'Back',
-    Would_You_Like_To_Equip_This_You: 'Would you like to equit this one:',
+    Would_You_Like_To_Equip_This_You: 'Would you like to equip this one:',
     You_Cannot_Afford_To_Equip_This_You: 'You cannot afford to Master this one:',
     This_Will_Replace_The_Mastered_You:
         'This will replace the current equipped one.',
@@ -207,4 +207,6 @@ export const en = {
     MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal: "Animal",
     decreasedUpgradeProfileModifiers: "-${value} decreased modifier values in Profile",
     increasedUpgradeProfileModifiers: "+${value} increased modifier values in Profile",
+    MODIFIER_DATA_applyRandomCurseOnCrit: "Chance to apply a random curse on critically hitting",
+    MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",
 };

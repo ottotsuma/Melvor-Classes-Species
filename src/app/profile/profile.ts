@@ -394,6 +394,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     }
 
     public updateModifiers(Inital = false) {
+        // Triggered on game load, but also on item equip and unequip
         try {
             // @ts-ignore 
             const profileModifer = this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0
@@ -410,34 +411,36 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                         })
                     })
                 });
-                game.profile.computeProvidedStats(true)
-            } else {
-                // Need to have a saved state from the start
-                let difference = 0;
-                // @ts-ignore 
-                const savedValue = this.game?.saveUpdateProfileModifiers || 0
-                if (savedValue !== profileModifer) {
-                    // Calculate the difference correctly
-                    difference = profileModifer - savedValue;
-                    // @ts-ignore 
-                    this.game.saveUpdateProfileModifiers = profileModifer;
-                }
-                if (difference !== 0) {
-                    game.profile.actions.registeredObjects.forEach(single => {
-                        single.standardModifiers.forEach(modifier => {
-                            modifier?.modifiers?.forEach(mod => {
-                                // Update mod.value by the difference
-                                if (mod.value < 0) {
-                                    mod.value -= difference;
-                                } else {
-                                    mod.value += difference;
-                                }
-                            });
-                        });
-                    });
-                    game.profile.computeProvidedStats(true);
-                }
             }
+            
+            //  else {
+            //     // Need to have a saved state from the start
+            //     let difference = 0;
+            //     // @ts-ignore 
+            //     const savedValue = this.game?.saveUpdateProfileModifiers || 0
+            //     if (savedValue !== profileModifer) {
+            //         // Calculate the difference correctly
+            //         difference = profileModifer - savedValue;
+            //         // @ts-ignore 
+            //         this.game.saveUpdateProfileModifiers = profileModifer;
+            //     }
+            //     if (difference !== 0) {
+            //         console.log("difference", difference, profileModifer, savedValue)
+            //         game.profile.actions.registeredObjects.forEach(single => {
+            //             single.standardModifiers.forEach(modifier => {
+            //                 modifier?.modifiers?.forEach(mod => {
+            //                     // Update mod.value by the difference
+            //                     if (mod.value < 0) {
+            //                         mod.value -= difference;
+            //                     } else {
+            //                         mod.value += difference;
+            //                     }
+            //                 });
+            //             });
+            //         });
+            //     }
+            // }
+            game.profile.computeProvidedStats(true);
         } catch (error) {
             console.log('updateModifiers', error)
         }
@@ -526,7 +529,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                 component.single_species.baseExperience,
                 masteryXP,
                 baseMasteryXP,
-                poolXP,                
+                poolXP,
                 // @ts-ignore // TODO: TYPES
                 this.game.defaultRealm
             );

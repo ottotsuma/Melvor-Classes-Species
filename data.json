@@ -1720,31 +1720,36 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtDemon": 30
+                                        "customModifiersInMelvor:damageDealtDemon": 30,
+                                        "customModifiersInMelvor:accuracyRatingDemon": 20
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:accuracyRatingDemon": 20
+                                        "prayerPointPreservationChance": 40
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "prayerPointPreservationChance": 40
+                                        "maxHitBasedOnPrayerCost": 10
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "maxHitBasedOnPrayerCost": 10
+                                        "flatPrayerPointsWhenHit": 1
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "flatPrayerPointsWhenHit": 1
+                                        "doubleBoneDrops": [
+                                            {
+                                                "value": 1
+                                            }
+                                        ]
                                     }
                                 }
                             ]
@@ -1762,9 +1767,8 @@
                                 "https://cdn2-main.melvor.net/assets/media/monsters/turkul_throwers.png",
                                 "melvorD:Attack",
                                 "melvorD:Strength",
-                                "melvorD:Defence",
-                                "melvorD:Hitpoints",
-                                "melvorD:Ranged"
+                                "melvorD:Ranged",
+                                "melvorD:Magic"
                             ],
                             "standardModifiers": [
                                 {
@@ -1776,37 +1780,40 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "attackInterval": 30
+                                        "customModifiersInMelvor:damageTakenMage": 100
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "flatMeleeDefenceBonus": 10
+                                        "namespace_profile:FlatMeleeDefenceBonusPerDefence": 2,
+                                        "namespace_profile:FlatRangedDefenceBonusPerDefence": 2
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "magicProtection": 1
+                                        "damageDealtToAllMonsters": 5
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "meleeAccuracyRating": 15
+                                        "accuracyRating": 10
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "evasionAgainstMelee": 5
+                                        "evasion": 5
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "meleeProtection": 2
+                                        "magicProtection": 1,
+                                        "meleeProtection": 1,
+                                        "rangedProtection": 1
                                     }
                                 }
                             ]
@@ -1832,13 +1839,18 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "damageTaken": 5
+                                        "customModifiersInMelvor:damageTakenRogue": 100
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "flatMagicDefenceBonus": 10
+                                        "flatSpellRuneCost": [
+                                            {
+                                                "itemID": "melvorD:Mind_Rune",
+                                                "value": -1
+                                            }
+                                        ]
                                     }
                                 },
                                 {
@@ -1856,13 +1868,34 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "magicEvasion": 5
+                                        "magicMinHitBasedOnMaxHit": 10
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "magicProtection": 2
+                                        "flatSpellRuneCost": [
+                                            {
+                                                "itemID": "melvorD:Air_Rune",
+                                                "value": -1
+                                            },
+                                            {
+                                                "itemID": "melvorD:Fire_Rune",
+                                                "value": -1
+                                            },
+                                            {
+                                                "itemID": "melvorD:Earth_Rune",
+                                                "value": -1
+                                            },
+                                            {
+                                                "itemID": "melvorD:Water_Rune",
+                                                "value": -1
+                                            },
+                                            {
+                                                "itemID": "melvorF:Nature_Rune",
+                                                "value": -1
+                                            }
+                                        ]
                                     }
                                 }
                             ]
@@ -1876,19 +1909,19 @@
                             "level": 1,
                             "skills": [
                                 "https://images.saymedia-content.com/.image/t_share/MTc2NDU4MzM1NjgyMzczNTk0/do-it-yourself-sterling-duchess-archer-halloween-costume-homemade-archer-cosplay.png",
-                                "melvorD:Slayer"
+                                "melvorD:Ranged"
                             ],
                             "standardModifiers": [
                                 {
                                     "level": 0,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                        "customModifiersInMelvor:traitAppliedRogue": 1
                                     }
                                 },
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "summoningMaxHit": -60
+                                        "customModifiersInMelvor:damageTakenFighter": 100
                                     }
                                 },
                                 {
@@ -1912,7 +1945,7 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "rangedCritChance": 25
+                                        "rangedCritChance": 5
                                     }
                                 },
                                 {
@@ -1932,9 +1965,8 @@
                             "level": 10,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png",
-                                "melvorD:Attack",
-                                "melvorD:Strength",
-                                "melvorD:Defence"
+                                "melvorD:Defence",
+                                "melvorD:Slayer"
                             ],
                             "standardModifiers": [
                                 {
@@ -1946,42 +1978,49 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "magicAccuracyRating": -40
+                                        "slayerTaskCost": [
+                                            {
+                                                "value": 25
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "namespace_profile:FlatMeleeDefenceBonusPerDefence": 2
+                                        "namespace_profile:FlatMeleeDefenceBonusPerDefence": 2,
+                                        "namespace_profile:FlatRangedDefenceBonusPerDefence": 2
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "namespace_profile:FlatRangedDefenceBonusPerDefence": 2
+                                        "currencyGainFromSlayerTasks": [
+                                            {
+                                                "currencyID": "melvorD:SlayerCoins",
+                                                "value": 50
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtHuman": 30
+                                        "customModifiersInMelvor:damageDealtMythicalCreature": 30,
+                                        "customModifiersInMelvor:accuracyRatingMythicalCreature": 25
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:accuracyRatingMythicalCreature": 25
+                                        "flatSlayerAreaEffectNegation": 10,
+                                        "slayerTaskLength": 50
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "flatCurrencyGainFromMeleeSlayerTasksBasedOnCombatLevel": [
-                                            {
-                                                "currencyID": "melvorD:SlayerCoins",
-                                                "value": 1
-                                            }
-                                        ]
+                                        "doubleSlayerTaskKillChance": 50
                                     }
                                 }
                             ]
@@ -1995,7 +2034,8 @@
                             "level": 20,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png",
-                                "melvorD:Ranged"
+                                "melvorD:Ranged",
+                                "melvorD:Slayer"
                             ],
                             "standardModifiers": [
                                 {
@@ -2007,37 +2047,55 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "ammoPreservationChance": -25
+                                        "slayerTaskLength": -50
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "evasionAgainstRanged": 10
+                                        "slayerTaskCost": [
+                                            {
+                                                "value": -25
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
+                                        "currencyGainFromSlayerTaskMonsterDrops": [
+                                            {
+                                                "currencyID": "melvorD:SlayerCoins",
+                                                "value": 10
+                                            }
+                                        ],
                                         "flatSlayerAreaEffectNegation": 10
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
+                                        "currencyGainFromSlayerTasks": [
+                                            {
+                                                "currencyID": "melvorD:SlayerCoins",
+                                                "value": 10
+                                            }
+                                        ],
                                         "flatRangedAccuracyBonusPerAttackInterval": 5
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAnimal": 30
+                                        "slayerTaskExtensionCost": -50,
+                                        "autoSlayerUnlocked": 1
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "attackInterval": 10
+                                        "bypassSlayerItems": 1,
+                                        "doubleSlayerTaskKillChance": 10
                                     }
                                 }
                             ]
@@ -2051,8 +2109,7 @@
                             "level": 30,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/pirate.png",
-                                "melvorD:Attack",
-                                "melvorD:Ranged"
+                                "https://cdn2-main.melvor.net/assets/media/main/coins.svg"
                             ],
                             "standardModifiers": [
                                 {
@@ -2064,25 +2121,35 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAarakocra": -100
+                                        "noCombatDropChance": 10
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "customModifiersInMelvor:accuracyRatingSeaCreature": 10
+                                        "currencyGainFromMonsterDrops": [
+                                            {
+                                                "currencyID": "melvorD:GP",
+                                                "value": 50
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "curseLifesteal": 5
+                                        "currencyGainFromCombat": [
+                                            {
+                                                "currencyID": "melvorD:GP",
+                                                "value": 50
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "evasion": 10
+                                        "combatLootDoublingChance": 40
                                     }
                                 },
                                 {
@@ -2090,8 +2157,24 @@
                                     "modifiers": {
                                         "currencyGain": [
                                             {
+                                                "skillID": "melvorD:Attack",
                                                 "currencyID": "melvorD:GP",
                                                 "value": 10
+                                            },
+                                            {
+                                                "skillID": "melvorD:Ranged",
+                                                "currencyID": "melvorD:GP",
+                                                "value": 10
+                                            },
+                                            {
+                                                "skillID": "melvorD:Magic",
+                                                "currencyID": "melvorD:GP",
+                                                "value": 10
+                                            }
+                                        ],
+                                        "doubleBoneDrops": [
+                                            {
+                                                "value": 1
                                             }
                                         ]
                                     }
@@ -2113,8 +2196,8 @@
                             "level": 40,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/paladin.png",
-                                "melvorD:Defence",
-                                "melvorD:Prayer"
+                                "melvorD:Prayer",
+                                "melvorD:Defence"
                             ],
                             "standardModifiers": [
                                 {
@@ -2126,7 +2209,7 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtAngel": -100
+                                        "customModifiersInMelvor:damageDealtAngel": -90
                                     }
                                 },
                                 {
@@ -2138,7 +2221,7 @@
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "flatPrayerPointsPerMonsterKill": 5
+                                        "flatPrayerPointsPerMonsterKill": 3
                                     }
                                 },
                                 {
@@ -2148,6 +2231,10 @@
                                             {
                                                 "value": 5,
                                                 "damageTypeID": "melvorD:Normal"
+                                            },
+                                            {
+                                                "value": 5,
+                                                "damageTypeID": "melvorF:Pure"
                                             }
                                         ]
                                     }
@@ -2155,13 +2242,13 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "bypassSlayerItems": 1
+                                        "prayerPointPreservationChance": 35
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "prayerPointPreservationChance": 35
+                                        "bypassSlayerItems": 1
                                     }
                                 }
                             ]
@@ -2186,9 +2273,17 @@
                                 },
                                 {
                                     "level": 1,
-                                    "modifiers": {
-                                        "damageTaken": 10
-                                    }
+                                    "combatEffects": [
+                                        {
+                                            "tableID": "melvorF:RandomCurse",
+                                            "chance": 10,
+                                            "appliesWhen": "BeingAttacked",
+                                            "targetOverride": "Self",
+                                            "isNegative": true,
+                                            "bypassBarrier": true,
+                                            "descriptionLang": "MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked"
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 20,
@@ -2204,15 +2299,24 @@
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "flatPotionCharges": 5
-                                    }
+                                    "combatEffects": [
+                                        {
+                                            "tableID": "melvorF:RandomCurse",
+                                            "appliesWhen": "StartOfFight",
+                                            "descriptionLang": "MODIFIER_DATA_applyRandomCurseOnSpawn"
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 80,
-                                    "modifiers": {
-                                        "magicEvasion": 20
-                                    }
+                                    "combatEffects": [
+                                        {
+                                            "tableID": "melvorF:RandomCurse",
+                                            "appliesWhen": "CritWithAttack",
+                                            "chance": 50,
+                                            "descriptionLang": "MODIFIER_DATA_applyRandomCurseOnCrit"
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 99,
@@ -2254,7 +2358,8 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "flatMasteryTokens": 1
+                                        "masteryXP": 5,
+                                        "skillXP": 5
                                     }
                                 },
                                 {
@@ -2266,19 +2371,19 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "masteryXP": 10
+                                        "bypassGlobalPreservationChance": 5
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "skillXP": 10
+                                        "namespace_profile:UpgradeProfileModifiers": 1
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "xpFromMasteryTokens": 1
+                                        "flatMasteryTokens": 1
                                     }
                                 }
                             ]
@@ -2292,6 +2397,7 @@
                             "level": 70,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/plague_doctor.png",
+                                "https://cdn2-main.melvor.net/assets/media/status/poison.svg",
                                 "melvorD:Magic"
                             ],
                             "standardModifiers": [
@@ -2309,21 +2415,45 @@
                                 },
                                 {
                                     "level": 20,
-                                    "modifiers": {
-                                        "magicCritChance": 20
-                                    }
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:Poison",
+                                            "appliesWhen": "HitByFirstAttack",
+                                            "chance": 50,
+                                            "bypassBarrier": true
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 40,
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:Poison",
+                                            "appliesWhen": "StartOfFight",
+                                            "chance": 10,
+                                            "bypassBarrier": true
+                                        }
+                                    ],
                                     "modifiers": {
-                                        "poisonLifesteal": 100
+                                        "poisonLifesteal": 50
                                     }
                                 },
                                 {
                                     "level": 60,
-                                    "modifiers": {
-                                        "magicMinHitBasedOnMaxHitSlayerTask": 20
-                                    }
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:DeadlyPoison",
+                                            "appliesWhen": "StartOfFight",
+                                            "chance": 10,
+                                            "bypassBarrier": true
+                                        },
+                                        {
+                                            "effectID": "melvorF:WeakeningI",
+                                            "appliesWhen": "StartOfFight",
+                                            "chance": 10,
+                                            "bypassBarrier": true
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 80,
@@ -2342,9 +2472,26 @@
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "magicLifesteal": 33
-                                    }
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:DeadlyPoison",
+                                            "appliesWhen": "PostAttack",
+                                            "chance": 10,
+                                            "bypassBarrier": true
+                                        },
+                                        {
+                                            "effectID": "melvorD:Poison",
+                                            "appliesWhen": "PostAttack",
+                                            "chance": 10,
+                                            "bypassBarrier": true
+                                        },
+                                        {
+                                            "effectID": "melvorF:Magic_Enhancement_Superior",
+                                            "appliesWhen": "StartOfFight",
+                                            "chance": 5,
+                                            "bypassBarrier": true
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -2450,29 +2597,41 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "doubleSlayerTaskKillChance": [
-                                            {
-                                                "value": 30
-                                            }
-                                        ]
+                                        "maxHitpoints": 10
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "evasion": 10
+                                        "maxHitBasedOnTargetCurrentHitpoints": [
+                                            {
+                                                "value": 0.1
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 60,
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorD:CurrentHitpointsHeal",
+                                            "appliesWhen": "EvadedAttack",
+                                            "chance": 20
+                                        }
+                                    ],
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageDealtDemon": 30
+                                        "maxHitpointsAgainstDamageType": [
+                                            {
+                                                "damageTypeID": "melvorD:Normal",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageFlatIgnoringResistance": 10
+                                        "lifestealDamageBasedOnCurrentHitpoints": 1
                                     }
                                 },
                                 {
@@ -2504,38 +2663,43 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "magicAttackInterval": 50
+                                        "runePreservationChance": -100
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "magicAccuracyRating": 20
+                                        "magicAccuracyRating": 10
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "magicDamageBonus": 30
+                                        "magicMinHitBasedOnMaxHit": 10
                                     }
                                 },
                                 {
                                     "level": 60,
+                                    
                                     "modifiers": {
-                                        "magicMinHitBasedOnMaxHit": 10
+                                        "magicDamageBonus": 30
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "runePreservationChance": 20
+                                        "magicAttackInterval": -10
                                     }
                                 },
                                 {
                                     "level": 99,
-                                    "modifiers": {
-                                        "bypassRunePreservationChance": 5
-                                    }
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "melvorF:Magic_Enhancement_Superior",
+                                            "appliesWhen": "StartOfFight",
+                                            "chance": 20
+                                        }
+                                    ]
                                 }
                             ]
                         }

@@ -54,10 +54,42 @@ export function YouComponent(profile: Profile) {
         updateModifiers: function () {
             this.modifiers = [];
             if (this.you) {
-                const Ref = profile.actions.allObjects.find(action => action.id === this.you.youId);
-                this.modifiers = profile.manager.getModifiers(Ref);
-                // this.modifiers = profile.manager.getModifiers(this.you.single_species);
+                {
+                    try {
+                        // @ts-ignore 
+                        const profileModifer = game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0
+                        // Need to have a saved state from the start
+                        let difference = 0;
+                        // @ts-ignore 
+                        const savedValue = game?.saveUpdateProfileModifiers || 0
+                        if (savedValue !== profileModifer) {
+                            // Calculate the difference correctly
+                            difference = profileModifer - savedValue;
+                            // @ts-ignore 
+                            game.saveUpdateProfileModifiers = profileModifer;
+                        }
+                        if (difference !== 0) {
+                            game.profile.actions.registeredObjects.forEach(single => {
+                                single.standardModifiers.forEach(modifier => {
+                                    modifier?.modifiers?.forEach(mod => {
+                                        // Update mod.value by the difference
+                                        if (mod.value < 0) {
+                                            mod.value -= difference;
+                                        } else {
+                                            mod.value += difference;
+                                        }
+                                    });
+                                });
+                            });
+                        }
+                    } catch (error) {
+                        console.log(error)
+                    }
+                    const Ref = profile.actions.allObjects.find(action => action.id === this.you.youId);
+                    this.modifiers = profile.manager.getModifiers(Ref);
+                    // this.modifiers = profile.manager.getModifiers(this.you.single_species);
+                }
             }
         }
-    };
+    }
 }

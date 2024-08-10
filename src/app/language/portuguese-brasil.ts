@@ -198,4 +198,6 @@ Single_Species_Naga: 'Naga',
     MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal: "Animal",
     decreasedUpgradeProfileModifiers: "-${value} decreased modifier values in Profile",
     increasedUpgradeProfileModifiers: "+${value} increased modifier values in Profile",
+    MODIFIER_DATA_applyRandomCurseOnCrit: "Chance to apply a random curse on critically hitting",
+    MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",
 }

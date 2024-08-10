@@ -51,7 +51,6 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
         },
         Master: function () {
             profile.Master(single_species);
-            profile.updateModifiers()
         },
         mastery: function () {
             profile.unlockMastery(single_species);
