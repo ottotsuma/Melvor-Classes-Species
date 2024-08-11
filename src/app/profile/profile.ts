@@ -396,51 +396,10 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public updateModifiers(Inital = false) {
         // Triggered on game load, but also on item equip and unequip
         try {
-            // @ts-ignore 
-            const profileModifer = this.game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0
-            if (Inital) { // @ts-ignore
-                this.game.saveUpdateProfileModifiers = profileModifer
-                game.profile.actions.registeredObjects.forEach(single => {
-                    single.standardModifiers.forEach(modifier => {
-                        modifier?.modifiers?.forEach(mod => {
-                            if (mod.value < 0) {
-                                mod.value = mod.value - profileModifer
-                            } else {
-                                mod.value = mod.value + profileModifer
-                            }
-                        })
-                    })
-                });
-            }
-            
-            //  else {
-            //     // Need to have a saved state from the start
-            //     let difference = 0;
-            //     // @ts-ignore 
-            //     const savedValue = this.game?.saveUpdateProfileModifiers || 0
-            //     if (savedValue !== profileModifer) {
-            //         // Calculate the difference correctly
-            //         difference = profileModifer - savedValue;
-            //         // @ts-ignore 
-            //         this.game.saveUpdateProfileModifiers = profileModifer;
-            //     }
-            //     if (difference !== 0) {
-            //         console.log("difference", difference, profileModifer, savedValue)
-            //         game.profile.actions.registeredObjects.forEach(single => {
-            //             single.standardModifiers.forEach(modifier => {
-            //                 modifier?.modifiers?.forEach(mod => {
-            //                     // Update mod.value by the difference
-            //                     if (mod.value < 0) {
-            //                         mod.value -= difference;
-            //                     } else {
-            //                         mod.value += difference;
-            //                     }
-            //                 });
-            //             });
-            //         });
-            //     }
-            // }
-            game.profile.computeProvidedStats(true);
+            this.userInterface.you1.updateModifiers();
+            this.userInterface.you2.updateModifiers();
+            this.computeProvidedStats(true);
+
         } catch (error) {
             console.log('updateModifiers', error)
         }
@@ -448,15 +407,56 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
     public onEquipmentChange() { }
 
+    private profileModifierCalc(modifier: StatObject) {
+        // @ts-ignore 
+        const profileModifier = game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0;
+    
+        const newModifier: StatObject = {
+            ...modifier,
+            // @ts-ignore
+            modifiers: modifier.modifiers ? modifier.modifiers.map(m => {
+                const newMod = { ...m };
+                if (newMod.modifier._localID === 'UpgradeProfileModifiers') {
+                } else if (newMod.value < 1) {
+                    newMod.value -= profileModifier;
+                } else {
+                    newMod.value += profileModifier;
+                }
+                return newMod;
+            }) : undefined,
+    
+            // @ts-ignore
+            combatEffects: modifier.combatEffects ? modifier.combatEffects.map(ce => {
+                // @ts-ignore
+                const newEffect = new CombatEffectApplicator(ce);
+                
+                if (modifier.modifiers?.some(m => m.modifier._localID === 'UpgradeProfileModifiers')) {
+                } else {
+                    if (newEffect.baseChance !== undefined) {
+                        newEffect.baseChance += profileModifier;
+                    }
+                }
+                return newEffect;
+            }) : undefined,
+        };
+    
+        if (newModifier.modifiers) {
+            newModifier.modifiers.forEach(tempMod => {
+                console.log(`After: ${tempMod.modifier._localID}: ${profileModifier} + ${modifier.modifiers.find(m => m.modifier._localID === tempMod.modifier._localID)?.value} = ${tempMod.value}`, profileModifier + (modifier.modifiers.find(m => m.modifier._localID === tempMod.modifier._localID)?.value || 0) === tempMod.value);
+            });
+        }
+        
+        return newModifier;
+    }
+    
+
     public addProvidedStats() {
         // @ts-ignore 
         super.addProvidedStats();
-
         for (const you of this.yous.all()) {
             const modifiers = this.manager.getModifiersForApplication(you.single_species);
-
             for (const modifier of modifiers) {
-                // @ts-ignore 
+                // const profileModifier = this.profileModifierCalc(modifier)
                 this.game.profile.providedStats.addStatObject(you.single_species, modifier);
             }
         }

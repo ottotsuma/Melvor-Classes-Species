@@ -25,7 +25,6 @@ export class ProfileManager {
             let description: any[] = [];
             if (modifier.modifiers) {
                 for (let index = 0; index < modifier.modifiers.length; index++) {
-                    // @ts-ignore 
                     description.push(modifier.modifiers[index].getDescription())
                 }
             }
