@@ -308,6 +308,7 @@
                             "level": 120,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/chicken.png",
+                                "https://cdn2-main.melvor.net/assets/media/misc/blood.svg",
                                 "melvorD:Attack"
                             ],
                             "standardModifiers": [
@@ -466,7 +467,7 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "meleeCritChance": 25
+                                        "allowAttackAugmentingMagic": 1
                                     }
                                 },
                                 {
@@ -478,24 +479,19 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "flatResistanceWithActivePrayer": [
-                                            {
-                                                "damageTypeID": "melvorD:Normal",
-                                                "value": 5
-                                            }
-                                        ]
+                                        "flatPrayerPointsPerMonsterKill": 1
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "magicMaxHitWithActivePrayer": 40
+                                        "magicMaxHitWithActivePrayer": 20
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "allowAttackAugmentingMagic": 1
+                                        "maxHitBasedOnPrayerCost": 10
                                     }
                                 }
                             ]
@@ -521,32 +517,24 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "cantEvade": 1
-                                    }
+                                        "maxHit": -50
+                                    },
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "namespace_profile:Self_Apply_Animal_Trait",
+                                            "chance": 30,
+                                            "appliesWhen": "StartOfFight"
+                                        }
+                                    ]
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
                                         "summoningAttackInterval": [
                                             {
-                                                "value": 15
+                                                "value": -15
                                             }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "level": 40,
-                                    "modifiers": {
-                                        "summoningAttackLifesteal": [
-                                            {
-                                                "value": 15
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "level": 60,
-                                    "modifiers": {
+                                        ],
                                         "summoningMaxHit": [
                                             {
                                                 "value": 10
@@ -555,9 +543,28 @@
                                     }
                                 },
                                 {
-                                    "level": 80,
+                                    "level": 40,
                                     "modifiers": {
-                                        "customModifiersInMelvor:damageTakenAnimal": -40
+                                        "customModifiersInMelvor:damageTakenAnimal": -20
+                                    },
+                                    "combatEffects": [
+                                        {
+                                            "effectID": "namespace_profile:I_Apply_Animal_Trait",
+                                            "chance": 30,
+                                            "appliesWhen": "StartOfFight"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 60,
+                                    "enemyModifiers": {
+                                        "damageTaken": 20
+                                    }
+                                },
+                                {
+                                    "level": 80,
+                                    "enemyModifiers": {
+                                        "attackInterval": 15
                                     }
                                 },
                                 {
@@ -581,7 +588,6 @@
                             "level": 110,
                             "skills": [
                                 "https://pngimg.com/uploads/viking/viking_PNG26.png",
-                                "melvorD:Strength",
                                 "melvorD:Hitpoints"
                             ],
                             "standardModifiers": [
@@ -594,13 +600,13 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "magicEvasion": -100
+                                        "cantEvade": 1
                                     }
                                 },
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "meleeEvasion": 10
+                                        "maxHitpoints": 20
                                     }
                                 },
                                 {
@@ -668,19 +674,19 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "potionChargePreservationChance": 10
+                                        "potionChargePreservationChance": 50
                                     }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "flatPotionCharges": 5
+                                        "flatPotionCharges": 15
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "randomHerblorePotionChance": 10
+                                        "randomHerblorePotionChance": 30
                                     }
                                 },
                                 {
@@ -689,7 +695,7 @@
                                         "flatAdditionalPrimaryProductQuantity": [
                                             {
                                                 "skillID": "melvorD:Herblore",
-                                                "value": 6
+                                                "value": 2
                                             }
                                         ]
                                     }
@@ -697,9 +703,10 @@
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "townshipResourceProduction": [
+                                        "skillCostReduction": [
                                             {
-                                                "value": 100
+                                                "skillID": "melvorD:Herblore",
+                                                "value": 50
                                             }
                                         ]
                                     }
@@ -715,6 +722,7 @@
                             "level": 120,
                             "skills": [
                                 "https://i.pinimg.com/originals/df/69/95/df69950bc011ab119f7cd70b39cc5329.png",
+                                "melvorD:Township",
                                 "namespace_profile:Profile"
                             ],
                             "standardModifiers": [
@@ -738,37 +746,37 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "namespace_profile:UpgradeProfileModifiers": 10
-                                    },
-                                    "combatEffects": [
-                                        {
-                                            "effectID": "melvorTotH:Leviathan",
-                                            "appliesWhen": "StartOfFight"
-                                        }
-                                    ]
+                                        "townshipBuildingCost": -10,
+                                        "townshipTraderStock": 10,
+                                        "townshipTraderCost": -10
+                                    }
                                 },
                                 {
                                     "level": 40,
                                     "modifiers": {
-                                        "damageDealtToAllMonsters": 50
+                                        "flatTownshipPopulation": 100,
+                                        "flatTownshipEducation": 10
                                     }
                                 },
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "flatTownshipHappiness": 100
+                                        "flatTownshipHappiness": 100,
+                                        "townshipRepairCost": -25
                                     }
                                 },
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "bypassAllSlayerItems": 1
+                                        "townshipResourceProduction": 10,
+                                        "townshipMaxStorage": 10
                                     }
                                 },
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "cleansed": 1
+                                        "townshipTaxPerCitizen": 10,
+                                        "townshipGPProduction": 10
                                     }
                                 }
                             ]

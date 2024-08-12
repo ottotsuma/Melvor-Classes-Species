@@ -1,7 +1,10 @@
 import { ModifierType } from './settings';
 
 export interface YouModifier {
-    description: any[];
+    description: {
+        description: string;
+        isNegative: boolean;
+    }[];
     isActive: boolean;
     level: number;
 }

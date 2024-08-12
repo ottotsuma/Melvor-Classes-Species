@@ -206,5 +206,5 @@ export const ja = {
     "decreasedUpgradeProfileModifiers": "-${value} プロファイルの修正値減少",
     "increasedUpgradeProfileModifiers": "+${value} プロファイルの修正値増加",
     MODIFIER_DATA_applyRandomCurseOnCrit: "Chance to apply a random curse on critically hitting",
-    MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",
+    MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",    CurrentHitpointsHeal: `Attacker has a 20% chance to heal for 20% of Attackers current hitpoints`
 };

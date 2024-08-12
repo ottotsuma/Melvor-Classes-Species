@@ -13,34 +13,65 @@ export class ProfileManager {
     public get essenceOfProfileIcon() {
         return this.game.items.getObjectByID('namespace_profile:Profile_Token')?.media;
     }
-
+    // static getDescriptions(statObject, negMult=1, posMult=1, includeZero=true) {
+    //     const descriptions = [];
+    //     if (statObject.modifiers !== undefined) {
+    //         statObject.modifiers.forEach((modValue)=>{
+    //             if (this.showDescription(modValue.isNegative, negMult, posMult, includeZero))
+    //                 descriptions.push(modValue.print(negMult, posMult));
+    //         }
+    //         );
+    //     }
+    //     if (statObject.combatEffects !== undefined) {
+    //         statObject.combatEffects.forEach((applicator)=>{
+    //             const desc = applicator.getDescription(negMult, posMult);
+    //             if (desc !== undefined && this.showDescription(applicator.isNegative, negMult, posMult, includeZero)) {
+    //                 descriptions.push(desc);
+    //             }
+    //         }
+    //         );
+    //     }
+    //     if (statObject.conditionalModifiers !== undefined) {
+    //         statObject.conditionalModifiers.forEach((conditional)=>{
+    //             const desc = conditional.getDescription(negMult, posMult);
+    //             if (desc !== undefined && this.showDescription(conditional.isNegative, negMult, posMult, includeZero))
+    //                 descriptions.push(desc);
+    //         }
+    //         );
+    //     }
+    //     if (statObject.enemyModifiers !== undefined) {
+    //         statObject.enemyModifiers.forEach((modValue,id)=>{
+    //             if (this.showDescription(!modValue.isNegative, negMult, posMult, includeZero))
+    //                 descriptions.push(modValue.printEnemy(posMult, negMult, 2, id === 0));
+    //         }
+    //         );
+    //     }
+    //     return descriptions;
+    // }
+    // static showDescription(isNegative, negMult, posMult, includeZero) {
+    //     return includeZero || !(isNegative ? negMult === 0 : posMult === 0);
+    // }
     constructor(private readonly profile: Profile, private readonly game: Game) { }
-
-    /** Gets modifier metadata. */
     public getModifiers(single_species: Single_Species) {
         if (!single_species.id) {
             return [] as YouModifier[];
         }
         return single_species.modifiers(this.profile.settings.modifierType).map(modifier => {
-            let description: any[] = [];
-            if (modifier.modifiers) {
-                for (let index = 0; index < modifier.modifiers.length; index++) {
-                    description.push(modifier.modifiers[index].getDescription())
+            let description: {
+                description: string;
+                isNegative: boolean;
+            }[] = [];
+            const Part1:StatDescription[] = StatObject.getDescriptions(modifier)
+            for (let index = 0; index < Part1.length; index++) {
+                const Part2: {
+                    description: string;
+                    isNegative: boolean;
+                } = {
+                    description: Part1[index].text,
+                    isNegative: Part1[index].isNegative,
                 }
+                description.push(Part2)
             }
-            if (modifier.combatEffects) {
-                for (let index = 0; index < modifier.combatEffects.length; index++) {
-                    // @ts-ignore 
-                    const obj1 = modifier.combatEffects[index].getDescription()
-                    // @ts-ignore 
-                    obj1.description = obj1.text
-                    description.push(obj1)
-                }
-            }
-            if (!modifier.modifiers && !modifier.combatEffects) {
-                console.log('Nothing here: ', modifier)
-            }
-
             return {
                 description,
                 isActive: this.isModifierActive(single_species, modifier),

@@ -178,13 +178,13 @@
                         "scopes": {},
                         "descriptions": [
                             {
-                                "text": "-${value} decreased modifier values in Profile",
+                                "text": "-${value} decreased chance to gain profile tokens",
                                 "lang": "Profile_decreasedUpgradeProfileModifiers",
                                 "below": 0,
                                 "includeSign": false
                             },
                             {
-                                "text": "+${value} increased modifier values in Profile",
+                                "text": "+${value} increased chance to gain profile tokens",
                                 "lang": "Profile_increasedUpgradeProfileModifiers",
                                 "above": 0,
                                 "includeSign": false
@@ -208,6 +208,11 @@
             {
                 "id": "I_Apply_Animal_Trait",
                 "templateID": "customModifiersInMelvor:Animal_Trait_Static_Non_Counting_Effect_Base"
+            },
+            {
+                "id": "Self_Apply_Animal_Trait",
+                "templateID": "customModifiersInMelvor:Animal_Trait_Static_Non_Counting_Effect_Base",
+                "target": "Self"
             }
         ],
         "combatPassives": [
@@ -453,6 +458,67 @@
             }
         ],
         "items": [
+            {
+                "id": "test_object",
+                "name": "test_object",
+                "category": "Combat",
+                "type": "Helmet",
+                "media": "assets/mastery-token.png",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 0,
+                "tier": "none",
+                "validSlots": [
+                    "Helmet"
+                ],
+                "occupiesSlots": [],
+                "equipRequirements": [],
+                "equipmentStats": [
+                    {
+                        "key": "meleeDefenceBonus",
+                        "value": 20
+                    },
+                    {
+                        "key": "rangedDefenceBonus",
+                        "value": 20
+                    },
+                    {
+                        "key": "magicDefenceBonus",
+                        "value": 20
+                    },
+                    {
+                        "key": "resistance",
+                        "damageType": "melvorD:Normal",
+                        "value": 4
+                    }
+                ],
+                "modifiers": {                    
+                    "offItemChance": 10
+                },
+                "combatEffects": [{
+                    "effectID":"melvorF:Absorbing_Shield",
+                    "appliesWhen":"BeingAttacked"
+                }],
+                "enemyModifiers":{
+                    "cleansed": 1,
+                    "rebirthChance":10
+                },
+                "conditionalModifiers": [{
+                    "modifiers":{
+                        "smallArtefactValue":[{
+                            "value": 1
+                        }]
+                    },
+                    "condition":{
+                        "character": "Player",
+                        "value": 10,
+                        "operator":"<",
+                        "type": "Hitpoints"
+                    }                    
+                }],
+                "itemType": "Equipment"
+            },
             {
                 "id": "Mastery_Token_Profile",
                 "name": "Mastery Token (Profile)",
@@ -2680,7 +2746,6 @@
                                 },
                                 {
                                     "level": 60,
-                                    
                                     "modifiers": {
                                         "magicDamageBonus": 30
                                     }

@@ -195,8 +195,8 @@ export const zhTW = {
     Profile_Profile_Single_Species_Pokemon: 'Pokemon Trainer',
     Profile_Single_Species_Pokemon: 'Pokemon Trainer',
     MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal: "Animal",
-    decreasedUpgradeProfileModifiers: "-${value} decreased modifier values in Profile",
-    increasedUpgradeProfileModifiers: "+${value} increased modifier values in Profile",
+    decreasedUpgradeProfileModifiers: "-${value} decreased chance to gain profile tokens",
+    increasedUpgradeProfileModifiers: "+${value} increased chance to gain profile tokens",
     MODIFIER_DATA_applyRandomCurseOnCrit: "Chance to apply a random curse on critically hitting",
-    MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",
+    MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",    CurrentHitpointsHeal: `Attacker has a 20% chance to heal for 20% of Attackers current hitpoints`
 }

@@ -871,7 +871,7 @@ export class App {
             if (tes) {
                 await this.context.gameData.addPackage('tes.json');
             }
-            if(necromancy) {
+            if (necromancy) {
                 await this.context.gameData.addPackage('necromancy.json');
             }
             await this.initGamemodes();
@@ -1188,9 +1188,11 @@ export class App {
                     return true
                 }
             }
-            if (rollPercentage(0.1)) {
+            // @ts-ignore 
+            const profileModifier = game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0;
+            if (rollPercentage(0.1 + (profileModifier/10))) {
                 game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true);
-            } else if (rollPercentage(0.01)) {
+            } else if (rollPercentage(0.01 + (profileModifier/100))) {
                 game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true);
             }
             const chosen_species = game.profile.yous.get(1) // human
@@ -1249,7 +1251,7 @@ export class App {
             }
             // Generic Species
             const allSkills: AnySkill[] = []
-            game.skills.registeredObjects.forEach(skill => allSkills.push(skill))            
+            game.skills.registeredObjects.forEach(skill => allSkills.push(skill))
             if (SkillsMatch(chosen_species.single_species.skills, [game.skills.getObjectByID("namespace_profile:Profile")]) || SkillsMatch(chosen_species.single_species.skills, allSkills)) {
                 game.profile.addXP(skillExp1, game.profile)
                 game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
