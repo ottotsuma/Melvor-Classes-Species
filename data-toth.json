@@ -117,7 +117,7 @@
                                         "skillInterval": [
                                             {
                                                 "skillID": "melvorD:Smithing",
-                                                "value": 5
+                                                "value": -5
                                             }
                                         ]
                                     }
@@ -145,7 +145,7 @@
                                         "skillInterval": [
                                             {
                                                 "skillID": "melvorD:Smithing",
-                                                "value": 10
+                                                "value": -10
                                             }
                                         ]
                                     }
