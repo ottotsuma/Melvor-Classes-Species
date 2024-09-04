@@ -237,6 +237,88 @@
             }
           ]
         }
+      },
+      {
+          "skillID": "melvorD:Thieving",
+          "data": {
+              "rareDrops": [
+                  {
+                      "itemID":"tes:gold_coin",
+                      "chance":{
+                          "baseChance": 0,
+                          "maxChance": 10,
+                          "type": "LevelScaling",
+                          "scalingFactor": 0.00000004
+                      },
+                      "quantity": 1,
+                      "requirements": [{
+                          "skillID":"namespace_profile:Profile",
+                          "level": 5,
+                          "type": "SkillLevel"
+                      }]
+                  },
+                  {
+                    "itemID":"tes:Lockpick",
+                    "chance":{
+                        "baseChance": 0,
+                        "maxChance": 10,
+                        "type": "LevelScaling",
+                        "scalingFactor": 0.00000004
+                    },
+                    "quantity": 1,
+                    "requirements": [{
+                        "skillID":"namespace_profile:Profile",
+                        "level": 5,
+                        "type": "SkillLevel"
+                    }]
+                },
+                {
+                  "itemID":"tes:ElsweyrSpicedTea",
+                  "chance":{
+                      "baseChance": 0,
+                      "maxChance": 10,
+                      "type": "LevelScaling",
+                      "scalingFactor": 0.00000004
+                  },
+                  "quantity": 1,
+                  "requirements": [{
+                      "skillID":"namespace_profile:Profile",
+                      "level": 5,
+                      "type": "SkillLevel"
+                  }]
+              },
+              {
+                "itemID": "tes:Soul_Gem",
+                "chance":{
+                    "baseChance": 0,
+                    "maxChance": 10,
+                    "type": "LevelScaling",
+                    "scalingFactor": 0.00000004
+                },
+                "quantity": 1,
+                "requirements": [{
+                    "skillID":"namespace_profile:Profile",
+                    "level": 5,
+                    "type": "SkillLevel"
+                }]
+            },
+            {
+              "itemID":"tes:Sweetroll",
+              "chance":{
+                  "baseChance": 0,
+                  "maxChance": 10,
+                  "type": "LevelScaling",
+                  "scalingFactor": 0.00000004
+              },
+              "quantity": 1,
+              "requirements": [{
+                  "skillID":"namespace_profile:Profile",
+                  "level": 5,
+                  "type": "SkillLevel"
+              }]
+          }
+              ]
+          }
       }
     ]
   }

@@ -494,14 +494,7 @@
                     }
                 ],
                 "modifiers": {                    
-                    "offItemChance": 10,
-                    "randomProductChance": [
-                      {
-                        "skillID": "melvorD:Thieving",
-                        "itemID": "tes:gold_coin",
-                        "value": 1
-                      }
-                    ]
+                    "offItemChance": 10
                 },
                 "combatEffects": [{
                     "effectID":"melvorF:Absorbing_Shield",
