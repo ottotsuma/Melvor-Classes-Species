@@ -1327,6 +1327,52 @@ export class App {
                 return new ProfileActionEventMatcher(data, this.game) as any;
             }
         });
+        this.context.patch(Thieving, 'postAction').after(() => {
+            this.game.items.allObjects.forEach(item => {
+                const Theiving = this.game.skills.getObjectByID('melvorD:Thieving')
+                const query = Theiving.getItemModifierQuery(item)
+                let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
+                if(chance > 0) {
+                    let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
+                    quantity = Math.max(quantity, 1);
+                    chance = clampValue(chance, 0, 100);
+                    if (rollPercentage(chance)) {
+                        game.bank.addItem(item, quantity, true, true, false, true);
+                    }
+                }
+            })
+        });
+
+        this.context.patch(Fishing, 'postAction').after(() => {
+            this.game.items.allObjects.forEach(item => {
+                const Theiving = this.game.skills.getObjectByID('melvorD:Fishing')
+                const query = Theiving.getItemModifierQuery(item)
+                let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
+                if(chance > 0) {
+                    let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
+                    quantity = Math.max(quantity, 1);
+                    chance = clampValue(chance, 0, 100);
+                    if (rollPercentage(chance)) {
+                        game.bank.addItem(item, quantity, true, true, false, true);
+                    }
+                }
+            })
+        });
+        this.context.patch(Mining, 'postAction').after(() => {
+            this.game.items.allObjects.forEach(item => {
+                const Theiving = this.game.skills.getObjectByID('melvorD:Mining')
+                const query = Theiving.getItemModifierQuery(item)
+                let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
+                if(chance > 0) {
+                    let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
+                    quantity = Math.max(quantity, 1);
+                    chance = clampValue(chance, 0, 100);
+                    if (rollPercentage(chance)) {
+                        game.bank.addItem(item, quantity, true, true, false, true);
+                    }
+                }
+            })
+        });
     }
 
     // private patchGamemodes(profile: Profile) {
