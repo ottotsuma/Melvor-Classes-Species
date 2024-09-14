@@ -596,11 +596,18 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             if (!element) {
                 return;
             }
-
-            if (this.level >= single_species.level) {
-                showElement(element);
+            if(single_species.abyssalLevel > 0) {
+                if (this._abyssalLevel >= single_species.abyssalLevel) {
+                    showElement(element);
+                } else {
+                    hideElement(element);
+                }
             } else {
-                hideElement(element);
+                if (this.level >= single_species.level) {
+                    showElement(element);
+                } else {
+                    hideElement(element);
+                }
             }
         }
 
