@@ -1181,110 +1181,188 @@ export class App {
 
     private patchEventManager() {
         function addMasteryXP() {
-            function SkillsMatch(ClassArray: string[], ActiveSkills: AnySkill[]) {
-                const classesArray: AnySkill[] = []
-                ClassArray.forEach(skill => classesArray.push(game.skills.getObjectByID(skill)))
-                if (classesArray.some(item => ActiveSkills.includes(item))) {
-                    return true
+            function SkillsMatch(ClassArray: string[], ActiveSkills: AnySkill[]): boolean {
+                if(Array.isArray(ClassArray)) {
+                    if(ClassArray.map(skill => game.skills.registeredObjects.has(skill))) {
+                        // Case where no skills in list exsist.
+                        return true
+                    } else {
+                        const classesArray: AnySkill[] = ClassArray.map(skill => game.skills.getObjectByID(skill));
+                        return classesArray.some(item => ActiveSkills.includes(item));
+                    }
+                } else {
+                    return false
                 }
             }
-            // @ts-ignore 
+        
+            function addXPAndMastery(speciesOrClass: any, skillExp: number, totalMasteryExp: number, totalAbyssXP: number) {
+                if (speciesOrClass.single_species.abyssalLevel > 0) {
+                    // console.log(`Adding Abyssal XP: ${totalAbyssXP} for ${speciesOrClass.single_species._localID} with Abyssal Level: ${speciesOrClass.single_species.abyssalLevel}`);
+                    game.profile.addAbyssalXP(totalAbyssXP, game.profile);
+                    game.profile.addMasteryXP(speciesOrClass.single_species, totalAbyssXP);
+                    game.profile.addMasteryPoolXP(game.realms.getObjectByID('melvorItA:Abyssal'), totalAbyssXP);
+                } else {
+                    game.profile.addXP(skillExp, game.profile);
+                    game.profile.addMasteryXP(speciesOrClass.single_species, totalMasteryExp);
+                    game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp);
+                }
+            }
+        
+            // @ts-ignore
             const profileModifier = game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0;
-            if (rollPercentage(0.1 + (profileModifier/10))) {
+            if (rollPercentage(0.1 + (profileModifier / 10))) {
                 game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true);
-            } else if (rollPercentage(0.01 + (profileModifier/100))) {
+            } else if (rollPercentage(0.01 + (profileModifier / 100))) {
                 game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true);
             }
-            const chosen_species = game.profile.yous.get(1) // human
-            const chosen_class = game.profile.yous.get(2) // knight
-            const profileLevel = game.profile._level
-            let exp1 = 0
-            if (chosen_species) {
-                exp1 = Math.floor(chosen_species.single_species.baseExperience) || 0
-            }
-
-            let exp2 = 0
-            if (chosen_class) {
-                exp2 = Math.floor(chosen_class.single_species.baseExperience) || 0
-            }
-
-            let skillExp1 = exp1 || 0
-            let masteryExp1 = exp1 || 0
-
-            let skillExp2 = exp2 || 0
-            let masteryExp2 = exp2 || 0
-
+        
+            const chosen_species = game.profile.yous.get(1); // human
+            const chosen_class = game.profile.yous.get(2); // knight
+            const profileLevel = game.profile._level;
+        
+            const getExperience = (entity: any) => {
+                let exp = 0, abyss_xp = 0;
+                if (entity) {
+                    exp = Math.floor(entity.single_species.baseExperience) || 0;
+                    if (entity.single_species.baseAbyssalExperience) {
+                        abyss_xp = Math.floor(entity.single_species.baseAbyssalExperience) || 0;
+                    }
+                }
+                return { exp, abyss_xp };
+            };
+        
+            const { exp: exp1, abyss_xp: species_abyss_xp } = getExperience(chosen_species);
+            const { exp: exp2, abyss_xp: class_abyss_exp } = getExperience(chosen_class);
             // @ts-ignore
-            const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {})
-
-            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
-            const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) + profileLevel || 0
-
-            // Add xp while in combat
-            // if ((chosen_species || chosen_class) && game?.combat?.isActive) {
-            //     const combatLevel = game?.combat?.enemy?.monster?.combatLevel || 1
-            //     //@ts-ignore both
-            //     const globalEXPmod = game.modifiers.getValue("skillXP", {})
-            //     // Calculate the base XP
-            //     const baseExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0;
-
-            //     // Scale the XP based on combat level
-            //     const scaledExp = baseExp * (combatLevel / 100);
-
-            //     // Ensure the XP is not less than a minimum value
-            //     const totalExp = Math.max(scaledExp, 1);
-            //     game.profile.addXP(totalExp, game.profile)
-            //     game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1 + totalMasteryExp2)
-            // }
-
-            // Burying bones species
-            if (SkillsMatch(chosen_species.single_species.skills, [game.skills.getObjectByID('melvorD:Prayer')])) {
-                game.profile.addXP(skillExp1, game.profile)
-                game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
-            }
-            // Burying bones class
-            if (SkillsMatch(chosen_class.single_species.skills, [game.skills.getObjectByID('melvorD:Prayer')])) {
-                game.profile.addXP(skillExp2, game.profile)
-                game.profile.addMasteryXP(chosen_class.single_species, totalMasteryExp2)
-                game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp2)
-            }
-            // Generic Species
-            const allSkills: AnySkill[] = []
-            game.skills.registeredObjects.forEach(skill => allSkills.push(skill))
-            if (SkillsMatch(chosen_species.single_species.skills, [game.skills.getObjectByID("namespace_profile:Profile")]) || SkillsMatch(chosen_species.single_species.skills, allSkills)) {
-                game.profile.addXP(skillExp1, game.profile)
-                game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
-            }
-            // Generic class
-            if (SkillsMatch(chosen_class.single_species.skills, [game.skills.getObjectByID("namespace_profile:Profile")]) || SkillsMatch(chosen_class.single_species.skills, allSkills)) {
-                game.profile.addXP(skillExp2, game.profile)
-                game.profile.addMasteryXP(chosen_class.single_species, totalMasteryExp2)
-                game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp2)
-            }
-            // Add xp
+            const globalAbyssEXPmod = game.modifiers.getValue("abyssalSkillXP", {});
+            const species_totalAbyssXP = species_abyss_xp + ((species_abyss_xp / 100) * globalAbyssEXPmod) || 0;
+            const class_totalAbyssXP = class_abyss_exp + ((class_abyss_exp / 100) * globalAbyssEXPmod) || 0;
+            // @ts-ignore
+            const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {});
+            const totalMasteryExp1 = exp1 + ((exp1 / 100) * globalMasteryEXPmod) + profileLevel || 0;
+            const totalMasteryExp2 = exp2 + ((exp2 / 100) * globalMasteryEXPmod) + profileLevel || 0;
+        
+            const allSkills: AnySkill[] = Array.from(game.skills.registeredObjects.values());
+        
+            const handleSkillMatch = (entity: any, skillExp: number, totalMasteryExp: number, totalAbyssXP: number) => {
+                if(entity && entity.single_species) {
+                    if (SkillsMatch(entity.single_species.skills, [game.skills.getObjectByID('melvorD:Prayer')])) {
+                        addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
+                    }
+                    if (SkillsMatch(entity.single_species.skills, [game.skills.getObjectByID("namespace_profile:Profile")]) || SkillsMatch(entity.single_species.skills, allSkills)) {
+                        addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
+                    }
+                }
+            };
+        
+            handleSkillMatch(chosen_species, exp1, totalMasteryExp1, species_totalAbyssXP);
+            handleSkillMatch(chosen_class, exp2, totalMasteryExp2, class_totalAbyssXP);
+        
             if ((chosen_species || chosen_class) && game?.activeAction?.activeSkills) {
-                if (chosen_species && SkillsMatch(chosen_species.single_species.skills, game.activeAction.activeSkills)) {
-                    game.profile.addMasteryXP(chosen_species.single_species, totalMasteryExp1)
-                    game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp1)
-
-                    //@ts-ignore species
-                    const globalEXPmod = game.modifiers.getValue("skillXP", {})
-                    const totalExp = skillExp1 + (((skillExp1) / 100) * globalEXPmod) || 0
-                    game.profile.addXP(totalExp, game.profile)
-                }
-                if (chosen_class && SkillsMatch(chosen_class.single_species.skills, game.activeAction.activeSkills)) {
-                    game.profile.addMasteryXP(chosen_class.single_species, totalMasteryExp2)
-                    game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp2)
-
-                    //@ts-ignore class
-                    const globalEXPmod = game.modifiers.getValue("skillXP", {})
-                    const totalExp = skillExp2 + (((skillExp2) / 100) * globalEXPmod) || 0
-                    game.profile.addXP(totalExp, game.profile)
-                }
+                // @ts-ignore
+                const globalEXPmod = game.modifiers.getValue("skillXP", {});
+                const handleActiveSkills = (entity: any, skillExp: number, totalMasteryExp: number, totalAbyssXP: number) => {
+                    if (SkillsMatch(entity && entity.single_species && entity.single_species.skills, game.activeAction.activeSkills)) {
+                        if (entity.single_species.abyssalLevel > 0) {
+                            game.profile.addAbyssalXP(totalAbyssXP, game.profile);
+                            game.profile.addMasteryXP(entity.single_species, totalAbyssXP);
+                            game.profile.addMasteryPoolXP(game.realms.getObjectByID('melvorItA:Abyssal'), totalAbyssXP);
+                        } else {
+                            game.profile.addMasteryXP(entity.single_species, totalMasteryExp);
+                            game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp);
+                            const totalExp = skillExp + ((skillExp / 100) * globalEXPmod) || 0;
+                            game.profile.addXP(totalExp, game.profile);
+                        }
+                    }
+                };
+        
+                handleActiveSkills(chosen_species, exp1, totalMasteryExp1, species_totalAbyssXP);
+                handleActiveSkills(chosen_class, exp2, totalMasteryExp2, class_totalAbyssXP);
             }
         }
+        // function addMasteryXP() {
+        //     function SkillsMatch(ClassArray: string[], ActiveSkills: AnySkill[]): boolean {
+        //         const classesArray: AnySkill[] = ClassArray.map(skill => game.skills.getObjectByID(skill));
+        //         return classesArray.some(item => ActiveSkills.includes(item));
+        //     }
+
+        //     function addXPAndMastery(speciesOrClass: any, skillExp: number, totalMasteryExp: number, totalAbyssXP: number) {
+        //         if (speciesOrClass.single_species.abyssalLevel > 0) {
+        //             game.profile.addAbyssalXP(totalAbyssXP, game.profile);
+        //         } else {
+        //             game.profile.addXP(skillExp, game.profile);
+        //             game.profile.addMasteryXP(speciesOrClass.single_species, totalMasteryExp);
+        //             game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp);
+        //         }
+        //     }
+        //     // @ts-ignore
+        //     const profileModifier = game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0;
+        //     if (rollPercentage(0.1 + (profileModifier / 10))) {
+        //         game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true);
+        //     } else if (rollPercentage(0.01 + (profileModifier / 100))) {
+        //         game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true);
+        //     }
+
+        //     const chosen_species = game.profile.yous.get(1); // human
+        //     const chosen_class = game.profile.yous.get(2); // knight
+        //     const profileLevel = game.profile._level;
+
+        //     const getExperience = (entity: any) => {
+        //         let exp = 0, abyss_xp = 0;
+        //         if (entity) {
+        //             exp = Math.floor(entity.single_species.baseExperience) || 0;
+        //             if (entity.single_species.baseAbyssalExperience) {
+        //                 abyss_xp = Math.floor(entity.single_species.baseAbyssalExperience) || 0;
+        //             }
+        //         }
+        //         return { exp, abyss_xp };
+        //     };
+
+        //     const { exp: exp1, abyss_xp: species_abyss_xp } = getExperience(chosen_species);
+        //     const { exp: exp2, abyss_xp: class_abyss_exp } = getExperience(chosen_class);
+        //     // @ts-ignore
+        //     const globalAbyssEXPmod = game.modifiers.getValue("abyssalSkillXP", {});
+        //     const class_totalAbyssXP = species_abyss_xp + ((species_abyss_xp / 100) * globalAbyssEXPmod) || 0;
+        //     const species_totalAbyssXP = class_abyss_exp + ((class_abyss_exp / 100) * globalAbyssEXPmod) || 0;
+        //     // @ts-ignore
+        //     const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {});
+        //     const totalMasteryExp1 = exp1 + ((exp1 / 100) * globalMasteryEXPmod) + profileLevel || 0;
+        //     const totalMasteryExp2 = exp2 + ((exp2 / 100) * globalMasteryEXPmod) + profileLevel || 0;
+
+        //     const allSkills: AnySkill[] = Array.from(game.skills.registeredObjects.values());
+
+        //     const handleSkillMatch = (entity: any, skillExp: number, totalMasteryExp: number, totalAbyssXP: number) => {
+        //         if (SkillsMatch(entity.single_species.skills, [game.skills.getObjectByID('melvorD:Prayer')])) {
+        //             addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
+        //         }
+        //         if (SkillsMatch(entity.single_species.skills, [game.skills.getObjectByID("namespace_profile:Profile")]) || SkillsMatch(entity.single_species.skills, allSkills)) {
+        //             addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
+        //         }
+        //     };
+
+        //     handleSkillMatch(chosen_species, exp1, totalMasteryExp1, species_totalAbyssXP);
+        //     handleSkillMatch(chosen_class, exp2, totalMasteryExp2, class_totalAbyssXP);
+
+        //     if ((chosen_species || chosen_class) && game?.activeAction?.activeSkills) {
+        //         // @ts-ignore
+        //         const globalEXPmod = game.modifiers.getValue("skillXP", {});
+        //         const handleActiveSkills = (entity: any, skillExp: number, totalMasteryExp: number, totalAbyssXP: number) => {
+        //             if (SkillsMatch(entity.single_species.skills, game.activeAction.activeSkills)) {
+        //                 if (entity.single_species.abyssalLevel > 0) {
+        //                     game.profile.addAbyssalXP(totalAbyssXP, game.profile);
+        //                 } else {
+        //                     game.profile.addMasteryXP(entity.single_species, totalMasteryExp);
+        //                     game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp);
+        //                     const totalExp = skillExp + ((skillExp / 100) * globalEXPmod) || 0;
+        //                     game.profile.addXP(totalExp, game.profile);
+        //                 }
+        //             }
+        //         };
+
+        //         handleActiveSkills(chosen_species, exp1, totalMasteryExp1, species_totalAbyssXP);
+        //         handleActiveSkills(chosen_class, exp2, totalMasteryExp2, class_totalAbyssXP);
+        //     }
+        // }
         this.context.patch(CombatManager, "onEnemyDeath").after(() => {
             try {
                 addMasteryXP()
@@ -1332,7 +1410,7 @@ export class App {
                 const Theiving = this.game.skills.getObjectByID('melvorD:Thieving')
                 const query = Theiving.getItemModifierQuery(item)
                 let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
-                if(chance > 0) {
+                if (chance > 0) {
                     let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
                     quantity = Math.max(quantity, 1);
                     chance = clampValue(chance, 0, 100);
@@ -1348,7 +1426,7 @@ export class App {
                 const Theiving = this.game.skills.getObjectByID('melvorD:Fishing')
                 const query = Theiving.getItemModifierQuery(item)
                 let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
-                if(chance > 0) {
+                if (chance > 0) {
                     let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
                     quantity = Math.max(quantity, 1);
                     chance = clampValue(chance, 0, 100);
@@ -1363,7 +1441,7 @@ export class App {
                 const Theiving = this.game.skills.getObjectByID('melvorD:Mining')
                 const query = Theiving.getItemModifierQuery(item)
                 let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
-                if(chance > 0) {
+                if (chance > 0) {
                     let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
                     quantity = Math.max(quantity, 1);
                     chance = clampValue(chance, 0, 100);
@@ -1412,7 +1490,9 @@ export class App {
             if (cloudManager.hasTotHEntitlementAndIsEnabled) {
                 levelCapIncreases.push(...['namespace_profile:Post99Dungeons', 'namespace_profile:ThroneOfTheHeraldSet120']);
             }
-
+            if (cloudManager.hasItAEntitlementAndIsEnabled) {
+                await this.context.gameData.addPackage("abyss.json");
+            }
             const gamemodes = this.game.gamemodes.filter(gamemode => gamemode.allowAncientRelicDrops);
 
             await this.context.gameData.addPackage({

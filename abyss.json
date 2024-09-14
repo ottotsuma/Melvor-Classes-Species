@@ -1,0 +1,898 @@
+{
+  "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+  "namespace": "namespace_profile",
+  "data": {
+    "skillData": [
+      {
+        "skillID": "namespace_profile:Profile",
+        "data": {
+          "abyssalLevelRealm": "melvorItA:Abyssal",
+          "hasAbyssalLevels": true,
+          "standardLevelRealm": "melvorD:Melvor",
+          "masteryPoolBonuses": [
+            {
+              "realm": "melvorItA:Abyssal",
+              "percent": 10,
+              "modifiers": {
+                "abyssalSkillXP": 3
+              }
+            },
+            {
+              "realm": "melvorItA:Abyssal",
+              "modifiers": {
+                "masteryXP": [
+                  {
+                    "realmID": "melvorItA:Abyssal",
+                    "value": 3
+                  }
+                ]
+              },
+              "percent": 25
+            },
+            {
+              "realm": "melvorItA:Abyssal",
+              "modifiers": {
+                "skillInterval": [
+                  {
+                    "realmID": "melvorItA:Abyssal",
+                    "value": -3
+                  }
+                ]
+              },
+              "percent": 50
+            },
+            {
+              "realm": "melvorItA:Abyssal",
+              "modifiers": {
+                "abyssalCombatSkillXP": 3
+              },
+              "percent": 95
+            }
+          ],
+          "classes": [
+            {
+              "id": "Abyss",
+              "name": "Abyss",
+              "media": "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png",
+              "baseExperience": 0,
+              "productId": "namespace_profile:Abyss",
+              "level": 1,
+              "abyssalLevel": 1,
+              "baseAbyssalExperience": 150,
+              "realm": "melvorItA:Abyssal",
+              "skills": [
+                "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedDemon": 1
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "abyssalSkillXP": 3
+                  }
+                },
+                {
+                  "level": 20,
+                  "modifiers": {
+                    "masteryXP": [
+                      {
+                        "realmID": "melvorItA:Abyssal",
+                        "value": 3
+                      }
+                    ]
+                  }
+                },
+                {
+                  "level": 40,
+                  "modifiers": {
+                    "skillInterval": [
+                      {
+                        "realmID": "melvorItA:Abyssal",
+                        "value": -3
+                      }
+                    ]
+                  }
+                },
+                {
+                  "level": 60,
+                  "modifiers": {
+                    "abyssalCombatSkillXP": 3
+                  }
+                },
+                {
+                  "level": 80,
+                  "modifiers": {
+                    "flatAbyssalSlayerAreaEffectNegation": [
+                      {
+                        "value": 3
+                      }
+                    ]
+                  }
+                },
+                {
+                  "level": 99,
+                  "modifiers": {
+                    "abyssalPrayerCost": [
+                      {
+                        "value": -1
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "Abyssal_Warden",
+              "name": "Abyssal Warden",
+              "media": "https://cdn2-main.melvor.net/assets/media/monsters/Abyssara.png",
+              "baseExperience": 0,
+              "productId": "namespace_profile:Abyssal_Warden",
+              "level": 1,
+              "abyssalLevel": 25,
+              "baseAbyssalExperience": 250,
+              "realm": "melvorItA:Abyssal",
+              "skills": [
+                "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png",
+                "https://cdn2-main.melvor.net/assets/media/status/laceration.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedDemon": 1
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "abyssalSkillXP": 3
+                  }
+                },
+                {
+                  "level": 20,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Laceration",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 15
+                    }
+                  ]
+                },
+                {
+                  "level": 40,
+                  "modifiers": {
+                    "lacerationLifesteal": 20
+                  }
+                },
+                {
+                  "level": 60,
+                  "modifiers": {
+                    "lacerationDOTDamageTaken": -25
+                  }
+                },
+                {
+                  "level": 80,
+                  "modifiers": {
+                    "extraLacerationStackChance": 10
+                  }
+                },
+                {
+                  "level": 99,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Laceration",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 20
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Toxic_Martyr",
+              "name": "Toxic Martyr",
+              "media": "https://cdn2-main.melvor.net/assets/media/monsters/Felth.png",
+              "baseExperience": 0,
+              "productId": "namespace_profile:Toxic_Martyr",
+              "level": 1,
+              "abyssalLevel": 30,
+              "baseAbyssalExperience": 300,
+              "realm": "melvorItA:Abyssal",
+              "skills": [
+                "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png",
+                "https://cdn2-main.melvor.net/assets/media/status/blight.png",
+                "https://cdn2-main.melvor.net/assets/media/status/Toxin.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedDemon": 1
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "abyssalSkillXP": 3
+                  }
+                },
+                {
+                  "level": 20,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Toxin",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 40,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Toxin",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 60,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Toxin",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    }
+                  ]
+                },
+                {
+                  "level": 80,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Toxin",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 50
+                    }
+                  ]
+                },
+                {
+                  "level": 99,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Toxin",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Fear_Bringer",
+              "name": "Fear Bringer",
+              "media": "https://cdn2-main.melvor.net/assets/media/monsters/Karn.png",
+              "baseExperience": 0,
+              "productId": "namespace_profile:Fear_Bringer",
+              "level": 1,
+              "abyssalLevel": 35,
+              "baseAbyssalExperience": 350,
+              "realm": "melvorItA:Abyssal",
+              "skills": [
+                "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png",
+                "https://cdn2-main.melvor.net/assets/media/status/fear.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedDemon": 1
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "abyssalSkillXP": 3
+                  }
+                },
+                {
+                  "level": 20,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorD:Fear",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 10
+                    },
+                    {
+                      "effectID": "melvorD:FearImmunity",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 25,
+                      "targetOverride": "Self"
+                    }
+                  ]
+                },
+                {
+                  "level": 40,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorD:Fear",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorD:FearImmunity",
+                      "targetOverride": "Self",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 60,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorD:Fear",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    },
+                    {
+                      "effectID": "melvorD:FearImmunity",
+                      "targetOverride": "Self",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    }
+                  ]
+                },
+                {
+                  "level": 80,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorD:Fear",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 90
+                    },
+                    {
+                      "effectID": "melvorD:FearImmunity",
+                      "targetOverride": "Self",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 50
+                    }
+                  ]
+                },
+                {
+                  "level": 99,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorD:Fear",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:Fearmonger",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Withering_Devourer",
+              "name": "Withering Devourer",
+              "media": "https://cdn2-main.melvor.net/assets/media/monsters/Vruul.png",
+              "baseExperience": 0,
+              "productId": "namespace_profile:Withering_Devourer",
+              "level": 1,
+              "abyssalLevel": 40,
+              "baseAbyssalExperience": 400,
+              "realm": "melvorItA:Abyssal",
+              "skills": [
+                "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png",
+                "https://cdn2-main.melvor.net/assets/media/status/wither.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedDemon": 1
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "abyssalSkillXP": 3
+                  }
+                },
+                {
+                  "level": 20,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Wither",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 10
+                    },
+                    {
+                      "effectID": "melvorItA:WitheredGuard",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 40,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Wither",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:WitheredGuard",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 60,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Wither",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    },
+                    {
+                      "effectID": "melvorItA:WitheringEngulf",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    }
+                  ]
+                },
+                {
+                  "level": 80,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Wither",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 90
+                    },
+                    {
+                      "effectID": "melvorItA:WitheredGuard",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 50
+                    }
+                  ]
+                },
+                {
+                  "level": 99,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Wither",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:WitheringEngulf",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Silent_Harbinger",
+              "name": "Silent Harbinger",
+              "media": "https://cdn2-main.melvor.net/assets/media/monsters/Anketh.png",
+              "baseExperience": 0,
+              "productId": "namespace_profile:Silent_Harbinger",
+              "level": 1,
+              "abyssalLevel": 45,
+              "baseAbyssalExperience": 450,
+              "realm": "melvorItA:Abyssal",
+              "skills": [
+                "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png",
+                "https://cdn2-main.melvor.net/assets/media/status/silence.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedDemon": 1
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "abyssalSkillXP": 3
+                  }
+                },
+                {
+                  "level": 20,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Silence",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 10
+                    },
+                    {
+                      "effectID": "melvorItA:SilenceImmunity",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 40,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Silence",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:SilenceImmunity",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 60,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Silence",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    },
+                    {
+                      "effectID": "melvorItA:SilenceImmunity",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    }
+                  ]
+                },
+                {
+                  "level": 80,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Silence",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 90
+                    },
+                    {
+                      "effectID": "melvorItA:SilenceImmunity",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 50
+                    }
+                  ]
+                },
+                {
+                  "level": 99,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Silence",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:SilentSlice",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Tendril_Nightmare",
+              "name": "Tendril Nightmare",
+              "media": "https://cdn2-main.melvor.net/assets/media/monsters/ZaKul.png",
+              "baseExperience": 0,
+              "productId": "namespace_profile:Tendril_Nightmare",
+              "level": 1,
+              "abyssalLevel": 50,
+              "baseAbyssalExperience": 500,
+              "realm": "melvorItA:Abyssal",
+              "skills": [
+                "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png",
+                "https://cdn2-main.melvor.net/assets/media/status/eldritch_curse.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedDemon": 1
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "abyssalSkillXP": 3
+                  }
+                },
+                {
+                  "level": 20,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:EldritchCurse",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 10
+                    }
+                  ]
+                },
+                {
+                  "level": 40,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:EldritchCurse",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 60,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:EldritchCurse",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    },
+                    {
+                      "effectID": "melvorItA:EldritchHunter",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    }
+                  ]
+                },
+                {
+                  "level": 80,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:TendrilNightmareBuff",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 90
+                    },
+                    {
+                      "effectID": "melvorItA:EldritchStalker",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 50
+                    }
+                  ]
+                },
+                {
+                  "level": 99,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:EldritchCurse",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 5
+                    },
+                    { 
+                      "effectID": "melvorItA:EldritchMarker",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Void_Gazer",
+              "name": "Void Gazer",
+              "media": "https://cdn2-main.melvor.net/assets/media/monsters/Nhilus.png",
+              "baseExperience": 0,
+              "productId": "namespace_profile:Void_Gazer",
+              "level": 1,
+              "abyssalLevel": 55,
+              "baseAbyssalExperience": 550,
+              "realm": "melvorItA:Abyssal",
+              "skills": [
+                "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png",
+                "https://cdn2-main.melvor.net/assets/media/status/voidburst.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedDemon": 1
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "abyssalSkillXP": 3
+                  }
+                },
+                {
+                  "level": 20,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Voidburst",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 10
+                    },
+                    {
+                      "effectID": "melvorItA:GazeIntoTheVoid",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 40,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Voidburst",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:VoidsEmbrace",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 60,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Voidburst",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    },
+                    {
+                      "effectID": "melvorItA:VoidfireVolley",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    }
+                  ]
+                },
+                {
+                  "level": 80,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Voidburst",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 90
+                    },
+                    {
+                      "effectID": "melvorItA:VoidShamblerCape",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 50
+                    }
+                  ]
+                },
+                {
+                  "level": 99,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:VoidTraveler",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:InfiniteVoid",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 3
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "Abyssal_King",
+              "name": "Abyssal King",
+              "media": "https://cdn2-main.melvor.net/assets/media/monsters/Xon.png",
+              "baseExperience": 0,
+              "productId": "namespace_profile:Abyssal_King",
+              "level": 1,
+              "abyssalLevel": 60,
+              "baseAbyssalExperience": 650,
+              "realm": "melvorItA:Abyssal",
+              "skills": [
+                "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedDemon": 1
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "abyssalSkillXP": 3
+                  }
+                },
+                {
+                  "level": 20,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:WrathOfTheRealm",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 10
+                    },
+                    {
+                      "effectID": "melvorItA:KingsRage",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 40,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Sovereignty",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:KingsRage",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 60,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:AbyssalBarrage",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    },
+                    {
+                      "effectID": "melvorItA:KingsRage",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    }
+                  ]
+                },
+                {
+                  "level": 80,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Sovereignty",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 90
+                    },
+                    {
+                      "effectID": "melvorItA:WrathOfTheRealm",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 50
+                    }
+                  ]
+                },
+                {
+                  "level": 99,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:WrathOfTheRealm",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:AbyssalBarrage",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 3
+                    }
+                  ]
+                }
+              ]
+            }            
+          ]
+        }
+      }
+    ]
+  }
+}

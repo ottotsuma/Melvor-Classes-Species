@@ -26,6 +26,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     public classIds: any[] = []; // empty array
     // @ts-ignore 
     private renderedProgressBar?: ProgressBarElement; // not found
+    // public abyssalMilestones?: Single_Species[];
 
     public readonly manager = new ProfileManager(this, this.game); // found
 
@@ -355,7 +356,14 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
         super.postDataRegistration();
 
         this.sortedMasteryActions = this.actions.allObjects.sort((a, b) => a.level - b.level);
-        this.milestones.push(...this.actions.allObjects);
+        // this.milestones.push(...this.actions.allObjects);
+        this.actions.forEach( (action) => {
+            if (action.abyssalLevel > 0)
+                this.abyssalMilestones.push(action);
+            else
+                this.milestones.push(action);
+        }
+        );
 
         this.sortMilestones();
 
@@ -438,6 +446,8 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                 }
                 return newEffect;
             }) : undefined,
+
+            // combatPassives
         };
     
         if (newModifier.modifiers) {

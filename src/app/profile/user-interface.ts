@@ -23,6 +23,14 @@ export class UserInterface {
     public get classesContainer() {
         return document.getElementById('classes-container');
     }
+    
+    // public get abyssSpeciesContainer() {
+    //     return document.getElementById('abyss-species-container');
+    // }
+
+    public get abyssClassesContainer() {
+        return document.getElementById('abyss-classes-container');
+    }
 
     public get youContainer() {
         return document.getElementById('you-container');
@@ -45,16 +53,25 @@ export class UserInterface {
             for (const single_species of this.profile.sortedMasteryActions) {
                 const component = Single_SpeciesComponent(this.profile, single_species, this.game);
                 if(this.profile.classIds.includes(single_species._localID)) {
-                    ui.create(component, this.classesContainer);
+                    if(single_species.abyssalLevel > 0) {                        
+                        ui.create(component, this.abyssClassesContainer);
+                    } else {
+                        ui.create(component, this.classesContainer);
+                    }
                 } else {
-                    ui.create(component, this.speciesContainer);
+                    if(single_species.abyssalLevel > 0) {                        
+                        // ui.create(component, this.abyssSpeciesContainer);
+                    } else {
+                        ui.create(component, this.speciesContainer);
+                    }
                 }
-
                 this.species.set(single_species, component);
             }
             this.locked = LockedComponent(this.profile);
             ui.create(this.locked, this.speciesContainer);
             ui.create(this.locked, this.classesContainer);
+            ui.create(this.locked, this.abyssClassesContainer);
+            // ui.create(this.locked, this.abyssSpeciesContainer);            
 
             this.you1 = YouComponent(this.profile);
             this.you2 = YouComponent(this.profile);

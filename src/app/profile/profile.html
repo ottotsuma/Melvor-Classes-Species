@@ -8,172 +8,216 @@
             <span style="color: rgb(245, 245, 245); background-color: rgb(35, 42, 53);">Guide is at the bottom</span>
             <div class="col-12" id="you-container"></div>
         </div>
-        <h4>Species</h4>
-        <div class="row row-deck gutters-tiny" id="species-container"></div>
-        <h4>Classes</h4>
-        <div class="row row-deck gutters-tiny" id="classes-container"></div>
-        <div style="color: rgb(245, 245, 245); background-color: rgb(35, 42, 53); padding: 10px;">
-            <div style="display: flex; justify-content: center;
-        align-items: end;">
-
-                <img class="m-2" src="https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg" height="64px">
-                <h3 style="color: rgb(245, 245, 245);">Profile</h3>
-            </div>
+        <div style="    display: flex;
+        flex-direction: column;
+        align-items: center;">
+        <details>
+            <summary style="color: white; display: inline; font-size: xx-large; justify-content: center; display: flex;">Species</summary>
             <div>
-                <div>
-                    <h4>Guide</h4>
-                    <p>
-                        Profile is a passive skill giving you the ability to pick both a class and a species to play as
-                        in
-                        Melvor.
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        The intention was to give you a role to play as, but it seems peolple want to swap species depending on the skill instead of having a mix of skills per species.
-                    </p>
-                    <p>
-                        To unlock modifiers you will need GP and a Profile Token. These tokens have a small chance to
-                        drop when gaining XP from any skill in the game. Just be sure to have a class and species
-                        equipped.
-                    </p>
-                    <p>
-                        Species have been assiged to not only every Melvor monster but also modded monsters from any of
-                        my
-                        or KumaV1's mods. I have tried to add species to the monsters of popular other content mods.
-                    </p>
-                    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
-        align-items: center;">
-                        <img class="m-2"
-                            src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.png">
-                    </div>
-                </div>
-                <div>
-                    <p>At the top you can see which Class & Species you have equipped right now along with the active
-                        and
-                        inactive modifiers.</p>
-                    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
-        align-items: center;">
-                        <img class="m-2"
-                            src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.3.png">
-                    </div>
-                </div>
-                <div>
-                    <p>Classes and Sepcies lists are shown just below with the ability to switch between any you like
-                        for free, until you unlock some modifiers, then things get costly.</p>
-                    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
-                        align-items: center;">
-                        <img class="m-2"
-                            src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.2.png">
-                    </div>
-                    <p>
-                        You must have at least a class or species equipped to gain XP in this skill. You can gain skill
-                        XP and mastery by killing monsters in combat with classes / species equipped.
-                    </p>
-                    <p>
-                        You can gain mastery XP for a species doing a non-combat skill if that species is marked with
-                        that skills tag. (That species/class must be equipped.) The image below shows an Elf that gains
-                        mastery exp from fletching. [Angels can also gain mastery XP by burying bones.]
-                    </p>
-                    <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
-        align-items: center;">
-                        <img class="m-2"
-                            src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.1.png">
-                    </div>
-                </div>
-                <div>
-                    <h4>
-                        Modding
-                    </h4>
-                    <p>
-                        You can create your own species and classes for this mod.
+                <div class="row row-deck gutters-tiny" id="species-container"></div>
+            </div>
+        </details>
 
-                        Code for following along can be found at: https://github.com/ottotsuma/Melvor-TES for an
-                        example.
-                    </p>
-                    <p>
-                        Firstly, you need to check the mod was loaded. This can be done inside of onModsLoaded or
-                        before.
-                    </p>
-                    <p style="font-style: italic; background-color: grey;">
-                        const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
-                    </p>
-                    <p>
-                        You can then check for {profileSkill} and if it's loaded then load your JSON you saved the below
-                        sample code in. Speaking of the below sample, in "skills" you can see two types of valid inputs.
-                        A melvor skill or an image. The image will appear below the name of your species. If you use a
-                        melvor or modded skill, then when preforming that skill you will gain mastery XP for that
-                        species. (Classes are coming soon, I had to redo the function)
-                    </p>
-                    <p style="font-style: italic; background-color: grey;">
-                        "data": {
-                        "skillData": [
-                        {
-                        "skillID": "namespace_profile:Profile",
-                        "data": {
-                        "species": [
-                        {
-                        "id": "Human",
-                        "name": "Human",
-                        "media": "https://ottotsuma.github.io/images/portraits/human%20female%20barbarian%202.jpg",
-                        "baseExperience": 5,
-                        "productId": "namespace_profile:Human",
-                        "level": 1,
-                        "skills": [
-                        "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
-                        "melvorD:Crafting"
-                        ],
-                        "standardModifiers": [
-                        {
-                        "level": 0,
-                        "key": "humanTraitApplied",
-                        "value": 1
-                        },
-                        {
-                        "level": 1,
-                        "key": "decreasedMagicMaxHit",
-                        "value": 10
-                        },
-                        {
-                        "level": 20,
-                        "key": "increasedDamageAgainstAnimals",
-                        "value": 10
-                        },
-                        {
-                        "level": 40,
-                        "key": "increasedDamageAgainstHumans",
-                        "value": 10
-                        },
-                        {
-                        "level": 60,
-                        "key": "increasedGPFromSales",
-                        "value": 10
-                        },
-                        {
-                        "level": 80,
-                        "key": "increasedChanceForGoldFromCrafting30",
-                        "value": 10
-                        },
-                        {
-                        "level": 99,
-                        "key": "decreasedGlobalSkillIntervalPercent",
-                        "value": 5
-                        }
-                        ]
-                        }
-                        ]
-                        }
-                        }
-                        }
-                    </p>
+        <details>
+            <summary style="color: white; display: inline; font-size: xx-large; justify-content: center; display: flex;">Classes</summary>
+            <div>
+                <div class="row row-deck gutters-tiny" id="classes-container"></div>
+            </div>
+        </details>
+
+        <!-- <details v-if="cloudManager.hasItAEntitlementAndIsEnabled">
+            <summary style="color: white; display: inline; font-size: xx-large; justify-content: center; display: flex;">Abyss Species</summary>
+            <div>
+                <div class="row row-deck gutters-tiny" id="abyss-species-container"></div>
+            </div>
+        </details> -->
+
+        <details>
+            <summary style="color: white; display: inline; font-size: xx-large; justify-content: center; display: flex;">Abyss Classes</summary>
+            <div>
+                <div class="row row-deck gutters-tiny" id="abyss-classes-container"></div>
+            </div>
+        </details>
+
+        <details>
+            <summary style="color: white; display: inline; font-size: xx-large; justify-content: center; display: flex;">Guide</summary>
+            <div style="color: rgb(245, 245, 245); background-color: rgb(35, 42, 53); padding: 10px;">
+                <div style="display: flex; justify-content: center;
+            align-items: end;">
+
+                    <img class="m-2" src="https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg"
+                        height="64px">
+                    <h3 style="color: rgb(245, 245, 245);">Profile</h3>
                 </div>
+
                 <div>
-                    <h4>Thank you</h4>
-                    <p>
-                        Thank you again for testing the skill.
-                    </p>
+                    <div>
+                        <p>
+                            Profile is a passive skill giving you the ability to pick both a class and a species to play
+                            as
+                            in
+                            Melvor.
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            The intention was to give you a role to play as, but it seems peolple want to swap species
+                            depending on the skill instead of having a mix of skills per species.
+                        </p>
+                        <p>
+                            To unlock modifiers you will need GP and a Profile Token. These tokens have a small chance
+                            to
+                            drop when gaining XP from any skill in the game. Just be sure to have a class and species
+                            equipped.
+                        </p>
+                        <p>
+                            Species have been assiged to not only every Melvor monster but also modded monsters from any
+                            of
+                            my
+                            or KumaV1's mods. I have tried to add species to the monsters of popular other content mods.
+                        </p>
+                        <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
+            align-items: center;">
+                            <img class="m-2"
+                                src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.png">
+                        </div>
+                    </div>
+                    <div>
+                        <p>At the top you can see which Class & Species you have equipped right now along with the
+                            active
+                            and
+                            inactive modifiers.</p>
+                        <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
+            align-items: center;">
+                            <img class="m-2"
+                                src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.3.png">
+                        </div>
+                    </div>
+                    <div>
+                        <p>Classes and Sepcies lists are shown just below with the ability to switch between any you
+                            like
+                            for free, until you unlock some modifiers, then things get costly.</p>
+                        <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
+                            align-items: center;">
+                            <img class="m-2"
+                                src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.2.png">
+                        </div>
+                        <p>
+                            You must have at least a class or species equipped to gain XP in this skill. You can gain
+                            skill
+                            XP and mastery by killing monsters in combat with classes / species equipped.
+                        </p>
+                        <p>
+                            You can gain mastery XP for a species doing a non-combat skill if that species is marked
+                            with
+                            that skills tag. (That species/class must be equipped.) The image below shows an Elf that
+                            gains
+                            mastery exp from fletching. [Angels can also gain mastery XP by burying bones.]
+                        </p>
+                        <div style="width: 100%; display: flex; justify-content: center; flex-direction: column;
+            align-items: center;">
+                            <img class="m-2"
+                                src="https://thumb.modcdn.io/mods/bceb/3619616/thumb_1020x2000/2024-01-241.1.png">
+                        </div>
+                    </div>
+                    <div>
+                        <h4>
+                            Modding
+                        </h4>
+                        <p>
+                            You can create your own species and classes for this mod.
+
+                            Code for following along can be found at: https://github.com/ottotsuma/Melvor-TES for an
+                            example.
+                        </p>
+                        <p>
+                            Firstly, you need to check the mod was loaded. This can be done inside of onModsLoaded or
+                            before.
+                        </p>
+                        <p style="font-style: italic; background-color: grey;">
+                            const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
+                        </p>
+                        <p>
+                            You can then check for {profileSkill} and if it's loaded then load your JSON you saved the
+                            below
+                            sample code in. Speaking of the below sample, in "skills" you can see two types of valid
+                            inputs.
+                            A melvor skill or an image. The image will appear below the name of your species. If you use
+                            a
+                            melvor or modded skill, then when preforming that skill you will gain mastery XP for that
+                            species. (Classes are coming soon, I had to redo the function)
+                        </p>
+                        <p style="font-style: italic; background-color: grey;">
+                            "data": {
+                            "skillData": [
+                            {
+                            "skillID": "namespace_profile:Profile",
+                            "data": {
+                            "species": [
+                            {
+                            "id": "Human",
+                            "name": "Human",
+                            "media": "https://ottotsuma.github.io/images/portraits/human%20female%20barbarian%202.jpg",
+                            "baseExperience": 5,
+                            "productId": "namespace_profile:Human",
+                            "level": 1,
+                            "skills": [
+                            "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",
+                            "melvorD:Crafting"
+                            ],
+                            "standardModifiers": [
+                            {
+                            "level": 0,
+                            "key": "humanTraitApplied",
+                            "value": 1
+                            },
+                            {
+                            "level": 1,
+                            "key": "decreasedMagicMaxHit",
+                            "value": 10
+                            },
+                            {
+                            "level": 20,
+                            "key": "increasedDamageAgainstAnimals",
+                            "value": 10
+                            },
+                            {
+                            "level": 40,
+                            "key": "increasedDamageAgainstHumans",
+                            "value": 10
+                            },
+                            {
+                            "level": 60,
+                            "key": "increasedGPFromSales",
+                            "value": 10
+                            },
+                            {
+                            "level": 80,
+                            "key": "increasedChanceForGoldFromCrafting30",
+                            "value": 10
+                            },
+                            {
+                            "level": 99,
+                            "key": "decreasedGlobalSkillIntervalPercent",
+                            "value": 5
+                            }
+                            ]
+                            }
+                            ]
+                            }
+                            }
+                            }
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Thank you</h4>
+                        <p>
+                            Thank you again for testing the skill.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </details>
+    </div>
     </div>
 </template>

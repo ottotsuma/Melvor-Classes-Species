@@ -100,3 +100,18 @@ In the skills section, if you add a skill by It's name the image will be added f
 
 
                                                 
+
+            // "PreAttack",
+            // "HitByAttack",
+            // "HitByFirstAttack",
+            // "HitWithAttack",
+            // "HitWithFirstAttack",
+            // "CritWithAttack",
+            // "PostAttack",
+            // "PostFirstAttack",
+            // "StartOfFight",
+            // "SummonAttack",
+            // "WasAttacked",
+            // "Rebirth",
+            // "BeingAttacked",
+            // "EvadedAttack"

@@ -205,6 +205,15 @@ export const ja = {
     "MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal": "動物",
     "decreasedUpgradeProfileModifiers": "-${value} プロファイルの修正値減少",
     "increasedUpgradeProfileModifiers": "+${value} プロファイルの修正値増加",
+        Single_Species_Abyss: "Abyss",
+    Single_Species_Abyssal_Warden: "Abyssal Warden",
+    Single_Species_Toxic_Martyr: "Toxic Martyr",
+    Single_Species_Fear_Bringer: "Fear Bringer",
+    Single_Species_Withering_Devourer: "Withering Devourer",
+    Single_Species_Silent_Harbinger: "Silent Harbinger",
+    Single_Species_Tendril_Nightmare: "Tendril Nightmare",
+    Single_Species_Void_Gazer: "Void Gazer",
+    Single_Species_Abyssal_King: "Abyssal King",
     MODIFIER_DATA_applyRandomCurseOnCrit: "Chance to apply a random curse on critically hitting",
     MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",    CurrentHitpointsHeal: `Attacker has a 20% chance to heal for 20% of Attackers current hitpoints`
 };

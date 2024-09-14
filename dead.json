@@ -1,0 +1,105 @@
+            {
+              "id": "Toxic_Martyr",
+              "name": "Toxic Martyr",
+              "media": "https://cdn2-main.melvor.net/assets/media/monsters/Felth.png",
+              "baseExperience": 0,
+              "productId": "namespace_profile:Toxic_Martyr",
+              "level": 1,
+              "abyssalLevel": 1,
+              "baseAbyssalExperience": 5,
+              "realm": "melvorItA:Abyssal",
+              "skills": [
+                "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png",
+                "https://cdn2-main.melvor.net/assets/media/status/blight.png",
+                "https://cdn2-main.melvor.net/assets/media/status/Toxin.png"
+              ],
+              "standardModifiers": [
+                {
+                  "level": 0,
+                  "modifiers": {
+                    "customModifiersInMelvor:traitAppliedDemon": 1
+                  }
+                },
+                {
+                  "level": 1,
+                  "modifiers": {
+                    "abyssalSkillXP": 3
+                  }
+                },
+                {
+                  "level": 20,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:MalevolentBlight",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 10
+                    },
+                    {
+                      "effectID": "melvorItA:Toxin",
+                      "appliesWhen": "StartOfFight",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 40,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Blight",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:Toxin",
+                      "appliesWhen": "HitByAttack",
+                      "chance": 5
+                    }
+                  ]
+                },
+                {
+                  "level": 60,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Blight",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    },
+                    {
+                      "effectID": "melvorItA:Toxin",
+                      "appliesWhen": "CritWithAttack",
+                      "chance": 20
+                    }
+                  ]
+                },
+                {
+                  "level": 80,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Blight",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 90
+                    },
+                    {
+                      "effectID": "melvorItA:Toxin",
+                      "appliesWhen": "HitByFirstAttack",
+                      "chance": 50
+                    }
+                  ]
+                },
+                {
+                  "level": 99,
+                  "combatEffects": [
+                    {
+                      "effectID": "melvorItA:Blight                                                                                                                                                       ",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 5
+                    },
+                    {
+                      "effectID": "melvorItA:Toxin",
+                      "appliesWhen": "HitWithAttack",
+                      "chance": 3
+                    }
+                  ]
+                }
+              ]
+            }
