@@ -24,9 +24,9 @@ export function Single_SpeciesComponent(profile: Profile, single_species: Single
                 .querySelector(`#${this.localId}`)
                 .querySelector('#grants-container') as HTMLElement;
 
-            this.xpIcon = grantsContainer.querySelector('#thuum-xp');
-            this.masteryIcon = grantsContainer.querySelector('#thuum-mastery-xp');
-            this.masteryPoolIcon = grantsContainer.querySelector('#thuum-pool-xp');
+            this.xpIcon = grantsContainer.querySelector('#profile-xp');
+            this.masteryIcon = grantsContainer.querySelector('#profile-mastery-xp');
+            this.masteryPoolIcon = grantsContainer.querySelector('#profile-pool-xp');
 
             const progressBar = document
                 .querySelector(`#${this.localId}`) // @ts-ignore 

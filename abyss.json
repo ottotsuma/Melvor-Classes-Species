@@ -674,7 +674,7 @@
                       "appliesWhen": "HitWithAttack",
                       "chance": 5
                     },
-                    { 
+                    {
                       "effectID": "melvorItA:EldritchMarker",
                       "appliesWhen": "HitWithAttack",
                       "chance": 3
@@ -889,7 +889,7 @@
                   ]
                 }
               ]
-            }            
+            }
           ]
         }
       }

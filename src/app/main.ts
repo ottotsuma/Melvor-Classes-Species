@@ -430,7 +430,6 @@ export class App {
                 "melvorTotH:RandomSpiderLair",
                 "melvorTotH:SpiderQueen"
             ]
-
             if (ToB) {
                 // RoguesList.push("ToBDungeon:Pestilent_Bloat",
                 //     "ToBDungeon:Nylocas_vasilias_ranged",

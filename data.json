@@ -459,67 +459,6 @@
         ],
         "items": [
             {
-                "id": "test_object",
-                "name": "test_object",
-                "category": "Combat",
-                "type": "Helmet",
-                "media": "assets/mastery-token.png",
-                "ignoreCompletion": true,
-                "obtainFromItemLog": false,
-                "golbinRaidExclusive": false,
-                "sellsFor": 0,
-                "tier": "none",
-                "validSlots": [
-                    "Helmet"
-                ],
-                "occupiesSlots": [],
-                "equipRequirements": [],
-                "equipmentStats": [
-                    {
-                        "key": "meleeDefenceBonus",
-                        "value": 20
-                    },
-                    {
-                        "key": "rangedDefenceBonus",
-                        "value": 20
-                    },
-                    {
-                        "key": "magicDefenceBonus",
-                        "value": 20
-                    },
-                    {
-                        "key": "resistance",
-                        "damageType": "melvorD:Normal",
-                        "value": 4
-                    }
-                ],
-                "modifiers": {                    
-                    "offItemChance": 10
-                },
-                "combatEffects": [{
-                    "effectID":"melvorF:Absorbing_Shield",
-                    "appliesWhen":"BeingAttacked"
-                }],
-                "enemyModifiers":{
-                    "cleansed": 1,
-                    "rebirthChance":10
-                },
-                "conditionalModifiers": [{
-                    "modifiers":{
-                        "smallArtefactValue":[{
-                            "value": 1
-                        }]
-                    },
-                    "condition":{
-                        "character": "Player",
-                        "value": 10,
-                        "operator":"<",
-                        "type": "Hitpoints"
-                    }                    
-                }],
-                "itemType": "Equipment"
-            },
-            {
                 "id": "Mastery_Token_Profile",
                 "name": "Mastery Token (Profile)",
                 "category": "Mastery",
@@ -2221,21 +2160,10 @@
                                 {
                                     "level": 80,
                                     "modifiers": {
-                                        "currencyGain": [
+                                        "flatCurrencyGainOnEnemyHit": [
                                             {
-                                                "skillID": "melvorD:Attack",
                                                 "currencyID": "melvorD:GP",
-                                                "value": 10
-                                            },
-                                            {
-                                                "skillID": "melvorD:Ranged",
-                                                "currencyID": "melvorD:GP",
-                                                "value": 10
-                                            },
-                                            {
-                                                "skillID": "melvorD:Magic",
-                                                "currencyID": "melvorD:GP",
-                                                "value": 10
+                                                "value": 100
                                             }
                                         ],
                                         "doubleBoneDrops": [

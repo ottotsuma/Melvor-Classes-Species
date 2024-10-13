@@ -18,10 +18,10 @@
                     </span>
                     <span v-for="mod in modifier.description">
                         <span v-if="!mod.description.includes('Error')"
-                            :class="{ 'thuum-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }"
+                            :class="{ 'profile-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }"
                             v-html="mod.description"></span>
                         <span v-else
-                            :class="{ 'thuum-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs
+                            :class="{ 'profile-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs
                             forgot the description for this modifier</span>
                     </span>
                 </div>
@@ -48,14 +48,14 @@
 
             <div>
                 <span v-for="mod in modifier.description">
-                    <small v-if="essenceOfProfile.quantity > 0" class="'thuum-text-grey'" v-html="mod.description">
+                    <small v-if="essenceOfProfile.quantity > 0" class="'profile-text-grey'" v-html="mod.description">
                     </small>
                     <small v-else-if="!mod.description.includes('Error')"
                         :class="{ 'text-danger': mod.isNegative, 'text-success': !mod.isNegative }"
                         v-html="mod.description">
                     </small>
                     <small v-else
-                        :class="{ 'thuum-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs
+                        :class="{ 'profile-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs
                         forgot the description for this modifier</small>
                 </span>
 
@@ -94,20 +94,20 @@
             <div>
                 <span v-for="mod in modifier.description">
                     <small v-if="!mod.description.includes('Error')"
-                        :class="{ 'thuum-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }"
+                        :class="{ 'profile-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }"
                         v-html="mod.description"></small>
                     <small v-else
-                        :class="{ 'thuum-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs
+                        :class="{ 'profile-text-grey': !modifier.isActive, 'text-danger' : modifier.isActive && mod.isNegative, 'text-success': !mod.isNegative && modifier.isActive }">Malcs
                         forgot the description for this modifier</small>
                 </span>
             </div>
 
-            <div class="thuum-footer-buttons mt-4">
+            <div class="profile-footer-buttons mt-4">
                 <button type="button" class="btn btn-lg btn-primary mr-2" @click="lock(modifier)">
-                    {{ getLangString('Thuum_Thuum_lock') }}
+                    {{ getLangString('Profile_Profile_lock') }}
                 </button>
                 <button type="button" class="btn btn-lg btn-danger" @click="setState('view')">
-                    {{ getLangString('Thuum_Thuum_Back') }}
+                    {{ getLangString('Profile_Profile_Back') }}
                 </button>
             </div>
         </div>

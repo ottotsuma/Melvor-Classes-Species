@@ -100,7 +100,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                 }
 
                 for (let index = 0; index < modifier.description.length; index++) {
-                    html += `<span class="${modifier.isActive ? modifier.description[index].isNegative ? 'text-danger' : 'text-success' : 'thuum-text-grey'}">${modifier.description[index].description}</span>`;
+                    html += `<span class="${modifier.isActive ? modifier.description[index].isNegative ? 'text-danger' : 'text-success' : 'profile-text-grey'}">${modifier.description[index].description}</span>`;
                 }
                 html += `</small><br />`
             }
@@ -134,7 +134,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                     </span>`;
                 }
                 for (let index = 0; index < modifier.description.length; index++) {
-                    html += `<span class="${modifier.isActive ? modifier.description[index].isNegative ? 'text-danger' : 'text-success' : 'thuum-text-grey'}">${modifier.description[index].description}</span>`;
+                    html += `<span class="${modifier.isActive ? modifier.description[index].isNegative ? 'text-danger' : 'text-success' : 'profile-text-grey'}">${modifier.description[index].description}</span>`;
                 }
                 html += `</small><br />`
             }
