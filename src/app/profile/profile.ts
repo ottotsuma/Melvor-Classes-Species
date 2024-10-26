@@ -357,7 +357,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
         this.sortedMasteryActions = this.actions.allObjects.sort((a, b) => a.level - b.level);
         // this.milestones.push(...this.actions.allObjects);
-        this.actions.forEach( (action) => {
+        this.actions.forEach((action) => {
             if (action.abyssalLevel > 0)
                 this.abyssalMilestones.push(action);
             else
@@ -418,7 +418,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
     private profileModifierCalc(modifier: StatObject) {
         // @ts-ignore 
         const profileModifier = game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0;
-    
+
         const newModifier: StatObject = {
             ...modifier,
             // @ts-ignore
@@ -432,12 +432,12 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
                 }
                 return newMod;
             }) : undefined,
-    
+
             // @ts-ignore
             combatEffects: modifier.combatEffects ? modifier.combatEffects.map(ce => {
                 // @ts-ignore
                 const newEffect = new CombatEffectApplicator(ce);
-                
+
                 if (modifier.modifiers?.some(m => m.modifier._localID === 'UpgradeProfileModifiers')) {
                 } else {
                     if (newEffect.baseChance !== undefined) {
@@ -449,16 +449,16 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
             // combatPassives
         };
-    
+
         if (newModifier.modifiers) {
             newModifier.modifiers.forEach(tempMod => {
                 console.log(`After: ${tempMod.modifier._localID}: ${profileModifier} + ${modifier.modifiers.find(m => m.modifier._localID === tempMod.modifier._localID)?.value} = ${tempMod.value}`, profileModifier + (modifier.modifiers.find(m => m.modifier._localID === tempMod.modifier._localID)?.value || 0) === tempMod.value);
             });
         }
-        
+
         return newModifier;
     }
-    
+
 
     public addProvidedStats() {
         // @ts-ignore 
@@ -521,28 +521,36 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             //     masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
             // }
             // @ts-ignore
-            const globalEXPmod = game.modifiers.getValue('skillXP', {}) // game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
-            const totalExp = skillExp1 + (((skillExp1) / 100) * globalEXPmod) || 0
+            // const globalEXPmod = game.modifiers.getValue('skillXP', {}) // game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
+            // const totalExp = skillExp1 + (((skillExp1) / 100) * globalEXPmod) || 0
             // @ts-ignore
             const globalMasteryEXPmod = game.modifiers.getValue('masteryXP', {}) // game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
 
-            const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
-
-            const masteryXP = totalMasteryExp1
+            const masteryXP = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) + profileLevel || 0
 
             const baseMasteryXP = Math.floor(component.single_species.baseExperience)
 
             const poolXP = this.getMasteryXPToAddToPool(masteryXP);
 
-            component.updateGrants(
-                totalExp,
-                component.single_species.baseExperience,
-                masteryXP,
-                baseMasteryXP,
-                poolXP,
-                // @ts-ignore // TODO: TYPES
-                this.game.defaultRealm
-            );
+            if (component.single_species.abyssalLevel > 0) {
+                component.updateGrants(
+                    this.modifyAbyssalXP(component.single_species.baseAbyssalExperience, component.single_species),
+                    component.single_species.baseAbyssalExperience,
+                    masteryXP,
+                    baseMasteryXP,
+                    poolXP,
+                    this.game.realms.getObjectByID('melvorItA:Abyssal')
+                );
+            } else {
+                component.updateGrants(
+                    this.modifyXP(component.single_species.baseExperience, component.single_species),
+                    component.single_species.baseExperience,
+                    masteryXP,
+                    baseMasteryXP,
+                    poolXP,
+                    this.game.defaultRealm
+                );
+            }
         }
 
         this.renderQueue.grants = false;
@@ -596,7 +604,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             if (!element) {
                 return;
             }
-            if(single_species.abyssalLevel > 0) {
+            if (single_species.abyssalLevel > 0) {
                 if (this._abyssalLevel >= single_species.abyssalLevel) {
                     showElement(element);
                 } else {
