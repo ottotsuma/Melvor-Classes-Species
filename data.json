@@ -968,7 +968,7 @@
                                         "skillInterval": [
                                             {
                                                 "skillID": "melvorD:Fishing",
-                                                "value": 50
+                                                "value": 10
                                             }
                                         ]
                                     }
@@ -1791,8 +1791,18 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "namespace_profile:FlatMeleeDefenceBonusPerDefence": 2,
-                                        "namespace_profile:FlatRangedDefenceBonusPerDefence": 2
+                                        "flatMeleeDefenceBonusBasedOnResistance": [
+                                            {
+                                                "value": 2,
+                                                "damageTypeID": "melvorD:Normal"
+                                            }
+                                        ],
+                                        "flatRangedDefenceBonusBasedOnResistance": [
+                                            {
+                                                "value": 2,
+                                                "damageTypeID": "melvorD:Normal"
+                                            }
+                                        ]
                                     }
                                 },
                                 {
@@ -1962,6 +1972,67 @@
                             ]
                         },
                         {
+                            "id": "Lumberjack",
+                            "name": "Moogleton Lumberjack",
+                            "media": "https://cdn2-main.melvor.net/assets/media/skills/thieving/lumberjack.png",
+                            "baseExperience": 5,
+                            "productId": "namespace_profile:Lumberjack",
+                            "level": 5,
+                            "skills": [
+                                "melvorD:Woodcutting"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "modifiers": {
+                                        "customModifiersInMelvor:traitAppliedFighter": 1
+                                    }
+                                },
+                                {
+                                    "level": 1,
+                                    "modifiers": {
+                                        "halveWoodcuttingDoubleChance": 1
+                                    }
+                                },
+                                {
+                                    "level": 20,
+                                    "modifiers": {
+                                        "skillXP":[{"skillID":"melvorD:Woodcutting", "value": 10}]
+                                    }
+                                },
+                                {
+                                    "level": 40,
+                                    "modifiers": {
+                                        "skillInterval": [
+                                            {
+                                                "skillID": "melvorD:Woodcutting",
+                                                "value": -10
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level": 60,
+                                    "modifiers": {
+                                        "skillMasteryXPPerDeedree": [{"skillID":"melvorD:Woodcutting","value": 10}]
+                                    }
+                                },
+                                {
+                                    "level": 80,
+                                    "modifiers": {
+                                        "woodcuttingXPAddedAsFiremakingXP": 10
+                                    }
+                                },
+                                {
+                                    "level": 99,
+                                    "modifiers": {
+                                        "melvorD:treeCutLimit":[{"value": 1}],  
+                                        "doubleItemsSkill": [{"skillID":"melvorD:Woodcutting","value": 1}] 
+                                    }
+                                }
+                            ]
+                        },
+                        {
                             "id": "Knight",
                             "name": "Knight",
                             "media": "https://ottotsuma.github.io/images/people/knights.jpg",
@@ -1993,8 +2064,18 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "namespace_profile:FlatMeleeDefenceBonusPerDefence": 2,
-                                        "namespace_profile:FlatRangedDefenceBonusPerDefence": 2
+                                        "flatMeleeDefenceBonusBasedOnResistance": [
+                                            {
+                                                "value": 4,
+                                                "damageTypeID": "melvorD:Normal"
+                                            }
+                                        ],
+                                        "flatRangedDefenceBonusBasedOnResistance": [
+                                            {
+                                                "value": 4,
+                                                "damageTypeID": "melvorD:Normal"
+                                            }
+                                        ]
                                     }
                                 },
                                 {

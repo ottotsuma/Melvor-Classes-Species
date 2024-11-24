@@ -810,7 +810,12 @@
                 {
                   "level": 1,
                   "modifiers": {
-                    "abyssalSkillXP": 3
+                    "abyssalSkillXP": 3,
+                    "flatMeleeDefenceBonusPerAbyssalLevel": [
+                      {
+                          "value": 2
+                      }
+                  ]
                   }
                 },
                 {

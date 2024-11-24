@@ -208,6 +208,7 @@ export const en = {
     increasedFlatMeleeDefenceBonusPerDefence: "+${value} increased flat melee defence per defence level",
     increasedFlatRangedDefenceBonusPerDefence: "+${value} increased flat ranged defence per defence level",
     Profile_Profile_Single_Species_Pokemon: 'Pokemon Trainer',
+    Single_Species_Lumberjack: "Moogleton Lumberjack",
     Profile_Single_Species_Pokemon: 'Pokemon Trainer',
     Profile_Profile_Single_Species_Khajiit: 'Khajiit',
     Profile_Profile_Single_Species_Argonian: 'Argonian',
@@ -217,7 +218,7 @@ export const en = {
     decreasedUpgradeProfileModifiers: "-${value} decreased chance to gain profile tokens",
     increasedUpgradeProfileModifiers: "+${value} increased chance to gain profile tokens",
     MODIFIER_DATA_applyRandomCurseOnCrit: "Chance to apply a random curse on critically hitting",
-    MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked", 
+    MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",
     CurrentHitpointsHeal: `Attacker has a 20% chance to heal for 20% of Attackers current hitpoints`
 
 };

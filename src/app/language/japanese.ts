@@ -208,6 +208,7 @@ export const ja = {
         Single_Species_Abyss: "Abyss",
     Single_Species_Abyssal_Warden: "Abyssal Warden",
     Single_Species_Toxic_Martyr: "Toxic Martyr",
+    Single_Species_Lumberjack: "Moogleton Lumberjack",
     Single_Species_Fear_Bringer: "Fear Bringer",
     Single_Species_Withering_Devourer: "Withering Devourer",
     Single_Species_Silent_Harbinger: "Silent Harbinger",

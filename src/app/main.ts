@@ -1402,13 +1402,19 @@ export class App {
                 console.log(error)
             }
         })
-        // @ts-ignore
-        this.context.patch(Character, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
+        this.context.patch(Enemy, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
+            // @ts-ignore
+            return meleeDefenceBonus + (game.combat.enemy.levels.Defence * game.combat.enemy.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
+        })
+        this.context.patch(Enemy, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
+            // @ts-ignore
+            return meleeDefenceBonus + (game.combat.enemy.levels.Defence * game.combat.enemy.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
+        })
+        this.context.patch(Player, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
             // @ts-ignore
             return meleeDefenceBonus + (game.combat.player.levels.Defence * game.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
         })
-        // @ts-ignore
-        this.context.patch(Character, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) { // @ts-ignore
+        this.context.patch(Player, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) { // @ts-ignore
             return rangedDefenceBonus + (game.combat.player.levels.Defence * game.modifiers.getValue('namespace_profile:FlatRangedDefenceBonusPerDefence', {}))
         })
         this.context.patch(Player, 'equipItem').after((_patch, data) => {
@@ -1437,7 +1443,6 @@ export class App {
                 }
             })
         });
-
         this.context.patch(Fishing, 'postAction').after(() => {
             this.game.items.allObjects.forEach(item => {
                 const Theiving = this.game.skills.getObjectByID('melvorD:Fishing')

@@ -199,7 +199,7 @@ export const ko = {
     increasedFlatMeleeDefenceBonusPerDefence: "+${value} increased flat melee defence per defence level",
     increasedFlatRangedDefenceBonusPerDefence: "+${value} increased flat ranged defence per defence level",
     Profile_Profile_Single_Species_Pokemon: 'Pokemon Trainer',
-    Profile_Single_Species_Pokemon: 'Pokemon Trainer',
+Single_Species_Lumberjack: "Moogleton Lumberjack",
     Profile_Profile_Single_Species_Khajiit: 'Khajiit',
     Profile_Profile_Single_Species_Argonian: 'Argonian',
     Profile_Single_Species_Khajiit: 'Khajiit',

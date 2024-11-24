@@ -202,6 +202,7 @@ export const zhCN = {
   Profile_Single_Species_Khajiit: '虎人',
   Profile_Single_Species_Argonian: '亚龙',
   Profile_Profile_Single_Species_Pokemon: 'Pokemon Trainer',
+Single_Species_Lumberjack: "Moogleton Lumberjack",
   Profile_Single_Species_Pokemon: 'Pokemon Trainer',
   MONSTER_TYPE_TRAIT_EFFECT_NAME_Animal: "Animal",
 decreasedUpgradeProfileModifiers: "-${value} decreased chance to gain profile tokens",
