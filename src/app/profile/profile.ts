@@ -651,7 +651,7 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             try {
                 writer.writeNamespacedObject(action);
 
-                const masteriesUnlocked = this.masteriesUnlocked.get(action);
+                const masteriesUnlocked = this.masteriesUnlocked.get(action) || [true, true, false, false, false, false, false];
 
                 writer.writeArray(masteriesUnlocked, value => {
                     writer.writeBoolean(value);

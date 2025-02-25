@@ -49,8 +49,8 @@ declare global {
 
 export class App {
     constructor(private readonly context: Modding.ModContext, private readonly game: Game) { }
-
     public async init() {
+        const profileLog: any = {};
         // mod.api.mythCombatSimulator?.registerNamespace('namespace_profile');
         await this.context.loadTemplates('profile/profile.html');
         await this.context.loadTemplates('profile/single_species/single_species.html');
@@ -915,7 +915,7 @@ export class App {
             const cmimFighterList: String[] = await cmim.getMonstersOfType('Fighter');
             const cmimMageList: String[] = await cmim.getMonstersOfType('Mage');
             const cmimRogueList: String[] = await cmim.getMonstersOfType('Rogue');
-            const initialPackage = this.context.gameData.buildPackage((itemPackage: any) => {
+            const monsterPackage = this.context.gameData.buildPackage((itemPackage: any) => {
                 cmimRogueList.forEach(monsterId => {
                     itemPackage.monsters.modify({
                         "id": monsterId,
@@ -1070,78 +1070,84 @@ export class App {
                 }
                 )
             })
-            this.game.profileLog = initialPackage
-            initialPackage.add();
+            profileLog.monsterPackage = monsterPackage
+            const newEntitiesPackage = this.context.gameData.buildPackage((itemPackage: any) => {
+                // New classes
+                function getModifier(negative: boolean, perc = 0.5) {
+                    const newModifier: any = {
+                        "increasedMasteryXP": [
+                            {
+                                "value": Math.floor(Math.random() * 200) + 1,
+                                "skillID": "melvorD:Firemaking"
+                            }
+                        ]
+                    }
+                    // game.modifierRegistry.allObjects.forEach(modifier => {
+                    //     if (rollPercentage(perc)) {
+                    //         const mod = modifier.namespace.name + ":" + modifier.localID
+                    //         if (negative && modifier.allowNegative) {
+                    //             newModifier[mod] = -Math.floor(Math.random() * 100) + 1
+                    //         } else if (!negative && modifier.allowPositive) {
+                    //             newModifier[mod] = Math.floor(Math.random() * 100) + 1
+                    //         }
+                    //     }
+                    // })
+                    return newModifier
+                }
+                const randomClass = {
+                    "id": 'Gambler',
+                    "name": 'Gambler',
+                    "media": 'https://static.vecteezy.com/system/resources/previews/015/081/534/original/white-rolling-dice-3d-rendering-isometric-icon-png.png',
+                    "baseExperience": 155,
+                    "productId": "namespace_profile:Gambler",
+                    "level": 99,
+                    "skills": ["namespace_profile:Profile"],
+                    "standardModifiers": [
+                        // {
+                        //     "level": 0,
+                        //     "modifiers": {
+                        //         "customModifiersInMelvor:traitAppliedFighter": 1
+                        //     }
+                        // },
+                        {
+                            "level": 1,
+                            "modifiers": getModifier(true, 10)
+                        },
+                        {
+                            "level": 20,
+                            "modifiers": getModifier(false)
+                        },
+                        {
+                            "level": 40,
+                            "modifiers": getModifier(false)
+                        },
+                        {
+                            "level": 60,
+                            "modifiers": getModifier(false)
+                        },
+                        {
+                            "level": 80,
+                            "modifiers": getModifier(false)
+                        },
+                        {
+                            "level": 99,
+                            "modifiers": getModifier(false)
+                        }
+                    ]
+                }
+                const newskilldata = {
+                    "skillID": "namespace_profile:Profile",
+                    "data": {
+                        "classes": [randomClass]
+                    }
+                }
+                itemPackage.skillData.add(newskilldata)
+            })
+            profileLog.newEntitiesPackage = newEntitiesPackage
+            this.game.profileLog = profileLog
+            monsterPackage.add();
+            newEntitiesPackage.add();
         })
-
-        // try {
-        //     this.context.gameData.buildPackage((itemPackage: any) => {
-        //         const newClasses: any[] = []
-        //         function getModifier(negative: boolean, perc = 0.5) {
-        //             const newModifier = {
-        //                     "increasedMasteryXP": [
-        //                         {
-        //                             "value": Math.floor(Math.random() * 200) + 1,
-        //                             "skillID": "melvorD:Firemaking"
-        //                             // game.modifierRegistry.registeredObjects
-        //                         }
-        //                     ]
-        //                 }
-        //            return newModifier
-        //         }
-        //         const randomClass = {
-        //             "id": 'Gambler',
-        //             "name": 'Gambler',
-        //             "media": 'https://static.vecteezy.com/system/resources/previews/015/081/534/original/white-rolling-dice-3d-rendering-isometric-icon-png.png',
-        //             "baseExperience": 155,
-        //             "maxGP": 551,
-        //             "productId": "namespace_profile:Gambler",
-        //             "level": 99,
-        //             "skills": ["namespace_profile:Profile"],
-        //             "standardModifiers": [
-        //                 {
-        //                     "level": 0,
-        //                     "modifiers": "traitAppliedFighter"
-        //                 },
-        //                 {
-        //                     "level": 1,
-        //                     "modifiers": getModifier(true, 10)
-        //                 },
-        //                 {
-        //                     "level": 20,
-        //                     "modifiers": getModifier(false)
-        //                 },
-        //                 {
-        //                     "level": 40,
-        //                     "modifiers": getModifier(false)
-        //                 },
-        //                 {
-        //                     "level": 60,
-        //                     "modifiers": getModifier(false)
-        //                 },
-        //                 {
-        //                     "level": 80,
-        //                     "modifiers": getModifier(false)
-        //                 },
-        //                 {
-        //                     "level": 99,
-        //                     "modifiers": getModifier(false)
-        //                 }
-        //             ]
-        //         }
-        //         newClasses.push(randomClass)
-        //         const newsilldata = {
-        //             "skillID": "namespace_profile:Profile",
-        //             "data": {
-        //                 "classes": newClasses
-        //             }
-        //         }
-        //         itemPackage.skillData.add(newsilldata)
-        //     }).add();
-        // } catch (error) {
-        //     console.log(error)
-        // }
-
         this.context.onCharacterLoaded(() => {
             this.game.profile.updateModifiers(true)
         })
