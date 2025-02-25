@@ -1074,26 +1074,22 @@ export class App {
             const newEntitiesPackage = this.context.gameData.buildPackage((itemPackage: any) => {
                 // New classes
                 function getModifier(negative: boolean, perc = 0.5) {
-                    const newModifier: any = {
-                        "increasedMasteryXP": [
-                            {
-                                "value": Math.floor(Math.random() * 200) + 1,
-                                "skillID": "melvorD:Firemaking"
-                            }
-                        ]
+                    const newModifier: any = {};
+
+                    const modifier = game.modifierRegistry.allObjects.find(object =>
+                        !object.disabled && object.hasEmptyScope && rollPercentage(perc)
+                    );
+
+                    if (modifier) {
+                        const mod = modifier.namespace + ":" + modifier.localID;
+                        let value = Math.floor(Math.random() * 10) + 1;
+                        if (modifier.inverted) value *= -1;
+                        newModifier[mod] = negative ? -value : value;
                     }
-                    // game.modifierRegistry.allObjects.forEach(modifier => {
-                    //     if (rollPercentage(perc)) {
-                    //         const mod = modifier.namespace.name + ":" + modifier.localID
-                    //         if (negative && modifier.allowNegative) {
-                    //             newModifier[mod] = -Math.floor(Math.random() * 100) + 1
-                    //         } else if (!negative && modifier.allowPositive) {
-                    //             newModifier[mod] = Math.floor(Math.random() * 100) + 1
-                    //         }
-                    //     }
-                    // })
-                    return newModifier
+
+                    return newModifier;
                 }
+
                 const randomClass = {
                     "id": 'Gambler',
                     "name": 'Gambler',
@@ -1103,12 +1099,12 @@ export class App {
                     "level": 99,
                     "skills": ["namespace_profile:Profile"],
                     "standardModifiers": [
-                        // {
-                        //     "level": 0,
-                        //     "modifiers": {
-                        //         "customModifiersInMelvor:traitAppliedFighter": 1
-                        //     }
-                        // },
+                        {
+                            "level": 0,
+                            "modifiers": {
+                                "customModifiersInMelvor:traitAppliedFighter": 1
+                            }
+                        },
                         {
                             "level": 1,
                             "modifiers": getModifier(true, 10)
@@ -1143,6 +1139,7 @@ export class App {
                 }
                 itemPackage.skillData.add(newskilldata)
             })
+            // game.profileLog.newEntitiesPackage.package.data.skillData[0].data.classes[0].standardModifiers[1].modifiers
             profileLog.newEntitiesPackage = newEntitiesPackage
             this.game.profileLog = profileLog
             monsterPackage.add();
