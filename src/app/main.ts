@@ -1184,12 +1184,9 @@ export class App {
     private patchEventManager() {
         function addMasteryXP(Skill: AnySkill) {
             function SkillsMatch(SkillsArray: string[], CompareSkills: AnySkill[]): boolean {
-                if (Array.isArray(SkillsArray)) {
-                    const classesArray: AnySkill[] = SkillsArray.map(skill => game.skills.getObjectByID(skill));
-                    return classesArray.some(item => CompareSkills.includes(item));
-                } else {
-                    return false
-                }
+                if (!Array.isArray(SkillsArray)) return false;
+                const classesArray = SkillsArray.map(skill => game.skills.getObjectByID(skill));
+                return classesArray.some(item => CompareSkills.includes(item));
             }
             function addXPAndMastery(speciesOrClass: any, skillExp: number, totalMasteryExp: number, totalAbyssXP: number) {
                 if (speciesOrClass.single_species.abyssalLevel > 0) {
@@ -1210,57 +1207,80 @@ export class App {
                 game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true);
             }
 
-            const chosen_species = game.profile.yous.get(1); // human
-            const chosen_class = game.profile.yous.get(2); // knight
+            // const chosen_species = game.profile.yous.get(1); // human
+            // const chosen_class = game.profile.yous.get(2); // knight
             const profileLevel = game.profile._level;
 
-            const getExperience = (entity: MasteredYou) => {
-                let exp = 0, abyss_xp = 0;
-                if (entity) {
-                    exp = Math.floor(entity.single_species.baseExperience) || 0;
-                    if (entity.single_species.baseAbyssalExperience) {
-                        abyss_xp = Math.floor(entity.single_species.baseAbyssalExperience) || 0;
-                    }
-                }
-                return { exp, abyss_xp };
-            };
+            // const getExperience = (entity: MasteredYou) => {
+            //     let exp = 0, abyss_xp = 0;
+            //     if (entity) {
+            //         exp = Math.floor(entity.single_species.baseExperience) || 0;
+            //         if (entity.single_species.baseAbyssalExperience) {
+            //             abyss_xp = Math.floor(entity.single_species.baseAbyssalExperience) || 0;
+            //         }
+            //     }
+            //     return { exp, abyss_xp };
+            // };
+            const chosen_entities = [game.profile.yous.get(1), game.profile.yous.get(2)];
+            for (const entity of chosen_entities) {
+                if (!entity) continue;
 
-            const { exp: species_xp, abyss_xp: species_abyss_xp } = getExperience(chosen_species);
-            const { exp: class_xp, abyss_xp: class_abyss_exp } = getExperience(chosen_class);
-            // @ts-ignore
-            const globalAbyssEXPmod = game.modifiers.getValue("abyssalSkillXP", {});
-            const species_totalAbyssXP = species_abyss_xp + ((species_abyss_xp / 100) * globalAbyssEXPmod) || 0;
-            const class_totalAbyssXP = class_abyss_exp + ((class_abyss_exp / 100) * globalAbyssEXPmod) || 0;
-            // @ts-ignore
-            const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {});
-            const totalMasteryExp1 = species_xp + ((species_xp / 100) * globalMasteryEXPmod) + profileLevel || 0;
-            const totalMasteryExp2 = class_xp + ((class_xp / 100) * globalMasteryEXPmod) + profileLevel || 0;
-            const allSkills: AnySkill[] = Array.from(game.skills.registeredObjects.values());
-            const handleSkillMatch = (
-                entity: MasteredYou,
-                skillExp: number,
-                totalMasteryExp: number,
-                totalAbyssXP: number
-            ) => {
-                if (entity && entity.single_species) {
-                    const entitySkills: string[] = entity.single_species.skills;
-                    if (!entitySkills.some(skill => game.skills.registeredObjects.has(skill))) {
-                        // The profile entity has no skills registered (custom species or class)
-                        addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
-                    }
-                    else if (SkillsMatch(entitySkills, [game.skills.getObjectByID("namespace_profile:Profile")])) {
-                        // This is when profile is a skill within the species or class
-                        addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
-                    }
-                    else if (SkillsMatch(entitySkills, [Skill])) {
-                        // When the rewarded xp skill matches the profile-equipped skill
-                        console.log('Matched:', Skill._localID, entity.single_species._localID);
-                        addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
-                    }
+                const baseExp = Math.floor(entity.single_species.baseExperience) || 0;
+                const baseAbyssalExp = Math.floor(entity.single_species.baseAbyssalExperience) || 0;
+                // @ts-ignore
+                const totalAbyssXP = baseAbyssalExp + ((baseAbyssalExp / 100) * globalAbyssEXPmod);// @ts-ignore
+                const totalMasteryExp = baseExp + ((baseExp / 100) * globalMasteryEXPmod) + profileLevel;
+
+                const entitySkills = entity.single_species.skills;
+                // const entitySkillsObjects = entitySkills.map(skill => game.skills.getObjectByID(skill));
+
+                // Check skill conditions in a single pass
+                if (
+                    !entitySkills.some(skill => game.skills.registeredObjects.has(skill)) ||
+                    SkillsMatch(entitySkills, [game.skills.getObjectByID("namespace_profile:Profile")]) ||
+                    SkillsMatch(entitySkills, [Skill])
+                ) {
+                    console.log('Matched:', Skill._localID, entity.single_species._localID);
+                    addXPAndMastery(entity, baseExp, totalMasteryExp, totalAbyssXP);
                 }
-            };
-            handleSkillMatch(chosen_species, species_xp, totalMasteryExp1, species_totalAbyssXP);
-            handleSkillMatch(chosen_class, class_xp, totalMasteryExp2, class_totalAbyssXP);
+            }
+
+            // const { exp: species_xp, abyss_xp: species_abyss_xp } = getExperience(chosen_species);
+            // const { exp: class_xp, abyss_xp: class_abyss_exp } = getExperience(chosen_class);
+            // // @ts-ignore
+            // const globalAbyssEXPmod = game.modifiers.getValue("abyssalSkillXP", {});
+            // const species_totalAbyssXP = species_abyss_xp + ((species_abyss_xp / 100) * globalAbyssEXPmod) || 0;
+            // const class_totalAbyssXP = class_abyss_exp + ((class_abyss_exp / 100) * globalAbyssEXPmod) || 0;
+            // // @ts-ignore
+            // const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {});
+            // const totalMasteryExp1 = species_xp + ((species_xp / 100) * globalMasteryEXPmod) + profileLevel || 0;
+            // const totalMasteryExp2 = class_xp + ((class_xp / 100) * globalMasteryEXPmod) + profileLevel || 0;
+            // const allSkills: AnySkill[] = Array.from(game.skills.registeredObjects.values());
+            // const handleSkillMatch = (
+            //     entity: MasteredYou,
+            //     skillExp: number,
+            //     totalMasteryExp: number,
+            //     totalAbyssXP: number
+            // ) => {
+            //     if (entity && entity.single_species) {
+            //         const entitySkills: string[] = entity.single_species.skills;
+            //         if (!entitySkills.some(skill => game.skills.registeredObjects.has(skill))) {
+            //             // The profile entity has no skills registered (custom species or class)
+            //             addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
+            //         }
+            //         else if (SkillsMatch(entitySkills, [game.skills.getObjectByID("namespace_profile:Profile")])) {
+            //             // This is when profile is a skill within the species or class
+            //             addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
+            //         }
+            //         else if (SkillsMatch(entitySkills, [Skill])) {
+            //             // When the rewarded xp skill matches the profile-equipped skill
+            //             console.log('Matched:', Skill._localID, entity.single_species._localID);
+            //             addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
+            //         }
+            //     }
+            // };
+            // handleSkillMatch(chosen_species, species_xp, totalMasteryExp1, species_totalAbyssXP);
+            // handleSkillMatch(chosen_class, class_xp, totalMasteryExp2, class_totalAbyssXP);
         }
         // @ts-ignore
         this.context.patch(Skill, 'addXP').before(function (amount: number, action: ActionType) {
@@ -1286,7 +1306,6 @@ export class App {
                 return [amount, action];
             }
         })
-
         this.context.patch(Enemy, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
             // @ts-ignore
             return meleeDefenceBonus + (game.combat.enemy.levels.Defence * game.combat.enemy.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
