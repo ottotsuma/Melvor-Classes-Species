@@ -1228,7 +1228,10 @@ export class App {
                 const baseExp = Math.floor(entity.single_species.baseExperience) || 0;
                 const baseAbyssalExp = Math.floor(entity.single_species.baseAbyssalExperience) || 0;
                 // @ts-ignore
-                const totalAbyssXP = baseAbyssalExp + ((baseAbyssalExp / 100) * globalAbyssEXPmod);// @ts-ignore
+                const globalAbyssEXPmod = game.modifiers.getValue("abyssalSkillXP", {});
+                // @ts-ignore
+                const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {});
+                const totalAbyssXP = baseAbyssalExp + ((baseAbyssalExp / 100) * globalAbyssEXPmod);
                 const totalMasteryExp = baseExp + ((baseExp / 100) * globalMasteryEXPmod) + profileLevel;
 
                 const entitySkills = entity.single_species.skills;
@@ -1240,7 +1243,7 @@ export class App {
                     SkillsMatch(entitySkills, [game.skills.getObjectByID("namespace_profile:Profile")]) ||
                     SkillsMatch(entitySkills, [Skill])
                 ) {
-                    console.log('Matched:', Skill._localID, entity.single_species._localID);
+                    // console.log('Matched:', Skill._localID, entity.single_species._localID);
                     addXPAndMastery(entity, baseExp, totalMasteryExp, totalAbyssXP);
                 }
             }
