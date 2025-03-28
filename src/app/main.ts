@@ -255,7 +255,7 @@ export class App {
             const GiantList = [
                 "melvorD:HillGiant", "melvorD:MossGiant", "melvorF:GiantMoth", "melvorD:GiantCrab", "melvorF:TurkulGiant"
             ]
-            const FightersList: any[] = [
+            let FightersList: any[] = [
                 "melvorD:BlackKnight",
                 "melvorD:HillGiant",
                 "melvorD:MossGiant",
@@ -351,7 +351,7 @@ export class App {
                 "melvorF:SpikedRedClaw",
                 "melvorF:GreaterSkeletalDragon",
             ]
-            const MagesList: any[] = [
+            let MagesList: any[] = [
                 "melvorD:TheEye",
                 "melvorD:ResurrectedEye",
                 "melvorD:Wizard",
@@ -390,7 +390,7 @@ export class App {
                 "melvorF:GiantMoth",
                 "melvorF:CursedLich",
             ]
-            const RoguesList: any[] = [
+            let RoguesList: any[] = [
                 "melvorD:FrozenArcher",
                 "melvorD:RangedGolbin",
                 "melvorD:PratTheProtectorOfSecrets",
@@ -423,7 +423,7 @@ export class App {
                 "melvorF:NoxiousSerpent",
                 "melvorF:LegaranWurm",
             ]
-            const randomList = [
+            let randomList = [
                 "melvorF:RandomITM",
                 "melvorF:Bane",
                 "melvorF:BaneInstrumentOfFear",
@@ -877,21 +877,30 @@ export class App {
             this.patchUnlock(this.game.profile);
             this.initCompatibility(this.game.profile);
             // Giving monsters classes
+            const MagesSet = new Set(MagesList);
+            const FightersSet = new Set(FightersList);
+            const RoguesSet = new Set(RoguesList);
+            const randomSet = new Set(randomList);
             game.monsters.forEach(monster => {
-                if (monster.attackType === "magic" && !MagesList.includes(monster._namespace.name + ':' + monster._localID)) {
-                    MagesList.push(monster._namespace.name + ':' + monster._localID)
-                }
-                if (monster.attackType === "melee" && !FightersList.includes(monster._namespace.name + ':' + monster._localID)) {
-                    FightersList.push(monster._namespace.name + ':' + monster._localID)
-                }
-                if (monster.attackType === "ranged" && !RoguesList.includes(monster._namespace.name + ':' + monster._localID)) {
-                    RoguesList.push(monster._namespace.name + ':' + monster._localID)
-                }
-                if (monster.attackType === "random" && !randomList.includes(monster._namespace.name + ':' + monster._localID)) {
-                    randomList.push(monster._namespace.name + ':' + monster._localID)
-                }
-            })
+                const monsterId = monster._namespace.name + ':' + monster._localID;
 
+                if (monster.attackType === "magic" && !MagesSet.has(monsterId)) {
+                    MagesSet.add(monsterId);
+                }
+                if (monster.attackType === "melee" && !FightersSet.has(monsterId)) {
+                    FightersSet.add(monsterId);
+                }
+                if (monster.attackType === "ranged" && !RoguesSet.has(monsterId)) {
+                    RoguesSet.add(monsterId);
+                }
+                if (monster.attackType === "random" && !randomSet.has(monsterId)) {
+                    randomSet.add(monsterId);
+                }
+            });
+            MagesList = Array.from(MagesSet);
+            FightersList = Array.from(FightersSet);
+            RoguesList = Array.from(RoguesSet);
+            randomList = Array.from(randomSet);
             cmim.registerOrUpdateType("Fighter", "Fighters", "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png", FightersList, true);
             cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", MagesList, true);
             cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", RoguesList, true);
@@ -1183,11 +1192,12 @@ export class App {
 
     private patchEventManager() {
         function addMasteryXP(Skill: AnySkill) {
-            function SkillsMatch(SkillsArray: string[], CompareSkills: AnySkill[]): boolean {
-                if (!Array.isArray(SkillsArray)) return false;
-                const classesArray = SkillsArray.map(skill => game.skills.getObjectByID(skill));
-                return classesArray.some(item => CompareSkills.includes(item));
-            }
+            // function SkillsMatch(SkillsArray: string[], CompareSkills: AnySkill[]): boolean {
+            //     if (!Array.isArray(SkillsArray)) return false;
+            //     const classesArray = SkillsArray.map(skill => game.skills.getObjectByID(skill));
+            //     const compareSkillsSet = new Set(CompareSkills);
+            //     return classesArray.some(item => compareSkillsSet.has(item));
+            // }
             function addXPAndMastery(speciesOrClass: any, skillExp: number, totalMasteryExp: number, totalAbyssXP: number) {
                 if (speciesOrClass.single_species.abyssalLevel > 0) {
                     game.profile.addAbyssalXP(totalAbyssXP, game.profile);
@@ -1199,34 +1209,24 @@ export class App {
                     game.profile.addMasteryPoolXP(game.defaultRealm, totalMasteryExp);
                 }
             }
+
+            const compareSkillsSet = new Set([game.skills.getObjectByID("namespace_profile:Profile"), Skill]);
             // @ts-ignore
             const profileModifier = game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0;
+
             if (rollPercentage(0.1 + (profileModifier / 10))) {
                 game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true);
             } else if (rollPercentage(0.01 + (profileModifier / 100))) {
                 game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true);
             }
 
-            // const chosen_species = game.profile.yous.get(1); // human
-            // const chosen_class = game.profile.yous.get(2); // knight
             const profileLevel = game.profile._level;
-
-            // const getExperience = (entity: MasteredYou) => {
-            //     let exp = 0, abyss_xp = 0;
-            //     if (entity) {
-            //         exp = Math.floor(entity.single_species.baseExperience) || 0;
-            //         if (entity.single_species.baseAbyssalExperience) {
-            //             abyss_xp = Math.floor(entity.single_species.baseAbyssalExperience) || 0;
-            //         }
-            //     }
-            //     return { exp, abyss_xp };
-            // };
             const chosen_entities = [game.profile.yous.get(1), game.profile.yous.get(2)];
             for (const entity of chosen_entities) {
                 if (!entity) continue;
-
-                const baseExp = Math.floor(entity.single_species.baseExperience) || 0;
-                const baseAbyssalExp = Math.floor(entity.single_species.baseAbyssalExperience) || 0;
+                const { baseExperience, baseAbyssalExperience, skills } = entity.single_species;
+                const baseExp = Math.floor(baseExperience) || 0;
+                const baseAbyssalExp = Math.floor(baseAbyssalExperience) || 0;
                 // @ts-ignore
                 const globalAbyssEXPmod = game.modifiers.getValue("abyssalSkillXP", {});
                 // @ts-ignore
@@ -1234,56 +1234,12 @@ export class App {
                 const totalAbyssXP = baseAbyssalExp + ((baseAbyssalExp / 100) * globalAbyssEXPmod);
                 const totalMasteryExp = baseExp + ((baseExp / 100) * globalMasteryEXPmod) + profileLevel;
 
-                const entitySkills = entity.single_species.skills;
-                // const entitySkillsObjects = entitySkills.map(skill => game.skills.getObjectByID(skill));
+                const hasRegisteredSkill = skills.some(skill => game.skills.registeredObjects.has(skill));
 
-                // Check skill conditions in a single pass
-                if (
-                    !entitySkills.some(skill => game.skills.registeredObjects.has(skill)) ||
-                    SkillsMatch(entitySkills, [game.skills.getObjectByID("namespace_profile:Profile")]) ||
-                    SkillsMatch(entitySkills, [Skill])
-                ) {
-                    // console.log('Matched:', Skill._localID, entity.single_species._localID);
+                if (!hasRegisteredSkill || compareSkillsSet.has(game.skills.getObjectByID(skills[0]))) {
                     addXPAndMastery(entity, baseExp, totalMasteryExp, totalAbyssXP);
                 }
             }
-
-            // const { exp: species_xp, abyss_xp: species_abyss_xp } = getExperience(chosen_species);
-            // const { exp: class_xp, abyss_xp: class_abyss_exp } = getExperience(chosen_class);
-            // // @ts-ignore
-            // const globalAbyssEXPmod = game.modifiers.getValue("abyssalSkillXP", {});
-            // const species_totalAbyssXP = species_abyss_xp + ((species_abyss_xp / 100) * globalAbyssEXPmod) || 0;
-            // const class_totalAbyssXP = class_abyss_exp + ((class_abyss_exp / 100) * globalAbyssEXPmod) || 0;
-            // // @ts-ignore
-            // const globalMasteryEXPmod = game.modifiers.getValue("masteryXP", {});
-            // const totalMasteryExp1 = species_xp + ((species_xp / 100) * globalMasteryEXPmod) + profileLevel || 0;
-            // const totalMasteryExp2 = class_xp + ((class_xp / 100) * globalMasteryEXPmod) + profileLevel || 0;
-            // const allSkills: AnySkill[] = Array.from(game.skills.registeredObjects.values());
-            // const handleSkillMatch = (
-            //     entity: MasteredYou,
-            //     skillExp: number,
-            //     totalMasteryExp: number,
-            //     totalAbyssXP: number
-            // ) => {
-            //     if (entity && entity.single_species) {
-            //         const entitySkills: string[] = entity.single_species.skills;
-            //         if (!entitySkills.some(skill => game.skills.registeredObjects.has(skill))) {
-            //             // The profile entity has no skills registered (custom species or class)
-            //             addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
-            //         }
-            //         else if (SkillsMatch(entitySkills, [game.skills.getObjectByID("namespace_profile:Profile")])) {
-            //             // This is when profile is a skill within the species or class
-            //             addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
-            //         }
-            //         else if (SkillsMatch(entitySkills, [Skill])) {
-            //             // When the rewarded xp skill matches the profile-equipped skill
-            //             console.log('Matched:', Skill._localID, entity.single_species._localID);
-            //             addXPAndMastery(entity, skillExp, totalMasteryExp, totalAbyssXP);
-            //         }
-            //     }
-            // };
-            // handleSkillMatch(chosen_species, species_xp, totalMasteryExp1, species_totalAbyssXP);
-            // handleSkillMatch(chosen_class, class_xp, totalMasteryExp2, class_totalAbyssXP);
         }
         // @ts-ignore
         this.context.patch(Skill, 'addXP').before(function (amount: number, action: ActionType) {
@@ -1551,3 +1507,6 @@ export class App {
 // decreasedGlobalDamagePreventionThreshold: Standard,
 // increasedDamagePreventionThreshold: Standard,
 // decreasedDamagePreventionThreshold: Standard,
+
+// 4. **Profile Your Code**:
+//    - Use profiling tools to identify bottlenecks in performance during runtime. This will give you clarity on specific functions or processes that are slowing down the application.
