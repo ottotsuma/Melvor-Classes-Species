@@ -62,7 +62,9 @@ export class App {
         this.initTranslation();
         const settings = this.initSettings();
         this.patchEventManager();
-        this.game.profile = this.game.registerSkill(this.game.registeredNamespaces.getNamespace('namespace_profile'), Profile);
+        const namespace = this.game.registeredNamespaces.getNamespace('namespace_profile');
+        if (!namespace) throw new Error('namespace_profile not found');
+        this.game.profile = this.game.registerSkill(namespace, Profile);
 
         this.context.onModsLoaded(async () => {
             const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
@@ -860,8 +862,9 @@ export class App {
             }
             if (cloudManager.hasAoDEntitlementAndIsEnabled) {
                 await this.context.gameData.addPackage('data-aod.json');
-                if (!game.skills.getObjectByID('namespace_profile:Profile')._unlocked) {
-                    game.skills.getObjectByID('namespace_profile:Profile').setUnlock(true)
+                const profile = game.skills.getObjectByID('namespace_profile:Profile')!;
+                if (!profile._unlocked) {
+                    profile.setUnlock(true);
                 }
             }
             if (Pokemon) {
@@ -1191,6 +1194,7 @@ export class App {
     }
 
     private patchEventManager() {
+        const Theiving = this.game.skills.getObjectByID('melvorD:Mining')!
         function addMasteryXP(Skill: AnySkill) {
             // function SkillsMatch(SkillsArray: string[], CompareSkills: AnySkill[]): boolean {
             //     if (!Array.isArray(SkillsArray)) return false;
@@ -1202,7 +1206,7 @@ export class App {
                 if (speciesOrClass.single_species.abyssalLevel > 0) {
                     game.profile.addAbyssalXP(totalAbyssXP, game.profile);
                     game.profile.addMasteryXP(speciesOrClass.single_species, totalAbyssXP);
-                    game.profile.addMasteryPoolXP(game.realms.getObjectByID('melvorItA:Abyssal'), totalAbyssXP);
+                    game.profile.addMasteryPoolXP(game.realms.getObjectByID('melvorItA:Abyssal')!, totalAbyssXP);
                 } else {
                     game.profile.addXP(skillExp, game.profile);
                     game.profile.addMasteryXP(speciesOrClass.single_species, totalMasteryExp);
@@ -1215,9 +1219,9 @@ export class App {
             const profileModifier = game.modifiers.getValue('namespace_profile:UpgradeProfileModifiers', {}) || 0;
 
             if (rollPercentage(0.1 + (profileModifier / 10))) {
-                game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1, true, true, false, true);
+                game.bank.addItem(game.items.getObjectByID('namespace_profile:Mastery_Token_Profile')!, 1, true, true, false, true);
             } else if (rollPercentage(0.01 + (profileModifier / 100))) {
-                game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true);
+                game.bank.addItem(game.items.getObjectByID('namespace_profile:Profile_Token')!, 1, true, true, false, true);
             }
 
             const profileLevel = game.profile._level;
@@ -1293,8 +1297,7 @@ export class App {
         });
         this.context.patch(Thieving, 'postAction').after(() => {
             this.game.items.allObjects.forEach(item => {
-                const Theiving = this.game.skills.getObjectByID('melvorD:Thieving')
-                const query = Theiving.getItemModifierQuery(item)
+                const query = Theiving.getItemModifierQuery(item);
                 let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
                 if (chance > 0) {
                     let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
@@ -1308,7 +1311,6 @@ export class App {
         });
         this.context.patch(Fishing, 'postAction').after(() => {
             this.game.items.allObjects.forEach(item => {
-                const Theiving = this.game.skills.getObjectByID('melvorD:Fishing')
                 const query = Theiving.getItemModifierQuery(item)
                 let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
                 if (chance > 0) {
@@ -1323,7 +1325,6 @@ export class App {
         });
         this.context.patch(Mining, 'postAction').after(() => {
             this.game.items.allObjects.forEach(item => {
-                const Theiving = this.game.skills.getObjectByID('melvorD:Mining')
                 const query = Theiving.getItemModifierQuery(item)
                 let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
                 if (chance > 0) {

@@ -9,7 +9,8 @@
         "esModuleInterop": true,
         "moduleResolution": "node",
         "noEmit": false,
-        "noEmitOnError": false
+        "noEmitOnError": false,
+        "lib": ["es2016", "dom"]
     },
     "include": ["src/**/*", "node_modules/melvor-types", "../Custom-Modifiers-in-Melvor/_definitions/**/*"]
 }
