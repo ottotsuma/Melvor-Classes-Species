@@ -4,10 +4,8 @@ import { YouModifier, Single_Species } from './profile.types';
 export class ProfileManager {
     public get elements() {
         const fragment = new DocumentFragment();
-
         fragment.append(getTemplateNode('profile'));
-
-        return [...fragment.children];
+        return Array.from(fragment.children);
     }
 
     public get essenceOfProfileIcon() {
@@ -61,7 +59,7 @@ export class ProfileManager {
                 description: string;
                 isNegative: boolean;
             }[] = [];
-            const Part1:StatDescription[] = StatObject.getDescriptions(modifier)
+            const Part1: StatDescription[] = StatObject.getDescriptions(modifier)
             for (let index = 0; index < Part1.length; index++) {
                 const Part2: {
                     description: string;
@@ -99,8 +97,10 @@ export class ProfileManager {
             this.profile.settings.youEquipCostSeven || 100000000
         ];
         const single_speciesRef = this.profile.actions.find(action => action.id === single_species.id);
-        const unlocked = this.profile.masteriesUnlocked.get(single_speciesRef).filter(isUnlocked => isUnlocked).length;
-
+        if (!single_speciesRef) return;
+        const masteries = this.profile.masteriesUnlocked.get(single_speciesRef);
+        if (!masteries) return;
+        const unlocked = masteries.filter(isUnlocked => isUnlocked).length;
         return { costs: MasterCostMap, unlocked };
     }
 
@@ -111,14 +111,13 @@ export class ProfileManager {
     }
 
     private isModifierActive(single_species: Single_Species, modifier: StatObject) {
-        single_species = this.profile.actions.find(action => action.id === single_species.id);
+        const action = this.profile.actions.find(action => action.id === single_species.id)!;
+        const unlockedMasteries = this.profile.masteriesUnlocked.get(action)!;
 
-        let unlockedMasteries = this.profile.masteriesUnlocked.get(single_species);
-
-        const validModifierLevels = single_species
+        const validModifierLevels = action
             .modifiers(this.profile.settings.modifierType)
-            .filter((modifier, index) => unlockedMasteries[index])
-            .map(single_species => single_species.level);
+            .filter((_modifier, index) => unlockedMasteries[index])
+            .map(mod => mod.level);
 
         return validModifierLevels.includes(modifier.level);
     }

@@ -3,15 +3,14 @@
         "outDir": "./build/",
         "noImplicitAny": true,
         "module": "es6",
-        "target": "es6",
+        "target": "ES2016",
         "allowJs": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "moduleResolution": "node",
         "noEmit": false,
         "noEmitOnError": false,
-        "lib": ["es2016", "dom"]
+        "lib": ["ES2016", "DOM"]
     },
     "include": ["src/**/*", "node_modules/melvor-types", "../Custom-Modifiers-in-Melvor/_definitions/**/*"]
 }
-// , "../Custom-Modifiers-in-Melvor/**/*"
