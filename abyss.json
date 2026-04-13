@@ -795,7 +795,7 @@
               "productId": "namespace_profile:Abyssal_King",
               "level": 1,
               "abyssalLevel": 60,
-              "baseAbyssalExperience": 650,
+              "baseAbyssalExperience": 666,
               "realm": "melvorItA:Abyssal",
               "skills": [
                 "https://cdn2-main.melvor.net/assets/media/skills/combat/abyssal_damage.png"
@@ -813,9 +813,9 @@
                     "abyssalSkillXP": 3,
                     "flatMeleeDefenceBonusPerAbyssalLevel": [
                       {
-                          "value": 2
+                        "value": 2
                       }
-                  ]
+                    ]
                   }
                 },
                 {

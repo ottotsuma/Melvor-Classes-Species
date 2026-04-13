@@ -257,7 +257,6 @@
                 "id": "SeaCreature_traits",
                 "name": "Sea Creature Traits",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealtDragon": 10,
                     "customModifiersInMelvor:damageDealtDragon": 10
                 }
             },
@@ -469,14 +468,6 @@
                 "golbinRaidExclusive": false,
                 "sellsFor": 1500,
                 "itemType": "MasteryToken",
-                "modifiers": {
-                    "masteryToken": [
-                        {
-                            "skillID": "namespace_profile:Profile",
-                            "value": 0.1
-                        }
-                    ]
-                },
                 "skill": "namespace_profile:Profile",
                 "realm": "melvorD:Melvor",
                 "percent": 0.1
@@ -776,7 +767,7 @@
                                 {
                                     "level": 0,
                                     "modifiers": {
-                                        "customModifiersInMelvor:traitAppliedHuman": 1
+                                        "customModifiersInMelvor:traitAppliedNaga": 1
                                     }
                                 },
                                 {
@@ -1997,7 +1988,12 @@
                                 {
                                     "level": 20,
                                     "modifiers": {
-                                        "skillXP":[{"skillID":"melvorD:Woodcutting", "value": 10}]
+                                        "skillXP": [
+                                            {
+                                                "skillID": "melvorD:Woodcutting",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
@@ -2014,7 +2010,12 @@
                                 {
                                     "level": 60,
                                     "modifiers": {
-                                        "skillMasteryXPPerDeedree": [{"skillID":"melvorD:Woodcutting","value": 10}]
+                                        "skillMasteryXPPerDeedree": [
+                                            {
+                                                "skillID": "melvorD:Woodcutting",
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
@@ -2026,8 +2027,17 @@
                                 {
                                     "level": 99,
                                     "modifiers": {
-                                        "melvorD:treeCutLimit":[{"value": 1}],  
-                                        "doubleItemsSkill": [{"skillID":"melvorD:Woodcutting","value": 1}] 
+                                        "melvorD:treeCutLimit": [
+                                            {
+                                                "value": 1
+                                            }
+                                        ],
+                                        "doubleItemsSkill": [
+                                            {
+                                                "skillID": "melvorD:Woodcutting",
+                                                "value": 1
+                                            }
+                                        ]
                                     }
                                 }
                             ]
@@ -2427,7 +2437,11 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "skillInterval": 10
+                                        "skillInterval": [
+                                            {
+                                                "value": 10
+                                            }
+                                        ]
                                     }
                                 },
                                 {
@@ -2822,8 +2836,8 @@
                 "currencyDrops": [
                     {
                         "currencyID": "melvorD:GP",
-                        "min": 20,
-                        "max": 1
+                        "min": 1,
+                        "max": 20
                     }
                 ],
                 "bones": {
@@ -2874,8 +2888,8 @@
                 "currencyDrops": [
                     {
                         "currencyID": "melvorD:GP",
-                        "min": 20,
-                        "max": 1
+                        "min": 1,
+                        "max": 20
                     }
                 ],
                 "bones": {
@@ -2915,8 +2929,8 @@
                 "currencyDrops": [
                     {
                         "currencyID": "melvorD:GP",
-                        "min": 5,
-                        "max": 1
+                        "min": 1,
+                        "max": 5
                     }
                 ],
                 "bones": {
@@ -2956,8 +2970,8 @@
                 "currencyDrops": [
                     {
                         "currencyID": "melvorD:GP",
-                        "min": 5,
-                        "max": 1
+                        "min": 1,
+                        "max": 5
                     }
                 ],
                 "bones": {
@@ -2997,8 +3011,8 @@
                 "currencyDrops": [
                     {
                         "currencyID": "melvorD:GP",
-                        "min": 5,
-                        "max": 1
+                        "min": 1,
+                        "max": 5
                     }
                 ],
                 "bones": {
@@ -3038,8 +3052,8 @@
                 "currencyDrops": [
                     {
                         "currencyID": "melvorD:GP",
-                        "min": 5,
-                        "max": 1
+                        "min": 1,
+                        "max": 5
                     }
                 ],
                 "bones": {

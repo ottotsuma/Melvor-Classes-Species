@@ -12,7 +12,6 @@
                             "name": "Combat Modifiers In Melvor",
                             "media": "assets/bob.png",
                             "baseExperience": 155,
-                            "maxGP": 551,
                             "productId": "namespace_profile:cmim_single_species",
                             "level": 99,
                             "skills": [
@@ -20,34 +19,46 @@
                             ],
                             "standardModifiers": [
                                 {
+                                    "level": 0,
+                                    "modifiers": {
+                                        "customModifiersInMelvor:traitAppliedHuman": 1
+                                    }
+                                },
+                                {
                                     "level": 1,
-                                    "key": "increasedDamageTakenFromAirSpells",
-                                    "value": 20
+                                    "modifiers": {
+                                        "increasedDamageTakenFromAirSpells": 20
+                                    }
                                 },
                                 {
                                     "level": 20,
-                                    "key": "increasedDamageAgainstElves",
-                                    "value": 20
+                                    "modifiers": {
+                                        "increasedDamageAgainstElves": 20
+                                    }
                                 },
                                 {
                                     "level": 40,
-                                    "key": "increasedDamageAgainstDragons",
-                                    "value": 20
+                                    "modifiers": {
+                                        "increasedDamageAgainstDragons": 20
+                                    }
                                 },
                                 {
                                     "level": 60,
-                                    "key": "increasedDamageAgainstHumans",
-                                    "value": 20
+                                    "modifiers": {
+                                        "increasedDamageAgainstHumans": 20
+                                    }
                                 },
                                 {
                                     "level": 80,
-                                    "key": "increasedDamageAgainstAnimals",
-                                    "value": 20
+                                    "modifiers": {
+                                        "increasedDamageAgainstAnimals": 20
+                                    }
                                 },
                                 {
                                     "level": 99,
-                                    "key": "increasedDamageAgainstUndead",
-                                    "value": 20
+                                    "modifiers": {
+                                        "increasedDamageAgainstUndead": 20
+                                    }
                                 }
                             ]
                         }
