@@ -12,7 +12,6 @@
                             "name": "Combat Modifiers In Melvor",
                             "media": "assets/bob.png",
                             "baseExperience": 155,
-                            "productId": "namespace_profile:cmim_single_species",
                             "level": 99,
                             "skills": [
                                 "namespace_profile:Profile"

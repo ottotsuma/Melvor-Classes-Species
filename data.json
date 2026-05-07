@@ -758,7 +758,6 @@
                             "name": "Human",
                             "media": "https://ottotsuma.github.io/images/portraits/human%20female%20barbarian%202.jpg",
                             "baseExperience": 5,
-                            "productId": "namespace_profile:Human",
                             "level": 1,
                             "skills": [
                                 "namespace_profile:Profile"
@@ -844,11 +843,116 @@
                             ]
                         },
                         {
+                            "id": "Kappa",
+                            "name": "Kappa",
+                            "media": "https://yokaiidle.netlify.app/assets/_CHARACTERS/Char_02.png",
+                            "baseExperience": 5,
+                            "level": 1,
+                            "skills": [
+                                "https://wiki.melvoridle.com/images/d/d9/Water_Strike_%28spell%29.png"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "modifiers": {
+                                        "customModifiersInMelvor:traitAppliedMythicalCreature": 1
+                                    }
+                                },
+                                {
+                                    "level": 10,
+                                    "modifiers": {
+                                        "flatMagicMinHit": [
+                                            {
+                                                "value": 40,
+                                                "subcategoryID": "melvorD:Water"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level": 20,
+                                    "modifiers": {
+                                        "magicMaxHit": [
+                                            {
+                                                "value": 3,
+                                                "subcategoryID": "melvorD:Water"
+                                            }
+                                        ],
+                                        "magicAccuracyRating": [
+                                            {
+                                                "value": 5,
+                                                "subcategoryID": "melvorD:Water"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level": 40,
+                                    "modifiers": {
+                                        "flatResistance": [
+                                            {
+                                                "value": 9,
+                                                "damageTypeID": "melvorD:Normal"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level": 60,
+                                    "modifiers": {
+                                        "magicMaxHit": [
+                                            {
+                                                "value": 5,
+                                                "subcategoryID": "melvorD:Water"
+                                            }
+                                        ],
+                                        "evasionAgainstMelee": [
+                                            {
+                                                "value": 5
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level": 80,
+                                    "modifiers": {
+                                        "flatResistance": [
+                                            {
+                                                "value": 3,
+                                                "damageTypeID": "melvorD:Normal"
+                                            }
+                                        ],
+                                        "hitpointRegeneration": [
+                                            {
+                                                "value": 10
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "level": 99,
+                                    "modifiers": {
+                                        "magicMaxHit": [
+                                            {
+                                                "value": 5,
+                                                "subcategoryID": "melvorD:Water"
+                                            }
+                                        ],
+                                        "flatResistance": [
+                                            {
+                                                "value": 6,
+                                                "damageTypeID": "melvorD:Normal"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
                             "id": "Elf",
                             "name": "Elf",
                             "media": "https://ottotsuma.github.io/images/portraits/elf-male-4.png",
                             "baseExperience": 12,
-                            "productId": "namespace_profile:Elf",
                             "level": 10,
                             "skills": [
                                 "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png",
@@ -940,7 +1044,6 @@
                             "name": "Aarakocra",
                             "media": "https://ottotsuma.github.io/images/portraits/aarakocra%20female.png",
                             "baseExperience": 21,
-                            "productId": "namespace_profile:Aarakocra",
                             "level": 20,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/torvair.png",
@@ -1040,7 +1143,6 @@
                             "name": "Goblin",
                             "media": "https://ottotsuma.github.io/images/people/goblin.jpg",
                             "baseExperience": 29,
-                            "productId": "namespace_profile:Goblin",
                             "level": 30,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/goblin.png",
@@ -1107,7 +1209,6 @@
                             "name": "Naga",
                             "media": "https://ottotsuma.github.io/images/people/The_Serpent_People.jpg",
                             "baseExperience": 32,
-                            "productId": "namespace_profile:Naga",
                             "level": 35,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/Stone_Snake.png",
@@ -1194,7 +1295,6 @@
                             "name": "Dragon",
                             "media": "https://ottotsuma.github.io/images/portraits/dragonborn%20male%20wizard.jpg",
                             "baseExperience": 37,
-                            "productId": "namespace_profile:Dragon",
                             "level": 40,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/dragon_green.png",
@@ -1289,7 +1389,6 @@
                             "name": "Undead",
                             "media": "https://ottotsuma.github.io/images/people/necro.jpg",
                             "baseExperience": 45,
-                            "productId": "namespace_profile:Undead",
                             "level": 50,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/zombie_hand.png",
@@ -1377,7 +1476,6 @@
                             "name": "Demon",
                             "media": "https://ottotsuma.github.io/images/monsters/50082a3f3bb279ecf31cd601361b4f37.jpg",
                             "baseExperience": 56,
-                            "productId": "namespace_profile:Demon",
                             "level": 60,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/fierce_devil.png",
@@ -1449,7 +1547,6 @@
                             "name": "Elemental",
                             "media": "https://toppng.com/uploads/preview/monsters-for-dungeons-dragons-dd-5e-fire-elemental-myrmido-11562936725otccjixnft.png",
                             "baseExperience": 62,
-                            "productId": "namespace_profile:Elemental",
                             "level": 70,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/infernal_golem.png",
@@ -1528,7 +1625,6 @@
                             "name": "Sea Creature",
                             "media": "https://ottotsuma.github.io/images/portraits/triton%20female%202.png",
                             "baseExperience": 69,
-                            "productId": "namespace_profile:SeaCreature",
                             "level": 80,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/twin_sea_dragon_serpents.png",
@@ -1611,7 +1707,6 @@
                             "name": "Mythical Creature",
                             "media": "https://i.pinimg.com/564x/19/cd/20/19cd20c3ea44128bb29e4432f2ca505f.jpg",
                             "baseExperience": 77,
-                            "productId": "namespace_profile:MythicalCreature",
                             "level": 90,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/elerine_mage.png",
@@ -1694,7 +1789,6 @@
                             "name": "Angel",
                             "media": "https://ottotsuma.github.io/images/monsters/155544adb53505632dccdb6edea8c83f.jpg",
                             "baseExperience": 84,
-                            "productId": "namespace_profile:Angel",
                             "level": 99,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/angel.png",
@@ -1757,7 +1851,6 @@
                             "name": "Fighter",
                             "media": "https://ottotsuma.github.io/images/people/knights.jpg",
                             "baseExperience": 5,
-                            "productId": "namespace_profile:Fighter",
                             "level": 1,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/turkul_throwers.png",
@@ -1829,7 +1922,6 @@
                             "name": "Mage",
                             "media": "https://ottotsuma.github.io/images/portraits/human%20male%20wizard%204.png",
                             "baseExperience": 5,
-                            "productId": "namespace_profile:Mage",
                             "level": 1,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png",
@@ -1909,9 +2001,8 @@
                         {
                             "id": "Rogue",
                             "name": "Rogue",
-                            "media": "https://www.sharecg.com/images/original/50642.jpg",
+                            "media": "assets/rogue.jpg",
                             "baseExperience": 5,
-                            "productId": "namespace_profile:Archer",
                             "level": 1,
                             "skills": [
                                 "https://images.saymedia-content.com/.image/t_share/MTc2NDU4MzM1NjgyMzczNTk0/do-it-yourself-sterling-duchess-archer-halloween-costume-homemade-archer-cosplay.png",
@@ -1967,7 +2058,6 @@
                             "name": "Moogleton Lumberjack",
                             "media": "https://cdn2-main.melvor.net/assets/media/skills/thieving/lumberjack.png",
                             "baseExperience": 5,
-                            "productId": "namespace_profile:Lumberjack",
                             "level": 5,
                             "skills": [
                                 "melvorD:Woodcutting"
@@ -2047,7 +2137,6 @@
                             "name": "Knight",
                             "media": "https://ottotsuma.github.io/images/people/knights.jpg",
                             "baseExperience": 12,
-                            "productId": "namespace_profile:Knight",
                             "level": 10,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/steel_knight.png",
@@ -2126,7 +2215,6 @@
                             "name": "Scout",
                             "media": "https://ottotsuma.github.io/images/people/2e0fee63d593cea1aada59d3f8f2a815.jpg",
                             "baseExperience": 21,
-                            "productId": "namespace_profile:Scout",
                             "level": 20,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png",
@@ -2201,7 +2289,6 @@
                             "name": "Pirate",
                             "media": "https://ottotsuma.github.io/images/people/f93a36fab2810f29163626fd22075750.jpg",
                             "baseExperience": 26,
-                            "productId": "namespace_profile:Pirate",
                             "level": 30,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/pirate.png",
@@ -2277,7 +2364,6 @@
                             "name": "Paladin",
                             "media": "https://ottotsuma.github.io/images/people/w1.jpg",
                             "baseExperience": 30,
-                            "productId": "namespace_profile:Paladin",
                             "level": 40,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/paladin.png",
@@ -2343,7 +2429,6 @@
                             "name": "Cursemancer",
                             "media": "https://ottotsuma.github.io/images/people/wep.jpg",
                             "baseExperience": 36,
-                            "productId": "namespace_profile:Cursemancer",
                             "level": 50,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/cursed_maiden.png",
@@ -2421,7 +2506,6 @@
                             "name": "Scholar",
                             "media": "https://i.pinimg.com/originals/0f/09/f5/0f09f526aa8d26d64049951499029984.jpg",
                             "baseExperience": 42,
-                            "productId": "namespace_profile:Scholar",
                             "level": 60,
                             "skills": [
                                 "https://vignette.wikia.nocookie.net/finalfantasy/images/b/b5/Scholar_Artwork_XIV.png",
@@ -2482,7 +2566,6 @@
                             "name": "Witchdoctor",
                             "media": "https://ottotsuma.github.io/images/people/witchdoctor.jpg",
                             "baseExperience": 49,
-                            "productId": "namespace_profile:Witchdoctor",
                             "level": 70,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/plague_doctor.png",
@@ -2499,7 +2582,7 @@
                                 {
                                     "level": 1,
                                     "modifiers": {
-                                        "attackInterval": 100
+                                        "attackInterval": 20
                                     }
                                 },
                                 {
@@ -2589,7 +2672,6 @@
                             "name": "Assassin",
                             "media": "https://i.pinimg.com/236x/e1/86/96/e18696a590f3e8929813006b2121c547.jpg?nii=t",
                             "baseExperience": 55,
-                            "productId": "namespace_profile:Assassin",
                             "level": 80,
                             "skills": [
                                 "https://www.pngmart.com/files/15/Assassins-Creed-Transparent-PNG.png",
@@ -2664,7 +2746,6 @@
                             "name": "Monk",
                             "media": "https://i.pinimg.com/originals/04/40/0f/04400f3062a019bd9e7e77be2fdf4b25.jpg",
                             "baseExperience": 63,
-                            "productId": "namespace_profile:Monk",
                             "level": 90,
                             "skills": [
                                 "https://clipart-library.com/data_images/569075.png",
@@ -2736,7 +2817,6 @@
                             "name": "Wizard",
                             "media": "https://ottotsuma.github.io/images/portraits/human%20male%20wizard%203.jpg",
                             "baseExperience": 67,
-                            "productId": "namespace_profile:Wizard",
                             "level": 99,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png",

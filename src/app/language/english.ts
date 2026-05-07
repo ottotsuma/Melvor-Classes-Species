@@ -219,6 +219,8 @@ export const en = {
     increasedUpgradeProfileModifiers: "+${value} increased chance to gain profile tokens",
     MODIFIER_DATA_applyRandomCurseOnCrit: "Chance to apply a random curse on critically hitting",
     MODIFIER_DATA_applyRandomCurseOnSelfBeingAttacked: "Chance to apply a random curse on self when attacked",
-    CurrentHitpointsHeal: `Attacker has a 20% chance to heal for 20% of Attackers current hitpoints`
-
+    CurrentHitpointsHeal: `Attacker has a 20% chance to heal for 20% of Attackers current hitpoints`,
+    Profile_Single_Species_Kappa: "Kappa",
+    Profile_Profile_Single_Species_Kappa: "Kappa",
+    Single_Species_Kappa: 'Kappa',
 };

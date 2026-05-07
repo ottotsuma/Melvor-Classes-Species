@@ -768,7 +768,7 @@ export class App {
                 DemonList.push("melvorAoD:CultImp")
             }
             // if (necromancy) {
-            //     UndeadList.push([
+            //     UndeadList.push(
             //         "necromancy:Baby_Necromancer",
             //         "necromancy:Teen_Necromancer",
             //         "necromancy:Adult_Necromancer",
@@ -800,7 +800,7 @@ export class App {
             //         "necromancy:Hooded_Figure_Revisited",
             //         "necromancy:Rasial_The_First_Necromancer",
             //         "necromancy:Rasials_True_Form",
-            //     ])
+            //     )
             // }
             const cmim = mod.api.customModifiersInMelvor;
 
@@ -871,6 +871,8 @@ export class App {
                 await this.context.gameData.addPackage('pokemon.json');
             }
             if (tes) {
+                cmim.registerOrUpdateType("Khajiit", "Khajiit", "https://cdn.melvor.net/core/v018/assets/media/pets/octavius_lepidus_viii.png", [], true);
+                cmim.registerOrUpdateType("Argonian", "Argonians", "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_red.png", [], true);
                 await this.context.gameData.addPackage('tes.json');
             }
             if (necromancy) {
@@ -908,25 +910,47 @@ export class App {
             cmim.registerOrUpdateType("Mage", "Mages", "https://cdn2-main.melvor.net/assets/media/monsters/wizard.png", MagesList, true);
             cmim.registerOrUpdateType("Rogue", "Rogues", "https://cdn2-main.melvor.net/assets/media/monsters/vorloran_watcher.png", RoguesList, true);
             // adding monsters modifiers to effect species
-            const cmimSeaCreatureList: String[] = await cmim.getMonstersOfType('SeaCreature');
-            const cmimMythicalCreatureList: String[] = await cmim.getMonstersOfType('MythicalCreature');
-            const cmimElementalList: String[] = await cmim.getMonstersOfType('Elemental');
-            const cmimDemonList: String[] = await cmim.getMonstersOfType('Demon');
-            const cmimAnimalList: String[] = await cmim.getMonstersOfType('Animal');
-            const cmimHumanList: String[] = await cmim.getMonstersOfType('Human');
-            const cmimUndeadList: String[] = await cmim.getMonstersOfType('Undead');
-            const cmimAngelList: String[] = await cmim.getMonstersOfType('Angel');
-            const cmimAarakocraList: String[] = await cmim.getMonstersOfType('Aarakocra');
-            const cmimBeastList: String[] = await cmim.getMonstersOfType('Beast');
-            const cmimGiantList: String[] = await cmim.getMonstersOfType('Giant');
-            const cmimOrcList: String[] = await cmim.getMonstersOfType('Orc');
-            const cmimPlantList: String[] = await cmim.getMonstersOfType('Plant');
-            const cmimGoblinList: String[] = await cmim.getMonstersOfType('Goblin');
-            const cmimElfList: String[] = await cmim.getMonstersOfType('Elf');
-            const cmimDragonList: String[] = await cmim.getMonstersOfType('Dragon');
-            const cmimFighterList: String[] = await cmim.getMonstersOfType('Fighter');
-            const cmimMageList: String[] = await cmim.getMonstersOfType('Mage');
-            const cmimRogueList: String[] = await cmim.getMonstersOfType('Rogue');
+            const [
+                cmimSeaCreatureList,
+                cmimMythicalCreatureList,
+                cmimElementalList,
+                cmimDemonList,
+                cmimAnimalList,
+                cmimHumanList,
+                cmimUndeadList,
+                cmimAngelList,
+                cmimAarakocraList,
+                cmimBeastList,
+                cmimGiantList,
+                cmimOrcList,
+                cmimPlantList,
+                cmimGoblinList,
+                cmimElfList,
+                cmimDragonList,
+                cmimFighterList,
+                cmimMageList,
+                cmimRogueList,
+            ] = await Promise.all([
+                cmim.getMonstersOfType('SeaCreature'),
+                cmim.getMonstersOfType('MythicalCreature'),
+                cmim.getMonstersOfType('Elemental'),
+                cmim.getMonstersOfType('Demon'),
+                cmim.getMonstersOfType('Animal'),
+                cmim.getMonstersOfType('Human'),
+                cmim.getMonstersOfType('Undead'),
+                cmim.getMonstersOfType('Angel'),
+                cmim.getMonstersOfType('Aarakocra'),
+                cmim.getMonstersOfType('Beast'),
+                cmim.getMonstersOfType('Giant'),
+                cmim.getMonstersOfType('Orc'),
+                cmim.getMonstersOfType('Plant'),
+                cmim.getMonstersOfType('Goblin'),
+                cmim.getMonstersOfType('Elf'),
+                cmim.getMonstersOfType('Dragon'),
+                cmim.getMonstersOfType('Fighter'),
+                cmim.getMonstersOfType('Mage'),
+                cmim.getMonstersOfType('Rogue'),
+            ]) as String[][];
             const monsterPackage = this.context.gameData.buildPackage((itemPackage: any) => {
                 cmimRogueList.forEach(monsterId => {
                     itemPackage.monsters.modify({
@@ -1086,20 +1110,16 @@ export class App {
             const newEntitiesPackage = this.context.gameData.buildPackage((itemPackage: any) => {
                 // New classes
                 function getModifier(negative: boolean, perc = 0.5) {
-                    const newModifier: any = {};
-
-                    const modifier = game.modifierRegistry.allObjects.find(object =>
-                        !object.disabled && object.hasEmptyScope && rollPercentage(perc)
+                    const eligible = game.modifierRegistry.allObjects.filter(
+                        o => !o.disabled && o.hasEmptyScope
                     );
-
-                    if (modifier) {
-                        const mod = modifier.namespace + ":" + modifier.localID;
-                        let value = Math.floor(Math.random() * 10) + 1;
-                        if (modifier.inverted) value *= -1;
-                        newModifier[mod] = negative ? -value : value;
-                    }
-
-                    return newModifier;
+                    // Now pick one at random with the given probability
+                    const modifier = eligible[Math.floor(Math.random() * eligible.length)];
+                    if (!modifier || !rollPercentage(perc)) return {};
+                    const mod = `${modifier.namespace}:${modifier.localID}`;
+                    let value = Math.floor(Math.random() * 10) + 1;
+                    if (modifier.inverted) value *= -1;
+                    return { [mod]: negative ? -value : value };
                 }
 
                 const randomClass = {
@@ -1107,7 +1127,6 @@ export class App {
                     "name": 'Gambler',
                     "media": 'https://static.vecteezy.com/system/resources/previews/015/081/534/original/white-rolling-dice-3d-rendering-isometric-icon-png.png',
                     "baseExperience": 155,
-                    "productId": "namespace_profile:Gambler",
                     "level": 99,
                     "skills": ["namespace_profile:Profile"],
                     "standardModifiers": [
@@ -1158,7 +1177,13 @@ export class App {
             newEntitiesPackage.add();
         })
         this.context.onCharacterLoaded(() => {
-            this.game.profile.updateModifiers(true)
+            const you1 = this.game.profile.yous.get(1);
+            const you2 = this.game.profile.yous.get(2);
+
+            if (you1) this.game.profile.userInterface.you1.setYou(you1);
+            if (you2) this.game.profile.userInterface.you2.setYou(you2);
+
+            this.game.profile.updateModifiers(true);
         })
 
 
@@ -1194,14 +1219,35 @@ export class App {
     }
 
     private patchEventManager() {
-        const Theiving = this.game.skills.getObjectByID('melvorD:Mining')!
+        const ThievingSkill = this.game.skills.getObjectByID('melvorD:Thieving')!
+
+        // Cache built once on the first postAction call, reused forever after
+        let cachedItemQueries: Array<{ item: AnyItem; query: any }> | null = null;
+
+        const getItemQueryCache = () => {
+            if (!cachedItemQueries) {
+                cachedItemQueries = this.game.items.allObjects
+                    .map(item => ({ item, query: ThievingSkill.getItemModifierQuery(item) }));
+            }
+            return cachedItemQueries;
+        };
+
+        // One shared function instead of three identical copies
+        const processRandomProducts = () => {
+            getItemQueryCache().forEach(({ item, query }) => {
+                let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
+                if (chance > 0) {
+                    let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
+                    quantity = Math.max(quantity, 1);
+                    chance = clampValue(chance, 0, 100);
+                    if (rollPercentage(chance)) {
+                        game.bank.addItem(item, quantity, true, true, false, true);
+                    }
+                }
+            });
+        };
+
         function addMasteryXP(Skill: AnySkill) {
-            // function SkillsMatch(SkillsArray: string[], CompareSkills: AnySkill[]): boolean {
-            //     if (!Array.isArray(SkillsArray)) return false;
-            //     const classesArray = SkillsArray.map(skill => game.skills.getObjectByID(skill));
-            //     const compareSkillsSet = new Set(CompareSkills);
-            //     return classesArray.some(item => compareSkillsSet.has(item));
-            // }
             function addXPAndMastery(speciesOrClass: any, skillExp: number, totalMasteryExp: number, totalAbyssXP: number) {
                 if (speciesOrClass.single_species.abyssalLevel > 0) {
                     game.profile.addAbyssalXP(totalAbyssXP, game.profile);
@@ -1245,6 +1291,7 @@ export class App {
                 }
             }
         }
+
         // @ts-ignore
         this.context.patch(Skill, 'addXP').before(function (amount: number, action: ActionType) {
             try {
@@ -1257,6 +1304,7 @@ export class App {
                 return [amount, action];
             }
         })
+
         // @ts-ignore
         this.context.patch(Skill, 'addAbyssalXP').before(function (amount: number, action: ActionType) {
             try {
@@ -1269,74 +1317,40 @@ export class App {
                 return [amount, action];
             }
         })
+
         this.context.patch(Enemy, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
             // @ts-ignore
             return meleeDefenceBonus + (game.combat.enemy.levels.Defence * game.combat.enemy.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
         })
-        this.context.patch(Enemy, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
-            // @ts-ignore
-            return meleeDefenceBonus + (game.combat.enemy.levels.Defence * game.combat.enemy.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
-        })
+
         this.context.patch(Player, 'getMeleeDefenceBonus').after(function (meleeDefenceBonus) {
             // @ts-ignore
             return meleeDefenceBonus + (game.combat.player.levels.Defence * game.modifiers.getValue('namespace_profile:FlatMeleeDefenceBonusPerDefence', {}))
         })
-        this.context.patch(Player, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) { // @ts-ignore
+
+        this.context.patch(Player, 'getRangedDefenceBonus').after(function (rangedDefenceBonus) {
+            // @ts-ignore
             return rangedDefenceBonus + (game.combat.player.levels.Defence * game.modifiers.getValue('namespace_profile:FlatRangedDefenceBonusPerDefence', {}))
         })
+
         this.context.patch(Player, 'equipItem').after(() => {
             this.game.profile.updateModifiers()
         });
+
         this.context.patch(Player, 'unequipItem').after(() => {
             this.game.profile.updateModifiers()
         });
+
         this.context.patch(GameEventSystem, 'constructMatcher').after((_patch, data) => {
             if (this.isProfileEvent(data)) {
                 return new ProfileActionEventMatcher(data, this.game) as any;
             }
         });
-        this.context.patch(Thieving, 'postAction').after(() => {
-            this.game.items.allObjects.forEach(item => {
-                const query = Theiving.getItemModifierQuery(item);
-                let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
-                if (chance > 0) {
-                    let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
-                    quantity = Math.max(quantity, 1);
-                    chance = clampValue(chance, 0, 100);
-                    if (rollPercentage(chance)) {
-                        game.bank.addItem(item, quantity, true, true, false, true);
-                    }
-                }
-            })
-        });
-        this.context.patch(Fishing, 'postAction').after(() => {
-            this.game.items.allObjects.forEach(item => {
-                const query = Theiving.getItemModifierQuery(item)
-                let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
-                if (chance > 0) {
-                    let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
-                    quantity = Math.max(quantity, 1);
-                    chance = clampValue(chance, 0, 100);
-                    if (rollPercentage(chance)) {
-                        game.bank.addItem(item, quantity, true, true, false, true);
-                    }
-                }
-            })
-        });
-        this.context.patch(Mining, 'postAction').after(() => {
-            this.game.items.allObjects.forEach(item => {
-                const query = Theiving.getItemModifierQuery(item)
-                let chance = this.game.modifiers.getValue("melvorD:randomProductChance", query);
-                if (chance > 0) {
-                    let quantity = this.game.modifiers.getValue("melvorD:flatBaseRandomProductQuantity", query);
-                    quantity = Math.max(quantity, 1);
-                    chance = clampValue(chance, 0, 100);
-                    if (rollPercentage(chance)) {
-                        game.bank.addItem(item, quantity, true, true, false, true);
-                    }
-                }
-            })
-        });
+
+        // All three now just call the shared function
+        this.context.patch(Thieving, 'postAction').after(() => processRandomProducts());
+        this.context.patch(Fishing, 'postAction').after(() => processRandomProducts());
+        this.context.patch(Mining, 'postAction').after(() => processRandomProducts());
     }
 
     // private patchGamemodes(profile: Profile) {

@@ -1,0 +1,75 @@
+{
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "namespace": "dnd",
+    "data": {
+        "items": [
+            {
+                "id": "DemonArmor",
+                "name": "Demon Armor",
+                "category": "Armour",
+                "type": "Armour",
+                "itemType": "Equipment",
+                "media": "img/armor.jpg",
+                "ignoreCompletion": false,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 10000,
+                "tier": "none",
+                "validSlots": [
+                    "Platebody"
+                ],
+                "occupiesSlots": [],
+                "equipRequirements": [
+                    {
+                        "skillID": "melvorD:Defence",
+                        "type": "SkillLevel",
+                        "level": 99
+                    }
+                ],
+                "equipmentStats": [
+                    {
+                        "damageType": "melvorItA:Abyssal",
+                        "key": "resistance",
+                        "value": 2
+                    },
+                    {
+                        "key": "magicDefenceBonus",
+                        "value": 25
+                    },
+                    {
+                        "key": "rangedDefenceBonus",
+                        "value": -17
+                    },
+                    {
+                        "key": "meleeDefenceBonus",
+                        "value": 162
+                    },
+                    {
+                        "key": "rangedAttackBonus",
+                        "value": 0
+                    },
+                    {
+                        "key": "magicAttackBonus",
+                        "value": -24
+                    },
+                    {
+                        "key": "meleeStrengthBonus",
+                        "value": 78
+                    },
+                    {
+                        "key": "stabAttackBonus",
+                        "value": 0
+                    }
+                ],
+                "modifiers": {
+                    "flatMagicMinHit": [
+                        {
+                            "value": 40,
+                            "subcategoryID": "melvorD:Water"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

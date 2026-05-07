@@ -14,7 +14,7 @@ export class MasteredYous {
         if (typeof slotOrSingle_Species === 'number') {
             masteredYou = Array.from(this.yous.values()).find(you => you.slot === slotOrSingle_Species);
         } else {
-            const you = this.profile.actions.getObjectByID(slotOrSingle_Species.id);
+            const you = this.profile.actions.getObjectByID(slotOrSingle_Species.id)!;
 
             masteredYou = this.yous.get(you);
         }
@@ -23,7 +23,7 @@ export class MasteredYous {
     }
 
     public set(key: Single_Species, value: MasteredYou) {
-        const you = this.profile.actions.getObjectByID(key.id);
+        const you = this.profile.actions.getObjectByID(key.id)!;
 
         this.yous.set(you, value);
     }
@@ -33,7 +33,7 @@ export class MasteredYous {
     }
 
     public remove(key: Single_Species) {
-        const you = this.profile.actions.getObjectByID(key.id);
+        const you = this.profile.actions.getObjectByID(key.id)!;
 
         this.yous.delete(you);
     }
@@ -43,7 +43,7 @@ export class MasteredYous {
     }
 
     public isMastered(single_species: Single_Species) {
-        const you = this.profile.actions.getObjectByID(single_species.id);
+        const you = this.profile.actions.getObjectByID(single_species.id)!;
 
         return this.yous.has(you);
     }

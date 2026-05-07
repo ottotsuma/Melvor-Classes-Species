@@ -46,7 +46,6 @@ In the skills section, if you add a skill by It's name the image will be added f
 "name": "Human",
 "media": "https://ottotsuma.github.io/images/portraits/human%20female%20barbarian%202.jpg",
 "baseExperience": 5,
-"productId": "namespace_profile:Human",
 "level": 1,
 "skills": [
 "https://cdn2-main.melvor.net/assets/media/skills/thieving/man.svg",

@@ -108,15 +108,18 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             SwalLocale.fire({
                 html,
                 showCancelButton: false,
-                icon: 'warning',
                 confirmButtonText: 'Ok'
             });
         } else {
             let html = `<h5 class="font-w400 text-combat-smoke font-size-sm mb-2">
             ${getLangString('Profile_Would_You_Like_To_Equip_This_You')}
-            <img class="single_species-icon align-middle" src="${single_species.media}" />
-            ${single_species.name}
             </h5>
+
+            <img class="single_species-icon align-middle" src="${single_species.media}" />
+
+            <p>
+            ${single_species.name}
+            </p>
 
             <h5>
                 <img class="skill-icon-xs mr-2" src="${this.game.gp.media}" /> ${numberWithCommas(MasterCost)} GP
@@ -315,9 +318,9 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
 
     public onLevelUp(oldLevel: number, newLevel: number) {
         super.onLevelUp(oldLevel, newLevel);
-        if (oldLevel < 2 && newLevel > 1) {
-            game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1000, true, true, false, true, 'Gift from creator');
-        }
+        // if (oldLevel < 2 && newLevel > 1) {
+        //     game.bank.addItem(game.items.getObjectByID(`namespace_profile:Mastery_Token_Profile`), 1000, true, true, false, true, 'Gift from creator');
+        // }
         this.renderQueue.visibleSpecies = true;
     }
 
@@ -329,9 +332,9 @@ export class Profile extends SkillWithMastery<Single_Species, ProfileSkillData> 
             this.computeProvidedStats(true);
         }
 
-        if (oldLevel < 20 && newLevel > 19) {
-            game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, 'Gift from creator');
-        }
+        // if (oldLevel < 20 && newLevel > 19) {
+        //     game.bank.addItem(game.items.getObjectByID(`namespace_profile:Profile_Token`), 1, true, true, false, true, 'Gift from creator');
+        // }
 
         this.renderQueue.youModifiers = true;
     }

@@ -12,7 +12,6 @@
                             "name": "Giant",
                             "media": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpluspng.com%2Fimg-png%2Fpng-giant-hill-giant-5e-full-png-450-616-450.png&f=1&nofb=1&ipt=03f0b66140237b4269326380a3797d0933ffbdfd6f684633c88667f5cef42484&ipo=images",
                             "baseExperience": 90,
-                            "productId": "namespace_profile:Giant",
                             "level": 100,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/hill_giant.png",
@@ -70,7 +69,6 @@
                             "name": "Orc",
                             "media": "https://ottotsuma.github.io/images/portraits/orc%20male%20fighter.jpg",
                             "baseExperience": 102,
-                            "productId": "namespace_profile:Orc",
                             "level": 105,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/turkul_throwers.png",
@@ -157,7 +155,6 @@
                             "name": "Plant",
                             "media": "https://ottotsuma.github.io/images/monsters/planty.jpg",
                             "baseExperience": 117,
-                            "productId": "namespace_profile:Plant",
                             "level": 110,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/plant.png",
@@ -244,7 +241,6 @@
                             "name": "Beast",
                             "media": "https://ottotsuma.github.io/images/gallery/companions/beast.jpg",
                             "baseExperience": 121,
-                            "productId": "namespace_profile:Beast",
                             "level": 115,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/m14.png",
@@ -304,7 +300,6 @@
                             "name": "Animal",
                             "media": "https://ottotsuma.github.io/images/gallery/companions/lizard.jpg",
                             "baseExperience": 128,
-                            "productId": "namespace_profile:Animal",
                             "level": 120,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/chicken.png",
@@ -374,7 +369,6 @@
                             "name": "Vampire",
                             "media": "https://ottotsuma.github.io/images/people/vampire.jpg",
                             "baseExperience": 128,
-                            "productId": "namespace_profile:Vampire",
                             "level": 120,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/vampire.png",
@@ -439,7 +433,6 @@
                             "name": "Inquisitor",
                             "media": "https://ottotsuma.github.io/images/people/inquisitor.jpg",
                             "baseExperience": 90,
-                            "productId": "namespace_profile:Inquisitor",
                             "level": 100,
                             "skills": [
                                 "https://i.pinimg.com/originals/aa/1f/d0/aa1fd0ad19d6d67fb32c7b7d5b0c2ad0.png",
@@ -501,7 +494,6 @@
                             "name": "Druid",
                             "media": "https://ottotsuma.github.io/images/portraits/loxodon%20druid.jpg",
                             "baseExperience": 99,
-                            "productId": "namespace_profile:Druid",
                             "level": 105,
                             "skills": [
                                 "https://gamepedia.cursecdn.com/witcher_gamepedia/5/53/People_Druid_full.png",
@@ -584,7 +576,6 @@
                             "name": "Viking",
                             "media": "https://ottotsuma.github.io/images/people/viking.jpg",
                             "baseExperience": 106,
-                            "productId": "namespace_profile:Viking",
                             "level": 110,
                             "skills": [
                                 "https://pngimg.com/uploads/viking/viking_PNG26.png",
@@ -652,7 +643,6 @@
                             "name": "Alchemist",
                             "media": "https://i.pinimg.com/originals/d7/11/22/d71122449516f738cc086f2263111c5a.jpg",
                             "baseExperience": 112,
-                            "productId": "namespace_profile:Alchemist",
                             "level": 115,
                             "skills": [
                                 "https://i.pinimg.com/originals/9f/44/28/9f442894bec6ab5311e1c00ca5735ce7.png",
@@ -718,7 +708,6 @@
                             "name": "King",
                             "media": "https://ottotsuma.github.io/images/people/king.jpg",
                             "baseExperience": 121,
-                            "productId": "namespace_profile:King",
                             "level": 120,
                             "skills": [
                                 "https://i.pinimg.com/originals/df/69/95/df69950bc011ab119f7cd70b39cc5329.png",

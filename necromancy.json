@@ -12,7 +12,6 @@
                             "name": "Necromancer",
                             "media": "https://ottotsuma.github.io/images/people/oldmage.jpg",
                             "baseExperience": 30,
-                            "productId": "namespace_profile:Necromancer",
                             "level": 45,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/monsters/necromancer.png",

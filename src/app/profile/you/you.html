@@ -1,15 +1,15 @@
 <template id="profile-you">
     <div class="block block-rounded block-link-pop border-top border-profile border-4x" v-if="isEnabled">
         <div class="text-center mb-1">
-            <div class="row gutters-tiny">
+            <div class="row gutters-tiny position-relative">
                 <div class="col-12 pt-3 font-size-lg mb-3" v-if="you">
-                    <img class="single_species-icon" v-bind:src="media" />
                     <span>
                         {{ templateLangString('Profile_You_Title', { name: name }) }}
                     </span>
                 </div>
-
-                <div class="col-12 pb-3 pr-3 pl-3" v-if="you">
+                <img class="single_species-icon" v-if="you" v-bind:src="media" />
+                <div class="col-12 pb-3 pr-3 pl-3 position-absolute"
+                    style="background-color: rgba(35, 42, 53, 0.85); bottom: 0; left: 0; right: 0;" v-if="you">
                     <div v-for="modifier in modifiers"
                         :class="{ 'text-danger' : modifier.level === 1, 'text-success': modifier.isActive, 'profile-text-grey': !modifier.isActive }">
                         <span v-if="!modifier.isActive">

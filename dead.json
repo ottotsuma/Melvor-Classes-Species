@@ -3,7 +3,6 @@
               "name": "Toxic Martyr",
               "media": "https://cdn2-main.melvor.net/assets/media/monsters/Felth.png",
               "baseExperience": 0,
-              "productId": "namespace_profile:Toxic_Martyr",
               "level": 1,
               "abyssalLevel": 1,
               "baseAbyssalExperience": 5,
